@@ -115,7 +115,7 @@
     "ShowStatusBar": false
   },
   "PublishInfo": {
-    "AppName": "Leave Request_2023 - copy",
+    "AppName": "Leave Request_2023",
     "BackgroundColor": "rgba(0, 176, 240, 1)",
     "IconColor": "RGBA(255,255,255,1)",
     "IconName": "Edit",
@@ -141,6 +141,7 @@
     "Collections and Variables",
     "LeaveInformationScreen",
     "Screen1",
-    "Screen2"
+    "Screen2",
+    "Screen3"
   ]
 }
