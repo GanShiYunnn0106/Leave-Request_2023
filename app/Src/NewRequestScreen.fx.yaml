@@ -507,24 +507,6 @@ NewRequestScreen As screen:
             Y: =458
             ZIndex: =11
 
-        Label1_6 As label:
-            FocusedBorderColor: =Label1_6.BorderColor
-            Font: =Font.Lato
-            FontWeight: =FontWeight.Bold
-            Height: =21
-            HoverBorderColor: =Label1_6.BorderColor
-            HoverColor: =Label1_6.Color
-            HoverFill: =Label1_6.Fill
-            PressedBorderColor: =Label1_6.BorderColor
-            PressedColor: =Label1_6.Color
-            PressedFill: =Label1_6.Fill
-            Size: =10.5
-            Text: ="*Titl"
-            Width: =300
-            X: =565
-            Y: =490
-            ZIndex: =12
-
         Label1_7 As label:
             FocusedBorderColor: =Label1_7.BorderColor
             Font: =Font.Lato
@@ -541,23 +523,8 @@ NewRequestScreen As screen:
                 ="Detail:"
             Width: =300
             X: =565
-            Y: =569
+            Y: =489
             ZIndex: =13
-
-        TextInput1 As text:
-            AccessibleLabel: ="Leave title. Required field."
-            BorderColor: =RGBA(0, 71, 144, 1)
-            Default: =_leaveTitle
-            FocusedBorderColor: =TextInput1.BorderColor
-            Font: =Font.Lato
-            PressedBorderColor: =TextInput1.HoverBorderColor
-            PressedColor: =TextInput1.Color
-            PressedFill: =TextInput1.Fill
-            Size: =10.5
-            Width: =267
-            X: =565
-            Y: =510
-            ZIndex: =16
 
         TextInput1_1 As text:
             AccessibleLabel: ="Leave detail"
@@ -573,7 +540,7 @@ NewRequestScreen As screen:
             Size: =10.5
             Width: =551
             X: =565
-            Y: =590
+            Y: =530
             ZIndex: =17
 
         Image2 As image:
