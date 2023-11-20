@@ -5,7 +5,8 @@ ConfirmationScreen As screen:
         =If(
             _submittingRequest,
             Concurrent(
-               
+              
+        
                 //if editing a request, revise the record that is being edited, otherwise create a new one 
                 Patch(
                     LeaveCollection,

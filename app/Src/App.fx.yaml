@@ -68,7 +68,7 @@ App As appinfo:
                 LeaveTypeCollection,
                 Table(
                     {
-                        type: "Annual Leave",
+                        type: "Annual leave",
                         icon: vacation,
                         iconselected: 'vacation-selected',
                         description: "Tips:
@@ -80,7 +80,7 @@ App As appinfo:
         "
                     },
                     {
-                        type: "Medical Leave",
+                        type: "Medical leave",
                         icon: 'sick-leave',
                         iconselected: 'sick-leave-selected',
                         description: "Tips:
@@ -92,7 +92,7 @@ App As appinfo:
         ."
                     },
                     {
-                        type: "Compassionate Leave",
+                        type: "Compassionate leave",
                         description: "a. Death of a member of the employee's family. First relation 
         (parents/ parents-in-law/ spouse/ children)
         03 days
@@ -106,7 +106,7 @@ App As appinfo:
                         description: "Where hospitalization is necessary 60 days (including 14 days of medical leave)."
                     },
                     {
-                        type: "Paternity Leave",
+                        type: "Paternity leave",
                         description: "Entitled to 7 days of paid paternity leave under Subsection 60FA; these days must be taken consecutively.
          The requirements are:
         • The male employee must be married to the mother in question.
@@ -114,12 +114,12 @@ App As appinfo:
         • He must notify the employer at least 30 days from expected confinement (or as early as possible)."
                     },
                     {
-                        type: "Marriage Leave",
+                        type: "Marriage leave",
                         description: "A full-time confirmed employee who has completed a minimum of twelve (12) months of continuous service is 
         entitled to 3 days of leave on the occasion of his first legal marriage while in the service of the Company.."
                     },
                     {
-                        type: "Unpaid Leave",
+                        type: "Unpaid leave",
                         description: "The Company may give sympathetic consideration to the granting of leave without pay for the following reasons:
         a. Conducting the pilgrimage (Haj)
         b. Pursuit of a course of study
@@ -132,7 +132,7 @@ App As appinfo:
         c. Pilgrimage leave shall be limited to once every five (05) years."
                     },
                     {
-                        type: "Maternity Leave",
+                        type: "Maternity leave",
                         description: "A full-time confirmed female employee will be entitled to 98 Consecutive days of paid maternity leave. For 
         miscarriage maternity leave only apply upon seven full months of pregnancy under the labour law.
         "

@@ -62,7 +62,18 @@ NewRequestScreen As screen:
         HoverColor: =Button1_1.Color
         HoverFill: =ColorFade(Button1_1.Fill, 20%)
         OnSelect: |-
-            =Set(_submittingRequest, true);
+            = Patch(LeaveAppliedByUsers,Defaults(LeaveAppliedByUsers),
+                            {LeaveTitle: TextInput1.Text},
+                            {LeaveDescription: TextInput1_1.Text},
+                            {FromDate: LeaveStartDatePicker.SelectedDate},
+                            {ToDate: LeaveEndDatePicker.SelectedDate},
+                            {LeaveType: _selectedLeaveType},
+                            {TotalDays: _requestedDays},
+                            {LeaveStatus: "Pending"},
+                            {RequestedTo:_selectedApprover.UserPrincipalName},
+                            {RequestedBy: _myProfile.UserPrincipalName},
+            
+            Set(_submittingRequest, true);
             Navigate(ConfirmationScreen, BorderStyle.None)
         PressedBorderColor: =Button1_1.Fill
         PressedColor: =Button1_1.Fill
@@ -508,8 +519,7 @@ NewRequestScreen As screen:
             PressedColor: =Label1_6.Color
             PressedFill: =Label1_6.Fill
             Size: =10.5
-            Text: |-
-                ="*Title:"
+            Text: ="*Titl"
             Width: =300
             X: =565
             Y: =490

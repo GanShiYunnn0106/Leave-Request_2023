@@ -245,7 +245,7 @@ HomeScreen As screen:
         TemplateSize: =128
         Visible: =CountRows(GalleryRequests.AllItems) > 0
         Width: =775
-        X: =232
+        X: =414
         Y: =162
         ZIndex: =12
 
@@ -764,21 +764,6 @@ HomeScreen As screen:
         Y: =80
         ZIndex: =43
 
-    AllButton As button:
-        BorderColor: =RGBA(56, 86, 153, 1)
-        Color: =RGBA(62, 96, 170, 1)
-        Fill: =RGBA(255, 255, 255, 1)
-        OnSelect: =
-        RadiusBottomLeft: =25
-        RadiusBottomRight: =25
-        RadiusTopLeft: =25
-        RadiusTopRight: =25
-        Text: ="All"
-        Width: =142
-        X: =316
-        Y: =103
-        ZIndex: =51
-
     Header_11 As group:
         Height: =5
         Width: =5
@@ -907,53 +892,4 @@ HomeScreen As screen:
             Width: =155
             X: =1211
             ZIndex: =50
-
-    PendingButton As button:
-        BorderColor: =RGBA(56, 86, 153, 1)
-        Color: =RGBA(62, 96, 170, 1)
-        Fill: =RGBA(255, 255, 255, 1)
-        OnSelect: |-
-            =
-            UpdateContext({FilterByPending:!FilterByPending})
-        RadiusBottomLeft: =25
-        RadiusBottomRight: =25
-        RadiusTopLeft: =25
-        RadiusTopRight: =25
-        Text: ="Pending"
-        Width: =142
-        X: =475
-        Y: =103
-        ZIndex: =52
-
-    ApprovedButton As button:
-        BorderColor: =RGBA(56, 86, 153, 1)
-        Color: =RGBA(62, 96, 170, 1)
-        Fill: =RGBA(255, 255, 255, 1)
-        OnSelect: |-
-            =UpdateContext({FilterByApproved:!FilterByApproved})
-        RadiusBottomLeft: =25
-        RadiusBottomRight: =25
-        RadiusTopLeft: =25
-        RadiusTopRight: =25
-        Text: ="Approved"
-        Width: =142
-        X: =638
-        Y: =103
-        ZIndex: =53
-
-    DeclinedButton As button:
-        BorderColor: =RGBA(56, 86, 153, 1)
-        Color: =RGBA(62, 96, 170, 1)
-        Fill: =RGBA(255, 255, 255, 1)
-        OnSelect: |-
-            =UpdateContext({FilterByDeclined:!FilterByDeclined})
-        RadiusBottomLeft: =25
-        RadiusBottomRight: =25
-        RadiusTopLeft: =25
-        RadiusTopRight: =25
-        Text: ="Declined"
-        Width: =142
-        X: =806
-        Y: =103
-        ZIndex: =54
 

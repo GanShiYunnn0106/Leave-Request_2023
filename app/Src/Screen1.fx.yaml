@@ -95,7 +95,7 @@ Screen1 As screen:
     Button4 As button:
         Height: =106
         OnSelect: |-
-            =ClearCollect(RequesterBalanceCollection,Table({type:"Annual leave",balance:10},{type:"Medical leave",balance:10},{type:"Compassionate leave",balance:10},{type:"Paternity leave",balance:10},{type:"Maternity leave",balance:10},{type:"Hospitalization leave",balance:10},{type:"Unpaid leave",balance:0},{type:"Marriage leave",balance:10}))
+            =ClearCollect(RequesterBalanceCollection,Table({type:"Annual leave",balance:14},{type:"Medical leave",balance:14},{type:"Compassionate leave",balance:3},{type:"Paternity leave",balance:10},{type:"Maternity leave",balance:10},{type:"Hospitalization leave",balance:10},{type:"Unpaid leave",balance:0},{type:"Marriage leave",balance:10}))
         Text: ="Requester balance"
         X: =912
         Y: =360
