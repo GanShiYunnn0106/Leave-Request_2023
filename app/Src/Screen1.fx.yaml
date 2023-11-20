@@ -88,8 +88,8 @@ Screen1 As screen:
                         )
              )
         Text: ="Leave type"
-        X: =498
-        Y: =346
+        X: =489
+        Y: =78
         ZIndex: =1
 
     Button4 As button:
@@ -97,7 +97,166 @@ Screen1 As screen:
         OnSelect: |-
             =ClearCollect(RequesterBalanceCollection,Table({type:"Annual leave",balance:14},{type:"Medical leave",balance:14},{type:"Compassionate leave",balance:3},{type:"Paternity leave",balance:10},{type:"Maternity leave",balance:10},{type:"Hospitalization leave",balance:10},{type:"Unpaid leave",balance:0},{type:"Marriage leave",balance:10}))
         Text: ="Requester balance"
-        X: =912
-        Y: =360
+        X: =865
+        Y: =176
         ZIndex: =2
+
+    GroupRequestInfo_1 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =11
+
+        Label1_6 As label:
+            FocusedBorderColor: =Label1_6.BorderColor
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Bold
+            Height: =21
+            HoverBorderColor: =Label1_6.BorderColor
+            HoverColor: =Label1_6.Color
+            HoverFill: =Label1_6.Fill
+            OnSelect: =""
+            PressedBorderColor: =Label1_6.BorderColor
+            PressedColor: =Label1_6.Color
+            PressedFill: =Label1_6.Fill
+            Size: =13.5
+            Text: |-
+                ="Submit request to:"
+            Width: =300
+            X: =252
+            Y: =458
+            ZIndex: =3
+
+        Label1_14 As label:
+            FocusedBorderColor: =Label1_14.BorderColor
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Bold
+            Height: =21
+            HoverBorderColor: =Label1_14.BorderColor
+            HoverColor: =Label1_14.Color
+            HoverFill: =Label1_14.Fill
+            OnSelect: =""
+            PressedBorderColor: =Label1_14.BorderColor
+            PressedColor: =Label1_14.Color
+            PressedFill: =Label1_14.Fill
+            Size: =13.5
+            Text: |-
+                ="About your leave:"
+            Width: =300
+            X: =565
+            Y: =458
+            ZIndex: =4
+
+        Label1_15 As label:
+            FocusedBorderColor: =Label1_15.BorderColor
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Bold
+            Height: =21
+            HoverBorderColor: =Label1_15.BorderColor
+            HoverColor: =Label1_15.Color
+            HoverFill: =Label1_15.Fill
+            OnSelect: =""
+            PressedBorderColor: =Label1_15.BorderColor
+            PressedColor: =Label1_15.Color
+            PressedFill: =Label1_15.Fill
+            Size: =10.5
+            Text: |-
+                ="Detail:"
+            Width: =300
+            X: =565
+            Y: =489
+            ZIndex: =5
+
+        TextInput1_2 As text:
+            AccessibleLabel: ="Leave detail"
+            BorderColor: =RGBA(0, 71, 144, 1)
+            Default: =_leaveDetail
+            FocusedBorderColor: =TextInput1_2.BorderColor
+            Font: =Font.Lato
+            Height: =74
+            Mode: =TextMode.MultiLine
+            OnSelect: =""
+            PressedBorderColor: =TextInput1_2.HoverBorderColor
+            PressedColor: =TextInput1_2.Color
+            PressedFill: =TextInput1_2.Fill
+            Size: =10.5
+            Width: =551
+            X: =565
+            Y: =530
+            ZIndex: =6
+
+        Image2_1 As image:
+            FocusedBorderColor: =Image2_1.BorderColor
+            Height: =35
+            HoverBorderColor: =ColorFade(Image2_1.BorderColor, 20%)
+            HoverFill: =ColorFade(Image2_1.Fill, 20%)
+            Image: =If(!IsBlank(_selectedApproverPhoto),_selectedApproverPhoto)
+            OnSelect: =""
+            PressedBorderColor: =ColorFade(Image2_1.BorderColor, -20%)
+            PressedFill: =ColorFade(Image2_1.Fill, -20%)
+            RadiusBottomLeft: =30
+            RadiusBottomRight: =30
+            RadiusTopLeft: =30
+            RadiusTopRight: =30
+            Width: =35
+            X: =252
+            Y: =489
+            ZIndex: =7
+
+        Label1_16 As label:
+            FocusedBorderColor: =Label1_16.BorderColor
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Bold
+            Height: =55
+            HoverBorderColor: =Label1_16.BorderColor
+            HoverColor: =Label1_16.Color
+            HoverFill: =Label1_16.Fill
+            OnSelect: =""
+            PressedBorderColor: =Label1_16.BorderColor
+            PressedColor: =Label1_16.Color
+            PressedFill: =Label1_16.Fill
+            Size: =12
+            Text: =If(!IsBlank(_selectedApprover.DisplayName),_selectedApprover.DisplayName,"Select an approver by clicking Change")
+            X: =299
+            Y: =489
+            ZIndex: =8
+
+        RectSeparator_2 As rectangle:
+            AccessibleLabel: ="Separator"
+            BorderColor: =RGBA(255, 37, 0, 0)
+            DisabledFill: =RectSeparator_2.Fill
+            Fill: =RGBA(205, 205, 205, 1)
+            FocusedBorderColor: =RectSeparator_2.BorderColor
+            Height: =1
+            HoverFill: =RectSeparator_2.Fill
+            OnSelect: =""
+            PressedFill: =RectSeparator_2.Fill
+            Width: =864
+            X: =252
+            Y: =428
+            ZIndex: =9
+
+        Button3_1 As button:
+            BorderColor: =ColorFade(Button3_1.Fill, -15%)
+            BorderThickness: =0
+            Color: =RGBA(10, 106, 204, 1)
+            DisabledBorderColor: =ColorFade(Button3_1.BorderColor, 70%)
+            Fill: =Parent.Fill
+            FocusedBorderColor: =Button3_1.BorderColor
+            Height: =21
+            HoverBorderColor: =ColorFade(Button3_1.BorderColor, 20%)
+            HoverColor: =Button3_1.Color
+            HoverFill: =ColorFade(Button3_1.Fill, 20%)
+            OnSelect: =""
+            PressedBorderColor: =Button3_1.Fill
+            PressedColor: =Button3_1.Fill
+            PressedFill: =Button3_1.Color
+            Size: =10
+            Text: ="Change"
+            Tooltip: ="Change approving manager"
+            Width: =70
+            X: =454
+            Y: =503
+            ZIndex: =10
 
