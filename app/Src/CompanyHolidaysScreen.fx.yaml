@@ -270,12 +270,12 @@ CompanyHolidaysScreen As screen:
         Height: =36
         Size: =14
         Text: |-
-            ="New company holiday:"
+            ="New public holiday:"
         Underline: =true
         Visible: =_managerView=true
         Width: =232
-        X: =1122
-        Y: =129
+        X: =1105
+        Y: =136
         ZIndex: =38
 
     Group1 As group:
