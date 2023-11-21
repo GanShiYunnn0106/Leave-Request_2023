@@ -14,8 +14,8 @@ CompanyHolidaysScreen As screen:
         HoverFill: =Rectangle3_2.Fill
         PressedFill: =Rectangle3_2.Fill
         Width: =244
-        X: =1122
-        Y: =73
+        X: =1105
+        Y: =67
         ZIndex: =3
 
     Header_2 As group:
@@ -285,15 +285,6 @@ CompanyHolidaysScreen As screen:
         Y: =40
         ZIndex: =38
 
-        txtHolidayDate As text:
-            Default: =""
-            Height: =34
-            Visible: =_managerView=true
-            Width: =155
-            X: =1126
-            Y: =310
-            ZIndex: =35
-
         Label7 As label:
             Font: =Font.Georgia
             Height: =108
@@ -313,7 +304,7 @@ CompanyHolidaysScreen As screen:
         Button1 As button:
             Height: =26
             OnSelect: |-
-                =Collect(HolidaysCollection,{HolidayName:txtHoliday.Text, StartDate:DateValue(txtHolidayDate.Text)})
+                =Collect(HolidaysCollection,{HolidayName:txtHoliday.Text, StartDate:DateValue(HolidayDate.SelectedDate)})
             Text: ="Add"
             Visible: =_managerView=true
             Width: =80
@@ -329,4 +320,12 @@ CompanyHolidaysScreen As screen:
         X: =1126
         Y: =235
         ZIndex: =39
+
+    HolidayDate As datepicker:
+        Color: =RGBA(0, 0, 0, 1)
+        Height: =35
+        Width: =164
+        X: =1129
+        Y: =321
+        ZIndex: =40
 
