@@ -205,7 +205,7 @@ AboutScreen As screen:
             Default: =If(!IsBlank(_aboutSelectedLeaveType),LookUp(LeaveTypeCollection, type=_aboutSelectedLeaveType))
             DisabledBorderColor: =AboutLeaveTypeGallery.BorderColor
             DisabledFill: =AboutLeaveTypeGallery.Fill
-            Height: =197
+            Height: =260
             HoverBorderColor: =AboutLeaveTypeGallery.BorderColor
             HoverFill: =AboutLeaveTypeGallery.Fill
             Items: =LeaveTypeCollection
@@ -215,12 +215,12 @@ AboutScreen As screen:
             PressedBorderColor: =AboutLeaveTypeGallery.BorderColor
             PressedFill: =AboutLeaveTypeGallery.Fill
             ShowScrollbar: =false
-            TemplatePadding: =20
-            TemplateSize: =40
-            Width: =803
+            TemplatePadding: =28
+            TemplateSize: =55
+            Width: =780
             WrapCount: =3
-            X: =249
-            Y: =200
+            X: =261
+            Y: =192
             ZIndex: =43
 
             AboutLeaveTypeIcon As image:
@@ -276,7 +276,7 @@ AboutScreen As screen:
                 RadiusTopLeft: =15
                 RadiusTopRight: =15
                 Text: =""
-                Width: =232
+                Width: =222
                 ZIndex: =3
 
             AboutLeaveTypeLabel As label:
@@ -299,15 +299,15 @@ AboutScreen As screen:
                 PressedFill: =AboutLeaveTypeLabel.Fill
                 Size: =14
                 Text: =ThisItem.type
-                Width: =232
+                Width: =217
+                X: =5
                 ZIndex: =4
 
         AboutDescription As label:
-            AutoHeight: =true
             Color: =RGBA(74, 74, 74, 1)
             FocusedBorderColor: =AboutDescription.BorderColor
-            Font: =Font.Lato
-            Height: =53
+            Font: =Font.Arial
+            Height: =87
             HoverBorderColor: =AboutDescription.BorderColor
             HoverColor: =AboutDescription.Color
             HoverFill: =AboutDescription.Fill
@@ -323,14 +323,12 @@ AboutScreen As screen:
             Text: ="Manage your personal leave requests and team leave requests in one place. When a request is completed, managers are notified via email and can quickly approve or decline based on the situation."
             Width: =855
             X: =265
-            Y: =112
+            Y: =73
             ZIndex: =44
 
         AboutLeaveTypeDescription As label:
-            AutoHeight: =true
             FocusedBorderColor: =AboutLeaveTypeDescription.BorderColor
-            Font: =Font.Lato
-            Height: =251
+            Height: =315
             HoverBorderColor: =AboutLeaveTypeDescription.BorderColor
             HoverColor: =AboutLeaveTypeDescription.Color
             HoverFill: =AboutLeaveTypeDescription.Fill
@@ -346,7 +344,7 @@ AboutScreen As screen:
             Text: =If(IsBlank(AboutLeaveTypeGallery.Selected), "", AboutLeaveTypeGallery.Selected.description)
             Width: =855
             X: =256
-            Y: =420
+            Y: =453
             ZIndex: =45
 
         AboutLeaveGallerySeparator As rectangle:
@@ -358,7 +356,7 @@ AboutScreen As screen:
             HoverFill: =AboutLeaveGallerySeparator.Fill
             PressedFill: =AboutLeaveGallerySeparator.Fill
             Width: =890
-            X: =234
-            Y: =397
+            X: =238
+            Y: =452
             ZIndex: =46
 
