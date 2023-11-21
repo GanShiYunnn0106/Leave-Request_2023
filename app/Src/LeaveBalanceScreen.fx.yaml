@@ -785,11 +785,12 @@ LeaveBalanceScreen As screen:
             ZIndex: =63
 
         Image1 As image:
-            Height: =22
+            Height: =20
             Image: =Info
             OnSelect: =Navigate(AboutScreen)
-            Width: =24
-            X: =124
+            Width: =20
+            X: =126
+            Y: =3
             ZIndex: =64
 
     Rectangle6 As rectangle:
