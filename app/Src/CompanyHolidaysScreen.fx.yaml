@@ -324,6 +324,7 @@ CompanyHolidaysScreen As screen:
     HolidayDate As datepicker:
         Color: =RGBA(0, 0, 0, 1)
         Height: =35
+        Visible: =_managerView=true
         Width: =164
         X: =1129
         Y: =321

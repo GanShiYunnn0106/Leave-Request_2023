@@ -1470,8 +1470,7 @@
           "NameMapSourceSchema": "?"
         },
         "Height",
-        "ZIndex",
-        "ShowScrollbar"
+        "ZIndex"
       ],
       "GalleryTemplateChildName": "galleryTemplate1",
       "HasDynamicProperties": false,
@@ -1495,11 +1494,6 @@
         {
           "Category": "Data",
           "PropertyName": "Items",
-          "RuleProviderType": "Unknown"
-        },
-        {
-          "Category": "Design",
-          "PropertyName": "ShowScrollbar",
           "RuleProviderType": "Unknown"
         },
         {
