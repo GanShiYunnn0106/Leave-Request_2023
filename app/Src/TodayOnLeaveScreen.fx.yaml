@@ -10,14 +10,15 @@ TodayOnLeaveScreen As screen:
 
     Gallery1 As gallery.galleryVertical:
         DelayItemLoading: =true
+        Fill: =RGBA(242, 242, 242, 1)
         Height: =621
         Items: |-
             =Filter(
                 Filter(
                     LeaveApp_Request,
-                    'Start_Date' <= Today()
+                    Start_Date <= Today()
                 ),
-                'End_Date' >= Today() && Status.Value = "Approved"
+                End_Date >= Today() && Status.Value = "Approved"
             )
         Layout: =Layout.Vertical
         LoadingSpinner: =LoadingSpinner.Data
