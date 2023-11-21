@@ -766,43 +766,6 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "NewRequestScreen.OnVisible"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "NewRequestScreen.OnVisible",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 23,
-                  "charOffset": 50,
-                  "snippet": {
-                    "text": "Set(_navMenuSelect, \"\")"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnVisible",
-                "module": "NewRequestScreen",
-                "type": "NewRequestScreen"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrIncompatibleCtxtVariableTypes",
-          "ruleIndex": 0
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
                   "fullyQualifiedName": "NewRequestScreen.GalleryNavigation_12.galleryTemplate2_14.TemplateFill"
                 }
               ],
@@ -2175,43 +2138,6 @@
           },
           "ruleId": "app-ErrInvalidName",
           "ruleIndex": 1
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "HomeScreen.OnVisible"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "HomeScreen.OnVisible",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 40,
-                  "charOffset": 16,
-                  "snippet": {
-                    "text": "Set(_navMenuSelect, \"My Leave Requests\")"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnVisible",
-                "module": "HomeScreen",
-                "type": "HomeScreen"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrIncompatibleCtxtVariableTypes",
-          "ruleIndex": 0
         },
         {
           "locations": [

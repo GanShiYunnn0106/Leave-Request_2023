@@ -23,7 +23,7 @@ App As appinfo:
                     TargetScreen: TodayOnLeaveScreen
                 },
                 {
-                    Title: "Company Holidays",
+                    Title: "Public Holidays",
                     TargetScreen: CompanyHolidaysScreen
                 },
                 {
@@ -55,7 +55,7 @@ App As appinfo:
                     TargetScreen: LeaveInformationScreen
                 },
                 {
-                    Title: "Company Holidays",
+                    Title: "Public Holidays",
                     TargetScreen: CompanyHolidaysScreen
                 },
                 {
