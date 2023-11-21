@@ -252,7 +252,7 @@ ManagerSendEmailScreen As screen:
             =If(
                 _sendEmailsEnabled,
                 Office365.SendEmailV2(
-                    GalleryRequests.Selected.Requester,
+                    GalleryRequests1.Selected.Requester,
                     TextInputManagerEmailSubject.Text,
                     TextInputManagerEmailBody.Text,
                     {Importance: "Normal"}

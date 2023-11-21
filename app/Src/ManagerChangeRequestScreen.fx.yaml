@@ -151,7 +151,7 @@ ManagerChangeRequestScreen As screen:
         PressedBorderColor: =LblLeaveStartDate.BorderColor
         PressedColor: =LblLeaveStartDate.Color
         PressedFill: =LblLeaveStartDate.Fill
-        Text: =Text(GalleryRequests.Selected.StartDate, DateTimeFormat.LongDate)
+        Text: =Text(GalleryRequests1.Selected.StartDate, DateTimeFormat.LongDate)
         Width: =400
         X: =Parent.Width/2 - LblLeaveStartDate.Width/2
         Y: =258
