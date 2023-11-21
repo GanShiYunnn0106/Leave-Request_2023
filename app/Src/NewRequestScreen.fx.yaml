@@ -575,8 +575,8 @@ NewRequestScreen As screen:
             PressedFill: =Label1_10.Fill
             Size: =12
             Text: =If(!IsBlank(_selectedApprover.DisplayName),_selectedApprover.DisplayName,"Select an approver by clicking Change")
-            X: =299
-            Y: =489
+            X: =289
+            Y: =503
             ZIndex: =21
 
         RectSeparator_1 As rectangle:
