@@ -41,7 +41,7 @@
             "Name": "galleryTemplate5",
             "Parent": "Gallery2",
             "PersistMetaDataIDKey": false,
-            "PublishOrderIndex": 441,
+            "PublishOrderIndex": 428,
             "Rules": [
               {
                 "Category": "Design",
@@ -141,7 +141,7 @@
             "Name": "Label2",
             "Parent": "Gallery2",
             "PersistMetaDataIDKey": false,
-            "PublishOrderIndex": 442,
+            "PublishOrderIndex": 429,
             "Rules": [
               {
                 "Category": "Data",
@@ -386,7 +386,7 @@
             "Name": "Rectangle13",
             "Parent": "Gallery2",
             "PersistMetaDataIDKey": false,
-            "PublishOrderIndex": 443,
+            "PublishOrderIndex": 430,
             "Rules": [
               {
                 "Category": "Design",
@@ -558,7 +558,7 @@
         "Name": "Gallery2",
         "Parent": "Navigation",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 440,
+        "PublishOrderIndex": 427,
         "Rules": [
           {
             "Category": "Data",
@@ -759,7 +759,7 @@
       },
       "CurrentScreen"
     ],
-    "LastModifiedTimestamp": "638361245287816675",
+    "LastModifiedTimestamp": "638360699184563571",
     "Name": "Navigation",
     "Rules": [
       {
@@ -767,7 +767,7 @@
         "InvariantScript": "Table({Title: \"My Leave Requests\", TargetScreen: HomeScreen},{Title: \"My Leave Balance\", TargetScreen: LeaveBalanceScreen},{Title: \"Today's On Leave\", TargetScreen: TodayOnLeaveScreen},{Title: \"Leave Information\", TargetScreen: LeaveInformationScreen},{Title: \"Edit Leave\", TargetScreen: EditLeaveScreen},{Title: \"Public Holidays\", TargetScreen: CompanyHolidaysScreen},{Title: \"About\", TargetScreen: AboutScreen},{Title: \"Log Out\", TargetScreen: LoginScreen})",
         "NameMap": "{\"TargetScreen\":\"TargetScreen\",\"Title\":\"Title\"}",
         "Property": "NavItem",
-        "RuleProviderType": "System"
+        "RuleProviderType": "Unknown"
       },
       {
         "Category": "Data",
@@ -850,7 +850,7 @@
   "IsPcfControl": false,
   "IsPremiumPcfControl": false,
   "IsWidgetTemplate": false,
-  "LastModifiedTimestamp": "638361245287816675",
+  "LastModifiedTimestamp": "638360699184563571",
   "Name": "b6b5e691fc474668b7b6312386d8a5c2",
   "OverridableProperties": {},
   "Version": "1.0"

@@ -28,12 +28,13 @@ HomeScreen As screen:
             =Table({Filter: "All"}, {Filter: "Pending"}, {Filter: "Approved"}, {Filter: "Rejected"})
         Layout: =Layout.Vertical
         LoadingSpinner: =LoadingSpinner.Data
-        TemplatePadding: =0
-        TemplateSize: =22
-        Width: =807
+        ShowScrollbar: =false
+        TemplatePadding: =1
+        TemplateSize: =86
+        Width: =461
         WrapCount: =4
-        X: =195
-        Y: =63
+        X: =394
+        Y: =82
         ZIndex: =1
 
         Button5 As button:
@@ -42,31 +43,30 @@ HomeScreen As screen:
             Color: =RGBA(62, 96, 170, 1)
             Fill: =RGBA(255, 255, 255, 1)
             Font: =Font.'Lato Black'
-            Height: =37
+            Height: =30
             OnSelect: =Select(Parent)
             RadiusBottomLeft: =35
             RadiusBottomRight: =35
             RadiusTopLeft: =35
             RadiusTopRight: =35
             Text: =ThisItem.Filter
-            Width: =110
-            X: =80
-            Y: =42
+            Width: =105
+            Y: =27
             ZIndex: =6
 
     "Gallery7 As gallery.'BrowseLayout_Vertical_ThreeTextVariant_ver5.0'":
         DelayItemLoading: =true
-        Height: =601
+        Height: =512
         Items: =If(ButtonFilter.Selected.Filter="All",Filter(Table1_17,'Created By'=User().FullName),Filter(Table1_17,Status=ButtonFilter.Selected.Filter && 'Created By'=User().FullName))
         Layout: =Layout.Vertical
         LoadingSpinner: =LoadingSpinner.Data
         OnSelect: =
         TemplatePadding: =0
-        TemplateSize: =197
+        TemplateSize: =199
         Visible: =!_managerView=true
         Width: =956
-        X: =243
-        Y: =167
+        X: =229
+        Y: =162
         ZIndex: =1
 
         Title2 As label:
@@ -98,7 +98,7 @@ HomeScreen As screen:
             Text: =ThisItem.'Start Date'
             VerticalAlign: =VerticalAlign.Top
             Width: =412
-            X: =144
+            X: =147
             Y: =48
             ZIndex: =2
 
@@ -159,8 +159,8 @@ HomeScreen As screen:
             OnSelect: =Select(Parent)
             Text: =ThisItem.'End Date'
             Width: =236
-            X: =144
-            Y: =89
+            X: =147
+            Y: =86
             ZIndex: =8
 
         Rectangle14 As rectangle:
@@ -199,7 +199,7 @@ HomeScreen As screen:
         Height: =695
         HoverFill: =Rectangle3.Fill
         PressedFill: =Rectangle3.Fill
-        Width: =303
+        Width: =246
         X: =1063
         Y: =73
         ZIndex: =3
@@ -403,13 +403,13 @@ HomeScreen As screen:
         DisabledFill: =Rectangle2_1.Fill
         Fill: =RGBA(202, 202, 202, 1)
         FocusedBorderColor: =Rectangle2_1.BorderColor
-        Height: =1
+        Height: =2
         HoverFill: =Rectangle2_1.Fill
         OnSelect: =
         PressedFill: =Rectangle2_1.Fill
-        Width: =GalleryRequests.TemplateWidth
-        X: =GalleryRequests.X + 5
-        Y: =GalleryRequests.Y + 4
+        Width: =832
+        X: =231
+        Y: =167
         ZIndex: =35
 
     GroupEmptyState As group:

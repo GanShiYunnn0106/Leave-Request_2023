@@ -8,7 +8,7 @@ TodayOnLeaveScreen As screen:
     Size: =1 + CountRows(App.SizeBreakpoints) - CountIf(App.SizeBreakpoints, Value >= TodayOnLeaveScreen.Width)
     Width: =Max(App.Width, App.DesignWidth)
 
-    "Gallery1 As gallery.'BrowseLayout_Vertical_OneTextVariant_ver5.0'":
+    Gallery1 As gallery.galleryVertical:
         BorderThickness: =1
         DelayItemLoading: =true
         Height: =621

@@ -187,8 +187,7 @@
         "Y",
         "Width",
         "Height",
-        "ZIndex",
-        "BorderThickness"
+        "ZIndex"
       ],
       "GalleryTemplateChildName": "galleryTemplate2",
       "HasDynamicProperties": false,
@@ -212,11 +211,6 @@
         {
           "Category": "Data",
           "PropertyName": "WrapCount",
-          "RuleProviderType": "Unknown"
-        },
-        {
-          "Category": "Design",
-          "PropertyName": "BorderThickness",
           "RuleProviderType": "Unknown"
         },
         {
@@ -396,7 +390,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Header_6",
-      "ParentIndex": 14,
+      "ParentIndex": 12,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
