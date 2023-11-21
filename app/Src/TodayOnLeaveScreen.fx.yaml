@@ -13,8 +13,11 @@ TodayOnLeaveScreen As screen:
         Height: =621
         Items: |-
             =Filter(
-                LeaveApp_Request,
-                Start_Date <= Today() && End_Date >= Today() && Status.Value = "Approved"
+                Filter(
+                    LeaveApp_Request,
+                    'Start_Date' <= Today()
+                ),
+                'End_Date' >= Today() && Status.Value = "Approved"
             )
         Layout: =Layout.Vertical
         LoadingSpinner: =LoadingSpinner.Data

@@ -278,7 +278,7 @@ HomeScreen As screen:
         TemplateSize: =128
         Visible: =CountRows(GalleryRequests.AllItems) > 0
         Width: =775
-        X: =414
+        X: =263
         Y: =162
         ZIndex: =12
 
