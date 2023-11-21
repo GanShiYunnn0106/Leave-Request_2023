@@ -183,26 +183,25 @@ HomeScreen As screen:
             Y: =187
             ZIndex: =9
 
-        Label26_1 As label:
-            Align: =Align.Center
-            BorderColor: |
+        RequestStatus As button:
+            BorderColor: |-
                 =If((ThisItem.Status.Value)="Pending",RGBA(0,71,144,1),
                 (ThisItem.Status.Value)="Rejected",RGBA(213,0,0,1),
                 (ThisItem.Status.Value)="Approved",RGBA(0,128,0,1))
             BorderThickness: =3
-            Color: |
+            Color: |-
                 =If((ThisItem.Status.Value)="Pending",RGBA(0,71,144,1),
                 (ThisItem.Status.Value)="Rejected",RGBA(213,0,0,1),
                 (ThisItem.Status.Value)="Approved",RGBA(0,128,0,1))
-            DisabledBorderColor: =RGBA(101, 128, 187, 1)
             Fill: =RGBA(255, 255, 255, 1)
             Font: =Font.'Lato Black'
-            FontWeight: =FontWeight.Bold
+            Height: =31
             OnSelect: =Select(Parent)
             Text: =ThisItem.Status.Value
-            X: =639
-            Y: =112
-            ZIndex: =10
+            Width: =145
+            X: =652
+            Y: =130
+            ZIndex: =11
 
     Rectangle3 As rectangle:
         DisabledFill: =Rectangle3.Fill
@@ -212,7 +211,7 @@ HomeScreen As screen:
         HoverFill: =Rectangle3.Fill
         PressedFill: =Rectangle3.Fill
         Width: =246
-        X: =1063
+        X: =1075
         Y: =73
         ZIndex: =3
 
@@ -352,28 +351,28 @@ HomeScreen As screen:
             Y: =88
             ZIndex: =3
 
-        RequestStatus As button:
-            BorderColor: =RequestStatus.Color
+        RequestStatus1 As button:
+            BorderColor: =RequestStatus1.Color
             Color: |-
                 =If(Upper(ThisItem.Status)="PENDING",RGBA(0, 71, 144, 1),
                 Upper(ThisItem.Status)="DECLINED",RGBA(213, 0, 0, 1),
                 Upper(ThisItem.Status)="APPROVED",RGBA(0, 128, 0, 1))
-            DisabledBorderColor: =ColorFade(RequestStatus.BorderColor, 70%)
+            DisabledBorderColor: =ColorFade(RequestStatus1.BorderColor, 70%)
             Fill: =RGBA(255, 255, 255, 1)
-            FocusedBorderColor: =RequestStatus.BorderColor
+            FocusedBorderColor: =RequestStatus1.BorderColor
             Font: =Font.Lato
             Height: =30
-            HoverBorderColor: =RequestStatus.BorderColor
-            HoverColor: =RequestStatus.Color
-            HoverFill: =ColorFade(RequestStatus.Fill, 20%)
+            HoverBorderColor: =RequestStatus1.BorderColor
+            HoverColor: =RequestStatus1.Color
+            HoverFill: =ColorFade(RequestStatus1.Fill, 20%)
             OnSelect: =Select(Parent)
             PaddingBottom: =0
             PaddingLeft: =0
             PaddingRight: =0
             PaddingTop: =0
-            PressedBorderColor: =RequestStatus.BorderColor
-            PressedColor: =RequestStatus.Fill
-            PressedFill: =RequestStatus.Color
+            PressedBorderColor: =RequestStatus1.BorderColor
+            PressedColor: =RequestStatus1.Fill
+            PressedFill: =RequestStatus1.Color
             RadiusBottomLeft: =4
             RadiusBottomRight: =4
             RadiusTopLeft: =4
