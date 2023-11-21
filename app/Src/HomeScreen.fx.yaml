@@ -212,7 +212,7 @@ HomeScreen As screen:
         PressedFill: =Rectangle3.Fill
         Width: =246
         X: =1075
-        Y: =73
+        Y: =63
         ZIndex: =3
 
     "GalleryRequests As gallery.'BrowseLayout_Vertical_TwoTextVariant_ver4.0'":
