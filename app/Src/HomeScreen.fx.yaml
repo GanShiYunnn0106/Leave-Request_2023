@@ -212,8 +212,8 @@ HomeScreen As screen:
         HoverFill: =Rectangle3.Fill
         PressedFill: =Rectangle3.Fill
         Width: =246
-        X: =1063
-        Y: =73
+        X: =1120
+        Y: =63
         ZIndex: =3
 
     "GalleryRequests As gallery.'BrowseLayout_Vertical_TwoTextVariant_ver4.0'":
