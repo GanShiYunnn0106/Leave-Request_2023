@@ -14,7 +14,7 @@ ConfirmationScreen As screen:
                         _editingRequest,
                         LookUp(
                             LeaveCollection,
-                            LeaveID = GalleryRequests.Selected.LeaveID
+                            LeaveID = GalleryRequests1.Selected.LeaveID
                         ),
                         Defaults(LeaveCollection)
                     ),
@@ -29,7 +29,7 @@ ConfirmationScreen As screen:
                         Requester: _myProfile.UserPrincipalName,
                         LeaveID: If(
                             _editingRequest,
-                            GalleryRequests.Selected.LeaveID,
+                            GalleryRequests1.Selected.LeaveID,
                             Text(
                                 Now(),
                                 DateTimeFormat.LongDateTime24

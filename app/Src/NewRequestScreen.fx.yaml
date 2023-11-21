@@ -19,14 +19,14 @@ NewRequestScreen As screen:
                 )
                 ,
                 _editingRequest && !_changingApprover,
-                Set(_selectedApprover, Office365Users.UserProfile(GalleryRequests.Selected.Approver));
-                Set(_selectedApproverPhoto, Office365Users.UserPhoto(GalleryRequests.Selected.Approver));
-                Set(_leaveStart, GalleryRequests.Selected.StartDate);
-                Set(_leaveEnd, GalleryRequests.Selected.EndDate);
+                Set(_selectedApprover, Office365Users.UserProfile(GalleryRequests1.Selected.Approver));
+                Set(_selectedApproverPhoto, Office365Users.UserPhoto(GalleryRequests1.Selected.Approver));
+                Set(_leaveStart, GalleryRequests1.Selected.StartDate);
+                Set(_leaveEnd, GalleryRequests1.Selected.EndDate);
                 If(_leaveEnd < Today(), Notify("This event occurred in the past and cannot be resubmitted without first changing the dates", NotificationType.Warning));
-                Set(_selectedLeaveType, GalleryRequests.Selected.LeaveType);
-                Set(_leaveTitle, GalleryRequests.Selected.Title);
-                Set(_leaveDetail, GalleryRequests.Selected.Detail);
+                Set(_selectedLeaveType, GalleryRequests1.Selected.LeaveType);
+                Set(_leaveTitle, GalleryRequests1.Selected.Title);
+                Set(_leaveDetail, GalleryRequests1.Selected.Detail);
             )
         );
         Set(_changingApprover, false)
