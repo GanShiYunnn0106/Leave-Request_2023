@@ -11,7 +11,11 @@ TodayOnLeaveScreen As screen:
     Gallery1 As gallery.galleryVertical:
         DelayItemLoading: =true
         Height: =621
-        Items: =Filter(Table1_16,  DateValue('Start Date') <= Today() && DateValue('End Date') >= Today() && Status = "Approved")
+        Items: |-
+            =Filter(
+                LeaveApp_Request,
+                Start_Date <= Today() && End_Date >= Today() && Status.Value = "Approved"
+            )
         Layout: =Layout.Vertical
         LoadingSpinner: =LoadingSpinner.Data
         TemplateSize: =64
@@ -24,7 +28,7 @@ TodayOnLeaveScreen As screen:
             FontWeight: =FontWeight.Semibold
             Height: =31
             OnSelect: =Select(Parent)
-            Text: =ThisItem.'Created By'
+            Text: =ThisItem.'Created_By'.DisplayName
             Width: =362
             X: =48
             Y: =16
@@ -33,7 +37,7 @@ TodayOnLeaveScreen As screen:
         Label19_1 As label:
             Height: =31
             OnSelect: =Select(Parent)
-            Text: =ThisItem.'Leave Type'
+            Text: =ThisItem.Leave_Type.Value
             Width: =180
             X: =505
             Y: =16
@@ -42,7 +46,7 @@ TodayOnLeaveScreen As screen:
         Label19_2 As label:
             Height: =31
             OnSelect: =Select(Parent)
-            Text: =Text(ThisItem.'Start Date',"[$-en-US]dd/mm/yyyy") & "  -  " & Text(ThisItem.'End Date',"[$-en-US]dd/mm/yyyy") & " , " & ThisItem.Days & " day(s)"
+            Text: =Text(ThisItem.'Start_Date', "[$-en-US]dd/mm/yyyy") & " - " & Text(ThisItem.'End_Date', "[$-en-US]dd/mm/yyyy") & ", " & ThisItem.Days & " day(s)"
             Width: =397
             X: =685
             Y: =16
