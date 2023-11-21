@@ -54,7 +54,7 @@ TodayOnLeaveScreen As screen:
         Label27 As label:
             Height: =32
             OnSelect: =Select(Parent)
-            Text: =ThisItem.'Days' & " day(s) "
+            Text: =ThisItem.Days & " day(s) "
             X: =23
             Y: =107
             ZIndex: =4
