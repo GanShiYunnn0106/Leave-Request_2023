@@ -784,6 +784,14 @@ LeaveBalanceScreen As screen:
             Text: ="Leave Types"
             ZIndex: =63
 
+        Image1 As image:
+            Height: =22
+            Image: =Info
+            OnSelect: =Navigate(AboutScreen)
+            Width: =24
+            X: =124
+            ZIndex: =64
+
     Rectangle6 As rectangle:
         Fill: =RGBA(230, 229, 229, 1)
         Height: =2
