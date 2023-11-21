@@ -78,7 +78,7 @@ HomeScreen As screen:
             If(_managerView, 
                 //If manager view, get user's leave balance record and determine any overlaps this request has from other people I manage
                 Set(_requesterBalanceRecord, LookUp(BalanceCollection, Year = Text(Year(Now())) && EmployeeEmail = ThisItem.Requester));
-                ClearCollect(RequestOverlaps, Filter(LeaveCollection, EndDate >= _selectedLeaveItem.StartDate && StartDate <= _selectedLeaveItem.EndDate 
+                ClearCollect(RequestOverlaps, Filter(LeaveCollection, EndDate >= _selectedLeaveItem.Start_Date && StartDate <= _selectedLeaveItem.End_Date 
                 && Requester <>_selectedLeaveItem.Requester));
                 
                 If(CountRows(RequestOverlaps) > 0, Set(_requestOverlapMessage, Concat(ForAll(Distinct(RequestOverlaps, Requester), {Result: ThisRecord.Value}), Result, ", ")))
@@ -87,8 +87,8 @@ HomeScreen As screen:
             Concurrent(
                 //gather requester or approver info depending on view
                 If(_managerView, 
-                    Set(_requester, Office365Users.UserProfile(ThisItem.Requester)), 
-                    Set(_selectedApprover, Office365Users.UserProfile(ThisItem.)); If(Office365Users.UserPhotoMetadata(_selectedApprover.Id).HasPhoto, Set(_selectedApproverPhoto, Office365Users.UserPhoto(_selectedApprover.Id)))),
+                    Set(_requester, Office365Users.UserProfile(ThisItem.Requester_To)), 
+                    Set(_selectedApprover, Office365Users.UserProfile(ThisItem.Decision_By)); If(Office365Users.UserPhotoMetadata(_selectedApprover.Id).HasPhoto, Set(_selectedApproverPhoto, Office365Users.UserPhoto(_selectedApprover.Id)))),
                 //**** CALCULATION USED TO DETERMINE TOTAL WORK DAYS REQUESTED ****
                  Set(_inclusiveTotalDaysRequested, DateDiff(ThisItem.Start_Date, ThisItem.End_Date, TimeUnit.Days) + 1);
                     Set(_numFullWeeks, RoundDown(_inclusiveTotalDaysRequested / 7, 0));
