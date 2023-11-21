@@ -10,7 +10,6 @@ TodayOnLeaveScreen As screen:
 
     Gallery1 As gallery.galleryVertical:
         DelayItemLoading: =true
-        Fill: =RGBA(242, 242, 242, 1)
         Height: =621
         Items: |-
             =Filter(
