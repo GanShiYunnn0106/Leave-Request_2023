@@ -57,7 +57,19 @@ HomeScreen As screen:
     "Gallery7 As gallery.'BrowseLayout_Vertical_ThreeTextVariant_ver5.0'":
         DelayItemLoading: =true
         Height: =512
-        Items: =If(ButtonFilter.Selected.Filter="All",LeaveApp_Request,Filter(LeaveApp_Request,Status.Value=ButtonFilter.Selected.Filter))
+        Items: |-
+            =If(
+                ButtonFilter.Selected.Filter = "All",
+                Filter(
+                    LeaveApp_Request,
+                    Created_By.DisplayName = User().FullName
+                ),
+               
+                Filter(
+                    LeaveApp_Request,
+                    Status.Value = ButtonFilter.Selected.Filter && Created_By.DisplayName = User().FullName
+                )
+            )
         Layout: =Layout.Vertical
         LoadingSpinner: =LoadingSpinner.Data
         OnSelect: =
