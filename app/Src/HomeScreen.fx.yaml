@@ -72,7 +72,7 @@ HomeScreen As screen:
             )
         Layout: =Layout.Vertical
         LoadingSpinner: =LoadingSpinner.Data
-        OnSelect: =
+        OnSelect: =Set(SelectedRecord,Gallery7.Selected)
         TemplatePadding: =0
         TemplateSize: =199
         Visible: =!_managerView=true
@@ -221,7 +221,7 @@ HomeScreen As screen:
         Default: =Blank()
         DisabledBorderColor: =GalleryRequests.BorderColor
         DisabledFill: =GalleryRequests.Fill
-        Height: =114
+        Height: =130
         HoverBorderColor: =GalleryRequests.BorderColor
         HoverFill: =GalleryRequests.Fill
         Items: |-
@@ -287,11 +287,11 @@ HomeScreen As screen:
         PressedFill: =GalleryRequests.Fill
         ShowScrollbar: =false
         TemplateFill: =If(ThisItem.IsSelected, RGBA(249, 249, 249, 1))
-        TemplateSize: =109
+        TemplateSize: =92
         Visible: =CountRows(GalleryRequests.AllItems) > 0
-        Width: =517
-        X: =549
-        Y: =339
+        Width: =743
+        X: =299
+        Y: =638
         ZIndex: =12
 
         Label3 As label:
