@@ -2,15 +2,16 @@ LeaveInformationScreen As screen:
 
     "Gallery6 As gallery.'BrowseLayout_Vertical_ThreeTextVariant_ver5.0'":
         DelayItemLoading: =true
-        Height: =567
-        Items: =Filter(Table1_4, SearchInput.Text in 'Created By')
+        Height: =584
+        Items: |
+            =LeaveApp_Request
         Layout: =Layout.Vertical
         LoadingSpinner: =LoadingSpinner.Data
         TemplatePadding: =0
-        TemplateSize: =297
+        TemplateSize: =312
         Width: =1142
         X: =224
-        Y: =179
+        Y: =164
         ZIndex: =1
 
         Separator7 As rectangle:
@@ -30,7 +31,7 @@ LeaveInformationScreen As screen:
 
         Label9 As label:
             FontWeight: =FontWeight.Semibold
-            Height: =223
+            Height: =259
             OnSelect: =Select(Parent)
             Text: |-
                 ="Name: 
@@ -42,17 +43,19 @@ LeaveInformationScreen As screen:
                 End Date:
                 
                 Details:
+                
+                Total Days:
                 "
-            Width: =275
-            X: =8
+            Width: =113
+            X: =9
             ZIndex: =7
 
         Label10 As label:
             Height: =26
             OnSelect: =Select(Parent)
-            Text: =ThisItem.'Created By'
+            Text: =ThisItem.Created_By.DisplayName
             Width: =397
-            X: =121
+            X: =102
             Y: =14
             ZIndex: =8
 
@@ -61,35 +64,35 @@ LeaveInformationScreen As screen:
             OnSelect: =Select(Parent)
             Text: =ThisItem.Comments
             Width: =274
-            X: =121
-            Y: =185
+            X: =122
+            Y: =180
             ZIndex: =9
 
         Label22 As label:
             Height: =18
             OnSelect: =Select(Parent)
-            Text: =ThisItem.'End Date'
+            Text: =ThisItem.End_Date
             Width: =210
             X: =121
-            Y: =147
+            Y: =140
             ZIndex: =12
 
         Label23 As label:
-            Height: =17
+            Height: =22
             OnSelect: =Select(Parent)
-            Text: =ThisItem.'Leave Type'
-            Width: =208
-            X: =126
-            Y: =62
+            Text: =ThisItem.Leave_Type.Value
+            Width: =291
+            X: =132
+            Y: =57
             ZIndex: =13
 
         Label24 As label:
             Height: =21
             OnSelect: =Select(Parent)
-            Text: =ThisItem.'Start Date'
+            Text: =ThisItem.Start_Date
             Width: =293
-            X: =126
-            Y: =104
+            X: =130
+            Y: =97
             ZIndex: =14
 
         Rectangle18 As rectangle:
@@ -105,20 +108,20 @@ LeaveInformationScreen As screen:
         Label26 As label:
             Align: =Align.Center
             BorderColor: |
-                =If((ThisItem.Status)="Pending",RGBA(0,71,144,1),
-                (ThisItem.Status)="Rejected",RGBA(213,0,0,1),
-                (ThisItem.Status)="Approved",RGBA(0,128,0,1))
+                =If((ThisItem.Status.Value)="Pending",RGBA(0,71,144,1),
+                (ThisItem.Status.Value)="Rejected",RGBA(213,0,0,1),
+                (ThisItem.Status.Value)="Approved",RGBA(0,128,0,1))
             BorderThickness: =3
             Color: |
-                =If((ThisItem.Status)="Pending",RGBA(0,71,144,1),
-                (ThisItem.Status)="Rejected",RGBA(213,0,0,1),
-                (ThisItem.Status)="Approved",RGBA(0,128,0,1))
+                =If((ThisItem.Status.Value)="Pending",RGBA(0,71,144,1),
+                (ThisItem.Status.Value)="Rejected",RGBA(213,0,0,1),
+                (ThisItem.Status.Value)="Approved",RGBA(0,128,0,1))
             DisabledBorderColor: =RGBA(101, 128, 187, 1)
             Fill: =RGBA(255, 255, 255, 1)
             Font: =Font.'Lato Black'
             FontWeight: =FontWeight.Bold
             OnSelect: =Select(Parent)
-            Text: =ThisItem.Status
+            Text: =ThisItem.Status.Value
             X: =937
             Y: =166
             ZIndex: =17
@@ -131,6 +134,15 @@ LeaveInformationScreen As screen:
             X: =4
             Y: =259
             ZIndex: =18
+
+        Label18 As label:
+            Height: =17
+            OnSelect: =Select(Parent)
+            Text: =ThisItem.Days
+            Width: =112
+            X: =130
+            Y: =226
+            ZIndex: =19
 
     Navigation_2 As Navigation:
         CurrentScreen: ="Leave Information"
@@ -297,7 +309,8 @@ LeaveInformationScreen As screen:
         Fill: =RGBA(0, 0, 0, 0)
         HintText: ="Search by Name"
         HoverBorderColor: =RGBA(163, 179, 214, 1)
-        X: =606
-        Y: =139
+        Width: =271
+        X: =585
+        Y: =124
         ZIndex: =12
 

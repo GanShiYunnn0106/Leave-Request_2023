@@ -31,7 +31,7 @@ TodayOnLeaveScreen As screen:
             FontWeight: =FontWeight.Semibold
             Height: =31
             OnSelect: =Select(Parent)
-            Text: =ThisItem.'Created_By'.DisplayName
+            Text: =ThisItem.Created_By.DisplayName
             Width: =362
             X: =48
             Y: =16
@@ -49,7 +49,7 @@ TodayOnLeaveScreen As screen:
         Label19_2 As label:
             Height: =31
             OnSelect: =Select(Parent)
-            Text: =Text(ThisItem.'Start_Date', "[$-en-US]dd/mm/yyyy") & " - " & Text(ThisItem.'End_Date', "[$-en-US]dd/mm/yyyy") & ", " & ThisItem.Days & " day(s)"
+            Text: =Text(ThisItem.Start_Date, "[$-en-US]dd/mm/yyyy") & " - " & Text(ThisItem.End_Date, "[$-en-US]dd/mm/yyyy") & ", " & ThisItem.Days & " day(s)"
             Width: =397
             X: =685
             Y: =16
