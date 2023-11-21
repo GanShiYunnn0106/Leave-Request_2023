@@ -131,128 +131,6 @@ HomeScreen As screen:
         Y: =169
         ZIndex: =1
 
-        Title2 As label:
-            Color: =RGBA(62, 96, 170, 1)
-            Font: =Font.Lato
-            FontWeight: =FontWeight.Bold
-            Height: =Self.Size * 1.8
-            OnSelect: =Select(Parent)
-            PaddingBottom: =0
-            PaddingLeft: =0
-            PaddingRight: =0
-            PaddingTop: =0
-            Size: =15
-            Text: =ThisItem.Created_By.DisplayName
-            VerticalAlign: =VerticalAlign.Top
-            Width: =Parent.TemplateWidth - 86
-            X: =14
-            Y: =13
-            ZIndex: =1
-
-        Subtitle2 As label:
-            Height: =25
-            OnSelect: =Select(Parent)
-            PaddingBottom: =0
-            PaddingLeft: =0
-            PaddingRight: =0
-            PaddingTop: =0
-            Size: =13
-            Text: =ThisItem.Start_Date
-            VerticalAlign: =VerticalAlign.Top
-            Width: =412
-            X: =147
-            Y: =48
-            ZIndex: =2
-
-        Body1 As label:
-            Height: =22
-            OnSelect: =Select(Parent)
-            PaddingBottom: =0
-            PaddingLeft: =0
-            PaddingRight: =0
-            PaddingTop: =0
-            Text: =ThisItem.Leave_Type.Value
-            VerticalAlign: =VerticalAlign.Top
-            Width: =737
-            X: =147
-            Y: =130
-            ZIndex: =3
-
-        NextArrow2 As icon.ChevronRight:
-            AccessibleLabel: =Self.Tooltip
-            Color: =RGBA(166, 166, 166, 1)
-            Height: =50
-            Icon: =Icon.ChevronRight
-            OnSelect: =Select(Parent)
-            PaddingBottom: =16
-            PaddingLeft: =16
-            PaddingRight: =16
-            PaddingTop: =16
-            Tooltip: ="View item details"
-            Width: =50
-            X: =Parent.TemplateWidth - Self.Width - 12
-            Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
-            ZIndex: =4
-
-        Separator2 As rectangle:
-            Fill: =RGBA(255, 255, 255, 1)
-            Height: =8
-            OnSelect: =Select(Parent)
-            Width: =Parent.TemplateWidth
-            Y: =Parent.TemplateHeight - Self.Height
-            ZIndex: =5
-
-        Label16 As label:
-            FontWeight: =FontWeight.Semibold
-            Height: =153
-            OnSelect: =Select(Parent)
-            Text: |-
-                ="Start date:
-                
-                End date:
-                
-                Leave Type:"
-            X: =28
-            Y: =25
-            ZIndex: =7
-
-        Label17 As label:
-            Height: =26
-            OnSelect: =Select(Parent)
-            Text: =ThisItem.End_Date
-            Width: =236
-            X: =147
-            Y: =86
-            ZIndex: =8
-
-        Rectangle14 As rectangle:
-            Fill: =RGBA(217, 216, 217, 1)
-            Height: =2
-            OnSelect: =Select(Parent)
-            Width: =826
-            Y: =187
-            ZIndex: =9
-
-        RequestStatus As button:
-            BorderColor: |-
-                =If((ThisItem.Status.Value)="Pending",RGBA(0,71,144,1),
-                (ThisItem.Status.Value)="Rejected",RGBA(213,0,0,1),
-                (ThisItem.Status.Value)="Approved",RGBA(0,128,0,1))
-            BorderThickness: =3
-            Color: |-
-                =If((ThisItem.Status.Value)="Pending",RGBA(0,71,144,1),
-                (ThisItem.Status.Value)="Rejected",RGBA(213,0,0,1),
-                (ThisItem.Status.Value)="Approved",RGBA(0,128,0,1))
-            Fill: =RGBA(255, 255, 255, 1)
-            Font: =Font.'Lato Black'
-            Height: =31
-            OnSelect: =Select(Parent)
-            Text: =ThisItem.Status.Value
-            Width: =145
-            X: =652
-            Y: =130
-            ZIndex: =11
-
     Rectangle3 As rectangle:
         DisabledFill: =Rectangle3.Fill
         Fill: =RGBA(249, 249, 249, 1)
@@ -343,64 +221,6 @@ HomeScreen As screen:
         Y: =638
         ZIndex: =12
 
-        Label3 As label:
-            Color: =RGBA(10, 106, 204, 1)
-            FocusedBorderColor: =Label3.BorderColor
-            FocusedBorderThickness: =2
-            Font: =Font.Lato
-            FontWeight: =FontWeight.Bold
-            Height: =Label3.Size * 1.7
-            HoverBorderColor: =Label3.BorderColor
-            HoverColor: =Label3.Color
-            HoverFill: =Label3.Fill
-            OnSelect: =Select(Parent)
-            PressedBorderColor: =Label3.BorderColor
-            PressedColor: =Label3.Color
-            PressedFill: =Label3.Fill
-            Size: =18
-            Text: =ThisItem.Title
-            Width: =620
-            X: =18
-            Y: =16
-            ZIndex: =1
-
-        Label5 As label:
-            FocusedBorderColor: =Label5.BorderColor
-            FocusedBorderThickness: =2
-            Font: =Font.'Lato Light'
-            Height: =Label5.Size * 1.8
-            HoverBorderColor: =Label5.BorderColor
-            HoverColor: =Label5.Color
-            HoverFill: =Label5.Fill
-            OnSelect: =Select(Parent)
-            PressedBorderColor: =Label5.BorderColor
-            PressedColor: =Label5.Color
-            PressedFill: =Label5.Fill
-            Size: =13.5
-            Text: =Text(ThisItem.StartDate,"[$-en-US]dddd, mmm. dd, yyyy") & If(DateDiff(ThisItem.StartDate, ThisItem.EndDate, TimeUnit.Days) <> 0, " - " & Text(ThisItem.EndDate,"[$-en-US]dddd, mmm. dd, yyyy"))
-            Width: =658
-            Y: =46
-            ZIndex: =2
-
-        Label6 As label:
-            FocusedBorderColor: =Label6.BorderColor
-            FocusedBorderThickness: =2
-            Font: =Font.Lato
-            Height: =30
-            HoverBorderColor: =Label6.BorderColor
-            HoverColor: =Label6.Color
-            HoverFill: =Label6.Fill
-            OnSelect: =Select(Parent)
-            PressedBorderColor: =Label6.BorderColor
-            PressedColor: =Label6.Color
-            PressedFill: =Label6.Fill
-            Size: =10.5
-            Text: =If(_managerView, ThisItem.Requester, ThisItem.Detail)
-            Width: =381
-            X: =6
-            Y: =88
-            ZIndex: =3
-
         RequestStatus1 As button:
             BorderColor: =RequestStatus1.Color
             Color: |-
@@ -433,19 +253,6 @@ HomeScreen As screen:
             X: =638
             Y: =16
             ZIndex: =4
-
-        Rectangle2 As rectangle:
-            AccessibleLabel: =ThisItem.Title
-            DisabledFill: =Rectangle2.Fill
-            Fill: =RGBA(202, 202, 202, 1)
-            FocusedBorderColor: =Rectangle2.BorderColor
-            Height: =1.5
-            HoverFill: =Rectangle2.Fill
-            OnSelect: =Select(Parent)
-            PressedFill: =Rectangle2.Fill
-            Width: =Parent.TemplateWidth
-            Y: =Parent.TemplateHeight - Rectangle2.Height
-            ZIndex: =5
 
     RectNavSep As rectangle:
         DisabledFill: =RectNavSep.Fill
@@ -576,8 +383,8 @@ HomeScreen As screen:
             PressedFill: =LblRequestDetailsHeader.Fill
             Size: =13.5
             Text: ="Request Details"
-            Width: =291
-            X: =1075
+            Width: =180
+            X: =1181
             Y: =103
             ZIndex: =13
 
@@ -585,7 +392,7 @@ HomeScreen As screen:
             AccessibleLabel: ="Selected request details"
             DisabledBorderColor: =GalleryRequestDetails.BorderColor
             DisabledFill: =GalleryRequestDetails.Fill
-            Height: =CountRows(GalleryRequestDetails.AllItems)*75
+            Height: =225
             HoverBorderColor: =GalleryRequestDetails.BorderColor
             HoverFill: =GalleryRequestDetails.Fill
             Items: |-
@@ -623,8 +430,8 @@ HomeScreen As screen:
             ShowScrollbar: =false
             TemplateSize: =68
             Visible: =_showDetails
-            Width: =360
-            X: =1006
+            Width: =223
+            X: =1137
             Y: =154
             ZIndex: =24
 
@@ -661,11 +468,11 @@ HomeScreen As screen:
                 PressedColor: =Label9_3.Color
                 PressedFill: =Label9_3.Fill
                 Size: =12
-                Text: =ThisItem.Value
+                Text: =Text(SelectedRecord.Subtitle2)
                 VerticalAlign: =VerticalAlign.Top
                 Visible: =_showDetails
-                Width: =266
-                X: =71
+                Width: =195
+                X: =18
                 Y: =25
                 ZIndex: =2
 
@@ -706,8 +513,8 @@ HomeScreen As screen:
             PressedFill: =BtnEmailRequester.Fill
             TabIndex: =0
             Visible: =_showDetails && _managerView && Upper(GalleryRequests1.Selected.Status) = Upper("Pending")
-            Width: =24
-            X: =1245
+            Width: =15
+            X: =1291
             Y: =BtnManagerApprove.Y + BtnManagerApprove.Height/2 - BtnEmailRequester.Height/2
             ZIndex: =25
 
@@ -743,8 +550,8 @@ HomeScreen As screen:
             Size: =10.5
             Text: ="Decline"
             Visible: =_showDetails && _managerView && Upper(GalleryRequests1.Selected.Status) = Upper("Pending")
-            Width: =91
-            X: =1137
+            Width: =56
+            X: =1224
             Y: =GalleryRequestDetails.Y + GalleryRequestDetails.Height + 5
             ZIndex: =26
 
@@ -792,8 +599,8 @@ HomeScreen As screen:
             Size: =10.5
             Text: ="Approve"
             Visible: =_showDetails && _managerView && Upper(GalleryRequests1.Selected.Status) = Upper("Pending")
-            Width: =91
-            X: =1037
+            Width: =56
+            X: =1162
             Y: =GalleryRequestDetails.Y + GalleryRequestDetails.Height + 5
             ZIndex: =27
 
@@ -823,8 +630,8 @@ HomeScreen As screen:
             Size: =10.5
             Text: ="Edit"
             Visible: =!_managerView && _showDetails && Upper(GalleryRequests1.Selected.Status) = Upper("Pending")
-            Width: =68
-            X: =1075
+            Width: =42
+            X: =1186
             Y: =378
             ZIndex: =28
 
@@ -846,8 +653,8 @@ HomeScreen As screen:
             PressedFill: =IconRequesterEdit.Fill
             TabIndex: =0
             Visible: =!_managerView && _showDetails && Upper(GalleryRequests1.Selected.Status) = Upper("Pending")
-            Width: =20
-            X: =1043
+            Width: =12
+            X: =1166
             Y: =378
             ZIndex: =29
 

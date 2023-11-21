@@ -180,7 +180,7 @@ LeaveBalanceScreen As screen:
         DelayItemLoading: =true
         Fill: =RGBA(255, 255, 255, 1)
         Height: =588
-        Items: =Filter(Table1_15,'Name of Employee' = User().FullName)
+        Items: =Filter(LeaveApp_Employee,NameofEmployee.Email = User().Email)
         Layout: =Layout.Vertical
         LoadingSpinner: =LoadingSpinner.Data
         TemplateSize: =537
@@ -678,7 +678,7 @@ LeaveBalanceScreen As screen:
             Label17_60 As label:
                 Height: =60
                 OnSelect: =Select(Parent)
-                Text: =ThisItem.'Annual Leave Entitlement'
+                Text: =ThisItem.AnnualLeaveBalance
                 X: =192
                 Y: =50
                 ZIndex: =9
@@ -784,15 +784,6 @@ LeaveBalanceScreen As screen:
             Text: ="Leave Types"
             ZIndex: =63
 
-        Image1 As image:
-            Height: =20
-            Image: =Info
-            OnSelect: =Navigate(AboutScreen)
-            Width: =20
-            X: =126
-            Y: =3
-            ZIndex: =64
-
     Rectangle6 As rectangle:
         Fill: =RGBA(230, 229, 229, 1)
         Height: =2
@@ -800,4 +791,13 @@ LeaveBalanceScreen As screen:
         X: =231
         Y: =141
         ZIndex: =36
+
+    Icon2 As icon.Information:
+        Height: =25
+        Icon: =Icon.Information
+        OnSelect: =Navigate(AboutScreen)
+        Width: =25
+        X: =375
+        Y: =154
+        ZIndex: =37
 
