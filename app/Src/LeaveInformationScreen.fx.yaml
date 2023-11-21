@@ -3,8 +3,7 @@ LeaveInformationScreen As screen:
     "Gallery6 As gallery.'BrowseLayout_Vertical_ThreeTextVariant_ver5.0'":
         DelayItemLoading: =true
         Height: =584
-        Items: |
-            =LeaveApp_Request
+        Items: =Filter(LeaveApp_Request,  SearchInput.Text in Created_By.DisplayName)
         Layout: =Layout.Vertical
         LoadingSpinner: =LoadingSpinner.Data
         TemplatePadding: =0
@@ -311,6 +310,14 @@ LeaveInformationScreen As screen:
         HoverBorderColor: =RGBA(163, 179, 214, 1)
         Width: =271
         X: =585
-        Y: =124
+        Y: =131
         ZIndex: =12
+
+    Icon1 As icon.Search:
+        Height: =25
+        Icon: =Icon.Search
+        Width: =25
+        X: =815
+        Y: =139
+        ZIndex: =13
 

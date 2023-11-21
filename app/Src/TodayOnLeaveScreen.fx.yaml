@@ -15,9 +15,9 @@ TodayOnLeaveScreen As screen:
             =Filter(
                 Filter(
                     LeaveApp_Request,
-                    'Start_Date' <= Today()
+                    Start_Date <= Today()
                 ),
-                'End_Date' >= Today() && Status.Value = "Approved"
+                End_Date >= Today() && Status.Value = "Approved"
             )
         Layout: =Layout.Vertical
         LoadingSpinner: =LoadingSpinner.Data
