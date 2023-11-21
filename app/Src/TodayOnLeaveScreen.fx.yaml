@@ -252,27 +252,3 @@ TodayOnLeaveScreen As screen:
         Y: =147
         ZIndex: =13
 
-    Label4_1 As label:
-        Align: =Align.Center
-        Font: =Font.Georgia
-        FontWeight: =FontWeight.Semibold
-        Height: =36
-        Size: =14
-        Text: |-
-            ="New public holiday:"
-        Underline: =true
-        Visible: =_managerView=true
-        Width: =232
-        X: =1126
-        Y: =399
-        ZIndex: =20
-
-    txtHoliday_1 As text:
-        Default: =""
-        Height: =35
-        Visible: =_managerView=true
-        Width: =170
-        X: =1163
-        Y: =474
-        ZIndex: =21
-

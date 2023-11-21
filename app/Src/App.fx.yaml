@@ -47,10 +47,6 @@ App As appinfo:
                     TargetScreen: TodayOnLeaveScreen
                 },
                 {
-                    Title: "Edit Leave",
-                    TargetScreen: EditLeaveScreen
-                },
-                {
                     Title: "Leave Information",
                     TargetScreen: LeaveInformationScreen
                 },
