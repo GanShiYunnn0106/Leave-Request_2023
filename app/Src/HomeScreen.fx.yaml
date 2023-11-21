@@ -77,8 +77,8 @@ HomeScreen As screen:
         TemplateSize: =199
         Visible: =!_managerView=true
         Width: =956
-        X: =231
-        Y: =154
+        X: =232
+        Y: =169
         ZIndex: =1
 
         Title2 As label:
@@ -445,8 +445,8 @@ HomeScreen As screen:
             Text: ="Make your first leave request!"
             Visible: =If(IsEmpty(Table1_14),true,false)
             Width: =400
-            X: =425
-            Y: =322
+            X: =543
+            Y: =422
             ZIndex: =31
 
         Circle1 As circle:
@@ -460,8 +460,8 @@ HomeScreen As screen:
             PressedFill: =Circle1.Fill
             Visible: =If(IsEmpty(Table1_14),true,false)
             Width: =64
-            X: =icon7.X
-            Y: =392
+            X: =697
+            Y: =492
             ZIndex: =32
 
         icon7 As icon.Add:
@@ -484,8 +484,8 @@ HomeScreen As screen:
             PressedFill: =icon7.Fill
             TabIndex: =0
             Visible: =If(IsEmpty(Table1_14),true,false)
-            X: =579
-            Y: =392
+            X: =697
+            Y: =492
             ZIndex: =33
 
         LblEmptyRequests As label:
@@ -502,8 +502,8 @@ HomeScreen As screen:
             Text: ="No " & If(_requestTypeFilter <> "All", Lower(_requestTypeFilter)) & " requests"
             Visible: =If(IsEmpty(Table1_14),true,false)
             Width: =190
-            X: =268
-            Y: =167
+            X: =386
+            Y: =267
             ZIndex: =34
 
     GroupRequestDetails As group:
