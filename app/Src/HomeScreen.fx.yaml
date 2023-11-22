@@ -332,8 +332,8 @@ HomeScreen As screen:
         HoverFill: =Rectangle3.Fill
         PressedFill: =Rectangle3.Fill
         Width: =246
-        X: =1075
-        Y: =63
+        X: =1120
+        Y: =73
         ZIndex: =3
 
     RectNavSep As rectangle:
