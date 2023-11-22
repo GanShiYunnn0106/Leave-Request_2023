@@ -559,7 +559,7 @@ LeaveBalanceScreen As screen:
             Label17_72 As label:
                 Height: =60
                 OnSelect: =Select(Parent)
-                Text: =ThisItem.'Medical Leave Entitlement'
+                Text: =ThisItem.MedicalLeaveEntitlement
                 X: =192
                 Y: =170
                 ZIndex: =21
@@ -567,7 +567,7 @@ LeaveBalanceScreen As screen:
             Label17_73 As label:
                 Height: =60
                 OnSelect: =Select(Parent)
-                Text: =ThisItem.'Medical Carried Forward Leave'
+                Text: =
                 Width: =200
                 X: =335
                 Y: =170
@@ -576,7 +576,7 @@ LeaveBalanceScreen As screen:
             Label17_74 As label:
                 Height: =60
                 OnSelect: =Select(Parent)
-                Text: =ThisItem.'Medical Total Entitlement Leave'
+                Text: =
                 X: =521
                 Y: =170
                 ZIndex: =23
@@ -584,7 +584,7 @@ LeaveBalanceScreen As screen:
             Label17_75 As label:
                 Height: =60
                 OnSelect: =Select(Parent)
-                Text: =ThisItem.'Medical Leave Taken'
+                Text: =ThisItem.MedicalLeaveTaken
                 X: =664
                 Y: =170
                 ZIndex: =24
@@ -592,7 +592,7 @@ LeaveBalanceScreen As screen:
             Label17_76 As label:
                 Height: =60
                 OnSelect: =Select(Parent)
-                Text: =ThisItem.'Medical Leave Balance'
+                Text: =ThisItem.MedicalLeaveBalance
                 X: =798
                 Y: =170
                 ZIndex: =25
@@ -645,7 +645,7 @@ LeaveBalanceScreen As screen:
                 FontWeight: =FontWeight.Semibold
                 Height: =60
                 OnSelect: =Select(Parent)
-                Text: =ThisItem.'Unpaid Leave Taken'
+                Text: =ThisItem.UnpaidLeaveTaken
                 X: =664
                 Y: =110
                 ZIndex: =18
@@ -692,7 +692,7 @@ LeaveBalanceScreen As screen:
                 Y: =50
                 ZIndex: =10
 
-            Label17_62 As label:
+            AnnualTotal As label:
                 Height: =60
                 OnSelect: =Select(Parent)
                 Text: =ThisItem.AnnualLeaveEntitlement + ThisItem.AnnualCarriedForward
@@ -703,7 +703,7 @@ LeaveBalanceScreen As screen:
             Label17_63 As label:
                 Height: =60
                 OnSelect: =Select(Parent)
-                Text: =ThisItem.'Annual Leave Taken'
+                Text: =ThisItem.AnnualLeaveTaken
                 X: =664
                 Y: =50
                 ZIndex: =12
@@ -711,7 +711,7 @@ LeaveBalanceScreen As screen:
             Label17_64 As label:
                 Height: =60
                 OnSelect: =Select(Parent)
-                Text: =ThisItem.'Annual Leave Balance'
+                Text: =AnnualTotal-ThisItem.AnnualLeaveTaken-ThisItem.UnpaidLeaveTaken
                 X: =800
                 Y: =50
                 ZIndex: =13
