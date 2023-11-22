@@ -520,7 +520,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "GroupDateSection",
-      "ParentIndex": 32,
+      "ParentIndex": 31,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -571,7 +571,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "GroupLeaveType",
-      "ParentIndex": 34,
+      "ParentIndex": 33,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -622,7 +622,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "GroupRequestInfo",
-      "ParentIndex": 33,
+      "ParentIndex": 32,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -673,7 +673,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Header_1",
-      "ParentIndex": 31,
+      "ParentIndex": 30,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -7133,7 +7133,14 @@
     "NRLeaveTypeButton": {
       "AllowAccessToGlobals": true,
       "ControlPropertyState": [
-        "OnSelect",
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "If\n(_selectedLeaveType = \"Annual\",\nSet(_balanceRemain,(LookUp(LeaveApp_Employee,NameofEmployee.Email=User().Email).AnnualLeaveEntitlement)),\n_selectedLeaveType = \"Medical\",\nSet(_balanceRemain,(LookUp(LeaveApp_Employee,NameofEmployee.Email=User().Email).MedicalLeaveEntitlement)),\n_selectedLeaveType = \"Casual Immediate\",\nSet(_balanceRemain,(LookUp(LeaveApp_Employee,NameofEmployee.Email=User().Email).CompassionateLeaveEntitlement)),\n_selectedLeaveType = \"Marriage\",\nSet(_balanceRemain,(LookUp(LeaveApp_Employee,NameofEmployee.Email=User().Email).MarriageLeaveEntitlement)),\n_selectedLeaveType = \"Paternity\",\nSet(_balanceRemain,(LookUp(LeaveApp_Employee,NameofEmployee.Email=User().Email).PaternityLeaveEntitlement)),\n_selectedLeaveType = \"Maternity\",\nSet(_balanceRemain,(LookUp(LeaveApp_Employee,NameofEmployee.Email=User().Email).MaternityLeaveEntitlement)),\n_selectedLeaveType = \"Hospitalization\",\nSet(_balanceRemain,(LookUp(LeaveApp_Employee,NameofEmployee.Email=User().Email).HospitalizationLeaveEntitlement));\n);\nSelect(Parent);",
+          "InvariantPropertyName": "OnSelect",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
         "Text",
         {
           "AFDDataSourceName": "",
