@@ -55,6 +55,14 @@ TodayOnLeaveScreen As screen:
             Y: =16
             ZIndex: =3
 
+        Rectangle9 As rectangle:
+            Fill: =RGBA(204, 204, 204, 1)
+            Height: =1
+            OnSelect: =Select(Parent)
+            Width: =1124
+            Y: =60
+            ZIndex: =4
+
     RectNavSep_5 As rectangle:
         DisabledFill: =RectNavSep_5.Fill
         Fill: =RGBA(204, 204, 204, 1)
