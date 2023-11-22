@@ -1,17 +1,7 @@
 LeaveBalanceScreen As screen:
     Height: =Max(App.Height, App.DesignHeight)
     OnHidden: =Set(_showDetails, false)
-    OnVisible: |-
-        =Concurrent(
-            Set(_navMenuSelect, "My Leave Balance"),
-            ClearCollect(RequesterBalanceCollection, 
-            { type: "Vacation", balance: Value(_requesterBalanceRecord.Vacation) - Value(_requesterBalanceRecord.VacationUsed)},
-            {type:"Sick Leave", balance:Value(_requesterBalanceRecord.Sick)-Value(_requesterBalanceRecord.SickUsed)},
-            {type:"Floating Holiday", balance:Value(_requesterBalanceRecord.Floating)-Value(_requesterBalanceRecord.FloatingUsed)},
-            {type:"Jury Duty", balance:Value(_requesterBalanceRecord.JuryDuty)-Value(_requesterBalanceRecord.JuryDutyUsed)},
-            {type:"Bereavement", balance:Value(_requesterBalanceRecord.Bereavement)-Value(_requesterBalanceRecord.BereavementUsed)}
-           )
-        )
+    OnVisible: =
     Orientation: =If(LeaveBalanceScreen.Width < LeaveBalanceScreen.Height, Layout.Vertical, Layout.Horizontal)
     Size: =1 + CountRows(App.SizeBreakpoints) - CountIf(App.SizeBreakpoints, Value >= LeaveBalanceScreen.Width)
     Width: =Max(App.Width, App.DesignWidth)
@@ -48,10 +38,10 @@ LeaveBalanceScreen As screen:
         Items: =Filter(LeaveApp_Employee,NameofEmployee.Email = User().Email)
         Layout: =Layout.Vertical
         LoadingSpinner: =LoadingSpinner.Data
-        TemplateSize: =537
+        TemplateSize: =503
         Width: =1080
-        X: =231
-        Y: =147
+        X: =233
+        Y: =153
         ZIndex: =10
 
         Rectangle12 As rectangle:
@@ -69,7 +59,7 @@ LeaveBalanceScreen As screen:
             Align: =Align.Center
             Height: =50
             OnSelect: =Select(Parent)
-            Text: =Round(ThisItem.AnnualCarriedForward,0) & " day(s)"
+            Text: =Value(ThisItem.AnnualCarriedForward) & " day(s)"
             Width: =212
             X: =45
             Y: =133
@@ -114,7 +104,7 @@ LeaveBalanceScreen As screen:
             Align: =Align.Center
             Height: =50
             OnSelect: =Select(Parent)
-            Text: =ThisItem.AnnualLeaveBalance
+            Text: =Value(ThisItem.Annual_x0020_Leave_x0020_Balance) & " day(s)"
             Width: =212
             X: =342
             Y: =133
