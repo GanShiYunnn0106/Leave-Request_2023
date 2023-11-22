@@ -4,14 +4,13 @@ NewRequestScreen As screen:
     OnVisible: |-
         =Concurrent(
             Select(LeaveStartDatePicker),
-            Set(_navMenuSelect, ""),
             If(!_editingRequest && !_changingApprover,
                 Set(_leaveStart, Today());
                 Set(_leaveEnd, Today());
                 Set(_leaveDetail, "");
                 Reset(LeaveEndDatePicker);
                 Reset(LeaveStartDatePicker);
-                Reset(TextInput1);
+                
                 Reset(TextInput1_1);
                 Set(_selectedApprover, Office365Users.Manager(_myProfile.Id));
                 Set(_selectedApproverPhoto, 
@@ -52,7 +51,7 @@ NewRequestScreen As screen:
         BorderThickness: =0
         Color: =RGBA(10, 106, 204, 1)
         DisabledBorderColor: =ColorFade(Button1_1.BorderColor, 70%)
-        DisplayMode: =If(IsBlank(Trim(TextInput1.Text)) || IsBlank(LeaveStartDatePicker.SelectedDate) || IsBlank(LeaveEndDatePicker.SelectedDate) || LeaveEndDatePicker.SelectedDate < LeaveStartDatePicker.SelectedDate || LeaveStartDatePicker.SelectedDate < Today() || IsBlank(_selectedLeaveType) || IsBlank(_selectedApprover), DisplayMode.Disabled, DisplayMode.Edit)
+        DisplayMode: =If(IsBlank(Trim(TextInput1_1.Text)) || IsBlank(LeaveStartDatePicker.SelectedDate) || IsBlank(LeaveEndDatePicker.SelectedDate) || LeaveEndDatePicker.SelectedDate < LeaveStartDatePicker.SelectedDate || LeaveStartDatePicker.SelectedDate < Today() || IsBlank(_selectedLeaveType) || IsBlank(_selectedApprover), DisplayMode.Disabled, DisplayMode.Edit)
         Fill: =Parent.Fill
         FocusedBorderColor: =Button1_1.BorderColor
         Font: =Font.Lato
@@ -83,7 +82,7 @@ NewRequestScreen As screen:
                             Email:User().Email,
                             JobTitle:".",
                             Picture:"."}};
-             )
+             
                             
             
                             
@@ -556,26 +555,8 @@ NewRequestScreen As screen:
             Size: =10.5
             Width: =551
             X: =565
-            Y: =530
+            Y: =519
             ZIndex: =17
-
-        Label1_10 As label:
-            FocusedBorderColor: =Label1_10.BorderColor
-            Font: =Font.Lato
-            FontWeight: =FontWeight.Bold
-            Height: =55
-            HoverBorderColor: =Label1_10.BorderColor
-            HoverColor: =Label1_10.Color
-            HoverFill: =Label1_10.Fill
-            OnSelect: =""
-            PressedBorderColor: =Label1_10.BorderColor
-            PressedColor: =Label1_10.Color
-            PressedFill: =Label1_10.Fill
-            Size: =12
-            Text: =If(!IsBlank(_selectedApprover.DisplayName),_selectedApprover.DisplayName,"Select an approver by clicking Change")
-            X: =289
-            Y: =503
-            ZIndex: =21
 
         RectSeparator_1 As rectangle:
             AccessibleLabel: ="Separator"
@@ -591,29 +572,6 @@ NewRequestScreen As screen:
             X: =252
             Y: =428
             ZIndex: =22
-
-        Button3 As button:
-            BorderColor: =ColorFade(Button3.Fill, -15%)
-            BorderThickness: =0
-            Color: =RGBA(10, 106, 204, 1)
-            DisabledBorderColor: =ColorFade(Button3.BorderColor, 70%)
-            Fill: =Parent.Fill
-            FocusedBorderColor: =Button3.BorderColor
-            Height: =21
-            HoverBorderColor: =ColorFade(Button3.BorderColor, 20%)
-            HoverColor: =Button3.Color
-            HoverFill: =ColorFade(Button3.Fill, 20%)
-            OnSelect: =""
-            PressedBorderColor: =Button3.Fill
-            PressedColor: =Button3.Fill
-            PressedFill: =Button3.Color
-            Size: =10
-            Text: ="Change"
-            Tooltip: ="Change approving manager"
-            Width: =70
-            X: =454
-            Y: =503
-            ZIndex: =24
 
     GalleryNavigation_12 As gallery.galleryVertical:
         AccessibleLabel: ="Select a gallery item to navigate to it's respective page"
@@ -661,7 +619,7 @@ NewRequestScreen As screen:
 
         Label2_12 As label:
             Align: =TextPosition.Left
-            Color: =If(ThisItem.MenuItem = _navMenuSelect, RGBA(47,41,43,1), RGBA(10,100,204,1))
+            Color: =
             FocusedBorderColor: =Label2_12.BorderColor
             FocusedBorderThickness: =2
             Font: =Font.Lato
@@ -677,7 +635,7 @@ NewRequestScreen As screen:
             PressedFill: =Label2_12.Fill
             Size: =13.5
             TabIndex: =0
-            Text: =ThisItem.MenuItem
+            Text: =
             Width: =231
             ZIndex: =2
 
