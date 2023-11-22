@@ -329,7 +329,7 @@ NewRequestScreen As screen:
             PressedFill: =Label1_9.Fill
             Size: =10.5
             Text: |-
-                = LookUp(RequesterBalanceCollection, type=_selectedLeaveType, balance) - _requestedDays
+                = _balanceRemain - _requestedDays
                     &
                     " days"
             Visible: =!IsBlank(_selectedLeaveType)
@@ -353,7 +353,7 @@ NewRequestScreen As screen:
                 ="Current balance:"
             Visible: =!IsBlank(_selectedLeaveType)
             Width: =114
-            X: =946
+            X: =936
             Y: =352
             ZIndex: =25
 
@@ -370,10 +370,10 @@ NewRequestScreen As screen:
             PressedColor: =Label1_12.Color
             PressedFill: =Label1_12.Fill
             Size: =10.5
-            Text: =_balanceRemain
+            Text: =_balanceRemain & " days"
             Visible: =!IsBlank(_selectedLeaveType)
             Width: =70
-            X: =1060
+            X: =1046
             Y: =352
             ZIndex: =26
 
@@ -645,8 +645,7 @@ NewRequestScreen As screen:
                 HoverFill: =NRLeaveTypeLabel.Fill
                 LineHeight: =1
                 OnSelect: |-
-                    =
-                    If
+                    =If
                     (_selectedLeaveType = "Annual",
                     Set(_balanceRemain,(LookUp(LeaveApp_Employee,NameofEmployee.Email=User().Email).AnnualLeaveEntitlement)),
                     _selectedLeaveType = "Medical",
