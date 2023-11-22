@@ -151,14 +151,6 @@ LeaveBalanceScreen As screen:
             Text: ="Leave Types"
             ZIndex: =63
 
-    Rectangle6 As rectangle:
-        Fill: =RGBA(230, 229, 229, 1)
-        Height: =2
-        Width: =970
-        X: =231
-        Y: =141
-        ZIndex: =11
-
     Header_4 As group:
         Height: =5
         Width: =5
@@ -287,6 +279,14 @@ LeaveBalanceScreen As screen:
             Width: =155
             X: =1211
             ZIndex: =7
+
+    Rectangle6 As rectangle:
+        Fill: =RGBA(230, 229, 229, 1)
+        Height: =2
+        Width: =970
+        X: =231
+        Y: =141
+        ZIndex: =11
 
     Icon2 As icon.Information:
         Height: =25

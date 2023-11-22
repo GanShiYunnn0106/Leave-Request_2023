@@ -138,7 +138,7 @@ HomeScreen As screen:
             PaddingLeft: =0
             PaddingRight: =0
             PaddingTop: =0
-            Text: =ThisItem.Comments
+            Text: =ThisItem.Start_Date
             VerticalAlign: =VerticalAlign.Top
             Width: =353
             X: =170
@@ -152,7 +152,7 @@ HomeScreen As screen:
             PaddingLeft: =0
             PaddingRight: =0
             PaddingTop: =0
-            Text: =ThisItem.ComplianceAssetId
+            Text: =ThisItem.End_Date
             VerticalAlign: =VerticalAlign.Top
             Width: =Title1.Width
             X: =170
@@ -166,7 +166,7 @@ HomeScreen As screen:
             PaddingLeft: =0
             PaddingRight: =0
             PaddingTop: =0
-            Text: =ThisItem.OData__ColorTag
+            Text: =ThisItem.Leave_Type.Value
             VerticalAlign: =VerticalAlign.Top
             Width: =Title1.Width
             X: =Title1.X

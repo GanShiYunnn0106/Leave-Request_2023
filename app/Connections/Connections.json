@@ -70,9 +70,6 @@
           "LeaveApp_Employee": {
             "tableName": "3b49dfb4-8eb7-4378-b5b7-1fdfee762a15"
           },
-          "LeaveApp_Employee_Entitlement": {
-            "tableName": "831d6ee5-9e2b-4130-ac8b-084fc5dfd9de"
-          },
           "LeaveApp_Request": {
             "tableName": "87f360e6-c28d-40aa-87bb-2268cf2c29e4"
           }
@@ -81,8 +78,7 @@
     },
     "dataSources": [
       "LeaveApp_Request",
-      "LeaveApp_Employee",
-      "LeaveApp_Employee_Entitlement"
+      "LeaveApp_Employee"
     ],
     "dependencies": {},
     "dependents": [],
