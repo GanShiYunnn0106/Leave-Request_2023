@@ -82,8 +82,8 @@ NewRequestScreen As screen:
                             DisplayName:User().FullName,
                             Email:User().Email,
                             JobTitle:".",
-                            Picture:"."}}
-            
+                            Picture:"."}};
+             )
                             
             
                             
