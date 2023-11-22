@@ -581,7 +581,24 @@ NewRequestScreen As screen:
             Items: =LeaveTypeCollection
             Layout: =Layout.Vertical
             LoadingSpinnerColor: =NewRequestLeaveTypeGallery.BorderColor
-            OnSelect: =Set(_selectedLeaveType, ThisItem.type)
+            OnSelect: |-
+                =Set(_selectedLeaveType, ThisItem.type);
+                If
+                (_selectedLeaveType = "Annual",
+                Set(_balanceRemain,((LookUp(LeaveApp_Employee,NameofEmployee.Email=User().Email).AnnualLeaveEntitlement) + (LookUp(LeaveApp_Employee,NameofEmployee.Email=User().Email).AnnualCarriedForward) - (LookUp(LeaveApp_Employee,NameofEmployee.Email=User().Email).AnnualLeaveTaken))),
+                _selectedLeaveType = "Medical",
+                Set(_balanceRemain,((LookUp(LeaveApp_Employee,NameofEmployee.Email=User().Email).MedicalLeaveEntitlement) - (LookUp(LeaveApp_Employee,NameofEmployee.Email=User().Email).MedicalLeaveTaken))),
+                _selectedLeaveType = "Casual Immediate",
+                Set(_balanceRemain,((LookUp(LeaveApp_Employee,NameofEmployee.Email=User().Email).CompassionateLeaveEntitlement) - (LookUp(LeaveApp_Employee,NameofEmployee.Email=User().Email).CompassionateLeaveTaken))),
+                _selectedLeaveType = "Marriage",
+                Set(_balanceRemain,((LookUp(LeaveApp_Employee,NameofEmployee.Email=User().Email).MarriageLeaveEntitlement) - (LookUp(LeaveApp_Employee,NameofEmployee.Email=User().Email).MarriageLeaveTaken))),
+                _selectedLeaveType = "Paternity",
+                Set(_balanceRemain,((LookUp(LeaveApp_Employee,NameofEmployee.Email=User().Email).PaternityLeaveEntitlement) - (LookUp(LeaveApp_Employee,NameofEmployee.Email=User().Email).PaternityLeaveTaken))),
+                _selectedLeaveType = "Maternity",
+                Set(_balanceRemain,((LookUp(LeaveApp_Employee,NameofEmployee.Email=User().Email).MaternityLeaveEntitlement) - (LookUp(LeaveApp_Employee,NameofEmployee.Email=User().Email).MaternityLeaveTaken))),
+                _selectedLeaveType = "Hospitalization",
+                Set(_balanceRemain,((LookUp(LeaveApp_Employee,NameofEmployee.Email=User().Email).HospitalizationLeaveEntitlement) - (LookUp(LeaveApp_Employee,NameofEmployee.Email=User().Email).HospitalizationLeaveTaken)));
+                );
             PressedBorderColor: =NewRequestLeaveTypeGallery.BorderColor
             PressedFill: =NewRequestLeaveTypeGallery.Fill
             ShowScrollbar: =false
@@ -645,22 +662,7 @@ NewRequestScreen As screen:
                 HoverFill: =NRLeaveTypeLabel.Fill
                 LineHeight: =1
                 OnSelect: |-
-                    =If
-                    (_selectedLeaveType = "Annual",
-                    Set(_balanceRemain,(LookUp(LeaveApp_Employee,NameofEmployee.Email=User().Email).AnnualLeaveEntitlement)),
-                    _selectedLeaveType = "Medical",
-                    Set(_balanceRemain,(LookUp(LeaveApp_Employee,NameofEmployee.Email=User().Email).MedicalLeaveEntitlement)),
-                    _selectedLeaveType = "Casual Immediate",
-                    Set(_balanceRemain,(LookUp(LeaveApp_Employee,NameofEmployee.Email=User().Email).CompassionateLeaveEntitlement)),
-                    _selectedLeaveType = "Marriage",
-                    Set(_balanceRemain,(LookUp(LeaveApp_Employee,NameofEmployee.Email=User().Email).MarriageLeaveEntitlement)),
-                    _selectedLeaveType = "Paternity",
-                    Set(_balanceRemain,(LookUp(LeaveApp_Employee,NameofEmployee.Email=User().Email).PaternityLeaveEntitlement)),
-                    _selectedLeaveType = "Maternity",
-                    Set(_balanceRemain,(LookUp(LeaveApp_Employee,NameofEmployee.Email=User().Email).MaternityLeaveEntitlement)),
-                    _selectedLeaveType = "Hospitalization",
-                    Set(_balanceRemain,(LookUp(LeaveApp_Employee,NameofEmployee.Email=User().Email).HospitalizationLeaveEntitlement));
-                    );
+                    =
                     Select(Parent);
                     
                      
