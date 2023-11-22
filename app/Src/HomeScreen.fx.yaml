@@ -22,6 +22,7 @@ HomeScreen As screen:
     Width: =Max(App.Width, App.DesignWidth)
 
     "GalleryRequest As gallery.'BrowseLayout_Vertical_ThreeTextVariant_ver5.0'":
+        BorderThickness: =
         DelayItemLoading: =true
         Fill: =RGBA(255, 255, 255, 1)
         Height: =614
@@ -92,7 +93,6 @@ HomeScreen As screen:
             Set(_showDetails, true);
         TemplatePadding: =0
         TemplateSize: =171
-        Visible: =!_managerView=true
         Width: =842
         X: =231
         Y: =154
@@ -272,7 +272,7 @@ HomeScreen As screen:
         Y: =80
         ZIndex: =17
 
-    Label17 As label:
+    NoData As label:
         Fill: =RGBA(255, 255, 255, 1)
         Height: =29
         Text: =NoData
@@ -281,100 +281,7 @@ HomeScreen As screen:
         Y: =161
         ZIndex: =25
 
-    "RequestDetail As gallery.'BrowseLayout_Vertical_OneTextVariant_ver5.0'":
-        DelayItemLoading: =true
-        Height: =563
-        Items: |-
-            =If(
-                ButtonFilter.Selected.Filter = "All",
-                Filter(
-                    LeaveApp_Request,
-                    Created_By.Email = User().Email    
-            ),
-                Filter(
-                    LeaveApp_Request,
-                    Status.Value = ButtonFilter.Selected.Filter && Created_By.Email = User().Email
-                )
-            )
-        Layout: =Layout.Vertical
-        LoadingSpinner: =LoadingSpinner.Data
-        TemplatePadding: =0
-        TemplateSize: =172
-        Width: =273
-        X: =1076
-        Y: =149
-        ZIndex: =26
-
-        Title3 As label:
-            FontWeight: =
-            Height: =31
-            OnSelect: =Select(Parent)
-            PaddingBottom: =0
-            PaddingLeft: =0
-            PaddingRight: =0
-            PaddingTop: =0
-            Text: |-
-                ="Total Days:  " & ThisItem.Days
-            VerticalAlign: =VerticalAlign.Top
-            Width: =226
-            X: =9
-            Y: =24
-            ZIndex: =1
-
-        Separator3 As rectangle:
-            Fill: =RGBA(217, 216, 217, 1)
-            Height: =2
-            OnSelect: =Select(Parent)
-            Width: =Parent.TemplateWidth
-            Y: =Parent.TemplateHeight - Self.Height
-            ZIndex: =3
-
-        Label19 As label:
-            Height: =33
-            OnSelect: =Select(Parent)
-            Text: |-
-                ="Leave Type:  " & ThisItem.Leave_Type.Value
-            Width: =264
-            X: =9
-            Y: =55
-            ZIndex: =4
-
-        Label25 As label:
-            Height: =42
-            OnSelect: =Select(Parent)
-            Text: |-
-                ="Requested To:  " & ThisItem.Requested_to.DisplayName
-            Width: =239
-            X: =9
-            Y: =88
-            ZIndex: =5
-
-        Icon5 As icon.Edit:
-            Height: =34
-            Icon: =Icon.Edit
-            OnSelect: =Select(Parent)
-            Width: =28
-            X: =167
-            Y: =130
-            ZIndex: =6
-
-        Button3 As button:
-            BorderColor: =RGBA(62, 96, 170, 1)
-            Color: =RGBA(62, 96, 170, 1)
-            Fill: =RGBA(255, 255, 255, 1)
-            Height: =34
-            OnSelect: =Select(Parent)
-            RadiusBottomLeft: =22
-            RadiusBottomRight: =22
-            RadiusTopLeft: =22
-            RadiusTopRight: =22
-            Text: ="edit"
-            Width: =52
-            X: =195
-            Y: =130
-            ZIndex: =7
-
-    Label27 As label:
+    RequestDetailsTitle As label:
         Color: =RGBA(62, 96, 170, 1)
         Font: =Font.'Lato Black'
         Size: =14
@@ -383,6 +290,229 @@ HomeScreen As screen:
         X: =1076
         Y: =116
         ZIndex: =27
+
+    RequestDetail As form:
+        DataSource: =LeaveApp_Request
+        Height: =617
+        Item: =GalleryRequest.Selected
+        NumberOfColumns: =1
+        Width: =291
+        X: =1075
+        Y: =151
+        ZIndex: =28
+
+        Requested_to_DataCard1 As typedDataCard.comboBoxEditCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Requested_to"
+            Default: =ThisItem.Requested_to
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@LeaveApp_Request],DataSourceInfo.DisplayName,"Requested_to")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =89
+            Required: =false
+            Update: =DataCardValue_RequestedTo.Selected
+            Width: =291
+            X: =0
+            Y: =0
+            ZIndex: =29
+
+            DataCardKey1 As label:
+                AutoHeight: =true
+                FontWeight: =FontWeight.Semibold
+                Height: =34
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue_RequestedTo As combobox:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                ChevronBackground: =RGBA(255, 255, 255, 1)
+                ChevronHoverBackground: =RGBA(255, 255, 255, 1)
+                DefaultSelectedItems: =Parent.Default
+                DisplayFields: =["DisplayName","Email","Picture"]
+                DisplayMode: =Parent.DisplayMode
+                FontWeight: =FontWeight.Semibold
+                HoverBorderColor: =RGBA(255, 255, 255, 1)
+                HoverFill: =RGBA(255, 255, 255, 1)
+                IsSearchable: =false
+                Items: =Choices([@LeaveApp_Request].Requested_to)
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                PressedFill: =RGBA(255, 255, 255, 1)
+                SearchFields: =["DisplayName"]
+                SearchItems: =[]
+                SelectionFill: =RGBA(255, 255, 255, 1)
+                SelectMultiple: =false
+                Template: =ListItemTemplate.Person
+                Tooltip: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey1.Y + DataCardKey1.Height + 5
+                ZIndex: =2
+
+        Leave_Type_DataCard2 As typedDataCard.comboBoxEditCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Leave_Type"
+            Default: =ThisItem.Leave_Type
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@LeaveApp_Request],DataSourceInfo.DisplayName,"Leave_Type")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =false
+            Update: =DataCardValue_LeaveType.Selected
+            Width: =291
+            X: =0
+            Y: =1
+            ZIndex: =29
+
+            DataCardKey2 As label:
+                AutoHeight: =true
+                FontWeight: =FontWeight.Semibold
+                Height: =34
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue_LeaveType As combobox:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                ChevronBackground: =RGBA(255, 255, 255, 1)
+                ChevronHoverBackground: =RGBA(255, 255, 255, 1)
+                DefaultSelectedItems: =Parent.Default
+                DisplayFields: =["Value"]
+                DisplayMode: =Parent.DisplayMode
+                FontWeight: =FontWeight.Semibold
+                HoverBorderColor: =RGBA(255, 255, 255, 1)
+                HoverFill: =
+                IsSearchable: =false
+                Items: =Choices([@LeaveApp_Request].Leave_Type)
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                PressedFill: =RGBA(255, 255, 255, 1)
+                SearchFields: =["Value"]
+                SearchItems: =[]
+                SelectionFill: =RGBA(255, 255, 255, 1)
+                SelectMultiple: =false
+                Tooltip: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey2.Y + DataCardKey2.Height + 5
+                ZIndex: =2
+
+        Days_DataCard3 As typedDataCard.numberEditCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Days"
+            Default: =ThisItem.Days
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@LeaveApp_Request],DataSourceInfo.DisplayName,"Days")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =false
+            Update: =Value(DataCardValue_Days.Text)
+            Width: =291
+            X: =0
+            Y: =2
+            ZIndex: =29
+
+            DataCardKey3 As label:
+                AutoHeight: =true
+                FontWeight: =FontWeight.Semibold
+                Height: =34
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue_Days As text:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                Default: =Parent.Default
+                DelayOutput: =true
+                DisplayMode: =Parent.DisplayMode
+                FontWeight: =FontWeight.Semibold
+                Format: =TextFormat.Number
+                HoverBorderColor: =RGBA(255, 255, 255, 1)
+                PaddingLeft: =5
+                PressedBorderColor: =RGBA(255, 255, 255, 1)
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Tooltip: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey3.Y + DataCardKey3.Height + 5
+                ZIndex: =2
+
+        Decision_By_DataCard4 As typedDataCard.comboBoxEditCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Decision_By"
+            Default: =ThisItem.Decision_By
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@LeaveApp_Request],DataSourceInfo.DisplayName,"Decision_By")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =false
+            Update: =DataCardValue_DecisonBy.Selected
+            Width: =291
+            X: =0
+            Y: =3
+            ZIndex: =29
+
+            DataCardKey4 As label:
+                AutoHeight: =true
+                FontWeight: =FontWeight.Semibold
+                Height: =34
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue_DecisonBy As combobox:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                ChevronBackground: =RGBA(255, 255, 255, 1)
+                ChevronHoverBackground: =RGBA(255, 255, 255, 1)
+                DefaultSelectedItems: =Parent.Default
+                DisplayFields: =["DisplayName","Email","Picture"]
+                DisplayMode: =Parent.DisplayMode
+                FontWeight: =FontWeight.Semibold
+                HoverBorderColor: =RGBA(255, 255, 255, 1)
+                HoverFill: =
+                IsSearchable: =false
+                Items: =Choices([@LeaveApp_Request].Decision_By)
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                SearchFields: =["DisplayName"]
+                SearchItems: =[]
+                SelectionFill: =RGBA(255, 255, 255, 1)
+                SelectMultiple: =false
+                Template: =ListItemTemplate.Person
+                Tooltip: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey4.Y + DataCardKey4.Height + 5
+                ZIndex: =2
 
     GroupEmptyState As group:
         Height: =5
@@ -479,7 +609,7 @@ HomeScreen As screen:
             FocusedBorderColor: =LblRequestDetailsHeader.BorderColor
             Font: =Font.Lato
             FontWeight: =FontWeight.Bold
-            Height: =11
+            Height: =17
             HoverBorderColor: =LblRequestDetailsHeader.BorderColor
             HoverColor: =LblRequestDetailsHeader.Color
             HoverFill: =LblRequestDetailsHeader.Fill
@@ -488,16 +618,16 @@ HomeScreen As screen:
             PressedFill: =LblRequestDetailsHeader.Fill
             Size: =13.5
             Text: ="Request Details"
-            Width: =180
-            X: =605
-            Y: =619
+            Width: =193
+            X: =331
+            Y: =537
             ZIndex: =4
 
         GalleryRequestDetails As gallery.galleryVertical:
             AccessibleLabel: ="Selected request details"
             DisabledBorderColor: =GalleryRequestDetails.BorderColor
             DisabledFill: =GalleryRequestDetails.Fill
-            Height: =126
+            Height: =194
             HoverBorderColor: =GalleryRequestDetails.BorderColor
             HoverFill: =GalleryRequestDetails.Fill
             Items: |-
@@ -535,9 +665,9 @@ HomeScreen As screen:
             ShowScrollbar: =false
             TemplateSize: =68
             Visible: =_showDetails
-            Width: =251
-            X: =557
-            Y: =642
+            Width: =269
+            X: =280
+            Y: =573
             ZIndex: =5
 
             Label11 As label:
@@ -605,7 +735,7 @@ HomeScreen As screen:
             Color: =RGBA(12, 132, 255, 1)
             DisabledFill: =BtnEmailRequester.Fill
             FocusedBorderColor: =BtnEmailRequester.BorderColor
-            Height: =8
+            Height: =12
             HoverBorderColor: =ColorFade(BtnEmailRequester.BorderColor, 20%)
             HoverColor: =ColorFade(BtnEmailRequester.Color, 20%)
             HoverFill: =BtnEmailRequester.Fill
@@ -618,9 +748,9 @@ HomeScreen As screen:
             PressedFill: =BtnEmailRequester.Fill
             TabIndex: =0
             Visible: =_showDetails && _managerView && Upper(GalleryRequests1.Selected.Status) = Upper("Pending")
-            Width: =15
-            X: =753
-            Y: =729
+            Width: =16
+            X: =490
+            Y: =707
             ZIndex: =6
 
         BtnManagerDecline As button:
@@ -632,7 +762,7 @@ HomeScreen As screen:
             FocusedBorderColor: =BtnManagerDecline.BorderColor
             FocusedBorderThickness: =2
             Font: =Font.Lato
-            Height: =10
+            Height: =15
             HoverBorderColor: =ColorFade(BtnManagerDecline.BorderColor, 20%)
             HoverColor: =BtnManagerDecline.Color
             HoverFill: =BtnManagerDecline.Fill
@@ -655,9 +785,9 @@ HomeScreen As screen:
             Size: =10.5
             Text: ="Decline"
             Visible: =_showDetails && _managerView && Upper(GalleryRequests1.Selected.Status) = Upper("Pending")
-            Width: =56
-            X: =686
-            Y: =728
+            Width: =60
+            X: =418
+            Y: =705
             ZIndex: =7
 
         BtnManagerApprove As button:
@@ -669,7 +799,7 @@ HomeScreen As screen:
             FocusedBorderColor: =BtnManagerApprove.BorderColor
             FocusedBorderThickness: =2
             Font: =Font.Lato
-            Height: =10
+            Height: =15
             HoverBorderColor: =ColorFade(BtnManagerApprove.BorderColor, 20%)
             HoverColor: =BtnManagerApprove.Color
             HoverFill: =BtnManagerApprove.Fill
@@ -704,9 +834,9 @@ HomeScreen As screen:
             Size: =10.5
             Text: ="Approve"
             Visible: =_showDetails && _managerView && Upper(GalleryRequests1.Selected.Status) = Upper("Pending")
-            Width: =56
-            X: =624
-            Y: =728
+            Width: =60
+            X: =352
+            Y: =705
             ZIndex: =8
 
         LblRequesterEdit As label:
@@ -716,7 +846,7 @@ HomeScreen As screen:
             FocusedBorderThickness: =2
             Font: =Font.Lato
             FontWeight: =FontWeight.Bold
-            Height: =8
+            Height: =12
             HoverBorderColor: =LblRequesterEdit.BorderColor
             HoverColor: =LblRequesterEdit.Color
             HoverFill: =LblRequesterEdit.Fill
@@ -735,9 +865,9 @@ HomeScreen As screen:
             Size: =10.5
             Text: ="Edit"
             Visible: =!_managerView && _showDetails && Upper(GalleryRequests1.Selected.Status) = Upper("Pending")
-            Width: =42
-            X: =648
-            Y: =726
+            Width: =45
+            X: =378
+            Y: =702
             ZIndex: =9
 
         IconRequesterEdit As icon.Edit:
@@ -745,7 +875,7 @@ HomeScreen As screen:
             Color: =RGBA(10, 106, 204, 1)
             DisabledFill: =IconRequesterEdit.Fill
             FocusedBorderColor: =IconRequesterEdit.BorderColor
-            Height: =8
+            Height: =12
             HoverBorderColor: =ColorFade(IconRequesterEdit.BorderColor, 20%)
             HoverColor: =ColorFade(IconRequesterEdit.Color, 20%)
             HoverFill: =IconRequesterEdit.Fill
@@ -758,9 +888,9 @@ HomeScreen As screen:
             PressedFill: =IconRequesterEdit.Fill
             TabIndex: =0
             Visible: =!_managerView && _showDetails && Upper(GalleryRequests1.Selected.Status) = Upper("Pending")
-            Width: =12
-            X: =628
-            Y: =726
+            Width: =13
+            X: =356
+            Y: =702
             ZIndex: =10
 
     Header_11 As group:
