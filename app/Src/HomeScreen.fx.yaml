@@ -341,11 +341,12 @@ HomeScreen As screen:
                 FontWeight: =FontWeight.Semibold
                 HoverBorderColor: =RGBA(255, 255, 255, 1)
                 HoverFill: =RGBA(255, 255, 255, 1)
+                IsSearchable: =false
                 Items: =Choices([@LeaveApp_Request].Requested_to)
                 PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
                 PressedFill: =RGBA(255, 255, 255, 1)
                 SearchFields: =["DisplayName"]
-                SearchItems: =Choices(LeaveApp_Request.Requested_to,DataCardValue_RequestedTo.SearchText)
+                SearchItems: =[]
                 SelectionFill: =RGBA(255, 255, 255, 1)
                 SelectMultiple: =false
                 Template: =ListItemTemplate.Person
@@ -395,11 +396,12 @@ HomeScreen As screen:
                 FontWeight: =FontWeight.Semibold
                 HoverBorderColor: =RGBA(255, 255, 255, 1)
                 HoverFill: =
+                IsSearchable: =false
                 Items: =Choices([@LeaveApp_Request].Leave_Type)
                 PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
                 PressedFill: =RGBA(255, 255, 255, 1)
                 SearchFields: =["Value"]
-                SearchItems: =Choices(LeaveApp_Request.Leave_Type,DataCardValue_LeaveType.SearchText)
+                SearchItems: =[]
                 SelectionFill: =RGBA(255, 255, 255, 1)
                 SelectMultiple: =false
                 Tooltip: =Parent.DisplayName
@@ -445,7 +447,9 @@ HomeScreen As screen:
                 DisplayMode: =Parent.DisplayMode
                 FontWeight: =FontWeight.Semibold
                 Format: =TextFormat.Number
+                HoverBorderColor: =RGBA(255, 255, 255, 1)
                 PaddingLeft: =5
+                PressedBorderColor: =RGBA(255, 255, 255, 1)
                 RadiusBottomLeft: =0
                 RadiusBottomRight: =0
                 RadiusTopLeft: =0
@@ -489,15 +493,18 @@ HomeScreen As screen:
             DataCardValue_DecisonBy As combobox:
                 BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
                 ChevronBackground: =RGBA(255, 255, 255, 1)
+                ChevronHoverBackground: =RGBA(255, 255, 255, 1)
                 DefaultSelectedItems: =Parent.Default
                 DisplayFields: =["DisplayName","Email","Picture"]
                 DisplayMode: =Parent.DisplayMode
                 FontWeight: =FontWeight.Semibold
+                HoverBorderColor: =RGBA(255, 255, 255, 1)
                 HoverFill: =
+                IsSearchable: =false
                 Items: =Choices([@LeaveApp_Request].Decision_By)
                 PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
                 SearchFields: =["DisplayName"]
-                SearchItems: =Choices(LeaveApp_Request.Decision_By,DataCardValue_DecisonBy.SearchText)
+                SearchItems: =[]
                 SelectionFill: =RGBA(255, 255, 255, 1)
                 SelectMultiple: =false
                 Template: =ListItemTemplate.Person
