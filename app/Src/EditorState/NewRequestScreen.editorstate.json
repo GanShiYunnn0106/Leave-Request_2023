@@ -520,7 +520,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "GroupDateSection",
-      "ParentIndex": 30,
+      "ParentIndex": 31,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -571,7 +571,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "GroupLeaveType",
-      "ParentIndex": 32,
+      "ParentIndex": 33,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -622,7 +622,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "GroupRequestInfo",
-      "ParentIndex": 31,
+      "ParentIndex": 32,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -673,7 +673,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Header_1",
-      "ParentIndex": 29,
+      "ParentIndex": 30,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -4448,7 +4448,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Label8",
-      "ParentIndex": 3,
+      "ParentIndex": 1,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -4966,7 +4966,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "LblHeaderTItle1_1",
-      "ParentIndex": 1,
+      "ParentIndex": 2,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -5195,7 +5195,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "LblHeaderTitle2_1",
-      "ParentIndex": 2,
+      "ParentIndex": 3,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -5355,7 +5355,14 @@
     "LeaveEndDatePicker": {
       "AllowAccessToGlobals": true,
       "ControlPropertyState": [
-        "DefaultDate",
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "Today()",
+          "InvariantPropertyName": "DefaultDate",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
         "DateTimeZone",
         "Format",
         "StartYear",
@@ -5684,7 +5691,14 @@
     "LeaveStartDatePicker": {
       "AllowAccessToGlobals": true,
       "ControlPropertyState": [
-        "DefaultDate",
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "Today()",
+          "InvariantPropertyName": "DefaultDate",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
         "DateTimeZone",
         "Format",
         "StartYear",
@@ -6568,7 +6582,14 @@
         "Width",
         "LoadingSpinner",
         "LoadingSpinnerColor",
-        "OnVisible",
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "",
+          "InvariantPropertyName": "OnVisible",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
         "OnHidden",
         "Size",
         "Orientation"
