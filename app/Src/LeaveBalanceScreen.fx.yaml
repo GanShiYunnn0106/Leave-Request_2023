@@ -678,7 +678,7 @@ LeaveBalanceScreen As screen:
             Label17_60 As label:
                 Height: =60
                 OnSelect: =Select(Parent)
-                Text: =ThisItem.AnnualLeaveBalance
+                Text: =ThisItem.AnnualLeaveEntitlement
                 X: =192
                 Y: =50
                 ZIndex: =9
@@ -686,7 +686,7 @@ LeaveBalanceScreen As screen:
             Label17_61 As label:
                 Height: =60
                 OnSelect: =Select(Parent)
-                Text: =ThisItem.'Annual Carried Forward Leave'
+                Text: =ThisItem.AnnualCarriedForward
                 Width: =200
                 X: =335
                 Y: =50
@@ -695,7 +695,7 @@ LeaveBalanceScreen As screen:
             Label17_62 As label:
                 Height: =60
                 OnSelect: =Select(Parent)
-                Text: =ThisItem.'Annual Total Entitlement'
+                Text: =ThisItem.AnnualLeaveEntitlement + ThisItem.AnnualCarriedForward
                 X: =521
                 Y: =50
                 ZIndex: =11

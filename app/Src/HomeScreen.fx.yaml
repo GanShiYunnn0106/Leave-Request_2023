@@ -33,8 +33,8 @@ HomeScreen As screen:
         TemplateSize: =86
         Width: =461
         WrapCount: =4
-        X: =394
-        Y: =82
+        X: =416
+        Y: =74
         ZIndex: =1
 
         ButtonCategories As button:
@@ -57,7 +57,7 @@ HomeScreen As screen:
     "GalleryRequest As gallery.'BrowseLayout_Vertical_ThreeTextVariant_ver5.0'":
         DelayItemLoading: =true
         Fill: =RGBA(242, 242, 242, 1)
-        Height: =512
+        Height: =590
         Items: |-
             =If(
                 ButtonFilter.Selected.Filter = "All",
@@ -124,38 +124,133 @@ HomeScreen As screen:
             //**** END CALCULATION ****
             Set(_showDetails, true);
         TemplatePadding: =0
-        TemplateSize: =199
+        TemplateSize: =171
         Visible: =!_managerView=true
-        Width: =831
-        X: =232
-        Y: =169
+        Width: =844
+        X: =231
+        Y: =154
         ZIndex: =1
 
-        Label1 As label:
+        Title1 As label:
+            Height: =25
             OnSelect: =Select(Parent)
-            Text: =ThisItem.Comments
-            X: =40
-            Y: =40
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =ThisItem.Start_Date
+            VerticalAlign: =VerticalAlign.Top
+            Width: =353
+            X: =170
+            Y: =45
             ZIndex: =1
 
-    Rectangle3 As rectangle:
-        DisabledFill: =Rectangle3.Fill
-        Fill: =RGBA(249, 249, 249, 1)
-        FocusedBorderColor: =Rectangle3.BorderColor
-        Height: =695
-        HoverFill: =Rectangle3.Fill
-        PressedFill: =Rectangle3.Fill
-        Width: =246
-        X: =1075
-        Y: =63
-        ZIndex: =3
+        Subtitle1 As label:
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =ThisItem.End_Date
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Title1.Width
+            X: =170
+            Y: =85
+            ZIndex: =2
+
+        Body1 As label:
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =ThisItem.Leave_Type.Value
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Title1.Width
+            X: =Title1.X
+            Y: =124
+            ZIndex: =3
+
+        NextArrow1 As icon.ChevronRight:
+            AccessibleLabel: =Self.Tooltip
+            Color: =RGBA(166, 166, 166, 1)
+            Height: =50
+            Icon: =Icon.ChevronRight
+            OnSelect: =Select(Parent)
+            PaddingBottom: =16
+            PaddingLeft: =16
+            PaddingRight: =16
+            PaddingTop: =16
+            Tooltip: ="View item details"
+            Width: =50
+            X: =Parent.TemplateWidth - Self.Width - 12
+            Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+            ZIndex: =4
+
+        Separator1 As rectangle:
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =8
+            OnSelect: =Select(Parent)
+            Width: =Parent.TemplateWidth
+            Y: =Parent.TemplateHeight - Self.Height
+            ZIndex: =5
+
+        Rectangle2 As rectangle:
+            Height: =Parent.TemplateHeight - Separator1.Height
+            OnSelect: =Select(Parent)
+            Visible: =ThisItem.IsSelected
+            Width: =4
+            ZIndex: =6
+
+        Label1 As label:
+            Color: =RGBA(101, 128, 187, 1)
+            Font: =Font.'Lato Black'
+            OnSelect: =Select(Parent)
+            Size: =14
+            Text: =ThisItem.Created_By.DisplayName
+            X: =20
+            Y: =5
+            ZIndex: =7
+
+        Label3 As label:
+            FontWeight: =FontWeight.Semibold
+            Height: =107
+            OnSelect: =Select(Parent)
+            Text: |-
+                ="Start date:
+                
+                End date:
+                
+                Leave type:"
+            X: =46
+            Y: =42
+            ZIndex: =8
+
+        Button5 As button:
+            BorderColor: |-
+                =If((ThisItem.Status.Value)="Pending",RGBA(0,71,144,1),
+                (ThisItem.Status.Value)="Rejected",RGBA(213,0,0,1),
+                (ThisItem.Status.Value)="Approved",RGBA(0,128,0,1))
+            Color: |-
+                =If((ThisItem.Status.Value)="Pending",RGBA(0,71,144,1),
+                (ThisItem.Status.Value)="Rejected",RGBA(213,0,0,1),
+                (ThisItem.Status.Value)="Approved",RGBA(0,128,0,1))
+            Fill: =RGBA(255, 255, 255, 1)
+            OnSelect: =Select(Parent)
+            Text: =ThisItem.Status.Value
+            X: =608
+            Y: =110
+            ZIndex: =9
 
     "GalleryRequests1 As gallery.'BrowseLayout_Vertical_TwoTextVariant_ver4.0'":
         AccessibleLabel: ="Leave request gallery"
         Default: =Blank()
+        DelayItemLoading: =true
         DisabledBorderColor: =GalleryRequests1.BorderColor
         DisabledFill: =GalleryRequests1.Fill
-        Height: =130
+        Height: =102
         HoverBorderColor: =GalleryRequests1.BorderColor
         HoverFill: =GalleryRequests1.Fill
         Items: |-
@@ -165,6 +260,7 @@ HomeScreen As screen:
                   Filter(LeaveCollection, If(_managerView, Approver = _myProfile.UserPrincipalName, Requester = _myProfile.UserPrincipalName)), 
                   Filter(LeaveCollection, Status=_requestTypeFilter && If(_managerView, Approver = _myProfile.UserPrincipalName, Requester = _myProfile.UserPrincipalName)) ), StartDate, SortOrder.Descending)
         Layout: =Layout.Vertical
+        LoadingSpinner: =LoadingSpinner.Data
         LoadingSpinnerColor: =GalleryRequests1.BorderColor
         OnSelect: |-
             =Set(_selectedLeaveItem, ThisItem);
@@ -221,45 +317,24 @@ HomeScreen As screen:
         PressedFill: =GalleryRequests1.Fill
         ShowScrollbar: =false
         TemplateFill: =If(ThisItem.IsSelected, RGBA(249, 249, 249, 1))
-        TemplateSize: =92
+        TemplateSize: =55
         Visible: =CountRows(GalleryRequests1.AllItems) > 0
-        Width: =743
-        X: =299
-        Y: =638
-        ZIndex: =12
+        Width: =729
+        X: =285
+        Y: =666
+        ZIndex: =1
 
-        RequestStatus1 As button:
-            BorderColor: =RequestStatus1.Color
-            Color: |-
-                =If(Upper(ThisItem.Status)="PENDING",RGBA(0, 71, 144, 1),
-                Upper(ThisItem.Status)="DECLINED",RGBA(213, 0, 0, 1),
-                Upper(ThisItem.Status)="APPROVED",RGBA(0, 128, 0, 1))
-            DisabledBorderColor: =ColorFade(RequestStatus1.BorderColor, 70%)
-            Fill: =RGBA(255, 255, 255, 1)
-            FocusedBorderColor: =RequestStatus1.BorderColor
-            Font: =Font.Lato
-            Height: =30
-            HoverBorderColor: =RequestStatus1.BorderColor
-            HoverColor: =RequestStatus1.Color
-            HoverFill: =ColorFade(RequestStatus1.Fill, 20%)
-            OnSelect: =Select(Parent)
-            PaddingBottom: =0
-            PaddingLeft: =0
-            PaddingRight: =0
-            PaddingTop: =0
-            PressedBorderColor: =RequestStatus1.BorderColor
-            PressedColor: =RequestStatus1.Fill
-            PressedFill: =RequestStatus1.Color
-            RadiusBottomLeft: =4
-            RadiusBottomRight: =4
-            RadiusTopLeft: =4
-            RadiusTopRight: =4
-            Size: =10.5
-            Text: =Upper(ThisItem.Status)
-            Width: =88
-            X: =638
-            Y: =16
-            ZIndex: =4
+    Rectangle3 As rectangle:
+        DisabledFill: =Rectangle3.Fill
+        Fill: =RGBA(249, 249, 249, 1)
+        FocusedBorderColor: =Rectangle3.BorderColor
+        Height: =695
+        HoverFill: =Rectangle3.Fill
+        PressedFill: =Rectangle3.Fill
+        Width: =246
+        X: =1075
+        Y: =63
+        ZIndex: =3
 
     RectNavSep As rectangle:
         DisabledFill: =RectNavSep.Fill
