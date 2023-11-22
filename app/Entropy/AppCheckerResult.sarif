@@ -14,894 +14,6 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "App.OnStart"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "App.OnStart",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 9,
-                  "charOffset": 5103,
-                  "snippet": {
-                    "text": "_leaveEnd"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnStart",
-                "module": "App",
-                "type": "App"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrOperatorExpected",
-          "ruleIndex": 0
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "App.OnStart"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "App.OnStart",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 1,
-                  "charOffset": 5112,
-                  "snippet": {
-                    "text": ","
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnStart",
-                "module": "App",
-                "type": "App"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrBadToken",
-          "ruleIndex": 1
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "App.OnStart"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "App.OnStart",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 18,
-                  "charOffset": 123,
-                  "snippet": {
-                    "text": "EmployeeNavigation"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnStart",
-                "module": "App",
-                "type": "App"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "EmployeeNavigation"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidName",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "App.OnStart"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "App.OnStart",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 637,
-                  "charOffset": 101,
-                  "snippet": {
-                    "text": "ClearCollect(\n        EmployeeNavigation,\n        {\n            Title: \"My Leave Requests\",\n            TargetScreen: HomeScreen\n        },\n        {\n            Title: \"My Leave Balance\",\n            TargetScreen: LeaveBalanceScreen\n        },\n        {\n            Title: \"Today's On Leave\",\n            TargetScreen: TodayOnLeaveScreen\n        },\n        {\n            Title: \"Public Holidays\",\n            TargetScreen: CompanyHolidaysScreen\n        },\n        {\n            Title: \"About\",\n            TargetScreen: AboutScreen\n        },\n        {\n            Title: \"Log Out\",\n            TargetScreen: LoginScreen\n        }\n    )"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnStart",
-                "module": "App",
-                "type": "App"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "ClearCollect"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidArgs-Func",
-          "ruleIndex": 3
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "App.OnStart"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "App.OnStart",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 17,
-                  "charOffset": 809,
-                  "snippet": {
-                    "text": "ManagerNavigation"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnStart",
-                "module": "App",
-                "type": "App"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "ManagerNavigation"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidName",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "App.OnStart"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "App.OnStart",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 551,
-                  "charOffset": 787,
-                  "snippet": {
-                    "text": "ClearCollect(\n        ManagerNavigation,\n        {\n            Title: \"Leave Requests\",\n            TargetScreen: HomeScreen\n        },\n        {\n            Title: \"Today's On Leave\",\n            TargetScreen: TodayOnLeaveScreen\n        },\n        {\n            Title: \"Leave Information\",\n            TargetScreen: LeaveInformationScreen\n        },\n        {\n            Title: \"Public Holidays\",\n            TargetScreen: CompanyHolidaysScreen\n        },\n        {\n            Title: \"Log Out\",\n            TargetScreen: LoginScreen\n        }\n    )"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnStart",
-                "module": "App",
-                "type": "App"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "ClearCollect"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidArgs-Func",
-          "ruleIndex": 3
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "App.OnStart"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "App.OnStart",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 24,
-                  "charOffset": 5078,
-                  "snippet": {
-                    "text": "Set(\n        Now()\n    )"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnStart",
-                "module": "App",
-                "type": "App"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "1",
-              "2"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrBadArity",
-          "ruleIndex": 4
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "App.OnStart"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "App.OnStart",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 9,
-                  "charOffset": 5103,
-                  "snippet": {
-                    "text": "_leaveEnd"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnStart",
-                "module": "App",
-                "type": "App"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrOperatorExpected",
-          "ruleIndex": 0
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "App.OnStart"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "App.OnStart",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 9,
-                  "charOffset": 5103,
-                  "snippet": {
-                    "text": "_leaveEnd"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnStart",
-                "module": "App",
-                "type": "App"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrBadType",
-          "ruleIndex": 5
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "App.OnStart"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "App.OnStart",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 6251,
-                  "charOffset": 42,
-                  "snippet": {
-                    "text": "Concurrent(\n    //collection used in the left nav menu\n    ClearCollect(\n        EmployeeNavigation,\n        {\n            Title: \"My Leave Requests\",\n            TargetScreen: HomeScreen\n        },\n        {\n            Title: \"My Leave Balance\",\n            TargetScreen: LeaveBalanceScreen\n        },\n        {\n            Title: \"Today's On Leave\",\n            TargetScreen: TodayOnLeaveScreen\n        },\n        {\n            Title: \"Public Holidays\",\n            TargetScreen: CompanyHolidaysScreen\n        },\n        {\n            Title: \"About\",\n            TargetScreen: AboutScreen\n        },\n        {\n            Title: \"Log Out\",\n            TargetScreen: LoginScreen\n        }\n    ),\n    //collection used in the left nav menu\n    ClearCollect(\n        ManagerNavigation,\n        {\n            Title: \"Leave Requests\",\n            TargetScreen: HomeScreen\n        },\n        {\n            Title: \"Today's On Leave\",\n            TargetScreen: TodayOnLeaveScreen\n        },\n        {\n            Title: \"Leave Information\",\n            TargetScreen: LeaveInformationScreen\n        },\n        {\n            Title: \"Public Holidays\",\n            TargetScreen: CompanyHolidaysScreen\n        },\n        {\n            Title: \"Log Out\",\n            TargetScreen: LoginScreen\n        }\n    ),\n    //add custom leave types to this collection to make them show up in the app\n    ClearCollect(\n        LeaveTypeCollection,\n        Table(\n            {\n                type: \"Annual leave\",\n                icon: vacation,\n                iconselected: 'vacation-selected',\n                description: \"Tips:\n                    1. (Employee's year of service less than 3 years) = 14 days\n                    (Employee's year of service more than 3 years) = 16 days\n                    (Position: (Team lead & above) && year of service more than 5 years) = 18 days\n                    2. Only a maximum of seven (07) days annual leave may be carried forward to the next calendar year. The excess leave unutilised shall be deemed forfeited and also The seven (7) days annual leave which has been carried forward to the next calendar year shall be cleared by end of March (the next quarter) of the next calendar year. The excess leave unutilized shall be deemed \nforfeited.\n\"\n            },\n            {\n                type: \"Medical leave\",\n                icon: 'sick-leave',\n                iconselected: 'sick-leave-selected',\n                description: \"Tips:\n                    1. Medical Leave shall be defined as approved leave of absence resulting from illness, disease or injury as certified by the Company Panel Doctor / Government Medical Officer / registered medical practitioner.\nAn employee shall also be entitled to paid leave after examination by a dental surgeon as defined in the Dental \nAct 1971. An employee shall provide a medical certificate from the Government Medical Officer / registered medical \npractitioner as evidence of absence covering all days of sickness.\n2. Total days for medical leave = 14\n.\"\n            },\n            {\n                type: \"Compassionate leave\",\n                description: \"a. Death of a member of the employee's family. First relation \n(parents/ parents-in-law/ spouse/ children)\n03 days\nb. Death of a member of the employee's family. Second relations \n(grandparents / brothers / sisters /grandchildren)\n02 days\nIn aggregate, the number of days taken under [a], [b] and [c] shall not exceed 03 days in any calendar year..\"\n            },\n            {\n                type: \"Hospitalization leave\",\n                description: \"Where hospitalization is necessary 60 days (including 14 days of medical leave).\"\n            },\n            {\n                type: \"Paternity leave\",\n                description: \"Entitled to 7 days of paid paternity leave under Subsection 60FA; these days must be taken consecutively.\n The requirements are:\n• The male employee must be married to the mother in question.\n• He must have been employed by the same employer for at least 12 months.\n• He must notify the employer at least 30 days from expected confinement (or as early as possible).\"\n            },\n            {\n                type: \"Marriage leave\",\n                description: \"A full-time confirmed employee who has completed a minimum of twelve (12) months of continuous service is \nentitled to 3 days of leave on the occasion of his first legal marriage while in the service of the Company..\"\n            },\n            {\n                type: \"Maternity leave\",\n                description: \"A full-time confirmed female employee will be entitled to 98 Consecutive days of paid maternity leave. For \nmiscarriage maternity leave only apply upon seven full months of pregnancy under the labour law.\n\"\n            }\n        )\n    ),\n    //defines leave start and end for requests. Default set to Now since most users will be creating new requests. Changes to reflect leave times for requests which are being edited\n    Set(\n        _leaveStart,\n        Now()\n    ),\n    Set(\n        Now()\n    ) _leaveEnd,\n       ,\n    Set(\n        _myProfile,\n        Office365Users.MyProfile()\n    ),\n    ClearCollect(\n        EmailTemplate,\n        \"<html>\n        <head>\n            <meta http-equiv=\"\"Content-Type\"\" content=\"\"text/html; charset=us-ascii\"\">\n        </head>\n        <body>\n        <p>\n        There is a leave request from:  {SubmitterName}  pending your approval. <ul><li>Type:  {LeaveType}</li><li>Title: {LeaveTitle}</li><li>Description: {LeaveDescript}</li><li>Start Date: {LeaveStart}</li><li>End Date: {LeaveEnd}</li>\" & \"</p>\n        </body>\n        </html>\"\n    ),\n    ClearCollect(\n        HolidaysCollection,\n        {\n            HolidayName: \"Thanksgiving\",\n            StartDate: DateValue(\"11/22/2018\")\n        },\n        {\n            HolidayName: \"Day after Thanksgiving\",\n            StartDate: DateValue(\"11/23/2018\")\n        },\n        {\n            HolidayName: \"Christmas\",\n            StartDate: DateValue(\"12/25/2018\")\n        },\n        {\n            HolidayName: \"DayAfterChristmas\",\n            StartDate: DateValue(\"12/26/2018\")\n        },\n        {\n            HolidayName: \"New Year's Day\",\n            StartDate: DateValue(\"1/1/2019\")\n        }\n    )\n)"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnStart",
-                "module": "App",
-                "type": "App"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Concurrent"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidArgs-Func",
-          "ruleIndex": 3
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "App.OnStart"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "App.OnStart",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 10,
-                  "charOffset": 6584,
-                  "snippet": {
-                    "text": "_myProfile"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnStart",
-                "module": "App",
-                "type": "App"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "_myProfile"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidName",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "App.OnStart"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "App.OnStart",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 18,
-                  "charOffset": 6594,
-                  "snippet": {
-                    "text": ".UserPrincipalName"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnStart",
-                "module": "App",
-                "type": "App"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidDot",
-          "ruleIndex": 6
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "App.OnStart"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "App.OnStart",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 10,
-                  "charOffset": 6632,
-                  "snippet": {
-                    "text": "_myProfile"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnStart",
-                "module": "App",
-                "type": "App"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "_myProfile"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidName",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "App.OnStart"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "App.OnStart",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 18,
-                  "charOffset": 6642,
-                  "snippet": {
-                    "text": ".UserPrincipalName"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnStart",
-                "module": "App",
-                "type": "App"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidDot",
-          "ruleIndex": 6
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "App.OnStart"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "App.OnStart",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 10,
-                  "charOffset": 6706,
-                  "snippet": {
-                    "text": "_myProfile"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnStart",
-                "module": "App",
-                "type": "App"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "_myProfile"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidName",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "App.OnStart"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "App.OnStart",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 18,
-                  "charOffset": 6716,
-                  "snippet": {
-                    "text": ".UserPrincipalName"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnStart",
-                "module": "App",
-                "type": "App"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidDot",
-          "ruleIndex": 6
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "App.OnStart"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "App.OnStart",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 10,
-                  "charOffset": 6894,
-                  "snippet": {
-                    "text": "_myProfile"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnStart",
-                "module": "App",
-                "type": "App"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "_myProfile"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidName",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "App.OnStart"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "App.OnStart",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 18,
-                  "charOffset": 6904,
-                  "snippet": {
-                    "text": ".UserPrincipalName"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnStart",
-                "module": "App",
-                "type": "App"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidDot",
-          "ruleIndex": 6
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "App.OnStart"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "App.OnStart",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 10,
-                  "charOffset": 6946,
-                  "snippet": {
-                    "text": "_myProfile"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnStart",
-                "module": "App",
-                "type": "App"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "_myProfile"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidName",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "App.OnStart"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "App.OnStart",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 12,
-                  "charOffset": 6956,
-                  "snippet": {
-                    "text": ".DisplayName"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnStart",
-                "module": "App",
-                "type": "App"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidDot",
-          "ruleIndex": 6
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "App.OnStart"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "App.OnStart",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 10,
-                  "charOffset": 7251,
-                  "snippet": {
-                    "text": "_myProfile"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnStart",
-                "module": "App",
-                "type": "App"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "_myProfile"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidName",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "App.OnStart"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "App.OnStart",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 18,
-                  "charOffset": 7261,
-                  "snippet": {
-                    "text": ".UserPrincipalName"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnStart",
-                "module": "App",
-                "type": "App"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidDot",
-          "ruleIndex": 6
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "LeaveBalanceScreen.OnVisible"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "LeaveBalanceScreen.OnVisible",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 39,
-                  "charOffset": 16,
-                  "snippet": {
-                    "text": "Set(_navMenuSelect, \"My Leave Balance\")"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnVisible",
-                "module": "LeaveBalanceScreen",
-                "type": "LeaveBalanceScreen"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrIncompatibleCtxtVariableTypes",
-          "ruleIndex": 7
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
                   "fullyQualifiedName": "LeaveBalanceScreen.IconHeaderCreateNew_3.OnSelect"
                 }
               ],
@@ -932,207 +44,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrIncompatibleCtxtVariableTypes",
-          "ruleIndex": 7
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "LeaveBalanceScreen.Navigation_6.NavItem"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "LeaveBalanceScreen.Navigation_6.NavItem",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 17,
-                  "charOffset": 16,
-                  "snippet": {
-                    "text": "ManagerNavigation"
-                  }
-                }
-              },
-              "properties": {
-                "member": "NavItem",
-                "module": "LeaveBalanceScreen",
-                "type": "LeaveBalanceScreen.Navigation_6"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "ManagerNavigation"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidName",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "LeaveBalanceScreen.Navigation_6.NavItem"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "LeaveBalanceScreen.Navigation_6.NavItem",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 18,
-                  "charOffset": 34,
-                  "snippet": {
-                    "text": "EmployeeNavigation"
-                  }
-                }
-              },
-              "properties": {
-                "member": "NavItem",
-                "module": "LeaveBalanceScreen",
-                "type": "LeaveBalanceScreen.Navigation_6"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "EmployeeNavigation"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidName",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "LeaveBalanceScreen.Navigation_6.NavItem"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "LeaveBalanceScreen.Navigation_6.NavItem",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 53,
-                  "charOffset": 0,
-                  "snippet": {
-                    "text": "If(_managerView,ManagerNavigation,EmployeeNavigation)"
-                  }
-                }
-              },
-              "properties": {
-                "member": "NavItem",
-                "module": "LeaveBalanceScreen",
-                "type": "LeaveBalanceScreen.Navigation_6"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "If"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidArgs-Func",
-          "ruleIndex": 3
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "LeaveBalanceScreen.Gallery4_1.Label17_64.Text"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "LeaveBalanceScreen.Gallery4_1.Label17_64.Text",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charOffset": 9,
-                  "snippet": {
-                    "text": ""
-                  }
-                }
-              },
-              "properties": {
-                "member": "Text",
-                "module": "LeaveBalanceScreen",
-                "type": "LeaveBalanceScreen.Gallery4_1.Label17_64"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Eof",
-              "Ident"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrExpectedFound-Ex-Fnd",
-          "ruleIndex": 8
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "LeaveBalanceScreen.Gallery4_1.Label17_64.Text"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "LeaveBalanceScreen.Gallery4_1.Label17_64.Text",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 1,
-                  "charOffset": 8,
-                  "snippet": {
-                    "text": "."
-                  }
-                }
-              },
-              "properties": {
-                "member": "Text",
-                "module": "LeaveBalanceScreen",
-                "type": "LeaveBalanceScreen.Gallery4_1.Label17_64"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "_"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidName",
-          "ruleIndex": 2
+          "ruleIndex": 0
         },
         {
           "locations": [
@@ -1169,127 +81,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrIncompatibleCtxtVariableTypes",
-          "ruleIndex": 7
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "LeaveInformationScreen.Navigation_2.NavItem"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "LeaveInformationScreen.Navigation_2.NavItem",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 17,
-                  "charOffset": 16,
-                  "snippet": {
-                    "text": "ManagerNavigation"
-                  }
-                }
-              },
-              "properties": {
-                "member": "NavItem",
-                "module": "LeaveInformationScreen",
-                "type": "LeaveInformationScreen.Navigation_2"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "ManagerNavigation"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidName",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "LeaveInformationScreen.Navigation_2.NavItem"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "LeaveInformationScreen.Navigation_2.NavItem",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 18,
-                  "charOffset": 34,
-                  "snippet": {
-                    "text": "EmployeeNavigation"
-                  }
-                }
-              },
-              "properties": {
-                "member": "NavItem",
-                "module": "LeaveInformationScreen",
-                "type": "LeaveInformationScreen.Navigation_2"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "EmployeeNavigation"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidName",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "LeaveInformationScreen.Navigation_2.NavItem"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "LeaveInformationScreen.Navigation_2.NavItem",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 53,
-                  "charOffset": 0,
-                  "snippet": {
-                    "text": "If(_managerView,ManagerNavigation,EmployeeNavigation)"
-                  }
-                }
-              },
-              "properties": {
-                "member": "NavItem",
-                "module": "LeaveInformationScreen",
-                "type": "LeaveInformationScreen.Navigation_2"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "If"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidArgs-Func",
-          "ruleIndex": 3
+          "ruleIndex": 0
         },
         {
           "locations": [
@@ -1329,281 +121,7 @@
             "level": "Medium"
           },
           "ruleId": "app-SuggestRemoteExecutionHint-InOpRhs",
-          "ruleIndex": 9
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "LoginScreen.OnVisible"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "LoginScreen.OnVisible",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 10,
-                  "charOffset": 122,
-                  "snippet": {
-                    "text": "_myProfile"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnVisible",
-                "module": "LoginScreen",
-                "type": "LoginScreen"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "_myProfile"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidName",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "LoginScreen.OnVisible"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "LoginScreen.OnVisible",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 3,
-                  "charOffset": 132,
-                  "snippet": {
-                    "text": ".Id"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnVisible",
-                "module": "LoginScreen",
-                "type": "LoginScreen"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidDot",
-          "ruleIndex": 6
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "LoginScreen.OnVisible"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "LoginScreen.OnVisible",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 37,
-                  "charOffset": 99,
-                  "snippet": {
-                    "text": "Office365Users.Manager(_myProfile.Id)"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnVisible",
-                "module": "LoginScreen",
-                "type": "LoginScreen"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Manager"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidArgs-Func",
-          "ruleIndex": 3
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "ManagerChangeRequestScreen.OnVisible"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "ManagerChangeRequestScreen.OnVisible",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 39,
-                  "charOffset": 16,
-                  "snippet": {
-                    "text": "Set(_navMenuSelect, \"My Leave Balance\")"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnVisible",
-                "module": "ManagerChangeRequestScreen",
-                "type": "ManagerChangeRequestScreen"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrIncompatibleCtxtVariableTypes",
-          "ruleIndex": 7
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "ManagerChangeRequestScreen.Navigation_9.NavItem"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "ManagerChangeRequestScreen.Navigation_9.NavItem",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 17,
-                  "charOffset": 16,
-                  "snippet": {
-                    "text": "ManagerNavigation"
-                  }
-                }
-              },
-              "properties": {
-                "member": "NavItem",
-                "module": "ManagerChangeRequestScreen",
-                "type": "ManagerChangeRequestScreen.Navigation_9"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "ManagerNavigation"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidName",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "ManagerChangeRequestScreen.Navigation_9.NavItem"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "ManagerChangeRequestScreen.Navigation_9.NavItem",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 18,
-                  "charOffset": 34,
-                  "snippet": {
-                    "text": "EmployeeNavigation"
-                  }
-                }
-              },
-              "properties": {
-                "member": "NavItem",
-                "module": "ManagerChangeRequestScreen",
-                "type": "ManagerChangeRequestScreen.Navigation_9"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "EmployeeNavigation"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidName",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "ManagerChangeRequestScreen.Navigation_9.NavItem"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "ManagerChangeRequestScreen.Navigation_9.NavItem",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 53,
-                  "charOffset": 0,
-                  "snippet": {
-                    "text": "If(_managerView,ManagerNavigation,EmployeeNavigation)"
-                  }
-                }
-              },
-              "properties": {
-                "member": "NavItem",
-                "module": "ManagerChangeRequestScreen",
-                "type": "ManagerChangeRequestScreen.Navigation_9"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "If"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidArgs-Func",
-          "ruleIndex": 3
+          "ruleIndex": 1
         },
         {
           "locations": [
@@ -1760,7 +278,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrInvalidDot",
-          "ruleIndex": 6
+          "ruleIndex": 4
         },
         {
           "locations": [
@@ -1797,7 +315,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrInvalidDot",
-          "ruleIndex": 6
+          "ruleIndex": 4
         },
         {
           "locations": [
@@ -1877,7 +395,7 @@
             "level": "Medium"
           },
           "ruleId": "app-ErrIncorrectFormat-Func",
-          "ruleIndex": 10
+          "ruleIndex": 5
         },
         {
           "locations": [
@@ -1964,203 +482,6 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "ManagerSendEmailScreen.OnVisible"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "ManagerSendEmailScreen.OnVisible",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 39,
-                  "charOffset": 16,
-                  "snippet": {
-                    "text": "Set(_navMenuSelect, \"My Leave Balance\")"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnVisible",
-                "module": "ManagerSendEmailScreen",
-                "type": "ManagerSendEmailScreen"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrIncompatibleCtxtVariableTypes",
-          "ruleIndex": 7
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "ManagerSendEmailScreen.GalleryNavigation_7.Items"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "ManagerSendEmailScreen.GalleryNavigation_7.Items",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 17,
-                  "charOffset": 17,
-                  "snippet": {
-                    "text": "ManagerNavigation"
-                  }
-                }
-              },
-              "properties": {
-                "member": "Items",
-                "module": "ManagerSendEmailScreen",
-                "type": "ManagerSendEmailScreen.GalleryNavigation_7"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "ManagerNavigation"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidName",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "ManagerSendEmailScreen.GalleryNavigation_7.Items"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "ManagerSendEmailScreen.GalleryNavigation_7.Items",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 18,
-                  "charOffset": 36,
-                  "snippet": {
-                    "text": "EmployeeNavigation"
-                  }
-                }
-              },
-              "properties": {
-                "member": "Items",
-                "module": "ManagerSendEmailScreen",
-                "type": "ManagerSendEmailScreen.GalleryNavigation_7"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "EmployeeNavigation"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidName",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "ManagerSendEmailScreen.GalleryNavigation_7.Items"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "ManagerSendEmailScreen.GalleryNavigation_7.Items",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 55,
-                  "charOffset": 0,
-                  "snippet": {
-                    "text": "If(_managerView, ManagerNavigation, EmployeeNavigation)"
-                  }
-                }
-              },
-              "properties": {
-                "member": "Items",
-                "module": "ManagerSendEmailScreen",
-                "type": "ManagerSendEmailScreen.GalleryNavigation_7"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "If"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidArgs-Func",
-          "ruleIndex": 3
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "ManagerSendEmailScreen.GalleryNavigation_7.galleryTemplate2_7.TemplateFill"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "ManagerSendEmailScreen.GalleryNavigation_7.galleryTemplate2_7.TemplateFill",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 8,
-                  "charOffset": 3,
-                  "snippet": {
-                    "text": "ThisItem"
-                  }
-                }
-              },
-              "properties": {
-                "member": "TemplateFill",
-                "module": "ManagerSendEmailScreen",
-                "type": "ManagerSendEmailScreen.GalleryNavigation_7.galleryTemplate2_7"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "ThisItem"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidName",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
                   "fullyQualifiedName": "ManagerSendEmailScreen.GalleryNavigation_7.galleryTemplate2_7.TemplateFill"
                 }
               ],
@@ -2185,13 +506,16 @@
             }
           ],
           "message": {
+            "arguments": [
+              "MenuItem"
+            ],
             "id": "issue"
           },
           "properties": {
             "level": "High"
           },
-          "ruleId": "app-ErrInvalidDot",
-          "ruleIndex": 6
+          "ruleId": "app-ErrInvalidName",
+          "ruleIndex": 2
         },
         {
           "locations": [
@@ -2232,47 +556,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrIncompatibleTypesForEquality-Left-Right",
-          "ruleIndex": 11
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "ManagerSendEmailScreen.GalleryNavigation_7.galleryTemplate2_7.OnSelect"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "ManagerSendEmailScreen.GalleryNavigation_7.galleryTemplate2_7.OnSelect",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 8,
-                  "charOffset": 20,
-                  "snippet": {
-                    "text": "ThisItem"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnSelect",
-                "module": "ManagerSendEmailScreen",
-                "type": "ManagerSendEmailScreen.GalleryNavigation_7.galleryTemplate2_7"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "ThisItem"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidName",
-          "ruleIndex": 2
+          "ruleIndex": 6
         },
         {
           "locations": [
@@ -2303,45 +587,8 @@
             }
           ],
           "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidDot",
-          "ruleIndex": 6
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "ManagerSendEmailScreen.GalleryNavigation_7.galleryTemplate2_7.OnSelect"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "ManagerSendEmailScreen.GalleryNavigation_7.galleryTemplate2_7.OnSelect",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 8,
-                  "charOffset": 62,
-                  "snippet": {
-                    "text": "ThisItem"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnSelect",
-                "module": "ManagerSendEmailScreen",
-                "type": "ManagerSendEmailScreen.GalleryNavigation_7.galleryTemplate2_7"
-              }
-            }
-          ],
-          "message": {
             "arguments": [
-              "ThisItem"
+              "MenuItem"
             ],
             "id": "issue"
           },
@@ -2380,45 +627,8 @@
             }
           ],
           "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidDot",
-          "ruleIndex": 6
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "ManagerSendEmailScreen.GalleryNavigation_7.galleryTemplate2_7.OnSelect"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "ManagerSendEmailScreen.GalleryNavigation_7.galleryTemplate2_7.OnSelect",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 8,
-                  "charOffset": 138,
-                  "snippet": {
-                    "text": "ThisItem"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnSelect",
-                "module": "ManagerSendEmailScreen",
-                "type": "ManagerSendEmailScreen.GalleryNavigation_7.galleryTemplate2_7"
-              }
-            }
-          ],
-          "message": {
             "arguments": [
-              "ThisItem"
+              "MenuItem"
             ],
             "id": "issue"
           },
@@ -2457,45 +667,8 @@
             }
           ],
           "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidDot",
-          "ruleIndex": 6
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "ManagerSendEmailScreen.GalleryNavigation_7.galleryTemplate2_7.OnSelect"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "ManagerSendEmailScreen.GalleryNavigation_7.galleryTemplate2_7.OnSelect",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 8,
-                  "charOffset": 223,
-                  "snippet": {
-                    "text": "ThisItem"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnSelect",
-                "module": "ManagerSendEmailScreen",
-                "type": "ManagerSendEmailScreen.GalleryNavigation_7.galleryTemplate2_7"
-              }
-            }
-          ],
-          "message": {
             "arguments": [
-              "ThisItem"
+              "MenuItem"
             ],
             "id": "issue"
           },
@@ -2534,45 +707,8 @@
             }
           ],
           "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidDot",
-          "ruleIndex": 6
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "ManagerSendEmailScreen.GalleryNavigation_7.galleryTemplate2_7.OnSelect"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "ManagerSendEmailScreen.GalleryNavigation_7.galleryTemplate2_7.OnSelect",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 8,
-                  "charOffset": 297,
-                  "snippet": {
-                    "text": "ThisItem"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnSelect",
-                "module": "ManagerSendEmailScreen",
-                "type": "ManagerSendEmailScreen.GalleryNavigation_7.galleryTemplate2_7"
-              }
-            }
-          ],
-          "message": {
             "arguments": [
-              "ThisItem"
+              "MenuItem"
             ],
             "id": "issue"
           },
@@ -2611,13 +747,16 @@
             }
           ],
           "message": {
+            "arguments": [
+              "MenuItem"
+            ],
             "id": "issue"
           },
           "properties": {
             "level": "High"
           },
-          "ruleId": "app-ErrInvalidDot",
-          "ruleIndex": 6
+          "ruleId": "app-ErrInvalidName",
+          "ruleIndex": 2
         },
         {
           "locations": [
@@ -2658,47 +797,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrIncompatibleTypesForEquality-Left-Right",
-          "ruleIndex": 11
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "ManagerSendEmailScreen.GalleryNavigation_7.galleryTemplate2_7.OnSelect"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "ManagerSendEmailScreen.GalleryNavigation_7.galleryTemplate2_7.OnSelect",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 8,
-                  "charOffset": 371,
-                  "snippet": {
-                    "text": "ThisItem"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnSelect",
-                "module": "ManagerSendEmailScreen",
-                "type": "ManagerSendEmailScreen.GalleryNavigation_7.galleryTemplate2_7"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "ThisItem"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidName",
-          "ruleIndex": 2
+          "ruleIndex": 6
         },
         {
           "locations": [
@@ -2729,13 +828,16 @@
             }
           ],
           "message": {
+            "arguments": [
+              "MenuItem"
+            ],
             "id": "issue"
           },
           "properties": {
             "level": "High"
           },
-          "ruleId": "app-ErrInvalidDot",
-          "ruleIndex": 6
+          "ruleId": "app-ErrInvalidName",
+          "ruleIndex": 2
         },
         {
           "locations": [
@@ -2776,7 +878,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrIncompatibleTypesForEquality-Left-Right",
-          "ruleIndex": 11
+          "ruleIndex": 6
         },
         {
           "locations": [
@@ -2813,47 +915,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrIncompatibleCtxtVariableTypes",
-          "ruleIndex": 7
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "ManagerSendEmailScreen.GalleryNavigation_7.Label2_7.Text"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "ManagerSendEmailScreen.GalleryNavigation_7.Label2_7.Text",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 8,
-                  "charOffset": 0,
-                  "snippet": {
-                    "text": "ThisItem"
-                  }
-                }
-              },
-              "properties": {
-                "member": "Text",
-                "module": "ManagerSendEmailScreen",
-                "type": "ManagerSendEmailScreen.GalleryNavigation_7.Label2_7"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "ThisItem"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidName",
-          "ruleIndex": 2
+          "ruleIndex": 0
         },
         {
           "locations": [
@@ -2884,45 +946,8 @@
             }
           ],
           "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidDot",
-          "ruleIndex": 6
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "ManagerSendEmailScreen.GalleryNavigation_7.Label2_7.Color"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "ManagerSendEmailScreen.GalleryNavigation_7.Label2_7.Color",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 8,
-                  "charOffset": 3,
-                  "snippet": {
-                    "text": "ThisItem"
-                  }
-                }
-              },
-              "properties": {
-                "member": "Color",
-                "module": "ManagerSendEmailScreen",
-                "type": "ManagerSendEmailScreen.GalleryNavigation_7.Label2_7"
-              }
-            }
-          ],
-          "message": {
             "arguments": [
-              "ThisItem"
+              "MenuItem"
             ],
             "id": "issue"
           },
@@ -2961,13 +986,16 @@
             }
           ],
           "message": {
+            "arguments": [
+              "MenuItem"
+            ],
             "id": "issue"
           },
           "properties": {
             "level": "High"
           },
-          "ruleId": "app-ErrInvalidDot",
-          "ruleIndex": 6
+          "ruleId": "app-ErrInvalidName",
+          "ruleIndex": 2
         },
         {
           "locations": [
@@ -3008,47 +1036,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrIncompatibleTypesForEquality-Left-Right",
-          "ruleIndex": 11
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "ManagerSendEmailScreen.GalleryNavigation_7.LeftMenuSeparator_7.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "ManagerSendEmailScreen.GalleryNavigation_7.LeftMenuSeparator_7.AccessibleLabel",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 8,
-                  "charOffset": 0,
-                  "snippet": {
-                    "text": "ThisItem"
-                  }
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "ManagerSendEmailScreen",
-                "type": "ManagerSendEmailScreen.GalleryNavigation_7.LeftMenuSeparator_7"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "ThisItem"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidName",
-          "ruleIndex": 2
+          "ruleIndex": 6
         },
         {
           "locations": [
@@ -3079,13 +1067,16 @@
             }
           ],
           "message": {
+            "arguments": [
+              "MenuItem"
+            ],
             "id": "issue"
           },
           "properties": {
             "level": "High"
           },
-          "ruleId": "app-ErrInvalidDot",
-          "ruleIndex": 6
+          "ruleId": "app-ErrInvalidName",
+          "ruleIndex": 2
         },
         {
           "locations": [
@@ -3162,7 +1153,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrInvalidDot",
-          "ruleIndex": 6
+          "ruleIndex": 4
         },
         {
           "locations": [
@@ -3199,7 +1190,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrInvalidDot",
-          "ruleIndex": 6
+          "ruleIndex": 4
         },
         {
           "locations": [
@@ -3232,123 +1223,6 @@
           "message": {
             "arguments": [
               "SendEmailV2"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidArgs-Func",
-          "ruleIndex": 3
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "NewRequestScreen.OnVisible"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "NewRequestScreen.OnVisible",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 10,
-                  "charOffset": 356,
-                  "snippet": {
-                    "text": "_myProfile"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnVisible",
-                "module": "NewRequestScreen",
-                "type": "NewRequestScreen"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "_myProfile"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidName",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "NewRequestScreen.OnVisible"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "NewRequestScreen.OnVisible",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 3,
-                  "charOffset": 366,
-                  "snippet": {
-                    "text": ".Id"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnVisible",
-                "module": "NewRequestScreen",
-                "type": "NewRequestScreen"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidDot",
-          "ruleIndex": 6
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "NewRequestScreen.OnVisible"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "NewRequestScreen.OnVisible",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 37,
-                  "charOffset": 333,
-                  "snippet": {
-                    "text": "Office365Users.Manager(_myProfile.Id)"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnVisible",
-                "module": "NewRequestScreen",
-                "type": "NewRequestScreen"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Manager"
             ],
             "id": "issue"
           },
@@ -3433,7 +1307,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrInvalidDot",
-          "ruleIndex": 6
+          "ruleIndex": 4
         },
         {
           "locations": [
@@ -3470,7 +1344,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrInvalidDot",
-          "ruleIndex": 6
+          "ruleIndex": 4
         },
         {
           "locations": [
@@ -3587,7 +1461,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrInvalidDot",
-          "ruleIndex": 6
+          "ruleIndex": 4
         },
         {
           "locations": [
@@ -3624,7 +1498,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrInvalidDot",
-          "ruleIndex": 6
+          "ruleIndex": 4
         },
         {
           "locations": [
@@ -3741,7 +1615,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrInvalidDot",
-          "ruleIndex": 6
+          "ruleIndex": 4
         },
         {
           "locations": [
@@ -3778,7 +1652,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrInvalidDot",
-          "ruleIndex": 6
+          "ruleIndex": 4
         },
         {
           "locations": [
@@ -3855,7 +1729,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrInvalidDot",
-          "ruleIndex": 6
+          "ruleIndex": 4
         },
         {
           "locations": [
@@ -3892,7 +1766,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrInvalidDot",
-          "ruleIndex": 6
+          "ruleIndex": 4
         },
         {
           "locations": [
@@ -3932,7 +1806,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrBadType-ExpectedTypesCSV",
-          "ruleIndex": 12
+          "ruleIndex": 7
         },
         {
           "locations": [
@@ -4009,7 +1883,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrInvalidDot",
-          "ruleIndex": 6
+          "ruleIndex": 4
         },
         {
           "locations": [
@@ -4046,7 +1920,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrInvalidDot",
-          "ruleIndex": 6
+          "ruleIndex": 4
         },
         {
           "locations": [
@@ -4123,7 +1997,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrInvalidDot",
-          "ruleIndex": 6
+          "ruleIndex": 4
         },
         {
           "locations": [
@@ -4160,7 +2034,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrInvalidDot",
-          "ruleIndex": 6
+          "ruleIndex": 4
         },
         {
           "locations": [
@@ -4237,7 +2111,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrInvalidDot",
-          "ruleIndex": 6
+          "ruleIndex": 4
         },
         {
           "locations": [
@@ -4274,303 +2148,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrInvalidDot",
-          "ruleIndex": 6
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "NewRequestScreen.OnVisible"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "NewRequestScreen.OnVisible",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 25,
-                  "charOffset": 101,
-                  "snippet": {
-                    "text": "Set(_leaveStart, Today())"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnVisible",
-                "module": "NewRequestScreen",
-                "type": "NewRequestScreen"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrIncompatibleCtxtVariableTypes",
-          "ruleIndex": 7
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "NewRequestScreen.OnVisible"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "NewRequestScreen.OnVisible",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 23,
-                  "charOffset": 136,
-                  "snippet": {
-                    "text": "Set(_leaveEnd, Today())"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnVisible",
-                "module": "NewRequestScreen",
-                "type": "NewRequestScreen"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrIncompatibleCtxtVariableTypes",
-          "ruleIndex": 7
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "NewRequestScreen.OnVisible"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "NewRequestScreen.OnVisible",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 21,
-                  "charOffset": 169,
-                  "snippet": {
-                    "text": "Set(_leaveDetail, \"\")"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnVisible",
-                "module": "NewRequestScreen",
-                "type": "NewRequestScreen"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrIncompatibleCtxtVariableTypes",
-          "ruleIndex": 7
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "NewRequestScreen.OnVisible"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "NewRequestScreen.OnVisible",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 53,
-                  "charOffset": 808,
-                  "snippet": {
-                    "text": "Set(_leaveStart, GalleryRequests1.Selected.StartDate)"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnVisible",
-                "module": "NewRequestScreen",
-                "type": "NewRequestScreen"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrIncompatibleCtxtVariableTypes",
-          "ruleIndex": 7
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "NewRequestScreen.OnVisible"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "NewRequestScreen.OnVisible",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 49,
-                  "charOffset": 871,
-                  "snippet": {
-                    "text": "Set(_leaveEnd, GalleryRequests1.Selected.EndDate)"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnVisible",
-                "module": "NewRequestScreen",
-                "type": "NewRequestScreen"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrIncompatibleCtxtVariableTypes",
-          "ruleIndex": 7
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "NewRequestScreen.OnVisible"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "NewRequestScreen.OnVisible",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 60,
-                  "charOffset": 1091,
-                  "snippet": {
-                    "text": "Set(_selectedLeaveType, GalleryRequests1.Selected.LeaveType)"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnVisible",
-                "module": "NewRequestScreen",
-                "type": "NewRequestScreen"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrIncompatibleCtxtVariableTypes",
-          "ruleIndex": 7
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "NewRequestScreen.OnVisible"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "NewRequestScreen.OnVisible",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 49,
-                  "charOffset": 1161,
-                  "snippet": {
-                    "text": "Set(_leaveTitle, GalleryRequests1.Selected.Title)"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnVisible",
-                "module": "NewRequestScreen",
-                "type": "NewRequestScreen"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrIncompatibleCtxtVariableTypes",
-          "ruleIndex": 7
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "NewRequestScreen.OnVisible"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "NewRequestScreen.OnVisible",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 51,
-                  "charOffset": 1220,
-                  "snippet": {
-                    "text": "Set(_leaveDetail, GalleryRequests1.Selected.Detail)"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnVisible",
-                "module": "NewRequestScreen",
-                "type": "NewRequestScreen"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrIncompatibleCtxtVariableTypes",
-          "ruleIndex": 7
+          "ruleIndex": 4
         },
         {
           "locations": [
@@ -4607,167 +2185,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrIncompatibleCtxtVariableTypes",
-          "ruleIndex": 7
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "NewRequestScreen.GalleryNavigation_12.Items"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "NewRequestScreen.GalleryNavigation_12.Items",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 17,
-                  "charOffset": 17,
-                  "snippet": {
-                    "text": "ManagerNavigation"
-                  }
-                }
-              },
-              "properties": {
-                "member": "Items",
-                "module": "NewRequestScreen",
-                "type": "NewRequestScreen.GalleryNavigation_12"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "ManagerNavigation"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidName",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "NewRequestScreen.GalleryNavigation_12.Items"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "NewRequestScreen.GalleryNavigation_12.Items",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 18,
-                  "charOffset": 36,
-                  "snippet": {
-                    "text": "EmployeeNavigation"
-                  }
-                }
-              },
-              "properties": {
-                "member": "Items",
-                "module": "NewRequestScreen",
-                "type": "NewRequestScreen.GalleryNavigation_12"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "EmployeeNavigation"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidName",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "NewRequestScreen.GalleryNavigation_12.Items"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "NewRequestScreen.GalleryNavigation_12.Items",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 55,
-                  "charOffset": 0,
-                  "snippet": {
-                    "text": "If(_managerView, ManagerNavigation, EmployeeNavigation)"
-                  }
-                }
-              },
-              "properties": {
-                "member": "Items",
-                "module": "NewRequestScreen",
-                "type": "NewRequestScreen.GalleryNavigation_12"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "If"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidArgs-Func",
-          "ruleIndex": 3
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "NewRequestScreen.GalleryNavigation_12.galleryTemplate2_14.TemplateFill"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "NewRequestScreen.GalleryNavigation_12.galleryTemplate2_14.TemplateFill",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 8,
-                  "charOffset": 3,
-                  "snippet": {
-                    "text": "ThisItem"
-                  }
-                }
-              },
-              "properties": {
-                "member": "TemplateFill",
-                "module": "NewRequestScreen",
-                "type": "NewRequestScreen.GalleryNavigation_12.galleryTemplate2_14"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "ThisItem"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidName",
-          "ruleIndex": 2
+          "ruleIndex": 0
         },
         {
           "locations": [
@@ -4798,13 +2216,16 @@
             }
           ],
           "message": {
+            "arguments": [
+              "MenuItem"
+            ],
             "id": "issue"
           },
           "properties": {
             "level": "High"
           },
-          "ruleId": "app-ErrInvalidDot",
-          "ruleIndex": 6
+          "ruleId": "app-ErrInvalidName",
+          "ruleIndex": 2
         },
         {
           "locations": [
@@ -4845,47 +2266,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrIncompatibleTypesForEquality-Left-Right",
-          "ruleIndex": 11
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "NewRequestScreen.GalleryNavigation_12.galleryTemplate2_14.OnSelect"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "NewRequestScreen.GalleryNavigation_12.galleryTemplate2_14.OnSelect",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 8,
-                  "charOffset": 20,
-                  "snippet": {
-                    "text": "ThisItem"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnSelect",
-                "module": "NewRequestScreen",
-                "type": "NewRequestScreen.GalleryNavigation_12.galleryTemplate2_14"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "ThisItem"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidName",
-          "ruleIndex": 2
+          "ruleIndex": 6
         },
         {
           "locations": [
@@ -4916,45 +2297,8 @@
             }
           ],
           "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidDot",
-          "ruleIndex": 6
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "NewRequestScreen.GalleryNavigation_12.galleryTemplate2_14.OnSelect"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "NewRequestScreen.GalleryNavigation_12.galleryTemplate2_14.OnSelect",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 8,
-                  "charOffset": 62,
-                  "snippet": {
-                    "text": "ThisItem"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnSelect",
-                "module": "NewRequestScreen",
-                "type": "NewRequestScreen.GalleryNavigation_12.galleryTemplate2_14"
-              }
-            }
-          ],
-          "message": {
             "arguments": [
-              "ThisItem"
+              "MenuItem"
             ],
             "id": "issue"
           },
@@ -4993,45 +2337,8 @@
             }
           ],
           "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidDot",
-          "ruleIndex": 6
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "NewRequestScreen.GalleryNavigation_12.galleryTemplate2_14.OnSelect"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "NewRequestScreen.GalleryNavigation_12.galleryTemplate2_14.OnSelect",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 8,
-                  "charOffset": 138,
-                  "snippet": {
-                    "text": "ThisItem"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnSelect",
-                "module": "NewRequestScreen",
-                "type": "NewRequestScreen.GalleryNavigation_12.galleryTemplate2_14"
-              }
-            }
-          ],
-          "message": {
             "arguments": [
-              "ThisItem"
+              "MenuItem"
             ],
             "id": "issue"
           },
@@ -5070,45 +2377,8 @@
             }
           ],
           "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidDot",
-          "ruleIndex": 6
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "NewRequestScreen.GalleryNavigation_12.galleryTemplate2_14.OnSelect"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "NewRequestScreen.GalleryNavigation_12.galleryTemplate2_14.OnSelect",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 8,
-                  "charOffset": 223,
-                  "snippet": {
-                    "text": "ThisItem"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnSelect",
-                "module": "NewRequestScreen",
-                "type": "NewRequestScreen.GalleryNavigation_12.galleryTemplate2_14"
-              }
-            }
-          ],
-          "message": {
             "arguments": [
-              "ThisItem"
+              "MenuItem"
             ],
             "id": "issue"
           },
@@ -5147,45 +2417,8 @@
             }
           ],
           "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidDot",
-          "ruleIndex": 6
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "NewRequestScreen.GalleryNavigation_12.galleryTemplate2_14.OnSelect"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "NewRequestScreen.GalleryNavigation_12.galleryTemplate2_14.OnSelect",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 8,
-                  "charOffset": 297,
-                  "snippet": {
-                    "text": "ThisItem"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnSelect",
-                "module": "NewRequestScreen",
-                "type": "NewRequestScreen.GalleryNavigation_12.galleryTemplate2_14"
-              }
-            }
-          ],
-          "message": {
             "arguments": [
-              "ThisItem"
+              "MenuItem"
             ],
             "id": "issue"
           },
@@ -5224,13 +2457,16 @@
             }
           ],
           "message": {
+            "arguments": [
+              "MenuItem"
+            ],
             "id": "issue"
           },
           "properties": {
             "level": "High"
           },
-          "ruleId": "app-ErrInvalidDot",
-          "ruleIndex": 6
+          "ruleId": "app-ErrInvalidName",
+          "ruleIndex": 2
         },
         {
           "locations": [
@@ -5271,47 +2507,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrIncompatibleTypesForEquality-Left-Right",
-          "ruleIndex": 11
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "NewRequestScreen.GalleryNavigation_12.galleryTemplate2_14.OnSelect"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "NewRequestScreen.GalleryNavigation_12.galleryTemplate2_14.OnSelect",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 8,
-                  "charOffset": 371,
-                  "snippet": {
-                    "text": "ThisItem"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnSelect",
-                "module": "NewRequestScreen",
-                "type": "NewRequestScreen.GalleryNavigation_12.galleryTemplate2_14"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "ThisItem"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidName",
-          "ruleIndex": 2
+          "ruleIndex": 6
         },
         {
           "locations": [
@@ -5342,13 +2538,16 @@
             }
           ],
           "message": {
+            "arguments": [
+              "MenuItem"
+            ],
             "id": "issue"
           },
           "properties": {
             "level": "High"
           },
-          "ruleId": "app-ErrInvalidDot",
-          "ruleIndex": 6
+          "ruleId": "app-ErrInvalidName",
+          "ruleIndex": 2
         },
         {
           "locations": [
@@ -5389,7 +2588,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrIncompatibleTypesForEquality-Left-Right",
-          "ruleIndex": 11
+          "ruleIndex": 6
         },
         {
           "locations": [
@@ -5426,204 +2625,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrIncompatibleCtxtVariableTypes",
-          "ruleIndex": 7
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "NewRequestScreen.GalleryNavigation_12.LeftMenuSeparator_12.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "NewRequestScreen.GalleryNavigation_12.LeftMenuSeparator_12.AccessibleLabel",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 8,
-                  "charOffset": 0,
-                  "snippet": {
-                    "text": "ThisItem"
-                  }
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "NewRequestScreen",
-                "type": "NewRequestScreen.GalleryNavigation_12.LeftMenuSeparator_12"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "ThisItem"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidName",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "NewRequestScreen.GalleryNavigation_12.LeftMenuSeparator_12.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "NewRequestScreen.GalleryNavigation_12.LeftMenuSeparator_12.AccessibleLabel",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 6,
-                  "charOffset": 8,
-                  "snippet": {
-                    "text": ".Title"
-                  }
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "NewRequestScreen",
-                "type": "NewRequestScreen.GalleryNavigation_12.LeftMenuSeparator_12"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidDot",
-          "ruleIndex": 6
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "NewRequestScreen.Navigation_7.NavItem"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "NewRequestScreen.Navigation_7.NavItem",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 17,
-                  "charOffset": 16,
-                  "snippet": {
-                    "text": "ManagerNavigation"
-                  }
-                }
-              },
-              "properties": {
-                "member": "NavItem",
-                "module": "NewRequestScreen",
-                "type": "NewRequestScreen.Navigation_7"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "ManagerNavigation"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidName",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "NewRequestScreen.Navigation_7.NavItem"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "NewRequestScreen.Navigation_7.NavItem",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 18,
-                  "charOffset": 34,
-                  "snippet": {
-                    "text": "EmployeeNavigation"
-                  }
-                }
-              },
-              "properties": {
-                "member": "NavItem",
-                "module": "NewRequestScreen",
-                "type": "NewRequestScreen.Navigation_7"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "EmployeeNavigation"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidName",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "NewRequestScreen.Navigation_7.NavItem"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "NewRequestScreen.Navigation_7.NavItem",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 53,
-                  "charOffset": 0,
-                  "snippet": {
-                    "text": "If(_managerView,ManagerNavigation,EmployeeNavigation)"
-                  }
-                }
-              },
-              "properties": {
-                "member": "NavItem",
-                "module": "NewRequestScreen",
-                "type": "NewRequestScreen.Navigation_7"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "If"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidArgs-Func",
-          "ruleIndex": 3
+          "ruleIndex": 0
         },
         {
           "locations": [
@@ -5660,7 +2662,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrIncompatibleCtxtVariableTypes",
-          "ruleIndex": 7
+          "ruleIndex": 0
         },
         {
           "locations": [
@@ -5737,7 +2739,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrBadType",
-          "ruleIndex": 5
+          "ruleIndex": 8
         },
         {
           "locations": [
@@ -5778,7 +2780,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrIncompatibleTypesForEquality-Left-Right",
-          "ruleIndex": 11
+          "ruleIndex": 6
         },
         {
           "locations": [
@@ -5855,7 +2857,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrBadType",
-          "ruleIndex": 5
+          "ruleIndex": 8
         },
         {
           "locations": [
@@ -5896,7 +2898,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrIncompatibleTypesForEquality-Left-Right",
-          "ruleIndex": 11
+          "ruleIndex": 6
         },
         {
           "locations": [
@@ -5973,7 +2975,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrBadType",
-          "ruleIndex": 5
+          "ruleIndex": 8
         },
         {
           "locations": [
@@ -6014,7 +3016,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrIncompatibleTypesForEquality-Left-Right",
-          "ruleIndex": 11
+          "ruleIndex": 6
         },
         {
           "locations": [
@@ -6091,7 +3093,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrBadType",
-          "ruleIndex": 5
+          "ruleIndex": 8
         },
         {
           "locations": [
@@ -6132,7 +3134,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrIncompatibleRulePropTypes-PropKind-RuleKind",
-          "ruleIndex": 13
+          "ruleIndex": 9
         },
         {
           "locations": [
@@ -6173,7 +3175,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrIncompatibleRulePropTypes-PropKind-RuleKind",
-          "ruleIndex": 13
+          "ruleIndex": 9
         },
         {
           "locations": [
@@ -6250,7 +3252,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrBadType",
-          "ruleIndex": 5
+          "ruleIndex": 8
         },
         {
           "locations": [
@@ -6291,7 +3293,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrIncompatibleTypesForEquality-Left-Right",
-          "ruleIndex": 11
+          "ruleIndex": 6
         },
         {
           "locations": [
@@ -6368,7 +3370,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrBadType",
-          "ruleIndex": 5
+          "ruleIndex": 8
         },
         {
           "locations": [
@@ -6409,7 +3411,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrIncompatibleRulePropTypes-PropKind-RuleKind",
-          "ruleIndex": 13
+          "ruleIndex": 9
         },
         {
           "locations": [
@@ -6486,7 +3488,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrBadType",
-          "ruleIndex": 5
+          "ruleIndex": 8
         },
         {
           "locations": [
@@ -6526,7 +3528,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrExpectedFound-Ex-Fnd",
-          "ruleIndex": 8
+          "ruleIndex": 10
         },
         {
           "locations": [
@@ -6606,7 +3608,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrBadSchema-ExpectedType",
-          "ruleIndex": 14
+          "ruleIndex": 11
         },
         {
           "locations": [
@@ -6648,7 +3650,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrColumnTypeMismatch-ColName-ExpectedType-ActualType",
-          "ruleIndex": 15
+          "ruleIndex": 12
         },
         {
           "locations": [
@@ -6689,7 +3691,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrIncompatibleRulePropTypes-PropKind-RuleKind",
-          "ruleIndex": 13
+          "ruleIndex": 9
         },
         {
           "locations": [
@@ -6726,127 +3728,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrIncompatibleCtxtVariableTypes",
-          "ruleIndex": 7
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "TodayOnLeaveScreen.Navigation_1.NavItem"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "TodayOnLeaveScreen.Navigation_1.NavItem",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 17,
-                  "charOffset": 16,
-                  "snippet": {
-                    "text": "ManagerNavigation"
-                  }
-                }
-              },
-              "properties": {
-                "member": "NavItem",
-                "module": "TodayOnLeaveScreen",
-                "type": "TodayOnLeaveScreen.Navigation_1"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "ManagerNavigation"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidName",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "TodayOnLeaveScreen.Navigation_1.NavItem"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "TodayOnLeaveScreen.Navigation_1.NavItem",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 18,
-                  "charOffset": 34,
-                  "snippet": {
-                    "text": "EmployeeNavigation"
-                  }
-                }
-              },
-              "properties": {
-                "member": "NavItem",
-                "module": "TodayOnLeaveScreen",
-                "type": "TodayOnLeaveScreen.Navigation_1"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "EmployeeNavigation"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidName",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "TodayOnLeaveScreen.Navigation_1.NavItem"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "TodayOnLeaveScreen.Navigation_1.NavItem",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 53,
-                  "charOffset": 0,
-                  "snippet": {
-                    "text": "If(_managerView,ManagerNavigation,EmployeeNavigation)"
-                  }
-                }
-              },
-              "properties": {
-                "member": "NavItem",
-                "module": "TodayOnLeaveScreen",
-                "type": "TodayOnLeaveScreen.Navigation_1"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "If"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidArgs-Func",
-          "ruleIndex": 3
+          "ruleIndex": 0
         },
         {
           "locations": [
@@ -6883,7 +3765,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrIncompatibleCtxtVariableTypes",
-          "ruleIndex": 7
+          "ruleIndex": 0
         },
         {
           "locations": [
@@ -6920,127 +3802,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrIncompatibleCtxtVariableTypes",
-          "ruleIndex": 7
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "AboutScreen.Navigation_3.NavItem"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "AboutScreen.Navigation_3.NavItem",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 17,
-                  "charOffset": 16,
-                  "snippet": {
-                    "text": "ManagerNavigation"
-                  }
-                }
-              },
-              "properties": {
-                "member": "NavItem",
-                "module": "AboutScreen",
-                "type": "AboutScreen.Navigation_3"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "ManagerNavigation"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidName",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "AboutScreen.Navigation_3.NavItem"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "AboutScreen.Navigation_3.NavItem",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 18,
-                  "charOffset": 34,
-                  "snippet": {
-                    "text": "EmployeeNavigation"
-                  }
-                }
-              },
-              "properties": {
-                "member": "NavItem",
-                "module": "AboutScreen",
-                "type": "AboutScreen.Navigation_3"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "EmployeeNavigation"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidName",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "AboutScreen.Navigation_3.NavItem"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "AboutScreen.Navigation_3.NavItem",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 53,
-                  "charOffset": 0,
-                  "snippet": {
-                    "text": "If(_managerView,ManagerNavigation,EmployeeNavigation)"
-                  }
-                }
-              },
-              "properties": {
-                "member": "NavItem",
-                "module": "AboutScreen",
-                "type": "AboutScreen.Navigation_3"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "If"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidArgs-Func",
-          "ruleIndex": 3
+          "ruleIndex": 0
         },
         {
           "locations": [
@@ -7077,7 +3839,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrIncompatibleCtxtVariableTypes",
-          "ruleIndex": 7
+          "ruleIndex": 0
         },
         {
           "locations": [
@@ -7114,127 +3876,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrIncompatibleCtxtVariableTypes",
-          "ruleIndex": 7
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "CompanyHolidaysScreen.Navigation_4.NavItem"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "CompanyHolidaysScreen.Navigation_4.NavItem",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 17,
-                  "charOffset": 16,
-                  "snippet": {
-                    "text": "ManagerNavigation"
-                  }
-                }
-              },
-              "properties": {
-                "member": "NavItem",
-                "module": "CompanyHolidaysScreen",
-                "type": "CompanyHolidaysScreen.Navigation_4"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "ManagerNavigation"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidName",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "CompanyHolidaysScreen.Navigation_4.NavItem"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "CompanyHolidaysScreen.Navigation_4.NavItem",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 18,
-                  "charOffset": 34,
-                  "snippet": {
-                    "text": "EmployeeNavigation"
-                  }
-                }
-              },
-              "properties": {
-                "member": "NavItem",
-                "module": "CompanyHolidaysScreen",
-                "type": "CompanyHolidaysScreen.Navigation_4"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "EmployeeNavigation"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidName",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "CompanyHolidaysScreen.Navigation_4.NavItem"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "CompanyHolidaysScreen.Navigation_4.NavItem",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 53,
-                  "charOffset": 0,
-                  "snippet": {
-                    "text": "If(_managerView,ManagerNavigation,EmployeeNavigation)"
-                  }
-                }
-              },
-              "properties": {
-                "member": "NavItem",
-                "module": "CompanyHolidaysScreen",
-                "type": "CompanyHolidaysScreen.Navigation_4"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "If"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidArgs-Func",
-          "ruleIndex": 3
+          "ruleIndex": 0
         },
         {
           "locations": [
@@ -7311,7 +3953,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrInvalidDot",
-          "ruleIndex": 6
+          "ruleIndex": 4
         },
         {
           "locations": [
@@ -7348,7 +3990,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrInvalidDot",
-          "ruleIndex": 6
+          "ruleIndex": 4
         },
         {
           "locations": [
@@ -7389,7 +4031,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrIncompatibleTypesForEquality-Left-Right",
-          "ruleIndex": 11
+          "ruleIndex": 6
         },
         {
           "locations": [
@@ -7466,84 +4108,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrInvalidDot",
-          "ruleIndex": 6
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "ConfirmationScreen.OnVisible"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "ConfirmationScreen.OnVisible",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 10,
-                  "charOffset": 835,
-                  "snippet": {
-                    "text": "_myProfile"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnVisible",
-                "module": "ConfirmationScreen",
-                "type": "ConfirmationScreen"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "_myProfile"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidName",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "ConfirmationScreen.OnVisible"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "ConfirmationScreen.OnVisible",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 18,
-                  "charOffset": 845,
-                  "snippet": {
-                    "text": ".UserPrincipalName"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnVisible",
-                "module": "ConfirmationScreen",
-                "type": "ConfirmationScreen"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidDot",
-          "ruleIndex": 6
+          "ruleIndex": 4
         },
         {
           "locations": [
@@ -7620,7 +4185,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrInvalidDot",
-          "ruleIndex": 6
+          "ruleIndex": 4
         },
         {
           "locations": [
@@ -7657,84 +4222,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrInvalidDot",
-          "ruleIndex": 6
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "ConfirmationScreen.OnVisible"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "ConfirmationScreen.OnVisible",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 10,
-                  "charOffset": 1121,
-                  "snippet": {
-                    "text": "_myProfile"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnVisible",
-                "module": "ConfirmationScreen",
-                "type": "ConfirmationScreen"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "_myProfile"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidName",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "ConfirmationScreen.OnVisible"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "ConfirmationScreen.OnVisible",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 18,
-                  "charOffset": 1131,
-                  "snippet": {
-                    "text": ".UserPrincipalName"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnVisible",
-                "module": "ConfirmationScreen",
-                "type": "ConfirmationScreen"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidDot",
-          "ruleIndex": 6
+          "ruleIndex": 4
         },
         {
           "locations": [
@@ -7846,92 +4334,17 @@
           ],
           "message": {
             "arguments": [
-              "Approver"
+              "LeaveType",
+              "Text",
+              "Error"
             ],
             "id": "issue"
           },
           "properties": {
             "level": "High"
           },
-          "ruleId": "app-ErrColDNE-Name",
-          "ruleIndex": 16
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "ConfirmationScreen.OnVisible"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "ConfirmationScreen.OnVisible",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 10,
-                  "charOffset": 1376,
-                  "snippet": {
-                    "text": "_myProfile"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnVisible",
-                "module": "ConfirmationScreen",
-                "type": "ConfirmationScreen"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "_myProfile"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidName",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "ConfirmationScreen.OnVisible"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "ConfirmationScreen.OnVisible",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 12,
-                  "charOffset": 1386,
-                  "snippet": {
-                    "text": ".DisplayName"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnVisible",
-                "module": "ConfirmationScreen",
-                "type": "ConfirmationScreen"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidDot",
-          "ruleIndex": 6
+          "ruleId": "app-ErrTypeError-Arg-Expected-Found",
+          "ruleIndex": 13
         },
         {
           "locations": [
@@ -8008,7 +4421,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrInvalidDot",
-          "ruleIndex": 6
+          "ruleIndex": 4
         },
         {
           "locations": [
@@ -8064,6 +4477,43 @@
                   "relativeAddress": 0
                 },
                 "region": {
+                  "charLength": 94,
+                  "charOffset": 1426,
+                  "snippet": {
+                    "text": "{\n                Field: \"{LeaveType}\",\n                Data: _selectedLeaveType\n            }"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnVisible",
+                "module": "ConfirmationScreen",
+                "type": "ConfirmationScreen"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrIncompatibleTypes",
+          "ruleIndex": 14
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "ConfirmationScreen.OnVisible"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "ConfirmationScreen.OnVisible",
+                  "relativeAddress": 0
+                },
+                "region": {
                   "charLength": 97,
                   "charOffset": 1640,
                   "snippet": {
@@ -8085,7 +4535,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrIncompatibleTypes",
-          "ruleIndex": 17
+          "ruleIndex": 14
         },
         {
           "locations": [
@@ -8122,7 +4572,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrIncompatibleTypes",
-          "ruleIndex": 17
+          "ruleIndex": 14
         },
         {
           "locations": [
@@ -8159,7 +4609,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrIncompatibleTypes",
-          "ruleIndex": 17
+          "ruleIndex": 14
         },
         {
           "locations": [
@@ -8201,7 +4651,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrColumnTypeMismatch-ColName-ExpectedType-ActualType",
-          "ruleIndex": 15
+          "ruleIndex": 12
         },
         {
           "locations": [
@@ -8248,191 +4698,6 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "ConfirmationScreen.OnVisible"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "ConfirmationScreen.OnVisible",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 47,
-                  "charOffset": 2902,
-                  "snippet": {
-                    "text": "Set(\n        _leaveStart,\n        Today()\n    )"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnVisible",
-                "module": "ConfirmationScreen",
-                "type": "ConfirmationScreen"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrIncompatibleCtxtVariableTypes",
-          "ruleIndex": 7
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "ConfirmationScreen.OnVisible"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "ConfirmationScreen.OnVisible",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 45,
-                  "charOffset": 2955,
-                  "snippet": {
-                    "text": "Set(\n        _leaveEnd,\n        Today()\n    )"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnVisible",
-                "module": "ConfirmationScreen",
-                "type": "ConfirmationScreen"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrIncompatibleCtxtVariableTypes",
-          "ruleIndex": 7
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "ConfirmationScreen.OnVisible"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "ConfirmationScreen.OnVisible",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 42,
-                  "charOffset": 3006,
-                  "snippet": {
-                    "text": "Set(\n        _leaveTitle,\n        \"\"\n    )"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnVisible",
-                "module": "ConfirmationScreen",
-                "type": "ConfirmationScreen"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrIncompatibleCtxtVariableTypes",
-          "ruleIndex": 7
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "ConfirmationScreen.OnVisible"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "ConfirmationScreen.OnVisible",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 43,
-                  "charOffset": 3054,
-                  "snippet": {
-                    "text": "Set(\n        _leaveDetail,\n        \"\"\n    )"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnVisible",
-                "module": "ConfirmationScreen",
-                "type": "ConfirmationScreen"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrIncompatibleCtxtVariableTypes",
-          "ruleIndex": 7
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "ConfirmationScreen.OnVisible"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "ConfirmationScreen.OnVisible",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 54,
-                  "charOffset": 3103,
-                  "snippet": {
-                    "text": "Set(\n        _selectedLeaveType,\n        Blank()\n    )"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnVisible",
-                "module": "ConfirmationScreen",
-                "type": "ConfirmationScreen"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrIncompatibleCtxtVariableTypes",
-          "ruleIndex": 7
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
                   "fullyQualifiedName": "ConfirmationScreen.IconHeaderCreateNew_4.OnSelect"
                 }
               ],
@@ -8463,322 +4728,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrIncompatibleCtxtVariableTypes",
-          "ruleIndex": 7
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "ConfirmationScreen.Navigation_8.NavItem"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "ConfirmationScreen.Navigation_8.NavItem",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 17,
-                  "charOffset": 16,
-                  "snippet": {
-                    "text": "ManagerNavigation"
-                  }
-                }
-              },
-              "properties": {
-                "member": "NavItem",
-                "module": "ConfirmationScreen",
-                "type": "ConfirmationScreen.Navigation_8"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "ManagerNavigation"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidName",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "ConfirmationScreen.Navigation_8.NavItem"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "ConfirmationScreen.Navigation_8.NavItem",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 18,
-                  "charOffset": 34,
-                  "snippet": {
-                    "text": "EmployeeNavigation"
-                  }
-                }
-              },
-              "properties": {
-                "member": "NavItem",
-                "module": "ConfirmationScreen",
-                "type": "ConfirmationScreen.Navigation_8"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "EmployeeNavigation"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidName",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "ConfirmationScreen.Navigation_8.NavItem"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "ConfirmationScreen.Navigation_8.NavItem",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 53,
-                  "charOffset": 0,
-                  "snippet": {
-                    "text": "If(_managerView,ManagerNavigation,EmployeeNavigation)"
-                  }
-                }
-              },
-              "properties": {
-                "member": "NavItem",
-                "module": "ConfirmationScreen",
-                "type": "ConfirmationScreen.Navigation_8"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "If"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidArgs-Func",
-          "ruleIndex": 3
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "HomeScreen.OnVisible"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "HomeScreen.OnVisible",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 13,
-                  "charOffset": 240,
-                  "snippet": {
-                    "text": "EmployeeEmail"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnVisible",
-                "module": "HomeScreen",
-                "type": "HomeScreen"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "EmployeeEmail"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidName",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "HomeScreen.OnVisible"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "HomeScreen.OnVisible",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 10,
-                  "charOffset": 256,
-                  "snippet": {
-                    "text": "_myProfile"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnVisible",
-                "module": "HomeScreen",
-                "type": "HomeScreen"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "_myProfile"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidName",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "HomeScreen.OnVisible"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "HomeScreen.OnVisible",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 18,
-                  "charOffset": 266,
-                  "snippet": {
-                    "text": ".UserPrincipalName"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnVisible",
-                "module": "HomeScreen",
-                "type": "HomeScreen"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidDot",
-          "ruleIndex": 6
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "HomeScreen.OnVisible"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "HomeScreen.OnVisible",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 1,
-                  "charOffset": 254,
-                  "snippet": {
-                    "text": "="
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnVisible",
-                "module": "HomeScreen",
-                "type": "HomeScreen"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Error",
-              "Error"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrIncompatibleTypesForEquality-Left-Right",
-          "ruleIndex": 11
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "HomeScreen.OnVisible"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "HomeScreen.OnVisible",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 40,
-                  "charOffset": 16,
-                  "snippet": {
-                    "text": "Set(_navMenuSelect, \"My Leave Requests\")"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnVisible",
-                "module": "HomeScreen",
-                "type": "HomeScreen"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrIncompatibleCtxtVariableTypes",
-          "ruleIndex": 7
+          "ruleIndex": 0
         },
         {
           "locations": [
@@ -8815,127 +4765,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrIncompatibleCtxtVariableTypes",
-          "ruleIndex": 7
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "HomeScreen.Navigation_5.NavItem"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "HomeScreen.Navigation_5.NavItem",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 17,
-                  "charOffset": 16,
-                  "snippet": {
-                    "text": "ManagerNavigation"
-                  }
-                }
-              },
-              "properties": {
-                "member": "NavItem",
-                "module": "HomeScreen",
-                "type": "HomeScreen.Navigation_5"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "ManagerNavigation"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidName",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "HomeScreen.Navigation_5.NavItem"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "HomeScreen.Navigation_5.NavItem",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 18,
-                  "charOffset": 34,
-                  "snippet": {
-                    "text": "EmployeeNavigation"
-                  }
-                }
-              },
-              "properties": {
-                "member": "NavItem",
-                "module": "HomeScreen",
-                "type": "HomeScreen.Navigation_5"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "EmployeeNavigation"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidName",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "HomeScreen.Navigation_5.NavItem"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "HomeScreen.Navigation_5.NavItem",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 53,
-                  "charOffset": 0,
-                  "snippet": {
-                    "text": "If(_managerView,ManagerNavigation,EmployeeNavigation)"
-                  }
-                }
-              },
-              "properties": {
-                "member": "NavItem",
-                "module": "HomeScreen",
-                "type": "HomeScreen.Navigation_5"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "If"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidArgs-Func",
-          "ruleIndex": 3
+          "ruleIndex": 0
         },
         {
           "locations": [
@@ -9056,7 +4886,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrIncompatibleTypesForEquality-Left-Right",
-          "ruleIndex": 11
+          "ruleIndex": 6
         },
         {
           "locations": [
@@ -9217,7 +5047,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrIncompatibleTypesForEquality-Left-Right",
-          "ruleIndex": 11
+          "ruleIndex": 6
         },
         {
           "locations": [
@@ -9294,7 +5124,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrInvalidDot",
-          "ruleIndex": 6
+          "ruleIndex": 4
         },
         {
           "locations": [
@@ -9411,7 +5241,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrInvalidDot",
-          "ruleIndex": 6
+          "ruleIndex": 4
         },
         {
           "locations": [
@@ -9448,7 +5278,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrInvalidDot",
-          "ruleIndex": 6
+          "ruleIndex": 4
         },
         {
           "locations": [
@@ -9565,7 +5395,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrInvalidDot",
-          "ruleIndex": 6
+          "ruleIndex": 4
         },
         {
           "locations": [
@@ -9602,7 +5432,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrInvalidDot",
-          "ruleIndex": 6
+          "ruleIndex": 4
         },
         {
           "locations": [
@@ -9719,7 +5549,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrInvalidDot",
-          "ruleIndex": 6
+          "ruleIndex": 4
         },
         {
           "locations": [
@@ -9756,7 +5586,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrInvalidDot",
-          "ruleIndex": 6
+          "ruleIndex": 4
         },
         {
           "locations": [
@@ -9873,7 +5703,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrInvalidDot",
-          "ruleIndex": 6
+          "ruleIndex": 4
         },
         {
           "locations": [
@@ -9910,7 +5740,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrInvalidDot",
-          "ruleIndex": 6
+          "ruleIndex": 4
         },
         {
           "locations": [
@@ -10027,7 +5857,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrInvalidDot",
-          "ruleIndex": 6
+          "ruleIndex": 4
         },
         {
           "locations": [
@@ -10064,7 +5894,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrInvalidDot",
-          "ruleIndex": 6
+          "ruleIndex": 4
         },
         {
           "locations": [
@@ -10181,7 +6011,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrInvalidDot",
-          "ruleIndex": 6
+          "ruleIndex": 4
         },
         {
           "locations": [
@@ -10218,7 +6048,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrInvalidDot",
-          "ruleIndex": 6
+          "ruleIndex": 4
         },
         {
           "locations": [
@@ -10335,7 +6165,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrInvalidDot",
-          "ruleIndex": 6
+          "ruleIndex": 4
         },
         {
           "locations": [
@@ -10372,7 +6202,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrInvalidDot",
-          "ruleIndex": 6
+          "ruleIndex": 4
         },
         {
           "locations": [
@@ -10413,7 +6243,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrIncompatibleTypesForEquality-Left-Right",
-          "ruleIndex": 11
+          "ruleIndex": 6
         },
         {
           "locations": [
@@ -10490,7 +6320,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrInvalidDot",
-          "ruleIndex": 6
+          "ruleIndex": 4
         },
         {
           "locations": [
@@ -10527,7 +6357,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrInvalidDot",
-          "ruleIndex": 6
+          "ruleIndex": 4
         },
         {
           "locations": [
@@ -10644,7 +6474,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrInvalidDot",
-          "ruleIndex": 6
+          "ruleIndex": 4
         },
         {
           "locations": [
@@ -10681,7 +6511,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrInvalidDot",
-          "ruleIndex": 6
+          "ruleIndex": 4
         },
         {
           "locations": [
@@ -10722,7 +6552,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrIncompatibleTypesForEquality-Left-Right",
-          "ruleIndex": 11
+          "ruleIndex": 6
         },
         {
           "locations": [
@@ -10799,7 +6629,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrInvalidDot",
-          "ruleIndex": 6
+          "ruleIndex": 4
         },
         {
           "locations": [
@@ -10836,7 +6666,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrInvalidDot",
-          "ruleIndex": 6
+          "ruleIndex": 4
         },
         {
           "locations": [
@@ -10877,46 +6707,6 @@
           },
           "ruleId": "app-ErrInvalidArgs-Func",
           "ruleIndex": 3
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "HomeScreen.GalleryRequest.galleryTemplate10.OnSelect"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "HomeScreen.GalleryRequest.galleryTemplate10.OnSelect",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 13,
-                  "charOffset": 267,
-                  "snippet": {
-                    "text": "EmployeeEmail"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnSelect",
-                "module": "HomeScreen",
-                "type": "HomeScreen.GalleryRequest.galleryTemplate10"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "EmployeeEmail"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidName",
-          "ruleIndex": 2
         },
         {
           "locations": [
@@ -10988,7 +6778,7 @@
           ],
           "message": {
             "arguments": [
-              "Error",
+              "Text",
               "Error"
             ],
             "id": "issue"
@@ -10997,47 +6787,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrIncompatibleTypesForEquality-Left-Right",
-          "ruleIndex": 11
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "HomeScreen.GalleryRequest.galleryTemplate10.OnSelect"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "HomeScreen.GalleryRequest.galleryTemplate10.OnSelect",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 9,
-                  "charOffset": 456,
-                  "snippet": {
-                    "text": "Requester"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnSelect",
-                "module": "HomeScreen",
-                "type": "HomeScreen.GalleryRequest.galleryTemplate10"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Requester"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidName",
-          "ruleIndex": 2
+          "ruleIndex": 6
         },
         {
           "locations": [
@@ -11109,127 +6859,6 @@
           ],
           "message": {
             "arguments": [
-              "Error",
-              "Error"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrIncompatibleTypesForEquality-Left-Right",
-          "ruleIndex": 11
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "HomeScreen.GalleryRequest.galleryTemplate10.OnSelect"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "HomeScreen.GalleryRequest.galleryTemplate10.OnSelect",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 9,
-                  "charOffset": 612,
-                  "snippet": {
-                    "text": "Requester"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnSelect",
-                "module": "HomeScreen",
-                "type": "HomeScreen.GalleryRequest.galleryTemplate10"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Requester"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidName",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "HomeScreen.GalleryRequest.galleryTemplate10.OnSelect"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "HomeScreen.GalleryRequest.galleryTemplate10.OnSelect",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 36,
-                  "charOffset": 586,
-                  "snippet": {
-                    "text": "Distinct(RequestOverlaps, Requester)"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnSelect",
-                "module": "HomeScreen",
-                "type": "HomeScreen.GalleryRequest.galleryTemplate10"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Distinct"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidArgs-Func",
-          "ruleIndex": 3
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "HomeScreen.GalleryRequest.galleryTemplate10.OnSelect"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "HomeScreen.GalleryRequest.galleryTemplate10.OnSelect",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 6,
-                  "charOffset": 653,
-                  "snippet": {
-                    "text": "Result"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnSelect",
-                "module": "HomeScreen",
-                "type": "HomeScreen.GalleryRequest.galleryTemplate10"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
               "Text",
               "Error"
             ],
@@ -11238,48 +6867,8 @@
           "properties": {
             "level": "High"
           },
-          "ruleId": "app-ErrBadType-ExpectedType-ProvidedType",
-          "ruleIndex": 18
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "HomeScreen.GalleryRequest.galleryTemplate10.OnSelect"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "HomeScreen.GalleryRequest.galleryTemplate10.OnSelect",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 94,
-                  "charOffset": 572,
-                  "snippet": {
-                    "text": "Concat(ForAll(Distinct(RequestOverlaps, Requester), {Result: ThisRecord.Value}), Result, \", \")"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnSelect",
-                "module": "HomeScreen",
-                "type": "HomeScreen.GalleryRequest.galleryTemplate10"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Concat"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidArgs-Func",
-          "ruleIndex": 3
+          "ruleId": "app-ErrIncompatibleTypesForEquality-Left-Right",
+          "ruleIndex": 6
         },
         {
           "locations": [
@@ -11400,7 +6989,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrBadType-ExpectedType-ProvidedType",
-          "ruleIndex": 18
+          "ruleIndex": 15
         },
         {
           "locations": [
@@ -11517,7 +7106,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrInvalidDot",
-          "ruleIndex": 6
+          "ruleIndex": 4
         },
         {
           "locations": [
@@ -11554,7 +7143,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrInvalidDot",
-          "ruleIndex": 6
+          "ruleIndex": 4
         },
         {
           "locations": [
@@ -11671,7 +7260,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrInvalidDot",
-          "ruleIndex": 6
+          "ruleIndex": 4
         },
         {
           "locations": [
@@ -11708,7 +7297,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrInvalidDot",
-          "ruleIndex": 6
+          "ruleIndex": 4
         },
         {
           "locations": [
@@ -11938,7 +7527,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 19
+          "ruleIndex": 16
         },
         {
           "locations": [
@@ -11968,7 +7557,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 20
+          "ruleIndex": 17
         },
         {
           "locations": [
@@ -11998,7 +7587,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 19
+          "ruleIndex": 16
         },
         {
           "locations": [
@@ -12028,7 +7617,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 20
+          "ruleIndex": 17
         },
         {
           "locations": [
@@ -12058,7 +7647,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 19
+          "ruleIndex": 16
         },
         {
           "locations": [
@@ -12088,7 +7677,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 20
+          "ruleIndex": 17
         },
         {
           "locations": [
@@ -12118,7 +7707,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 19
+          "ruleIndex": 16
         },
         {
           "locations": [
@@ -12148,7 +7737,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 19
+          "ruleIndex": 16
         },
         {
           "locations": [
@@ -12178,7 +7767,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 20
+          "ruleIndex": 17
         },
         {
           "locations": [
@@ -12208,7 +7797,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 20
+          "ruleIndex": 17
         },
         {
           "locations": [
@@ -12238,7 +7827,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 20
+          "ruleIndex": 17
         },
         {
           "locations": [
@@ -12268,7 +7857,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 20
+          "ruleIndex": 17
         },
         {
           "locations": [
@@ -12298,7 +7887,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 20
+          "ruleIndex": 17
         },
         {
           "locations": [
@@ -12328,7 +7917,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 19
+          "ruleIndex": 16
         },
         {
           "locations": [
@@ -12358,7 +7947,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 20
+          "ruleIndex": 17
         },
         {
           "locations": [
@@ -12388,7 +7977,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-FocusBorderShouldBeVisible",
-          "ruleIndex": 21
+          "ruleIndex": 18
         },
         {
           "locations": [
@@ -12418,7 +8007,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 20
+          "ruleIndex": 17
         },
         {
           "locations": [
@@ -12448,7 +8037,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-FocusBorderShouldBeVisible",
-          "ruleIndex": 21
+          "ruleIndex": 18
         },
         {
           "locations": [
@@ -12478,7 +8067,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 20
+          "ruleIndex": 17
         },
         {
           "locations": [
@@ -12508,7 +8097,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-FocusBorderShouldBeVisible",
-          "ruleIndex": 21
+          "ruleIndex": 18
         },
         {
           "locations": [
@@ -12538,7 +8127,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 20
+          "ruleIndex": 17
         },
         {
           "locations": [
@@ -12568,7 +8157,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-FocusBorderShouldBeVisible",
-          "ruleIndex": 21
+          "ruleIndex": 18
         },
         {
           "locations": [
@@ -12598,7 +8187,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 20
+          "ruleIndex": 17
         },
         {
           "locations": [
@@ -12627,7 +8216,7 @@
             "level": "Low"
           },
           "ruleId": "acc-ReadableScreenNameNeeded",
-          "ruleIndex": 22
+          "ruleIndex": 19
         },
         {
           "locations": [
@@ -12657,7 +8246,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 20
+          "ruleIndex": 17
         },
         {
           "locations": [
@@ -12687,7 +8276,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-FocusBorderShouldBeVisible",
-          "ruleIndex": 21
+          "ruleIndex": 18
         },
         {
           "locations": [
@@ -12717,7 +8306,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 20
+          "ruleIndex": 17
         },
         {
           "locations": [
@@ -12747,7 +8336,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-FocusBorderShouldBeVisible",
-          "ruleIndex": 21
+          "ruleIndex": 18
         },
         {
           "locations": [
@@ -12777,7 +8366,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 20
+          "ruleIndex": 17
         },
         {
           "locations": [
@@ -12807,7 +8396,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 19
+          "ruleIndex": 16
         },
         {
           "locations": [
@@ -12837,7 +8426,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 20
+          "ruleIndex": 17
         },
         {
           "locations": [
@@ -12867,7 +8456,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-FocusBorderShouldBeVisible",
-          "ruleIndex": 21
+          "ruleIndex": 18
         },
         {
           "locations": [
@@ -12897,7 +8486,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 20
+          "ruleIndex": 17
         },
         {
           "locations": [
@@ -12927,7 +8516,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-FocusBorderShouldBeVisible",
-          "ruleIndex": 21
+          "ruleIndex": 18
         },
         {
           "locations": [
@@ -12957,7 +8546,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 20
+          "ruleIndex": 17
         },
         {
           "locations": [
@@ -12986,7 +8575,7 @@
             "level": "Low"
           },
           "ruleId": "acc-ReadableScreenNameNeeded",
-          "ruleIndex": 22
+          "ruleIndex": 19
         },
         {
           "locations": [
@@ -13016,7 +8605,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 19
+          "ruleIndex": 16
         },
         {
           "locations": [
@@ -13046,7 +8635,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 20
+          "ruleIndex": 17
         },
         {
           "locations": [
@@ -13076,7 +8665,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 19
+          "ruleIndex": 16
         },
         {
           "locations": [
@@ -13106,7 +8695,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 20
+          "ruleIndex": 17
         },
         {
           "locations": [
@@ -13136,7 +8725,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 19
+          "ruleIndex": 16
         },
         {
           "locations": [
@@ -13166,7 +8755,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 20
+          "ruleIndex": 17
         },
         {
           "locations": [
@@ -13196,7 +8785,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-FocusBorderShouldBeVisible",
-          "ruleIndex": 21
+          "ruleIndex": 18
         },
         {
           "locations": [
@@ -13226,7 +8815,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 19
+          "ruleIndex": 16
         },
         {
           "locations": [
@@ -13256,7 +8845,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-FocusBorderShouldBeVisible",
-          "ruleIndex": 21
+          "ruleIndex": 18
         },
         {
           "locations": [
@@ -13286,7 +8875,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 20
+          "ruleIndex": 17
         },
         {
           "locations": [
@@ -13316,7 +8905,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 20
+          "ruleIndex": 17
         },
         {
           "locations": [
@@ -13346,7 +8935,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 20
+          "ruleIndex": 17
         },
         {
           "locations": [
@@ -13376,7 +8965,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 20
+          "ruleIndex": 17
         },
         {
           "locations": [
@@ -13406,7 +8995,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 19
+          "ruleIndex": 16
         },
         {
           "locations": [
@@ -13436,7 +9025,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 20
+          "ruleIndex": 17
         },
         {
           "locations": [
@@ -13466,7 +9055,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 19
+          "ruleIndex": 16
         },
         {
           "locations": [
@@ -13496,7 +9085,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 19
+          "ruleIndex": 16
         },
         {
           "locations": [
@@ -13526,7 +9115,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 20
+          "ruleIndex": 17
         },
         {
           "locations": [
@@ -13556,7 +9145,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 20
+          "ruleIndex": 17
         },
         {
           "locations": [
@@ -13586,7 +9175,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 20
+          "ruleIndex": 17
         },
         {
           "locations": [
@@ -13616,7 +9205,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 20
+          "ruleIndex": 17
         },
         {
           "locations": [
@@ -13646,7 +9235,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 19
+          "ruleIndex": 16
         },
         {
           "locations": [
@@ -13676,7 +9265,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 20
+          "ruleIndex": 17
         },
         {
           "locations": [
@@ -13706,7 +9295,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 20
+          "ruleIndex": 17
         },
         {
           "locations": [
@@ -13736,7 +9325,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 19
+          "ruleIndex": 16
         },
         {
           "locations": [
@@ -13766,7 +9355,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 20
+          "ruleIndex": 17
         },
         {
           "locations": [
@@ -13796,7 +9385,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 20
+          "ruleIndex": 17
         },
         {
           "locations": [
@@ -13826,7 +9415,7 @@
             "level": "Medium"
           },
           "ruleId": "app-UnusedVariables",
-          "ruleIndex": 23
+          "ruleIndex": 20
         },
         {
           "locations": [
@@ -13856,7 +9445,7 @@
             "level": "Medium"
           },
           "ruleId": "app-UnusedVariables",
-          "ruleIndex": 23
+          "ruleIndex": 20
         },
         {
           "locations": [
@@ -13886,7 +9475,7 @@
             "level": "Medium"
           },
           "ruleId": "app-UnusedVariables",
-          "ruleIndex": 23
+          "ruleIndex": 20
         },
         {
           "locations": [
@@ -13916,7 +9505,7 @@
             "level": "Medium"
           },
           "ruleId": "app-UnusedMediaResources",
-          "ruleIndex": 24
+          "ruleIndex": 21
         },
         {
           "locations": [
@@ -13946,7 +9535,7 @@
             "level": "Medium"
           },
           "ruleId": "app-UnusedMediaResources",
-          "ruleIndex": 24
+          "ruleIndex": 21
         },
         {
           "locations": [
@@ -13976,7 +9565,7 @@
             "level": "Medium"
           },
           "ruleId": "app-UnusedMediaResources",
-          "ruleIndex": 24
+          "ruleIndex": 21
         },
         {
           "locations": [
@@ -14006,7 +9595,7 @@
             "level": "Medium"
           },
           "ruleId": "app-UnusedMediaResources",
-          "ruleIndex": 24
+          "ruleIndex": 21
         },
         {
           "locations": [
@@ -14036,7 +9625,7 @@
             "level": "Medium"
           },
           "ruleId": "app-UnusedMediaResources",
-          "ruleIndex": 24
+          "ruleIndex": 21
         },
         {
           "locations": [
@@ -14066,7 +9655,7 @@
             "level": "Medium"
           },
           "ruleId": "app-UnusedMediaResources",
-          "ruleIndex": 24
+          "ruleIndex": 21
         },
         {
           "locations": [
@@ -14096,7 +9685,7 @@
             "level": "Medium"
           },
           "ruleId": "app-UnusedMediaResources",
-          "ruleIndex": 24
+          "ruleIndex": 21
         },
         {
           "locations": [
@@ -14125,7 +9714,7 @@
             "level": "Medium"
           },
           "ruleId": "app-ScreenHasManyControls",
-          "ruleIndex": 25
+          "ruleIndex": 22
         }
       ],
       "tool": {
@@ -14134,16 +9723,16 @@
           "name": "PowerApps app checker",
           "rules": [
             {
-              "id": "app-ErrOperatorExpected",
+              "id": "app-ErrIncompatibleCtxtVariableTypes",
               "messageStrings": {
                 "issue": {
-                  "text": "Expected operator. We expect an operator such as +, *, or & at this point in the formula."
+                  "text": "Incompatible type. We can't evaluate your formula because the context variable types are incompatible with the types of values in other places in your app."
                 }
               },
               "properties": {
                 "componentType": "app",
                 "howToFix": [
-                  "Edit your formula so that it includes an operator between the operands."
+                  "Look at places where you use a context variable and make sure that the type (e.g., text, number, date, record, table) is compatible."
                 ],
                 "level": "High",
                 "primaryCategory": "formula",
@@ -14151,18 +9740,21 @@
               }
             },
             {
-              "id": "app-ErrBadToken",
+              "id": "app-SuggestRemoteExecutionHint-InOpRhs",
               "messageStrings": {
                 "issue": {
-                  "text": "Unexpected characters. Characters are used in the formula in an unexpected way."
+                  "text": "Delegation warning. The highlighted part of this formula might not work correctly on large data sets."
                 }
               },
               "properties": {
                 "componentType": "app",
                 "howToFix": [
-                  "Remove or replace the unexpected characters."
+                  "Change the item to the right of the \"in\" operator to be a column from the correct data source.",
+                  "If your data set exceeds the 500 record limit but contains less than 2,000 records, try resetting the limit.",
+                  "Try simplifying the formula.",
+                  "Try moving your data to a different data source."
                 ],
-                "level": "High",
+                "level": "Medium",
                 "primaryCategory": "formula",
                 "whyFix": ""
               }
@@ -14199,34 +9791,6 @@
               }
             },
             {
-              "id": "app-ErrBadArity",
-              "messageStrings": {
-                "issue": {
-                  "text": "Invalid number of arguments: received {0}, expected {1}."
-                }
-              },
-              "properties": {
-                "componentType": "app",
-                "level": "High",
-                "primaryCategory": "formula",
-                "whyFix": ""
-              }
-            },
-            {
-              "id": "app-ErrBadType",
-              "messageStrings": {
-                "issue": {
-                  "text": "Invalid argument type."
-                }
-              },
-              "properties": {
-                "componentType": "app",
-                "level": "High",
-                "primaryCategory": "formula",
-                "whyFix": ""
-              }
-            },
-            {
               "id": "app-ErrInvalidDot",
               "messageStrings": {
                 "issue": {
@@ -14236,60 +9800,6 @@
               "properties": {
                 "componentType": "app",
                 "level": "High",
-                "primaryCategory": "formula",
-                "whyFix": ""
-              }
-            },
-            {
-              "id": "app-ErrIncompatibleCtxtVariableTypes",
-              "messageStrings": {
-                "issue": {
-                  "text": "Incompatible type. We can't evaluate your formula because the context variable types are incompatible with the types of values in other places in your app."
-                }
-              },
-              "properties": {
-                "componentType": "app",
-                "howToFix": [
-                  "Look at places where you use a context variable and make sure that the type (e.g., text, number, date, record, table) is compatible."
-                ],
-                "level": "High",
-                "primaryCategory": "formula",
-                "whyFix": ""
-              }
-            },
-            {
-              "id": "app-ErrExpectedFound-Ex-Fnd",
-              "messageStrings": {
-                "issue": {
-                  "text": "Unexpected characters. The formula contains '{0}' where '{1}' is expected."
-                }
-              },
-              "properties": {
-                "componentType": "app",
-                "howToFix": [
-                  "Remove or replace the unexpected characters with an expected character."
-                ],
-                "level": "High",
-                "primaryCategory": "formula",
-                "whyFix": ""
-              }
-            },
-            {
-              "id": "app-SuggestRemoteExecutionHint-InOpRhs",
-              "messageStrings": {
-                "issue": {
-                  "text": "Delegation warning. The highlighted part of this formula might not work correctly on large data sets."
-                }
-              },
-              "properties": {
-                "componentType": "app",
-                "howToFix": [
-                  "Change the item to the right of the \"in\" operator to be a column from the correct data source.",
-                  "If your data set exceeds the 500 record limit but contains less than 2,000 records, try resetting the limit.",
-                  "Try simplifying the formula.",
-                  "Try moving your data to a different data source."
-                ],
-                "level": "Medium",
                 "primaryCategory": "formula",
                 "whyFix": ""
               }
@@ -14341,6 +9851,20 @@
               }
             },
             {
+              "id": "app-ErrBadType",
+              "messageStrings": {
+                "issue": {
+                  "text": "Invalid argument type."
+                }
+              },
+              "properties": {
+                "componentType": "app",
+                "level": "High",
+                "primaryCategory": "formula",
+                "whyFix": ""
+              }
+            },
+            {
               "id": "app-ErrIncompatibleRulePropTypes-PropKind-RuleKind",
               "messageStrings": {
                 "issue": {
@@ -14351,6 +9875,23 @@
                 "componentType": "app",
                 "howToFix": [
                   "Change the rule to produce a {0} value."
+                ],
+                "level": "High",
+                "primaryCategory": "formula",
+                "whyFix": ""
+              }
+            },
+            {
+              "id": "app-ErrExpectedFound-Ex-Fnd",
+              "messageStrings": {
+                "issue": {
+                  "text": "Unexpected characters. The formula contains '{0}' where '{1}' is expected."
+                }
+              },
+              "properties": {
+                "componentType": "app",
+                "howToFix": [
+                  "Remove or replace the unexpected characters with an expected character."
                 ],
                 "level": "High",
                 "primaryCategory": "formula",
@@ -14389,10 +9930,10 @@
               }
             },
             {
-              "id": "app-ErrColDNE-Name",
+              "id": "app-ErrTypeError-Arg-Expected-Found",
               "messageStrings": {
                 "issue": {
-                  "text": "The specified column '{0}' does not exist."
+                  "text": "The type of this argument '{0}' does not match the expected type '{1}'. Found type '{2}'."
                 }
               },
               "properties": {
