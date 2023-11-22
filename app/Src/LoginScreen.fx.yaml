@@ -1,9 +1,7 @@
 LoginScreen As screen:
     Height: =Max(App.Height, App.DesignHeight)
-    OnVisible: |-
+    OnVisible: |
         =//whenever user navigates to this page, set their approver to their manager
-        Set(_selectedApprover, Office365Users.Manager(_myProfile.Id));
-        Set(_selectedApproverPhoto, If(Office365Users.UserPhotoMetadata(_selectedApprover.Id).HasPhoto, Office365Users.UserPhoto(_selectedApprover.Id)))
     Orientation: =If(LoginScreen.Width < LoginScreen.Height, Layout.Vertical, Layout.Horizontal)
     Size: =1 + CountRows(App.SizeBreakpoints) - CountIf(App.SizeBreakpoints, Value >= LoginScreen.Width)
     Width: =Max(App.Width, App.DesignWidth)

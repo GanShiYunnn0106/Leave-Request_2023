@@ -35,7 +35,14 @@
         "DisabledColor",
         "PressedColor",
         "HoverColor",
-        "DisplayMode",
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "DisplayMode.Edit",
+          "InvariantPropertyName": "DisplayMode",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
         {
           "AFDDataSourceName": "",
           "AutoRuleBindingEnabled": false,
@@ -744,7 +751,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "GroupDateSection",
-      "ParentIndex": 31,
+      "ParentIndex": 32,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -795,7 +802,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "GroupLeaveType",
-      "ParentIndex": 33,
+      "ParentIndex": 34,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -846,7 +853,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "GroupRequestInfo",
-      "ParentIndex": 32,
+      "ParentIndex": 33,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -897,7 +904,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Header_1",
-      "ParentIndex": 30,
+      "ParentIndex": 31,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
