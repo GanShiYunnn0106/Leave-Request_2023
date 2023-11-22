@@ -69,7 +69,7 @@ LeaveBalanceScreen As screen:
             Align: =Align.Center
             Height: =50
             OnSelect: =Select(Parent)
-            Text: =Round(ThisItem.AnnualCarriedForward.Value,0) & " day(s)"
+            Text: =Round(ThisItem.AnnualCarriedForward,0) & " day(s)"
             Width: =212
             X: =45
             Y: =133
@@ -126,7 +126,7 @@ LeaveBalanceScreen As screen:
             Align: =Align.Center
             Height: =50
             OnSelect: =Select(Parent)
-            Text: =Round(ThisItem.AnnualLeaveBalance,0) & " day(s)"
+            Text: =ThisItem.AnnualLeaveBalance
             Width: =212
             X: =342
             Y: =133
