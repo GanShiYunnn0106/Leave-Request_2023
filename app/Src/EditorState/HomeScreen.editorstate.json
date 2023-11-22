@@ -55,7 +55,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "%TemplateBrowseGalleryBody.ID%",
       "Name": "Body1",
-      "ParentIndex": 8,
+      "ParentIndex": 3,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -325,7 +325,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "BtnEmailRequester",
-      "ParentIndex": 20,
+      "ParentIndex": 16,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -605,7 +605,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "BtnManagerApprove",
-      "ParentIndex": 18,
+      "ParentIndex": 14,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -930,7 +930,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "BtnManagerDecline",
-      "ParentIndex": 19,
+      "ParentIndex": 15,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -1201,7 +1201,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Button5",
-      "ParentIndex": 7,
+      "ParentIndex": 9,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -1695,7 +1695,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "ButtonFilter",
-      "ParentIndex": 8,
+      "ParentIndex": 10,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -2206,7 +2206,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "GalleryRequest",
-      "ParentIndex": 13,
+      "ParentIndex": 17,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -2448,7 +2448,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "GalleryRequestDetails",
-      "ParentIndex": 12,
+      "ParentIndex": 13,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -3878,7 +3878,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "IconRequesterEdit",
-      "ParentIndex": 16,
+      "ParentIndex": 19,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -4137,7 +4137,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Image1_1",
-      "ParentIndex": 3,
+      "ParentIndex": 2,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -4346,7 +4346,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Label1",
-      "ParentIndex": 2,
+      "ParentIndex": 7,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -4823,7 +4823,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Label3",
-      "ParentIndex": 3,
+      "ParentIndex": 8,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -5089,7 +5089,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Label9_3",
-      "ParentIndex": 2,
+      "ParentIndex": 3,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -5336,7 +5336,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "LblEmptyRequests",
-      "ParentIndex": 15,
+      "ParentIndex": 18,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -6878,7 +6878,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "LblRequesterEdit",
-      "ParentIndex": 17,
+      "ParentIndex": 20,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -7145,7 +7145,7 @@
       },
       "MetaDataIDKey": "",
       "Name": "Navigation_5",
-      "ParentIndex": 9,
+      "ParentIndex": 8,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -7236,7 +7236,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "%TemplateBrowseGalleryNextIcon.ID%",
       "Name": "NextArrow1",
-      "ParentIndex": 5,
+      "ParentIndex": 4,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -7545,7 +7545,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "%TemplateBrowseGalleryRectangle1.ID%",
       "Name": "Rectangle2",
-      "ParentIndex": 1,
+      "ParentIndex": 6,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -7708,7 +7708,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Rectangle2_1",
-      "ParentIndex": 14,
+      "ParentIndex": 12,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -7972,7 +7972,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "RectNavSep",
-      "ParentIndex": 10,
+      "ParentIndex": 9,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -8079,7 +8079,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "%TemplateBrowseGallerySeparator1.ID%",
       "Name": "Separator1",
-      "ParentIndex": 9,
+      "ParentIndex": 5,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -8221,7 +8221,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "%TemplateBrowseGallerySubtitle.ID%",
       "Name": "Subtitle1",
-      "ParentIndex": 6,
+      "ParentIndex": 2,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -8454,7 +8454,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "%TemplateBrowseGalleryTitle.ID%",
       "Name": "Title1",
-      "ParentIndex": 4,
+      "ParentIndex": 1,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
