@@ -638,7 +638,9 @@ NewRequestScreen As screen:
                 HoverColor: =NRLeaveTypeLabel.Color
                 HoverFill: =NRLeaveTypeLabel.Fill
                 LineHeight: =1
-                OnSelect: =Select(Parent)
+                OnSelect: |
+                    =Set(_LeaveBalance,LookUp(LeaveApp_Employee,NameofEmployee.Email=User().Email).AnnualLeaveBalance);
+                    Select(Parent);
                 PaddingBottom: =0
                 PaddingLeft: =0
                 PaddingRight: =0.00
