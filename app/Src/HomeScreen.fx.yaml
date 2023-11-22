@@ -33,8 +33,8 @@ HomeScreen As screen:
         TemplateSize: =86
         Width: =461
         WrapCount: =4
-        X: =394
-        Y: =82
+        X: =416
+        Y: =74
         ZIndex: =1
 
         ButtonCategories As button:
@@ -57,7 +57,7 @@ HomeScreen As screen:
     "GalleryRequest As gallery.'BrowseLayout_Vertical_ThreeTextVariant_ver5.0'":
         DelayItemLoading: =true
         Fill: =RGBA(242, 242, 242, 1)
-        Height: =512
+        Height: =590
         Items: |-
             =If(
                 ButtonFilter.Selected.Filter = "All",
@@ -124,12 +124,125 @@ HomeScreen As screen:
             //**** END CALCULATION ****
             Set(_showDetails, true);
         TemplatePadding: =0
-        TemplateSize: =199
+        TemplateSize: =171
         Visible: =!_managerView=true
-        Width: =831
-        X: =232
-        Y: =169
+        Width: =889
+        X: =231
+        Y: =154
         ZIndex: =1
+
+        Title1 As label:
+            Height: =25
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =ThisItem.Start_Date
+            VerticalAlign: =VerticalAlign.Top
+            Width: =353
+            X: =170
+            Y: =45
+            ZIndex: =1
+
+        Subtitle1 As label:
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =ThisItem.End_Date
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Title1.Width
+            X: =170
+            Y: =85
+            ZIndex: =2
+
+        Body1 As label:
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =ThisItem.Leave_Type.Value
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Title1.Width
+            X: =Title1.X
+            Y: =124
+            ZIndex: =3
+
+        NextArrow1 As icon.ChevronRight:
+            AccessibleLabel: =Self.Tooltip
+            Color: =RGBA(166, 166, 166, 1)
+            Height: =50
+            Icon: =Icon.ChevronRight
+            OnSelect: =Select(Parent)
+            PaddingBottom: =16
+            PaddingLeft: =16
+            PaddingRight: =16
+            PaddingTop: =16
+            Tooltip: ="View item details"
+            Width: =50
+            X: =Parent.TemplateWidth - Self.Width - 12
+            Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+            ZIndex: =4
+
+        Separator1 As rectangle:
+            Fill: =RGBA(217, 216, 217, 1)
+            Height: =3
+            OnSelect: =Select(Parent)
+            Width: =Parent.TemplateWidth
+            Y: =Parent.TemplateHeight - Self.Height
+            ZIndex: =5
+
+        Rectangle2 As rectangle:
+            Height: =Parent.TemplateHeight - Separator1.Height
+            OnSelect: =Select(Parent)
+            Visible: =ThisItem.IsSelected
+            Width: =4
+            ZIndex: =6
+
+        Label1 As label:
+            Color: =RGBA(101, 128, 187, 1)
+            Font: =Font.'Lato Black'
+            OnSelect: =Select(Parent)
+            Size: =14
+            Text: =ThisItem.Created_By.DisplayName
+            X: =20
+            Y: =5
+            ZIndex: =7
+
+        Label3 As label:
+            FontWeight: =FontWeight.Semibold
+            Height: =107
+            OnSelect: =Select(Parent)
+            Text: |-
+                ="Start date:
+                
+                End date:
+                
+                Leave type:"
+            X: =46
+            Y: =42
+            ZIndex: =8
+
+        Button5 As button:
+            BorderColor: |-
+                =If((ThisItem.Status.Value)="Pending",RGBA(0,71,144,1),
+                (ThisItem.Status.Value)="Rejected",RGBA(213,0,0,1),
+                (ThisItem.Status.Value)="Approved",RGBA(0,128,0,1))
+            Color: |-
+                =If((ThisItem.Status.Value)="Pending",RGBA(0,71,144,1),
+                (ThisItem.Status.Value)="Rejected",RGBA(213,0,0,1),
+                (ThisItem.Status.Value)="Approved",RGBA(0,128,0,1))
+            Fill: =RGBA(255, 255, 255, 1)
+            OnSelect: =Select(Parent)
+            Text: =ThisItem.Status.Value
+            X: =608
+            Y: =110
+            ZIndex: =9
 
     Rectangle3 As rectangle:
         DisabledFill: =Rectangle3.Fill
@@ -139,120 +252,9 @@ HomeScreen As screen:
         HoverFill: =Rectangle3.Fill
         PressedFill: =Rectangle3.Fill
         Width: =246
-        X: =1075
-        Y: =63
+        X: =1120
+        Y: =73
         ZIndex: =3
-
-    "GalleryRequests1 As gallery.'BrowseLayout_Vertical_TwoTextVariant_ver4.0'":
-        AccessibleLabel: ="Leave request gallery"
-        Default: =Blank()
-        DisabledBorderColor: =GalleryRequests1.BorderColor
-        DisabledFill: =GalleryRequests1.Fill
-        Height: =130
-        HoverBorderColor: =GalleryRequests1.BorderColor
-        HoverFill: =GalleryRequests1.Fill
-        Items: |-
-            =//Filter values based on _requestTypeFilter, set by selecting item in GalleryFilters. Sort by StartDate, descending.
-            Sort(
-                If(_requestTypeFilter="All",
-                  Filter(LeaveCollection, If(_managerView, Approver = _myProfile.UserPrincipalName, Requester = _myProfile.UserPrincipalName)), 
-                  Filter(LeaveCollection, Status=_requestTypeFilter && If(_managerView, Approver = _myProfile.UserPrincipalName, Requester = _myProfile.UserPrincipalName)) ), StartDate, SortOrder.Descending)
-        Layout: =Layout.Vertical
-        LoadingSpinnerColor: =GalleryRequests1.BorderColor
-        OnSelect: |-
-            =Set(_selectedLeaveItem, ThisItem);
-            
-            If(_managerView, 
-                //If manager view, get user's leave balance record and determine any overlaps this request has from other people I manage
-                Set(_requesterBalanceRecord, LookUp(BalanceCollection, Year = Text(Year(Now())) && EmployeeEmail = ThisItem.Requester));
-                ClearCollect(RequestOverlaps, Filter(LeaveCollection, EndDate >= _selectedLeaveItem.StartDate && StartDate <= _selectedLeaveItem.EndDate 
-                && Requester <>_selectedLeaveItem.Requester));
-                
-                If(CountRows(RequestOverlaps) > 0, Set(_requestOverlapMessage, Concat(ForAll(Distinct(RequestOverlaps, Requester), {Result: ThisRecord.Value}), Result, ", ")))
-            );
-            
-            Concurrent(
-                //gather requester or approver info depending on view
-                If(_managerView, 
-                    Set(_requester, Office365Users.UserProfile(ThisItem.Requester)), 
-                    Set(_selectedApprover, Office365Users.UserProfile(ThisItem.Approver)); If(Office365Users.UserPhotoMetadata(_selectedApprover.Id).HasPhoto, Set(_selectedApproverPhoto, Office365Users.UserPhoto(_selectedApprover.Id)))),
-                //**** CALCULATION USED TO DETERMINE TOTAL WORK DAYS REQUESTED ****
-                 Set(_inclusiveTotalDaysRequested, DateDiff(ThisItem.StartDate, ThisItem.EndDate, TimeUnit.Days) + 1);
-                    Set(_numFullWeeks, RoundDown(_inclusiveTotalDaysRequested / 7, 0));
-                    Set(_numFullDaysPartialWeek, _inclusiveTotalDaysRequested - _numFullWeeks * 7);
-                    Set(_startWeekday, Weekday(ThisItem.StartDate)); 
-                    Set(_endWeekday, Weekday(ThisItem.EndDate));
-            
-            
-                   //calculates the number of business days in the partial week left over after whole weeks are subtracted out of total days requested
-                If(_numFullDaysPartialWeek = 6, 
-                    If(_startWeekday <= 2, Set(_numPartialWeekdays, 5), Set(_numPartialWeekdays, 4)
-                    ),
-                  _numFullDaysPartialWeek = 5,
-                    If(_startWeekday = 2, Set(_numPartialWeekdays, 5), _startWeekday = 1 || _startWeekday = 3 || _startWeekday = 4, Set(_numPartialWeekdays, 4), Set(_numPartialWeekdays, 3)
-                    ),
-                  _numFullDaysPartialWeek = 4,
-                    If(_startWeekday = 2 || _startWeekday = 3, Set(_numPartialWeekdays, 4), _startWeekday = 1 || _startWeekday = 4, Set(_numPartialWeekdays, 3), Set(_numPartialWeekdays, 2)
-                    ),
-                  _numFullDaysPartialWeek = 3,
-                    If(_startWeekday = 6 || _startWeekday = 7, Set(_numPartialWeekdays, 1), _startWeekday = 1 || _startWeekday = 5, Set(_numPartialWeekdays, 2), Set(_numPartialWeekdays, 3)
-                    ),
-                  _numFullDaysPartialWeek = 2,
-                    If(_startWeekday = 7, Set(_numPartialWeekdays, 0), _startWeekday = 1 || _startWeekday = 6, Set(_numPartialWeekdays, 1), Set(_numPartialWeekdays, 2)),
-                  _numFullDaysPartialWeek = 1,
-                    If(_startWeekday = 1 || _startWeekday = 7, Set(_numPartialWeekdays, 0), Set(_numPartialWeekdays, 1)
-                    ),
-                  _numFullDaysPartialWeek = 0, Set(_numPartialWeekdays, 0)
-                );
-                  Set(_workDaysInRequest, _numFullWeeks * 5 + _numPartialWeekdays),
-                  Set(_holidaysInRequest, CountIf(HolidaysCollection, StartDate >= ThisItem.StartDate, StartDate <= ThisItem.EndDate))
-            );
-            Set(_requestedDays, _workDaysInRequest - _holidaysInRequest);
-            //**** END CALCULATION ****
-            Set(_showDetails, true);
-        PressedBorderColor: =GalleryRequests1.BorderColor
-        PressedFill: =GalleryRequests1.Fill
-        ShowScrollbar: =false
-        TemplateFill: =If(ThisItem.IsSelected, RGBA(249, 249, 249, 1))
-        TemplateSize: =92
-        Visible: =CountRows(GalleryRequests1.AllItems) > 0
-        Width: =743
-        X: =299
-        Y: =638
-        ZIndex: =12
-
-        RequestStatus1 As button:
-            BorderColor: =RequestStatus1.Color
-            Color: |-
-                =If(Upper(ThisItem.Status)="PENDING",RGBA(0, 71, 144, 1),
-                Upper(ThisItem.Status)="DECLINED",RGBA(213, 0, 0, 1),
-                Upper(ThisItem.Status)="APPROVED",RGBA(0, 128, 0, 1))
-            DisabledBorderColor: =ColorFade(RequestStatus1.BorderColor, 70%)
-            Fill: =RGBA(255, 255, 255, 1)
-            FocusedBorderColor: =RequestStatus1.BorderColor
-            Font: =Font.Lato
-            Height: =30
-            HoverBorderColor: =RequestStatus1.BorderColor
-            HoverColor: =RequestStatus1.Color
-            HoverFill: =ColorFade(RequestStatus1.Fill, 20%)
-            OnSelect: =Select(Parent)
-            PaddingBottom: =0
-            PaddingLeft: =0
-            PaddingRight: =0
-            PaddingTop: =0
-            PressedBorderColor: =RequestStatus1.BorderColor
-            PressedColor: =RequestStatus1.Fill
-            PressedFill: =RequestStatus1.Color
-            RadiusBottomLeft: =4
-            RadiusBottomRight: =4
-            RadiusTopLeft: =4
-            RadiusTopRight: =4
-            Size: =10.5
-            Text: =Upper(ThisItem.Status)
-            Width: =88
-            X: =638
-            Y: =16
-            ZIndex: =4
 
     RectNavSep As rectangle:
         DisabledFill: =RectNavSep.Fill
@@ -301,8 +303,8 @@ HomeScreen As screen:
             Text: ="Make your first leave request!"
             Visible: =If(IsEmpty(Table1_14),true,false)
             Width: =400
-            X: =543
-            Y: =422
+            X: =477
+            Y: =506
             ZIndex: =31
 
         Circle1 As circle:
@@ -316,8 +318,8 @@ HomeScreen As screen:
             PressedFill: =Circle1.Fill
             Visible: =If(IsEmpty(Table1_14),true,false)
             Width: =64
-            X: =697
-            Y: =492
+            X: =631
+            Y: =576
             ZIndex: =32
 
         icon7 As icon.Add:
@@ -340,8 +342,8 @@ HomeScreen As screen:
             PressedFill: =icon7.Fill
             TabIndex: =0
             Visible: =If(IsEmpty(Table1_14),true,false)
-            X: =697
-            Y: =492
+            X: =631
+            Y: =576
             ZIndex: =33
 
         LblEmptyRequests As label:
@@ -358,8 +360,8 @@ HomeScreen As screen:
             Text: ="No " & If(_requestTypeFilter <> "All", Lower(_requestTypeFilter)) & " requests"
             Visible: =If(IsEmpty(Table1_14),true,false)
             Width: =190
-            X: =386
-            Y: =267
+            X: =320
+            Y: =351
             ZIndex: =34
 
     GroupRequestDetails As group:
@@ -384,8 +386,8 @@ HomeScreen As screen:
             Size: =13.5
             Text: ="Request Details"
             Width: =180
-            X: =1181
-            Y: =103
+            X: =1102
+            Y: =95
             ZIndex: =13
 
         GalleryRequestDetails As gallery.galleryVertical:
@@ -431,8 +433,8 @@ HomeScreen As screen:
             TemplateSize: =68
             Visible: =_showDetails
             Width: =223
-            X: =1137
-            Y: =154
+            X: =1073
+            Y: =150
             ZIndex: =24
 
             Label11 As label:
@@ -514,8 +516,8 @@ HomeScreen As screen:
             TabIndex: =0
             Visible: =_showDetails && _managerView && Upper(GalleryRequests1.Selected.Status) = Upper("Pending")
             Width: =15
-            X: =1291
-            Y: =BtnManagerApprove.Y + BtnManagerApprove.Height/2 - BtnEmailRequester.Height/2
+            X: =1227
+            Y: =382
             ZIndex: =25
 
         BtnManagerDecline As button:
@@ -551,8 +553,8 @@ HomeScreen As screen:
             Text: ="Decline"
             Visible: =_showDetails && _managerView && Upper(GalleryRequests1.Selected.Status) = Upper("Pending")
             Width: =56
-            X: =1224
-            Y: =GalleryRequestDetails.Y + GalleryRequestDetails.Height + 5
+            X: =1160
+            Y: =380
             ZIndex: =26
 
         BtnManagerApprove As button:
@@ -600,8 +602,8 @@ HomeScreen As screen:
             Text: ="Approve"
             Visible: =_showDetails && _managerView && Upper(GalleryRequests1.Selected.Status) = Upper("Pending")
             Width: =56
-            X: =1162
-            Y: =GalleryRequestDetails.Y + GalleryRequestDetails.Height + 5
+            X: =1098
+            Y: =380
             ZIndex: =27
 
         LblRequesterEdit As label:
@@ -631,8 +633,8 @@ HomeScreen As screen:
             Text: ="Edit"
             Visible: =!_managerView && _showDetails && Upper(GalleryRequests1.Selected.Status) = Upper("Pending")
             Width: =42
-            X: =1186
-            Y: =378
+            X: =1122
+            Y: =374
             ZIndex: =28
 
         IconRequesterEdit As icon.Edit:
@@ -654,8 +656,8 @@ HomeScreen As screen:
             TabIndex: =0
             Visible: =!_managerView && _showDetails && Upper(GalleryRequests1.Selected.Status) = Upper("Pending")
             Width: =12
-            X: =1166
-            Y: =378
+            X: =1102
+            Y: =374
             ZIndex: =29
 
     Navigation_5 As Navigation:

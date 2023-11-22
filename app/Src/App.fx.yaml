@@ -128,9 +128,9 @@ App As appinfo:
                 Now()
             ),
             Set(
-                _leaveEnd,
                 Now()
-            ),
+            ) _leaveEnd,
+               ,
             Set(
                 _myProfile,
                 Office365Users.MyProfile()
