@@ -54,38 +54,76 @@ LeaveBalanceScreen As screen:
         Y: =147
         ZIndex: =10
 
-        Label17_55 As label:
-            FontWeight: =FontWeight.Bold
-            Height: =46
+        Rectangle12 As rectangle:
+            BorderColor: =RGBA(91, 115, 168, 1)
+            BorderThickness: =1
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =252
             OnSelect: =Select(Parent)
-            Text: ="Carried Forward"
-            Width: =200
-            X: =335
-            Y: =3
+            Width: =212
+            X: =45
+            Y: =7
+            ZIndex: =1
+
+        Label6 As label:
+            Align: =Align.Center
+            Height: =50
+            OnSelect: =Select(Parent)
+            Text: =Round(ThisItem.AnnualCarriedForward,0) & " day(s)"
+            Width: =212
+            X: =45
+            Y: =133
+            ZIndex: =2
+
+        Label16 As label:
+            Align: =Align.Center
+            Height: =76
+            OnSelect: =Select(Parent)
+            Text: |-
+                ="Expiry Date : 
+                31/3/2023"
+            Width: =212
+            X: =45
+            Y: =183
             ZIndex: =3
 
-        Label17_57 As label:
-            FontWeight: =FontWeight.Bold
-            Height: =46
+        Rectangle12_1 As rectangle:
+            BorderColor: =RGBA(91, 115, 168, 1)
+            BorderThickness: =1
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =252
             OnSelect: =Select(Parent)
-            Text: ="Taken"
-            X: =664
-            Y: =3
+            Width: =212
+            X: =342
+            Y: =7
             ZIndex: =5
 
-        Label17_58 As label:
+        Label17_1 As label:
+            Align: =Align.Center
             FontWeight: =FontWeight.Bold
-            Height: =46
+            Height: =66
             OnSelect: =Select(Parent)
-            Text: ="Balance"
-            X: =800
-            Y: =3
+            Size: =16
+            Text: ="Annual Leave"
+            Width: =212
+            X: =342
+            Y: =55
             ZIndex: =6
+
+        Label6_1 As label:
+            Align: =Align.Center
+            Height: =50
+            OnSelect: =Select(Parent)
+            Text: =ThisItem.AnnualLeaveBalance
+            Width: =212
+            X: =342
+            Y: =133
+            ZIndex: =7
 
     Rectangle6 As rectangle:
         Fill: =RGBA(230, 229, 229, 1)
-        Height: =2
-        Width: =970
+        Height: =1
+        Width: =1130
         X: =231
         Y: =141
         ZIndex: =11
@@ -218,15 +256,6 @@ LeaveBalanceScreen As screen:
             Width: =155
             X: =1211
             ZIndex: =7
-
-    Icon2 As icon.Information:
-        Height: =25
-        Icon: =Icon.Information
-        OnSelect: =Navigate(AboutScreen)
-        Width: =25
-        X: =375
-        Y: =154
-        ZIndex: =12
 
     Navigation_6 As Navigation:
         CurrentScreen: ="My Leave Balance"

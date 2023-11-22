@@ -1,34 +1,12 @@
 NewRequestScreen As screen:
     Height: =Max(App.Height, App.DesignHeight)
     OnHidden: =
-    OnVisible: |-
-        =Concurrent(
-            Select(LeaveStartDatePicker),
-            If(!_editingRequest && !_changingApprover,
-                Set(_leaveStart, Today());
-                Set(_leaveEnd, Today());
-                Set(_leaveDetail, "");
-                Reset(LeaveEndDatePicker);
-                Reset(LeaveStartDatePicker);
-                
-                Reset(TextInput1_1);
-                Set(_selectedApprover, Office365Users.Manager(_myProfile.Id));
-                Set(_selectedApproverPhoto, 
-                    If(Office365Users.UserPhotoMetadata(_selectedApprover.Id).HasPhoto, Office365Users.UserPhoto(_selectedApprover.Id))
-                )
-                ,
-                _editingRequest && !_changingApprover,
-                Set(_selectedApprover, Office365Users.UserProfile(GalleryRequests1.Selected.Approver));
-                Set(_selectedApproverPhoto, Office365Users.UserPhoto(GalleryRequests1.Selected.Approver));
-                Set(_leaveStart, GalleryRequests1.Selected.StartDate);
-                Set(_leaveEnd, GalleryRequests1.Selected.EndDate);
-                If(_leaveEnd < Today(), Notify("This event occurred in the past and cannot be resubmitted without first changing the dates", NotificationType.Warning));
-                Set(_selectedLeaveType, GalleryRequests1.Selected.LeaveType);
-                Set(_leaveTitle, GalleryRequests1.Selected.Title);
-                Set(_leaveDetail, GalleryRequests1.Selected.Detail);
-            )
-        );
-        Set(_changingApprover, false)
+    OnVisible: |+
+        =Reset(LeaveEndDatePicker);
+        Reset(LeaveStartDatePicker);
+        Reset(TextInput1_1);
+        
+        
     Orientation: =If(NewRequestScreen.Width < NewRequestScreen.Height, Layout.Vertical, Layout.Horizontal)
     Size: =1 + CountRows(App.SizeBreakpoints) - CountIf(App.SizeBreakpoints, Value >= NewRequestScreen.Width)
     Width: =Max(App.Width, App.DesignWidth)
@@ -44,60 +22,6 @@ NewRequestScreen As screen:
         X: =231
         Y: =80
         ZIndex: =3
-
-    Button1_1 As button:
-        Align: =LayoutAlignItems.Center
-        BorderColor: =RGBA(0,0,0,1)
-        BorderThickness: =0
-        Color: =RGBA(10, 106, 204, 1)
-        DisabledBorderColor: =ColorFade(Button1_1.BorderColor, 70%)
-        DisplayMode: =If(IsBlank(Trim(TextInput1_1.Text)) || IsBlank(LeaveStartDatePicker.SelectedDate) || IsBlank(LeaveEndDatePicker.SelectedDate) || LeaveEndDatePicker.SelectedDate < LeaveStartDatePicker.SelectedDate || LeaveStartDatePicker.SelectedDate < Today() || IsBlank(_selectedLeaveType) || IsBlank(_selectedApprover), DisplayMode.Disabled, DisplayMode.Edit)
-        Fill: =Parent.Fill
-        FocusedBorderColor: =Button1_1.BorderColor
-        Font: =Font.Lato
-        Height: =84
-        HoverBorderColor: =ColorFade(Button1_1.BorderColor, 20%)
-        HoverColor: =Button1_1.Color
-        HoverFill: =ColorFade(Button1_1.Fill, 20%)
-        OnSelect: |
-            = Patch(LeaveApp_Request,Defaults(LeaveApp_Request),
-                            {Start_Date: LeaveStartDatePicker.SelectedDate},
-                            {End_Date: LeaveEndDatePicker.SelectedDate},
-                            {Leave_Type:{'@odata.type':"Microsoft.Azure.Connectors.SharePoint.SPListExpandedUser",Value: _selectedLeaveType}},
-                            {Days: _requestedDays},
-                            {Comments: TextInput1_1.Text},
-                            {Created_By: 
-                            {'@odata.type':"Microsoft.Azure.Connectors.SharePoint.SPListExpandedUser",
-                            Claims: "i:0#.f|membership|" & Lower(User().Email),
-                            Department:"",
-                            DisplayName:User().FullName,
-                            Email:User().Email,
-                            JobTitle:".",
-                            Picture:"."}},
-                            {Requested_to: 
-                            {'@odata.type':"Microsoft.Azure.Connectors.SharePoint.SPListExpandedUser",
-                            Claims: "i:0#.f|membership|" & Lower(User().Email),
-                            Department:"",
-                            DisplayName:User().FullName,
-                            Email:User().Email,
-                            JobTitle:".",
-                            Picture:"."}};
-             
-                            
-            
-                            
-        PressedBorderColor: =Button1_1.Fill
-        PressedColor: =Button1_1.Fill
-        PressedFill: =Button1_1.Color
-        RadiusBottomLeft: =0
-        RadiusBottomRight: =0
-        RadiusTopLeft: =0
-        RadiusTopRight: =0
-        Text: ="Submit request"
-        Width: =1134
-        X: =232
-        Y: =684
-        ZIndex: =23
 
     Label8 As label:
         Align: =LayoutAlignItems.Center
@@ -311,7 +235,6 @@ NewRequestScreen As screen:
         LeaveStartDatePicker As datepicker:
             AccessibleLabel: ="Leave start date. Required field."
             BorderColor: =If(And(!_editingRequest, LeaveStartDatePicker.SelectedDate < Today()) || LeaveStartDatePicker.SelectedDate > LeaveEndDatePicker.SelectedDate, Color.Red, RGBA(0, 71, 144, 1))
-            DefaultDate: =_leaveStart
             FocusedBorderColor: =LeaveStartDatePicker.BorderColor
             HoverBorderColor: =LeaveStartDatePicker.BorderColor
             HoverFill: =LeaveStartDatePicker.Fill
@@ -360,7 +283,6 @@ NewRequestScreen As screen:
         LeaveEndDatePicker As datepicker:
             AccessibleLabel: ="Leave end date. Required field."
             BorderColor: =If(LeaveStartDatePicker.SelectedDate > LeaveEndDatePicker.SelectedDate, Color.Red, RGBA(0, 71, 144, 1))
-            DefaultDate: =_leaveEnd
             FocusedBorderColor: =LeaveEndDatePicker.BorderColor
             HoverBorderColor: =LeaveEndDatePicker.BorderColor
             HoverFill: =LeaveEndDatePicker.Fill
@@ -407,7 +329,7 @@ NewRequestScreen As screen:
             PressedFill: =Label1_9.Fill
             Size: =10.5
             Text: |-
-                = LookUp(RequesterBalanceCollection, type=_selectedLeaveType, balance) - _requestedDays
+                = _balanceRemain - _requestedDays
                     &
                     " days"
             Visible: =!IsBlank(_selectedLeaveType)
@@ -431,7 +353,7 @@ NewRequestScreen As screen:
                 ="Current balance:"
             Visible: =!IsBlank(_selectedLeaveType)
             Width: =114
-            X: =946
+            X: =936
             Y: =352
             ZIndex: =25
 
@@ -443,14 +365,15 @@ NewRequestScreen As screen:
             HoverBorderColor: =Label1_12.BorderColor
             HoverColor: =Label1_12.Color
             HoverFill: =Label1_12.Fill
+            Live: =Live
             PressedBorderColor: =Label1_12.BorderColor
             PressedColor: =Label1_12.Color
             PressedFill: =Label1_12.Fill
             Size: =10.5
-            Text: =LookUp(RequesterBalanceCollection,type=_selectedLeaveType, If(balance=1,Text(balance)&" day", Text(balance) & " days"))
+            Text: =_balanceRemain & " days"
             Visible: =!IsBlank(_selectedLeaveType)
             Width: =70
-            X: =1060
+            X: =1046
             Y: =352
             ZIndex: =26
 
@@ -543,7 +466,7 @@ NewRequestScreen As screen:
         TextInput1_1 As text:
             AccessibleLabel: ="Leave detail"
             BorderColor: =RGBA(0, 71, 144, 1)
-            Default: =_leaveDetail
+            Default: =
             FocusedBorderColor: =TextInput1_1.BorderColor
             Font: =Font.Lato
             Height: =74
@@ -721,7 +644,26 @@ NewRequestScreen As screen:
                 HoverColor: =NRLeaveTypeLabel.Color
                 HoverFill: =NRLeaveTypeLabel.Fill
                 LineHeight: =1
-                OnSelect: =Select(Parent)
+                OnSelect: |-
+                    =If
+                    (_selectedLeaveType = "Annual",
+                    Set(_balanceRemain,(LookUp(LeaveApp_Employee,NameofEmployee.Email=User().Email).AnnualLeaveEntitlement)),
+                    _selectedLeaveType = "Medical",
+                    Set(_balanceRemain,(LookUp(LeaveApp_Employee,NameofEmployee.Email=User().Email).MedicalLeaveEntitlement)),
+                    _selectedLeaveType = "Casual Immediate",
+                    Set(_balanceRemain,(LookUp(LeaveApp_Employee,NameofEmployee.Email=User().Email).CompassionateLeaveEntitlement)),
+                    _selectedLeaveType = "Marriage",
+                    Set(_balanceRemain,(LookUp(LeaveApp_Employee,NameofEmployee.Email=User().Email).MarriageLeaveEntitlement)),
+                    _selectedLeaveType = "Paternity",
+                    Set(_balanceRemain,(LookUp(LeaveApp_Employee,NameofEmployee.Email=User().Email).PaternityLeaveEntitlement)),
+                    _selectedLeaveType = "Maternity",
+                    Set(_balanceRemain,(LookUp(LeaveApp_Employee,NameofEmployee.Email=User().Email).MaternityLeaveEntitlement)),
+                    _selectedLeaveType = "Hospitalization",
+                    Set(_balanceRemain,(LookUp(LeaveApp_Employee,NameofEmployee.Email=User().Email).HospitalizationLeaveEntitlement));
+                    );
+                    Select(Parent);
+                    
+                     
                 PaddingBottom: =0
                 PaddingLeft: =0
                 PaddingRight: =0.00
@@ -781,4 +723,10 @@ NewRequestScreen As screen:
         NavItem: =If(_managerView,ManagerNavigation,EmployeeNavigation)
         Y: =80
         ZIndex: =48
+
+    Label5 As label:
+        Text: =LookUp(LeaveApp_Employee,NameofEmployee.Email=User().Email).NameofManager.DisplayName
+        X: =252
+        Y: =490
+        ZIndex: =49
 
