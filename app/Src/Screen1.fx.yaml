@@ -101,40 +101,6 @@ Screen1 As screen:
         Y: =176
         ZIndex: =2
 
-    Button2_1 As button:
-        OnSelect: |-
-            =ClearCollect(
-                    EmployeeNavigation,
-                    {
-                        Title: "My Leave Requests",
-                        TargetScreen: HomeScreen
-                    },
-                    {
-                        Title: "My Leave Balance",
-                        TargetScreen: LeaveBalanceScreen
-                    },
-                    {
-                        Title: "Today's On Leave",
-                        TargetScreen: TodayOnLeaveScreen
-                    },
-                    {
-                        Title: "Public Holidays",
-                        TargetScreen: CompanyHolidaysScreen
-                    },
-                    {
-                        Title: "About",
-                        TargetScreen: AboutScreen
-                    },
-                    {
-                        Title: "Log Out",
-                        TargetScreen: LoginScreen
-                    }
-                )
-        Text: ="employee type"
-        X: =409
-        Y: =290
-        ZIndex: =11
-
     GroupRequestInfo_1 As group:
         Height: =5
         Width: =5
@@ -293,34 +259,4 @@ Screen1 As screen:
             X: =454
             Y: =503
             ZIndex: =10
-
-    Button2_2 As button:
-        OnSelect: |-
-            =ClearCollect(
-                    ManagerNavigation1,
-                    {
-                        Title: "Leave Requests",
-                        TargetScreen: HomeScreen
-                    },
-                    {
-                        Title: "Today's On Leave",
-                        TargetScreen: TodayOnLeaveScreen
-                    },
-                    {
-                        Title: "Leave Information",
-                        TargetScreen: LeaveInformationScreen
-                    },
-                    {
-                        Title: "Public Holidays",
-                        TargetScreen: CompanyHolidaysScreen
-                    },
-                    {
-                        Title: "Log Out",
-                        TargetScreen: LoginScreen
-                    }
-                )
-        Text: ="employee type"
-        X: =628
-        Y: =176
-        ZIndex: =12
 
