@@ -67,6 +67,9 @@
     "datasets": {
       "https://dynafront.sharepoint.com/sites/Revamp_LeaveApplication": {
         "dataSources": {
+          "LeaveApp_Employee": {
+            "tableName": "3b49dfb4-8eb7-4378-b5b7-1fdfee762a15"
+          },
           "LeaveApp_Request": {
             "tableName": "87f360e6-c28d-40aa-87bb-2268cf2c29e4"
           }
@@ -74,7 +77,8 @@
       }
     },
     "dataSources": [
-      "LeaveApp_Request"
+      "LeaveApp_Request",
+      "LeaveApp_Employee"
     ],
     "dependencies": {},
     "dependents": [],
