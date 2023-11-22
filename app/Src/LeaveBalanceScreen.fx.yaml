@@ -77,18 +77,6 @@ LeaveBalanceScreen As screen:
             Y: =183
             ZIndex: =3
 
-        Label17 As label:
-            Align: =Align.Center
-            FontWeight: =FontWeight.Bold
-            Height: =66
-            OnSelect: =Select(Parent)
-            Size: =16
-            Text: ="Annual Carried Forward Leave"
-            Width: =212
-            X: =45
-            Y: =55
-            ZIndex: =4
-
         Rectangle12_1 As rectangle:
             BorderColor: =RGBA(91, 115, 168, 1)
             BorderThickness: =1

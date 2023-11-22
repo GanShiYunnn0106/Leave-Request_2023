@@ -329,7 +329,7 @@ NewRequestScreen As screen:
             PressedFill: =Label1_9.Fill
             Size: =10.5
             Text: |-
-                = LookUp(RequesterBalanceCollection, type=_selectedLeaveType, balance) - _requestedDays
+                = _balanceRemain - _requestedDays
                     &
                     " days"
             Visible: =!IsBlank(_selectedLeaveType)
@@ -353,7 +353,7 @@ NewRequestScreen As screen:
                 ="Current balance:"
             Visible: =!IsBlank(_selectedLeaveType)
             Width: =114
-            X: =946
+            X: =936
             Y: =352
             ZIndex: =25
 
@@ -370,10 +370,10 @@ NewRequestScreen As screen:
             PressedColor: =Label1_12.Color
             PressedFill: =Label1_12.Fill
             Size: =10.5
-            Text: =_balanceRemain
+            Text: =_balanceRemain & " days"
             Visible: =!IsBlank(_selectedLeaveType)
             Width: =70
-            X: =1060
+            X: =1046
             Y: =352
             ZIndex: =26
 
@@ -645,10 +645,25 @@ NewRequestScreen As screen:
                 HoverFill: =NRLeaveTypeLabel.Fill
                 LineHeight: =1
                 OnSelect: |-
-                    =If(_selectedLeaveType = "Annual",
-                    Set(_balanceRemain,(LookUp(LeaveApp_Employee,NameofEmployee.Email=User().Email).AnnualLeaveBalance)),
+                    =If
+                    (_selectedLeaveType = "Annual",
+                    Set(_balanceRemain,(LookUp(LeaveApp_Employee,NameofEmployee.Email=User().Email).AnnualLeaveEntitlement)),
+                    _selectedLeaveType = "Medical",
+                    Set(_balanceRemain,(LookUp(LeaveApp_Employee,NameofEmployee.Email=User().Email).MedicalLeaveEntitlement)),
+                    _selectedLeaveType = "Casual Immediate",
+                    Set(_balanceRemain,(LookUp(LeaveApp_Employee,NameofEmployee.Email=User().Email).CompassionateLeaveEntitlement)),
+                    _selectedLeaveType = "Marriage",
+                    Set(_balanceRemain,(LookUp(LeaveApp_Employee,NameofEmployee.Email=User().Email).MarriageLeaveEntitlement)),
+                    _selectedLeaveType = "Paternity",
+                    Set(_balanceRemain,(LookUp(LeaveApp_Employee,NameofEmployee.Email=User().Email).PaternityLeaveEntitlement)),
+                    _selectedLeaveType = "Maternity",
+                    Set(_balanceRemain,(LookUp(LeaveApp_Employee,NameofEmployee.Email=User().Email).MaternityLeaveEntitlement)),
+                    _selectedLeaveType = "Hospitalization",
+                    Set(_balanceRemain,(LookUp(LeaveApp_Employee,NameofEmployee.Email=User().Email).HospitalizationLeaveEntitlement));
                     );
                     Select(Parent);
+                    
+                     
                 PaddingBottom: =0
                 PaddingLeft: =0
                 PaddingRight: =0.00
@@ -714,38 +729,4 @@ NewRequestScreen As screen:
         X: =252
         Y: =490
         ZIndex: =49
-
-    Button3 As button:
-        BorderColor: =RGBA(43, 67, 119, 1)
-        Color: =RGBA(43, 67, 119, 1)
-        Fill: =RGBA(255, 255, 255, 1)
-        Height: =98
-        OnSelect: |-
-            =Patch(LeaveApp_Request,Defaults(LeaveApp_Request),
-                            {Start_Date: LeaveStartDatePicker.SelectedDate},
-                            {End_Date: LeaveEndDatePicker.SelectedDate},
-                            {Leave_Type:{'@odata.type':"Microsoft.Azure.Connectors.SharePoint.SPListExpandedUser",Value: _selectedLeaveType}},
-                            {Days: _requestedDays},
-                            {Comments: TextInput1_1.Text},
-                            {Created_By: 
-                            {'@odata.type':"Microsoft.Azure.Connectors.SharePoint.SPListExpandedUser",
-                            Claims: "i:0#.f|membership|" & Lower(User().Email),
-                            Department:"",
-                            DisplayName:User().FullName,
-                            Email:User().Email,
-                            JobTitle:".",
-                            Picture:"."}},
-                            {Requested_to: 
-                            {'@odata.type':"Microsoft.Azure.Connectors.SharePoint.SPListExpandedUser",
-                            Claims: "i:0#.f|membership|" & Lower(LookUp(LeaveApp_Employee,NameofEmployee.Email=User().Email).NameofManager.Email),
-                            Department:"",
-                            DisplayName:User().FullName,
-                            Email:User().Email,
-                            JobTitle:".",
-                            Picture:"."}})
-        Text: ="Submit request"
-        Width: =1135
-        X: =231
-        Y: =670
-        ZIndex: =50
 
