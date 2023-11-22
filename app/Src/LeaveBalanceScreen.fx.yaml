@@ -121,7 +121,7 @@ LeaveBalanceScreen As screen:
             Label17_61 As label:
                 Height: =60
                 OnSelect: =Select(Parent)
-                Text: =ThisItem.AnnualCarriedForward
+                Text: =ThisItem.AnnualCarriedForward.Value
                 Width: =200
                 X: =335
                 Y: =50
