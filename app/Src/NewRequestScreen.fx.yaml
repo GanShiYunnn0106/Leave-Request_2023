@@ -679,7 +679,22 @@ NewRequestScreen As screen:
                 HoverFill: =NRLeaveTypeLabel.Fill
                 LineHeight: =1
                 OnSelect: |-
-                    =
+                    =If
+                    (_selectedLeaveType = "Annual",
+                    Set(_balanceRemain,(LookUp(LeaveApp_Employee,NameofEmployee.Email=User().Email).AnnualLeaveEntitlement)),
+                    _selectedLeaveType = "Medical",
+                    Set(_balanceRemain,(LookUp(LeaveApp_Employee,NameofEmployee.Email=User().Email).MedicalLeaveEntitlement)),
+                    _selectedLeaveType = "Casual Immediate",
+                    Set(_balanceRemain,(LookUp(LeaveApp_Employee,NameofEmployee.Email=User().Email).CompassionateLeaveEntitlement)),
+                    _selectedLeaveType = "Marriage",
+                    Set(_balanceRemain,(LookUp(LeaveApp_Employee,NameofEmployee.Email=User().Email).MarriageLeaveEntitlement)),
+                    _selectedLeaveType = "Paternity",
+                    Set(_balanceRemain,(LookUp(LeaveApp_Employee,NameofEmployee.Email=User().Email).PaternityLeaveEntitlement)),
+                    _selectedLeaveType = "Maternity",
+                    Set(_balanceRemain,(LookUp(LeaveApp_Employee,NameofEmployee.Email=User().Email).MaternityLeaveEntitlement)),
+                    _selectedLeaveType = "Hospitalization",
+                    Set(_balanceRemain,(LookUp(LeaveApp_Employee,NameofEmployee.Email=User().Email).HospitalizationLeaveEntitlement));
+                    );
                     Select(Parent);
                     
                      
