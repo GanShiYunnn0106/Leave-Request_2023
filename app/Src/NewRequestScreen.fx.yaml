@@ -60,11 +60,11 @@ NewRequestScreen As screen:
         HoverBorderColor: =ColorFade(Button1_1.BorderColor, 20%)
         HoverColor: =Button1_1.Color
         HoverFill: =ColorFade(Button1_1.Fill, 20%)
-        OnSelect: |-
+        OnSelect: |
             = Patch(LeaveApp_Request,Defaults(LeaveApp_Request),
                             {Start_Date: LeaveStartDatePicker.SelectedDate},
                             {End_Date: LeaveEndDatePicker.SelectedDate},
-                            {Leave_Type: _selectedLeaveType},
+                            {Leave_Type:{'@odata.type':"Microsoft.Azure.Connectors.SharePoint.SPListExpandedUser",Value: _selectedLeaveType}},
                             {Days: _requestedDays},
                             {Comments: TextInput1_1.Text},
                             {Created_By: 
@@ -82,13 +82,11 @@ NewRequestScreen As screen:
                             DisplayName:User().FullName,
                             Email:User().Email,
                             JobTitle:".",
-                            Picture:"."}},
-            
+                            Picture:"."}};
+             )
                             
             
                             
-            Set(_submittingRequest, true);
-            Navigate(ConfirmationScreen, BorderStyle.None)
         PressedBorderColor: =Button1_1.Fill
         PressedColor: =Button1_1.Fill
         PressedFill: =Button1_1.Color

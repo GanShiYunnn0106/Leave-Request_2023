@@ -244,7 +244,7 @@ HomeScreen As screen:
             Y: =110
             ZIndex: =9
 
-    GalleryRequests1 As gallery.galleryVertical:
+    "GalleryRequests1 As gallery.'BrowseLayout_Vertical_TwoTextVariant_ver4.0'":
         AccessibleLabel: ="Leave request gallery"
         Default: =Blank()
         DelayItemLoading: =true
