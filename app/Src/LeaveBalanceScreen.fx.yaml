@@ -84,7 +84,7 @@ LeaveBalanceScreen As screen:
             Height: =252
             OnSelect: =Select(Parent)
             Width: =212
-            X: =342
+            X: =318
             Y: =7
             ZIndex: =5
 
@@ -96,7 +96,7 @@ LeaveBalanceScreen As screen:
             Size: =16
             Text: ="Annual Leave"
             Width: =212
-            X: =342
+            X: =318
             Y: =55
             ZIndex: =6
 
@@ -106,7 +106,7 @@ LeaveBalanceScreen As screen:
             OnSelect: =Select(Parent)
             Text: =Value(ThisItem.Annual_x0020_Leave_x0020_Balance) & " day(s)"
             Width: =212
-            X: =342
+            X: =318
             Y: =133
             ZIndex: =7
 
@@ -121,6 +121,15 @@ LeaveBalanceScreen As screen:
             X: =45
             Y: =55
             ZIndex: =8
+
+        Icon2 As icon.Information:
+            Height: =25
+            Icon: =Icon.Information
+            OnSelect: =Navigate(AboutScreen)
+            Width: =25
+            X: =498
+            Y: =14
+            ZIndex: =9
 
     Rectangle6 As rectangle:
         Fill: =RGBA(230, 229, 229, 1)
