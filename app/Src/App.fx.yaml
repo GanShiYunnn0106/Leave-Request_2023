@@ -13,7 +13,6 @@ App As appinfo:
             );
         
         
-        
             //collection used in the left nav menu
             ClearCollect(
                 EmployeeNavigation,
