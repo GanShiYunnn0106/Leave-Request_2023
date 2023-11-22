@@ -6,7 +6,7 @@ Screen1 As screen:
                 LeaveTypeCollection, 
                     Table(
                             {
-                                type:"Annual leave", 
+                                type:"Annual", 
                                 icon:vacation,
                                 iconselected:'vacation-selected',
                                 description:
@@ -21,7 +21,7 @@ Screen1 As screen:
                             }
                             ,
                             {
-                                type:"Medical leave", 
+                                type:"Medical", 
                                 icon:'sick-leave', 
                                 iconselected:'sick-leave-selected',
                                 description:"Tips:
@@ -34,23 +34,30 @@ Screen1 As screen:
                             }
                                 ,
                             {
-                                type:"Compassionate leave", 
+                                type:"Casual Immediate", 
                                 description:"a. Death of a member of the employee's family. First relation 
             (parents/ parents-in-law/ spouse/ children)
             03 days
-            b. Death of a member of the employee's family. Second relations 
+            
+            In aggregate, the number of days taken under Casual Immediate and Casual Second shall not exceed 03 days in any calendar year.."
+                            }
+                            ,
+                            {
+                                type:"Casual Second", 
+                                description:"
+            Death of a member of the employee's family. Second relations 
             (grandparents / brothers / sisters /grandchildren)
             02 days
-            In aggregate, the number of days taken under [a], [b] and [c] shall not exceed 03 days in any calendar year.."
+            In aggregate, the number of days taken under Casual Immediate and Casual Second shall not exceed 03 days in any calendar year.."
                             }
                                 ,
                             {
-                                type:"Hospitalization leave", 
+                                type:"Hospitalization", 
                                 description:"Where hospitalization is necessary 60 days (including 14 days of medical leave)."
                             }
                                 ,
                             {
-                                type:"Paternity leave", 
+                                type:"Paternity", 
                                 description:"Entitled to 7 days of paid paternity leave under Subsection 60FA; these days must be taken consecutively.
              The requirements are:
             • The male employee must be married to the mother in question.
@@ -59,28 +66,13 @@ Screen1 As screen:
                             }
                                 ,
                             {
-                                type:"Marriage leave", 
+                                type:"Marriage", 
                                 description:"A full-time confirmed employee who has completed a minimum of twelve (12) months of continuous service is 
             entitled to 3 days of leave on the occasion of his first legal marriage while in the service of the Company.."
                             }
                                 ,
                             {
-                                type:"Unpaid leave",
-                                description:"The Company may give sympathetic consideration to the granting of leave without pay for the following reasons:
-            a. Conducting the pilgrimage (Haj)
-            b. Pursuit of a course of study
-            c. Insufficient earned leave
-            
-            As regards to (a) above, a maximum of 2 unpaid leave would be granted, subject to the following conditions:
-            a. The employee must have completed as least twelve (12) months of continuous service with the 
-            Company.
-            b. Notice of intention to take pilgrimage leave must be given at least six (06) months prior to the intended 
-            pilgrimage.
-            c. Pilgrimage leave shall be limited to once every five (05) years."
-                            }
-                                ,
-                            {
-                                type:"Maternity leave", 
+                                type:"Maternity", 
                                 description:"A full-time confirmed female employee will be entitled to 98 Consecutive days of paid maternity leave. For 
             miscarriage maternity leave only apply upon seven full months of pregnancy under the labour law.
             "
@@ -100,40 +92,6 @@ Screen1 As screen:
         X: =865
         Y: =176
         ZIndex: =2
-
-    Button2_1 As button:
-        OnSelect: |-
-            =ClearCollect(
-                    EmployeeNavigation,
-                    {
-                        Title: "My Leave Requests",
-                        TargetScreen: HomeScreen
-                    },
-                    {
-                        Title: "My Leave Balance",
-                        TargetScreen: LeaveBalanceScreen
-                    },
-                    {
-                        Title: "Today's On Leave",
-                        TargetScreen: TodayOnLeaveScreen
-                    },
-                    {
-                        Title: "Public Holidays",
-                        TargetScreen: CompanyHolidaysScreen
-                    },
-                    {
-                        Title: "About",
-                        TargetScreen: AboutScreen
-                    },
-                    {
-                        Title: "Log Out",
-                        TargetScreen: LoginScreen
-                    }
-                )
-        Text: ="employee type"
-        X: =409
-        Y: =290
-        ZIndex: =11
 
     GroupRequestInfo_1 As group:
         Height: =5
@@ -293,34 +251,4 @@ Screen1 As screen:
             X: =454
             Y: =503
             ZIndex: =10
-
-    Button2_2 As button:
-        OnSelect: |-
-            =ClearCollect(
-                    ManagerNavigation1,
-                    {
-                        Title: "Leave Requests",
-                        TargetScreen: HomeScreen
-                    },
-                    {
-                        Title: "Today's On Leave",
-                        TargetScreen: TodayOnLeaveScreen
-                    },
-                    {
-                        Title: "Leave Information",
-                        TargetScreen: LeaveInformationScreen
-                    },
-                    {
-                        Title: "Public Holidays",
-                        TargetScreen: CompanyHolidaysScreen
-                    },
-                    {
-                        Title: "Log Out",
-                        TargetScreen: LoginScreen
-                    }
-                )
-        Text: ="employee type"
-        X: =628
-        Y: =176
-        ZIndex: =12
 
