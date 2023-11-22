@@ -364,7 +364,7 @@ NewRequestScreen As screen:
             PressedColor: =Label1_12.Color
             PressedFill: =Label1_12.Fill
             Size: =10.5
-            Text: =LookUp(RequesterBalanceCollection,type=_selectedLeaveType, If(balance=1,Text(balance)&" day", Text(balance) & " days"))
+            Text: =_LeaveBalance
             Visible: =!IsBlank(_selectedLeaveType)
             Width: =70
             X: =1060
@@ -638,9 +638,7 @@ NewRequestScreen As screen:
                 HoverColor: =NRLeaveTypeLabel.Color
                 HoverFill: =NRLeaveTypeLabel.Fill
                 LineHeight: =1
-                OnSelect: |
-                    =Set(_LeaveBalance,LookUp(LeaveApp_Employee,NameofEmployee.Email=User().Email).AnnualLeaveBalance);
-                    Select(Parent);
+                OnSelect: =Select(Parent);
                 PaddingBottom: =0
                 PaddingLeft: =0
                 PaddingRight: =0.00

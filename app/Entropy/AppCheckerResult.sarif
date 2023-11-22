@@ -1140,43 +1140,6 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "HomeScreen.OnVisible"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "HomeScreen.OnVisible",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 40,
-                  "charOffset": 16,
-                  "snippet": {
-                    "text": "Set(_navMenuSelect, \"My Leave Requests\")"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnVisible",
-                "module": "HomeScreen",
-                "type": "HomeScreen"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrIncompatibleCtxtVariableTypes",
-          "ruleIndex": 1
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
                   "fullyQualifiedName": "HomeScreen.GalleryRequest.galleryTemplate10.OnSelect"
                 }
               ],
@@ -6821,6 +6784,46 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "NewRequestScreen.Label1_12.Text"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "NewRequestScreen.Label1_12.Text",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 13,
+                  "charOffset": 0,
+                  "snippet": {
+                    "text": "_LeaveBalance"
+                  }
+                }
+              },
+              "properties": {
+                "member": "Text",
+                "module": "NewRequestScreen",
+                "type": "NewRequestScreen.Label1_12"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "_LeaveBalance"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidName",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "LeaveInformationScreen.Gallery6.Items"
                 }
               ],
@@ -8521,36 +8524,6 @@
               },
               "properties": {
                 "member": "_sendEmailsEnabled",
-                "module": "App",
-                "type": "App"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-UnusedVariables",
-          "ruleIndex": 12
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "App._LeaveBalance"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "App._LeaveBalance",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "_LeaveBalance",
                 "module": "App",
                 "type": "App"
               }
