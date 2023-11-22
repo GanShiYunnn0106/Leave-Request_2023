@@ -1,7 +1,7 @@
 AboutScreen As screen:
     Height: =Max(App.Height, App.DesignHeight)
     OnHidden: =Set(_showDetails, false)
-    OnVisible: =Set(_navMenuSelect, "About")
+    OnVisible: =
     Orientation: =If(AboutScreen.Width < AboutScreen.Height, Layout.Vertical, Layout.Horizontal)
     Size: =1 + CountRows(App.SizeBreakpoints) - CountIf(App.SizeBreakpoints, Value >= AboutScreen.Width)
     Width: =Max(App.Width, App.DesignWidth)

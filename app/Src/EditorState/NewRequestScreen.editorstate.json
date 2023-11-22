@@ -2030,7 +2030,14 @@
           "IsLockable": false,
           "NameMapSourceSchema": "?"
         },
-        "Live",
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "Live.Off",
+          "InvariantPropertyName": "Live",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
         "Role",
         "ContentLanguage"
       ],
