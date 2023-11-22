@@ -1,12 +1,12 @@
 App As appinfo:
     BackEnabled: =true
     OnError: =
-    OnStart: |-
+    OnStart: |+
         =Set(
             _sendEmailsEnabled,
             false
         );
-        Concurrent(
+        
             //collection used in the left nav menu
             ClearCollect(
                 EmployeeNavigation,
@@ -34,7 +34,7 @@ App As appinfo:
                     Title: "Log Out",
                     TargetScreen: LoginScreen
                 }
-            ),
+            );
             //collection used in the left nav menu
             ClearCollect(
                 ManagerNavigation,
@@ -58,7 +58,7 @@ App As appinfo:
                     Title: "Log Out",
                     TargetScreen: LoginScreen
                 }
-            ),
+            );
             //add custom leave types to this collection to make them show up in the app
             ClearCollect(
                 LeaveTypeCollection,
@@ -121,20 +121,9 @@ App As appinfo:
         "
                     }
                 )
-            ),
+            );
             //defines leave start and end for requests. Default set to Now since most users will be creating new requests. Changes to reflect leave times for requests which are being edited
-            Set(
-                _leaveStart,
-                Now()
-            ),
-            Set(
-                Now()
-            ) _leaveEnd,
-               ,
-            Set(
-                _myProfile,
-                Office365Users.MyProfile()
-            ),
+         
             ClearCollect(
                 EmailTemplate,
                 "<html>
@@ -146,7 +135,7 @@ App As appinfo:
                 There is a leave request from:  {SubmitterName}  pending your approval. <ul><li>Type:  {LeaveType}</li><li>Title: {LeaveTitle}</li><li>Description: {LeaveDescript}</li><li>Start Date: {LeaveStart}</li><li>End Date: {LeaveEnd}</li>" & "</p>
                 </body>
                 </html>"
-            ),
+            );
             ClearCollect(
                 HolidaysCollection,
                 {
@@ -169,51 +158,8 @@ App As appinfo:
                     HolidayName: "New Year's Day",
                     StartDate: DateValue("1/1/2019")
                 }
-            )
-        );
-        ClearCollect(
-            LeaveCollection,
-            {
-                Title: "Vacation",
-                Detail: "Example vacation request",
-                StartDate: Today(),
-                EndDate: DateAdd(
-                    Today(),
-                    6,
-                    TimeUnit.Days
-                ),
-                LeaveType: "Vacation",
-                Requester: _myProfile.UserPrincipalName,
-                Approver: _myProfile.UserPrincipalName,
-                Status: "Pending",
-                LeaveID: _myProfile.UserPrincipalName & Text(
-                    Now(),
-                    "[$-en-US]mm-dd-yyyy-hh-mm-ss-fff"
-                )
-            }
-        );
-        ClearCollect(
-            BalanceCollection,
-            {
-                EmployeeEmail: _myProfile.UserPrincipalName,
-                EmployeeName: _myProfile.DisplayName,
-                Year: Text(Year(Now())),
-                Vacation: 10,
-                VacationUsed: 0,
-                Sick: 8,
-                SickUsed: 0,
-                Floating: 8,
-                FloatingUsed: 0,
-                JuryDuty: 3,
-                JuryDutyUsed: 0,
-                Bereavement: 5,
-                BereavementUsed: 0,
-                BalanceID: _myProfile.UserPrincipalName & Text(
-                    Now(),
-                    "[$-en-US]mm-dd-yyyy-hh-mm-ss-fff"
-                )
-            }
-        )
+            );
+        
     Theme: =PowerAppsTheme
 
     Host As hostControl.DefaultHostControlVariant:
