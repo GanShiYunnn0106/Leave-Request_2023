@@ -1,7 +1,12 @@
 NewRequestScreen As screen:
     Height: =Max(App.Height, App.DesignHeight)
     OnHidden: =
-    OnVisible: =
+    OnVisible: |+
+        =Reset(LeaveEndDatePicker);
+        Reset(LeaveStartDatePicker);
+        Reset(TextInput1_1);
+        
+        
     Orientation: =If(NewRequestScreen.Width < NewRequestScreen.Height, Layout.Vertical, Layout.Horizontal)
     Size: =1 + CountRows(App.SizeBreakpoints) - CountIf(App.SizeBreakpoints, Value >= NewRequestScreen.Width)
     Width: =Max(App.Width, App.DesignWidth)
@@ -360,11 +365,12 @@ NewRequestScreen As screen:
             HoverBorderColor: =Label1_12.BorderColor
             HoverColor: =Label1_12.Color
             HoverFill: =Label1_12.Fill
+            Live: =Live
             PressedBorderColor: =Label1_12.BorderColor
             PressedColor: =Label1_12.Color
             PressedFill: =Label1_12.Fill
             Size: =10.5
-            Text: =_LeaveBalance
+            Text: =_balanceRemain
             Visible: =!IsBlank(_selectedLeaveType)
             Width: =70
             X: =1060
@@ -638,7 +644,11 @@ NewRequestScreen As screen:
                 HoverColor: =NRLeaveTypeLabel.Color
                 HoverFill: =NRLeaveTypeLabel.Fill
                 LineHeight: =1
-                OnSelect: =Select(Parent);
+                OnSelect: |-
+                    =If(_selectedLeaveType = "Annual",
+                    Set(_balanceRemain,(LookUp(LeaveApp_Employee,NameofEmployee.Email=User().Email).AnnualLeaveBalance)),
+                    );
+                    Select(Parent);
                 PaddingBottom: =0
                 PaddingLeft: =0
                 PaddingRight: =0.00
