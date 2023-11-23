@@ -518,7 +518,7 @@ HomeScreen As screen:
                 Y: =DataCardKey4.Y + DataCardKey4.Height + 5
                 ZIndex: =2
 
-    Label6 As label:
+    EditLable As label:
         BorderThickness: =2
         Color: =RGBA(101, 128, 187, 1)
         FocusedBorderThickness: =3
@@ -527,9 +527,11 @@ HomeScreen As screen:
         Height: =31
         HoverBorderColor: =RGBA(62, 96, 170, 1)
         HoverFill: =RGBA(230, 229, 229, 1)
-        OnSelect: |-
+        OnSelect: |+
             =Set(_editingRequest, true);
-            Navigate(NewRequestScreen, BorderStyle.None)
+            Navigate(NewRequestScreen, BorderStyle.None);
+            
+            
         Text: ="EDIT"
         Visible: =!_managerView && (GalleryRequest.Selected.Status.Value) = "Pending"
         Width: =51
@@ -537,7 +539,7 @@ HomeScreen As screen:
         Y: =506
         ZIndex: =29
 
-    Icon2 As icon.Edit:
+    EditIcon As icon.Edit:
         Height: =30
         Icon: =Icon.Edit
         Visible: =!_managerView && (GalleryRequest.Selected.Status.Value) = "Pending"
