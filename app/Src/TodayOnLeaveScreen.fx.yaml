@@ -28,7 +28,7 @@ TodayOnLeaveScreen As screen:
         ZIndex: =1
 
         TodayOnLeaveName As label:
-            FontWeight: =FontWeight.Semibold
+            FontWeight: =FontWeight.Bold
             Height: =31
             OnSelect: =Select(Parent)
             Text: =ThisItem.Created_By.DisplayName
