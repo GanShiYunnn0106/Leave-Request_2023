@@ -5,7 +5,7 @@ NewRequestScreen As screen:
         =Reset(LeaveEndDatePicker);
         Reset(LeaveStartDatePicker);
         Reset(TextInput1_1);
-        Select(LeaveStartDatePicker)
+        Select(LeaveStartDatePicker);
         
     Orientation: =If(NewRequestScreen.Width < NewRequestScreen.Height, Layout.Vertical, Layout.Horizontal)
     Size: =1 + CountRows(App.SizeBreakpoints) - CountIf(App.SizeBreakpoints, Value >= NewRequestScreen.Width)
@@ -390,7 +390,8 @@ NewRequestScreen As screen:
             PressedColor: =Label1_13.Color
             PressedFill: =Label1_13.Fill
             Size: =12
-            Text: =If(LeaveStartDatePicker.SelectedDate > LeaveEndDatePicker.SelectedDate || And(!_editingRequest, LeaveStartDatePicker.SelectedDate < Today()), "Start date must occur on or " & If(LeaveStartDatePicker.SelectedDate > LeaveEndDatePicker.SelectedDate,"before end date", "after today"), If(_balanceRemain < _requestedDays,"Please select date fulfil your leave balance"))
+            Text: |-
+                =If(LeaveStartDatePicker.SelectedDate > LeaveEndDatePicker.SelectedDate || And(!_editingRequest, LeaveStartDatePicker.SelectedDate < Today()), "Start date must occur on or " & If(LeaveStartDatePicker.SelectedDate > LeaveEndDatePicker.SelectedDate,"before end date", "after today"), If(_balanceRemain < _requestedDays,"Reminder: Do not exceed leave balance"))
             Width: =252
             X: =874
             Y: =295
@@ -444,6 +445,7 @@ NewRequestScreen As screen:
             ZIndex: =11
 
         Label1_7 As label:
+            Color: =RGBA(0, 0, 0, 1)
             FocusedBorderColor: =Label1_7.BorderColor
             Font: =Font.Lato
             FontWeight: =FontWeight.Bold
@@ -457,7 +459,7 @@ NewRequestScreen As screen:
             PressedFill: =Label1_7.Fill
             Size: =10.5
             Text: |-
-                ="Detail:"
+                ="* Detail:"
             Width: =300
             X: =565
             Y: =489
@@ -767,8 +769,10 @@ NewRequestScreen As screen:
     Button6 As button:
         BorderColor: =RGBA(43, 67, 119, 1)
         Color: =RGBA(43, 67, 119, 1)
-        DisplayMode: =If(IsBlank(LeaveStartDatePicker.SelectedDate) || IsBlank(LeaveEndDatePicker.SelectedDate) || LeaveEndDatePicker.SelectedDate < LeaveStartDatePicker.SelectedDate || LeaveStartDatePicker.SelectedDate < Today() || IsBlank(_selectedLeaveType) || (_balanceRemain < _requestedDays) , DisplayMode.Disabled, DisplayMode.Edit)
+        DisplayMode: |
+            =If(IsBlank(LeaveStartDatePicker.SelectedDate) || IsBlank(LeaveEndDatePicker.SelectedDate) || LeaveEndDatePicker.SelectedDate < LeaveStartDatePicker.SelectedDate || LeaveStartDatePicker.SelectedDate < Today() || IsBlank(_selectedLeaveType) || (_balanceRemain < _requestedDays) || IsBlank(TextInput1_1), DisplayMode.Disabled, DisplayMode.Edit)
         Fill: =RGBA(255, 255, 255, 1)
+        FontWeight: =FontWeight.Bold
         Height: =112
         OnSelect: |-
             =Patch(LeaveApp_Request,Defaults(LeaveApp_Request),
