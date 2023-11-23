@@ -40,57 +40,9 @@ HomeScreen As screen:
             )
         Layout: =Layout.Vertical
         LoadingSpinner: =LoadingSpinner.Data
-        OnSelect: |-
+        OnSelect: |
             =Set(_selectedLeaveItem, ThisItem);
             Set(SelectedRecord,GalleryRequest.Selected);
-            If(_managerView, 
-                //If manager view, get user's leave balance record and determine any overlaps this request has from other people I manage
-                //Set(_requesterBalanceRecord, LookUp(LeaveApp_Request, Year = Text(Year(Now())) && EmployeeEmail = ThisItem.Requester));
-                //ClearCollect(RequestOverlaps, Filter(LeaveCollection, EndDate >= _selectedLeaveItem.StartDate && StartDate <= _selectedLeaveItem.EndDate 
-               // && Requester <>_selectedLeaveItem.Requester));
-                
-                //If(CountRows(RequestOverlaps) > 0, Set(_requestOverlapMessage, Concat(ForAll(Distinct(RequestOverlaps, Requester), {Result: ThisRecord.Value}), Result, ", ")))
-            //);
-            
-            Concurrent(
-                //gather requester or approver info depending on view
-                //If(_managerView, 
-                   // Set(_requester, Office365Users.UserProfile(ThisItem.Requested_To.DisplayName)), 
-                   // Set(_selectedApprover, Office365Users.UserProfile(ThisItem.Approver)); If(Office365Users.UserPhotoMetadata(_selectedApprover.Id).HasPhoto, Set(_selectedApproverPhoto, Office365Users.UserPhoto(_selectedApprover.Id)))),
-                //**** CALCULATION USED TO DETERMINE TOTAL WORK DAYS REQUESTED ****
-                 Set(_inclusiveTotalDaysRequested, DateDiff(ThisItem.Start_Date, ThisItem.End_Date, TimeUnit.Days) + 1);
-                    Set(_numFullWeeks, RoundDown(_inclusiveTotalDaysRequested / 7, 0));
-                    Set(_numFullDaysPartialWeek, _inclusiveTotalDaysRequested - _numFullWeeks * 7);
-                    Set(_startWeekday, Weekday(ThisItem.Start_Date)); 
-                    Set(_endWeekday, Weekday(ThisItem.End_Date));
-            
-            
-                   //calculates the number of business days in the partial week left over after whole weeks are subtracted out of total days requested
-                If(_numFullDaysPartialWeek = 6, 
-                    If(_startWeekday <= 2, Set(_numPartialWeekdays, 5), Set(_numPartialWeekdays, 4)
-                    ),
-                  _numFullDaysPartialWeek = 5,
-                    If(_startWeekday = 2, Set(_numPartialWeekdays, 5), _startWeekday = 1 || _startWeekday = 3 || _startWeekday = 4, Set(_numPartialWeekdays, 4), Set(_numPartialWeekdays, 3)
-                    ),
-                  _numFullDaysPartialWeek = 4,
-                    If(_startWeekday = 2 || _startWeekday = 3, Set(_numPartialWeekdays, 4), _startWeekday = 1 || _startWeekday = 4, Set(_numPartialWeekdays, 3), Set(_numPartialWeekdays, 2)
-                    ),
-                  _numFullDaysPartialWeek = 3,
-                    If(_startWeekday = 6 || _startWeekday = 7, Set(_numPartialWeekdays, 1), _startWeekday = 1 || _startWeekday = 5, Set(_numPartialWeekdays, 2), Set(_numPartialWeekdays, 3)
-                    ),
-                  _numFullDaysPartialWeek = 2,
-                    If(_startWeekday = 7, Set(_numPartialWeekdays, 0), _startWeekday = 1 || _startWeekday = 6, Set(_numPartialWeekdays, 1), Set(_numPartialWeekdays, 2)),
-                  _numFullDaysPartialWeek = 1,
-                    If(_startWeekday = 1 || _startWeekday = 7, Set(_numPartialWeekdays, 0), Set(_numPartialWeekdays, 1)
-                    ),
-                  _numFullDaysPartialWeek = 0, Set(_numPartialWeekdays, 0)
-                );
-                  Set(_workDaysInRequest, _numFullWeeks * 5 + _numPartialWeekdays),
-                  Set(_holidaysInRequest, CountIf(HolidaysCollection, StartDate >= ThisItem.Start_Date, StartDate <= ThisItem.End_Date))
-            );
-            Set(_requestedDays, _workDaysInRequest - _holidaysInRequest);
-            //**** END CALCULATION ****
-            Set(_showDetails, true);
         TemplatePadding: =0
         TemplateSize: =171
         Width: =842
@@ -98,7 +50,7 @@ HomeScreen As screen:
         Y: =154
         ZIndex: =1
 
-        Title1 As label:
+        TitleStartDate As label:
             Height: =25
             OnSelect: =
             PaddingBottom: =0
@@ -112,7 +64,7 @@ HomeScreen As screen:
             Y: =45
             ZIndex: =1
 
-        Subtitle1 As label:
+        SubtitleEndDate As label:
             Height: =Self.Size * 1.8
             OnSelect: =
             PaddingBottom: =0
@@ -121,12 +73,12 @@ HomeScreen As screen:
             PaddingTop: =0
             Text: =Text(DateTimeValue(Text(ThisItem.End_Date)),DateTimeFormat.LongDate)
             VerticalAlign: =VerticalAlign.Top
-            Width: =Title1.Width
+            Width: =TitleStartDate.Width
             X: =170
             Y: =85
             ZIndex: =2
 
-        Body1 As label:
+        BodyComments As label:
             Height: =Self.Size * 1.8
             OnSelect: =
             PaddingBottom: =0
@@ -135,8 +87,8 @@ HomeScreen As screen:
             PaddingTop: =0
             Text: =ThisItem.Comments
             VerticalAlign: =VerticalAlign.Top
-            Width: =Title1.Width
-            X: =Title1.X
+            Width: =TitleStartDate.Width
+            X: =TitleStartDate.X
             Y: =124
             ZIndex: =3
 
@@ -155,7 +107,7 @@ HomeScreen As screen:
             Width: =4
             ZIndex: =6
 
-        Label1 As label:
+        LabelName As label:
             Color: =RGBA(101, 128, 187, 1)
             Font: =Font.'Lato Black'
             OnSelect: =
@@ -179,7 +131,7 @@ HomeScreen As screen:
             Y: =42
             ZIndex: =8
 
-        Button5 As button:
+        ButtonStatus As button:
             BorderColor: |-
                 =If((ThisItem.Status.Value)="Pending",RGBA(0,71,144,1),
                 (ThisItem.Status.Value)="Rejected",RGBA(213,0,0,1),
@@ -259,62 +211,12 @@ HomeScreen As screen:
         Y: =80
         ZIndex: =19
 
-    Label28 As label:
-        FontWeight: =FontWeight.Semibold
-        Height: =54
-        Text: |
-            ="Total Days: 
-            " &GalleryRequest.Selected.Days
-        Width: =146
-        X: =1089
-        Y: =168
-        ZIndex: =26
-
-    Label29 As label:
-        FontWeight: =FontWeight.Semibold
-        Height: =52
-        Text: |-
-            ="Leave Type:
-            " & GalleryRequest.Selected.Leave_Type.Value
-        X: =1089
-        Y: =234
-        ZIndex: =27
-
-    Label30 As label:
-        FontWeight: =FontWeight.Semibold
-        Text: |-
-            ="Request send to:
-            " & GalleryRequest.Selected.Requested_to.DisplayName
-        X: =1089
-        Y: =304
-        ZIndex: =28
-
-    Label31 As label:
-        FontWeight: =FontWeight.Semibold
-        Height: =44
-        Text: |-
-            ="Carry Forward Leave:
-            " & GalleryRequest.Selected.CarryForwardDays & "days"
-        Width: =213
-        X: =1086
-        Y: =372
-        ZIndex: =29
-
-    Label11 As label:
-        FontWeight: =FontWeight.Semibold
-        Text: |-
-            ="Unpaid Leave:
-            " & GalleryRequest.Selected.UnpaidLeave & "days"
-        X: =1089
-        Y: =440
-        ZIndex: =30
-
     GroupRequestDetails As group:
         Height: =5
         Width: =5
         X: =40
         Y: =40
-        ZIndex: =32
+        ZIndex: =36
 
         Rectangle3 As rectangle:
             DisabledFill: =Rectangle3.Fill
@@ -334,8 +236,8 @@ HomeScreen As screen:
             Size: =14
             Text: ="Request Details"
             Underline: =true
-            X: =1076
-            Y: =116
+            X: =1087
+            Y: =121
             ZIndex: =17
 
         EditLable As label:
@@ -355,8 +257,8 @@ HomeScreen As screen:
             Text: ="EDIT"
             Visible: =!_managerView && (GalleryRequest.Selected.Status.Value) = "Pending"
             Width: =51
-            X: =1119
-            Y: =506
+            X: =1124
+            Y: =540
             ZIndex: =20
 
         EditIcon As icon.Edit:
@@ -364,8 +266,8 @@ HomeScreen As screen:
             Icon: =Icon.Edit
             Visible: =!_managerView && (GalleryRequest.Selected.Status.Value) = "Pending"
             Width: =21
-            X: =1085
-            Y: =506
+            X: =1088
+            Y: =540
             ZIndex: =21
 
         ButtonManagerApprove As button:
@@ -394,6 +296,84 @@ HomeScreen As screen:
             X: =1226
             Y: =533
             ZIndex: =23
+
+        Days As label:
+            FontWeight: =FontWeight.Semibold
+            Height: =54
+            Text: |
+                =GalleryRequest.Selected.Days
+            Width: =146
+            X: =1089
+            Y: =168
+            ZIndex: =26
+
+        Leave_Type As label:
+            FontWeight: =FontWeight.Semibold
+            Text: = GalleryRequest.Selected.Leave_Type.Value
+            Width: =243
+            X: =1089
+            Y: =246
+            ZIndex: =27
+
+        Request_To As label:
+            FontWeight: =FontWeight.Semibold
+            Text: = GalleryRequest.Selected.Requested_to.DisplayName
+            X: =1089
+            Y: =313
+            ZIndex: =28
+
+        CarryForwardDays As label:
+            FontWeight: =FontWeight.Semibold
+            Height: =44
+            Text: = GalleryRequest.Selected.CarryForwardDays & " days"
+            Width: =213
+            X: =1089
+            Y: =388
+            ZIndex: =29
+
+        UnpaidLeave As label:
+            FontWeight: =FontWeight.Semibold
+            Text: = GalleryRequest.Selected.UnpaidLeave & " days"
+            X: =1089
+            Y: =473
+            ZIndex: =30
+
+        LblTotalDays As label:
+            Text: |-
+                ="Total days:"
+            X: =1087
+            Y: =154
+            ZIndex: =31
+
+        LblLeaveType As label:
+            Text: |-
+                ="Leave Type:"
+            X: =1087
+            Y: =222
+            ZIndex: =32
+
+        LblRequestTo As label:
+            Text: |-
+                ="Request Send To:"
+            X: =1089
+            Y: =286
+            ZIndex: =33
+
+        LblCarryForward As label:
+            Height: =22
+            Text: |-
+                ="Carry Forward Days:"
+            Width: =182
+            X: =1085
+            Y: =373
+            ZIndex: =34
+
+        LblUnpaidLeave As label:
+            Text: |-
+                ="Unpaid Leaves:"
+            X: =1089
+            Y: =449
+            ZIndex: =35
 
     GroupEmptyState As group:
         Height: =5
