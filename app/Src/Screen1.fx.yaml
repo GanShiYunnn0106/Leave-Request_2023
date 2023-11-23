@@ -93,6 +93,66 @@ Screen1 As screen:
         Y: =176
         ZIndex: =2
 
+    Button3 As button:
+        Fill: =RGBA(141, 198, 63, 1)
+        OnSelect: |
+            =Patch(
+                LeaveApp_Employee,
+                Defaults(LeaveApp_Employee),
+                LookUp(
+                    LeaveApp_Employee,
+                    Created_By.Email = User().Email && LeaveType = _selectedLeaveType
+                    // Add other conditions as needed to uniquely identify the record
+                ),
+                {
+                    Annual_x0020_Leave_x0020_Balance: If(
+                        _selectedLeaveType = "Annual",
+                        LeaveApp_Employee.Annual_x0020_Leave_x0020_Balance - _requestedDays,
+                        LeaveApp_Employee.Annual_x0020_Leave_x0020_Balance
+                    ),
+                    MedicalLeaveBalance: If(
+                        _selectedLeaveType = "Medical",
+                        LeaveApp_Employee.MedicalLeaveBalance - _requestedDays,
+                        LeaveApp_Employee.MedicalLeaveBalance
+                    ),
+                    CasualImmediateLeaveBalance: If(
+                        _selectedLeaveType = "Casual Immediate",
+                        LeaveApp_Employee.CasualImmediateLeaveBalance - _requestedDays,
+                        LeaveApp_Employee.CasualImmediateLeaveBalance
+                    ),
+                    CasualSecondLeaveBalance: If(
+                        _selectedLeaveType = "Casual Second",
+                        LeaveApp_Employee.CasualSecondLeaveBalance - _requestedDays,
+                        LeaveApp_Employee.CasualSecondLeaveBalance
+                    ),
+                    MarriageLeaveBalance: If(
+                        _selectedLeaveType = "Marriage",
+                        LeaveApp_Employee.MarriageLeaveBalance - _requestedDays,
+                        LeaveApp_Employee.MarriageLeaveBalance
+                    ),
+                    PaternityLeaveBalance: If(
+                        _selectedLeaveType = "Paternity",
+                        LeaveApp_Employee.PaternityLeaveBalance - _requestedDays,
+                        LeaveApp_Employee.PaternityLeaveBalance
+                    ),
+                    MaternityLeaveBalance: If(
+                        _selectedLeaveType = "Maternity",
+                        LeaveApp_Employee.MaternityLeaveBalance - _requestedDays,
+                        LeaveApp_Employee.MaternityLeaveBalance
+                    ),
+                    HospitalizationLeaveBalance: If(
+                        _selectedLeaveType = "Hospitalization",
+                        LeaveApp_Employee.HospitalizationLeaveBalance - _requestedDays,
+                        LeaveApp_Employee.HospitalizationLeaveBalance
+                    )
+                    // Add other leave types as needed
+                }
+            )
+        Text: ="Approve"
+        X: =70
+        Y: =176
+        ZIndex: =11
+
     GroupRequestInfo_1 As group:
         Height: =5
         Width: =5
@@ -251,66 +311,6 @@ Screen1 As screen:
             X: =454
             Y: =503
             ZIndex: =10
-
-    Button3 As button:
-        Fill: =RGBA(141, 198, 63, 1)
-        OnSelect: |
-            =Patch(
-                LeaveApp_Employee,
-                Defaults(LeaveApp_Employee),
-                LookUp(
-                    LeaveApp_Employee,
-                    Created_By.Email = User().Email && LeaveType = _selectedLeaveType
-                    // Add other conditions as needed to uniquely identify the record
-                ),
-                {
-                    Annual_x0020_Leave_x0020_Balance: If(
-                        _selectedLeaveType = "Annual",
-                        LeaveApp_Employee.Annual_x0020_Leave_x0020_Balance - _requestedDays,
-                        LeaveApp_Employee.Annual_x0020_Leave_x0020_Balance
-                    ),
-                    MedicalLeaveBalance: If(
-                        _selectedLeaveType = "Medical",
-                        LeaveApp_Employee.MedicalLeaveBalance - _requestedDays,
-                        LeaveApp_Employee.MedicalLeaveBalance
-                    ),
-                    CasualImmediateLeaveBalance: If(
-                        _selectedLeaveType = "Casual Immediate",
-                        LeaveApp_Employee.CasualImmediateLeaveBalance - _requestedDays,
-                        LeaveApp_Employee.CasualImmediateLeaveBalance
-                    ),
-                    CasualSecondLeaveBalance: If(
-                        _selectedLeaveType = "Casual Second",
-                        LeaveApp_Employee.CasualSecondLeaveBalance - _requestedDays,
-                        LeaveApp_Employee.CasualSecondLeaveBalance
-                    ),
-                    MarriageLeaveBalance: If(
-                        _selectedLeaveType = "Marriage",
-                        LeaveApp_Employee.MarriageLeaveBalance - _requestedDays,
-                        LeaveApp_Employee.MarriageLeaveBalance
-                    ),
-                    PaternityLeaveBalance: If(
-                        _selectedLeaveType = "Paternity",
-                        LeaveApp_Employee.PaternityLeaveBalance - _requestedDays,
-                        LeaveApp_Employee.PaternityLeaveBalance
-                    ),
-                    MaternityLeaveBalance: If(
-                        _selectedLeaveType = "Maternity",
-                        LeaveApp_Employee.MaternityLeaveBalance - _requestedDays,
-                        LeaveApp_Employee.MaternityLeaveBalance
-                    ),
-                    HospitalizationLeaveBalance: If(
-                        _selectedLeaveType = "Hospitalization",
-                        LeaveApp_Employee.HospitalizationLeaveBalance - _requestedDays,
-                        LeaveApp_Employee.HospitalizationLeaveBalance
-                    )
-                    // Add other leave types as needed
-                }
-            )
-        Text: ="Approve"
-        X: =70
-        Y: =176
-        ZIndex: =11
 
     Button3_2 As button:
         Fill: =RGBA(237, 28, 36, 1)
