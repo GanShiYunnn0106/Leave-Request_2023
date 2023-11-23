@@ -339,6 +339,7 @@ HomeScreen As screen:
                 DisplayFields: =["DisplayName","Email","Picture"]
                 DisplayMode: =Parent.DisplayMode
                 FontWeight: =FontWeight.Semibold
+                Height: =38
                 HoverBorderColor: =RGBA(255, 255, 255, 1)
                 HoverFill: =RGBA(255, 255, 255, 1)
                 IsSearchable: =false
@@ -351,7 +352,7 @@ HomeScreen As screen:
                 SelectMultiple: =false
                 Template: =ListItemTemplate.Person
                 Tooltip: =Parent.DisplayName
-                Width: =Parent.Width - 60
+                Width: =187
                 X: =30
                 Y: =DataCardKey1.Y + DataCardKey1.Height + 5
                 ZIndex: =2
@@ -363,7 +364,7 @@ HomeScreen As screen:
             DisplayMode: =Parent.DisplayMode
             DisplayName: =DataSourceInfo([@LeaveApp_Request],DataSourceInfo.DisplayName,"Leave_Type")
             Fill: =RGBA(0, 0, 0, 0)
-            Height: =50
+            Height: =77
             Required: =false
             Update: =DataCardValue_LeaveType.Selected
             Width: =291
@@ -394,6 +395,7 @@ HomeScreen As screen:
                 DisplayFields: =["Value"]
                 DisplayMode: =Parent.DisplayMode
                 FontWeight: =FontWeight.Semibold
+                Height: =35
                 HoverBorderColor: =RGBA(255, 255, 255, 1)
                 HoverFill: =
                 IsSearchable: =false
@@ -405,7 +407,7 @@ HomeScreen As screen:
                 SelectionFill: =RGBA(255, 255, 255, 1)
                 SelectMultiple: =false
                 Tooltip: =Parent.DisplayName
-                Width: =Parent.Width - 60
+                Width: =181
                 X: =30
                 Y: =DataCardKey2.Y + DataCardKey2.Height + 5
                 ZIndex: =2
@@ -447,6 +449,7 @@ HomeScreen As screen:
                 DisplayMode: =Parent.DisplayMode
                 FontWeight: =FontWeight.Semibold
                 Format: =TextFormat.Number
+                Height: =35
                 HoverBorderColor: =RGBA(255, 255, 255, 1)
                 PaddingLeft: =5
                 PressedBorderColor: =RGBA(255, 255, 255, 1)
@@ -455,7 +458,7 @@ HomeScreen As screen:
                 RadiusTopLeft: =0
                 RadiusTopRight: =0
                 Tooltip: =Parent.DisplayName
-                Width: =Parent.Width - 60
+                Width: =172
                 X: =30
                 Y: =DataCardKey3.Y + DataCardKey3.Height + 5
                 ZIndex: =2
@@ -467,7 +470,7 @@ HomeScreen As screen:
             DisplayMode: =Parent.DisplayMode
             DisplayName: =DataSourceInfo([@LeaveApp_Request],DataSourceInfo.DisplayName,"Decision_By")
             Fill: =RGBA(0, 0, 0, 0)
-            Height: =50
+            Height: =90
             Required: =false
             Update: =DataCardValue_DecisonBy.Selected
             Width: =291
@@ -498,6 +501,7 @@ HomeScreen As screen:
                 DisplayFields: =["DisplayName","Email","Picture"]
                 DisplayMode: =Parent.DisplayMode
                 FontWeight: =FontWeight.Semibold
+                Height: =38
                 HoverBorderColor: =RGBA(255, 255, 255, 1)
                 HoverFill: =
                 IsSearchable: =false
@@ -509,10 +513,38 @@ HomeScreen As screen:
                 SelectMultiple: =false
                 Template: =ListItemTemplate.Person
                 Tooltip: =Parent.DisplayName
-                Width: =Parent.Width - 60
+                Width: =231
                 X: =30
                 Y: =DataCardKey4.Y + DataCardKey4.Height + 5
                 ZIndex: =2
+
+    Label6 As label:
+        BorderThickness: =2
+        Color: =RGBA(101, 128, 187, 1)
+        FocusedBorderThickness: =3
+        Font: =Font.'Lato Black'
+        FontWeight: =FontWeight.Semibold
+        Height: =31
+        HoverBorderColor: =RGBA(62, 96, 170, 1)
+        HoverFill: =RGBA(230, 229, 229, 1)
+        OnSelect: |-
+            =Set(_editingRequest, true);
+            Navigate(NewRequestScreen, BorderStyle.None)
+        Text: ="EDIT"
+        Visible: =!_managerView && (GalleryRequest.Selected.Status.Value) = "Pending"
+        Width: =51
+        X: =1119
+        Y: =506
+        ZIndex: =29
+
+    Icon2 As icon.Edit:
+        Height: =30
+        Icon: =Icon.Edit
+        Visible: =!_managerView && (GalleryRequest.Selected.Status.Value) = "Pending"
+        Width: =21
+        X: =1085
+        Y: =506
+        ZIndex: =30
 
     GroupEmptyState As group:
         Height: =5
