@@ -95,13 +95,12 @@ Screen1 As screen:
 
     Button3 As button:
         Fill: =RGBA(141, 198, 63, 1)
-        OnSelect: |
+        OnSelect: |-
             =Patch(
                 LeaveApp_Employee,
-                Defaults(LeaveApp_Employee),
                 LookUp(
                     LeaveApp_Employee,
-                    Created_By.Email = User().Email && LeaveType = _selectedLeaveType
+                    NameofEmployee.Email = User().Email
                     // Add other conditions as needed to uniquely identify the record
                 ),
                 {
@@ -110,40 +109,40 @@ Screen1 As screen:
                         LeaveApp_Employee.Annual_x0020_Leave_x0020_Balance - _requestedDays,
                         LeaveApp_Employee.Annual_x0020_Leave_x0020_Balance
                     ),
-                    MedicalLeaveBalance: If(
+                    Medical_x0020_Leave_x0020_Balance: If(
                         _selectedLeaveType = "Medical",
-                        LeaveApp_Employee.MedicalLeaveBalance - _requestedDays,
-                        LeaveApp_Employee.MedicalLeaveBalance
+                        LeaveApp_Employee.Medical_x0020_Leave_x0020_Balance - _requestedDays,
+                        LeaveApp_Employee.Medical_x0020_Leave_x0020_Balance
                     ),
-                    CasualImmediateLeaveBalance: If(
+                    Compassionate_x0020_Leave_x0020_Balance: If(
                         _selectedLeaveType = "Casual Immediate",
-                        LeaveApp_Employee.CasualImmediateLeaveBalance - _requestedDays,
-                        LeaveApp_Employee.CasualImmediateLeaveBalance
+                        LeaveApp_Employee.Compassionate_x0020_Leave_x0020_Balance - _requestedDays,
+                        LeaveApp_Employee.Compassionate_x0020_Leave_x0020_Balance
                     ),
-                    CasualSecondLeaveBalance: If(
+                    Casual_x0020_Second_x0020_Leave_x0020_Balance: If(
                         _selectedLeaveType = "Casual Second",
-                        LeaveApp_Employee.CasualSecondLeaveBalance - _requestedDays,
-                        LeaveApp_Employee.CasualSecondLeaveBalance
+                        LeaveApp_Employee.Casual_x0020_Second_x0020_Leave_x0020_Balance - _requestedDays,
+                        LeaveApp_Employee.Casual_x0020_Second_x0020_Leave_x0020_Balance
                     ),
-                    MarriageLeaveBalance: If(
+                    Marriage_x0020_Leave_x0020_Balance: If(
                         _selectedLeaveType = "Marriage",
-                        LeaveApp_Employee.MarriageLeaveBalance - _requestedDays,
-                        LeaveApp_Employee.MarriageLeaveBalance
+                        LeaveApp_Employee.Marriage_x0020_Leave_x0020_Balance - _requestedDays,
+                        LeaveApp_Employee.Marriage_x0020_Leave_x0020_Balance
                     ),
-                    PaternityLeaveBalance: If(
+                    Paternity_x0020_Leave_x0020_Balance: If(
                         _selectedLeaveType = "Paternity",
-                        LeaveApp_Employee.PaternityLeaveBalance - _requestedDays,
-                        LeaveApp_Employee.PaternityLeaveBalance
+                        LeaveApp_Employee.Paternity_x0020_Leave_x0020_Balance - _requestedDays,
+                        LeaveApp_Employee.Paternity_x0020_Leave_x0020_Balance
                     ),
-                    MaternityLeaveBalance: If(
+                    Maternity_x0020_Leave_x0020_Balance: If(
                         _selectedLeaveType = "Maternity",
-                        LeaveApp_Employee.MaternityLeaveBalance - _requestedDays,
-                        LeaveApp_Employee.MaternityLeaveBalance
+                        LeaveApp_Employee.Maternity_x0020_Leave_x0020_Balance - _requestedDays,
+                        LeaveApp_Employee.Maternity_x0020_Leave_x0020_Balance
                     ),
-                    HospitalizationLeaveBalance: If(
+                    Hospitalization_x0020_Leave_x0020_Balance: If(
                         _selectedLeaveType = "Hospitalization",
-                        LeaveApp_Employee.HospitalizationLeaveBalance - _requestedDays,
-                        LeaveApp_Employee.HospitalizationLeaveBalance
+                        LeaveApp_Employee.Hospitalization_x0020_Leave_x0020_Balance - _requestedDays,
+                        LeaveApp_Employee.Hospitalization_x0020_Leave_x0020_Balance
                     )
                     // Add other leave types as needed
                 }
