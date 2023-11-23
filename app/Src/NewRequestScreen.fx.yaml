@@ -5,7 +5,7 @@ NewRequestScreen As screen:
         =Reset(LeaveEndDatePicker);
         Reset(LeaveStartDatePicker);
         Reset(TextInput1_1);
-        
+        Select(LeaveStartDatePicker)
         
     Orientation: =If(NewRequestScreen.Width < NewRequestScreen.Height, Layout.Vertical, Layout.Horizontal)
     Size: =1 + CountRows(App.SizeBreakpoints) - CountIf(App.SizeBreakpoints, Value >= NewRequestScreen.Width)
