@@ -229,7 +229,25 @@ CompanyHolidaysScreen As screen:
             PressedBorderColor: =Label13.BorderColor
             PressedColor: =Label13.Color
             PressedFill: =Label13.Fill
-            Text: =Text(DateAdd(ThisItem.StartDate, -TimeZoneOffset(ThisItem.StartDate), TimeUnit.Minutes),"[$-en-US]dddd, mmmm dd")
+            Text: |-
+                =Text(
+                    DateAdd(
+                        If(
+                            !IsBlank(ThisItem.StartDate),
+                            ThisItem.StartDate,
+                            Now() // Use a default value if StartDate is null
+                        ),
+                        -TimeZoneOffset(
+                            If(
+                                !IsBlank(ThisItem.StartDate),
+                                ThisItem.StartDate,
+                                Now() // Use a default value if StartDate is null
+                            )
+                        ),
+                        TimeUnit.Minutes
+                    ),
+                    "[$-en-US]dddd, mmmm dd"
+                )
             Width: =442
             X: =405
             ZIndex: =2
