@@ -372,14 +372,7 @@
         "Width",
         "LoadingSpinner",
         "LoadingSpinnerColor",
-        {
-          "AFDDataSourceName": "",
-          "AutoRuleBindingEnabled": false,
-          "AutoRuleBindingString": "",
-          "InvariantPropertyName": "OnVisible",
-          "IsLockable": false,
-          "NameMapSourceSchema": "?"
-        },
+        "OnVisible",
         {
           "AFDDataSourceName": "",
           "AutoRuleBindingEnabled": false,

@@ -1,7 +1,7 @@
 CompanyHolidaysScreen As screen:
     Height: =Max(App.Height, App.DesignHeight)
     OnHidden: =Set(_showDetails, false)
-    OnVisible: =Set(_navMenuSelect, "Company Holidays")
+    OnVisible: =
     Orientation: =If(CompanyHolidaysScreen.Width < CompanyHolidaysScreen.Height, Layout.Vertical, Layout.Horizontal)
     Size: =1 + CountRows(App.SizeBreakpoints) - CountIf(App.SizeBreakpoints, Value >= CompanyHolidaysScreen.Width)
     Width: =Max(App.Width, App.DesignWidth)
