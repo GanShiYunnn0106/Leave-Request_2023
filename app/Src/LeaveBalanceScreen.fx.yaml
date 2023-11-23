@@ -118,7 +118,7 @@ LeaveBalanceScreen As screen:
             Size: =16
             Text: ="Annual Carried Forward Leave"
             Width: =212
-            X: =45
+            X: =54
             Y: =55
             ZIndex: =8
 
@@ -130,6 +130,15 @@ LeaveBalanceScreen As screen:
             X: =498
             Y: =14
             ZIndex: =9
+
+        Icon2_1 As icon.Information:
+            Height: =25
+            Icon: =Icon.Information
+            OnSelect: =Navigate(AboutScreen)
+            Width: =25
+            X: =225
+            Y: =14
+            ZIndex: =10
 
     Rectangle6 As rectangle:
         Fill: =RGBA(230, 229, 229, 1)
