@@ -14,8 +14,8 @@ CompanyHolidaysScreen As screen:
         HoverFill: =Rectangle3_2.Fill
         PressedFill: =Rectangle3_2.Fill
         Width: =244
-        X: =1105
-        Y: =67
+        X: =1122
+        Y: =73
         ZIndex: =3
 
     Header_2 As group:
@@ -274,7 +274,7 @@ CompanyHolidaysScreen As screen:
         Underline: =true
         Visible: =_managerView=true
         Width: =232
-        X: =1105
+        X: =1121
         Y: =136
         ZIndex: =38
 
@@ -297,7 +297,7 @@ CompanyHolidaysScreen As screen:
                 Date:"
             Visible: =_managerView=true
             Width: =124
-            X: =1126
+            X: =1142
             Y: =193
             ZIndex: =36
 
@@ -308,7 +308,7 @@ CompanyHolidaysScreen As screen:
             Text: ="Add"
             Visible: =_managerView=true
             Width: =80
-            X: =1170
+            X: =1186
             Y: =375
             ZIndex: =37
 
@@ -316,8 +316,8 @@ CompanyHolidaysScreen As screen:
         Default: =""
         Height: =34
         Visible: =_managerView=true
-        Width: =155
-        X: =1126
+        Width: =165
+        X: =1142
         Y: =235
         ZIndex: =39
 
@@ -327,7 +327,7 @@ CompanyHolidaysScreen As screen:
         Height: =35
         Visible: =_managerView=true
         Width: =164
-        X: =1129
+        X: =1145
         Y: =321
         ZIndex: =40
 

@@ -30,7 +30,7 @@ LeaveBalanceScreen As screen:
         Y: =90
         ZIndex: =9
 
-    Gallery4_1 As gallery.galleryVertical:
+    LeaveBalance As gallery.galleryVertical:
         BorderColor: =RGBA(230, 230, 230, 1)
         DelayItemLoading: =true
         Fill: =RGBA(255, 255, 255, 1)
