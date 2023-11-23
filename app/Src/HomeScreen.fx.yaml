@@ -260,41 +260,54 @@ HomeScreen As screen:
         ZIndex: =19
 
     Label28 As label:
+        FontWeight: =FontWeight.Semibold
         Height: =54
         Text: |
             ="Total Days: 
             " &GalleryRequest.Selected.Days
         Width: =146
-        X: =1080
+        X: =1089
         Y: =168
         ZIndex: =26
 
     Label29 As label:
+        FontWeight: =FontWeight.Semibold
         Height: =52
         Text: |-
             ="Leave Type:
             " & GalleryRequest.Selected.Leave_Type.Value
-        X: =1080
-        Y: =230
+        X: =1089
+        Y: =234
         ZIndex: =27
 
     Label30 As label:
+        FontWeight: =FontWeight.Semibold
         Text: |-
             ="Request send to:
             " & GalleryRequest.Selected.Requested_to.DisplayName
-        X: =1085
+        X: =1089
         Y: =304
         ZIndex: =28
 
     Label31 As label:
-        Height: =62
+        FontWeight: =FontWeight.Semibold
+        Height: =44
         Text: |-
             ="Carry Forward Leave:
-            " & GalleryRequest.Selected.CarryForwardDays
+            " & GalleryRequest.Selected.CarryForwardDays & "days"
         Width: =213
         X: =1086
-        Y: =363
+        Y: =372
         ZIndex: =29
+
+    Label11 As label:
+        FontWeight: =FontWeight.Semibold
+        Text: |-
+            ="Unpaid Leave:
+            " & GalleryRequest.Selected.UnpaidLeave & "days"
+        X: =1089
+        Y: =440
+        ZIndex: =30
 
     GroupRequestDetails As group:
         Height: =5
