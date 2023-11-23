@@ -94,7 +94,7 @@ LeaveBalanceScreen As screen:
             Height: =66
             OnSelect: =Select(Parent)
             Size: =16
-            Text: ="Annual Leave"
+            Text: ="Annual Leave Balance"
             Width: =212
             X: =318
             Y: =55
@@ -116,9 +116,9 @@ LeaveBalanceScreen As screen:
             Height: =66
             OnSelect: =Select(Parent)
             Size: =16
-            Text: ="Annual Carried Forward Leave"
+            Text: ="Carried Forward Leave Balance"
             Width: =212
-            X: =54
+            X: =45
             Y: =55
             ZIndex: =8
 
