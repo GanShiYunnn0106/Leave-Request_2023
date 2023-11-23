@@ -1134,10 +1134,11 @@ HomeScreen As screen:
                     DefaultSelectedItems: =Parent.Default
                     DisplayFields: =["Value"]
                     DisplayMode: =Parent.DisplayMode
+                    IsSearchable: =false
                     Items: =Choices([@LeaveApp_Request].MID)
                     PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
                     SearchFields: =["Value"]
-                    SearchItems: =Choices(LeaveApp_Request.MID,DataCardValue41.SearchText)
+                    SearchItems: =[]
                     SelectMultiple: =false
                     Tooltip: =Parent.DisplayName
                     Width: =Parent.Width - 60
