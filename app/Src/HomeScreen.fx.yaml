@@ -518,6 +518,36 @@ HomeScreen As screen:
                 Y: =DataCardKey4.Y + DataCardKey4.Height + 5
                 ZIndex: =2
 
+    EditLable As label:
+        BorderThickness: =2
+        Color: =RGBA(101, 128, 187, 1)
+        FocusedBorderThickness: =3
+        Font: =Font.'Lato Black'
+        FontWeight: =FontWeight.Semibold
+        Height: =31
+        HoverBorderColor: =RGBA(62, 96, 170, 1)
+        HoverFill: =RGBA(230, 229, 229, 1)
+        OnSelect: |+
+            =Set(_editingRequest, true);
+            Navigate(NewRequestScreen, BorderStyle.None);
+            
+            
+        Text: ="EDIT"
+        Visible: =!_managerView && (GalleryRequest.Selected.Status.Value) = "Pending"
+        Width: =51
+        X: =1119
+        Y: =506
+        ZIndex: =29
+
+    EditIcon As icon.Edit:
+        Height: =30
+        Icon: =Icon.Edit
+        Visible: =!_managerView && (GalleryRequest.Selected.Status.Value) = "Pending"
+        Width: =21
+        X: =1085
+        Y: =506
+        ZIndex: =30
+
     GroupEmptyState As group:
         Height: =5
         Width: =5
