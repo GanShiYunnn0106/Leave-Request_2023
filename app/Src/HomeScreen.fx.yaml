@@ -328,7 +328,7 @@ HomeScreen As screen:
             FontWeight: =FontWeight.Semibold
             Text: =GalleryRequest.Selected.UnpaidLeave & " days"
             X: =1089
-            Y: =473
+            Y: =462
             ZIndex: =30
 
         LblTotalDays As label:
@@ -364,8 +364,8 @@ HomeScreen As screen:
         LblUnpaidLeave As label:
             Text: |-
                 ="Unpaid Leaves:"
-            X: =1089
-            Y: =449
+            X: =1085
+            Y: =439
             ZIndex: =35
 
     Header_11 As group:

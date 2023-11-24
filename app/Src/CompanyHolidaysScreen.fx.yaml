@@ -322,7 +322,7 @@ CompanyHolidaysScreen As screen:
         Button1 As button:
             Height: =26
             OnSelect: |-
-                =Collect(LeaveApp_PublicHoliday_2,{HolidayName:txtHoliday.Text, HolidayDates:DateValue(HolidayDate.SelectedDate)})
+                =Collect(LeaveApp_PublicHoliday,{HolidayName:txtHoliday.Text, HolidayDates:DateValue(HolidayDate.SelectedDate)})
             Text: ="Add"
             Visible: =_managerView=true
             Width: =80
