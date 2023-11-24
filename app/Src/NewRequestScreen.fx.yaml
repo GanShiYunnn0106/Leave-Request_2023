@@ -10,7 +10,7 @@ NewRequestScreen As screen:
             Select(LeaveStartDatePicker)
             );
         If(
-            _editingRequest && !IsBlank(GalleryRequest.Selected),
+            _editingRequest,
             Set(_selectedLeaveType, GalleryRequest.Selected.Leave_Type.Value);
             Set(_leaveStart, GalleryRequest.Selected.Start_Date);
             If(_leaveEnd < Today(), Notify("This event occurred in the past and cannot be resubmitted without first changing the dates", NotificationType.Warning));
