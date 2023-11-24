@@ -12,8 +12,9 @@ NewRequestScreen As screen:
         If(
             _editingRequest && !IsBlank(GalleryRequest.Selected),
             Set(_selectedLeaveType, GalleryRequest.Selected.Leave_Type.Value);
-            _leaveStart = GalleryRequest.Selected.Start_Date;
-            _leaveEnd = GalleryRequest.Selected.End_Date;
+            Set(_leaveStart, GalleryRequest.Selected.Start_Date);
+            If(_leaveEnd < Today(), Notify("This event occurred in the past and cannot be resubmitted without first changing the dates", NotificationType.Warning));
+            Set(_leaveEnd, GalleryRequest.Selected.End_Date);
             Set(_leaveDetail, GalleryRequest.Selected.Comments)
         )
     Orientation: =If(NewRequestScreen.Width < NewRequestScreen.Height, Layout.Vertical, Layout.Horizontal)
