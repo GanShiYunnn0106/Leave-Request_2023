@@ -188,7 +188,7 @@ CompanyHolidaysScreen As screen:
         Height: =597
         HoverBorderColor: =GalleryHolidays.BorderColor
         HoverFill: =GalleryHolidays.Fill
-        Items: =LeaveApp_PublicHoliday_1
+        Items: =LeaveApp_PublicHoliday
         Layout: =Layout.Vertical
         LoadingSpinnerColor: =GalleryHolidays.BorderColor
         PressedBorderColor: =GalleryHolidays.BorderColor
