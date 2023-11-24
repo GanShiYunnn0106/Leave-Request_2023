@@ -322,6 +322,7 @@ LeaveInformationScreen As screen:
             =Table({Filter: "All"}, {Filter: "Pending"}, {Filter: "Approved"}, {Filter: "Rejected"})
         Layout: =Layout.Vertical
         LoadingSpinner: =LoadingSpinner.Data
+        OnSelect: =
         ShowScrollbar: =false
         TemplatePadding: =1
         TemplateSize: =86
