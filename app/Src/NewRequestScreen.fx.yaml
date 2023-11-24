@@ -1,17 +1,63 @@
 NewRequestScreen As screen:
     Height: =Max(App.Height, App.DesignHeight)
     OnHidden: =
-    OnVisible: |
+    OnVisible: |-
         =If(
-            !_editingRequest,
+            _editingRequest = false,
             Reset(LeaveEndDatePicker);
             Reset(LeaveStartDatePicker);
             Reset(TextInput1_1);
-            Select(LeaveStartDatePicker)
-            );
-        If(
+            Select(LeaveStartDatePicker),
+            
             _editingRequest,
             Set(_selectedLeaveType, GalleryRequest.Selected.Leave_Type.Value);
+            If(
+                _selectedLeaveType = "Annual",
+                Set(
+                    _balanceRemain,
+                    ((LookUp(LeaveApp_Employee, NameofEmployee.Email = User().Email).AnnualLeaveEntitlement +
+                    LookUp(LeaveApp_Employee, NameofEmployee.Email = User().Email).AnnualCarriedForward) -
+                    LookUp(LeaveApp_Employee, NameofEmployee.Email = User().Email).AnnualLeaveTaken
+                    )
+                ),
+                _selectedLeaveType = "Medical",
+                Set(
+                    _balanceRemain,
+                    (LookUp(LeaveApp_Employee, NameofEmployee.Email = User().Email).MedicalLeaveEntitlement -
+                    LookUp(LeaveApp_Employee, NameofEmployee.Email = User().Email).MedicalLeaveTaken)
+                ),
+                _selectedLeaveType = "Casual Immediate",
+                Set(
+                    _balanceRemain,
+                    (LookUp(LeaveApp_Employee, NameofEmployee.Email = User().Email).CompassionateLeaveEntitlement -
+                    LookUp(LeaveApp_Employee, NameofEmployee.Email = User().Email).CompassionateLeaveTaken)
+                ),
+                _selectedLeaveType = "Marriage",
+                Set(
+                    _balanceRemain,
+                    (LookUp(LeaveApp_Employee, NameofEmployee.Email = User().Email).MarriageLeaveEntitlement -
+                    LookUp(LeaveApp_Employee, NameofEmployee.Email = User().Email).MarriageLeaveTaken)
+                ),
+                _selectedLeaveType = "Paternity",
+                Set(
+                    _balanceRemain,
+                    (LookUp(LeaveApp_Employee, NameofEmployee.Email = User().Email).PaternityLeaveEntitlement -
+                    LookUp(LeaveApp_Employee, NameofEmployee.Email = User().Email).PaternityLeaveTaken)
+                ),
+                _selectedLeaveType = "Maternity",
+                Set(
+                    _balanceRemain,
+                    (LookUp(LeaveApp_Employee, NameofEmployee.Email = User().Email).MaternityLeaveEntitlement -
+                    LookUp(LeaveApp_Employee, NameofEmployee.Email = User().Email).MaternityLeaveTaken)
+                ),
+                _selectedLeaveType = "Hospitalization",
+                Set(
+                    _balanceRemain,
+                    (LookUp(LeaveApp_Employee, NameofEmployee.Email = User().Email).HospitalizationLeaveEntitlement -
+                    LookUp(LeaveApp_Employee, NameofEmployee.Email = User().Email).HospitalizationLeaveTaken)
+                )
+            );
+        
             Set(_leaveStart, GalleryRequest.Selected.Start_Date);
             If(_leaveEnd < Today(), Notify("This event occurred in the past and cannot be resubmitted without first changing the dates", NotificationType.Warning));
             Set(_leaveEnd, GalleryRequest.Selected.End_Date);
@@ -140,7 +186,7 @@ NewRequestScreen As screen:
             HoverColor: =ColorFade(IconHeaderCreateNew_6.Color, 20%)
             HoverFill: =IconHeaderCreateNew_6.Fill
             Icon: =Icon.Add
-            OnSelect: =Navigate(NewRequestScreen,BorderStyle.None);Set(_selectedLeaveType,Blank());Set(_editingRequest, false )
+            OnSelect: =Navigate(NewRequestScreen,BorderStyle.None);Set(_selectedLeaveType,Blank());Set(_editingRequest, false)
             PaddingBottom: =7
             PaddingLeft: =7
             PaddingRight: =7

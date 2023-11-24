@@ -456,10 +456,11 @@ HomeScreen As screen:
             HoverColor: =ColorFade(IconHeaderCreateNew.Color, 20%)
             HoverFill: =IconHeaderCreateNew.Fill
             Icon: =Icon.Add
-            OnSelect: |
-                =Navigate(NewRequestScreen, BorderStyle.None);
-                Set(_selectedLeaveType,Blank());
-                Set(_editingRequest, false)
+            OnSelect: |+
+                =Set(_editingRequest, false);
+                Navigate(NewRequestScreen, BorderStyle.None);
+                Set(_selectedLeaveType,Blank())
+                
             PaddingBottom: =7
             PaddingLeft: =7
             PaddingRight: =7
