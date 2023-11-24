@@ -780,7 +780,7 @@ NewRequestScreen As screen:
                  _editingRequest,
                     LookUp(
                             LeaveApp_Request,
-                                LeaveID = GalleryRequests.Selected.LeaveID
+                                ID = GalleryRequest.Selected.ID
                         ),
                 Defaults(LeaveApp_Request)),
                 {Start_Date: LeaveStartDatePicker.SelectedDate},
