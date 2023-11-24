@@ -2935,166 +2935,6 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "HomeScreen.Circle1.OnSelect"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "HomeScreen.Circle1.OnSelect",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 19,
-                  "charOffset": 7,
-                  "snippet": {
-                    "text": "IconHeaderCreateNew"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnSelect",
-                "module": "HomeScreen",
-                "type": "HomeScreen.Circle1"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "IconHeaderCreateNew"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidName",
-          "ruleIndex": 0
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "HomeScreen.Circle1.OnSelect"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "HomeScreen.Circle1.OnSelect",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 27,
-                  "charOffset": 0,
-                  "snippet": {
-                    "text": "Select(IconHeaderCreateNew)"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnSelect",
-                "module": "HomeScreen",
-                "type": "HomeScreen.Circle1"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Select"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidArgs-Func",
-          "ruleIndex": 4
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "HomeScreen.icon7.OnSelect"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "HomeScreen.icon7.OnSelect",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 19,
-                  "charOffset": 7,
-                  "snippet": {
-                    "text": "IconHeaderCreateNew"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnSelect",
-                "module": "HomeScreen",
-                "type": "HomeScreen.icon7"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "IconHeaderCreateNew"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidName",
-          "ruleIndex": 0
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "HomeScreen.icon7.OnSelect"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "HomeScreen.icon7.OnSelect",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 27,
-                  "charOffset": 0,
-                  "snippet": {
-                    "text": "Select(IconHeaderCreateNew)"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnSelect",
-                "module": "HomeScreen",
-                "type": "HomeScreen.icon7"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Select"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidArgs-Func",
-          "ruleIndex": 4
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
                   "fullyQualifiedName": "Navigation.Gallery2.AccessibleLabel"
                 }
               ],
@@ -4708,6 +4548,36 @@
           },
           "ruleId": "acc-AccessibleLabelNeeded",
           "ruleIndex": 8
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "HomeScreen.Circle1.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "HomeScreen.Circle1.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "HomeScreen",
+                "type": "HomeScreen.Circle1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 9
         },
         {
           "locations": [
