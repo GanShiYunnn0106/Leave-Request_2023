@@ -6,12 +6,15 @@ LeaveInformationScreen As screen:
         Height: =604
         Items: |-
             =If(
-                ButtonFilter_1.Selected.Filter = "All",LeaveApp_Request,
+                ButtonFilter_1.Selected.Filter = "All",
+                LeaveApp_Request,
             
                 Filter(
                     LeaveApp_Request,
-                    Status.Value = ButtonFilter_1.Selected.Filter 
+                    Status.Value = ButtonFilter_1.Selected.Filter
                 )
+            
+                
             )
         Layout: =Layout.Vertical
         LoadingSpinner: =LoadingSpinner.Data
