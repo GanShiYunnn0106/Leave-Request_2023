@@ -11,8 +11,6 @@ App As appinfo:
                 _myProfile,
                 Office365Users.MyProfile()
             );
-        Set(_leaveStart,Now());
-        Set(_leaveEnd,Now());
         
             //collection used in the left nav menu
             ClearCollect(
