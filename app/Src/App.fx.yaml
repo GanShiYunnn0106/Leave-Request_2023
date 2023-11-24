@@ -179,8 +179,8 @@ App As appinfo:
                     StartDate: DateValue("1/1/2019")
                 }
             );
-        Set(_leaveStart,LeaveStartDatePicker);
-        Set(_leaveEnd,LeaveEndDatePicker);
+        Set(_leaveStart,Now());
+        Set(_leaveEnd,Now());
     Theme: =PowerAppsTheme
 
     Host As hostControl.DefaultHostControlVariant:
