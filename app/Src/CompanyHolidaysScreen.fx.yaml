@@ -188,7 +188,7 @@ CompanyHolidaysScreen As screen:
         Height: =597
         HoverBorderColor: =GalleryHolidays.BorderColor
         HoverFill: =GalleryHolidays.Fill
-        Items: =HolidaysCollection
+        Items: =LeaveApp_PublicHoliday
         Layout: =Layout.Vertical
         LoadingSpinnerColor: =GalleryHolidays.BorderColor
         PressedBorderColor: =GalleryHolidays.BorderColor
@@ -233,14 +233,14 @@ CompanyHolidaysScreen As screen:
                 =Text(
                     DateAdd(
                         If(
-                            !IsBlank(ThisItem.StartDate),
-                            ThisItem.StartDate,
+                            !IsBlank(ThisItem.HolidayDates),
+                            ThisItem.HolidayDates,
                             Now() // Use a default value if StartDate is null
                         ),
                         -TimeZoneOffset(
                             If(
-                                !IsBlank(ThisItem.StartDate),
-                                ThisItem.StartDate,
+                                !IsBlank(ThisItem.HolidayDates),
+                                ThisItem.HolidayDates,
                                 Now() // Use a default value if StartDate is null
                             )
                         ),
@@ -268,7 +268,7 @@ CompanyHolidaysScreen As screen:
         Icon3 As icon.Trash:
             Height: =24
             Icon: =Icon.Trash
-            OnSelect: =Remove(HolidaysCollection,ThisItem)
+            OnSelect: =Remove(LeaveApp_PublicHoliday,ThisItem)
             Visible: =_managerView=true
             Width: =43
             X: =776
@@ -322,7 +322,7 @@ CompanyHolidaysScreen As screen:
         Button1 As button:
             Height: =26
             OnSelect: |-
-                =Collect(HolidaysCollection,{HolidayName:txtHoliday.Text, StartDate:DateValue(HolidayDate.SelectedDate)})
+                =Collect(LeaveApp_PublicHoliday_2,{HolidayName:txtHoliday.Text, HolidayDates:DateValue(HolidayDate.SelectedDate)})
             Text: ="Add"
             Visible: =_managerView=true
             Width: =80

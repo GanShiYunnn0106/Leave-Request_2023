@@ -1,13 +1,71 @@
 NewRequestScreen As screen:
     Height: =Max(App.Height, App.DesignHeight)
     OnHidden: =
-    OnVisible: |
-        =Reset(LeaveEndDatePicker);
-        Reset(LeaveStartDatePicker);
-        Reset(TextInput1_1);
-        Select(LeaveStartDatePicker);
+    OnVisible: |-
+        =If(
+            !_editingRequest,
+            Set(_leaveStart,Today());
+            Set(_leaveEnd,Today());
+            Set(_leaveDetail,"");
+            Reset(LeaveEndDatePicker);
+            Reset(LeaveStartDatePicker);
+            Reset(TextInput1_1);
+            Select(LeaveStartDatePicker),
+            
+            _editingRequest,
+            Set(_selectedLeaveType, GalleryRequest.Selected.Leave_Type.Value);
+            If(
+                _selectedLeaveType = "Annual",
+                Set(
+                    _balanceRemain,
+                    ((LookUp(LeaveApp_Employee, NameofEmployee.Email = User().Email).AnnualLeaveEntitlement +
+                    LookUp(LeaveApp_Employee, NameofEmployee.Email = User().Email).AnnualCarriedForward) -
+                    LookUp(LeaveApp_Employee, NameofEmployee.Email = User().Email).AnnualLeaveTaken
+                    )
+                ),
+                _selectedLeaveType = "Medical",
+                Set(
+                    _balanceRemain,
+                    (LookUp(LeaveApp_Employee, NameofEmployee.Email = User().Email).MedicalLeaveEntitlement -
+                    LookUp(LeaveApp_Employee, NameofEmployee.Email = User().Email).MedicalLeaveTaken)
+                ),
+                _selectedLeaveType = "Casual Immediate",
+                Set(
+                    _balanceRemain,
+                    (LookUp(LeaveApp_Employee, NameofEmployee.Email = User().Email).CompassionateLeaveEntitlement -
+                    LookUp(LeaveApp_Employee, NameofEmployee.Email = User().Email).CompassionateLeaveTaken)
+                ),
+                _selectedLeaveType = "Marriage",
+                Set(
+                    _balanceRemain,
+                    (LookUp(LeaveApp_Employee, NameofEmployee.Email = User().Email).MarriageLeaveEntitlement -
+                    LookUp(LeaveApp_Employee, NameofEmployee.Email = User().Email).MarriageLeaveTaken)
+                ),
+                _selectedLeaveType = "Paternity",
+                Set(
+                    _balanceRemain,
+                    (LookUp(LeaveApp_Employee, NameofEmployee.Email = User().Email).PaternityLeaveEntitlement -
+                    LookUp(LeaveApp_Employee, NameofEmployee.Email = User().Email).PaternityLeaveTaken)
+                ),
+                _selectedLeaveType = "Maternity",
+                Set(
+                    _balanceRemain,
+                    (LookUp(LeaveApp_Employee, NameofEmployee.Email = User().Email).MaternityLeaveEntitlement -
+                    LookUp(LeaveApp_Employee, NameofEmployee.Email = User().Email).MaternityLeaveTaken)
+                ),
+                _selectedLeaveType = "Hospitalization",
+                Set(
+                    _balanceRemain,
+                    (LookUp(LeaveApp_Employee, NameofEmployee.Email = User().Email).HospitalizationLeaveEntitlement -
+                    LookUp(LeaveApp_Employee, NameofEmployee.Email = User().Email).HospitalizationLeaveTaken)
+                )
+            );
         
-           
+            Set(_leaveStart, GalleryRequest.Selected.Start_Date);
+            If(_leaveEnd < Today(), Notify("This event occurred in the past and cannot be resubmitted without first changing the dates", NotificationType.Warning));
+            Set(_leaveEnd, GalleryRequest.Selected.End_Date);
+            Set(_leaveDetail, GalleryRequest.Selected.Comments)
+        )
     Orientation: =If(NewRequestScreen.Width < NewRequestScreen.Height, Layout.Vertical, Layout.Horizontal)
     Size: =1 + CountRows(App.SizeBreakpoints) - CountIf(App.SizeBreakpoints, Value >= NewRequestScreen.Width)
     Width: =Max(App.Width, App.DesignWidth)
@@ -131,7 +189,7 @@ NewRequestScreen As screen:
             HoverColor: =ColorFade(IconHeaderCreateNew_6.Color, 20%)
             HoverFill: =IconHeaderCreateNew_6.Fill
             Icon: =Icon.Add
-            OnSelect: =Navigate(NewRequestScreen,BorderStyle.None);Set(_selectedLeaveType,Blank());Set(_editingRequest, false )
+            OnSelect: =Navigate(NewRequestScreen,BorderStyle.None);Set(_selectedLeaveType,Blank());Set(_editingRequest, false)
             PaddingBottom: =7
             PaddingLeft: =7
             PaddingRight: =7
@@ -236,6 +294,7 @@ NewRequestScreen As screen:
         LeaveStartDatePicker As datepicker:
             AccessibleLabel: ="Leave start date. Required field."
             BorderColor: =If(And(!_editingRequest, LeaveStartDatePicker.SelectedDate < Today()) || LeaveStartDatePicker.SelectedDate > LeaveEndDatePicker.SelectedDate, Color.Red, RGBA(0, 71, 144, 1))
+            DefaultDate: =_leaveStart
             FocusedBorderColor: =LeaveStartDatePicker.BorderColor
             HoverBorderColor: =LeaveStartDatePicker.BorderColor
             HoverFill: =LeaveStartDatePicker.Fill
@@ -284,6 +343,7 @@ NewRequestScreen As screen:
         LeaveEndDatePicker As datepicker:
             AccessibleLabel: ="Leave end date. Required field."
             BorderColor: =If(LeaveStartDatePicker.SelectedDate > LeaveEndDatePicker.SelectedDate, Color.Red, RGBA(0, 71, 144, 1))
+            DefaultDate: =_leaveEnd
             FocusedBorderColor: =LeaveEndDatePicker.BorderColor
             HoverBorderColor: =LeaveEndDatePicker.BorderColor
             HoverFill: =LeaveEndDatePicker.Fill
@@ -413,7 +473,6 @@ NewRequestScreen As screen:
             HoverBorderColor: =Label1_4.BorderColor
             HoverColor: =Label1_4.Color
             HoverFill: =Label1_4.Fill
-            OnSelect: =""
             PressedBorderColor: =Label1_4.BorderColor
             PressedColor: =Label1_4.Color
             PressedFill: =Label1_4.Fill
@@ -433,7 +492,6 @@ NewRequestScreen As screen:
             HoverBorderColor: =Label1_5.BorderColor
             HoverColor: =Label1_5.Color
             HoverFill: =Label1_5.Fill
-            OnSelect: =""
             PressedBorderColor: =Label1_5.BorderColor
             PressedColor: =Label1_5.Color
             PressedFill: =Label1_5.Fill
@@ -454,7 +512,6 @@ NewRequestScreen As screen:
             HoverBorderColor: =Label1_7.BorderColor
             HoverColor: =Label1_7.Color
             HoverFill: =Label1_7.Fill
-            OnSelect: =""
             PressedBorderColor: =Label1_7.BorderColor
             PressedColor: =Label1_7.Color
             PressedFill: =Label1_7.Fill
@@ -469,12 +526,11 @@ NewRequestScreen As screen:
         TextInput1_1 As text:
             AccessibleLabel: ="Leave detail"
             BorderColor: =RGBA(0, 71, 144, 1)
-            Default: =
+            Default: =_leaveDetail
             FocusedBorderColor: =TextInput1_1.BorderColor
             Font: =Font.Lato
             Height: =74
             Mode: =TextMode.MultiLine
-            OnSelect: =Set(_leaveDetail,TextInput1_1)
             PressedBorderColor: =TextInput1_1.HoverBorderColor
             PressedColor: =TextInput1_1.Color
             PressedFill: =TextInput1_1.Fill
@@ -492,7 +548,6 @@ NewRequestScreen As screen:
             FocusedBorderColor: =RectSeparator_1.BorderColor
             Height: =1
             HoverFill: =RectSeparator_1.Fill
-            OnSelect: =""
             PressedFill: =RectSeparator_1.Fill
             Width: =864
             X: =252
@@ -768,31 +823,61 @@ NewRequestScreen As screen:
         FontWeight: =FontWeight.Bold
         Height: =112
         OnSelect: |-
-            =Patch(LeaveApp_Request,Defaults(LeaveApp_Request),
-                            {Start_Date: LeaveStartDatePicker.SelectedDate},
-                            {End_Date: LeaveEndDatePicker.SelectedDate},
-                            {Leave_Type:{'@odata.type':"Microsoft.Azure.Connectors.SharePoint.SPListExpandedUser",Value: _selectedLeaveType}},
-                            {Days: _requestedDays},
-                            {Comments: TextInput1_1.Text},
-                            {Created_By: 
-                            {'@odata.type':"Microsoft.Azure.Connectors.SharePoint.SPListExpandedUser",
-                            Claims: "i:0#.f|membership|" & Lower(User().Email),
-                            Department:"",
-                            DisplayName:User().FullName,
-                            Email:User().Email,
-                            JobTitle:".",
-                            Picture:"."}},
-                            {Requested_to: 
-                            {'@odata.type':"Microsoft.Azure.Connectors.SharePoint.SPListExpandedUser",
-                            Claims: "i:0#.f|membership|" & Lower(LookUp(LeaveApp_Employee,NameofEmployee.Email=User().Email).NameofManager.Email),
-                            Department:"",
-                            DisplayName:LookUp(LeaveApp_Employee,NameofEmployee.Email=User().Email).NameofManager.DisplayName,
-                            Email:User().Email,
-                            JobTitle:".",
-                            Picture:"."}});
-            
+            =Patch(
+                LeaveApp_Request,
+                If(
+                 _editingRequest,
+                    LookUp(
+                            LeaveApp_Request,
+                                ID = GalleryRequest.Selected.ID
+                        ),
+                Defaults(LeaveApp_Request)),
+                {Start_Date: LeaveStartDatePicker.SelectedDate},
+                {End_Date: LeaveEndDatePicker.SelectedDate},
+                {
+                    Leave_Type: {
+                        '@odata.type': "Microsoft.Azure.Connectors.SharePoint.SPListExpandedUser",
+                        Value: _selectedLeaveType
+                    }
+                },
+                {Days: _requestedDays},
+                {Comments: TextInput1_1.Text},
+                {
+                    Created_By: {
+                        '@odata.type': "Microsoft.Azure.Connectors.SharePoint.SPListExpandedUser",
+                        Claims: "i:0#.f|membership|" & Lower(User().Email),
+                        Department: "",
+                        DisplayName: User().FullName,
+                        Email: User().Email,
+                        JobTitle: ".",
+                        Picture: "."
+                    }
+                },
+                {
+                    Requested_to: {
+                        '@odata.type': "Microsoft.Azure.Connectors.SharePoint.SPListExpandedUser",
+                        Claims: "i:0#.f|membership|" & Lower(
+                            LookUp(
+                                LeaveApp_Employee,
+                                NameofEmployee.Email = User().Email
+                            ).NameofManager.Email
+                        ),
+                        Department: "",
+                        DisplayName: LookUp(
+                            LeaveApp_Employee,
+                            NameofEmployee.Email = User().Email
+                        ).NameofManager.DisplayName,
+                        Email: User().Email,
+                        JobTitle: ".",
+                        Picture: "."
+                    }
+                }
+            );
             Navigate(HomeScreen);
-            Notify("Successfully applied leave...",NotificationType.Success)
+            Notify(
+                "Successfully applied leave...",
+                NotificationType.Success
+            )
         Text: ="Submit Request"
         Width: =1134
         X: =232
