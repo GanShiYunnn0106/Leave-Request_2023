@@ -3,7 +3,10 @@ NewRequestScreen As screen:
     OnHidden: =
     OnVisible: |-
         =If(
-            _editingRequest = false,
+            !_editingRequest,
+            Set(_leaveStart,Today());
+            Set(_leaveEnd,Today());
+            Set(_leaveDetail,"");
             Reset(LeaveEndDatePicker);
             Reset(LeaveStartDatePicker);
             Reset(TextInput1_1);
