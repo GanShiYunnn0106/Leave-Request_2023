@@ -456,7 +456,7 @@
         {
           "AFDDataSourceName": "",
           "AutoRuleBindingEnabled": false,
-          "AutoRuleBindingString": "CustomGallerySample",
+          "AutoRuleBindingString": "",
           "InvariantPropertyName": "Items",
           "IsLockable": false,
           "NameMapSourceSchema": "?"
@@ -2547,7 +2547,14 @@
         "DisabledFill",
         "PressedFill",
         "HoverFill",
-        "Font",
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "",
+          "InvariantPropertyName": "Font",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
         "FontWeight",
         "Align",
         "VerticalAlign",

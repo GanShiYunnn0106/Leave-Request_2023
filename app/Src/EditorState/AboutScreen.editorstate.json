@@ -19,7 +19,14 @@
         "PressedFill",
         "HoverFill",
         "Font",
-        "FontWeight",
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "",
+          "InvariantPropertyName": "FontWeight",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
         "Align",
         "VerticalAlign",
         "X",
@@ -58,7 +65,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "AboutDescription",
-      "ParentIndex": 7,
+      "ParentIndex": 10,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -309,7 +316,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "AboutLeaveGallerySeparator",
-      "ParentIndex": 13,
+      "ParentIndex": 14,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -420,7 +427,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "AboutLeaveMiddle",
-      "ParentIndex": 16,
+      "ParentIndex": 17,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -749,7 +756,14 @@
         "PressedFill",
         "HoverFill",
         "Font",
-        "FontWeight",
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "",
+          "InvariantPropertyName": "FontWeight",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
         "Align",
         "VerticalAlign",
         {
@@ -772,7 +786,14 @@
         "Height",
         "DisplayMode",
         "ZIndex",
-        "Size",
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "",
+          "InvariantPropertyName": "Size",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
         "LineHeight",
         "AutoHeight",
         "PaddingTop",
@@ -794,7 +815,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "AboutLeaveTypeDescription",
-      "ParentIndex": 14,
+      "ParentIndex": 15,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -1071,7 +1092,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "AboutLeaveTypeGallery",
-      "ParentIndex": 12,
+      "ParentIndex": 13,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -2030,7 +2051,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "AboutTitle",
-      "ParentIndex": 11,
+      "ParentIndex": 12,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -2440,7 +2461,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Header_3",
-      "ParentIndex": 15,
+      "ParentIndex": 16,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -3781,7 +3802,7 @@
       },
       "MetaDataIDKey": "",
       "Name": "Navigation_3",
-      "ParentIndex": 9,
+      "ParentIndex": 8,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -4018,7 +4039,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Rectangle3_3",
-      "ParentIndex": 8,
+      "ParentIndex": 7,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -4026,6 +4047,119 @@
           "PropertyName": "ContentLanguage",
           "RuleProviderType": "Unknown"
         },
+        {
+          "Category": "Design",
+          "PropertyName": "Fill",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Design",
+          "PropertyName": "DisabledFill",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Design",
+          "PropertyName": "PressedFill",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Design",
+          "PropertyName": "HoverFill",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Design",
+          "PropertyName": "BorderColor",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Design",
+          "PropertyName": "BorderStyle",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Design",
+          "PropertyName": "FocusedBorderColor",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Design",
+          "PropertyName": "DisplayMode",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Design",
+          "PropertyName": "X",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Design",
+          "PropertyName": "Y",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Design",
+          "PropertyName": "Width",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Design",
+          "PropertyName": "Height",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Design",
+          "PropertyName": "ZIndex",
+          "RuleProviderType": "Unknown"
+        }
+      ],
+      "StyleName": "defaultRectangleStyle",
+      "Type": "ControlInfo"
+    },
+    "Rectangle8": {
+      "AllowAccessToGlobals": true,
+      "ControlPropertyState": [
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "",
+          "InvariantPropertyName": "Fill",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
+        "DisabledFill",
+        "PressedFill",
+        "HoverFill",
+        "BorderColor",
+        "BorderStyle",
+        "FocusedBorderColor",
+        "DisplayMode",
+        "X",
+        "Y",
+        "Width",
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "",
+          "InvariantPropertyName": "Height",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
+        "ZIndex"
+      ],
+      "HasDynamicProperties": false,
+      "IsAutoGenerated": false,
+      "IsComponentDefinition": false,
+      "IsDataControl": false,
+      "IsFromScreenLayout": false,
+      "IsGroupControl": false,
+      "IsLocked": false,
+      "LayoutName": "",
+      "MetaDataIDKey": "",
+      "Name": "Rectangle8",
+      "ParentIndex": 11,
+      "PersistMetaDataIDKey": false,
+      "Properties": [
         {
           "Category": "Design",
           "PropertyName": "Fill",
@@ -4137,7 +4271,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "RectNavSep_2",
-      "ParentIndex": 10,
+      "ParentIndex": 9,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {

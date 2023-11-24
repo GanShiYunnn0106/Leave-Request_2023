@@ -307,6 +307,7 @@ AboutScreen As screen:
             Color: =RGBA(74, 74, 74, 1)
             FocusedBorderColor: =AboutDescription.BorderColor
             Font: =Font.Arial
+            FontWeight: =FontWeight.Semibold
             Height: =87
             HoverBorderColor: =AboutDescription.BorderColor
             HoverColor: =AboutDescription.Color
@@ -323,11 +324,12 @@ AboutScreen As screen:
             Text: ="Manage your personal leave requests and team leave requests in one place. When a request is completed, managers are notified via email and can quickly approve or decline based on the situation."
             Width: =855
             X: =265
-            Y: =73
+            Y: =83
             ZIndex: =44
 
         AboutLeaveTypeDescription As label:
             FocusedBorderColor: =AboutLeaveTypeDescription.BorderColor
+            FontWeight: =FontWeight.Semibold
             Height: =315
             HoverBorderColor: =AboutLeaveTypeDescription.BorderColor
             HoverColor: =AboutLeaveTypeDescription.Color
@@ -340,7 +342,7 @@ AboutScreen As screen:
             PressedBorderColor: =AboutLeaveTypeDescription.BorderColor
             PressedColor: =AboutLeaveTypeDescription.Color
             PressedFill: =AboutLeaveTypeDescription.Fill
-            Size: =12
+            Size: =14
             Text: =LookUp(LeaveTypeCollection,type = _aboutSelectedLeaveType).description
             Width: =855
             X: =256
@@ -359,4 +361,12 @@ AboutScreen As screen:
             X: =238
             Y: =452
             ZIndex: =46
+
+    Rectangle8 As rectangle:
+        Fill: =RGBA(230, 229, 229, 1)
+        Height: =2
+        Width: =889
+        X: =231
+        Y: =160
+        ZIndex: =48
 
