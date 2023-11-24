@@ -3,20 +3,7 @@ HomeScreen As screen:
         =RGBA(255,255,255,1)
     Height: =Max(App.Height, App.DesignHeight)
     OnHidden: =Set(_showDetails, false)
-    OnVisible: |-
-        =Concurrent(
-            Set(_navMenuSelect, "My Leave Requests"),
-            //if not manager view, refresh my balance collection when on this screen
-            If(!_managerView, Set(_requesterBalanceRecord, LookUp(BalanceCollection, Year = Text(Year(Now())) && EmployeeEmail = _myProfile.UserPrincipalName));
-                ClearCollect(RequesterBalanceCollection, 
-                { type: "Vacation", balance: Value(_requesterBalanceRecord.Vacation) - Value(_requesterBalanceRecord.VacationUsed)},
-                {type:"Sick Leave", balance:Value(_requesterBalanceRecord.Sick)-Value(_requesterBalanceRecord.SickUsed)},
-                {type:"Floating Holiday", balance:Value(_requesterBalanceRecord.Floating)-Value(_requesterBalanceRecord.FloatingUsed)},
-                {type:"Jury Duty", balance:Value(_requesterBalanceRecord.JuryDuty)-Value(_requesterBalanceRecord.JuryDutyUsed)},
-                {type:"Bereavement", balance:Value(_requesterBalanceRecord.Bereavement)-Value(_requesterBalanceRecord.BereavementUsed)})
-            ),
-            Set(_showDetails, false)
-        );
+    OnVisible: =
     Orientation: =If(HomeScreen.Width < HomeScreen.Height, Layout.Vertical, Layout.Horizontal)
     Size: =1 + CountRows(App.SizeBreakpoints) - CountIf(App.SizeBreakpoints, Value >= HomeScreen.Width)
     Width: =Max(App.Width, App.DesignWidth)
@@ -213,65 +200,6 @@ HomeScreen As screen:
         Y: =80
         ZIndex: =19
 
-    GroupEmptyState As group:
-        Height: =5
-        Width: =5
-        X: =40
-        Y: =40
-        ZIndex: =36
-
-        LblFirstRequest As label:
-            Align: =LayoutAlignItems.Center
-            FocusedBorderColor: =LblFirstRequest.BorderColor
-            Font: =Font.Lato
-            Height: =93
-            HoverBorderColor: =LblFirstRequest.BorderColor
-            HoverColor: =LblFirstRequest.Color
-            HoverFill: =LblFirstRequest.Fill
-            PressedBorderColor: =LblFirstRequest.BorderColor
-            PressedColor: =LblFirstRequest.Color
-            PressedFill: =LblFirstRequest.Fill
-            Size: =20
-            Text: ="Make your first leave request!"
-            Visible: =If(IsEmpty(Table1_14),true,false)
-            Width: =400
-            X: =477
-            Y: =506
-            ZIndex: =5
-
-        Circle1 As circle:
-            AccessibleLabel: ="Create new leave request"
-            DisabledFill: =Circle1.Fill
-            Fill: =RGBA(12, 132, 255, 1)
-            FocusedBorderColor: =Circle1.BorderColor
-            Height: =60
-            HoverFill: =Circle1.Fill
-            OnSelect: =Select(IconHeaderCreateNew)
-            PressedFill: =Circle1.Fill
-            Visible: =!_managerView && !GalleryRequest.Visible && _requestTypeFilter = "All"
-            Width: =64
-            X: =631
-            Y: =576
-            ZIndex: =6
-
-        LblEmptyRequests As label:
-            FocusedBorderColor: =LblEmptyRequests.BorderColor
-            Font: =Font.Lato
-            FontWeight: =FontWeight.Semibold
-            Height: =37
-            HoverBorderColor: =LblEmptyRequests.BorderColor
-            HoverColor: =LblEmptyRequests.Color
-            HoverFill: =LblEmptyRequests.Fill
-            PressedBorderColor: =LblEmptyRequests.BorderColor
-            PressedColor: =LblEmptyRequests.Color
-            PressedFill: =LblEmptyRequests.Fill
-            Text: ="No " & If(_requestTypeFilter <> "All", Lower(_requestTypeFilter)) & " requests"
-            Visible: =If(IsEmpty(Table1_14),true,false)
-            Width: =190
-            X: =320
-            Y: =351
-            ZIndex: =8
-
     GroupRequestDetails As group:
         Height: =5
         Width: =5
@@ -310,11 +238,16 @@ HomeScreen As screen:
             Height: =31
             HoverBorderColor: =RGBA(62, 96, 170, 1)
             HoverFill: =RGBA(230, 229, 229, 1)
-            OnSelect: |+
-                =Set(_editingRequest, true);
-                Navigate(NewRequestScreen, BorderStyle.None);
-                
-                
+            OnSelect: |
+                =Set(
+                    _editingRequest,
+                    true
+                );
+                Navigate(
+                    NewRequestScreen,
+                    ScreenTransition.None,
+                    {SelectedRecord: GalleryRequest}
+                );
             Text: ="EDIT"
             Visible: =!_managerView && (GalleryRequest.Selected.Status.Value) = "Pending"
             Width: =51
@@ -370,7 +303,7 @@ HomeScreen As screen:
 
         Leave_Type As label:
             FontWeight: =FontWeight.Semibold
-            Text: = GalleryRequest.Selected.Leave_Type.Value
+            Text: =GalleryRequest.Selected.Leave_Type.Value
             Width: =243
             X: =1089
             Y: =246
@@ -378,7 +311,7 @@ HomeScreen As screen:
 
         Request_To As label:
             FontWeight: =FontWeight.Semibold
-            Text: = GalleryRequest.Selected.Requested_to.DisplayName
+            Text: =GalleryRequest.Selected.Requested_to.DisplayName
             X: =1089
             Y: =313
             ZIndex: =28
@@ -386,7 +319,7 @@ HomeScreen As screen:
         CarryForwardDays As label:
             FontWeight: =FontWeight.Semibold
             Height: =44
-            Text: = GalleryRequest.Selected.CarryForwardDays & " days"
+            Text: =GalleryRequest.Selected.CarryForwardDays & " days"
             Width: =213
             X: =1089
             Y: =388
@@ -394,7 +327,7 @@ HomeScreen As screen:
 
         UnpaidLeave As label:
             FontWeight: =FontWeight.Semibold
-            Text: = GalleryRequest.Selected.UnpaidLeave & " days"
+            Text: =GalleryRequest.Selected.UnpaidLeave & " days"
             X: =1089
             Y: =473
             ZIndex: =30
