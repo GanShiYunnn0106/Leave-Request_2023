@@ -2,12 +2,20 @@ NewRequestScreen As screen:
     Height: =Max(App.Height, App.DesignHeight)
     OnHidden: =
     OnVisible: |
-        =Reset(LeaveEndDatePicker);
-        Reset(LeaveStartDatePicker);
-        Reset(TextInput1_1);
-        Select(LeaveStartDatePicker);
-        
-           
+        =If(
+            !_editingRequest,
+            Reset(LeaveEndDatePicker);
+            Reset(LeaveStartDatePicker);
+            Reset(TextInput1_1);
+            Select(LeaveStartDatePicker)
+            );
+        If(
+            _editingRequest && !IsBlank(GalleryRequest.Selected),
+            Set(_selectedLeaveType, GalleryRequest.Selected.Leave_Type.Value);
+            Set(_leaveStart, GalleryRequest.Selected.Start_Date);
+            Set(_leaveEnd, GalleryRequest.Selected.End_Date);
+            Set(_leaveDetail, GalleryRequest.Selected.Comments)
+        )
     Orientation: =If(NewRequestScreen.Width < NewRequestScreen.Height, Layout.Vertical, Layout.Horizontal)
     Size: =1 + CountRows(App.SizeBreakpoints) - CountIf(App.SizeBreakpoints, Value >= NewRequestScreen.Width)
     Width: =Max(App.Width, App.DesignWidth)
@@ -413,7 +421,6 @@ NewRequestScreen As screen:
             HoverBorderColor: =Label1_4.BorderColor
             HoverColor: =Label1_4.Color
             HoverFill: =Label1_4.Fill
-            OnSelect: =""
             PressedBorderColor: =Label1_4.BorderColor
             PressedColor: =Label1_4.Color
             PressedFill: =Label1_4.Fill
@@ -433,7 +440,6 @@ NewRequestScreen As screen:
             HoverBorderColor: =Label1_5.BorderColor
             HoverColor: =Label1_5.Color
             HoverFill: =Label1_5.Fill
-            OnSelect: =""
             PressedBorderColor: =Label1_5.BorderColor
             PressedColor: =Label1_5.Color
             PressedFill: =Label1_5.Fill
@@ -454,7 +460,6 @@ NewRequestScreen As screen:
             HoverBorderColor: =Label1_7.BorderColor
             HoverColor: =Label1_7.Color
             HoverFill: =Label1_7.Fill
-            OnSelect: =""
             PressedBorderColor: =Label1_7.BorderColor
             PressedColor: =Label1_7.Color
             PressedFill: =Label1_7.Fill
@@ -474,7 +479,6 @@ NewRequestScreen As screen:
             Font: =Font.Lato
             Height: =74
             Mode: =TextMode.MultiLine
-            OnSelect: =Set(_leaveDetail,TextInput1_1)
             PressedBorderColor: =TextInput1_1.HoverBorderColor
             PressedColor: =TextInput1_1.Color
             PressedFill: =TextInput1_1.Fill
@@ -492,7 +496,6 @@ NewRequestScreen As screen:
             FocusedBorderColor: =RectSeparator_1.BorderColor
             Height: =1
             HoverFill: =RectSeparator_1.Fill
-            OnSelect: =""
             PressedFill: =RectSeparator_1.Fill
             Width: =864
             X: =252
