@@ -12,7 +12,6 @@ App As appinfo:
                 Office365Users.MyProfile()
             );
         
-        
             //collection used in the left nav menu
             ClearCollect(
                 EmployeeNavigation,
