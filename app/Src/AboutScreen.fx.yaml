@@ -341,14 +341,7 @@ AboutScreen As screen:
             PressedColor: =AboutLeaveTypeDescription.Color
             PressedFill: =AboutLeaveTypeDescription.Fill
             Size: =12
-            Text: |-
-                ="Tips:
-                          1. Medical Leave shall be defined as approved leave of absence resulting from illness, disease or injury as certified by the Company Panel Doctor / Government Medical Officer / registered medical practitioner.
-                An employee shall also be entitled to paid leave after examination by a dental surgeon as defined in the Dental 
-                Act 1971. An employee shall provide a medical certificate from the Government Medical Officer / registered medical 
-                practitioner as evidence of absence covering all days of sickness.
-                2. Total days for medical leave = 14
-                ."
+            Text: =LookUp(LeaveTypeCollection,type = _aboutSelectedLeaveType).description
             Width: =855
             X: =256
             Y: =453
