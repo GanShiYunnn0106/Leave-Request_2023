@@ -586,19 +586,19 @@ NewRequestScreen As screen:
                 =Set(_selectedLeaveType, ThisItem.type);
                 If
                 (_selectedLeaveType = "Annual",
-                UpdateContext(_balanceRemain,((LookUp(LeaveApp_Employee,NameofEmployee.Email=User().Email).AnnualLeaveEntitlement) + (LookUp(LeaveApp_Employee,NameofEmployee.Email=User().Email).AnnualCarriedForward) - (LookUp(LeaveApp_Employee,NameofEmployee.Email=User().Email).AnnualLeaveTaken))),
+                Set(_balanceRemain,((LookUp(LeaveApp_Employee,NameofEmployee.Email=User().Email).AnnualLeaveEntitlement) + (LookUp(LeaveApp_Employee,NameofEmployee.Email=User().Email).AnnualCarriedForward) - (LookUp(LeaveApp_Employee,NameofEmployee.Email=User().Email).AnnualLeaveTaken))),
                 _selectedLeaveType = "Medical",
-                UpdateContext(_balanceRemain,((LookUp(LeaveApp_Employee,NameofEmployee.Email=User().Email).MedicalLeaveEntitlement) - (LookUp(LeaveApp_Employee,NameofEmployee.Email=User().Email).MedicalLeaveTaken))),
+                Set(_balanceRemain,((LookUp(LeaveApp_Employee,NameofEmployee.Email=User().Email).MedicalLeaveEntitlement) - (LookUp(LeaveApp_Employee,NameofEmployee.Email=User().Email).MedicalLeaveTaken))),
                 _selectedLeaveType = "Casual Immediate",
-                UpdateContext(_balanceRemain,((LookUp(LeaveApp_Employee,NameofEmployee.Email=User().Email).CompassionateLeaveEntitlement) - (LookUp(LeaveApp_Employee,NameofEmployee.Email=User().Email).CompassionateLeaveTaken))),
+                Set(_balanceRemain,((LookUp(LeaveApp_Employee,NameofEmployee.Email=User().Email).CompassionateLeaveEntitlement) - (LookUp(LeaveApp_Employee,NameofEmployee.Email=User().Email).CompassionateLeaveTaken))),
                 _selectedLeaveType = "Marriage",
-                UpdateContext(_balanceRemain,((LookUp(LeaveApp_Employee,NameofEmployee.Email=User().Email).MarriageLeaveEntitlement) - (LookUp(LeaveApp_Employee,NameofEmployee.Email=User().Email).MarriageLeaveTaken))),
+                Set(_balanceRemain,((LookUp(LeaveApp_Employee,NameofEmployee.Email=User().Email).MarriageLeaveEntitlement) - (LookUp(LeaveApp_Employee,NameofEmployee.Email=User().Email).MarriageLeaveTaken))),
                 _selectedLeaveType = "Paternity",
-                UpdateContext(_balanceRemain,((LookUp(LeaveApp_Employee,NameofEmployee.Email=User().Email).PaternityLeaveEntitlement) - (LookUp(LeaveApp_Employee,NameofEmployee.Email=User().Email).PaternityLeaveTaken))),
+                Set(_balanceRemain,((LookUp(LeaveApp_Employee,NameofEmployee.Email=User().Email).PaternityLeaveEntitlement) - (LookUp(LeaveApp_Employee,NameofEmployee.Email=User().Email).PaternityLeaveTaken))),
                 _selectedLeaveType = "Maternity",
-                UpdateContext(_balanceRemain,((LookUp(LeaveApp_Employee,NameofEmployee.Email=User().Email).MaternityLeaveEntitlement) - (LookUp(LeaveApp_Employee,NameofEmployee.Email=User().Email).MaternityLeaveTaken))),
+                Set(_balanceRemain,((LookUp(LeaveApp_Employee,NameofEmployee.Email=User().Email).MaternityLeaveEntitlement) - (LookUp(LeaveApp_Employee,NameofEmployee.Email=User().Email).MaternityLeaveTaken))),
                 _selectedLeaveType = "Hospitalization",
-                UpdateContext(_balanceRemain,((LookUp(LeaveApp_Employee,NameofEmployee.Email=User().Email).HospitalizationLeaveEntitlement) - (LookUp(LeaveApp_Employee,NameofEmployee.Email=User().Email).HospitalizationLeaveTaken)));
+                Set(_balanceRemain,((LookUp(LeaveApp_Employee,NameofEmployee.Email=User().Email).HospitalizationLeaveEntitlement) - (LookUp(LeaveApp_Employee,NameofEmployee.Email=User().Email).HospitalizationLeaveTaken)));
                 );
             PressedBorderColor: =NewRequestLeaveTypeGallery.BorderColor
             PressedFill: =NewRequestLeaveTypeGallery.Fill
