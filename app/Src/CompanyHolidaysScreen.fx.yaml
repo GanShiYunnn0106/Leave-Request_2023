@@ -188,7 +188,7 @@ CompanyHolidaysScreen As screen:
         Height: =597
         HoverBorderColor: =GalleryHolidays.BorderColor
         HoverFill: =GalleryHolidays.Fill
-        Items: =LeaveApp_PublicHoliday
+        Items: =LeaveApp_PublicHoliday_2
         Layout: =Layout.Vertical
         LoadingSpinnerColor: =GalleryHolidays.BorderColor
         PressedBorderColor: =GalleryHolidays.BorderColor
@@ -268,7 +268,7 @@ CompanyHolidaysScreen As screen:
         Icon3 As icon.Trash:
             Height: =24
             Icon: =Icon.Trash
-            OnSelect: =Remove(LeaveApp_PublicHoliday_1,ThisItem)
+            OnSelect: =Remove(LeaveApp_PublicHoliday_2,ThisItem)
             Visible: =_managerView=true
             Width: =43
             X: =776
@@ -322,7 +322,7 @@ CompanyHolidaysScreen As screen:
         Button1 As button:
             Height: =26
             OnSelect: |-
-                =Collect(LeaveApp_PublicHoliday_1,{HolidayName:txtHoliday.Text, HolidayDates:DateValue(HolidayDate.SelectedDate)})
+                =Collect(LeaveApp_PublicHoliday_2,{HolidayName:txtHoliday.Text, HolidayDates:DateValue(HolidayDate.SelectedDate)})
             Text: ="Add"
             Visible: =_managerView=true
             Width: =80
