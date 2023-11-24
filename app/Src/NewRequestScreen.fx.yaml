@@ -1,12 +1,23 @@
 NewRequestScreen As screen:
     Height: =Max(App.Height, App.DesignHeight)
     OnHidden: =
-    OnVisible: |+
-        =Reset(LeaveEndDatePicker);
+    OnVisible: |-
+        =Concurrent(
+            If(!_editingRequest,
+        Reset(LeaveEndDatePicker);
         Reset(LeaveStartDatePicker);
         Reset(TextInput1_1);
         Select(LeaveStartDatePicker);
-        
+            
+            ),
+            If( 
+        _editingRequest,
+            Set(_selectedLeaveType,GalleryRequest.Selected.Leave_Type),
+            Set(_leaveStart,GalleryRequest.Selected.Start_Date),
+            Set(_leaveEnd,GalleryRequest.Selected.End_Date),
+            Set(_leaveDetail,GalleryRequest.Selected.Comments)
+        )
+        )
     Orientation: =If(NewRequestScreen.Width < NewRequestScreen.Height, Layout.Vertical, Layout.Horizontal)
     Size: =1 + CountRows(App.SizeBreakpoints) - CountIf(App.SizeBreakpoints, Value >= NewRequestScreen.Width)
     Width: =Max(App.Width, App.DesignWidth)
@@ -271,7 +282,9 @@ NewRequestScreen As screen:
                     );
                       Set(_workDaysInRequest, _numFullWeeks * 5 + _numPartialWeekdays);  
                       Set(_holidaysInRequest, CountIf(HolidaysCollection, StartDate >= LeaveStartDatePicker.SelectedDate, StartDate <= LeaveEndDatePicker.SelectedDate));
-                      Set(_requestedDays, _workDaysInRequest - _holidaysInRequest)
+                      Set(_requestedDays, _workDaysInRequest - _holidaysInRequest);
+                      Set(_leaveStart, LeaveStartDatePicker);
+                      Set(_leaveEnd,LeaveEndDatePicker);
                 )
             PressedBorderColor: =LeaveStartDatePicker.BorderColor
             PressedFill: =LeaveStartDatePicker.Fill
@@ -473,7 +486,7 @@ NewRequestScreen As screen:
             Font: =Font.Lato
             Height: =74
             Mode: =TextMode.MultiLine
-            OnSelect: =""
+            OnSelect: =Set(_leaveDetail,TextInput1_1)
             PressedBorderColor: =TextInput1_1.HoverBorderColor
             PressedColor: =TextInput1_1.Color
             PressedFill: =TextInput1_1.Fill
@@ -583,7 +596,7 @@ NewRequestScreen As screen:
             Items: =LeaveTypeCollection
             Layout: =Layout.Vertical
             LoadingSpinnerColor: =NewRequestLeaveTypeGallery.BorderColor
-            OnSelect: |-
+            OnSelect: |
                 =Set(_selectedLeaveType, ThisItem.type);
                 If
                 (_selectedLeaveType = "Annual",
