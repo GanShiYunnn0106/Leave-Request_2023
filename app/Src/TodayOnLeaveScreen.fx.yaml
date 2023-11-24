@@ -214,6 +214,7 @@ TodayOnLeaveScreen As screen:
             ZIndex: =8
 
     TodayOnLeaveTitle As label:
+        Color: =RGBA(101, 128, 187, 1)
         Font: =Font.Georgia
         FontWeight: =FontWeight.Bold
         Height: =78

@@ -26,16 +26,18 @@ HomeScreen As screen:
         DelayItemLoading: =true
         Fill: =RGBA(255, 255, 255, 1)
         Height: =614
-        Items: |-
+        Items: |
             =If(
-                ButtonFilter.Selected.Filter = "All",
-                Filter(
-                    LeaveApp_Request,
-                    Created_By.Email = User().Email    
-            ),
-                Filter(
-                    LeaveApp_Request,
-                    Status.Value = ButtonFilter.Selected.Filter && Created_By.Email = User().Email
+                !_managerView,
+                If(
+                    ButtonFilter.Selected.Filter = "All",
+                    Filter(LeaveApp_Request, Created_By.Email = User().Email),
+                    Filter(LeaveApp_Request, Status.Value = ButtonFilter.Selected.Filter && Created_By.Email = User().Email)
+                ),
+                If(
+                    ButtonFilter.Selected.Filter = "All",
+                    Filter(LeaveApp_Request, Requested_to.Email = User().Email),
+                    Filter(LeaveApp_Request, Status.Value = ButtonFilter.Selected.Filter && Requested_to.Email = User().Email)
                 )
             )
         Layout: =Layout.Vertical
