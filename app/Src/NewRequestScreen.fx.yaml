@@ -2,10 +2,18 @@ NewRequestScreen As screen:
     Height: =Max(App.Height, App.DesignHeight)
     OnHidden: =
     OnVisible: |
-        =Reset(LeaveEndDatePicker);
+        =Concurrent( Select(LeaveStartDatePicker),
+        If(!_editingRequest,
+        Reset(LeaveEndDatePicker);
         Reset(LeaveStartDatePicker);
         Reset(TextInput1_1);
-        Select(LeaveStartDatePicker);
+        );
+        If(_editingRequest,
+        Set(_selectedLeaveType,GalleryRequest.Selected.Leave_Type);
+        Set(_leaveStart,GalleryRequest.Selected.Start_Date);
+        Set(_leaveEnd,GalleryRequest.Selected.End_Date);
+        Set(_leaveDetail,GalleryRequest.Selected.Comments);
+        )
         
            
     Orientation: =If(NewRequestScreen.Width < NewRequestScreen.Height, Layout.Vertical, Layout.Horizontal)
