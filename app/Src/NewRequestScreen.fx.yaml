@@ -1,23 +1,13 @@
 NewRequestScreen As screen:
     Height: =Max(App.Height, App.DesignHeight)
     OnHidden: =
-    OnVisible: |-
-        =Concurrent(
-            If(!_editingRequest,
-        Reset(LeaveEndDatePicker);
+    OnVisible: |
+        =Reset(LeaveEndDatePicker);
         Reset(LeaveStartDatePicker);
         Reset(TextInput1_1);
         Select(LeaveStartDatePicker);
-            
-            ),
-            If( 
-        _editingRequest,
-            Set(_selectedLeaveType,GalleryRequest.Selected.Leave_Type),
-            Set(_leaveStart,GalleryRequest.Selected.Start_Date),
-            Set(_leaveEnd,GalleryRequest.Selected.End_Date),
-            Set(_leaveDetail,GalleryRequest.Selected.Comments)
-        )
-        )
+        
+           
     Orientation: =If(NewRequestScreen.Width < NewRequestScreen.Height, Layout.Vertical, Layout.Horizontal)
     Size: =1 + CountRows(App.SizeBreakpoints) - CountIf(App.SizeBreakpoints, Value >= NewRequestScreen.Width)
     Width: =Max(App.Width, App.DesignWidth)
@@ -254,7 +244,8 @@ NewRequestScreen As screen:
             OnChange: =Select(LeaveStartDatePicker)
             OnSelect: |-
                 =//**** CALCULATION USED TO DETERMINE TOTAL WORK DAYS REQUESTED ****
-                
+                Set(_leaveStart, LeaveStartDatePicker);
+                    Set(_leaveEnd,LeaveEndDatePicker);
                 If(LeaveStartDatePicker.SelectedDate <= LeaveEndDatePicker.SelectedDate,
                     Set(_inclusiveTotalDaysRequested, DateDiff(LeaveStartDatePicker.SelectedDate, LeaveEndDatePicker.SelectedDate, TimeUnit.Days) + 1);
                     Set(_numFullWeeks, RoundDown(_inclusiveTotalDaysRequested / 7, 0));
@@ -283,8 +274,7 @@ NewRequestScreen As screen:
                       Set(_workDaysInRequest, _numFullWeeks * 5 + _numPartialWeekdays);  
                       Set(_holidaysInRequest, CountIf(HolidaysCollection, StartDate >= LeaveStartDatePicker.SelectedDate, StartDate <= LeaveEndDatePicker.SelectedDate));
                       Set(_requestedDays, _workDaysInRequest - _holidaysInRequest);
-                      Set(_leaveStart, LeaveStartDatePicker);
-                      Set(_leaveEnd,LeaveEndDatePicker);
+                      
                 )
             PressedBorderColor: =LeaveStartDatePicker.BorderColor
             PressedFill: =LeaveStartDatePicker.Fill
