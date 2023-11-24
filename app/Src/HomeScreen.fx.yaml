@@ -446,15 +446,15 @@ HomeScreen As screen:
             Y: =17
             ZIndex: =14
 
-        IconHeaderCreateNew_9 As icon.Add:
+        IconHeaderCreateNew As icon.Add:
             AccessibleLabel: ="Create new leave request"
             Color: =Rectangle1_11.Fill
-            DisabledFill: =IconHeaderCreateNew_9.Fill
-            FocusedBorderColor: =IconHeaderCreateNew_9.BorderColor
+            DisabledFill: =IconHeaderCreateNew.Fill
+            FocusedBorderColor: =IconHeaderCreateNew.BorderColor
             Height: =46
-            HoverBorderColor: =ColorFade(IconHeaderCreateNew_9.BorderColor, 20%)
-            HoverColor: =ColorFade(IconHeaderCreateNew_9.Color, 20%)
-            HoverFill: =IconHeaderCreateNew_9.Fill
+            HoverBorderColor: =ColorFade(IconHeaderCreateNew.BorderColor, 20%)
+            HoverColor: =ColorFade(IconHeaderCreateNew.Color, 20%)
+            HoverFill: =IconHeaderCreateNew.Fill
             Icon: =Icon.Add
             OnSelect: |
                 =Navigate(NewRequestScreen, BorderStyle.None);
@@ -464,9 +464,9 @@ HomeScreen As screen:
             PaddingLeft: =7
             PaddingRight: =7
             PaddingTop: =7
-            PressedBorderColor: =ColorFade(IconHeaderCreateNew_9.BorderColor, -20%)
-            PressedColor: =ColorFade(IconHeaderCreateNew_9.Color, -20%)
-            PressedFill: =IconHeaderCreateNew_9.Fill
+            PressedBorderColor: =ColorFade(IconHeaderCreateNew.BorderColor, -20%)
+            PressedColor: =ColorFade(IconHeaderCreateNew.Color, -20%)
+            PressedFill: =IconHeaderCreateNew.Fill
             TabIndex: =0
             Width: =46
             X: =CircleHeaderCreateNew_9.X

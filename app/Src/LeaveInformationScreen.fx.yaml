@@ -2,7 +2,7 @@ LeaveInformationScreen As screen:
 
     "Gallery6 As gallery.'BrowseLayout_Vertical_ThreeTextVariant_ver5.0'":
         DelayItemLoading: =true
-        Fill: =RGBA(242, 242, 242, 1)
+        Fill: =RGBA(255, 255, 255, 1)
         Height: =604
         Items: |-
             =If(
@@ -130,8 +130,8 @@ LeaveInformationScreen As screen:
             Size: =15
             Text: =ThisItem.Status.Value
             Width: =140
-            X: =916
-            Y: =15
+            X: =894
+            Y: =25
             ZIndex: =17
 
         Rectangle20 As rectangle:
