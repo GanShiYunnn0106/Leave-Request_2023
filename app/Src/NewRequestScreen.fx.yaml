@@ -12,8 +12,8 @@ NewRequestScreen As screen:
         If(
             _editingRequest && !IsBlank(GalleryRequest.Selected),
             Set(_selectedLeaveType, GalleryRequest.Selected.Leave_Type.Value);
-            Set(_leaveStart, GalleryRequest.Selected.Start_Date);
-            Set(_leaveEnd, GalleryRequest.Selected.End_Date);
+            _leaveStart = GalleryRequest.Selected.Start_Date;
+            _leaveEnd = GalleryRequest.Selected.End_Date;
             Set(_leaveDetail, GalleryRequest.Selected.Comments)
         )
     Orientation: =If(NewRequestScreen.Width < NewRequestScreen.Height, Layout.Vertical, Layout.Horizontal)
