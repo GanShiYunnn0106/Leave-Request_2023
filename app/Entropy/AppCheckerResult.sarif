@@ -3145,17 +3145,17 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "App._myProfile"
+                  "fullyQualifiedName": "App._sendEmailsEnabled"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "App._myProfile",
+                  "fullyQualifiedName": "App._sendEmailsEnabled",
                   "relativeAddress": 0
                 }
               },
               "properties": {
-                "member": "_myProfile",
+                "member": "_sendEmailsEnabled",
                 "module": "App",
                 "type": "App"
               }
@@ -3175,17 +3175,17 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "App._sendEmailsEnabled"
+                  "fullyQualifiedName": "App._myProfile"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "App._sendEmailsEnabled",
+                  "fullyQualifiedName": "App._myProfile",
                   "relativeAddress": 0
                 }
               },
               "properties": {
-                "member": "_sendEmailsEnabled",
+                "member": "_myProfile",
                 "module": "App",
                 "type": "App"
               }
