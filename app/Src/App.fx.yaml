@@ -95,8 +95,7 @@ App As appinfo:
                             ,
                         {
                             type:"Casual Immediate", 
-                            description:"1. Death of a member of the employee's family. First relation 
-        (parents/ parents-in-law/ spouse/ children) 
+                            description:"1. Death of a member of the employee's family. First relation (parents/ parents-in-law/ spouse/ children). 
         
         2. Total days for casual immediate = 3 days.
         
@@ -106,7 +105,8 @@ App As appinfo:
                         {
                             type:"Casual Second", 
                             description:"1.Death of a member of the employee's family. Second relations 
-        (grandparents / brothers / sisters /grandchildren) 
+        (grandparents / brothers / sisters /grandchildren).
+        
         2. Total days for casual second = 2 days.
         
         In aggregate, the number of days taken under Casual Immediate and Casual Second shall not exceed 03 days in any calendar year."
