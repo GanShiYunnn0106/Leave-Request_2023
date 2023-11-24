@@ -245,8 +245,7 @@ HomeScreen As screen:
                 );
                 Navigate(
                     NewRequestScreen,
-                    ScreenTransition.None,
-                    {SelectedRecord: GalleryRequest}
+                    ScreenTransition.None
                 );
             Text: ="EDIT"
             Visible: =!_managerView && (GalleryRequest.Selected.Status.Value) = "Pending"
