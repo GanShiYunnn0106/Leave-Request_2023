@@ -245,7 +245,7 @@ NewRequestScreen As screen:
             OnSelect: |-
                 =//**** CALCULATION USED TO DETERMINE TOTAL WORK DAYS REQUESTED ****
                 Set(_leaveStart, LeaveStartDatePicker);
-                    Set(_leaveEnd,LeaveEndDatePicker);
+                
                 If(LeaveStartDatePicker.SelectedDate <= LeaveEndDatePicker.SelectedDate,
                     Set(_inclusiveTotalDaysRequested, DateDiff(LeaveStartDatePicker.SelectedDate, LeaveEndDatePicker.SelectedDate, TimeUnit.Days) + 1);
                     Set(_numFullWeeks, RoundDown(_inclusiveTotalDaysRequested / 7, 0));
