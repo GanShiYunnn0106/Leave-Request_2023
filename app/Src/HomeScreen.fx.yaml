@@ -3,20 +3,7 @@ HomeScreen As screen:
         =RGBA(255,255,255,1)
     Height: =Max(App.Height, App.DesignHeight)
     OnHidden: =Set(_showDetails, false)
-    OnVisible: |-
-        =Concurrent(
-            Set(_navMenuSelect, "My Leave Requests"),
-            //if not manager view, refresh my balance collection when on this screen
-            If(!_managerView, Set(_requesterBalanceRecord, LookUp(BalanceCollection, Year = Text(Year(Now())) && EmployeeEmail = _myProfile.UserPrincipalName));
-                ClearCollect(RequesterBalanceCollection, 
-                { type: "Vacation", balance: Value(_requesterBalanceRecord.Vacation) - Value(_requesterBalanceRecord.VacationUsed)},
-                {type:"Sick Leave", balance:Value(_requesterBalanceRecord.Sick)-Value(_requesterBalanceRecord.SickUsed)},
-                {type:"Floating Holiday", balance:Value(_requesterBalanceRecord.Floating)-Value(_requesterBalanceRecord.FloatingUsed)},
-                {type:"Jury Duty", balance:Value(_requesterBalanceRecord.JuryDuty)-Value(_requesterBalanceRecord.JuryDutyUsed)},
-                {type:"Bereavement", balance:Value(_requesterBalanceRecord.Bereavement)-Value(_requesterBalanceRecord.BereavementUsed)})
-            ),
-            Set(_showDetails, false)
-        );
+    OnVisible: =
     Orientation: =If(HomeScreen.Width < HomeScreen.Height, Layout.Vertical, Layout.Horizontal)
     Size: =1 + CountRows(App.SizeBreakpoints) - CountIf(App.SizeBreakpoints, Value >= HomeScreen.Width)
     Width: =Max(App.Width, App.DesignWidth)

@@ -244,8 +244,6 @@ NewRequestScreen As screen:
             OnChange: =Select(LeaveStartDatePicker)
             OnSelect: |-
                 =//**** CALCULATION USED TO DETERMINE TOTAL WORK DAYS REQUESTED ****
-                Set(_leaveStart, LeaveStartDatePicker);
-                Set(_leaveEnd,LeaveEndDatePicker);
                 If(LeaveStartDatePicker.SelectedDate <= LeaveEndDatePicker.SelectedDate,
                     Set(_inclusiveTotalDaysRequested, DateDiff(LeaveStartDatePicker.SelectedDate, LeaveEndDatePicker.SelectedDate, TimeUnit.Days) + 1);
                     Set(_numFullWeeks, RoundDown(_inclusiveTotalDaysRequested / 7, 0));
@@ -513,19 +511,11 @@ NewRequestScreen As screen:
             =If(_managerView, ManagerNavigation, EmployeeNavigation)
         Layout: =Layout.Vertical
         LoadingSpinnerColor: =GalleryNavigation_12.BorderColor
-        OnSelect: |-
-            =Set(_navMenuSelect, ThisItem.MenuItem);
-            If(
-                "Requests" in ThisItem.MenuItem, Navigate(HomeScreen, BorderStyle.None),
-                "Balance" in ThisItem.MenuItem, Navigate(LeaveBalanceScreen, BorderStyle.None),
-                "Holidays" in ThisItem.MenuItem, Navigate(CompanyHolidaysScreen, BorderStyle.None),
-                ThisItem.MenuItem = "About", Navigate(AboutScreen, BorderStyle.None),
-                ThisItem.MenuItem = "Log out", Navigate(LoginScreen, BorderStyle.None)
-            )
+        OnSelect: =
         PressedBorderColor: =GalleryNavigation_12.BorderColor
         PressedFill: =GalleryNavigation_12.Fill
         ShowScrollbar: =false
-        TemplateFill: =If(ThisItem.MenuItem = _navMenuSelect, RGBA(255,255,255,1), RGBA(245,245,245,1))
+        TemplateFill: =
         TemplatePadding: =0
         TemplateSize: =72
         Width: =231
