@@ -12,12 +12,15 @@ TodayOnLeaveScreen As screen:
         DelayItemLoading: =true
         Height: =621
         Items: |-
-            =Filter(
+            =Sort(
                 Filter(
                     LeaveApp_Request,
-                    Start_Date <= Today()
+                    Start_Date <= Today()&&
+                    End_Date >= Today()&&
+                    Status.Value = "Approved"
                 ),
-                End_Date >= Today() && Status.Value = "Approved"
+                 Created_By.DisplayName,
+                 SortOrder.Ascending
             )
         Layout: =Layout.Vertical
         LoadingSpinner: =LoadingSpinner.Data
