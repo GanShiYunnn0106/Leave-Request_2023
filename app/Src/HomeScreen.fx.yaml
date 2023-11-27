@@ -3,7 +3,17 @@ HomeScreen As screen:
         =RGBA(255,255,255,1)
     Height: =Max(App.Height, App.DesignHeight)
     OnHidden: =Set(_showDetails, false)
-    OnVisible: =
+    OnVisible: |-
+        =Set(LeaveTempID,LookUp(LeaveApp_Request,ID = GalleryRequest.Selected.ID));
+        Set(LeaveAnnualCarriedTemp,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email).AnnualCarriedForward);
+        Set(LeaveAnnualTakenTemp,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email).AnnualLeaveTaken);
+        Set(LeaveMedicalTakenTemp,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email).MedicalLeaveTaken);
+        Set(LeaveCasualImmediateTakenTemp,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email).AnnualLeaveTaken);
+        Set(LeaveCasualSecondTakenTemp,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email).CasualSecondLeaveTaken);
+        Set(LeaveMarriageTakenTemp,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email).MarriageLeaveTaken);
+        Set(LeavePaternityTakenTemp,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email).PaternityLeaveTaken);
+        Set(LeaveMaternityTakenTemp,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email).MaternityLeaveTaken);
+        Set(LeaveHospitalizationTakenTemp,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email).HospitalizationLeaveTaken);
     Orientation: =If(HomeScreen.Width < HomeScreen.Height, Layout.Vertical, Layout.Horizontal)
     Size: =1 + CountRows(App.SizeBreakpoints) - CountIf(App.SizeBreakpoints, Value >= HomeScreen.Width)
     Width: =Max(App.Width, App.DesignWidth)
@@ -61,6 +71,17 @@ HomeScreen As screen:
         OnSelect: |
             =Set(_selectedLeaveItem, ThisItem);
             Set(SelectedRecord,GalleryRequest.Selected);
+            
+            Set(LeaveTempID,LookUp(LeaveApp_Request,ID = GalleryRequest.Selected.ID));
+            Set(LeaveAnnualCarriedTemp,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email).AnnualCarriedForward);
+            Set(LeaveAnnualTakenTemp,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email).AnnualLeaveTaken);
+            Set(LeaveMedicalTakenTemp,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email).MedicalLeaveTaken);
+            Set(LeaveCasualImmediateTakenTemp,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email).AnnualLeaveTaken);
+            Set(LeaveCasualSecondTakenTemp,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email).CasualSecondLeaveTaken);
+            Set(LeaveMarriageTakenTemp,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email).MarriageLeaveTaken);
+            Set(LeavePaternityTakenTemp,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email).PaternityLeaveTaken);
+            Set(LeaveMaternityTakenTemp,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email).MaternityLeaveTaken);
+            Set(LeaveHospitalizationTakenTemp,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email).HospitalizationLeaveTaken);
         TemplatePadding: =0
         TemplateSize: =171
         Width: =820
@@ -247,6 +268,7 @@ HomeScreen As screen:
             FocusedBorderColor: =Rectangle3.BorderColor
             Height: =695
             HoverFill: =Rectangle3.Fill
+            OnSelect: =
             PressedFill: =Rectangle3.Fill
             Width: =315
             X: =1051
@@ -256,6 +278,7 @@ HomeScreen As screen:
         RequestDetailsTitle As label:
             Color: =RGBA(62, 96, 170, 1)
             Font: =Font.'Lato Black'
+            OnSelect: =
             Size: =14
             Text: ="Request Details"
             Underline: =true
@@ -273,15 +296,7 @@ HomeScreen As screen:
             Height: =30
             HoverBorderColor: =RGBA(62, 96, 170, 1)
             HoverFill: =RGBA(230, 229, 229, 1)
-            OnSelect: |
-                =Set(
-                    _editingRequest,
-                    true
-                );
-                Navigate(
-                    NewRequestScreen,
-                    ScreenTransition.None
-                );
+            OnSelect: =
             Text: ="EDIT"
             Visible: =!_managerView && (GalleryRequest.Selected.Status.Value) = "Pending"
             Width: =54
@@ -292,6 +307,7 @@ HomeScreen As screen:
         EditIcon As icon.Edit:
             Height: =30
             Icon: =Icon.Edit
+            OnSelect: =
             Visible: =!_managerView && (GalleryRequest.Selected.Status.Value) = "Pending"
             Width: =23
             X: =1063
@@ -303,39 +319,28 @@ HomeScreen As screen:
             Color: =RGBA(54, 176, 75, 1)
             Fill: =RGBA(255, 255, 255, 1)
             Height: =27
-            OnSelect: |
+            OnSelect: |-
                 =Set(LeaveTempID,LookUp(LeaveApp_Request,ID = GalleryRequest.Selected.ID));
-                Set(LeaveTempType,LookUp(LeaveApp_Request,ID = GalleryRequest.Selected.ID).Leave_Type.Value);
-                Set(LeaveTempUserID,LookUp(LeaveApp_Employee,ID = GalleryRequest.Selected.ID));
-                Set(LeaveTempAnnualTaken,LookUp(LeaveApp_Employee,ID = GalleryRequest.Selected.ID).AnnualLeaveTaken);
-                Set(LeaveTempAnnualCarried,LookUp(LeaveApp_Employee,ID = GalleryRequest.Selected.ID).AnnualCarriedForward);
-                Set(LeaveTempHospitalizationTaken,LookUp(LeaveApp_Employee,ID = GalleryRequest.Selected.ID).HospitalizationLeaveTaken);
-                Set(LeaveTempMedicalTaken,LookUp(LeaveApp_Employee,ID = GalleryRequest.Selected.ID).MedicalLeaveTaken);
-                Set(LeaveTempCasualSecondTaken,LookUp(LeaveApp_Employee,ID = GalleryRequest.Selected.ID).CasualSecondLeaveTaken);
-                Set(LeaveTempCasualImmediateTaken,LookUp(LeaveApp_Employee,ID = GalleryRequest.Selected.ID).AnnualLeaveTaken);
-                Set(LeaveTempPaternityTaken,LookUp(LeaveApp_Employee,ID = GalleryRequest.Selected.ID).PaternityLeaveTaken);
-                Set(LeaveTempMaternityTaken,LookUp(LeaveApp_Employee,ID = GalleryRequest.Selected.ID).MaternityLeaveTaken);
-                Set(LeaveTempMarriageTaken,LookUp(LeaveApp_Employee,ID = GalleryRequest.Selected.ID).MarriageLeaveTaken);
+                Set(LeaveAnnualCarriedTemp,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email).AnnualCarriedForward);
+                Set(LeaveAnnualTakenTemp,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email).AnnualLeaveTaken);
+                Set(LeaveMedicalTakenTemp,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email).MedicalLeaveTaken);
+                Set(LeaveCasualImmediateTakenTemp,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email).AnnualLeaveTaken);
+                Set(LeaveCasualSecondTakenTemp,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email).CasualSecondLeaveTaken);
+                Set(LeaveMarriageTakenTemp,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email).MarriageLeaveTaken);
+                Set(LeavePaternityTakenTemp,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email).PaternityLeaveTaken);
+                Set(LeaveMaternityTakenTemp,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email).MaternityLeaveTaken);
+                Set(LeaveHospitalizationTakenTemp,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email).HospitalizationLeaveTaken);
+                Set(TypeTemp,GalleryRequest.Selected.Leave_Type.Value);
+                Set(DaysTemp,GalleryRequest.Selected.Days);
+                Set(LeaveTempID,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email).ID);
                 
-                Patch(LeaveApp_Request,LeaveTempID,{
-                        Status: {
-                            '@odata.type': "Microsoft.Azure.Connectors.SharePoint.SPListExpandedUser",
-                            Value: "Approved"
-                        }
-                    });
-                    
-                     If(LeaveTempType = "Medical",Patch(LeaveApp_Employee,LeaveTempUserID,{AnnualLeaveTaken: LeaveTempMedicalTaken + _leaveDaysTemp}));
-                      If(LeaveTempType = "Hospitalized",Patch(LeaveApp_Employee,LeaveTempUserID,{AnnualLeaveTaken: LeaveTempHospitalizationTaken + _leaveDaysTemp}));
-                       If(LeaveTempType = "Casual Immediate",Patch(LeaveApp_Employee,LeaveTempUserID,{AnnualLeaveTaken: LeaveTempCasualSecondTaken + _leaveDaysTemp}));
-                        If(LeaveTempType = "Casual Second",Patch(LeaveApp_Employee,LeaveTempUserID,{AnnualLeaveTaken: LeaveTempCasualImmediateTaken + _leaveDaysTemp}));
-                         If(LeaveTempType = "Paternity",Patch(LeaveApp_Employee,LeaveTempUserID,{AnnualLeaveTaken: LeaveTempPaternityTaken + _leaveDaysTemp}));
-                          If(LeaveTempType = "Maternity",Patch(LeaveApp_Employee,LeaveTempUserID,{AnnualLeaveTaken: LeaveTempMaternityTaken + _leaveDaysTemp}));
-                          If(LeaveTempType = "Marriage",Patch(LeaveApp_Employee,LeaveTempUserID,{AnnualLeaveTaken: LeaveTempMarriageTaken + _leaveDaysTemp}));
-                          If(LeaveTempType = "Annual" && LeaveTempAnnualCarried < _leaveDaysTemp,Patch(LeaveApp_Employee,LeaveTempUserID,{AnnualLeaveTaken: LeaveTempAnnualTaken + _leaveDaysTemp},{AnnualCarriedForward: 0}));
-                          If(LeaveTempType = "Annual" && LeaveTempAnnualCarried >= _leaveDaysTemp,Patch(LeaveApp_Employee,LeaveTempUserID,{AnnualCarriedForward: LeaveTempAnnualCarried + _leaveDaysTemp}));
+                
+                If((TypeTemp = "Annual" && LeaveAnnualCarriedTemp >= DaysTemp),Patch(LeaveApp_Employee,{AnnualCarriedForward: LeaveAnnualCarriedTemp - DaysTemp}));
+                If((TypeTemp = "Annual" && LeaveAnnualCarriedTemp < DaysTemp),Patch(LeaveApp_Employee,{AnnualCarriedForward: 0},{AnnualLeaveTaken: LeaveAnnualTakenTemp + (DaysTemp - LeaveAnnualCarriedTemp)}));
             Size: =11
             Text: ="Approve"
-            Visible: =_managerView && (GalleryRequest.Selected.Status.Value) = "Pending"
+            Visible: |
+                =_managerView && (GalleryRequest.Selected.Status.Value) = "Pending"
             Width: =78
             X: =1094
             Y: =590
@@ -346,14 +351,7 @@ HomeScreen As screen:
             Color: =RGBA(213, 25, 32, 1)
             Fill: =RGBA(255, 255, 255, 1)
             Height: =27
-            OnSelect: |-
-                =Set(LeaveTempID,LookUp(LeaveApp_Request,ID = GalleryRequest.Selected.ID));
-                Patch(LeaveApp_Request,LeaveTempID,{
-                        Status: {
-                            '@odata.type': "Microsoft.Azure.Connectors.SharePoint.SPListExpandedUser",
-                            Value: "Rejected"
-                        }
-                    })
+            OnSelect: =
             Size: =11
             Text: ="Decline"
             Visible: =_managerView && (GalleryRequest.Selected.Status.Value) = "Pending"
@@ -365,6 +363,7 @@ HomeScreen As screen:
         Days As label:
             FontWeight: =FontWeight.Semibold
             Height: =36
+            OnSelect: =
             Text: |
                 =GalleryRequest.Selected.Days
             Width: =157
@@ -375,6 +374,7 @@ HomeScreen As screen:
         Leave_Type As label:
             FontWeight: =FontWeight.Semibold
             Height: =42
+            OnSelect: =
             Text: =GalleryRequest.Selected.Leave_Type.Value
             Width: =278
             X: =1066
@@ -384,6 +384,7 @@ HomeScreen As screen:
         Request_To As label:
             FontWeight: =FontWeight.Semibold
             Height: =30
+            OnSelect: =
             Size: =12.5
             Text: =GalleryRequest.Selected.Requested_to.DisplayName
             Width: =299
@@ -394,6 +395,7 @@ HomeScreen As screen:
         CarryForwardDays As label:
             FontWeight: =FontWeight.Semibold
             Height: =44
+            OnSelect: =
             Text: =GalleryRequest.Selected.CarryForwardDays & " days"
             Width: =229
             X: =1067
@@ -402,6 +404,7 @@ HomeScreen As screen:
 
         UnpaidLeave As label:
             FontWeight: =FontWeight.Semibold
+            OnSelect: =
             Text: =GalleryRequest.Selected.UnpaidLeave & " days"
             Width: =161
             X: =1067
@@ -409,6 +412,7 @@ HomeScreen As screen:
             ZIndex: =30
 
         LblTotalDays As label:
+            OnSelect: =
             Text: |-
                 ="Total days:"
             Width: =161
@@ -417,6 +421,7 @@ HomeScreen As screen:
             ZIndex: =31
 
         LblLeaveType As label:
+            OnSelect: =
             Text: |-
                 ="Leave Type:"
             Width: =161
@@ -425,6 +430,7 @@ HomeScreen As screen:
             ZIndex: =32
 
         LblRequestTo As label:
+            OnSelect: =
             Text: |-
                 ="Request Send To:"
             Width: =161
@@ -434,6 +440,7 @@ HomeScreen As screen:
 
         LblCarryForward As label:
             Height: =19
+            OnSelect: =
             Text: |-
                 ="Carry Forward Days:"
             Width: =206
@@ -443,6 +450,7 @@ HomeScreen As screen:
 
         LblUnpaidLeave As label:
             Height: =30
+            OnSelect: =
             Text: |-
                 ="Unpaid Leaves:"
             Width: =171
