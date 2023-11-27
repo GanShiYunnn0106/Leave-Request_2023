@@ -3,7 +3,17 @@ HomeScreen As screen:
         =RGBA(255,255,255,1)
     Height: =Max(App.Height, App.DesignHeight)
     OnHidden: =Set(_showDetails, false)
-    OnVisible: =
+    OnVisible: |-
+        =Set(LeaveTempID,LookUp(LeaveApp_Request,ID = GalleryRequest.Selected.ID));
+        Set(LeaveAnnualCarriedTemp,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email).AnnualCarriedForward);
+        Set(LeaveAnnualTakenTemp,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email).AnnualLeaveTaken);
+        Set(LeaveMedicalTakenTemp,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email).MedicalLeaveTaken);
+        Set(LeaveCasualImmediateTakenTemp,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email).AnnualLeaveTaken);
+        Set(LeaveCasualSecondTakenTemp,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email).CasualSecondLeaveTaken);
+        Set(LeaveMarriageTakenTemp,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email).MarriageLeaveTaken);
+        Set(LeavePaternityTakenTemp,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email).PaternityLeaveTaken);
+        Set(LeaveMaternityTakenTemp,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email).MaternityLeaveTaken);
+        Set(LeaveHospitalizationTakenTemp,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email).HospitalizationLeaveTaken);
     Orientation: =If(HomeScreen.Width < HomeScreen.Height, Layout.Vertical, Layout.Horizontal)
     Size: =1 + CountRows(App.SizeBreakpoints) - CountIf(App.SizeBreakpoints, Value >= HomeScreen.Width)
     Width: =Max(App.Width, App.DesignWidth)
