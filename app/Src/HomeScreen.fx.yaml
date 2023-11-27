@@ -46,7 +46,7 @@ HomeScreen As screen:
             Set(SelectedRecord,GalleryRequest.Selected);
         TemplatePadding: =0
         TemplateSize: =171
-        Width: =842
+        Width: =820
         X: =231
         Y: =154
         ZIndex: =1
@@ -167,11 +167,16 @@ HomeScreen As screen:
         ButtonCategories As button:
             BorderColor: =RGBA(62, 96, 170, 1)
             BorderThickness: =3
-            Color: =RGBA(62, 96, 170, 1)
-            Fill: =RGBA(255, 255, 255, 1)
+            Color: =If(ButtonFilter.Selected.Filter=ThisItem.Filter,RGBA(255, 255, 255, 1),RGBA(10, 106, 204, 1))
+            DisabledBorderColor: =ColorFade(ButtonFilter.BorderColor, 30%)
+            Fill: =If(ButtonFilter.Selected.Filter=ThisItem.Filter,RGBA(0, 71, 144, 1),RGBA(255, 255, 255, 1))
             Font: =Font.'Lato Black'
             Height: =30
+            HoverColor: =ButtonFilter.BorderColor
             OnSelect: =
+            PressedBorderColor: =ButtonFilter.Fill
+            PressedColor: =If(ButtonFilter.Selected.Filter=ThisItem.Filter,RGBA(255, 255, 255, 1),RGBA(10, 106, 204, 1))
+            PressedFill: =ButtonFilter.BorderColor
             RadiusBottomLeft: =35
             RadiusBottomRight: =35
             RadiusTopLeft: =35
@@ -201,7 +206,7 @@ HomeScreen As screen:
         HoverFill: =Rectangle2_1.Fill
         OnSelect: =
         PressedFill: =Rectangle2_1.Fill
-        Width: =832
+        Width: =820
         X: =231
         Y: =154
         ZIndex: =9
@@ -226,8 +231,8 @@ HomeScreen As screen:
             Height: =695
             HoverFill: =Rectangle3.Fill
             PressedFill: =Rectangle3.Fill
-            Width: =293
-            X: =1073
+            Width: =315
+            X: =1051
             Y: =73
             ZIndex: =3
 
@@ -237,7 +242,8 @@ HomeScreen As screen:
             Size: =14
             Text: ="Request Details"
             Underline: =true
-            X: =1087
+            Width: =161
+            X: =1066
             Y: =121
             ZIndex: =17
 
@@ -247,7 +253,7 @@ HomeScreen As screen:
             FocusedBorderThickness: =3
             Font: =Font.'Lato Black'
             FontWeight: =FontWeight.Semibold
-            Height: =31
+            Height: =30
             HoverBorderColor: =RGBA(62, 96, 170, 1)
             HoverFill: =RGBA(230, 229, 229, 1)
             OnSelect: |
@@ -261,18 +267,18 @@ HomeScreen As screen:
                 );
             Text: ="EDIT"
             Visible: =!_managerView && (GalleryRequest.Selected.Status.Value) = "Pending"
-            Width: =51
-            X: =1124
-            Y: =540
+            Width: =54
+            X: =1101
+            Y: =560
             ZIndex: =20
 
         EditIcon As icon.Edit:
             Height: =30
             Icon: =Icon.Edit
             Visible: =!_managerView && (GalleryRequest.Selected.Status.Value) = "Pending"
-            Width: =21
-            X: =1088
-            Y: =540
+            Width: =23
+            X: =1063
+            Y: =560
             ZIndex: =21
 
         ButtonManagerApprove As button:
@@ -291,9 +297,9 @@ HomeScreen As screen:
             Size: =11
             Text: ="Approve"
             Visible: =_managerView && (GalleryRequest.Selected.Status.Value) = "Pending"
-            Width: =73
-            X: =1128
-            Y: =533
+            Width: =78
+            X: =1094
+            Y: =590
             ZIndex: =22
 
         ButtonManagerDecline As button:
@@ -312,87 +318,97 @@ HomeScreen As screen:
             Size: =11
             Text: ="Decline"
             Visible: =_managerView && (GalleryRequest.Selected.Status.Value) = "Pending"
-            Width: =73
-            X: =1226
-            Y: =533
+            Width: =78
+            X: =1201
+            Y: =590
             ZIndex: =23
 
         Days As label:
             FontWeight: =FontWeight.Semibold
-            Height: =54
+            Height: =36
             Text: |
                 =GalleryRequest.Selected.Days
-            Width: =146
-            X: =1089
-            Y: =168
+            Width: =157
+            X: =1066
+            Y: =195
             ZIndex: =26
 
         Leave_Type As label:
             FontWeight: =FontWeight.Semibold
+            Height: =42
             Text: =GalleryRequest.Selected.Leave_Type.Value
-            Width: =243
-            X: =1089
-            Y: =246
+            Width: =278
+            X: =1066
+            Y: =265
             ZIndex: =27
 
         Request_To As label:
             FontWeight: =FontWeight.Semibold
+            Height: =30
+            Size: =12.5
             Text: =GalleryRequest.Selected.Requested_to.DisplayName
-            X: =1089
-            Y: =313
+            Width: =299
+            X: =1067
+            Y: =351
             ZIndex: =28
 
         CarryForwardDays As label:
             FontWeight: =FontWeight.Semibold
             Height: =44
             Text: =GalleryRequest.Selected.CarryForwardDays & " days"
-            Width: =213
-            X: =1089
-            Y: =388
+            Width: =229
+            X: =1067
+            Y: =412
             ZIndex: =29
 
         UnpaidLeave As label:
             FontWeight: =FontWeight.Semibold
             Text: =GalleryRequest.Selected.UnpaidLeave & " days"
-            X: =1089
-            Y: =462
+            Width: =161
+            X: =1067
+            Y: =500
             ZIndex: =30
 
         LblTotalDays As label:
             Text: |-
                 ="Total days:"
-            X: =1087
-            Y: =154
+            Width: =161
+            X: =1066
+            Y: =161
             ZIndex: =31
 
         LblLeaveType As label:
             Text: |-
                 ="Leave Type:"
-            X: =1087
-            Y: =222
+            Width: =161
+            X: =1066
+            Y: =236
             ZIndex: =32
 
         LblRequestTo As label:
             Text: |-
                 ="Request Send To:"
-            X: =1089
-            Y: =286
+            Width: =161
+            X: =1068
+            Y: =316
             ZIndex: =33
 
         LblCarryForward As label:
-            Height: =22
+            Height: =19
             Text: |-
                 ="Carry Forward Days:"
-            Width: =182
-            X: =1085
-            Y: =373
+            Width: =206
+            X: =1066
+            Y: =399
             ZIndex: =34
 
         LblUnpaidLeave As label:
+            Height: =30
             Text: |-
                 ="Unpaid Leaves:"
-            X: =1085
-            Y: =439
+            Width: =171
+            X: =1066
+            Y: =471
             ZIndex: =35
 
     Header_11 As group:

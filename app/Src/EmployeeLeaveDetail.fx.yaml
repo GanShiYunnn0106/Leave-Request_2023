@@ -1,12 +1,15 @@
 EmployeeLeaveDetail As screen:
 
     Label1_17 As label:
+        Color: =RGBA(101, 128, 187, 1)
+        Font: =Font.Georgia
+        FontWeight: =FontWeight.Semibold
         Height: =67
         Size: =20
         Text: ="Leave Details  -  " & LeaveBalanceGallery.Selected.NameofEmployee.DisplayName
         Width: =495
-        X: =261
-        Y: =80
+        X: =246
+        Y: =85
         ZIndex: =1
 
     Label11_12 As label:
@@ -15,15 +18,17 @@ EmployeeLeaveDetail As screen:
         Text: |-
             ="Annual Leave Taken :"
         Width: =294
-        X: =278
-        Y: =147
+        X: =281
+        Y: =157
         ZIndex: =2
 
     Label11_13 As label:
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =2
         Text: =LeaveBalanceGallery.Selected.AnnualLeaveTaken & " day(s)"
         Width: =273
-        X: =278
-        Y: =176
+        X: =281
+        Y: =188
         ZIndex: =4
 
     Label11_14 As label:
@@ -32,16 +37,16 @@ EmployeeLeaveDetail As screen:
         Text: |-
             ="Annual Leave Balance :"
         Width: =294
-        X: =591
-        Y: =147
+        X: =592
+        Y: =158
         ZIndex: =5
 
     Label11_15 As label:
         Height: =34
         Text: =Value(LeaveBalanceGallery.Selected.Annual_x0020_Leave_x0020_Balance) & " day(s)"
         Width: =270
-        X: =591
-        Y: =179
+        X: =588
+        Y: =192
         ZIndex: =6
 
     Label11_16 As label:
@@ -51,15 +56,15 @@ EmployeeLeaveDetail As screen:
             ="Medical Leave Taken :"
         Width: =326
         X: =278
-        Y: =213
+        Y: =223
         ZIndex: =7
 
     Label11_17 As label:
-        Height: =46
+        Height: =38
         Text: =LeaveBalanceGallery.Selected.MedicalLeaveTaken & " day(s)"
-        Width: =300
+        Width: =286
         X: =278
-        Y: =249
+        Y: =253
         ZIndex: =8
 
     Label11_18 As label:
@@ -68,16 +73,16 @@ EmployeeLeaveDetail As screen:
         Text: |-
             ="Medical Leave Balance :"
         Width: =316
-        X: =591
-        Y: =216
+        X: =594
+        Y: =226
         ZIndex: =9
 
     Label11_19 As label:
         Height: =34
         Text: =Value(LeaveBalanceGallery.Selected.Medical_x0020_Leave_x0020_Balanc) & " day(s)"
         Width: =270
-        X: =591
-        Y: =249
+        X: =594
+        Y: =259
         ZIndex: =10
 
     Label11_20 As label:
@@ -128,7 +133,7 @@ EmployeeLeaveDetail As screen:
             ="Annual Carried Forward Balance :"
         Width: =326
         X: =907
-        Y: =142
+        Y: =156
         ZIndex: =23
 
     Header_8 As group:
@@ -268,7 +273,7 @@ EmployeeLeaveDetail As screen:
         Text: =LeaveBalanceGallery.Selected.AnnualCarriedForward & " day(s)"
         Width: =300
         X: =907
-        Y: =174
+        Y: =186
         ZIndex: =24
 
     Label11_26 As label:
@@ -422,7 +427,7 @@ EmployeeLeaveDetail As screen:
             ="Unpaid Leave Taken :"
         Width: =326
         X: =907
-        Y: =215
+        Y: =225
         ZIndex: =41
 
     Label11_43 As label:
@@ -430,6 +435,14 @@ EmployeeLeaveDetail As screen:
         Text: =LeaveBalanceGallery.Selected.UnpaidLeaveTaken & " day(s)"
         Width: =300
         X: =907
-        Y: =247
+        Y: =257
         ZIndex: =42
+
+    Rectangle12 As rectangle:
+        Fill: =RGBA(217, 216, 217, 1)
+        Height: =2
+        Width: =1135
+        X: =231
+        Y: =155
+        ZIndex: =43
 
