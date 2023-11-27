@@ -832,6 +832,7 @@ NewRequestScreen As screen:
                                 ID = GalleryRequest.Selected.ID
                         ),
                 Defaults(LeaveApp_Request)),
+                
                 {Start_Date: LeaveStartDatePicker.SelectedDate},
                 {End_Date: LeaveEndDatePicker.SelectedDate},
                 {
@@ -873,6 +874,8 @@ NewRequestScreen As screen:
                     }
                 }
             );
+            
+            Set(_leaveDaysTemp,_requestedDays);
             Navigate(HomeScreen);
             Notify(
                 "Successfully applied leave...",
