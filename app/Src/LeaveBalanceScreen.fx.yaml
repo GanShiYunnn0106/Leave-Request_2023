@@ -25,7 +25,7 @@ LeaveBalanceScreen As screen:
         Height: =51
         Size: =18
         Text: ="Leave Balance   -   " & User().FullName
-        Width: =361
+        Width: =623
         X: =253
         Y: =90
         ZIndex: =9
@@ -75,7 +75,6 @@ LeaveBalanceScreen As screen:
 
             Label6 As label:
                 Align: =Align.Center
-                BorderThickness: =1.8
                 FontWeight: =FontWeight.Semibold
                 Height: =84
                 OnSelect: =Select(Parent)
@@ -143,7 +142,6 @@ LeaveBalanceScreen As screen:
 
             Label6_1 As label:
                 Align: =Align.Center
-                BorderThickness: =1.8
                 FontWeight: =FontWeight.Semibold
                 Height: =84
                 OnSelect: =Select(Parent)
