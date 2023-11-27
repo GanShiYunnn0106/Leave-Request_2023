@@ -18,13 +18,25 @@ HomeScreen As screen:
                 !_managerView,
                 If(
                     ButtonFilter.Selected.Filter = "All",
-                    Filter(LeaveApp_Request, Created_By.Email = User().Email),
-                    Filter(LeaveApp_Request, Status.Value = ButtonFilter.Selected.Filter && Created_By.Email = User().Email)
+                    Filter(
+                        LeaveApp_Request,
+                        Year(Start_Date) = Year(Today()) && Created_By.Email = User().Email
+                    ),
+                    Filter(
+                        LeaveApp_Request,
+                        Status.Value = ButtonFilter.Selected.Filter && Year(Start_Date) = Year(Today()) && Created_By.Email = User().Email
+                    )
                 ),
                 If(
                     ButtonFilter.Selected.Filter = "All",
-                    Filter(LeaveApp_Request, Requested_to.Email = User().Email),
-                    Filter(LeaveApp_Request, Status.Value = ButtonFilter.Selected.Filter && Requested_to.Email = User().Email)
+                    Filter(
+                        LeaveApp_Request,
+                        Year(Start_Date) = Year(Today()) && Requested_to.Email = User().Email
+                    ),
+                    Filter(
+                        LeaveApp_Request,
+                        Status.Value = ButtonFilter.Selected.Filter && Year(Start_Date) = Year(Today()) && Requested_to.Email = User().Email
+                    )
                 )
             )
         Layout: =Layout.Vertical
