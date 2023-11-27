@@ -1,148 +1,136 @@
 App As appinfo:
     BackEnabled: =true
     OnError: =
-    OnStart: |-
+    OnStart: |
         =Set(
             _sendEmailsEnabled,
             false
         );
-        
-         Set(
-                _myProfile,
-                Office365Users.MyProfile()
-            );
-        
+        Set(
+            _myProfile,
+            Office365Users.MyProfile()
+        );
             //collection used in the left nav menu
-            ClearCollect(
-                EmployeeNavigation,
-                {
-                    Title: "My Leave Requests",
-                    TargetScreen: HomeScreen
-                },
-                {
-                    Title: "My Leave Balance",
-                    TargetScreen: LeaveBalanceScreen
-                },
-                {
-                    Title: "Today's On Leave",
-                    TargetScreen: TodayOnLeaveScreen
-                },
-                {
-                    Title: "Public Holidays",
-                    TargetScreen: CompanyHolidaysScreen
-                },
-                {
-                    Title: "About",
-                    TargetScreen: AboutScreen
-                },
-                {
-                    Title: "Log Out",
-                    TargetScreen: LoginScreen
-                }
-            );
+        ClearCollect(
+            EmployeeNavigation,
+            {
+                Title: "My Leave Requests",
+                TargetScreen: HomeScreen
+            },
+            {
+                Title: "My Leave Balance",
+                TargetScreen: LeaveBalanceScreen
+            },
+            {
+                Title: "Today's On Leave",
+                TargetScreen: TodayOnLeaveScreen
+            },
+            {
+                Title: "Public Holidays",
+                TargetScreen: CompanyHolidaysScreen
+            },
+            {
+                Title: "About",
+                TargetScreen: AboutScreen
+            },
+            {
+                Title: "Log Out",
+                TargetScreen: LoginScreen
+            }
+        );
             //collection used in the left nav menu
-            ClearCollect(
-                ManagerNavigation,
-                {
-                    Title: "Leave Requests",
-                    TargetScreen: HomeScreen
-                },
-                {
-                    Title: "Today's On Leave",
-                    TargetScreen: TodayOnLeaveScreen
-                },
-                {
-                    Title: "Leave Information",
-                    TargetScreen: LeaveInformationScreen
-                },
-                {
-                    Title: "Public Holidays",
-                    TargetScreen: CompanyHolidaysScreen
-                },
-                {
-                    Title: "Log Out",
-                    TargetScreen: LoginScreen
-                }
-            );
+        ClearCollect(
+            ManagerNavigation,
+            {
+                Title: "Leave Requests",
+                TargetScreen: HomeScreen
+            },
+            {
+                Title: "Today's On Leave",
+                TargetScreen: TodayOnLeaveScreen
+            },
+            {
+                Title: "Employee Leave Balance",
+                TargetScreen: EmployeeLeaveBalance
+            },
+            {
+                Title: "Leave Information",
+                TargetScreen: LeaveInformationScreen
+            },
+            {
+                Title: "Public Holidays",
+                TargetScreen: CompanyHolidaysScreen
+            },
+            {
+                Title: "Log Out",
+                TargetScreen: LoginScreen
+            }
+        );
             //add custom leave types to this collection to make them show up in the app
-             ClearCollect(
-            LeaveTypeCollection, 
-                Table(
-                        {
-                            type:"Annual", 
-                            icon:vacation,
-                            iconselected:'vacation-selected',
-                            description:
-                            "Tips:
+        ClearCollect(
+            LeaveTypeCollection,
+            Table(
+                {
+                    type: "Annual",
+                    icon: vacation,
+                    iconselected: 'vacation-selected',
+                    description: "Tips:
                             1. (Employee's year of service less than 3 years) = 14 days
                             (Employee's year of service more than 3 years) = 16 days
                             (Position: (Team lead & above) && year of service more than 5 years) = 18 days
-        
                             2. Only a maximum of seven (07) days annual leave may be carried forward to the next calendar year. The excess leave unutilised shall be deemed forfeited and also The seven (7) days annual leave which has been carried forward to the next calendar year shall be cleared by end of March (the next quarter) of the next calendar year. The excess leave unutilized shall be deemed 
         forfeited.
         "
-                        }
-                        ,
-                        {
-                            type:"Medical", 
-                            icon:'sick-leave', 
-                            iconselected:'sick-leave-selected',
-                            description:"Tips:
+                },
+                {
+                    type: "Medical",
+                    icon: 'sick-leave',
+                    iconselected: 'sick-leave-selected',
+                    description: "Tips:
                             1. Medical Leave shall be defined as approved leave of absence resulting from illness, disease or injury as certified by the Company Panel Doctor / Government Medical Officer / registered medical practitioner.
         An employee shall also be entitled to paid leave after examination by a dental surgeon as defined in the Dental Act 1971. An employee shall provide a medical certificate from the Government Medical Officer / registered medical practitioner as evidence of absence covering all days of sickness.
         2. Total days for medical leave = 14 days."
-                        }
-                            ,
-                        {
-                            type:"Casual Immediate", 
-                            description:"1. Death of a member of the employee's family. First relation (parents/ parents-in-law/ spouse/ children). 
-        
+                },
+                {
+                    type: "Casual Immediate",
+                    description: "1. Death of a member of the employee's family. First relation (parents/ parents-in-law/ spouse/ children). 
         2. Total days for casual immediate = 3 days.
-        
         In aggregate, the number of days taken under Casual Immediate and Casual Second shall not exceed 03 days in any calendar year."
-                        }
-                        ,
-                        {
-                            type:"Casual Second", 
-                            description:"1.Death of a member of the employee's family. Second relations 
+                },
+                {
+                    type: "Casual Second",
+                    description: "1.Death of a member of the employee's family. Second relations 
         (grandparents / brothers / sisters /grandchildren).
-        
         2. Total days for casual second = 2 days.
-        
         In aggregate, the number of days taken under Casual Immediate and Casual Second shall not exceed 03 days in any calendar year."
-                        }
-                            ,
-                        {
-                            type:"Hospitalization", 
-                            description:"Where hospitalization is necessary 60 days (including 14 days of medical leave)."
-                        }
-                            ,
-                        {
-                            type:"Paternity", 
-                            description:"Entitled to 7 days of paid paternity leave under Subsection 60FA; these days must be taken consecutively.
+                },
+                {
+                    type: "Hospitalization",
+                    description: "Where hospitalization is necessary 60 days (including 14 days of medical leave)."
+                },
+                {
+                    type: "Paternity",
+                    description: "Entitled to 7 days of paid paternity leave under Subsection 60FA; these days must be taken consecutively.
          The requirements are:
                 • The male employee must be married to the mother in question.
                 • He must have been employed by the same employer for at least 12 months.
                 • He must notify the employer at least 30 days from expected confinement (or as early as possible)."
-                        }
-                            ,
-                        {
-                            type:"Marriage", 
-                            description:"A full-time confirmed employee who has completed a minimum of twelve (12) months of continuous service is entitled to 3 days of leave on the occasion of his first legal marriage while in the service of the Company."
-                        }
-                            ,
-                        {
-                            type:"Maternity", 
-                            description:"A full-time confirmed female employee will be entitled to 98 Consecutive days of paid maternity leave. For miscarriage maternity leave only apply upon seven full months of pregnancy under the labour law.
+                },
+                {
+                    type: "Marriage",
+                    description: "A full-time confirmed employee who has completed a minimum of twelve (12) months of continuous service is entitled to 3 days of leave on the occasion of his first legal marriage while in the service of the Company."
+                },
+                {
+                    type: "Maternity",
+                    description: "A full-time confirmed female employee will be entitled to 98 Consecutive days of paid maternity leave. For miscarriage maternity leave only apply upon seven full months of pregnancy under the labour law.
         "
-                        }
-                    )
-         );
+                }
+            )
+        );
             //defines leave start and end for requests. Default set to Now since most users will be creating new requests. Changes to reflect leave times for requests which are being edited
-         
-            ClearCollect(
-                EmailTemplate,
-                "<html>
+        ClearCollect(
+            EmailTemplate,
+            "<html>
                 <head>
                     <meta http-equiv=""Content-Type"" content=""text/html; charset=us-ascii"">
                 </head>
@@ -151,32 +139,38 @@ App As appinfo:
                 There is a leave request from:  {SubmitterName}  pending your approval. <ul><li>Type:  {LeaveType}</li><li>Title: {LeaveTitle}</li><li>Description: {LeaveDescript}</li><li>Start Date: {LeaveStart}</li><li>End Date: {LeaveEnd}</li>" & "</p>
                 </body>
                 </html>"
-            );
-            ClearCollect(
-                HolidaysCollection,
-                {
-                    HolidayName: "Thanksgiving",
-                    StartDate: DateValue("11/22/2018")
-                },
-                {
-                    HolidayName: "Day after Thanksgiving",
-                    StartDate: DateValue("11/23/2018")
-                },
-                {
-                    HolidayName: "Christmas",
-                    StartDate: DateValue("12/25/2018")
-                },
-                {
-                    HolidayName: "DayAfterChristmas",
-                    StartDate: DateValue("12/26/2018")
-                },
-                {
-                    HolidayName: "New Year's Day",
-                    StartDate: DateValue("1/1/2019")
-                }
-            );
-        Set(_leaveStart,Now());
-        Set(_leaveEnd,Now());
+        );
+        ClearCollect(
+            HolidaysCollection,
+            {
+                HolidayName: "Thanksgiving",
+                StartDate: DateValue("11/22/2018")
+            },
+            {
+                HolidayName: "Day after Thanksgiving",
+                StartDate: DateValue("11/23/2018")
+            },
+            {
+                HolidayName: "Christmas",
+                StartDate: DateValue("12/25/2018")
+            },
+            {
+                HolidayName: "DayAfterChristmas",
+                StartDate: DateValue("12/26/2018")
+            },
+            {
+                HolidayName: "New Year's Day",
+                StartDate: DateValue("1/1/2019")
+            }
+        );
+        Set(
+            _leaveStart,
+            Now()
+        );
+        Set(
+            _leaveEnd,
+            Now()
+        );
     Theme: =PowerAppsTheme
 
     Host As hostControl.DefaultHostControlVariant:
