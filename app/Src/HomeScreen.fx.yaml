@@ -345,7 +345,7 @@ HomeScreen As screen:
                 Set(LeaveHospitalizationTakenTemp,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email).HospitalizationLeaveTaken);
                 Set(TypeTemp,GalleryRequest.Selected.Leave_Type.Value);
                 Set(DaysTemp,GalleryRequest.Selected.Days);
-                Set(LeaveTempID,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email).ID);
+                Set(LeaveTempID1,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email).ID);
                 
                 
                 If((TypeTemp = "Annual" && LeaveAnnualCarriedTemp >= DaysTemp),Patch(LeaveApp_Employee,{AnnualCarriedForward: LeaveAnnualCarriedTemp - DaysTemp}));
@@ -364,7 +364,12 @@ HomeScreen As screen:
             Color: =RGBA(213, 25, 32, 1)
             Fill: =RGBA(255, 255, 255, 1)
             Height: =27
-            OnSelect: =
+            OnSelect: |-
+                =Set(LeaveTempID,LookUp(LeaveApp_Request,ID = GalleryRequest.Selected.ID));
+                Patch(LeaveApp_Request,LeaveTempID,{Status: {
+                            '@odata.type': "Microsoft.Azure.Connectors.SharePoint.SPListExpandedUser",
+                            Value: "Approved"
+                        }});
             Size: =11
             Text: ="Decline"
             Visible: =_managerView && (GalleryRequest.Selected.Status.Value) = "Pending"
