@@ -108,6 +108,8 @@ LoginScreen As screen:
             BorderColor: =ColorFade(BtnManagerLogin.Fill, -15%)
             BorderThickness: =0
             DisabledBorderColor: =ColorFade(BtnManagerLogin.BorderColor, 70%)
+            DisplayMode: |
+                =DisplayMode.Edit
             Fill: =RGBA(62, 96, 170, 1)
             FocusedBorderColor: =BtnManagerLogin.BorderColor
             Height: =61
@@ -115,9 +117,12 @@ LoginScreen As screen:
             HoverColor: =BtnManagerLogin.Color
             HoverFill: =ColorFade(BtnManagerLogin.Fill, 20%)
             OnSelect: |-
-                =Set(_managerView,true);
-                Set(_requestTypeFilter,"Pending");
-                Navigate(HomeScreen,BorderStyle.None)
+                =If(
+                    !IsBlank(LookUp(LeaveApp_Employee, User().Email = NameofManager.Email)),
+                    Set(_managerView, true);
+                    Set(_requestTypeFilter, "Pending");
+                    Navigate(HomeScreen, BorderStyle.None)
+                )
             PaddingBottom: =0
             PaddingLeft: =0
             PaddingRight: =0

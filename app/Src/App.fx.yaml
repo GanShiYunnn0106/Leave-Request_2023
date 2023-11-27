@@ -6,10 +6,7 @@ App As appinfo:
             _sendEmailsEnabled,
             false
         );
-        Set(
-            _myProfile,
-            Office365Users.MyProfile()
-        );
+        
             //collection used in the left nav menu
         ClearCollect(
             EmployeeNavigation,
@@ -66,6 +63,7 @@ App As appinfo:
                 TargetScreen: LoginScreen
             }
         );
+        
             //add custom leave types to this collection to make them show up in the app
         ClearCollect(
             LeaveTypeCollection,
