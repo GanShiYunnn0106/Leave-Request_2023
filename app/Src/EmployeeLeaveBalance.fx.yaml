@@ -5,6 +5,18 @@ EmployeeLeaveBalance As screen:
         NavItem: =If(_managerView, ManagerNavigation, EmployeeNavigation)
         Y: =80
 
+    Rectangle3_4 As rectangle:
+        DisabledFill: =Rectangle3_4.Fill
+        Fill: =RGBA(249, 249, 249, 1)
+        FocusedBorderColor: =Rectangle3_4.BorderColor
+        Height: =688
+        HoverFill: =Rectangle3_4.Fill
+        PressedFill: =Rectangle3_4.Fill
+        Width: =244
+        X: =1122
+        Y: =80
+        ZIndex: =9
+
     Header_7 As group:
         Height: =5
         Width: =5
@@ -137,18 +149,6 @@ EmployeeLeaveBalance As screen:
             X: =1211
             ZIndex: =8
 
-    Rectangle3_4 As rectangle:
-        DisabledFill: =Rectangle3_4.Fill
-        Fill: =RGBA(249, 249, 249, 1)
-        FocusedBorderColor: =Rectangle3_4.BorderColor
-        Height: =688
-        HoverFill: =Rectangle3_4.Fill
-        PressedFill: =Rectangle3_4.Fill
-        Width: =244
-        X: =1122
-        Y: =80
-        ZIndex: =9
-
     "LeaveBalanceGallery As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
         DelayItemLoading: =true
         Height: =688
@@ -157,7 +157,7 @@ EmployeeLeaveBalance As screen:
         LoadingSpinner: =LoadingSpinner.Data
         OnSelect: =Navigate(EmployeeLeaveDetail)
         TemplatePadding: =0
-        TemplateSize: =104
+        TemplateSize: =125
         Width: =891
         X: =231
         Y: =80
@@ -193,7 +193,7 @@ EmployeeLeaveBalance As screen:
             VerticalAlign: =VerticalAlign.Top
             Width: =Title1.Width
             X: =Title1.X
-            Y: =Title1.Y + Title1.Height
+            Y: =65
             ZIndex: =3
 
         NextArrow1 As icon.ChevronRight:
@@ -226,4 +226,12 @@ EmployeeLeaveBalance As screen:
             Visible: =ThisItem.IsSelected
             Width: =4
             ZIndex: =6
+
+        Rectangle11 As rectangle:
+            Fill: =RGBA(230, 229, 229, 1)
+            Height: =2
+            OnSelect: =Select(Parent)
+            Width: =887
+            Y: =120
+            ZIndex: =7
 

@@ -185,6 +185,7 @@ AboutScreen As screen:
             HoverBorderColor: =AboutTitle.BorderColor
             HoverColor: =AboutTitle.Color
             HoverFill: =AboutTitle.Fill
+            Italic: =true
             LineHeight: =1
             PaddingBottom: =0
             PaddingLeft: =0
@@ -196,6 +197,7 @@ AboutScreen As screen:
             Size: =13.5
             Text: |-
                 ="Learn about the types of leave:"
+            Underline: =true
             Width: =855
             X: =265
             Y: =172
@@ -320,11 +322,11 @@ AboutScreen As screen:
             PressedBorderColor: =AboutDescription.BorderColor
             PressedColor: =AboutDescription.Color
             PressedFill: =AboutDescription.Fill
-            Size: =12
+            Size: =13.5
             Text: ="Manage your personal leave requests and team leave requests in one place. When a request is completed, managers are notified via email and can quickly approve or decline based on the situation."
-            Width: =855
-            X: =265
-            Y: =83
+            Width: =882
+            X: =252
+            Y: =84
             ZIndex: =44
 
         AboutLeaveTypeDescription As label:
