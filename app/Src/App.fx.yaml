@@ -96,15 +96,14 @@ App As appinfo:
                             ,
                         {
                             type:"Casual Immediate", 
-                            description:"a. Death of a member of the employee's family. First relation (parents/ parents-in-law/ spouse/ children) = 03 days
+                            description:"Death of a member of the employee's family. First relation (parents/ parents-in-law/ spouse/ children) = 03 days
         
         In aggregate, the number of days taken under Casual Immediate and Casual Second shall not exceed 03 days in any calendar year.."
                         }
                         ,
                         {
                             type:"Casual Second", 
-                            description:"
-        Death of a member of the employee's family. Second relations (grandparents / brothers / sisters /grandchildren) = 02 days
+                            description:"Death of a member of the employee's family. Second relations (grandparents / brothers / sisters /grandchildren) = 02 days
         
         In aggregate, the number of days taken under Casual Immediate and Casual Second shall not exceed 03 days in any calendar year.."
                         }
