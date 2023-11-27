@@ -288,17 +288,16 @@ HomeScreen As screen:
             Height: =27
             OnSelect: |
                 =Set(LeaveTempID,LookUp(LeaveApp_Request,ID = GalleryRequest.Selected.ID));
-                Set(LeaveTempType,LookUp(LeaveApp_Request,ID = GalleryRequest.Selected.ID).Leave_Type.Value);
-                Set(LeaveTempUserID,LookUp(LeaveApp_Employee,ID = GalleryRequest.Selected.ID));
-                Set(LeaveTempAnnualTaken,LookUp(LeaveApp_Employee,ID = GalleryRequest.Selected.ID).AnnualLeaveTaken);
-                Set(LeaveTempAnnualCarried,LookUp(LeaveApp_Employee,ID = GalleryRequest.Selected.ID).AnnualCarriedForward);
-                Set(LeaveTempHospitalizationTaken,LookUp(LeaveApp_Employee,ID = GalleryRequest.Selected.ID).HospitalizationLeaveTaken);
-                Set(LeaveTempMedicalTaken,LookUp(LeaveApp_Employee,ID = GalleryRequest.Selected.ID).MedicalLeaveTaken);
-                Set(LeaveTempCasualSecondTaken,LookUp(LeaveApp_Employee,ID = GalleryRequest.Selected.ID).CasualSecondLeaveTaken);
-                Set(LeaveTempCasualImmediateTaken,LookUp(LeaveApp_Employee,ID = GalleryRequest.Selected.ID).AnnualLeaveTaken);
-                Set(LeaveTempPaternityTaken,LookUp(LeaveApp_Employee,ID = GalleryRequest.Selected.ID).PaternityLeaveTaken);
-                Set(LeaveTempMaternityTaken,LookUp(LeaveApp_Employee,ID = GalleryRequest.Selected.ID).MaternityLeaveTaken);
-                Set(LeaveTempMarriageTaken,LookUp(LeaveApp_Employee,ID = GalleryRequest.Selected.ID).MarriageLeaveTaken);
+                Set(LeaveAnnualCarriedTemp,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email).AnnualCarriedForward);
+                Set(LeaveAnnualTakenTemp,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email).AnnualLeaveTaken);
+                Set(LeaveMedicalTakenTemp,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email).MedicalLeaveTaken);
+                Set(LeaveCasualImmediateTakenTemp,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email).AnnualLeaveTaken);
+                Set(LeaveCasualSecondTakenTemp,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email).CasualSecondLeaveTaken);
+                Set(LeaveMarriageTakenTemp,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email).MarriageLeaveTaken);
+                Set(LeavePaternityTakenTemp,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email).PaternityLeaveTaken);
+                Set(LeaveMaternityTakenTemp,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email).MaternityLeaveTaken);
+                Set(LeaveHospitalizationTakenTemp,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email).HospitalizationLeaveTaken);
+                
                 
                 Patch(LeaveApp_Request,LeaveTempID,{
                         Status: {
@@ -306,16 +305,10 @@ HomeScreen As screen:
                             Value: "Approved"
                         }
                     });
-                    
-                     If(LeaveTempType = "Medical",Patch(LeaveApp_Employee,LeaveTempUserID,{AnnualLeaveTaken: LeaveTempMedicalTaken + _leaveDaysTemp}));
-                      If(LeaveTempType = "Hospitalized",Patch(LeaveApp_Employee,LeaveTempUserID,{AnnualLeaveTaken: LeaveTempHospitalizationTaken + _leaveDaysTemp}));
-                       If(LeaveTempType = "Casual Immediate",Patch(LeaveApp_Employee,LeaveTempUserID,{AnnualLeaveTaken: LeaveTempCasualSecondTaken + _leaveDaysTemp}));
-                        If(LeaveTempType = "Casual Second",Patch(LeaveApp_Employee,LeaveTempUserID,{AnnualLeaveTaken: LeaveTempCasualImmediateTaken + _leaveDaysTemp}));
-                         If(LeaveTempType = "Paternity",Patch(LeaveApp_Employee,LeaveTempUserID,{AnnualLeaveTaken: LeaveTempPaternityTaken + _leaveDaysTemp}));
-                          If(LeaveTempType = "Maternity",Patch(LeaveApp_Employee,LeaveTempUserID,{AnnualLeaveTaken: LeaveTempMaternityTaken + _leaveDaysTemp}));
-                          If(LeaveTempType = "Marriage",Patch(LeaveApp_Employee,LeaveTempUserID,{AnnualLeaveTaken: LeaveTempMarriageTaken + _leaveDaysTemp}));
-                          If(LeaveTempType = "Annual" && LeaveTempAnnualCarried < _leaveDaysTemp,Patch(LeaveApp_Employee,LeaveTempUserID,{AnnualLeaveTaken: LeaveTempAnnualTaken + _leaveDaysTemp},{AnnualCarriedForward: 0}));
-                          If(LeaveTempType = "Annual" && LeaveTempAnnualCarried >= _leaveDaysTemp,Patch(LeaveApp_Employee,LeaveTempUserID,{AnnualCarriedForward: LeaveTempAnnualCarried + _leaveDaysTemp}));
+                
+                If((GalleryRequest.Selected.Leave_Type.Value = "Annual" && LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email).AnnualCarriedForward >= GalleryRequest.Selected.Days),Patch(LeaveApp_Employee,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email),{AnnualCarriedForward: (LeaveAnnualCarriedTemp - GalleryRequest.Selected.Days)}));
+                
+                If((GalleryRequest.Selected.Leave_Type.Value = "Annual" && LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email).AnnualCarriedForward < GalleryRequest.Selected.Days),Patch(LeaveApp_Employee,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email),{AnnualCarriedForward: 0},{AnnualLeaveTaken: LeaveAnnualTakenTemp + (GalleryRequest.Selected.Days - LeaveAnnualCarriedTemp)}));
             Size: =11
             Text: ="Approve"
             Visible: =_managerView && (GalleryRequest.Selected.Status.Value) = "Pending"
