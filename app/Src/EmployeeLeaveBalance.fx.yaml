@@ -218,7 +218,7 @@ EmployeeLeaveBalance As screen:
             Fill: =RGBA(230, 229, 229, 1)
             Height: =2
             OnSelect: =Select(Parent)
-            Width: =887
+            Width: =1135
             Y: =120
             ZIndex: =7
 
@@ -246,4 +246,12 @@ EmployeeLeaveBalance As screen:
         X: =912
         Y: =109
         ZIndex: =14
+
+    Rectangle14 As rectangle:
+        Fill: =RGBA(230, 229, 229, 1)
+        Height: =2
+        Width: =1135
+        X: =231
+        Y: =157
+        ZIndex: =15
 
