@@ -276,7 +276,7 @@
   },
   "FunctionParamsInvariantScripts": {},
   "FunctionParamsInvariantScriptsOnInstances": {},
-  "HeaderLastSavedDateTimeUTC": "11/27/2023 03:39:05",
+  "HeaderLastSavedDateTimeUTC": "11/27/2023 03:51:58",
   "IsLegacyComponentAllowGlobalScopeCase": false,
   "LocalConnectionIDReferences": {
     "12f73af9-777f-4fd4-a512-da2f66fd7501": "\"/providers/microsoft.powerapps/apis/shared_office365/connections/eefb4da557ef4127b9b1aea660ab9aea\"",
@@ -332,18 +332,17 @@
     "DropDownSample": 6,
     "EmailTemplate": 11,
     "EmployeeNavigation": 12,
-    "HolidaysCollection": 13,
     "LeaveApp_Employee": 7,
     "LeaveApp_PublicHoliday": 8,
     "LeaveApp_Request": 9,
-    "LeaveTypeCollection": 14,
+    "LeaveTypeCollection": 13,
     "ListboxSample": 10,
-    "ManagerNavigation": 15,
+    "ManagerNavigation": 14,
     "MicrosoftTeams": 0,
     "Office365": 1,
     "Office365Users": 2,
     "Office365Users_1": 3,
-    "RequesterBalanceCollection": 16
+    "RequesterBalanceCollection": 15
   },
   "OrderGroupControls": {
     "AboutLeaveMiddle": {

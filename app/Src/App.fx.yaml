@@ -140,7 +140,7 @@ App As appinfo:
                 </body>
                 </html>"
         );
-        ClearCollect(HolidaysCollection,LeaveApp_PublicHoliday);
+        
         Set(
             _leaveStart,
             Now()

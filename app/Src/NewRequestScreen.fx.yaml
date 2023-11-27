@@ -329,7 +329,7 @@ NewRequestScreen As screen:
                       _numFullDaysPartialWeek = 0, Set(_numPartialWeekdays, 0)
                     );
                       Set(_workDaysInRequest, _numFullWeeks * 5 + _numPartialWeekdays);  
-                      Set(_holidaysInRequest, CountIf(HolidaysCollection, StartDate >= LeaveStartDatePicker.SelectedDate, StartDate <= LeaveEndDatePicker.SelectedDate));
+                      Set(_holidaysInRequest, CountIf(LeaveApp_PublicHoliday, HolidayDates >= LeaveStartDatePicker.SelectedDate, HolidayDates <= LeaveEndDatePicker.SelectedDate));
                       Set(_requestedDays, _workDaysInRequest - _holidaysInRequest);
                       
                 )
