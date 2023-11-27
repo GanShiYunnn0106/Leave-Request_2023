@@ -167,11 +167,16 @@ HomeScreen As screen:
         ButtonCategories As button:
             BorderColor: =RGBA(62, 96, 170, 1)
             BorderThickness: =3
-            Color: =RGBA(62, 96, 170, 1)
-            Fill: =RGBA(255, 255, 255, 1)
+            Color: =If(ButtonFilter.Selected.Filter=ThisItem.Filter,RGBA(255, 255, 255, 1),RGBA(10, 106, 204, 1))
+            DisabledBorderColor: =ColorFade(ButtonFilter.BorderColor, 30%)
+            Fill: =If(ButtonFilter.Selected.Filter=ThisItem.Filter,RGBA(0, 71, 144, 1),RGBA(255, 255, 255, 1))
             Font: =Font.'Lato Black'
             Height: =30
+            HoverColor: =ButtonFilter.BorderColor
             OnSelect: =
+            PressedBorderColor: =ButtonFilter.Fill
+            PressedColor: =If(ButtonFilter.Selected.Filter=ThisItem.Filter,RGBA(255, 255, 255, 1),RGBA(10, 106, 204, 1))
+            PressedFill: =ButtonFilter.BorderColor
             RadiusBottomLeft: =35
             RadiusBottomRight: =35
             RadiusTopLeft: =35
@@ -338,8 +343,9 @@ HomeScreen As screen:
         Request_To As label:
             FontWeight: =FontWeight.Semibold
             Text: =GalleryRequest.Selected.Requested_to.DisplayName
+            Width: =277
             X: =1089
-            Y: =313
+            Y: =315
             ZIndex: =28
 
         CarryForwardDays As label:
