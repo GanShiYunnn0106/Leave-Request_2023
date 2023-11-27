@@ -296,7 +296,15 @@ HomeScreen As screen:
             Height: =30
             HoverBorderColor: =RGBA(62, 96, 170, 1)
             HoverFill: =RGBA(230, 229, 229, 1)
-            OnSelect: =
+            OnSelect: |-
+                =Set(
+                    _editingRequest,
+                    true
+                );
+                Navigate(
+                    NewRequestScreen,
+                    ScreenTransition.None
+                );
             Text: ="EDIT"
             Visible: =!_managerView && (GalleryRequest.Selected.Status.Value) = "Pending"
             Width: =54

@@ -25,7 +25,7 @@ LeaveBalanceScreen As screen:
         Height: =51
         Size: =18
         Text: ="Leave Balance   -   " & User().FullName
-        Width: =623
+        Width: =737
         X: =253
         Y: =90
         ZIndex: =9
