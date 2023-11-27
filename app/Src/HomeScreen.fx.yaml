@@ -270,7 +270,12 @@ HomeScreen As screen:
             Height: =27
             OnSelect: |-
                 =Set(LeaveTempID,LookUp(LeaveApp_Request,ID = GalleryRequest.Selected.ID));
-                Patch(LeaveApp_Request,myItem,{Status:})
+                Patch(LeaveApp_Request,LeaveTempID,{
+                        Status: {
+                            '@odata.type': "Microsoft.Azure.Connectors.SharePoint.SPListExpandedUser",
+                            Value: "Approved"
+                        }
+                    })
             Size: =11
             Text: ="Approve"
             Visible: =_managerView && (GalleryRequest.Selected.Status.Value) = "Pending"
@@ -284,6 +289,14 @@ HomeScreen As screen:
             Color: =RGBA(213, 25, 32, 1)
             Fill: =RGBA(255, 255, 255, 1)
             Height: =27
+            OnSelect: |-
+                =Set(LeaveTempID,LookUp(LeaveApp_Request,ID = GalleryRequest.Selected.ID));
+                Patch(LeaveApp_Request,LeaveTempID,{
+                        Status: {
+                            '@odata.type': "Microsoft.Azure.Connectors.SharePoint.SPListExpandedUser",
+                            Value: "Rejected"
+                        }
+                    })
             Size: =11
             Text: ="Decline"
             Visible: =_managerView && (GalleryRequest.Selected.Status.Value) = "Pending"
