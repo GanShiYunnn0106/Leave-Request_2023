@@ -5,18 +5,6 @@ EmployeeLeaveBalance As screen:
         NavItem: =If(_managerView, ManagerNavigation, EmployeeNavigation)
         Y: =80
 
-    Rectangle3_4 As rectangle:
-        DisabledFill: =Rectangle3_4.Fill
-        Fill: =RGBA(249, 249, 249, 1)
-        FocusedBorderColor: =Rectangle3_4.BorderColor
-        Height: =688
-        HoverFill: =Rectangle3_4.Fill
-        PressedFill: =Rectangle3_4.Fill
-        Width: =244
-        X: =1122
-        Y: =80
-        ZIndex: =9
-
     Header_7 As group:
         Height: =5
         Width: =5
@@ -148,6 +136,18 @@ EmployeeLeaveBalance As screen:
             Width: =155
             X: =1211
             ZIndex: =8
+
+    Rectangle3_4 As rectangle:
+        DisabledFill: =Rectangle3_4.Fill
+        Fill: =RGBA(249, 249, 249, 1)
+        FocusedBorderColor: =Rectangle3_4.BorderColor
+        Height: =688
+        HoverFill: =Rectangle3_4.Fill
+        PressedFill: =Rectangle3_4.Fill
+        Width: =244
+        X: =1122
+        Y: =80
+        ZIndex: =9
 
     "LeaveBalanceGallery As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
         DelayItemLoading: =true

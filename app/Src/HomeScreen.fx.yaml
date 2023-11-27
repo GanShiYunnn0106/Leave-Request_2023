@@ -18,13 +18,25 @@ HomeScreen As screen:
                 !_managerView,
                 If(
                     ButtonFilter.Selected.Filter = "All",
-                    Filter(LeaveApp_Request, Created_By.Email = User().Email),
-                    Filter(LeaveApp_Request, Status.Value = ButtonFilter.Selected.Filter && Created_By.Email = User().Email)
+                    Filter(
+                        LeaveApp_Request,
+                        Year(Start_Date) = Year(Today()) && Created_By.Email = User().Email
+                    ),
+                    Filter(
+                        LeaveApp_Request,
+                        Status.Value = ButtonFilter.Selected.Filter && Year(Start_Date) = Year(Today()) && Created_By.Email = User().Email
+                    )
                 ),
                 If(
                     ButtonFilter.Selected.Filter = "All",
-                    Filter(LeaveApp_Request, Requested_to.Email = User().Email),
-                    Filter(LeaveApp_Request, Status.Value = ButtonFilter.Selected.Filter && Requested_to.Email = User().Email)
+                    Filter(
+                        LeaveApp_Request,
+                        Year(Start_Date) = Year(Today()) && Requested_to.Email = User().Email
+                    ),
+                    Filter(
+                        LeaveApp_Request,
+                        Status.Value = ButtonFilter.Selected.Filter && Year(Start_Date) = Year(Today()) && Requested_to.Email = User().Email
+                    )
                 )
             )
         Layout: =Layout.Vertical
@@ -268,7 +280,14 @@ HomeScreen As screen:
             Color: =RGBA(54, 176, 75, 1)
             Fill: =RGBA(255, 255, 255, 1)
             Height: =27
-            OnSelect: =
+            OnSelect: |-
+                =Set(LeaveTempID,LookUp(LeaveApp_Request,ID = GalleryRequest.Selected.ID));
+                Patch(LeaveApp_Request,LeaveTempID,{
+                        Status: {
+                            '@odata.type': "Microsoft.Azure.Connectors.SharePoint.SPListExpandedUser",
+                            Value: "Approved"
+                        }
+                    })
             Size: =11
             Text: ="Approve"
             Visible: =_managerView && (GalleryRequest.Selected.Status.Value) = "Pending"
@@ -282,6 +301,14 @@ HomeScreen As screen:
             Color: =RGBA(213, 25, 32, 1)
             Fill: =RGBA(255, 255, 255, 1)
             Height: =27
+            OnSelect: |-
+                =Set(LeaveTempID,LookUp(LeaveApp_Request,ID = GalleryRequest.Selected.ID));
+                Patch(LeaveApp_Request,LeaveTempID,{
+                        Status: {
+                            '@odata.type': "Microsoft.Azure.Connectors.SharePoint.SPListExpandedUser",
+                            Value: "Rejected"
+                        }
+                    })
             Size: =11
             Text: ="Decline"
             Visible: =_managerView && (GalleryRequest.Selected.Status.Value) = "Pending"
