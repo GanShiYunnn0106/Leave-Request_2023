@@ -2,7 +2,7 @@ EmployeeLeaveBalance As screen:
 
     Navigation_8 As Navigation:
         CurrentScreen: ="Employee Leave Balance"
-        NavItem: =If(_managerView,ManagerNavigation,EmployeeNavigation)
+        NavItem: =If(_managerView, ManagerNavigation, EmployeeNavigation)
         Y: =80
 
     Header_7 As group:
