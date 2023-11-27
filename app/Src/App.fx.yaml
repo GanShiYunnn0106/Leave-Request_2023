@@ -140,29 +140,7 @@ App As appinfo:
                 </body>
                 </html>"
         );
-        ClearCollect(
-            HolidaysCollection,
-            {
-                HolidayName: "Thanksgiving",
-                StartDate: DateValue("11/22/2018")
-            },
-            {
-                HolidayName: "Day after Thanksgiving",
-                StartDate: DateValue("11/23/2018")
-            },
-            {
-                HolidayName: "Christmas",
-                StartDate: DateValue("12/25/2018")
-            },
-            {
-                HolidayName: "DayAfterChristmas",
-                StartDate: DateValue("12/26/2018")
-            },
-            {
-                HolidayName: "New Year's Day",
-                StartDate: DateValue("1/1/2019")
-            }
-        );
+        ClearCollect(HolidaysCollection,LeaveApp_PublicHoliday);
         Set(
             _leaveStart,
             Now()
