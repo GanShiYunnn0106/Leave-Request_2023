@@ -67,66 +67,74 @@ App As appinfo:
             }
         );
             //add custom leave types to this collection to make them show up in the app
-        ClearCollect(
-            LeaveTypeCollection,
-            Table(
-                {
-                    type: "Annual",
-                    icon: vacation,
-                    iconselected: 'vacation-selected',
-                    description: "Tips:
-                            1. (Employee's year of service less than 3 years) = 14 days
-                            (Employee's year of service more than 3 years) = 16 days
-                            (Position: (Team lead & above) && year of service more than 5 years) = 18 days
-                            2. Only a maximum of seven (07) days annual leave may be carried forward to the next calendar year. The excess leave unutilised shall be deemed forfeited and also The seven (7) days annual leave which has been carried forward to the next calendar year shall be cleared by end of March (the next quarter) of the next calendar year. The excess leave unutilized shall be deemed 
-        forfeited.
-        "
-                },
-                {
-                    type: "Medical",
-                    icon: 'sick-leave',
-                    iconselected: 'sick-leave-selected',
-                    description: "Tips:
-                            1. Medical Leave shall be defined as approved leave of absence resulting from illness, disease or injury as certified by the Company Panel Doctor / Government Medical Officer / registered medical practitioner.
-        An employee shall also be entitled to paid leave after examination by a dental surgeon as defined in the Dental Act 1971. An employee shall provide a medical certificate from the Government Medical Officer / registered medical practitioner as evidence of absence covering all days of sickness.
-        2. Total days for medical leave = 14 days."
-                },
-                {
-                    type: "Casual Immediate",
-                    description: "1. Death of a member of the employee's family. First relation (parents/ parents-in-law/ spouse/ children). 
-        2. Total days for casual immediate = 3 days.
-        In aggregate, the number of days taken under Casual Immediate and Casual Second shall not exceed 03 days in any calendar year."
-                },
-                {
-                    type: "Casual Second",
-                    description: "1.Death of a member of the employee's family. Second relations 
-        (grandparents / brothers / sisters /grandchildren).
-        2. Total days for casual second = 2 days.
-        In aggregate, the number of days taken under Casual Immediate and Casual Second shall not exceed 03 days in any calendar year."
-                },
-                {
-                    type: "Hospitalization",
-                    description: "Where hospitalization is necessary 60 days (including 14 days of medical leave)."
-                },
-                {
-                    type: "Paternity",
-                    description: "Entitled to 7 days of paid paternity leave under Subsection 60FA; these days must be taken consecutively.
-         The requirements are:
-                • The male employee must be married to the mother in question.
-                • He must have been employed by the same employer for at least 12 months.
-                • He must notify the employer at least 30 days from expected confinement (or as early as possible)."
-                },
-                {
-                    type: "Marriage",
-                    description: "A full-time confirmed employee who has completed a minimum of twelve (12) months of continuous service is entitled to 3 days of leave on the occasion of his first legal marriage while in the service of the Company."
-                },
-                {
-                    type: "Maternity",
-                    description: "A full-time confirmed female employee will be entitled to 98 Consecutive days of paid maternity leave. For miscarriage maternity leave only apply upon seven full months of pregnancy under the labour law.
-        "
-                }
-            )
-        );
+         ClearCollect(
+            LeaveTypeCollection, 
+                Table(
+                        {
+                            type:"Annual", 
+                            icon:vacation,
+                            iconselected:'vacation-selected',
+                            description:
+                            "Tips:
+        1.  (Employee's year of service less than 3 years) = 14 days
+             (Employee's year of service more than 3 years) = 16 days
+             (Position: (Team lead & above) && year of service more than 5 years) = 18 days
+        
+        2.  Only a maximum of seven (07) days annual leave may be carried forward to the next calendar year. The excess leave unutilised shall be deemed forfeited and also The seven (7) days annual leave which has been carried forward to the next calendar year shall be cleared by end of March (the next quarter) of the next calendar year. The excess leave unutilized shall be deemed forfeited."
+                        }
+                        ,
+                        {
+                            type:"Medical", 
+                            icon:'sick-leave', 
+                            iconselected:'sick-leave-selected',
+                            description:"Tips:
+        1. Medical Leave shall be defined as approved leave of absence resulting from illness, disease or injury as certified by the Company Panel Doctor / Government Medical Officer / registered medical practitioner. An employee shall also be entitled to paid leave after examination by a dental surgeon as defined in the Dental Act 1971. An employee shall provide a medical certificate from the Government Medical Officer / registered medical 
+        practitioner as evidence of absence covering all days of sickness.
+        
+        2. Total days for medical leave = 14."
+                        }
+                            ,
+                        {
+                            type:"Casual Immediate", 
+                            description:"a. Death of a member of the employee's family. First relation (parents/ parents-in-law/ spouse/ children) = 03 days
+        
+        In aggregate, the number of days taken under Casual Immediate and Casual Second shall not exceed 03 days in any calendar year.."
+                        }
+                        ,
+                        {
+                            type:"Casual Second", 
+                            description:"
+        Death of a member of the employee's family. Second relations (grandparents / brothers / sisters /grandchildren) = 02 days
+        
+        In aggregate, the number of days taken under Casual Immediate and Casual Second shall not exceed 03 days in any calendar year.."
+                        }
+                            ,
+                        {
+                            type:"Hospitalization", 
+                            description:"Where hospitalization is necessary 60 days (including 14 days of medical leave)."
+                        }
+                            ,
+                        {
+                            type:"Paternity", 
+                            description:"Entitled to 7 days of paid paternity leave under Subsection 60FA; these days must be taken consecutively.
+        
+        The requirements are:
+        • The male employee must be married to the mother in question.
+        • He must have been employed by the same employer for at least 12 months.
+        • He must notify the employer at least 30 days from expected confinement (or as early as possible)."
+                        }
+                            ,
+                        {
+                            type:"Marriage", 
+                            description:"A full-time confirmed employee who has completed a minimum of twelve (12) months of continuous service is entitled to 3 days of leave on the occasion of his first legal marriage while in the service of the Company.."
+                        }
+                            ,
+                        {
+                            type:"Maternity", 
+                            description:"A full-time confirmed female employee will be entitled to 98 Consecutive days of paid maternity leave. For miscarriage maternity leave only apply upon seven full months of pregnancy under the labour law."
+                        }
+                    )
+         );
             //defines leave start and end for requests. Default set to Now since most users will be creating new requests. Changes to reflect leave times for requests which are being edited
         ClearCollect(
             EmailTemplate,
