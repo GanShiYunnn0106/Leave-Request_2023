@@ -332,6 +332,7 @@ HomeScreen As screen:
                 Set(LeaveHospitalizationTakenTemp,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email).HospitalizationLeaveTaken);
                 Set(TypeTemp,GalleryRequest.Selected.Leave_Type.Value);
                 Set(DaysTemp,GalleryRequest.Selected.Days);
+                Set(LeaveTempID,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email).ID);
                 
                 
                 If((TypeTemp = "Annual" && LeaveAnnualCarriedTemp >= DaysTemp),Patch(LeaveApp_Employee,{AnnualCarriedForward: LeaveAnnualCarriedTemp - DaysTemp}));
