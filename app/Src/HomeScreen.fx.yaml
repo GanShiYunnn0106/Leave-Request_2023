@@ -321,6 +321,8 @@ HomeScreen As screen:
             Height: =27
             OnSelect: |-
                 =Set(LeaveTempID,LookUp(LeaveApp_Request,ID = GalleryRequest.Selected.ID));
+                Patch(LeaveApp_Request,LeaveTempID,{Status: });
+                
                 Set(LeaveAnnualCarriedTemp,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email).AnnualCarriedForward);
                 Set(LeaveAnnualTakenTemp,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email).AnnualLeaveTaken);
                 Set(LeaveMedicalTakenTemp,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email).MedicalLeaveTaken);
