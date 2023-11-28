@@ -382,8 +382,7 @@ HomeScreen As screen:
             FontWeight: =FontWeight.Semibold
             Height: =36
             OnSelect: =
-            Text: |
-                =GalleryRequest.Selected.Days
+            Text: =GalleryRequest.Selected.Days
             Width: =157
             X: =1066
             Y: =195
