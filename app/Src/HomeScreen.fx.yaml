@@ -345,10 +345,10 @@ HomeScreen As screen:
                 Set(LeaveHospitalizationTakenTemp,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email).HospitalizationLeaveTaken);
                 Set(TypeTemp,GalleryRequest.Selected.Leave_Type.Value);
                 Set(DaysTemp,GalleryRequest.Selected.Days);
-                Set(LeaveTempID1,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email).ID);
+                Set(LeaveTempEmail,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email));
                 
                 
-                If((TypeTemp = "Annual" && LeaveAnnualCarriedTemp >= DaysTemp),Patch(LeaveApp_Employee,{AnnualCarriedForward: LeaveAnnualCarriedTemp - DaysTemp}));
+                If((TypeTemp = "Annual" && LeaveAnnualCarriedTemp >= DaysTemp),Patch(LeaveApp_Employee,LeaveTempEmail,{AnnualCarriedForward: LeaveAnnualCarriedTemp - DaysTemp}));
                 If((TypeTemp = "Annual" && LeaveAnnualCarriedTemp < DaysTemp),Patch(LeaveApp_Employee,{AnnualCarriedForward: 0},{AnnualLeaveTaken: LeaveAnnualTakenTemp + (DaysTemp - LeaveAnnualCarriedTemp)}));
             Size: =11
             Text: ="Approve"
@@ -368,7 +368,7 @@ HomeScreen As screen:
                 =Set(LeaveTempID,LookUp(LeaveApp_Request,ID = GalleryRequest.Selected.ID));
                 Patch(LeaveApp_Request,LeaveTempID,{Status: {
                             '@odata.type': "Microsoft.Azure.Connectors.SharePoint.SPListExpandedUser",
-                            Value: "Approved"
+                            Value: "Rejected"
                         }});
             Size: =11
             Text: ="Decline"
