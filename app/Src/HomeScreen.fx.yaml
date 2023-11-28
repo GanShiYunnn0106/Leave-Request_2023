@@ -14,6 +14,7 @@ HomeScreen As screen:
         Set(LeavePaternityTakenTemp,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email).PaternityLeaveTaken);
         Set(LeaveMaternityTakenTemp,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email).MaternityLeaveTaken);
         Set(LeaveHospitalizationTakenTemp,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email).HospitalizationLeaveTaken);
+        Reset(RemarksTextBox);
     Orientation: =If(HomeScreen.Width < HomeScreen.Height, Layout.Vertical, Layout.Horizontal)
     Size: =1 + CountRows(App.SizeBreakpoints) - CountIf(App.SizeBreakpoints, Value >= HomeScreen.Width)
     Width: =Max(App.Width, App.DesignWidth)
@@ -82,6 +83,8 @@ HomeScreen As screen:
             Set(LeavePaternityTakenTemp,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email).PaternityLeaveTaken);
             Set(LeaveMaternityTakenTemp,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email).MaternityLeaveTaken);
             Set(LeaveHospitalizationTakenTemp,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email).HospitalizationLeaveTaken);
+            
+            Reset(RemarksTextBox);
         TemplatePadding: =0
         TemplateSize: =171
         Width: =820
@@ -255,12 +258,12 @@ HomeScreen As screen:
         Y: =80
         ZIndex: =19
 
-    GroupRequestDetails As group:
+    Group4 As group:
         Height: =5
         Width: =5
         X: =40
         Y: =40
-        ZIndex: =36
+        ZIndex: =39
 
         Rectangle3 As rectangle:
             DisabledFill: =Rectangle3.Fill
@@ -327,17 +330,32 @@ HomeScreen As screen:
             Color: =RGBA(54, 176, 75, 1)
             Fill: =RGBA(255, 255, 255, 1)
             Height: =27
-            OnSelect: |-
+            OnSelect: |+
                 =Set(LeaveTempID,LookUp(LeaveApp_Request,ID = GalleryRequest.Selected.ID));
+                Set(DecisionDateTemp,Now());
                 Patch(LeaveApp_Request,LeaveTempID,{Status: {
                             '@odata.type': "Microsoft.Azure.Connectors.SharePoint.SPListExpandedUser",
                             Value: "Approved"
-                        }});
+                        }}
+                        ,{Decision_Date: Now()}
+                        ,{Remarks_By_Decision_Maker: RemarksTextBox.Text}
+                        ,{
+                        Decision_By: {
+                            '@odata.type': "Microsoft.Azure.Connectors.SharePoint.SPListExpandedUser",
+                            Claims: "i:0#.f|membership|" & Lower(User().Email),
+                            Department: "",
+                            DisplayName: User().FullName,
+                            Email: User().Email,
+                            JobTitle: ".",
+                            Picture: "."
+                        }
+                    }
+                        );
                 
                 Set(LeaveAnnualCarriedTemp,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email).AnnualCarriedForward);
                 Set(LeaveAnnualTakenTemp,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email).AnnualLeaveTaken);
                 Set(LeaveMedicalTakenTemp,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email).MedicalLeaveTaken);
-                Set(LeaveCasualImmediateTakenTemp,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email).AnnualLeaveTaken);
+                Set(LeaveCasualImmediateTakenTemp,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email).CompassionateLeaveTaken);
                 Set(LeaveCasualSecondTakenTemp,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email).CasualSecondLeaveTaken);
                 Set(LeaveMarriageTakenTemp,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email).MarriageLeaveTaken);
                 Set(LeavePaternityTakenTemp,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email).PaternityLeaveTaken);
@@ -347,16 +365,24 @@ HomeScreen As screen:
                 Set(DaysTemp,GalleryRequest.Selected.Days);
                 Set(LeaveTempEmail,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email));
                 
-                
                 If((TypeTemp = "Annual" && LeaveAnnualCarriedTemp >= DaysTemp),Patch(LeaveApp_Employee,LeaveTempEmail,{AnnualCarriedForward: LeaveAnnualCarriedTemp - DaysTemp}));
-                If((TypeTemp = "Annual" && LeaveAnnualCarriedTemp < DaysTemp),Patch(LeaveApp_Employee,{AnnualCarriedForward: 0},{AnnualLeaveTaken: LeaveAnnualTakenTemp + (DaysTemp - LeaveAnnualCarriedTemp)}));
+                If((TypeTemp = "Annual" && LeaveAnnualCarriedTemp < DaysTemp),Patch(LeaveApp_Employee,LeaveTempEmail,{AnnualCarriedForward: 0},{AnnualLeaveTaken: LeaveAnnualTakenTemp + (DaysTemp - LeaveAnnualCarriedTemp)}));
+                If((TypeTemp = "Medical"),Patch(LeaveApp_Employee,LeaveTempEmail,{MedicalLeaveTaken: LeaveMedicalTakenTemp + DaysTemp}));
+                If((TypeTemp = "Casual Immediate"),Patch(LeaveApp_Employee,LeaveTempEmail,{CompassionateLeaveTaken: LeaveCasualImmediateTakenTemp + DaysTemp}));
+                If((TypeTemp = "Casual Second"),Patch(LeaveApp_Employee,LeaveTempEmail,{CasualSecondLeaveTaken: LeaveCasualSecondTakenTemp + DaysTemp}));
+                If((TypeTemp = "Hospitalization"),Patch(LeaveApp_Employee,LeaveTempEmail,{HospitalizationLeaveTaken: LeaveHospitalizationTakenTemp + DaysTemp}));
+                If((TypeTemp = "Paternity"),Patch(LeaveApp_Employee,LeaveTempEmail,{PaternityLeaveTaken: LeavePaternityTakenTemp + DaysTemp }));
+                If((TypeTemp = "Marriage"),Patch(LeaveApp_Employee,LeaveTempEmail,{MarriageLeaveTaken: LeaveMarriageTakenTemp + DaysTemp}));
+                If((TypeTemp = "Maternity"),Patch(LeaveApp_Employee,LeaveTempEmail,{MaternityLeaveTaken: LeaveMaternityTakenTemp + DaysTemp}));
+                
+                
             Size: =11
             Text: ="Approve"
             Visible: |
                 =_managerView && (GalleryRequest.Selected.Status.Value) = "Pending"
             Width: =78
-            X: =1094
-            Y: =590
+            X: =1086
+            Y: =563
             ZIndex: =22
 
         ButtonManagerDecline As button:
@@ -366,16 +392,31 @@ HomeScreen As screen:
             Height: =27
             OnSelect: |-
                 =Set(LeaveTempID,LookUp(LeaveApp_Request,ID = GalleryRequest.Selected.ID));
+                Set(DecisionDateTemp,Now());
                 Patch(LeaveApp_Request,LeaveTempID,{Status: {
                             '@odata.type': "Microsoft.Azure.Connectors.SharePoint.SPListExpandedUser",
                             Value: "Rejected"
-                        }});
+                        }}
+                        ,{Decision_Date: Now()}
+                        ,{Remarks_By_Decision_Maker: RemarksTextBox.Text}
+                        ,{
+                        Decision_By: {
+                            '@odata.type': "Microsoft.Azure.Connectors.SharePoint.SPListExpandedUser",
+                            Claims: "i:0#.f|membership|" & Lower(User().Email),
+                            Department: "",
+                            DisplayName: User().FullName,
+                            Email: User().Email,
+                            JobTitle: ".",
+                            Picture: "."
+                        }
+                    }
+                        );
             Size: =11
             Text: ="Decline"
             Visible: =_managerView && (GalleryRequest.Selected.Status.Value) = "Pending"
             Width: =78
-            X: =1201
-            Y: =590
+            X: =1194
+            Y: =563
             ZIndex: =23
 
         Days As label:
@@ -475,6 +516,23 @@ HomeScreen As screen:
             X: =1066
             Y: =471
             ZIndex: =35
+
+        LblRemarks As label:
+            Text: |-
+                ="Remarks:"
+            Visible: =_managerView && (GalleryRequest.Selected.Status.Value) = "Pending"
+            X: =1063
+            Y: =601
+            ZIndex: =37
+
+        RemarksTextBox As text:
+            Default: =""
+            Height: =116
+            Visible: =_managerView && (GalleryRequest.Selected.Status.Value) = "Pending"
+            Width: =280
+            X: =1068
+            Y: =641
+            ZIndex: =38
 
     Header_11 As group:
         Height: =5
