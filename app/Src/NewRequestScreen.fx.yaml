@@ -549,7 +549,7 @@ NewRequestScreen As screen:
             Height: =1
             HoverFill: =RectSeparator_1.Fill
             PressedFill: =RectSeparator_1.Fill
-            Width: =864
+            Width: =1018
             X: =252
             Y: =428
             ZIndex: =22
@@ -798,7 +798,7 @@ NewRequestScreen As screen:
             HoverFill: =NewRequestSeparator.Fill
             OnSelect: =
             PressedFill: =NewRequestSeparator.Fill
-            Width: =949
+            Width: =1003
             X: =267
             Y: =294
             ZIndex: =46
