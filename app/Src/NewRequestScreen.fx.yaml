@@ -452,7 +452,7 @@ NewRequestScreen As screen:
             PressedFill: =Label1_13.Fill
             Size: =12
             Text: |-
-                =If(LeaveStartDatePicker.SelectedDate > LeaveEndDatePicker.SelectedDate || And(!_editingRequest, LeaveStartDatePicker.SelectedDate < Today()), "Start date must occur on or " & If(LeaveStartDatePicker.SelectedDate > LeaveEndDatePicker.SelectedDate,"before end date", "after today"), If(_balanceRemain < _requestedDays,"Reminder: Do not exceed leave balance"))
+                =If((_balanceRemain < _requestedDays),"Reminder: Do not exceed leave balance",(LeaveStartDatePicker.SelectedDate > LeaveEndDatePicker.SelectedDate),"Start date must occur on before end date")
             Width: =252
             X: =874
             Y: =295
@@ -818,7 +818,7 @@ NewRequestScreen As screen:
         BorderColor: =RGBA(43, 67, 119, 1)
         Color: =RGBA(43, 67, 119, 1)
         DisplayMode: |
-            =If(IsBlank(LeaveStartDatePicker.SelectedDate) || IsBlank(LeaveEndDatePicker.SelectedDate) || LeaveEndDatePicker.SelectedDate < LeaveStartDatePicker.SelectedDate || LeaveStartDatePicker.SelectedDate < Today() || IsBlank(_selectedLeaveType) || (_balanceRemain < _requestedDays) || IsBlank(TextInput1_1), DisplayMode.Disabled, DisplayMode.Edit)
+            =If(IsBlank(LeaveStartDatePicker.SelectedDate) || IsBlank(LeaveEndDatePicker.SelectedDate) || LeaveEndDatePicker.SelectedDate < LeaveStartDatePicker.SelectedDate || IsBlank(_selectedLeaveType) || (_balanceRemain < _requestedDays) || IsBlank(TextInput1_1), DisplayMode.Disabled, DisplayMode.Edit)
         Fill: =RGBA(255, 255, 255, 1)
         FontWeight: =FontWeight.Bold
         Height: =112
