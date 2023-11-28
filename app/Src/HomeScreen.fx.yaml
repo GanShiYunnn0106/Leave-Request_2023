@@ -33,7 +33,7 @@ HomeScreen As screen:
                             LeaveApp_Request,
                             Year(Start_Date) = Year(Today()) && Created_By.Email = User().Email
                         ),
-                        Start_Date,
+                        Created,
                         SortOrder.Descending
                     ),
                     Sort(
