@@ -49,6 +49,7 @@ LeaveBalanceScreen As screen:
         ZIndex: =10
 
         DatePicker1 As datepicker:
+            DefaultDate: =
             DisplayMode: =DisplayMode.Disabled
             OnSelect: =Select(Parent)
             Visible: =false

@@ -145,7 +145,7 @@ EmployeeLeaveBalance As screen:
         LoadingSpinner: =LoadingSpinner.Data
         OnSelect: =Navigate(EmployeeLeaveDetail)
         TemplatePadding: =0
-        TemplateSize: =125
+        TemplateSize: =111
         Width: =1135
         X: =231
         Y: =157
@@ -180,7 +180,7 @@ EmployeeLeaveBalance As screen:
             VerticalAlign: =VerticalAlign.Top
             Width: =Title1.Width
             X: =Title1.X
-            Y: =65
+            Y: =56
             ZIndex: =3
 
         NextArrow1 As icon.ChevronRight:
@@ -204,7 +204,7 @@ EmployeeLeaveBalance As screen:
             Height: =8
             OnSelect: =Select(Parent)
             Width: =Parent.TemplateWidth
-            Y: =Parent.TemplateHeight - Self.Height
+            Y: =99
             ZIndex: =5
 
         Rectangle10 As rectangle:
@@ -219,7 +219,7 @@ EmployeeLeaveBalance As screen:
             Height: =2
             OnSelect: =Select(Parent)
             Width: =1135
-            Y: =120
+            Y: =107
             ZIndex: =7
 
     Label1 As label:

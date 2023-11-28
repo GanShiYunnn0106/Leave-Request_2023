@@ -21,9 +21,9 @@ LeaveInformationScreen As screen:
         Layout: =Layout.Vertical
         LoadingSpinner: =LoadingSpinner.Data
         TemplatePadding: =0
-        TemplateSize: =260
-        Width: =1142
-        X: =224
+        TemplateSize: =259
+        Width: =1133
+        X: =221
         Y: =164
         ZIndex: =1
 
@@ -145,17 +145,17 @@ LeaveInformationScreen As screen:
             OnSelect: =Select(Parent)
             Width: =1134
             X: =4
-            Y: =259
+            Y: =257
             ZIndex: =18
 
         Label18 As label:
             FontWeight: =FontWeight.Semibold
-            Height: =17
+            Height: =22
             OnSelect: =Select(Parent)
             Text: =ThisItem.Days & " days"
             Width: =112
             X: =188
-            Y: =228
+            Y: =223
             ZIndex: =19
 
     Navigation_2 As Navigation:
