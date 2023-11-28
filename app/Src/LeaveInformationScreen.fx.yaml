@@ -8,13 +8,13 @@ LeaveInformationScreen As screen:
             =If(
             
                 ButtonFilter_1.Selected.Filter = "All",
-                Sort(LeaveApp_Request, Start_Date, SortOrder.Descending),
+                Sort(LeaveApp_Request, Created, SortOrder.Descending),
                 Sort(
                     Filter(
                     LeaveApp_Request,
                     Status.Value = ButtonFilter_1.Selected.Filter
                 ),
-                Start_Date,
+                Created,
                 SortOrder.Descending
                 )
             )
