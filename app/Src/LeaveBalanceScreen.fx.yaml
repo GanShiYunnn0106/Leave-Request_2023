@@ -120,7 +120,7 @@ LeaveBalanceScreen As screen:
                 Icon: =Icon.Information
                 OnSelect: =Navigate(AboutScreen);Set(_aboutSelectedLeaveType,"Annual");
                 Width: =25
-                X: =223
+                X: =233
                 Y: =33
                 ZIndex: =10
 
@@ -168,7 +168,7 @@ LeaveBalanceScreen As screen:
                 Icon: =Icon.Information
                 OnSelect: =Navigate(AboutScreen);Set(_aboutSelectedLeaveType,"Annual");
                 Width: =25
-                X: =496
+                X: =506
                 Y: =33
                 ZIndex: =11
 

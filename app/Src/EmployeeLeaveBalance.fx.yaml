@@ -140,7 +140,7 @@ EmployeeLeaveBalance As screen:
     "LeaveBalanceGallery As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
         DelayItemLoading: =true
         Height: =611
-        Items: =Filter(LeaveApp_Employee, StartsWith(NameofEmployee.DisplayName, SearchLeaveInput.Text))
+        Items: =Filter(LeaveApp_Employee, StartsWith(NameofEmployee.DisplayName, SearchLeaveInput.Text) && NameofManager.Email = User().Email)
         Layout: =Layout.Vertical
         LoadingSpinner: =LoadingSpinner.Data
         OnSelect: =Navigate(EmployeeLeaveDetail)
