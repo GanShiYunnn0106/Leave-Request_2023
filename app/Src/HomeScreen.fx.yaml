@@ -355,6 +355,7 @@ HomeScreen As screen:
             Height: =46
             HoverFill: =CircleHeaderCreateNew_9.Fill
             PressedFill: =CircleHeaderCreateNew_9.Fill
+            Visible: =If(_managerView,false,true)
             Width: =46
             X: =1155
             Y: =17
@@ -383,6 +384,7 @@ HomeScreen As screen:
             PressedColor: =ColorFade(IconHeaderCreateNew.Color, -20%)
             PressedFill: =IconHeaderCreateNew.Fill
             TabIndex: =0
+            Visible: =If(_managerView,false,true)
             Width: =46
             X: =CircleHeaderCreateNew_9.X
             Y: =17
@@ -408,6 +410,7 @@ HomeScreen As screen:
             PressedFill: =LblHeaderCreateNew_9.Fill
             Size: =13.5
             Text: ="Create Request"
+            Visible: =If(_managerView,false,true)
             Width: =155
             X: =1211
             ZIndex: =16
