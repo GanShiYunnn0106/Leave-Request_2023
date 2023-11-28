@@ -49,7 +49,7 @@ LeaveBalanceScreen As screen:
         ZIndex: =10
 
         DatePicker1 As datepicker:
-            DefaultDate: =
+            DefaultDate: =Date(2023,3,31)
             DisplayMode: =DisplayMode.Disabled
             OnSelect: =Select(Parent)
             Visible: =false
@@ -109,7 +109,7 @@ LeaveBalanceScreen As screen:
             Label19 As label:
                 Align: =Align.Center
                 OnSelect: =Select(Parent)
-                Text: =Text(DatePicker1.SelectedDate, "dddd, dd mmmm ") & Text(Today(), "yyyy")
+                Text: =Text(DatePicker1.SelectedDate, "dd mmmm ") & Text(Today(), "yyyy")
                 Width: =208
                 X: =54
                 Y: =238
