@@ -237,7 +237,7 @@ HomeScreen As screen:
         Width: =1
         X: =231
         Y: =80
-        ZIndex: =4
+        ZIndex: =3
 
     Rectangle2_1 As rectangle:
         DisabledFill: =Rectangle2_1.Fill
@@ -250,37 +250,28 @@ HomeScreen As screen:
         Width: =820
         X: =231
         Y: =154
-        ZIndex: =9
+        ZIndex: =4
 
     Navigation_5 As Navigation:
         CurrentScreen: ="My Leave Requests"
         NavItem: =If(_managerView,ManagerNavigation, EmployeeNavigation)
         Y: =80
-        ZIndex: =19
+        ZIndex: =12
 
-    Group4 As group:
-        Height: =5
-        Width: =5
-        X: =40
-        Y: =40
-        ZIndex: =39
+    LblRemarks As label:
+        Text: |-
+            ="Remarks:"
+        Visible: =_managerView && (GalleryRequest.Selected.Status.Value) = "Pending"
+        X: =1063
+        Y: =601
+        ZIndex: =13
 
-        LblRemarks As label:
-            Text: |-
-                ="Remarks:"
-            Visible: =_managerView && (GalleryRequest.Selected.Status.Value) = "Pending"
-            X: =1063
-            Y: =601
-            ZIndex: =37
-
-        RemarksTextBox As text:
-            Default: =""
-            Height: =116
-            Visible: =_managerView && (GalleryRequest.Selected.Status.Value) = "Pending"
-            Width: =280
-            X: =1068
-            Y: =641
-            ZIndex: =38
+    Label11 As label:
+        Text: |-
+            ="Remarks: "
+        X: =1067
+        Y: =601
+        ZIndex: =31
 
     Header_11 As group:
         Height: =5
@@ -297,7 +288,7 @@ HomeScreen As screen:
             HoverFill: =Rectangle1_11.Fill
             PressedFill: =Rectangle1_11.Fill
             Width: =1366
-            ZIndex: =10
+            ZIndex: =5
 
         LblHeaderTItle1_11 As label:
             Color: =RGBA(255, 255, 255, 1)
@@ -314,7 +305,7 @@ HomeScreen As screen:
             Text: =Upper("Request")
             Width: =117
             X: =30
-            ZIndex: =11
+            ZIndex: =6
 
         LblHeaderTitle2_11 As label:
             Color: =RGBA(255, 255, 255, 1)
@@ -330,7 +321,7 @@ HomeScreen As screen:
             Text: =Upper("Leave")
             Width: =138
             X: =178
-            ZIndex: =12
+            ZIndex: =7
 
         icon2_11 As icon.ArrowRight:
             Color: =Color.White
@@ -346,7 +337,7 @@ HomeScreen As screen:
             Width: =32
             X: =143
             Y: =9
-            ZIndex: =13
+            ZIndex: =8
 
         CircleHeaderCreateNew_9 As circle:
             DisabledFill: =CircleHeaderCreateNew_9.Fill
@@ -359,7 +350,7 @@ HomeScreen As screen:
             Width: =46
             X: =1155
             Y: =17
-            ZIndex: =14
+            ZIndex: =9
 
         IconHeaderCreateNew As icon.Add:
             AccessibleLabel: ="Create new leave request"
@@ -388,7 +379,7 @@ HomeScreen As screen:
             Width: =46
             X: =CircleHeaderCreateNew_9.X
             Y: =17
-            ZIndex: =15
+            ZIndex: =10
 
         LblHeaderCreateNew_9 As label:
             Color: =RGBA(255, 255, 255, 1)
@@ -413,9 +404,9 @@ HomeScreen As screen:
             Visible: =If(_managerView,false,true)
             Width: =155
             X: =1211
-            ZIndex: =16
+            ZIndex: =11
 
-    GroupRequestDetails_2 As group:
+    Group4 As group:
         Height: =5
         Width: =5
         X: =40
@@ -433,7 +424,16 @@ HomeScreen As screen:
             Width: =315
             X: =1051
             Y: =80
-            ZIndex: =39
+            ZIndex: =14
+
+        RemarksTextBox As text:
+            Default: =""
+            Height: =116
+            Visible: =_managerView && (GalleryRequest.Selected.Status.Value) = "Pending"
+            Width: =280
+            X: =1068
+            Y: =641
+            ZIndex: =15
 
         RequestDetailsTitle_2 As label:
             Color: =RGBA(62, 96, 170, 1)
@@ -445,7 +445,7 @@ HomeScreen As screen:
             Width: =161
             X: =1066
             Y: =121
-            ZIndex: =40
+            ZIndex: =16
 
         EditLable_2 As label:
             BorderThickness: =2
@@ -470,7 +470,7 @@ HomeScreen As screen:
             Width: =54
             X: =1101
             Y: =560
-            ZIndex: =41
+            ZIndex: =17
 
         EditIcon_2 As icon.Edit:
             Height: =30
@@ -480,7 +480,7 @@ HomeScreen As screen:
             Width: =23
             X: =1063
             Y: =560
-            ZIndex: =42
+            ZIndex: =18
 
         ButtonManagerApprove_2 As button:
             BorderColor: =RGBA(54, 176, 75, 1)
@@ -540,10 +540,10 @@ HomeScreen As screen:
                             "Hi" & GalleryRequest.Selected.Created_By.DisplayName &
                             "," &
                             "Detail of leave: <br><br>
-                            Leave type: " & GalleryRequest.Selected.Leave_Type.'Value' &
-                            "<br><br>Total days: " & GalleryRequest.Selected.'Days' & 
-                            "<br><br>Start date: " & GalleryRequest.Selected.'Start_Date' &
-                            "<br><br>End date: " & GalleryRequest.Selected.'End_Date' &
+                            Leave type: " & GalleryRequest.Selected.Leave_Type.Value &
+                            "<br><br>Total days: " & GalleryRequest.Selected.Days & 
+                            "<br><br>Start date: " & GalleryRequest.Selected.Start_Date &
+                            "<br><br>End date: " & GalleryRequest.Selected.End_Date &
                             "<br><br>Leave detail: " & GalleryRequest.Selected.Comments &
                             "<br><br>Remarks by decision makers: " & RemarksTextBox.Text &
                             "<br><br><br>Leave status: Approved"
@@ -555,9 +555,9 @@ HomeScreen As screen:
             Visible: |
                 =_managerView && (GalleryRequest.Selected.Status.Value) = "Pending"
             Width: =78
-            X: =1094
-            Y: =590
-            ZIndex: =43
+            X: =1092
+            Y: =551
+            ZIndex: =19
 
         ButtonManagerDecline_2 As button:
             BorderColor: =RGBA(213, 25, 32, 1)
@@ -585,13 +585,30 @@ HomeScreen As screen:
                         }
                     }
                         );
+                
+                        Office365.SendEmailV2(
+                            LeaveRequestedToEmail;LeaveCreatedByEmail,
+                            "Leave Status Update",
+                            "Hi" & GalleryRequest.Selected.Created_By.DisplayName &
+                            "," &
+                            "Detail of leave: <br><br>
+                            Leave type: " & GalleryRequest.Selected.Leave_Type.Value &
+                            "<br><br>Total days: " & GalleryRequest.Selected.Days & 
+                            "<br><br>Start date: " & GalleryRequest.Selected.Start_Date &
+                            "<br><br>End date: " & GalleryRequest.Selected.End_Date &
+                            "<br><br>Leave detail: " & GalleryRequest.Selected.Comments &
+                            "<br><br>Remarks by decision makers: " & RemarksTextBox.Text &
+                            "<br><br><br>Leave status: Rejected"
+                            ,
+                            {Importance: "Normal"}
+                        )
             Size: =11
             Text: ="Decline"
             Visible: =_managerView && (GalleryRequest.Selected.Status.Value) = "Pending"
             Width: =78
             X: =1201
-            Y: =590
-            ZIndex: =44
+            Y: =551
+            ZIndex: =20
 
         Days_2 As label:
             FontWeight: =FontWeight.Semibold
@@ -602,7 +619,7 @@ HomeScreen As screen:
             Width: =157
             X: =1066
             Y: =195
-            ZIndex: =45
+            ZIndex: =21
 
         Leave_Type_2 As label:
             FontWeight: =FontWeight.Semibold
@@ -612,7 +629,7 @@ HomeScreen As screen:
             Width: =278
             X: =1066
             Y: =265
-            ZIndex: =46
+            ZIndex: =22
 
         Request_To_2 As label:
             FontWeight: =FontWeight.Semibold
@@ -623,7 +640,7 @@ HomeScreen As screen:
             Width: =299
             X: =1067
             Y: =351
-            ZIndex: =47
+            ZIndex: =23
 
         CarryForwardDays_2 As label:
             FontWeight: =FontWeight.Semibold
@@ -633,7 +650,7 @@ HomeScreen As screen:
             Width: =229
             X: =1067
             Y: =412
-            ZIndex: =48
+            ZIndex: =24
 
         UnpaidLeave_2 As label:
             FontWeight: =FontWeight.Semibold
@@ -642,7 +659,7 @@ HomeScreen As screen:
             Width: =161
             X: =1067
             Y: =500
-            ZIndex: =49
+            ZIndex: =25
 
         LblTotalDays_2 As label:
             OnSelect: =
@@ -651,7 +668,7 @@ HomeScreen As screen:
             Width: =161
             X: =1066
             Y: =161
-            ZIndex: =50
+            ZIndex: =26
 
         LblLeaveType_2 As label:
             OnSelect: =
@@ -660,7 +677,7 @@ HomeScreen As screen:
             Width: =161
             X: =1066
             Y: =236
-            ZIndex: =51
+            ZIndex: =27
 
         LblRequestTo_2 As label:
             OnSelect: =
@@ -669,7 +686,7 @@ HomeScreen As screen:
             Width: =161
             X: =1068
             Y: =316
-            ZIndex: =52
+            ZIndex: =28
 
         LblCarryForward_2 As label:
             Height: =19
@@ -679,7 +696,7 @@ HomeScreen As screen:
             Width: =206
             X: =1066
             Y: =399
-            ZIndex: =53
+            ZIndex: =29
 
         LblUnpaidLeave_2 As label:
             Height: =30
@@ -689,5 +706,5 @@ HomeScreen As screen:
             Width: =171
             X: =1066
             Y: =471
-            ZIndex: =54
+            ZIndex: =30
 
