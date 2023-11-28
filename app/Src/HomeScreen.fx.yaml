@@ -549,7 +549,7 @@ HomeScreen As screen:
                 Set(DecisionDateTemp,Now());
                 Patch(LeaveApp_Request,LeaveTempID,{Status: {
                             '@odata.type': "Microsoft.Azure.Connectors.SharePoint.SPListExpandedUser",
-                            Value: "Approved"
+                            Value: "Rejected"
                         }}
                         ,{Decision_Date: Now()}
                         ,{Remarks_By_Decision_Maker: RemarksTextBox.Text}
