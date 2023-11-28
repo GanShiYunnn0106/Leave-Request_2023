@@ -237,25 +237,7 @@ CompanyHolidaysScreen As screen:
             PressedBorderColor: =Label13.BorderColor
             PressedColor: =Label13.Color
             PressedFill: =Label13.Fill
-            Text: |-
-                =Text(
-                    DateAdd(
-                        If(
-                            !IsBlank(ThisItem.HolidayDates),
-                            ThisItem.HolidayDates,
-                            Now() // Use a default value if StartDate is null
-                        ),
-                        -TimeZoneOffset(
-                            If(
-                                !IsBlank(ThisItem.HolidayDates),
-                                ThisItem.HolidayDates,
-                                Now() // Use a default value if StartDate is null
-                            )
-                        ),
-                        TimeUnit.Minutes
-                    ),
-                    "[$-en-US]dddd, mmmm dd"
-                )
+            Text: =Text(ThisItem.HolidayDates, "[$-en-US]dd/mm/yyyy") & "  -  " & Text(ThisItem.ToDate, "[$-en-US]dd/mm/yyyy")
             Width: =442
             X: =405
             ZIndex: =2
@@ -329,7 +311,7 @@ CompanyHolidaysScreen As screen:
 
         Button1 As button:
             OnSelect: |-
-                =Collect(LeaveApp_PublicHoliday,{HolidayName:txtHoliday.Text, HolidayDates:DateValue(HolidayDate.SelectedDate)})
+                =Collect(LeaveApp_PublicHoliday,{HolidayName:txtHoliday.Text, HolidayDates:DateValue(HolidayDate.SelectedDate), ToDate:DateValue(HolidayDate2.SelectedDate)})
             Text: ="Add"
             Visible: =_managerView=true
             Width: =80
@@ -358,6 +340,7 @@ CompanyHolidaysScreen As screen:
 
     HolidayDate2 As datepicker:
         Height: =35
+        Visible: =_managerView=true
         Width: =164
         X: =1147
         Y: =402
