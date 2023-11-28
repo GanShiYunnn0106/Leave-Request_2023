@@ -487,7 +487,7 @@ HomeScreen As screen:
             Color: =RGBA(54, 176, 75, 1)
             Fill: =RGBA(255, 255, 255, 1)
             Height: =27
-            OnSelect: |+
+            OnSelect: |
                 =Set(LeaveTempID,LookUp(LeaveApp_Request,ID = GalleryRequest.Selected.ID));
                 Set(DecisionDateTemp,Now());
                 Patch(LeaveApp_Request,LeaveTempID,{Status: {
@@ -521,6 +521,8 @@ HomeScreen As screen:
                 Set(TypeTemp,GalleryRequest.Selected.Leave_Type.Value);
                 Set(DaysTemp,GalleryRequest.Selected.Days);
                 Set(LeaveTempEmail,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email));
+                Set(LeaveRequestedToEmail,GalleryRequest.Selected.Requested_to.Email);
+                Set(LeaveCreatedByEmail,GalleryRequest.Selected.Requested_to.Email);
                 
                 If((TypeTemp = "Annual" && LeaveAnnualCarriedTemp >= DaysTemp),Patch(LeaveApp_Employee,LeaveTempEmail,{AnnualCarriedForward: LeaveAnnualCarriedTemp - DaysTemp}));
                 If((TypeTemp = "Annual" && LeaveAnnualCarriedTemp < DaysTemp),Patch(LeaveApp_Employee,LeaveTempEmail,{AnnualCarriedForward: 0},{AnnualLeaveTaken: LeaveAnnualTakenTemp + (DaysTemp - LeaveAnnualCarriedTemp)}));
@@ -532,7 +534,22 @@ HomeScreen As screen:
                 If((TypeTemp = "Marriage"),Patch(LeaveApp_Employee,LeaveTempEmail,{MarriageLeaveTaken: LeaveMarriageTakenTemp + DaysTemp}));
                 If((TypeTemp = "Maternity"),Patch(LeaveApp_Employee,LeaveTempEmail,{MaternityLeaveTaken: LeaveMaternityTakenTemp + DaysTemp}));
                 
-                
+                Office365.SendEmailV2(
+                            LeaveRequestedToEmail;LeaveCreatedByEmail,
+                            "Leave Status Update",
+                            "Hi" & GalleryRequest.Selected.Created_By.DisplayName &
+                            "," &
+                            "Detail of leave: <br><br>
+                            Leave type: " & GalleryRequest.Selected.Leave_Type.'Value' &
+                            "<br><br>Total days: " & GalleryRequest.Selected.'Days' & 
+                            "<br><br>Start date: " & GalleryRequest.Selected.'Start_Date' &
+                            "<br><br>End date: " & GalleryRequest.Selected.'End_Date' &
+                            "<br><br>Leave detail: " & GalleryRequest.Selected.Comments &
+                            "<br><br>Remarks by decision makers: " & RemarksTextBox.Text &
+                            "<br><br><br>Leave status: Approved"
+                            ,
+                            {Importance: "Normal"}
+                        )
             Size: =11
             Text: ="Approve"
             Visible: |
