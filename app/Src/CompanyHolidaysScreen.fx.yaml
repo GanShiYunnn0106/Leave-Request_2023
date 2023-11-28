@@ -295,14 +295,18 @@ CompanyHolidaysScreen As screen:
 
         Label7 As label:
             Font: =Font.Georgia
-            Height: =193
+            Height: =224
             Size: =14
             Text: |-
                 ="Holiday:
                 
                 
                 
-                Date:"
+                From:
+                
+                
+                
+                To:"
             Visible: =_managerView=true
             Width: =177
             X: =1141
@@ -324,8 +328,8 @@ CompanyHolidaysScreen As screen:
         Height: =34
         Visible: =_managerView=true
         Width: =165
-        X: =1143
-        Y: =256
+        X: =1141
+        Y: =220
         ZIndex: =39
 
     HolidayDate As datepicker:
@@ -334,15 +338,15 @@ CompanyHolidaysScreen As screen:
         Height: =35
         Visible: =_managerView=true
         Width: =164
-        X: =1144
-        Y: =338
+        X: =1141
+        Y: =310
         ZIndex: =40
 
     HolidayDate2 As datepicker:
         Height: =35
         Visible: =_managerView=true
         Width: =164
-        X: =1147
-        Y: =402
+        X: =1141
+        Y: =406
         ZIndex: =41
 
