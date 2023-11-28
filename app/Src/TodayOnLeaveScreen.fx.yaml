@@ -52,7 +52,7 @@ TodayOnLeaveScreen As screen:
         TodayOnLeaveDuration As label:
             Height: =31
             OnSelect: =Select(Parent)
-            Text: =Text(ThisItem.Start_Date, "[$-en-US]dd/mm/yyyy") & "  -  " & Text(ThisItem.End_Date, "[$-en-US]dd/mm/yyyy") & ", " & ThisItem.Days & " day(s)"
+            Text: =Text(ThisItem.Start_Date, "[$-en-US]dd mmm yyyy") & "  -  " & Text(ThisItem.End_Date, "[$-en-US]dd mmm yyyy") & ", " & ThisItem.Days & " day(s)"
             Width: =397
             X: =685
             Y: =16
@@ -220,10 +220,10 @@ TodayOnLeaveScreen As screen:
         Color: =RGBA(101, 128, 187, 1)
         Font: =Font.Georgia
         FontWeight: =FontWeight.Bold
-        Height: =78
+        Height: =66
         Size: =16
-        Text: ="Today On Leave   -   " & Text(Today(),"[$-en-US]dd/mm/yyyy")
-        Width: =359
+        Text: ="Today On Leave   -   " & Text(Today(),"[$-en-US]dd mmm yyyy")
+        Width: =473
         X: =250
         Y: =81
         ZIndex: =12
