@@ -312,6 +312,7 @@ AboutScreen As screen:
             HoverColor: =AboutLeaveTypeDescription.Color
             HoverFill: =AboutLeaveTypeDescription.Fill
             LineHeight: =1.5
+            Overflow: =Overflow.Scroll
             PaddingBottom: =0
             PaddingLeft: =0
             PaddingRight: =0

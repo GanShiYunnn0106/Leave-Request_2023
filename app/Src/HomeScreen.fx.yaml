@@ -548,7 +548,7 @@ HomeScreen As screen:
                 
                             "Here are the details of leave request: <br><br>" &
                 
-                            "<b><strong>Employee name:</strong></b> " & GalleryRequest.Selected.Created_By.'DisplayName' &
+                            "<b><strong>Employee name:</strong></b> " & GalleryRequest.Selected.Created_By.DisplayName &
                             "<br><b><strong>Leave type:</strong></b> " & GalleryRequest.Selected.Leave_Type.Value &
                             "<br><b><strong>Start date:</strong></b> " & GalleryRequest.Selected.Start_Date &
                             "<br><b><strong>End date:</strong></b> " & GalleryRequest.Selected.End_Date &
@@ -613,7 +613,7 @@ HomeScreen As screen:
                             "," &
                             "This is to inform that we have reviewed and ""<font color = red>rejected </font>"" your leave request, The reason of your leave request being rejected could refer to ""Remarks(rejecter)"" below." &
                             "Here are the details of leave request: <br><br><br>" &
-                            "Employee name: " & GalleryRequest.Selected.Created_By.'DisplayName' &
+                            "Employee name: " & GalleryRequest.Selected.Created_By.DisplayName &
                             "<br>Leave type: " & GalleryRequest.Selected.Leave_Type.Value &
                             "<br>Start date: " & GalleryRequest.Selected.Start_Date &
                             "<br>End date: " & GalleryRequest.Selected.End_Date &
