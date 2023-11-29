@@ -567,6 +567,9 @@ HomeScreen As screen:
             OnSelect: |-
                 =Set(LeaveTempID,LookUp(LeaveApp_Request,ID = GalleryRequest.Selected.ID));
                 Set(DecisionDateTemp,Now());
+                Set(LeaveTempEmail,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email));
+                Set(LeaveRequestedToEmail,GalleryRequest.Selected.Requested_to.Email);
+                Set(LeaveCreatedByEmail,GalleryRequest.Selected.Requested_to.Email);
                 Patch(LeaveApp_Request,LeaveTempID,{Status: {
                             '@odata.type': "Microsoft.Azure.Connectors.SharePoint.SPListExpandedUser",
                             Value: "Rejected"
