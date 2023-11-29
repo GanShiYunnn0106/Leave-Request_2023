@@ -237,7 +237,7 @@ CompanyHolidaysScreen As screen:
             PressedBorderColor: =Label13.BorderColor
             PressedColor: =Label13.Color
             PressedFill: =Label13.Fill
-            Text: =Text(ThisItem.HolidayDates, "[$-en-US]dd/mm/yyyy") & "  -  " & Text(ThisItem.ToDate, "[$-en-US]dd/mm/yyyy")
+            Text: =Text(ThisItem.HolidayDates, "[$-en-US]ddd, dd mmm yyyy") & "  -  " & Text(ThisItem.ToDate, "[$-en-US]ddd, dd mmm yyyy")
             Width: =442
             X: =405
             ZIndex: =2
