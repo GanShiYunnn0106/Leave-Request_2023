@@ -22,7 +22,7 @@ HomeScreen As screen:
     "GalleryRequest As gallery.'BrowseLayout_Vertical_ThreeTextVariant_ver5.0'":
         BorderThickness: =
         DelayItemLoading: =true
-        Fill: =RGBA(255, 255, 255, 1)
+        Fill: =RGBA(249, 249, 249, 1)
         Height: =614
         Items: |+
             =If(
