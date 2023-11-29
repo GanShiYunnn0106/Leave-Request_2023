@@ -536,17 +536,32 @@ HomeScreen As screen:
                 
                 Office365.SendEmailV2(
                             LeaveRequestedToEmail;LeaveCreatedByEmail,
-                            "Leave Status Update",
-                            "Hi" & GalleryRequest.Selected.Created_By.DisplayName &
+                            "Acknowledgement Leave Request Approved",
+                
+                            "<div style=""font-family: Calibri; font-size:15px;"">" &
+                
+                            "Dear " & GalleryRequest.Selected.Created_By.DisplayName &
                             "," &
-                            "Detail of leave: <br><br>
-                            Leave type: " & GalleryRequest.Selected.Leave_Type.Value &
-                            "<br><br>Total days: " & GalleryRequest.Selected.Days & 
-                            "<br><br>Start date: " & GalleryRequest.Selected.Start_Date &
-                            "<br><br>End date: " & GalleryRequest.Selected.End_Date &
-                            "<br><br>Leave detail: " & GalleryRequest.Selected.Comments &
-                            "<br><br>Remarks by decision makers: " & RemarksTextBox.Text &
-                            "<br><br><br>Leave status: Approved"
+                
+                
+                            "This is to inform that we have reviewed and ""<font color = green>approved</font>"" your leave request." &
+                
+                            "Here are the details of leave request: <br><br>" &
+                
+                            "<b><strong>Employee name:</strong></b> " & GalleryRequest.Selected.Created_By.'DisplayName' &
+                            "<br><b><strong>Leave type:</strong></b> " & GalleryRequest.Selected.Leave_Type.Value &
+                            "<br><b><strong>Start date:</strong></b> " & GalleryRequest.Selected.Start_Date &
+                            "<br><b><strong>End date:</strong></b> " & GalleryRequest.Selected.End_Date &
+                            "<br><b><strong>Total days:</strong></b> " & GalleryRequest.Selected.Days & 
+                            "<br><b><strong>Leave detail:</strong></b> " & GalleryRequest.Selected.Comments &
+                            "<br><b><strong>Remarks by decision makers:</strong></b> " & RemarksTextBox.Text &
+                            "<br><b><strong>Leave status:</strong></b> Approved" &
+                
+                
+                            "<br><br>Your leave has been entered into our system, and you are all set to take your time off during these dates.<br>If you have any questions or notice that there is any incorrect information within the details of your leave request above, feel free to contact our HR, Ms Teh Ping Hung" & 
+                            "Thank you for your cooperation and understanding, and we hope you have a restful leave." &
+                            "<br><br>Best regards,<br>Leave Admin" &
+                            "</div>"
                             ,
                             {Importance: "Normal"}
                         )
@@ -563,6 +578,7 @@ HomeScreen As screen:
             BorderColor: =RGBA(213, 25, 32, 1)
             Color: =RGBA(213, 25, 32, 1)
             Fill: =RGBA(255, 255, 255, 1)
+            Font: =Font.'Open Sans Condensed'
             Height: =27
             OnSelect: |-
                 =Set(LeaveTempID,LookUp(LeaveApp_Request,ID = GalleryRequest.Selected.ID));
@@ -589,19 +605,27 @@ HomeScreen As screen:
                     }
                         );
                 
-                        Office365.SendEmailV2(
+                    Office365.SendEmailV2(
                             LeaveRequestedToEmail;LeaveCreatedByEmail,
-                            "Leave Status Update",
-                            "Hi" & GalleryRequest.Selected.Created_By.DisplayName &
+                            "Acknowledgement Leave Request Rejected",
+                            "<div style=""font-family: Calibri; font-size:15px;"">" &
+                            "Dear " & GalleryRequest.Selected.Created_By.DisplayName &
                             "," &
-                            "Detail of leave: <br><br>
-                            Leave type: " & GalleryRequest.Selected.Leave_Type.Value &
-                            "<br><br>Total days: " & GalleryRequest.Selected.Days & 
-                            "<br><br>Start date: " & GalleryRequest.Selected.Start_Date &
-                            "<br><br>End date: " & GalleryRequest.Selected.End_Date &
-                            "<br><br>Leave detail: " & GalleryRequest.Selected.Comments &
-                            "<br><br>Remarks by decision makers: " & RemarksTextBox.Text &
-                            "<br><br><br>Leave status: Rejected"
+                            "This is to inform that we have reviewed and ""<font color = red>rejected </font>"" your leave request, The reason of your leave request being rejected could refer to ""Remarks(rejecter)"" below." &
+                            "Here are the details of leave request: <br><br><br>" &
+                            "Employee name: " & GalleryRequest.Selected.Created_By.'DisplayName' &
+                            "<br>Leave type: " & GalleryRequest.Selected.Leave_Type.Value &
+                            "<br>Start date: " & GalleryRequest.Selected.Start_Date &
+                            "<br>End date: " & GalleryRequest.Selected.End_Date &
+                            "<br>Total days: " & GalleryRequest.Selected.Days & 
+                            "<br>Leave detail: " & GalleryRequest.Selected.Comments &
+                            "<br>Remarks by decision makers: " & RemarksTextBox.Text &
+                            "<br>Leave status: Approved" &
+                            "<br><br><br>Your leave has been entered into our system, and you are all set to take your time off during these dates.<br>If you have any questions or notice any incorrect information within the details of your leave request above, feel free to contact our HR, Ms Teh Ping Hung" & 
+                            "Thank you for your cooperation and understanding, and we hope you have a restful leave." &
+                            "<br><br>Best regards,<br>Leave Admin" &
+                            "</div>"
+                            
                             ,
                             {Importance: "Normal"}
                         )
