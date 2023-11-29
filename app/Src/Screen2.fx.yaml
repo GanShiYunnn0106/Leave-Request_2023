@@ -192,8 +192,8 @@ Screen2 As screen:
             OnSelect: =
             Text: =GalleryRequest.Selected.Leave_Type.Value
             Width: =278
-            X: =1066
-            Y: =265
+            X: =1077
+            Y: =279
             ZIndex: =8
 
         Request_To_1 As label:
@@ -240,8 +240,8 @@ Screen2 As screen:
             Text: |-
                 ="Leave Type:"
             Width: =161
-            X: =1066
-            Y: =236
+            X: =1077
+            Y: =251
             ZIndex: =13
 
         LblRequestTo_1 As label:
@@ -249,8 +249,8 @@ Screen2 As screen:
             Text: |-
                 ="Request Send To:"
             Width: =161
-            X: =1068
-            Y: =316
+            X: =1063
+            Y: =311
             ZIndex: =14
 
         LblCarryForward_1 As label:

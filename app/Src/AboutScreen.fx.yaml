@@ -181,7 +181,7 @@ AboutScreen As screen:
             FocusedBorderColor: =AboutTitle.BorderColor
             Font: =Font.Lato
             FontWeight: =FontWeight.Bold
-            Height: =22
+            Height: =21
             HoverBorderColor: =AboutTitle.BorderColor
             HoverColor: =AboutTitle.Color
             HoverFill: =AboutTitle.Fill
@@ -197,17 +197,16 @@ AboutScreen As screen:
             Size: =13.5
             Text: |-
                 ="Learn about the types of leave:"
-            Underline: =true
             Width: =855
-            X: =265
-            Y: =172
+            X: =256
+            Y: =101
             ZIndex: =42
 
         AboutLeaveTypeGallery As gallery.galleryVertical:
             Default: =If(!IsBlank(_aboutSelectedLeaveType),LookUp(LeaveTypeCollection, type=_aboutSelectedLeaveType))
             DisabledBorderColor: =AboutLeaveTypeGallery.BorderColor
             DisabledFill: =AboutLeaveTypeGallery.Fill
-            Height: =300
+            Height: =337
             HoverBorderColor: =AboutLeaveTypeGallery.BorderColor
             HoverFill: =AboutLeaveTypeGallery.Fill
             Items: =LeaveTypeCollection
@@ -222,7 +221,7 @@ AboutScreen As screen:
             Width: =780
             WrapCount: =3
             X: =261
-            Y: =192
+            Y: =120
             ZIndex: =43
 
             AboutLeaveTypeIcon As image:
@@ -305,38 +304,15 @@ AboutScreen As screen:
                 X: =5
                 ZIndex: =4
 
-        AboutDescription As label:
-            Color: =RGBA(74, 74, 74, 1)
-            FocusedBorderColor: =AboutDescription.BorderColor
-            Font: =Font.Arial
-            FontWeight: =FontWeight.Semibold
-            Height: =87
-            HoverBorderColor: =AboutDescription.BorderColor
-            HoverColor: =AboutDescription.Color
-            HoverFill: =AboutDescription.Fill
-            LineHeight: =1.5
-            PaddingBottom: =0
-            PaddingLeft: =0
-            PaddingRight: =0.00
-            PaddingTop: =0.00
-            PressedBorderColor: =AboutDescription.BorderColor
-            PressedColor: =AboutDescription.Color
-            PressedFill: =AboutDescription.Fill
-            Size: =13.5
-            Text: ="Manage your personal leave requests and team leave requests in one place. When a request is completed, managers are notified via email and can quickly approve or decline based on the situation."
-            Width: =882
-            X: =252
-            Y: =84
-            ZIndex: =44
-
         AboutLeaveTypeDescription As label:
             FocusedBorderColor: =AboutLeaveTypeDescription.BorderColor
             FontWeight: =FontWeight.Semibold
-            Height: =315
+            Height: =354
             HoverBorderColor: =AboutLeaveTypeDescription.BorderColor
             HoverColor: =AboutLeaveTypeDescription.Color
             HoverFill: =AboutLeaveTypeDescription.Fill
             LineHeight: =1.5
+            Overflow: =Overflow.Scroll
             PaddingBottom: =0
             PaddingLeft: =0
             PaddingRight: =0
@@ -346,9 +322,9 @@ AboutScreen As screen:
             PressedFill: =AboutLeaveTypeDescription.Fill
             Size: =14
             Text: =LookUp(LeaveTypeCollection,type = _aboutSelectedLeaveType).description
-            Width: =855
-            X: =256
-            Y: =453
+            Width: =892
+            X: =237
+            Y: =384
             ZIndex: =45
 
         AboutLeaveGallerySeparator As rectangle:
@@ -360,15 +336,7 @@ AboutScreen As screen:
             HoverFill: =AboutLeaveGallerySeparator.Fill
             PressedFill: =AboutLeaveGallerySeparator.Fill
             Width: =890
-            X: =238
-            Y: =452
+            X: =239
+            Y: =384
             ZIndex: =46
-
-    Rectangle8 As rectangle:
-        Fill: =RGBA(230, 229, 229, 1)
-        Height: =2
-        Width: =889
-        X: =231
-        Y: =160
-        ZIndex: =48
 
