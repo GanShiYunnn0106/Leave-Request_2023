@@ -12,129 +12,120 @@ EmployeeLeaveDetail As screen:
         Y: =85
         ZIndex: =1
 
-    Label11_12 As label:
-        FontWeight: =FontWeight.Semibold
-        Height: =44
-        Text: |-
-            ="Annual Leave Taken :"
-        Width: =294
-        X: =281
-        Y: =177
-        ZIndex: =2
+    Gallery1 As gallery.galleryVertical:
+        DelayItemLoading: =true
+        Height: =555
+        Items: =Filter(LeaveApp_Request,Created_By.DisplayName = _selectedEmployee)
+        Layout: =Layout.Vertical
+        LoadingSpinner: =LoadingSpinner.Data
+        TemplateSize: =59
+        Width: =1135
+        X: =231
+        Y: =213
+        ZIndex: =1
 
-    Label11_13 As label:
-        BorderStyle: =BorderStyle.None
-        BorderThickness: =2
-        Text: =LeaveBalanceGallery.Selected.AnnualLeaveTaken & " day(s)"
-        Width: =273
-        X: =281
-        Y: =208
-        ZIndex: =4
+        Label28 As label:
+            Height: =25
+            OnSelect: =Select(Parent)
+            Size: =11
+            Text: =ThisItem.Leave_Type.Value
+            Width: =170
+            X: =25
+            Y: =16
+            ZIndex: =1
 
-    Label11_14 As label:
-        FontWeight: =FontWeight.Semibold
-        Height: =44
-        Text: |-
-            ="Annual Leave Balance :"
-        Width: =294
-        X: =592
-        Y: =178
-        ZIndex: =5
+        Label28_2 As label:
+            Height: =25
+            OnSelect: =Select(Parent)
+            Size: =11
+            Text: =ThisItem.Start_Date
+            Width: =100
+            X: =291
+            Y: =16
+            ZIndex: =3
 
-    Label11_15 As label:
-        Height: =34
-        Text: =Value(LeaveBalanceGallery.Selected.Annual_x0020_Leave_x0020_Balance) & " day(s)"
-        Width: =270
-        X: =588
-        Y: =212
-        ZIndex: =6
+        Label28_3 As label:
+            Height: =25
+            OnSelect: =Select(Parent)
+            Size: =11
+            Text: =ThisItem.End_Date
+            Width: =100
+            X: =391
+            Y: =16
+            ZIndex: =4
 
-    Label11_16 As label:
-        FontWeight: =FontWeight.Semibold
-        Height: =44
-        Text: |-
-            ="Medical Leave Taken :"
-        Width: =326
-        X: =278
-        Y: =243
-        ZIndex: =7
+        Label28_4 As label:
+            Height: =25
+            OnSelect: =Select(Parent)
+            Size: =11
+            Text: =ThisItem.Days
+            Width: =88
+            X: =500
+            Y: =16
+            ZIndex: =5
 
-    Label11_17 As label:
-        Height: =38
-        Text: =LeaveBalanceGallery.Selected.MedicalLeaveTaken & " day(s)"
-        Width: =286
-        X: =278
-        Y: =273
-        ZIndex: =8
+        Label28_5 As label:
+            Height: =25
+            OnSelect: =Select(Parent)
+            Size: =11
+            Text: =ThisItem.CarryForwardDays
+            Width: =100
+            X: =598
+            Y: =16
+            ZIndex: =6
 
-    Label11_18 As label:
-        FontWeight: =FontWeight.Semibold
-        Height: =41
-        Text: |-
-            ="Medical Leave Balance :"
-        Width: =316
-        X: =594
-        Y: =246
-        ZIndex: =9
+        Label28_6 As label:
+            Height: =25
+            OnSelect: =Select(Parent)
+            Size: =11
+            Text: =ThisItem.UnpaidLeave
+            Width: =100
+            X: =752
+            Y: =16
+            ZIndex: =7
 
-    Label11_19 As label:
-        Height: =34
-        Text: =Value(LeaveBalanceGallery.Selected.Medical_x0020_Leave_x0020_Balanc) & " day(s)"
-        Width: =270
-        X: =594
-        Y: =279
-        ZIndex: =10
+        Label28_7 As label:
+            Height: =25
+            OnSelect: =Select(Parent)
+            Size: =11
+            Text: =ThisItem.Decision_By.DisplayName
+            Width: =273
+            X: =852
+            Y: =16
+            ZIndex: =8
 
-    Label11_20 As label:
-        FontWeight: =FontWeight.Semibold
-        Height: =45
-        Text: |-
-            ="Compassionate Leave Taken :"
-        Width: =326
-        X: =278
-        Y: =315
-        ZIndex: =11
+        Rectangle15 As rectangle:
+            Fill: =RGBA(230, 230, 230, 1)
+            Height: =1
+            OnSelect: =Select(Parent)
+            Width: =1120
+            Y: =58
+            ZIndex: =9
 
-    Label11_21 As label:
-        Height: =34
-        Text: =LeaveBalanceGallery.Selected.CompassionateLeaveTaken & " day(s)"
-        Width: =300
-        X: =278
-        Y: =357
-        ZIndex: =12
-
-    Label11_22 As label:
-        FontWeight: =FontWeight.Semibold
-        Height: =44
-        Text: |-
-            ="Compassionate Leave Balance :"
-        Width: =294
-        X: =588
-        Y: =317
-        ZIndex: =13
-
-    Label11_23 As label:
-        Height: =34
-        Text: =Value(LeaveBalanceGallery.Selected.Compassionate_x0020_Leave_x0020_) & " day(s)"
-        Width: =270
-        X: =591
-        Y: =358
-        ZIndex: =14
+        Button8 As button:
+            BorderColor: =If((ThisItem.Status.Value)="Pending",RGBA(0,71,144,1),(ThisItem.Status.Value)="Rejected",RGBA(213,0,0,1),(ThisItem.Status.Value)="Approved",RGBA(0,128,0,1))
+            Color: =If((ThisItem.Status.Value)="Pending",RGBA(0,71,144,1),(ThisItem.Status.Value)="Rejected",RGBA(213,0,0,1),(ThisItem.Status.Value)="Approved",RGBA(0,128,0,1))
+            DisabledBorderColor: =
+            DisabledColor: =If((ThisItem.Status.Value)="Pending",RGBA(0,71,144,1),(ThisItem.Status.Value)="Rejected",RGBA(213,0,0,1),(ThisItem.Status.Value)="Approved",RGBA(0,128,0,1))
+            DisabledFill: =
+            DisplayMode: =DisplayMode.Disabled
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =25
+            OnSelect: =Select(Parent)
+            PressedBorderColor: =
+            PressedColor: =
+            PressedFill: =
+            Size: =10
+            Text: =ThisItem.Status.Value
+            Width: =75
+            X: =193
+            Y: =16
+            ZIndex: =10
 
     Navigation_9 As Navigation:
         NavItem: =If(_managerView,ManagerNavigation,EmployeeNavigation)
         Y: =80
         ZIndex: =15
-
-    Label11_24 As label:
-        FontWeight: =FontWeight.Semibold
-        Height: =45
-        Text: |-
-            ="Annual Carried Forward Balance :"
-        Width: =326
-        X: =907
-        Y: =176
-        ZIndex: =23
 
     Header_8 As group:
         Height: =5
@@ -268,176 +259,6 @@ EmployeeLeaveDetail As screen:
             X: =1211
             ZIndex: =22
 
-    Label11_25 As label:
-        Height: =34
-        Text: =LeaveBalanceGallery.Selected.AnnualCarriedForward & " day(s)"
-        Width: =300
-        X: =907
-        Y: =206
-        ZIndex: =24
-
-    Label11_26 As label:
-        FontWeight: =FontWeight.Semibold
-        Height: =45
-        Text: |-
-            ="Marriage Leave Taken :"
-        Width: =326
-        X: =278
-        Y: =398
-        ZIndex: =25
-
-    Label11_27 As label:
-        Height: =34
-        Text: =LeaveBalanceGallery.Selected.MarriageLeaveTaken & " day(s)"
-        Width: =300
-        X: =278
-        Y: =443
-        ZIndex: =26
-
-    Label11_28 As label:
-        FontWeight: =FontWeight.Semibold
-        Height: =44
-        Text: |-
-            ="Marriage Leave Balance :"
-        Width: =294
-        X: =591
-        Y: =400
-        ZIndex: =27
-
-    Label11_29 As label:
-        Height: =34
-        Text: =Value(LeaveBalanceGallery.Selected.Marriage_x0020_Leave_x0020_Balan) & " day(s)"
-        Width: =270
-        X: =588
-        Y: =443
-        ZIndex: =28
-
-    Label11_30 As label:
-        FontWeight: =FontWeight.Semibold
-        Height: =45
-        Text: |-
-            ="Paternity Leave Taken :"
-        Width: =326
-        X: =278
-        Y: =482
-        ZIndex: =29
-
-    Label11_31 As label:
-        Height: =34
-        Text: =LeaveBalanceGallery.Selected.PaternityLeaveTaken & " day(s)"
-        Width: =300
-        X: =278
-        Y: =527
-        ZIndex: =30
-
-    Label11_32 As label:
-        FontWeight: =FontWeight.Semibold
-        Height: =44
-        Text: |-
-            ="Paternity Leave Balance :"
-        Width: =294
-        X: =591
-        Y: =483
-        ZIndex: =31
-
-    Label11_33 As label:
-        Height: =34
-        Text: =Value(LeaveBalanceGallery.Selected.Paternity_x0020_Leave_x0020_Bala) & " day(s)"
-        Width: =270
-        X: =591
-        Y: =527
-        ZIndex: =32
-
-    Label11_34 As label:
-        FontWeight: =FontWeight.Semibold
-        Height: =45
-        Text: |-
-            ="Maternity Leave Taken :"
-        Width: =326
-        X: =278
-        Y: =567
-        ZIndex: =33
-
-    Label11_35 As label:
-        Height: =34
-        Text: =LeaveBalanceGallery.Selected.MaternityLeaveTaken & " day(s)"
-        Width: =300
-        X: =278
-        Y: =612
-        ZIndex: =34
-
-    Label11_36 As label:
-        FontWeight: =FontWeight.Semibold
-        Height: =44
-        Text: |-
-            ="Maternity Leave Balance :"
-        Width: =294
-        X: =591
-        Y: =567
-        ZIndex: =35
-
-    Label11_37 As label:
-        Height: =34
-        Text: =Value(LeaveBalanceGallery.Selected.Maternity_x0020_Leave_x0020_Bala) & " day(s)"
-        Width: =270
-        X: =591
-        Y: =607
-        ZIndex: =36
-
-    Label11_38 As label:
-        FontWeight: =FontWeight.Semibold
-        Height: =45
-        Text: |-
-            ="Hospitalization Leave Taken :"
-        Width: =326
-        X: =278
-        Y: =646
-        ZIndex: =37
-
-    Label11_39 As label:
-        Height: =34
-        Text: =LeaveBalanceGallery.Selected.HospitalizationLeaveTaken & " day(s)"
-        Width: =300
-        X: =278
-        Y: =682
-        ZIndex: =38
-
-    Label11_40 As label:
-        FontWeight: =FontWeight.Semibold
-        Height: =44
-        Text: |-
-            ="Hospitalization Leave Balance :"
-        Width: =294
-        X: =592
-        Y: =646
-        ZIndex: =39
-
-    Label11_41 As label:
-        Height: =34
-        Text: =Value(LeaveBalanceGallery.Selected.Hospitalization_x0020_Leave_x002) & " day(s)"
-        Width: =270
-        X: =591
-        Y: =682
-        ZIndex: =40
-
-    Label11_42 As label:
-        FontWeight: =FontWeight.Semibold
-        Height: =45
-        Text: |-
-            ="Unpaid Leave Taken :"
-        Width: =326
-        X: =907
-        Y: =245
-        ZIndex: =41
-
-    Label11_43 As label:
-        Height: =34
-        Text: =LeaveBalanceGallery.Selected.UnpaidLeaveTaken & " day(s)"
-        Width: =300
-        X: =907
-        Y: =277
-        ZIndex: =42
-
     Rectangle12 As rectangle:
         Fill: =RGBA(217, 216, 217, 1)
         Height: =2
@@ -445,4 +266,140 @@ EmployeeLeaveDetail As screen:
         X: =231
         Y: =155
         ZIndex: =43
+
+    Title2_1 As label:
+        FontWeight: =FontWeight.Semibold
+        Height: =29
+        OnSelect: =
+        PaddingBottom: =0
+        PaddingLeft: =0
+        PaddingRight: =0
+        PaddingTop: =0
+        Size: =12
+        Text: ="Leave Type"
+        VerticalAlign: =VerticalAlign.Top
+        Width: =163
+        X: =266
+        Y: =185
+        ZIndex: =45
+
+    Title2_2 As label:
+        FontWeight: =FontWeight.Semibold
+        Height: =29
+        OnSelect: =
+        PaddingBottom: =0
+        PaddingLeft: =0
+        PaddingRight: =0
+        PaddingTop: =0
+        Size: =12
+        Text: ="Status"
+        VerticalAlign: =VerticalAlign.Top
+        Width: =96
+        X: =432
+        Y: =185
+        ZIndex: =46
+
+    Title2_3 As label:
+        FontWeight: =FontWeight.Semibold
+        Height: =29
+        OnSelect: =
+        PaddingBottom: =0
+        PaddingLeft: =0
+        PaddingRight: =0
+        PaddingTop: =0
+        Size: =12
+        Text: ="Start Date"
+        VerticalAlign: =VerticalAlign.Top
+        Width: =133
+        X: =531
+        Y: =185
+        ZIndex: =47
+
+    Title2_4 As label:
+        FontWeight: =FontWeight.Semibold
+        Height: =29
+        OnSelect: =
+        PaddingBottom: =0
+        PaddingLeft: =0
+        PaddingRight: =0
+        PaddingTop: =0
+        Size: =12
+        Text: ="End Date"
+        VerticalAlign: =VerticalAlign.Top
+        Width: =102
+        X: =634
+        Y: =185
+        ZIndex: =48
+
+    Title2_5 As label:
+        FontWeight: =FontWeight.Semibold
+        Height: =29
+        OnSelect: =
+        PaddingBottom: =0
+        PaddingLeft: =0
+        PaddingRight: =0
+        PaddingTop: =0
+        Size: =12
+        Text: ="Total Days"
+        VerticalAlign: =VerticalAlign.Top
+        Width: =102
+        X: =741
+        Y: =185
+        ZIndex: =49
+
+    Title2_6 As label:
+        FontWeight: =FontWeight.Semibold
+        Height: =29
+        OnSelect: =
+        PaddingBottom: =0
+        PaddingLeft: =0
+        PaddingRight: =0
+        PaddingTop: =0
+        Size: =11
+        Text: ="Carry Forward Days"
+        VerticalAlign: =VerticalAlign.Top
+        Width: =184
+        X: =835
+        Y: =185
+        ZIndex: =50
+
+    Title2_7 As label:
+        FontWeight: =FontWeight.Semibold
+        Height: =29
+        OnSelect: =
+        PaddingBottom: =0
+        PaddingLeft: =0
+        PaddingRight: =0
+        PaddingTop: =0
+        Size: =11
+        Text: ="Unpaid Days"
+        VerticalAlign: =VerticalAlign.Top
+        Width: =102
+        X: =988
+        Y: =185
+        ZIndex: =51
+
+    Title2_8 As label:
+        FontWeight: =FontWeight.Semibold
+        Height: =29
+        OnSelect: =
+        PaddingBottom: =0
+        PaddingLeft: =0
+        PaddingRight: =0
+        PaddingTop: =0
+        Size: =11
+        Text: ="Approved By"
+        VerticalAlign: =VerticalAlign.Top
+        Width: =102
+        X: =1098
+        Y: =185
+        ZIndex: =52
+
+    Rectangle12_1 As rectangle:
+        Fill: =RGBA(217, 216, 217, 1)
+        Height: =1
+        Width: =1120
+        X: =240
+        Y: =216
+        ZIndex: =53
 
