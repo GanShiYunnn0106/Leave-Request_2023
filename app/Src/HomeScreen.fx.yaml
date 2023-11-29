@@ -22,7 +22,7 @@ HomeScreen As screen:
     "GalleryRequest As gallery.'BrowseLayout_Vertical_ThreeTextVariant_ver5.0'":
         BorderThickness: =
         DelayItemLoading: =true
-        Fill: =RGBA(255, 255, 255, 1)
+        Fill: =RGBA(249, 249, 249, 1)
         Height: =614
         Items: |+
             =If(
@@ -644,8 +644,8 @@ HomeScreen As screen:
             Text: |
                 =GalleryRequest.Selected.Days
             Width: =157
-            X: =1066
-            Y: =195
+            X: =1055
+            Y: =194
             ZIndex: =21
 
         Leave_Type_2 As label:
@@ -654,18 +654,18 @@ HomeScreen As screen:
             OnSelect: =
             Text: =GalleryRequest.Selected.Leave_Type.Value
             Width: =278
-            X: =1066
-            Y: =265
+            X: =1051
+            Y: =268
             ZIndex: =22
 
         Request_To_2 As label:
             FontWeight: =FontWeight.Semibold
-            Height: =30
+            Height: =28
             OnSelect: =
             Size: =12.5
             Text: =GalleryRequest.Selected.Requested_to.DisplayName
-            Width: =299
-            X: =1067
+            Width: =315
+            X: =1051
             Y: =351
             ZIndex: =23
 
@@ -675,8 +675,8 @@ HomeScreen As screen:
             OnSelect: =
             Text: =GalleryRequest.Selected.CarryForwardDays & " days"
             Width: =229
-            X: =1067
-            Y: =412
+            X: =1057
+            Y: =427
             ZIndex: =24
 
         UnpaidLeave_2 As label:
@@ -684,8 +684,8 @@ HomeScreen As screen:
             OnSelect: =
             Text: =GalleryRequest.Selected.UnpaidLeave & " days"
             Width: =161
-            X: =1067
-            Y: =500
+            X: =1057
+            Y: =506
             ZIndex: =25
 
         LblTotalDays_2 As label:
@@ -693,7 +693,7 @@ HomeScreen As screen:
             Text: |-
                 ="Total days:"
             Width: =161
-            X: =1066
+            X: =1047
             Y: =161
             ZIndex: =26
 
@@ -702,7 +702,7 @@ HomeScreen As screen:
             Text: |-
                 ="Leave Type:"
             Width: =161
-            X: =1066
+            X: =1051
             Y: =236
             ZIndex: =27
 
@@ -711,8 +711,8 @@ HomeScreen As screen:
             Text: |-
                 ="Request Send To:"
             Width: =161
-            X: =1068
-            Y: =316
+            X: =1047
+            Y: =320
             ZIndex: =28
 
         LblCarryForward_2 As label:
@@ -721,8 +721,8 @@ HomeScreen As screen:
             Text: |-
                 ="Carry Forward Days:"
             Width: =206
-            X: =1066
-            Y: =399
+            X: =1051
+            Y: =404
             ZIndex: =29
 
         LblUnpaidLeave_2 As label:
@@ -731,7 +731,7 @@ HomeScreen As screen:
             Text: |-
                 ="Unpaid Leaves:"
             Width: =171
-            X: =1066
-            Y: =471
+            X: =1051
+            Y: =476
             ZIndex: =30
 

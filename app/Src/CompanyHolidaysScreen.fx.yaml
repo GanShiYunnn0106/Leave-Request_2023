@@ -228,7 +228,7 @@ CompanyHolidaysScreen As screen:
         Label13 As label:
             FocusedBorderColor: =Label13.BorderColor
             FocusedBorderThickness: =2
-            Font: =Font.Lato
+            Font: =Font.'Segoe UI'
             Height: =49
             HoverBorderColor: =Label13.BorderColor
             HoverColor: =Label13.Color
@@ -237,9 +237,10 @@ CompanyHolidaysScreen As screen:
             PressedBorderColor: =Label13.BorderColor
             PressedColor: =Label13.Color
             PressedFill: =Label13.Fill
+            Size: =13.8
             Text: =Text(ThisItem.HolidayDates, "[$-en-US]ddd, dd mmm yyyy") & "  -  " & Text(ThisItem.ToDate, "[$-en-US]ddd, dd mmm yyyy")
             Width: =442
-            X: =405
+            X: =395
             ZIndex: =2
 
         Rectangle5 As rectangle:

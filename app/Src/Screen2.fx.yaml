@@ -178,8 +178,8 @@ Screen2 As screen:
             OnSelect: =
             Text: =GalleryRequest.Selected.Leave_Type.Value
             Width: =278
-            X: =1066
-            Y: =265
+            X: =1077
+            Y: =279
             ZIndex: =8
 
         Request_To_1 As label:
@@ -226,8 +226,8 @@ Screen2 As screen:
             Text: |-
                 ="Leave Type:"
             Width: =161
-            X: =1066
-            Y: =236
+            X: =1077
+            Y: =251
             ZIndex: =13
 
         LblRequestTo_1 As label:
@@ -235,8 +235,8 @@ Screen2 As screen:
             Text: |-
                 ="Request Send To:"
             Width: =161
-            X: =1068
-            Y: =316
+            X: =1063
+            Y: =311
             ZIndex: =14
 
         LblCarryForward_1 As label:
@@ -258,4 +258,18 @@ Screen2 As screen:
             X: =1066
             Y: =471
             ZIndex: =16
+
+    Button5 As button:
+        BorderColor: =RGBA(157, 218, 250, 1)
+        BorderThickness: =5
+        Color: =RGBA(56, 86, 153, 1)
+        Fill: =RGBA(229, 234, 243, 1)
+        Height: =133
+        HoverBorderColor: =RGBA(216, 223, 238, 1)
+        PressedBorderColor: =
+        Text: ="Button"
+        Width: =272
+        X: =176
+        Y: =218
+        ZIndex: =17
 

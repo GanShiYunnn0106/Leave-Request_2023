@@ -1,4 +1,6 @@
 LoginScreen As screen:
+    Fill: |
+        =RGBA(255,255,255,1)
     Height: =Max(App.Height, App.DesignHeight)
     OnVisible: |
         =//whenever user navigates to this page, set their approver to their manager
