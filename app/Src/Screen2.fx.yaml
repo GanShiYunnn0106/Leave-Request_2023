@@ -10,8 +10,8 @@ Screen2 As screen:
         PressedBorderColor: =
         Text: ="Button"
         Width: =272
-        X: =176
-        Y: =218
+        X: =791
+        Y: =28
         ZIndex: =17
 
     GroupRequestDetails_1 As group:
@@ -272,4 +272,293 @@ Screen2 As screen:
             X: =1066
             Y: =471
             ZIndex: =16
+
+    Label11_44 As label:
+        FontWeight: =FontWeight.Semibold
+        Height: =44
+        Text: |-
+            ="Annual Leave Taken :"
+        Width: =294
+        X: =37
+        Y: =202
+        ZIndex: =18
+
+    Label11_45 As label:
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =2
+        Text: =LeaveBalanceGallery.Selected.AnnualLeaveTaken & " day(s)"
+        Width: =273
+        X: =37
+        Y: =233
+        ZIndex: =19
+
+    Label11_46 As label:
+        FontWeight: =FontWeight.Semibold
+        Height: =44
+        Text: |-
+            ="Annual Leave Balance :"
+        Width: =294
+        X: =348
+        Y: =203
+        ZIndex: =20
+
+    Label11_47 As label:
+        Height: =34
+        Text: =Value(LeaveBalanceGallery.Selected.Annual_x0020_Leave_x0020_Balance) & " day(s)"
+        Width: =270
+        X: =344
+        Y: =237
+        ZIndex: =21
+
+    Label11_48 As label:
+        FontWeight: =FontWeight.Semibold
+        Height: =44
+        Text: |-
+            ="Medical Leave Taken :"
+        Width: =326
+        X: =34
+        Y: =268
+        ZIndex: =22
+
+    Label11_49 As label:
+        Height: =38
+        Text: =LeaveBalanceGallery.Selected.MedicalLeaveTaken & " day(s)"
+        Width: =286
+        X: =34
+        Y: =298
+        ZIndex: =23
+
+    Label11_50 As label:
+        FontWeight: =FontWeight.Semibold
+        Height: =41
+        Text: |-
+            ="Medical Leave Balance :"
+        Width: =316
+        X: =350
+        Y: =271
+        ZIndex: =24
+
+    Label11_51 As label:
+        Height: =34
+        Text: =Value(LeaveBalanceGallery.Selected.Medical_x0020_Leave_x0020_Balanc) & " day(s)"
+        Width: =270
+        X: =350
+        Y: =304
+        ZIndex: =25
+
+    Label11_52 As label:
+        FontWeight: =FontWeight.Semibold
+        Height: =45
+        Text: |-
+            ="Compassionate Leave Taken :"
+        Width: =326
+        X: =34
+        Y: =340
+        ZIndex: =26
+
+    Label11_53 As label:
+        Height: =34
+        Text: =LeaveBalanceGallery.Selected.CompassionateLeaveTaken & " day(s)"
+        Width: =300
+        X: =34
+        Y: =382
+        ZIndex: =27
+
+    Label11_54 As label:
+        FontWeight: =FontWeight.Semibold
+        Height: =44
+        Text: |-
+            ="Compassionate Leave Balance :"
+        Width: =294
+        X: =344
+        Y: =342
+        ZIndex: =28
+
+    Label11_55 As label:
+        Height: =34
+        Text: =Value(LeaveBalanceGallery.Selected.Compassionate_x0020_Leave_x0020_) & " day(s)"
+        Width: =270
+        X: =347
+        Y: =383
+        ZIndex: =29
+
+    Label11_56 As label:
+        FontWeight: =FontWeight.Semibold
+        Height: =45
+        Text: |-
+            ="Annual Carried Forward Balance :"
+        Width: =326
+        X: =663
+        Y: =201
+        ZIndex: =30
+
+    Label11_57 As label:
+        Height: =34
+        Text: =LeaveBalanceGallery.Selected.AnnualCarriedForward & " day(s)"
+        Width: =300
+        X: =663
+        Y: =231
+        ZIndex: =31
+
+    Label11_58 As label:
+        FontWeight: =FontWeight.Semibold
+        Height: =45
+        Text: |-
+            ="Marriage Leave Taken :"
+        Width: =326
+        X: =34
+        Y: =423
+        ZIndex: =32
+
+    Label11_59 As label:
+        Height: =34
+        Text: =LeaveBalanceGallery.Selected.MarriageLeaveTaken & " day(s)"
+        Width: =300
+        X: =34
+        Y: =468
+        ZIndex: =33
+
+    Label11_60 As label:
+        FontWeight: =FontWeight.Semibold
+        Height: =44
+        Text: |-
+            ="Marriage Leave Balance :"
+        Width: =294
+        X: =347
+        Y: =425
+        ZIndex: =34
+
+    Label11_61 As label:
+        Height: =34
+        Text: =Value(LeaveBalanceGallery.Selected.Marriage_x0020_Leave_x0020_Balan) & " day(s)"
+        Width: =270
+        X: =344
+        Y: =468
+        ZIndex: =35
+
+    Label11_62 As label:
+        FontWeight: =FontWeight.Semibold
+        Height: =45
+        Text: |-
+            ="Paternity Leave Taken :"
+        Width: =326
+        X: =34
+        Y: =507
+        ZIndex: =36
+
+    Label11_63 As label:
+        Height: =34
+        Text: =LeaveBalanceGallery.Selected.PaternityLeaveTaken & " day(s)"
+        Width: =300
+        X: =34
+        Y: =552
+        ZIndex: =37
+
+    Label11_64 As label:
+        FontWeight: =FontWeight.Semibold
+        Height: =44
+        Text: |-
+            ="Paternity Leave Balance :"
+        Width: =294
+        X: =347
+        Y: =508
+        ZIndex: =38
+
+    Label11_65 As label:
+        Height: =34
+        Text: =Value(LeaveBalanceGallery.Selected.Paternity_x0020_Leave_x0020_Bala) & " day(s)"
+        Width: =270
+        X: =347
+        Y: =552
+        ZIndex: =39
+
+    Label11_66 As label:
+        FontWeight: =FontWeight.Semibold
+        Height: =45
+        Text: |-
+            ="Maternity Leave Taken :"
+        Width: =326
+        X: =34
+        Y: =592
+        ZIndex: =40
+
+    Label11_67 As label:
+        Height: =34
+        Text: =LeaveBalanceGallery.Selected.MaternityLeaveTaken & " day(s)"
+        Width: =300
+        X: =34
+        Y: =637
+        ZIndex: =41
+
+    Label11_68 As label:
+        FontWeight: =FontWeight.Semibold
+        Height: =44
+        Text: |-
+            ="Maternity Leave Balance :"
+        Width: =294
+        X: =347
+        Y: =592
+        ZIndex: =42
+
+    Label11_69 As label:
+        Height: =34
+        Text: =Value(LeaveBalanceGallery.Selected.Maternity_x0020_Leave_x0020_Bala) & " day(s)"
+        Width: =270
+        X: =347
+        Y: =632
+        ZIndex: =43
+
+    Label11_70 As label:
+        FontWeight: =FontWeight.Semibold
+        Height: =45
+        Text: |-
+            ="Hospitalization Leave Taken :"
+        Width: =326
+        X: =34
+        Y: =671
+        ZIndex: =44
+
+    Label11_71 As label:
+        Height: =34
+        Text: =LeaveBalanceGallery.Selected.HospitalizationLeaveTaken & " day(s)"
+        Width: =300
+        X: =34
+        Y: =707
+        ZIndex: =45
+
+    Label11_72 As label:
+        FontWeight: =FontWeight.Semibold
+        Height: =44
+        Text: |-
+            ="Hospitalization Leave Balance :"
+        Width: =294
+        X: =348
+        Y: =671
+        ZIndex: =46
+
+    Label11_73 As label:
+        Height: =34
+        Text: =Value(LeaveBalanceGallery.Selected.Hospitalization_x0020_Leave_x002) & " day(s)"
+        Width: =270
+        X: =347
+        Y: =707
+        ZIndex: =47
+
+    Label11_74 As label:
+        FontWeight: =FontWeight.Semibold
+        Height: =45
+        Text: |-
+            ="Unpaid Leave Taken :"
+        Width: =326
+        X: =663
+        Y: =270
+        ZIndex: =48
+
+    Label11_75 As label:
+        Height: =34
+        Text: =LeaveBalanceGallery.Selected.UnpaidLeaveTaken & " day(s)"
+        Width: =300
+        X: =663
+        Y: =302
+        ZIndex: =49
 
