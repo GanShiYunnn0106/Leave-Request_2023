@@ -262,16 +262,16 @@ HomeScreen As screen:
         ZIndex: =12
 
     Label11 As label:
-        BorderColor: =RGBA(62, 96, 170, 1)
         BorderThickness: =3
-        Height: =100
+        FontWeight: =FontWeight.Semibold
+        Height: =68
         Overflow: =Overflow.Scroll
         Text: =GalleryRequest.Selected.Remarks_By_Decision_Maker
         Visible: |
             =_managerView && ((GalleryRequest.Selected.Status.Value) = "Approved" || (GalleryRequest.Selected.Status.Value) = "Rejected")
-        Width: =236
-        X: =1078
-        Y: =584
+        Width: =246
+        X: =1091
+        Y: =594
         ZIndex: =32
 
     Group4 As group:
@@ -512,7 +512,7 @@ HomeScreen As screen:
             Text: |
                 =GalleryRequest.Selected.Days
             Width: =157
-            X: =1068
+            X: =1078
             Y: =194
             ZIndex: =21
 
@@ -604,14 +604,14 @@ HomeScreen As screen:
             ZIndex: =30
 
         LblRemarksHeader As label:
-            Height: =30
+            Height: =45
             Text: |-
                 ="Remarks: "
             Visible: |
                 =_managerView
-            Width: =147
+            Width: =137
             X: =1076
-            Y: =554
+            Y: =543
             ZIndex: =31
 
     Header_11 As group:
