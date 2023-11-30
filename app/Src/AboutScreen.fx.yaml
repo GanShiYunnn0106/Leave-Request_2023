@@ -181,7 +181,7 @@ AboutScreen As screen:
             FocusedBorderColor: =AboutTitle.BorderColor
             Font: =Font.Lato
             FontWeight: =FontWeight.Bold
-            Height: =21
+            Height: =19
             HoverBorderColor: =AboutTitle.BorderColor
             HoverColor: =AboutTitle.Color
             HoverFill: =AboutTitle.Fill
@@ -198,15 +198,15 @@ AboutScreen As screen:
             Text: |-
                 ="Learn about the types of leave:"
             Width: =862
-            X: =256
-            Y: =101
+            X: =252
+            Y: =154
             ZIndex: =42
 
         AboutLeaveTypeGallery As gallery.galleryVertical:
             Default: =If(!IsBlank(_aboutSelectedLeaveType),LookUp(LeaveTypeCollection, type=_aboutSelectedLeaveType))
             DisabledBorderColor: =AboutLeaveTypeGallery.BorderColor
             DisabledFill: =AboutLeaveTypeGallery.Fill
-            Height: =353
+            Height: =332
             HoverBorderColor: =AboutLeaveTypeGallery.BorderColor
             HoverFill: =AboutLeaveTypeGallery.Fill
             Items: =LeaveTypeCollection
@@ -218,10 +218,10 @@ AboutScreen As screen:
             ShowScrollbar: =false
             TemplatePadding: =28
             TemplateSize: =55
-            Width: =786
+            Width: =808
             WrapCount: =3
-            X: =272
-            Y: =120
+            X: =279
+            Y: =174
             ZIndex: =43
 
             AboutLeaveTypeIcon As image:
@@ -307,7 +307,7 @@ AboutScreen As screen:
         AboutLeaveTypeDescription As label:
             FocusedBorderColor: =AboutLeaveTypeDescription.BorderColor
             FontWeight: =FontWeight.Semibold
-            Height: =325
+            Height: =304
             HoverBorderColor: =AboutLeaveTypeDescription.BorderColor
             HoverColor: =AboutLeaveTypeDescription.Color
             HoverFill: =AboutLeaveTypeDescription.Fill
@@ -324,7 +324,7 @@ AboutScreen As screen:
             Text: =LookUp(LeaveTypeCollection,type = _aboutSelectedLeaveType).description
             Width: =900
             X: =256
-            Y: =401
+            Y: =422
             ZIndex: =45
 
         AboutLeaveGallerySeparator As rectangle:
@@ -337,6 +337,28 @@ AboutScreen As screen:
             PressedFill: =AboutLeaveGallerySeparator.Fill
             Width: =939
             X: =231
-            Y: =381
+            Y: =419
             ZIndex: =46
+
+    Label32 As label:
+        FontWeight: =FontWeight.Semibold
+        Height: =61
+        Text: ="For more information, please refer to the original document located under the Dynafront Group Channel > Files > Employee Guide."
+        Width: =909
+        X: =245
+        Y: =80
+        ZIndex: =48
+
+    AboutLeaveGallerySeparator_1 As rectangle:
+        DisabledFill: =AboutLeaveGallerySeparator_1.Fill
+        Fill: =RGBA(205, 205, 205, 1)
+        FocusedBorderColor: =AboutLeaveGallerySeparator_1.BorderColor
+        FocusedBorderThickness: =0
+        Height: =2
+        HoverFill: =AboutLeaveGallerySeparator_1.Fill
+        PressedFill: =AboutLeaveGallerySeparator_1.Fill
+        Width: =939
+        X: =230
+        Y: =139
+        ZIndex: =49
 

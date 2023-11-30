@@ -12,7 +12,8 @@ LeaveInformationScreen As screen:
                 Sort(
                     Filter(
                     LeaveApp_Request,
-                    Status.Value = ButtonFilter_1.Selected.Filter
+                    Status.Value = ButtonFilter_1.Selected.Filter && Year(Start_Date) = Year(Today())
+                    
                 ),
                 Created,
                 SortOrder.Descending
