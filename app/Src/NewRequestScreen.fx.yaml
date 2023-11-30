@@ -65,8 +65,9 @@ NewRequestScreen As screen:
             HolidayCollection,
             Filter(
                 LeaveApp_PublicHoliday,
-                HolidayDates >= Today()
+                HolidayDates >= Today()   
             )
+            
         );
         
             Set(_leaveStart, GalleryRequest.Selected.Start_Date);
@@ -448,56 +449,38 @@ NewRequestScreen As screen:
                         _numFullWeeks * 5 + _numPartialWeekdays
                     );
                 
-                ClearCollect(
-                    HolidayCollection,
-                    Filter(
-                        LeaveApp_PublicHoliday,
-                        HolidayDates >= Today()
-                    )
-                );
-                
-                
-                    Set(HolidayStartDate,LookUp(
+                   Set(
+                        HolidayStartDate,
+                        LookUp(
                             LeaveApp_PublicHoliday,
                             (HolidayDates > LeaveStartDatePicker.SelectedDate && HolidayDates <= LeaveEndDatePicker.SelectedDate)
-                        ).HolidayDates );
-                
-                
-                    Set(HolidayLastDate,LookUp(
+                        ).HolidayDates
+                    );
+                    Set(
+                        HolidayLastDate,
+                        LookUp(
                             LeaveApp_PublicHoliday,
                             (ToDate > LeaveStartDatePicker.SelectedDate && ToDate <= LeaveEndDatePicker.SelectedDate)
-                        ).ToDate);
+                        ).ToDate
+                    );
+                    Set(
+                        NumberOfDaysForHolidays,
+                        DateDiff(
+                            HolidayStartDate,
+                            HolidayLastDate
+                        ) + 1
+                    );
                 
-                If(CountIf(
-                                LeaveApp_PublicHoliday,
-                                HolidayDates >= LeaveStartDatePicker.SelectedDate,
-                                HolidayDates <= LeaveEndDatePicker.SelectedDate
-                            ) >= 1,    
-                    //calculate holiday if start date and end date is the same
-                If(
-                        HolidayStartDate = HolidayLastDate,
-                        Set(
+                Set(
                             _holidaysInRequest,
                             CountIf(
                                 LeaveApp_PublicHoliday,
                                 HolidayDates >= LeaveStartDatePicker.SelectedDate,
                                 HolidayDates <= LeaveEndDatePicker.SelectedDate
                             )
-                        )
-                    );
-                         //calculate holiday if start date and end date is not same
-                If(
-                        HolidayStartDate < HolidayStartDate,
-                        Set(
-                            _holidaysInRequest,
-                            CountIf(
-                                LeaveApp_PublicHoliday,
-                                HolidayDates >= LeaveStartDatePicker.SelectedDate,
-                                HolidayDates <= LeaveEndDatePicker.SelectedDate
-                            ) + DateDiff( HolidayStartDate,HolidayLastDate)
-                        )
-                    ));
-                    If(
+                        );
+                
+                 If(
                         (_workDaysInRequest - _holidaysInRequest) < 0,
                         Set(
                             _requestedDays,
@@ -507,7 +490,7 @@ NewRequestScreen As screen:
                             _requestedDays,
                             _workDaysInRequest - _holidaysInRequest
                         )
-                    );
+                    )
                     
                 )
             PressedBorderColor: =LeaveStartDatePicker.BorderColor
