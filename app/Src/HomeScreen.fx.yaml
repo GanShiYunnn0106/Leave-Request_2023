@@ -23,7 +23,7 @@ HomeScreen As screen:
         BorderThickness: =
         DelayItemLoading: =true
         Fill: =RGBA(255, 255, 255, 1)
-        Height: =579
+        Height: =610
         Items: |+
             =If(
                 !_managerView,

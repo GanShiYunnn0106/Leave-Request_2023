@@ -175,7 +175,6 @@ CompanyHolidaysScreen As screen:
         PressedFill: =LblHolidaysHeader.Fill
         Size: =14
         Text: ="Below is a list of our company's paid holidays during which our offices will be closed for observance."
-        Underline: =true
         Width: =904
         X: =232
         Y: =104
@@ -236,9 +235,14 @@ CompanyHolidaysScreen As screen:
             PressedColor: =Label13.Color
             PressedFill: =Label13.Fill
             Size: =13.8
-            Text: =Text(ThisItem.HolidayDates, "[$-en-US]ddd, dd mmm yyyy") & "  -  " & Text(ThisItem.ToDate, "[$-en-US]ddd, dd mmm yyyy")
+            Text: |-
+                =If(
+                    DateValue(ThisItem.HolidayDates) = DateValue(ThisItem.ToDate),
+                    Text(DateValue(ThisItem.HolidayDates), "[$-en-US]ddd, dd mmm yyyy"),
+                    Text(DateValue(ThisItem.HolidayDates), "[$-en-US]ddd, dd mmm yyyy") & "  -  " & Text(DateValue(ThisItem.ToDate), "[$-en-US]ddd, dd mmm yyyy")
+                )
             Width: =442
-            X: =395
+            X: =405
             ZIndex: =2
 
         Rectangle5 As rectangle:
