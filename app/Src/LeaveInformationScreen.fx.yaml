@@ -21,10 +21,10 @@ LeaveInformationScreen As screen:
         Layout: =Layout.Vertical
         LoadingSpinner: =LoadingSpinner.Data
         TemplatePadding: =0
-        TemplateSize: =265
+        TemplateSize: =190
         Width: =1133
-        X: =221
-        Y: =164
+        X: =220
+        Y: =163
         ZIndex: =1
 
         Separator7 As rectangle:
@@ -43,7 +43,7 @@ LeaveInformationScreen As screen:
             ZIndex: =6
 
         Label9 As label:
-            Height: =259
+            Height: =132
             OnSelect: =Select(Parent)
             Size: =13.6
             Text: |-
@@ -51,13 +51,7 @@ LeaveInformationScreen As screen:
                 
                 Leave Type:
                 
-                Start Date:
-                
-                End Date:
-                
                 Details:
-                
-                Total Days:
                 "
             Width: =122
             X: =26
@@ -65,23 +59,23 @@ LeaveInformationScreen As screen:
 
         Label10 As label:
             FontWeight: =FontWeight.Semibold
-            Height: =47
+            Height: =46
             OnSelect: =Select(Parent)
-            Size: =14.5
+            Size: =14
             Text: =ThisItem.Created_By.DisplayName
-            Width: =665
-            X: =175
+            Width: =448
+            X: =132
             ZIndex: =8
 
         Label14 As label:
             FontWeight: =FontWeight.Semibold
-            Height: =38
+            Height: =105
             OnSelect: =Select(Parent)
             Size: =14.5
             Text: =ThisItem.Comments
-            Width: =915
-            X: =177
-            Y: =175
+            Width: =381
+            X: =132
+            Y: =57
             ZIndex: =9
 
         Label22 As label:
@@ -91,19 +85,19 @@ LeaveInformationScreen As screen:
             Size: =14.5
             Text: =ThisItem.End_Date
             Width: =210
-            X: =177
-            Y: =134
+            X: =685
+            Y: =44
             ZIndex: =12
 
         Label23 As label:
             FontWeight: =FontWeight.Semibold
-            Height: =35
+            Height: =39
             OnSelect: =Select(Parent)
             Size: =14.5
             Text: =ThisItem.Leave_Type.Value
-            Width: =548
-            X: =177
-            Y: =47
+            Width: =303
+            X: =148
+            Y: =46
             ZIndex: =13
 
         Label24 As label:
@@ -113,8 +107,8 @@ LeaveInformationScreen As screen:
             Size: =14.5
             Text: =ThisItem.Start_Date
             Width: =293
-            X: =177
-            Y: =90
+            X: =685
+            Y: =1
             ZIndex: =14
 
         Rectangle20 As rectangle:
@@ -122,18 +116,18 @@ LeaveInformationScreen As screen:
             Height: =2
             OnSelect: =Select(Parent)
             Width: =1134
-            Y: =257
+            Y: =190
             ZIndex: =18
 
         Label18 As label:
             FontWeight: =FontWeight.Semibold
-            Height: =30
+            Height: =45
             OnSelect: =Select(Parent)
             Size: =14.5
             Text: =ThisItem.Days & " days"
             Width: =204
-            X: =175
-            Y: =226
+            X: =691
+            Y: =87
             ZIndex: =19
 
         Button7 As button:
@@ -141,7 +135,6 @@ LeaveInformationScreen As screen:
                 =If((ThisItem.Status.Value)="Pending",RGBA(0,71,144,1),
                 (ThisItem.Status.Value)="Rejected",RGBA(213,0,0,1),
                 (ThisItem.Status.Value)="Approved",RGBA(0,128,0,1))
-            BorderThickness: =3
             Color: |-
                 =If((ThisItem.Status.Value)="Pending",RGBA(0,71,144,1),
                 (ThisItem.Status.Value)="Rejected",RGBA(213,0,0,1),
@@ -156,17 +149,31 @@ LeaveInformationScreen As screen:
             Fill: =RGBA(255, 255, 255, 1)
             Font: =Font.'Lato Black'
             FontWeight: =FontWeight.Normal
-            Height: =43
+            Height: =35
             OnSelect: =Select(Parent)
             PressedBorderColor: =
             PressedColor: =
             PressedFill: =
             Size: =18
             Text: =ThisItem.Status.Value
-            Width: =156
-            X: =881
-            Y: =101
+            Width: =145
+            X: =936
+            Y: =115
             ZIndex: =20
+
+        Label31 As label:
+            Height: =128
+            OnSelect: =Select(Parent)
+            Text: |-
+                ="Start Date:
+                
+                End Date:
+                
+                Total Days:"
+            Width: =111
+            X: =580
+            Y: =4
+            ZIndex: =21
 
     Navigation_2 As Navigation:
         CurrentScreen: ="Leave Information"
