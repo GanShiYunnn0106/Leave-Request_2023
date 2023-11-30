@@ -272,7 +272,6 @@ CompanyHolidaysScreen As screen:
 
     Label4 As label:
         Align: =Align.Center
-        Font: =Font.Georgia
         FontWeight: =FontWeight.Semibold
         Height: =36
         Size: =14
@@ -281,8 +280,8 @@ CompanyHolidaysScreen As screen:
         Underline: =true
         Visible: =_managerView=true
         Width: =232
-        X: =1121
-        Y: =136
+        X: =1105
+        Y: =138
         ZIndex: =38
 
     Group1 As group:

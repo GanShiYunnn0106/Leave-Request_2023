@@ -3,24 +3,24 @@ EmployeeLeaveDetail As screen:
     Label1_17 As label:
         Color: =RGBA(101, 128, 187, 1)
         FontWeight: =FontWeight.Bold
-        Height: =67
+        Height: =49
         Size: =20
         Text: ="Leave Details  -  " & LeaveBalanceGallery.Selected.NameofEmployee.DisplayName
-        Width: =495
-        X: =246
-        Y: =85
+        Width: =1019
+        X: =305
+        Y: =99
         ZIndex: =1
 
     Gallery1 As gallery.galleryVertical:
         DelayItemLoading: =true
-        Height: =555
+        Height: =543
         Items: =Filter(LeaveApp_Request,Created_By.DisplayName = _selectedEmployee)
         Layout: =Layout.Vertical
         LoadingSpinner: =LoadingSpinner.Data
-        TemplateSize: =59
-        Width: =1135
-        X: =231
-        Y: =213
+        TemplateSize: =60
+        Width: =1149
+        X: =216
+        Y: =215
         ZIndex: =1
 
         Label28 As label:
@@ -54,6 +54,7 @@ EmployeeLeaveDetail As screen:
             ZIndex: =4
 
         Label28_4 As label:
+            Align: =Align.Center
             Height: =25
             OnSelect: =Select(Parent)
             Size: =11
@@ -64,6 +65,7 @@ EmployeeLeaveDetail As screen:
             ZIndex: =5
 
         Label28_5 As label:
+            Align: =Align.Center
             Height: =25
             OnSelect: =Select(Parent)
             Size: =11
@@ -74,6 +76,7 @@ EmployeeLeaveDetail As screen:
             ZIndex: =6
 
         Label28_6 As label:
+            Align: =Align.Center
             Height: =25
             OnSelect: =Select(Parent)
             Size: =11
@@ -263,7 +266,7 @@ EmployeeLeaveDetail As screen:
         Height: =2
         Width: =1135
         X: =231
-        Y: =155
+        Y: =167
         ZIndex: =43
 
     Title2_1 As label:
@@ -395,10 +398,19 @@ EmployeeLeaveDetail As screen:
         ZIndex: =52
 
     Rectangle12_1 As rectangle:
-        Fill: =RGBA(217, 216, 217, 1)
-        Height: =1
-        Width: =1120
-        X: =240
+        Fill: =RGBA(204, 204, 204, 1)
+        Height: =2
+        Width: =1135
+        X: =231
         Y: =216
         ZIndex: =53
+
+    Icon4 As icon.BackArrow:
+        Height: =40
+        Icon: =Icon.BackArrow
+        OnSelect: =Navigate(EmployeeLeaveBalance)
+        Width: =40
+        X: =248
+        Y: =100
+        ZIndex: =54
 

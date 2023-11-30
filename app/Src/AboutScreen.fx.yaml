@@ -197,7 +197,7 @@ AboutScreen As screen:
             Size: =13.5
             Text: |-
                 ="Learn about the types of leave:"
-            Width: =855
+            Width: =862
             X: =256
             Y: =101
             ZIndex: =42
@@ -206,7 +206,7 @@ AboutScreen As screen:
             Default: =If(!IsBlank(_aboutSelectedLeaveType),LookUp(LeaveTypeCollection, type=_aboutSelectedLeaveType))
             DisabledBorderColor: =AboutLeaveTypeGallery.BorderColor
             DisabledFill: =AboutLeaveTypeGallery.Fill
-            Height: =337
+            Height: =353
             HoverBorderColor: =AboutLeaveTypeGallery.BorderColor
             HoverFill: =AboutLeaveTypeGallery.Fill
             Items: =LeaveTypeCollection
@@ -218,10 +218,10 @@ AboutScreen As screen:
             ShowScrollbar: =false
             TemplatePadding: =28
             TemplateSize: =55
-            Width: =780
+            Width: =786
             WrapCount: =3
             X: =261
-            Y: =120
+            Y: =121
             ZIndex: =43
 
             AboutLeaveTypeIcon As image:
@@ -307,7 +307,7 @@ AboutScreen As screen:
         AboutLeaveTypeDescription As label:
             FocusedBorderColor: =AboutLeaveTypeDescription.BorderColor
             FontWeight: =FontWeight.Semibold
-            Height: =354
+            Height: =371
             HoverBorderColor: =AboutLeaveTypeDescription.BorderColor
             HoverColor: =AboutLeaveTypeDescription.Color
             HoverFill: =AboutLeaveTypeDescription.Fill
@@ -322,9 +322,9 @@ AboutScreen As screen:
             PressedFill: =AboutLeaveTypeDescription.Fill
             Size: =14
             Text: =LookUp(LeaveTypeCollection,type = _aboutSelectedLeaveType).description
-            Width: =892
+            Width: =899
             X: =237
-            Y: =384
+            Y: =397
             ZIndex: =45
 
         AboutLeaveGallerySeparator As rectangle:
@@ -335,8 +335,8 @@ AboutScreen As screen:
             Height: =1
             HoverFill: =AboutLeaveGallerySeparator.Fill
             PressedFill: =AboutLeaveGallerySeparator.Fill
-            Width: =890
+            Width: =897
             X: =239
-            Y: =384
+            Y: =397
             ZIndex: =46
 

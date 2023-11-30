@@ -213,14 +213,14 @@ HomeScreen As screen:
         ButtonCategories As button:
             BorderColor: =RGBA(62, 96, 170, 1)
             BorderThickness: =3
-            Color: =If(ButtonFilter.Selected.Filter=ThisItem.Filter,RGBA(255, 255, 255, 1),RGBA(10, 106, 204, 1))
+            Color: =If(ButtonFilter.Selected.Filter=ThisItem.Filter,RGBA(255, 255, 255, 1),RGBA(0,71,144,1))
             DisabledBorderColor: =ColorFade(ButtonFilter.BorderColor, 30%)
             Fill: =If(ButtonFilter.Selected.Filter=ThisItem.Filter,RGBA(0, 71, 144, 1),RGBA(255, 255, 255, 1))
             Font: =Font.'Lato Black'
             Height: =37
             OnSelect: =
             PressedBorderColor: =ButtonFilter.Fill
-            PressedColor: =If(ButtonFilter.Selected.Filter=ThisItem.Filter,RGBA(255, 255, 255, 1),RGBA(10, 106, 204, 1))
+            PressedColor: =If(ButtonFilter.Selected.Filter=ThisItem.Filter,RGBA(255, 255, 255, 1),RGBA(0,71,144,1))
             RadiusBottomLeft: =35
             RadiusBottomRight: =35
             RadiusTopLeft: =35
@@ -262,16 +262,17 @@ HomeScreen As screen:
         ZIndex: =12
 
     Label11 As label:
-        BorderColor: =RGBA(62, 96, 170, 1)
+        BorderColor: =RGBA(0,71,144,1)
         BorderThickness: =3
-        Height: =100
+        FontWeight: =FontWeight.Semibold
+        Height: =68
         Overflow: =Overflow.Scroll
         Text: =GalleryRequest.Selected.Remarks_By_Decision_Maker
         Visible: |
             =_managerView && ((GalleryRequest.Selected.Status.Value) = "Approved" || (GalleryRequest.Selected.Status.Value) = "Rejected")
-        Width: =236
+        Width: =259
         X: =1078
-        Y: =584
+        Y: =594
         ZIndex: =32
 
     Group4 As group:
@@ -512,7 +513,7 @@ HomeScreen As screen:
             Text: |
                 =GalleryRequest.Selected.Days
             Width: =157
-            X: =1068
+            X: =1078
             Y: =194
             ZIndex: =21
 
@@ -552,7 +553,7 @@ HomeScreen As screen:
             OnSelect: =
             Text: =GalleryRequest.Selected.UnpaidLeave & " days"
             Width: =161
-            X: =1076
+            X: =1070
             Y: =503
             ZIndex: =25
 
@@ -604,14 +605,14 @@ HomeScreen As screen:
             ZIndex: =30
 
         LblRemarksHeader As label:
-            Height: =30
+            Height: =45
             Text: |-
                 ="Remarks: "
             Visible: |
                 =_managerView
-            Width: =147
+            Width: =137
             X: =1076
-            Y: =554
+            Y: =543
             ZIndex: =31
 
     Header_11 As group:
