@@ -100,7 +100,7 @@ HomeScreen As screen:
             PaddingLeft: =0
             PaddingRight: =0
             PaddingTop: =0
-            Text: =Text(DateTimeValue(Text(ThisItem.Start_Date)),DateTimeFormat.LongDate)
+            Text: =Text(ThisItem.Start_Date, "[$-en-US]dd mmm yyyy")
             VerticalAlign: =VerticalAlign.Top
             Width: =353
             X: =156
@@ -115,7 +115,7 @@ HomeScreen As screen:
             PaddingLeft: =0
             PaddingRight: =0
             PaddingTop: =0
-            Text: =Text(DateTimeValue(Text(ThisItem.End_Date)),DateTimeFormat.LongDate)
+            Text: =Text(ThisItem.End_Date, "[$-en-US]dd mmm yyyy")
             VerticalAlign: =VerticalAlign.Top
             Width: =TitleStartDate.Width
             X: =156
@@ -262,8 +262,8 @@ HomeScreen As screen:
         ZIndex: =12
 
     Label11 As label:
-        BorderColor: =RGBA(0,71,144,1)
-        BorderThickness: =3
+        BorderThickness: =2
+        Fill: =RGBA(255, 255, 255, 1)
         FontWeight: =FontWeight.Semibold
         Height: =68
         Overflow: =Overflow.Scroll
@@ -271,8 +271,8 @@ HomeScreen As screen:
         Visible: |
             =_managerView && ((GalleryRequest.Selected.Status.Value) = "Approved" || (GalleryRequest.Selected.Status.Value) = "Rejected")
         Width: =259
-        X: =1078
-        Y: =594
+        X: =1071
+        Y: =570
         ZIndex: =32
 
     Group4 As group:
@@ -301,7 +301,7 @@ HomeScreen As screen:
             Visible: =_managerView && (GalleryRequest.Selected.Status.Value) = "Pending"
             Width: =241
             X: =1076
-            Y: =594
+            Y: =570
             ZIndex: =15
 
         RequestDetailsTitle_2 As label:
@@ -338,7 +338,7 @@ HomeScreen As screen:
             Visible: =!_managerView && (GalleryRequest.Selected.Status.Value) = "Pending"
             Width: =54
             X: =1119
-            Y: =684
+            Y: =660
             ZIndex: =17
 
         EditIcon_2 As icon.Edit:
@@ -348,7 +348,7 @@ HomeScreen As screen:
             Visible: =!_managerView && (GalleryRequest.Selected.Status.Value) = "Pending"
             Width: =23
             X: =1091
-            Y: =684
+            Y: =660
             ZIndex: =18
 
         ButtonManagerApprove_2 As button:
@@ -440,7 +440,7 @@ HomeScreen As screen:
                 =_managerView && (GalleryRequest.Selected.Status.Value) = "Pending"
             Width: =78
             X: =1107
-            Y: =714
+            Y: =660
             ZIndex: =19
 
         ButtonManagerDecline_2 As button:
@@ -503,17 +503,16 @@ HomeScreen As screen:
             Visible: =_managerView && (GalleryRequest.Selected.Status.Value) = "Pending"
             Width: =78
             X: =1213
-            Y: =714
+            Y: =660
             ZIndex: =20
 
         Days_2 As label:
             FontWeight: =FontWeight.Semibold
             Height: =36
             OnSelect: =
-            Text: |
-                =GalleryRequest.Selected.Days
+            Text: =GalleryRequest.Selected.Days & " days"
             Width: =157
-            X: =1078
+            X: =1070
             Y: =194
             ZIndex: =21
 
@@ -523,7 +522,7 @@ HomeScreen As screen:
             OnSelect: =
             Text: =GalleryRequest.Selected.Leave_Type.Value
             Width: =278
-            X: =1071
+            X: =1070
             Y: =260
             ZIndex: =22
 
@@ -534,27 +533,27 @@ HomeScreen As screen:
             Size: =12.5
             Text: =GalleryRequest.Selected.Requested_to.DisplayName
             Width: =295
-            X: =1071
-            Y: =345
+            X: =1070
+            Y: =337
             ZIndex: =23
 
         CarryForwardDays_2 As label:
             FontWeight: =FontWeight.Semibold
             Height: =35
             OnSelect: =
-            Text: =GalleryRequest.Selected.CarryForwardDays & " days"
+            Text: =If(IsBlank(GalleryRequest.Selected.CarryForwardDays),"-",GalleryRequest.Selected.CarryForwardDays &" days")
             Width: =213
-            X: =1071
-            Y: =425
+            X: =1070
+            Y: =409
             ZIndex: =24
 
         UnpaidLeave_2 As label:
             FontWeight: =FontWeight.Semibold
             OnSelect: =
-            Text: =GalleryRequest.Selected.UnpaidLeave & " days"
+            Text: =If(IsBlank(GalleryRequest.Selected.UnpaidLeave),"-",GalleryRequest.Selected.UnpaidLeave &" days")
             Width: =161
             X: =1070
-            Y: =503
+            Y: =480
             ZIndex: =25
 
         LblTotalDays_2 As label:
@@ -571,7 +570,7 @@ HomeScreen As screen:
             Text: |-
                 ="Leave Type:"
             Width: =161
-            X: =1068
+            X: =1070
             Y: =233
             ZIndex: =27
 
@@ -580,8 +579,8 @@ HomeScreen As screen:
             Text: |-
                 ="Request Send To:"
             Width: =161
-            X: =1066
-            Y: =320
+            X: =1070
+            Y: =304
             ZIndex: =28
 
         LblCarryForward_2 As label:
@@ -591,7 +590,7 @@ HomeScreen As screen:
                 ="Carry Forward Days:"
             Width: =206
             X: =1070
-            Y: =406
+            Y: =390
             ZIndex: =29
 
         LblUnpaidLeave_2 As label:
@@ -600,8 +599,8 @@ HomeScreen As screen:
             Text: |-
                 ="Unpaid Leaves:"
             Width: =171
-            X: =1071
-            Y: =473
+            X: =1070
+            Y: =457
             ZIndex: =30
 
         LblRemarksHeader As label:
@@ -611,8 +610,8 @@ HomeScreen As screen:
             Visible: |
                 =_managerView
             Width: =137
-            X: =1076
-            Y: =543
+            X: =1070
+            Y: =527
             ZIndex: =31
 
     Header_11 As group:

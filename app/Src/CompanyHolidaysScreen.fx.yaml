@@ -318,8 +318,8 @@ CompanyHolidaysScreen As screen:
             Text: ="Add"
             Visible: =_managerView=true
             Width: =86
-            X: =1190
-            Y: =479
+            X: =1193
+            Y: =499
             ZIndex: =37
 
     txtHoliday As text:

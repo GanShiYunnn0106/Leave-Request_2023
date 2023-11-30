@@ -24,6 +24,7 @@ EmployeeLeaveDetail As screen:
         ZIndex: =1
 
         Label28 As label:
+            Align: =Align.Center
             Height: =25
             OnSelect: =Select(Parent)
             Size: =11
@@ -34,22 +35,24 @@ EmployeeLeaveDetail As screen:
             ZIndex: =1
 
         Label28_2 As label:
+            Align: =Align.Center
             Height: =25
             OnSelect: =Select(Parent)
             Size: =11
             Text: =ThisItem.Start_Date
             Width: =100
-            X: =291
+            X: =300
             Y: =16
             ZIndex: =3
 
         Label28_3 As label:
+            Align: =Align.Center
             Height: =25
             OnSelect: =Select(Parent)
             Size: =11
             Text: =ThisItem.End_Date
             Width: =100
-            X: =391
+            X: =409
             Y: =16
             ZIndex: =4
 
@@ -60,7 +63,7 @@ EmployeeLeaveDetail As screen:
             Size: =11
             Text: =ThisItem.Days
             Width: =88
-            X: =500
+            X: =509
             Y: =16
             ZIndex: =5
 
@@ -120,7 +123,7 @@ EmployeeLeaveDetail As screen:
             Size: =10
             Text: =ThisItem.Status.Value
             Width: =75
-            X: =193
+            X: =202
             Y: =16
             ZIndex: =10
 
@@ -329,7 +332,7 @@ EmployeeLeaveDetail As screen:
         Text: ="End Date"
         VerticalAlign: =VerticalAlign.Top
         Width: =102
-        X: =634
+        X: =643
         Y: =185
         ZIndex: =48
 
@@ -393,7 +396,7 @@ EmployeeLeaveDetail As screen:
         Text: ="Approved By"
         VerticalAlign: =VerticalAlign.Top
         Width: =102
-        X: =1107
+        X: =1098
         Y: =185
         ZIndex: =52
 
