@@ -100,7 +100,7 @@ HomeScreen As screen:
             PaddingLeft: =0
             PaddingRight: =0
             PaddingTop: =0
-            Text: =ThisItem.Start_Date
+            Text: =Text(ThisItem.Start_Date, "[$-en-US]dd mmm yyyy")
             VerticalAlign: =VerticalAlign.Top
             Width: =353
             X: =156
@@ -115,7 +115,7 @@ HomeScreen As screen:
             PaddingLeft: =0
             PaddingRight: =0
             PaddingTop: =0
-            Text: =ThisItem.End_Date
+            Text: =Text(ThisItem.End_Date, "[$-en-US]dd mmm yyyy")
             VerticalAlign: =VerticalAlign.Top
             Width: =TitleStartDate.Width
             X: =156
@@ -541,8 +541,7 @@ HomeScreen As screen:
             FontWeight: =FontWeight.Semibold
             Height: =35
             OnSelect: =
-            Text: =GalleryRequest.Selected.CarryForwardDays & "days"
-            Visible: =!IsBlank(GalleryRequest.Selected.CarryForwardDays)
+            Text: =If(IsBlank(GalleryRequest.Selected.CarryForwardDays),"-",GalleryRequest.Selected.CarryForwardDays &" days")
             Width: =213
             X: =1070
             Y: =409
@@ -551,10 +550,10 @@ HomeScreen As screen:
         UnpaidLeave_2 As label:
             FontWeight: =FontWeight.Semibold
             OnSelect: =
-            Text: =GalleryRequest.Selected.UnpaidLeave & " days"
+            Text: =If(IsBlank(GalleryRequest.Selected.UnpaidLeave),"-",GalleryRequest.Selected.UnpaidLeave &" days")
             Width: =161
             X: =1070
-            Y: =487
+            Y: =480
             ZIndex: =25
 
         LblTotalDays_2 As label:
