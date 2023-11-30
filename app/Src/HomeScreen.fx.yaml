@@ -262,8 +262,8 @@ HomeScreen As screen:
         ZIndex: =12
 
     Label11 As label:
-        BorderColor: =RGBA(0,71,144,1)
-        BorderThickness: =3
+        BorderThickness: =2
+        Fill: =RGBA(255, 255, 255, 1)
         FontWeight: =FontWeight.Semibold
         Height: =68
         Overflow: =Overflow.Scroll
