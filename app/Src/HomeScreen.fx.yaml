@@ -23,7 +23,7 @@ HomeScreen As screen:
         BorderThickness: =
         DelayItemLoading: =true
         Fill: =RGBA(255, 255, 255, 1)
-        Height: =579
+        Height: =610
         Items: |+
             =If(
                 !_managerView,
@@ -510,7 +510,7 @@ HomeScreen As screen:
             FontWeight: =FontWeight.Semibold
             Height: =36
             OnSelect: =
-            Text: =GalleryRequest.Selected.Days & " days"
+            Text: =If(IsBlank(GalleryRequest.Selected.Days),"-",GalleryRequest.Selected.Days &" days")
             Width: =157
             X: =1070
             Y: =194
