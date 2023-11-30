@@ -21,10 +21,10 @@ LeaveInformationScreen As screen:
         Layout: =Layout.Vertical
         LoadingSpinner: =LoadingSpinner.Data
         TemplatePadding: =0
-        TemplateSize: =190
+        TemplateSize: =171
         Width: =1133
-        X: =220
-        Y: =163
+        X: =233
+        Y: =164
         ZIndex: =1
 
         Separator7 As rectangle:
@@ -34,13 +34,6 @@ LeaveInformationScreen As screen:
             Width: =806
             Y: =Parent.TemplateHeight - Self.Height
             ZIndex: =5
-
-        Rectangle17 As rectangle:
-            Height: =Parent.TemplateHeight - Separator7.Height
-            OnSelect: =Select(Parent)
-            Visible: =ThisItem.IsSelected
-            Width: =4
-            ZIndex: =6
 
         Label9 As label:
             Height: =132
@@ -64,18 +57,18 @@ LeaveInformationScreen As screen:
             Size: =14
             Text: =ThisItem.Created_By.DisplayName
             Width: =448
-            X: =132
+            X: =146
             ZIndex: =8
 
         Label14 As label:
             FontWeight: =FontWeight.Semibold
-            Height: =105
+            Height: =75
             OnSelect: =Select(Parent)
             Size: =14.5
-            Text: =ThisItem.Comments
-            Width: =381
-            X: =132
-            Y: =57
+            Text: =If(IsBlank(ThisItem.Comments),"-",ThisItem.Comments)
+            Width: =434
+            X: =146
+            Y: =69
             ZIndex: =9
 
         Label22 As label:
@@ -83,7 +76,7 @@ LeaveInformationScreen As screen:
             Height: =41
             OnSelect: =Select(Parent)
             Size: =14.5
-            Text: =ThisItem.End_Date
+            Text: =Text(ThisItem.End_Date, "[$-en-US]dd mmm yyyy")
             Width: =210
             X: =685
             Y: =44
@@ -105,7 +98,7 @@ LeaveInformationScreen As screen:
             Height: =44
             OnSelect: =Select(Parent)
             Size: =14.5
-            Text: =ThisItem.Start_Date
+            Text: =Text(ThisItem.Start_Date, "[$-en-US]dd mmm yyyy")
             Width: =293
             X: =685
             Y: =1
@@ -116,7 +109,7 @@ LeaveInformationScreen As screen:
             Height: =2
             OnSelect: =Select(Parent)
             Width: =1134
-            Y: =190
+            Y: =165
             ZIndex: =18
 
         Label18 As label:
@@ -147,18 +140,15 @@ LeaveInformationScreen As screen:
             DisabledFill: =
             DisplayMode: =DisplayMode.Disabled
             Fill: =RGBA(255, 255, 255, 1)
-            Font: =Font.'Lato Black'
-            FontWeight: =FontWeight.Normal
             Height: =35
             OnSelect: =Select(Parent)
             PressedBorderColor: =
             PressedColor: =
             PressedFill: =
-            Size: =18
             Text: =ThisItem.Status.Value
             Width: =145
-            X: =936
-            Y: =115
+            X: =927
+            Y: =61
             ZIndex: =20
 
         Label31 As label:
