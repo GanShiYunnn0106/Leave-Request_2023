@@ -24,6 +24,21 @@ LoginScreen As screen:
         Y: =221
         ZIndex: =6
 
+    Label25 As label:
+        Align: =Align.Center
+        Color: =RGBA(71, 90, 131, 1)
+        Font: =Font.Georgia
+        FontWeight: =FontWeight.Bold
+        Height: =128
+        Size: =35
+        Text: |-
+            ="REQUEST 
+            LEAVE"
+        Width: =425
+        X: =166
+        Y: =414
+        ZIndex: =7
+
     LoginAsEmployeeGroup As group:
         Height: =5
         Width: =5
@@ -50,7 +65,7 @@ LoginScreen As screen:
             PressedBorderColor: =LblEmployeeLogin.BorderColor
             PressedColor: =LblEmployeeLogin.Color
             PressedFill: =LblEmployeeLogin.Fill
-            Size: =12
+            Size: =12.5
             Text: ="TO SUBMIT A LEAVE REQUEST"
             Width: =299
             X: =945
@@ -89,21 +104,6 @@ LoginScreen As screen:
             Y: =269
             ZIndex: =5
 
-    Label25 As label:
-        Align: =Align.Center
-        Color: =RGBA(71, 90, 131, 1)
-        Font: =Font.Georgia
-        FontWeight: =FontWeight.Bold
-        Height: =128
-        Size: =35
-        Text: |-
-            ="REQUEST 
-            LEAVE"
-        Width: =425
-        X: =166
-        Y: =414
-        ZIndex: =7
-
     LoginAsManagerGroup As group:
         Height: =5
         Width: =5
@@ -130,10 +130,10 @@ LoginScreen As screen:
             PressedBorderColor: =LblManagerLogin.BorderColor
             PressedColor: =LblManagerLogin.Color
             PressedFill: =LblManagerLogin.Fill
-            Size: =12
+            Size: =12.5
             Text: ="TO APPROVE OR DECLINE LEAVE REQUESTS"
-            Width: =373
-            X: =909
+            Width: =418
+            X: =878
             Y: =440
             ZIndex: =2
 
@@ -170,8 +170,8 @@ LoginScreen As screen:
             RadiusTopRight: =15
             Size: =20
             Text: ="Login as a manager"
-            Width: =318
-            X: =936
+            Width: =344
+            X: =922
             Y: =488
             ZIndex: =3
 

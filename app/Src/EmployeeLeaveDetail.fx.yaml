@@ -54,6 +54,7 @@ EmployeeLeaveDetail As screen:
             ZIndex: =4
 
         Label28_4 As label:
+            Align: =Align.Center
             Height: =25
             OnSelect: =Select(Parent)
             Size: =11
@@ -64,6 +65,7 @@ EmployeeLeaveDetail As screen:
             ZIndex: =5
 
         Label28_5 As label:
+            Align: =Align.Center
             Height: =25
             OnSelect: =Select(Parent)
             Size: =11
@@ -74,6 +76,7 @@ EmployeeLeaveDetail As screen:
             ZIndex: =6
 
         Label28_6 As label:
+            Align: =Align.Center
             Height: =25
             OnSelect: =Select(Parent)
             Size: =11
