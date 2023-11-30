@@ -3,12 +3,12 @@ EmployeeLeaveDetail As screen:
     Label1_17 As label:
         Color: =RGBA(101, 128, 187, 1)
         FontWeight: =FontWeight.Bold
-        Height: =67
+        Height: =49
         Size: =20
         Text: ="Leave Details  -  " & LeaveBalanceGallery.Selected.NameofEmployee.DisplayName
-        Width: =495
-        X: =246
-        Y: =85
+        Width: =1019
+        X: =305
+        Y: =99
         ZIndex: =1
 
     Gallery1 As gallery.galleryVertical:
@@ -404,4 +404,13 @@ EmployeeLeaveDetail As screen:
         X: =240
         Y: =216
         ZIndex: =53
+
+    Icon4 As icon.BackArrow:
+        Height: =40
+        Icon: =Icon.BackArrow
+        OnSelect: =Navigate(EmployeeLeaveBalance)
+        Width: =40
+        X: =248
+        Y: =100
+        ZIndex: =54
 

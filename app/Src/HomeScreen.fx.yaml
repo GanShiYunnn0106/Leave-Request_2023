@@ -552,7 +552,7 @@ HomeScreen As screen:
             OnSelect: =
             Text: =GalleryRequest.Selected.UnpaidLeave & " days"
             Width: =161
-            X: =1076
+            X: =1070
             Y: =503
             ZIndex: =25
 
