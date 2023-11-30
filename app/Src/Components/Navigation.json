@@ -39,9 +39,10 @@
             "LayoutName": "",
             "MetaDataIDKey": "",
             "Name": "galleryTemplate5",
+            "OptimizeForDevices": "Off",
             "Parent": "Gallery2",
             "PersistMetaDataIDKey": false,
-            "PublishOrderIndex": 3,
+            "PublishOrderIndex": 351,
             "Rules": [
               {
                 "Category": "Design",
@@ -139,9 +140,10 @@
             "LayoutName": "",
             "MetaDataIDKey": "",
             "Name": "Label2",
+            "OptimizeForDevices": "Off",
             "Parent": "Gallery2",
             "PersistMetaDataIDKey": false,
-            "PublishOrderIndex": 4,
+            "PublishOrderIndex": 352,
             "Rules": [
               {
                 "Category": "Data",
@@ -384,9 +386,10 @@
             "LayoutName": "",
             "MetaDataIDKey": "",
             "Name": "Rectangle13",
+            "OptimizeForDevices": "Off",
             "Parent": "Gallery2",
             "PersistMetaDataIDKey": false,
-            "PublishOrderIndex": 5,
+            "PublishOrderIndex": 353,
             "Rules": [
               {
                 "Category": "Design",
@@ -556,9 +559,10 @@
         "LayoutName": "",
         "MetaDataIDKey": "",
         "Name": "Gallery2",
+        "OptimizeForDevices": "Off",
         "Parent": "Navigation",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 2,
+        "PublishOrderIndex": 350,
         "Rules": [
           {
             "Category": "Data",
@@ -759,7 +763,7 @@
       },
       "CurrentScreen"
     ],
-    "LastModifiedTimestamp": "638368436906654768",
+    "LastModifiedTimestamp": "638369060249138715",
     "Name": "Navigation",
     "Rules": [
       {
@@ -850,7 +854,7 @@
   "IsPcfControl": false,
   "IsPremiumPcfControl": false,
   "IsWidgetTemplate": false,
-  "LastModifiedTimestamp": "638368436906654768",
+  "LastModifiedTimestamp": "638369060249138715",
   "Name": "b6b5e691fc474668b7b6312386d8a5c2",
   "OverridableProperties": {},
   "Version": "1.0"

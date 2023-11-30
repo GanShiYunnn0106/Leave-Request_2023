@@ -7,7 +7,7 @@ EmployeeLeaveBalance As screen:
 
     "EmployeeLeaveFilter As gallery.'BrowseLayout_Vertical_OneImageTwoColumnVariant_ver5.0'":
         DelayItemLoading: =true
-        Height: =67
+        Height: =58
         Items: |-
             =Table({Filter: "All"}, {Filter: "My Subordinate Only"})
         Layout: =Layout.Vertical
@@ -15,10 +15,10 @@ EmployeeLeaveBalance As screen:
         ShowScrollbar: =false
         TemplatePadding: =4
         TemplateSize: =57
-        Width: =634
+        Width: =638
         WrapCount: =2
-        X: =481
-        Y: =159
+        X: =231
+        Y: =97
         ZIndex: =1
 
         Button12 As button:
@@ -38,8 +38,7 @@ EmployeeLeaveBalance As screen:
             RadiusTopRight: =20
             Text: =ThisItem.Filter
             Width: =250
-            X: =30
-            Y: =9
+            X: =48
             ZIndex: =1
 
     Header_7 As group:
@@ -176,7 +175,7 @@ EmployeeLeaveBalance As screen:
 
     "LeaveBalanceGallery As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
         DelayItemLoading: =true
-        Height: =533
+        Height: =596
         Items: |
             =If(
                 EmployeeLeaveFilter.Selected.Filter = "All",
@@ -196,10 +195,10 @@ EmployeeLeaveBalance As screen:
         LoadingSpinner: =LoadingSpinner.Data
         OnSelect: =Set(_selectedEmployee, ThisItem.NameofEmployee.DisplayName); Navigate(EmployeeLeaveDetail)
         TemplatePadding: =0
-        TemplateSize: =110
+        TemplateSize: =111
         Width: =1135
         X: =231
-        Y: =223
+        Y: =160
         ZIndex: =10
 
         Title1 As label:
@@ -250,14 +249,6 @@ EmployeeLeaveBalance As screen:
             Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
             ZIndex: =4
 
-        Separator2 As rectangle:
-            Fill: =RGBA(255, 255, 255, 1)
-            Height: =8
-            OnSelect: =Select(Parent)
-            Width: =Parent.TemplateWidth
-            Y: =99
-            ZIndex: =5
-
         Rectangle10 As rectangle:
             Height: =Parent.TemplateHeight - Separator2.Height
             OnSelect: =Select(Parent)
@@ -295,31 +286,34 @@ EmployeeLeaveBalance As screen:
 
     Label1 As label:
         Color: =RGBA(255, 255, 255, 1)
-        Height: =52
+        FontWeight: =FontWeight.Semibold
+        Height: =44
         Size: =20
         Text: ="Employee Leave Balance"
-        Width: =322
-        X: =522
-        Y: =11
+        Width: =368
+        X: =579
+        Y: =19
         ZIndex: =11
 
     SearchLeaveInput As text:
         Default: =""
+        Height: =43
         HintText: ="Search Name of Employee"
-        X: =638
-        Y: =102
+        Width: =326
+        X: =947
+        Y: =97
         ZIndex: =13
 
     Icon1 As icon.Search:
         Height: =26
         Icon: =Icon.Search
         Width: =25
-        X: =912
-        Y: =109
+        X: =1224
+        Y: =107
         ZIndex: =14
 
     Rectangle14 As rectangle:
-        Fill: =RGBA(230, 229, 229, 1)
+        Fill: =RGBA(230, 230, 230, 1)
         Height: =2
         Width: =1135
         X: =231

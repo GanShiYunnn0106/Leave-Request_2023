@@ -10,7 +10,7 @@ TodayOnLeaveScreen As screen:
 
     TodayOnLeaveGallery As gallery.galleryVertical:
         DelayItemLoading: =true
-        Height: =621
+        Height: =565
         Items: |-
             =Sort(
                 Filter(
@@ -27,11 +27,11 @@ TodayOnLeaveScreen As screen:
         TemplateSize: =64
         Width: =1134
         X: =232
-        Y: =147
+        Y: =203
         ZIndex: =1
 
         TodayOnLeaveName As label:
-            FontWeight: =FontWeight.Bold
+            FontWeight: =FontWeight.Semibold
             Height: =45
             OnSelect: =Select(Parent)
             Size: =14
@@ -223,9 +223,9 @@ TodayOnLeaveScreen As screen:
         Color: =RGBA(101, 128, 187, 1)
         FontWeight: =FontWeight.Bold
         Height: =66
-        Size: =18
+        Size: =19
         Text: ="Today On Leave   -   " & Text(Today(),"[$-en-US]dd mmm yyyy")
-        Width: =473
+        Width: =485
         X: =250
         Y: =81
         ZIndex: =12
@@ -238,4 +238,23 @@ TodayOnLeaveScreen As screen:
         X: =232
         Y: =147
         ZIndex: =13
+
+    Label21 As label:
+        FontWeight: =FontWeight.Bold
+        Height: =58
+        Size: =14
+        Text: ="        Name                                                                    Leave Type                                                         Duration "
+        Width: =1078
+        X: =250
+        Y: =147
+        ZIndex: =14
+
+    Rectangle1_5 As rectangle:
+        BorderStyle: =BorderStyle.Dotted
+        Fill: =RGBA(230, 229, 229, 1)
+        Height: =2
+        Width: =1134
+        X: =232
+        Y: =203
+        ZIndex: =15
 

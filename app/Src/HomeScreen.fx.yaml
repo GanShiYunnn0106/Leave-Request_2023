@@ -42,7 +42,7 @@ HomeScreen As screen:
                             LeaveApp_Request,
                             Status.Value = ButtonFilter.Selected.Filter && Year(Start_Date) = Year(Today()) && Created_By.Email = User().Email
                         ),
-                        Start_Date,
+                        Created,
                         SortOrder.Descending
                     )
                 ),
@@ -53,7 +53,7 @@ HomeScreen As screen:
                             LeaveApp_Request,
                             Year(Start_Date) = Year(Today()) && Requested_to.Email = User().Email
                         ),
-                        Start_Date,
+                        Created,
                         SortOrder.Descending
                     ),
                     Sort(
@@ -61,7 +61,7 @@ HomeScreen As screen:
                             LeaveApp_Request,
                             Status.Value = ButtonFilter.Selected.Filter && Year(Start_Date) = Year(Today()) && Requested_to.Email = User().Email
                         ),
-                        Start_Date,
+                        Created,
                         SortOrder.Descending
                     )
                 )
@@ -138,7 +138,7 @@ HomeScreen As screen:
             ZIndex: =3
 
         Separator1 As rectangle:
-            Fill: =RGBA(217, 216, 217, 1)
+            Fill: =RGBA(230, 230, 230, 1)
             Height: =3
             OnSelect: =
             Width: =Parent.TemplateWidth
@@ -232,7 +232,7 @@ HomeScreen As screen:
 
     Rectangle2_1 As rectangle:
         DisabledFill: =Rectangle2_1.Fill
-        Fill: =RGBA(202, 202, 202, 1)
+        Fill: =RGBA(230, 230, 230, 1)
         FocusedBorderColor: =Rectangle2_1.BorderColor
         Height: =2
         HoverFill: =Rectangle2_1.Fill
@@ -258,10 +258,12 @@ HomeScreen As screen:
         ZIndex: =13
 
     Label11 As label:
+        Height: =30
         Text: |-
             ="Remarks: "
-        X: =1056
-        Y: =612
+        Width: =147
+        X: =1076
+        Y: =554
         ZIndex: =31
 
     Header_11 As group:
@@ -419,11 +421,11 @@ HomeScreen As screen:
 
         RemarksTextBox As text:
             Default: =""
-            Height: =116
+            Height: =68
             Visible: =_managerView && (GalleryRequest.Selected.Status.Value) = "Pending"
-            Width: =280
-            X: =1068
-            Y: =641
+            Width: =241
+            X: =1076
+            Y: =594
             ZIndex: =15
 
         RequestDetailsTitle_2 As label:
@@ -459,8 +461,8 @@ HomeScreen As screen:
             Text: ="EDIT"
             Visible: =!_managerView && (GalleryRequest.Selected.Status.Value) = "Pending"
             Width: =54
-            X: =1101
-            Y: =560
+            X: =1119
+            Y: =684
             ZIndex: =17
 
         EditIcon_2 As icon.Edit:
@@ -469,8 +471,8 @@ HomeScreen As screen:
             OnSelect: =
             Visible: =!_managerView && (GalleryRequest.Selected.Status.Value) = "Pending"
             Width: =23
-            X: =1063
-            Y: =560
+            X: =1091
+            Y: =684
             ZIndex: =18
 
         ButtonManagerApprove_2 As button:
@@ -561,8 +563,8 @@ HomeScreen As screen:
             Visible: |
                 =_managerView && (GalleryRequest.Selected.Status.Value) = "Pending"
             Width: =78
-            X: =1092
-            Y: =551
+            X: =1107
+            Y: =714
             ZIndex: =19
 
         ButtonManagerDecline_2 As button:
@@ -624,8 +626,8 @@ HomeScreen As screen:
             Text: ="Decline"
             Visible: =_managerView && (GalleryRequest.Selected.Status.Value) = "Pending"
             Width: =78
-            X: =1201
-            Y: =551
+            X: =1213
+            Y: =714
             ZIndex: =20
 
         Days_2 As label:

@@ -2,8 +2,7 @@ EmployeeLeaveDetail As screen:
 
     Label1_17 As label:
         Color: =RGBA(101, 128, 187, 1)
-        Font: =Font.Georgia
-        FontWeight: =FontWeight.Semibold
+        FontWeight: =FontWeight.Bold
         Height: =67
         Size: =20
         Text: ="Leave Details  -  " & LeaveBalanceGallery.Selected.NameofEmployee.DisplayName
@@ -70,7 +69,7 @@ EmployeeLeaveDetail As screen:
             Size: =11
             Text: =ThisItem.CarryForwardDays
             Width: =100
-            X: =598
+            X: =620
             Y: =16
             ZIndex: =6
 
@@ -275,7 +274,7 @@ EmployeeLeaveDetail As screen:
         PaddingLeft: =0
         PaddingRight: =0
         PaddingTop: =0
-        Size: =12
+        Size: =13
         Text: ="Leave Type"
         VerticalAlign: =VerticalAlign.Top
         Width: =163
@@ -391,7 +390,7 @@ EmployeeLeaveDetail As screen:
         Text: ="Approved By"
         VerticalAlign: =VerticalAlign.Top
         Width: =102
-        X: =1098
+        X: =1107
         Y: =185
         ZIndex: =52
 

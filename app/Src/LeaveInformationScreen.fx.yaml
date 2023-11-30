@@ -21,7 +21,7 @@ LeaveInformationScreen As screen:
         Layout: =Layout.Vertical
         LoadingSpinner: =LoadingSpinner.Data
         TemplatePadding: =0
-        TemplateSize: =259
+        TemplateSize: =265
         Width: =1133
         X: =221
         Y: =164
@@ -67,7 +67,7 @@ LeaveInformationScreen As screen:
             FontWeight: =FontWeight.Semibold
             Height: =47
             OnSelect: =Select(Parent)
-            Size: =15
+            Size: =14.5
             Text: =ThisItem.Created_By.DisplayName
             Width: =665
             X: =175
@@ -77,7 +77,7 @@ LeaveInformationScreen As screen:
             FontWeight: =FontWeight.Semibold
             Height: =38
             OnSelect: =Select(Parent)
-            Size: =15
+            Size: =14.5
             Text: =ThisItem.Comments
             Width: =915
             X: =177
@@ -88,7 +88,7 @@ LeaveInformationScreen As screen:
             FontWeight: =FontWeight.Semibold
             Height: =41
             OnSelect: =Select(Parent)
-            Size: =15
+            Size: =14.5
             Text: =ThisItem.End_Date
             Width: =210
             X: =177
@@ -99,7 +99,7 @@ LeaveInformationScreen As screen:
             FontWeight: =FontWeight.Semibold
             Height: =35
             OnSelect: =Select(Parent)
-            Size: =15
+            Size: =14.5
             Text: =ThisItem.Leave_Type.Value
             Width: =548
             X: =177
@@ -110,7 +110,7 @@ LeaveInformationScreen As screen:
             FontWeight: =FontWeight.Semibold
             Height: =44
             OnSelect: =Select(Parent)
-            Size: =15
+            Size: =14.5
             Text: =ThisItem.Start_Date
             Width: =293
             X: =177
@@ -118,7 +118,7 @@ LeaveInformationScreen As screen:
             ZIndex: =14
 
         Rectangle20 As rectangle:
-            Fill: =RGBA(204, 204, 204, 1)
+            Fill: =RGBA(230, 230, 230, 1)
             Height: =2
             OnSelect: =Select(Parent)
             Width: =1134
@@ -127,13 +127,13 @@ LeaveInformationScreen As screen:
 
         Label18 As label:
             FontWeight: =FontWeight.Semibold
-            Height: =44
+            Height: =30
             OnSelect: =Select(Parent)
-            Size: =15
+            Size: =14.5
             Text: =ThisItem.Days & " days"
             Width: =204
             X: =175
-            Y: =213
+            Y: =226
             ZIndex: =19
 
         Button7 As button:
@@ -141,7 +141,7 @@ LeaveInformationScreen As screen:
                 =If((ThisItem.Status.Value)="Pending",RGBA(0,71,144,1),
                 (ThisItem.Status.Value)="Rejected",RGBA(213,0,0,1),
                 (ThisItem.Status.Value)="Approved",RGBA(0,128,0,1))
-            BorderThickness: =4
+            BorderThickness: =3
             Color: |-
                 =If((ThisItem.Status.Value)="Pending",RGBA(0,71,144,1),
                 (ThisItem.Status.Value)="Rejected",RGBA(213,0,0,1),
@@ -307,7 +307,7 @@ LeaveInformationScreen As screen:
             ZIndex: =7
 
     Rectangle20_1 As rectangle:
-        Fill: =RGBA(204, 204, 204, 1)
+        Fill: =RGBA(230, 230, 230, 1)
         Height: =2
         OnSelect: =
         Width: =1134
@@ -317,14 +317,13 @@ LeaveInformationScreen As screen:
 
     Label20 As label:
         Color: =RGBA(255, 255, 255, 1)
-        Font: =Font.Georgia
         FontWeight: =FontWeight.Semibold
-        Height: =36
+        Height: =42
         Size: =22
-        Text: ="Leave request history"
-        Width: =395
-        X: =597
-        Y: =23
+        Text: ="Leave Request History"
+        Width: =439
+        X: =579
+        Y: =19
         ZIndex: =11
 
     "ButtonFilter_1 As gallery.'BrowseLayout_Vertical_OneTextOneImageVariant_ver5.0'":
