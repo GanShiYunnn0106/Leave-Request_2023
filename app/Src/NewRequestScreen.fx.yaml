@@ -61,14 +61,7 @@ NewRequestScreen As screen:
                 )
             );
         
-        ClearCollect(
-            HolidayCollection,
-            Filter(
-                LeaveApp_PublicHoliday,
-                HolidayDates >= Today()   
-            )
-            
-        );
+        
         
             Set(_leaveStart, GalleryRequest.Selected.Start_Date);
             If(_leaveEnd < Today(), Notify("This event occurred in the past and cannot be resubmitted without first changing the dates", NotificationType.Warning));
@@ -484,6 +477,7 @@ NewRequestScreen As screen:
                             )
                         );
                 
+                Set(totalValue,Sum(Filter(LeaveApp_PublicHoliday, HolidayDates >= LeaveStartDatePicker.SelectedDate,HolidayDates <= LeaveEndDatePicker.SelectedDate), Value(totalValue)));
                 
                 Set(_totalDaysOfHolidays, _numberOfTypesHoliday + NumberOfDaysForHolidays);
                 Set(daysBetweenStartDateToHolidayDate,DateDiff(LeaveStartDatePicker.SelectedDate,HolidayStartDate));
