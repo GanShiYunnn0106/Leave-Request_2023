@@ -22,12 +22,15 @@ EmployeeLeaveBalance As screen:
         ZIndex: =1
 
         Button12 As button:
-            BorderColor: =RGBA(56, 86, 153, 1)
-            Color: =RGBA(56, 86, 153, 1)
-            Fill: =RGBA(0, 0, 0, 0)
+            BorderColor: =RGBA(43, 67, 119, 1)
+            Color: =If(EmployeeLeaveFilter.Selected.Filter=ThisItem.Filter,RGBA(255, 255, 255, 1),RGBA(50, 50, 120, 1))
+            Fill: =If(EmployeeLeaveFilter .Selected.Filter=ThisItem.Filter,RGBA(50, 50, 120, 1),RGBA(255, 255, 255, 1))
             OnSelect: =Select(Parent)
             PressedBorderColor: =EmployeeLeaveFilter.Fill
-            PressedColor: =If(EmployeeLeaveFilter.Selected.Filter=ThisItem.Filter,RGBA(255, 255, 255, 1),RGBA(10, 106, 204, 1))
+            PressedColor: |-
+                =If(
+                    EmployeeLeaveFilter.Selected.Filter = ThisItem.Filter,Color.White, RGBA(50, 50, 120,1)
+                )
             PressedFill: =EmployeeLeaveFilter.BorderColor
             RadiusBottomLeft: =20
             RadiusBottomRight: =20
