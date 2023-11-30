@@ -262,6 +262,7 @@ HomeScreen As screen:
         ZIndex: =12
 
     Label11 As label:
+        BorderColor: =RGBA(0,71,144,1)
         BorderThickness: =3
         FontWeight: =FontWeight.Semibold
         Height: =68
@@ -269,8 +270,8 @@ HomeScreen As screen:
         Text: =GalleryRequest.Selected.Remarks_By_Decision_Maker
         Visible: |
             =_managerView && ((GalleryRequest.Selected.Status.Value) = "Approved" || (GalleryRequest.Selected.Status.Value) = "Rejected")
-        Width: =246
-        X: =1091
+        Width: =259
+        X: =1078
         Y: =594
         ZIndex: =32
 
