@@ -45,6 +45,7 @@ LeaveInformationScreen As screen:
         Label9 As label:
             Height: =259
             OnSelect: =Select(Parent)
+            Size: =13.6
             Text: |-
                 ="Name: 
                 
@@ -59,108 +60,113 @@ LeaveInformationScreen As screen:
                 Total Days:
                 "
             Width: =122
-            X: =70
+            X: =26
             ZIndex: =7
 
         Label10 As label:
             FontWeight: =FontWeight.Semibold
-            Height: =28
+            Height: =47
             OnSelect: =Select(Parent)
-            Size: =13.5
+            Size: =15
             Text: =ThisItem.Created_By.DisplayName
-            Width: =530
-            X: =218
-            Y: =15
+            Width: =665
+            X: =175
             ZIndex: =8
 
         Label14 As label:
             FontWeight: =FontWeight.Semibold
-            Height: =32
+            Height: =38
             OnSelect: =Select(Parent)
-            Size: =13.5
+            Size: =15
             Text: =ThisItem.Comments
-            Width: =769
-            X: =216
-            Y: =176
+            Width: =915
+            X: =177
+            Y: =175
             ZIndex: =9
 
         Label22 As label:
             FontWeight: =FontWeight.Semibold
-            Height: =18
+            Height: =41
             OnSelect: =Select(Parent)
-            Size: =13.5
+            Size: =15
             Text: =ThisItem.End_Date
             Width: =210
-            X: =218
-            Y: =144
+            X: =177
+            Y: =134
             ZIndex: =12
 
         Label23 As label:
             FontWeight: =FontWeight.Semibold
-            Height: =30
+            Height: =35
             OnSelect: =Select(Parent)
-            Size: =13.5
+            Size: =15
             Text: =ThisItem.Leave_Type.Value
-            Width: =380
-            X: =218
-            Y: =54
+            Width: =548
+            X: =177
+            Y: =47
             ZIndex: =13
 
         Label24 As label:
             FontWeight: =FontWeight.Semibold
-            Height: =21
-            OnSelect: =Select(Parent)
-            Text: =ThisItem.Start_Date
-            Width: =293
-            X: =216
-            Y: =101
-            ZIndex: =14
-
-        Label26 As label:
-            Align: =Align.Center
-            BorderColor: |
-                =If((ThisItem.Status.Value)="Pending",RGBA(0,71,144,1),
-                (ThisItem.Status.Value)="Rejected",RGBA(213,0,0,1),
-                (ThisItem.Status.Value)="Approved",RGBA(0,128,0,1))
-            BorderThickness: =4
-            Color: |
-                =If((ThisItem.Status.Value)="Pending",RGBA(0,71,144,1),
-                (ThisItem.Status.Value)="Rejected",RGBA(213,0,0,1),
-                (ThisItem.Status.Value)="Approved",RGBA(0,128,0,1))
-            DisabledBorderColor: =RGBA(101, 128, 187, 1)
-            Fill: =RGBA(255, 255, 255, 1)
-            FocusedBorderThickness: =5
-            Font: =Font.'Lato Black'
-            FontWeight: =FontWeight.Bold
-            Height: =55
-            LineHeight: =1.6
+            Height: =44
             OnSelect: =Select(Parent)
             Size: =15
-            Text: =ThisItem.Status.Value
-            Width: =140
-            X: =882
-            Y: =100
-            ZIndex: =17
+            Text: =ThisItem.Start_Date
+            Width: =293
+            X: =177
+            Y: =90
+            ZIndex: =14
 
         Rectangle20 As rectangle:
             Fill: =RGBA(204, 204, 204, 1)
             Height: =2
             OnSelect: =Select(Parent)
             Width: =1134
-            X: =4
             Y: =257
             ZIndex: =18
 
         Label18 As label:
             FontWeight: =FontWeight.Semibold
-            Height: =31
+            Height: =44
             OnSelect: =Select(Parent)
-            Size: =13.5
+            Size: =15
             Text: =ThisItem.Days & " days"
             Width: =204
-            X: =216
-            Y: =215
+            X: =175
+            Y: =213
             ZIndex: =19
+
+        Button7 As button:
+            BorderColor: |-
+                =If((ThisItem.Status.Value)="Pending",RGBA(0,71,144,1),
+                (ThisItem.Status.Value)="Rejected",RGBA(213,0,0,1),
+                (ThisItem.Status.Value)="Approved",RGBA(0,128,0,1))
+            BorderThickness: =4
+            Color: |-
+                =If((ThisItem.Status.Value)="Pending",RGBA(0,71,144,1),
+                (ThisItem.Status.Value)="Rejected",RGBA(213,0,0,1),
+                (ThisItem.Status.Value)="Approved",RGBA(0,128,0,1))
+            DisabledBorderColor: =
+            DisabledColor: |-
+                =If((ThisItem.Status.Value)="Pending",RGBA(0,71,144,1),
+                (ThisItem.Status.Value)="Rejected",RGBA(213,0,0,1),
+                (ThisItem.Status.Value)="Approved",RGBA(0,128,0,1))
+            DisabledFill: =
+            DisplayMode: =DisplayMode.Disabled
+            Fill: =RGBA(255, 255, 255, 1)
+            Font: =Font.'Lato Black'
+            FontWeight: =FontWeight.Normal
+            Height: =43
+            OnSelect: =Select(Parent)
+            PressedBorderColor: =
+            PressedColor: =
+            PressedFill: =
+            Size: =18
+            Text: =ThisItem.Status.Value
+            Width: =156
+            X: =881
+            Y: =101
+            ZIndex: =20
 
     Navigation_2 As Navigation:
         CurrentScreen: ="Leave Information"
@@ -323,7 +329,7 @@ LeaveInformationScreen As screen:
 
     "ButtonFilter_1 As gallery.'BrowseLayout_Vertical_OneTextOneImageVariant_ver5.0'":
         DelayItemLoading: =true
-        Height: =87
+        Height: =94
         Items: |-
             =Table({Filter: "All"}, {Filter: "Pending"}, {Filter: "Approved"}, {Filter: "Rejected"})
         Layout: =Layout.Vertical
@@ -331,11 +337,11 @@ LeaveInformationScreen As screen:
         OnSelect: =
         ShowScrollbar: =false
         TemplatePadding: =1
-        TemplateSize: =86
-        Width: =559
+        TemplateSize: =98
+        Width: =708
         WrapCount: =4
-        X: =519
-        Y: =78
+        X: =433
+        Y: =73
         ZIndex: =14
 
         ButtonCategories_1 As button:
@@ -344,7 +350,7 @@ LeaveInformationScreen As screen:
             Color: =If(ButtonFilter_1.Selected.Filter=ThisItem.Filter,RGBA(255, 255, 255, 1),RGBA(10, 106, 204, 1))
             Fill: =If(ButtonFilter_1.Selected.Filter=ThisItem.Filter,RGBA(0, 71, 144, 1),RGBA(255, 255, 255, 1))
             Font: =Font.'Lato Black'
-            Height: =30
+            Height: =37
             OnSelect: =
             PressedColor: =If(ButtonFilter_1.Selected.Filter=ThisItem.Filter,RGBA(255, 255, 255, 1),RGBA(10, 106, 204, 1))
             RadiusBottomLeft: =35
@@ -352,7 +358,7 @@ LeaveInformationScreen As screen:
             RadiusTopLeft: =35
             RadiusTopRight: =35
             Text: =ThisItem.Filter
-            Width: =105
+            Width: =110
             Y: =33
             ZIndex: =6
 

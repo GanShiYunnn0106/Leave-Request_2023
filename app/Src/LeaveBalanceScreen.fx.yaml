@@ -20,13 +20,12 @@ LeaveBalanceScreen As screen:
 
     Label15 As label:
         Color: =RGBA(101, 128, 187, 1)
-        Font: =Font.Georgia
-        FontWeight: =FontWeight.Semibold
-        Height: =51
+        FontWeight: =FontWeight.Bold
+        Height: =58
         Size: =18
         Text: ="Leave Balance   -   " & User().FullName
-        Width: =737
-        X: =264
+        Width: =750
+        X: =250
         Y: =85
         ZIndex: =9
 

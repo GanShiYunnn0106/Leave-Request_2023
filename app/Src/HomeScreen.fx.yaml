@@ -93,7 +93,8 @@ HomeScreen As screen:
         ZIndex: =1
 
         TitleStartDate As label:
-            Height: =25
+            FontWeight: =FontWeight.Semibold
+            Height: =36
             OnSelect: =
             PaddingBottom: =0
             PaddingLeft: =0
@@ -103,10 +104,11 @@ HomeScreen As screen:
             VerticalAlign: =VerticalAlign.Top
             Width: =353
             X: =170
-            Y: =45
+            Y: =27
             ZIndex: =1
 
         SubtitleEndDate As label:
+            FontWeight: =FontWeight.Semibold
             Height: =Self.Size * 1.8
             OnSelect: =
             PaddingBottom: =0
@@ -117,11 +119,12 @@ HomeScreen As screen:
             VerticalAlign: =VerticalAlign.Top
             Width: =TitleStartDate.Width
             X: =170
-            Y: =85
+            Y: =71
             ZIndex: =2
 
         BodyComments As label:
-            Height: =Self.Size * 1.8
+            FontWeight: =FontWeight.Semibold
+            Height: =56
             OnSelect: =
             PaddingBottom: =0
             PaddingLeft: =0
@@ -129,9 +132,9 @@ HomeScreen As screen:
             PaddingTop: =0
             Text: =ThisItem.Comments
             VerticalAlign: =VerticalAlign.Top
-            Width: =TitleStartDate.Width
+            Width: =421
             X: =TitleStartDate.X
-            Y: =124
+            Y: =115
             ZIndex: =3
 
         Separator1 As rectangle:
@@ -149,20 +152,10 @@ HomeScreen As screen:
             Width: =4
             ZIndex: =6
 
-        LabelName As label:
-            Color: =RGBA(101, 128, 187, 1)
-            Font: =Font.'Lato Black'
-            OnSelect: =
-            Size: =14
-            Text: =ThisItem.Created_By.DisplayName
-            X: =20
-            Y: =5
-            ZIndex: =7
-
         Label3 As label:
-            FontWeight: =FontWeight.Semibold
             Height: =107
             OnSelect: =
+            Size: =14
             Text: |-
                 ="Start date:
                 
@@ -170,7 +163,7 @@ HomeScreen As screen:
                 
                 Comment:"
             X: =46
-            Y: =42
+            Y: =30
             ZIndex: =8
 
         ButtonStatus As button:
@@ -185,24 +178,24 @@ HomeScreen As screen:
             Fill: =RGBA(255, 255, 255, 1)
             OnSelect: =
             Text: =ThisItem.Status.Value
-            X: =608
-            Y: =110
+            X: =624
+            Y: =112
             ZIndex: =9
 
     "ButtonFilter As gallery.'BrowseLayout_Vertical_OneTextOneImageVariant_ver5.0'":
         DelayItemLoading: =true
-        Height: =87
+        Height: =104
         Items: |-
             =Table({Filter: "All"}, {Filter: "Pending"}, {Filter: "Approved"}, {Filter: "Rejected"})
         Layout: =Layout.Vertical
         LoadingSpinner: =LoadingSpinner.Data
         ShowScrollbar: =false
         TemplatePadding: =1
-        TemplateSize: =86
-        Width: =461
+        TemplateSize: =98
+        Width: =624
         WrapCount: =4
-        X: =416
-        Y: =74
+        X: =371
+        Y: =73
         ZIndex: =2
 
         ButtonCategories As button:
@@ -212,18 +205,16 @@ HomeScreen As screen:
             DisabledBorderColor: =ColorFade(ButtonFilter.BorderColor, 30%)
             Fill: =If(ButtonFilter.Selected.Filter=ThisItem.Filter,RGBA(0, 71, 144, 1),RGBA(255, 255, 255, 1))
             Font: =Font.'Lato Black'
-            Height: =30
-            HoverColor: =ButtonFilter.BorderColor
+            Height: =37
             OnSelect: =
             PressedBorderColor: =ButtonFilter.Fill
             PressedColor: =If(ButtonFilter.Selected.Filter=ThisItem.Filter,RGBA(255, 255, 255, 1),RGBA(10, 106, 204, 1))
-            PressedFill: =ButtonFilter.BorderColor
             RadiusBottomLeft: =35
             RadiusBottomRight: =35
             RadiusTopLeft: =35
             RadiusTopRight: =35
             Text: =ThisItem.Filter
-            Width: =105
+            Width: =110
             Y: =27
             ZIndex: =6
 
@@ -269,8 +260,8 @@ HomeScreen As screen:
     Label11 As label:
         Text: |-
             ="Remarks: "
-        X: =1067
-        Y: =601
+        X: =1056
+        Y: =612
         ZIndex: =31
 
     Header_11 As group:
@@ -644,7 +635,7 @@ HomeScreen As screen:
             Text: |
                 =GalleryRequest.Selected.Days
             Width: =157
-            X: =1055
+            X: =1068
             Y: =194
             ZIndex: =21
 
@@ -654,29 +645,29 @@ HomeScreen As screen:
             OnSelect: =
             Text: =GalleryRequest.Selected.Leave_Type.Value
             Width: =278
-            X: =1051
-            Y: =268
+            X: =1071
+            Y: =260
             ZIndex: =22
 
         Request_To_2 As label:
             FontWeight: =FontWeight.Semibold
-            Height: =28
+            Height: =32
             OnSelect: =
             Size: =12.5
             Text: =GalleryRequest.Selected.Requested_to.DisplayName
-            Width: =315
-            X: =1051
-            Y: =351
+            Width: =295
+            X: =1071
+            Y: =345
             ZIndex: =23
 
         CarryForwardDays_2 As label:
             FontWeight: =FontWeight.Semibold
-            Height: =44
+            Height: =35
             OnSelect: =
             Text: =GalleryRequest.Selected.CarryForwardDays & " days"
-            Width: =229
-            X: =1057
-            Y: =427
+            Width: =213
+            X: =1071
+            Y: =425
             ZIndex: =24
 
         UnpaidLeave_2 As label:
@@ -684,8 +675,8 @@ HomeScreen As screen:
             OnSelect: =
             Text: =GalleryRequest.Selected.UnpaidLeave & " days"
             Width: =161
-            X: =1057
-            Y: =506
+            X: =1076
+            Y: =503
             ZIndex: =25
 
         LblTotalDays_2 As label:
@@ -693,7 +684,7 @@ HomeScreen As screen:
             Text: |-
                 ="Total days:"
             Width: =161
-            X: =1047
+            X: =1070
             Y: =161
             ZIndex: =26
 
@@ -702,8 +693,8 @@ HomeScreen As screen:
             Text: |-
                 ="Leave Type:"
             Width: =161
-            X: =1051
-            Y: =236
+            X: =1068
+            Y: =233
             ZIndex: =27
 
         LblRequestTo_2 As label:
@@ -711,7 +702,7 @@ HomeScreen As screen:
             Text: |-
                 ="Request Send To:"
             Width: =161
-            X: =1047
+            X: =1066
             Y: =320
             ZIndex: =28
 
@@ -721,8 +712,8 @@ HomeScreen As screen:
             Text: |-
                 ="Carry Forward Days:"
             Width: =206
-            X: =1051
-            Y: =404
+            X: =1070
+            Y: =406
             ZIndex: =29
 
         LblUnpaidLeave_2 As label:
@@ -731,7 +722,7 @@ HomeScreen As screen:
             Text: |-
                 ="Unpaid Leaves:"
             Width: =171
-            X: =1051
-            Y: =476
+            X: =1071
+            Y: =473
             ZIndex: =30
 

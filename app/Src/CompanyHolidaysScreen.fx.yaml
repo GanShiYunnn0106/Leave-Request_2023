@@ -164,7 +164,6 @@ CompanyHolidaysScreen As screen:
 
     LblHolidaysHeader As label:
         FocusedBorderColor: =LblHolidaysHeader.BorderColor
-        Font: =Font.Lato
         Height: =25
         HoverBorderColor: =LblHolidaysHeader.BorderColor
         HoverColor: =LblHolidaysHeader.Color
@@ -176,6 +175,7 @@ CompanyHolidaysScreen As screen:
         PressedFill: =LblHolidaysHeader.Fill
         Size: =14
         Text: ="Below is a list of our company's paid holidays during which our offices will be closed for observance."
+        Underline: =true
         Width: =904
         X: =232
         Y: =104
@@ -210,7 +210,6 @@ CompanyHolidaysScreen As screen:
         Label12 As label:
             FocusedBorderColor: =Label12.BorderColor
             FocusedBorderThickness: =2
-            Font: =Font.Lato
             FontWeight: =FontWeight.Semibold
             Height: =49
             HoverBorderColor: =Label12.BorderColor
@@ -228,7 +227,6 @@ CompanyHolidaysScreen As screen:
         Label13 As label:
             FocusedBorderColor: =Label13.BorderColor
             FocusedBorderThickness: =2
-            Font: =Font.'Segoe UI'
             Height: =49
             HoverBorderColor: =Label13.BorderColor
             HoverColor: =Label13.Color
@@ -296,7 +294,7 @@ CompanyHolidaysScreen As screen:
 
         Label7 As label:
             Font: =Font.Georgia
-            Height: =224
+            Height: =255
             Size: =14
             Text: |-
                 ="Holiday:
@@ -309,45 +307,46 @@ CompanyHolidaysScreen As screen:
                 
                 To:"
             Visible: =_managerView=true
-            Width: =177
-            X: =1141
+            Width: =210
+            X: =1131
             Y: =178
             ZIndex: =36
 
         Button1 As button:
+            Height: =42
             OnSelect: |-
                 =Collect(LeaveApp_PublicHoliday,{HolidayName:txtHoliday.Text, HolidayDates:DateValue(HolidayDate.SelectedDate), ToDate:DateValue(HolidayDate2.SelectedDate)})
             Text: ="Add"
             Visible: =_managerView=true
-            Width: =80
-            X: =1186
-            Y: =468
+            Width: =86
+            X: =1190
+            Y: =479
             ZIndex: =37
 
     txtHoliday As text:
         Default: =""
-        Height: =34
+        Height: =36
         Visible: =_managerView=true
-        Width: =165
-        X: =1141
-        Y: =220
+        Width: =210
+        X: =1140
+        Y: =240
         ZIndex: =39
 
     HolidayDate As datepicker:
         Color: =RGBA(0, 0, 0, 1)
         DisabledBorderColor: =RGBA(62, 96, 170, 1)
-        Height: =35
+        Height: =39
         Visible: =_managerView=true
-        Width: =164
-        X: =1141
-        Y: =310
+        Width: =174
+        X: =1140
+        Y: =330
         ZIndex: =40
 
     HolidayDate2 As datepicker:
-        Height: =35
+        Height: =41
         Visible: =_managerView=true
-        Width: =164
-        X: =1141
-        Y: =406
+        Width: =174
+        X: =1140
+        Y: =422
         ZIndex: =41
 
