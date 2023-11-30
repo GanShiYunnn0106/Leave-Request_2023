@@ -24,7 +24,7 @@
                 },
                 "region": {
                   "charLength": 193,
-                  "charOffset": 3389,
+                  "charOffset": 3914,
                   "snippet": {
                     "text": "CountIf(\n                LeaveApp_PublicHoliday,\n                HolidayDates >= LeaveStartDatePicker.SelectedDate,\n                HolidayDates <= LeaveEndDatePicker.SelectedDate\n            )"
                   }
@@ -64,7 +64,7 @@
                 },
                 "region": {
                   "charLength": 193,
-                  "charOffset": 4072,
+                  "charOffset": 4286,
                   "snippet": {
                     "text": "CountIf(\n                LeaveApp_PublicHoliday,\n                HolidayDates >= LeaveStartDatePicker.SelectedDate,\n                HolidayDates <= LeaveEndDatePicker.SelectedDate\n            )"
                   }
@@ -104,7 +104,7 @@
                 },
                 "region": {
                   "charLength": 193,
-                  "charOffset": 4767,
+                  "charOffset": 4671,
                   "snippet": {
                     "text": "CountIf(\n                LeaveApp_PublicHoliday,\n                HolidayDates >= LeaveStartDatePicker.SelectedDate,\n                HolidayDates <= LeaveEndDatePicker.SelectedDate\n            )"
                   }

@@ -61,6 +61,14 @@ NewRequestScreen As screen:
                 )
             );
         
+        ClearCollect(
+            HolidayCollection,
+            Filter(
+                LeaveApp_PublicHoliday,
+                HolidayDates >= Today()
+            )
+        );
+        
             Set(_leaveStart, GalleryRequest.Selected.Start_Date);
             If(_leaveEnd < Today(), Notify("This event occurred in the past and cannot be resubmitted without first changing the dates", NotificationType.Warning));
             Set(_leaveEnd, GalleryRequest.Selected.End_Date);
@@ -440,6 +448,26 @@ NewRequestScreen As screen:
                         _numFullWeeks * 5 + _numPartialWeekdays
                     );
                 
+                ClearCollect(
+                    HolidayCollection,
+                    Filter(
+                        LeaveApp_PublicHoliday,
+                        HolidayDates >= Today()
+                    )
+                );
+                
+                
+                    Set(HolidayStartDate,LookUp(
+                            LeaveApp_PublicHoliday,
+                            (HolidayDates > LeaveStartDatePicker.SelectedDate && HolidayDates <= LeaveEndDatePicker.SelectedDate)
+                        ).HolidayDates );
+                
+                
+                    Set(HolidayLastDate,LookUp(
+                            LeaveApp_PublicHoliday,
+                            (ToDate > LeaveStartDatePicker.SelectedDate && ToDate <= LeaveEndDatePicker.SelectedDate)
+                        ).ToDate);
+                
                 If(CountIf(
                                 LeaveApp_PublicHoliday,
                                 HolidayDates >= LeaveStartDatePicker.SelectedDate,
@@ -447,13 +475,7 @@ NewRequestScreen As screen:
                             ) >= 1,    
                     //calculate holiday if start date and end date is the same
                 If(
-                        LookUp(
-                            LeaveApp_PublicHoliday,
-                            (HolidayDates > LeaveStartDatePicker.SelectedDate && HolidayDates <= LeaveEndDatePicker.SelectedDate)
-                        ).HolidayDates = LookUp(
-                            LeaveApp_PublicHoliday,
-                            (ToDate > LeaveStartDatePicker.SelectedDate && ToDate <= LeaveEndDatePicker.SelectedDate)
-                        ).ToDate,
+                        HolidayStartDate = HolidayLastDate,
                         Set(
                             _holidaysInRequest,
                             CountIf(
@@ -465,20 +487,14 @@ NewRequestScreen As screen:
                     );
                          //calculate holiday if start date and end date is not same
                 If(
-                        LookUp(
-                            LeaveApp_PublicHoliday,
-                            (HolidayDates > LeaveStartDatePicker.SelectedDate && HolidayDates <= LeaveEndDatePicker.SelectedDate)
-                        ).HolidayDates < LookUp(
-                            LeaveApp_PublicHoliday,
-                            (ToDate > LeaveStartDatePicker.SelectedDate && ToDate <= LeaveEndDatePicker.SelectedDate)
-                        ).ToDate,
+                        HolidayStartDate < HolidayStartDate,
                         Set(
                             _holidaysInRequest,
                             CountIf(
                                 LeaveApp_PublicHoliday,
                                 HolidayDates >= LeaveStartDatePicker.SelectedDate,
                                 HolidayDates <= LeaveEndDatePicker.SelectedDate
-                            ) + DateDiff( LeaveStartDatePicker.SelectedDate,LeaveEndDatePicker.SelectedDate)
+                            ) + DateDiff( HolidayStartDate,HolidayLastDate)
                         )
                     ));
                     If(
@@ -1047,4 +1063,14 @@ NewRequestScreen As screen:
         X: =232
         Y: =656
         ZIndex: =50
+
+    Label27 As label:
+        BorderThickness: =4
+        Text: |-
+            =
+            
+                   
+        X: =267
+        Y: =563
+        ZIndex: =51
 
