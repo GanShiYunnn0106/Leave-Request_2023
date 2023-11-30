@@ -5330,7 +5330,7 @@
       "StyleName": "defaultLabelStyle",
       "Type": "ControlInfo"
     },
-    "LblRemarks": {
+    "LblRemarksHeader": {
       "AllowAccessToGlobals": true,
       "ControlPropertyState": [
         "Live",
@@ -5387,9 +5387,9 @@
       "IsLocked": false,
       "LayoutName": "",
       "MetaDataIDKey": "",
-      "Name": "LblRemarks",
+      "Name": "LblRemarksHeader",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 29,
+      "ParentIndex": 1,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -5405,6 +5405,11 @@
         {
           "Category": "Data",
           "PropertyName": "Live",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Design",
+          "PropertyName": "X",
           "RuleProviderType": "Unknown"
         },
         {
@@ -5434,7 +5439,7 @@
         },
         {
           "Category": "Design",
-          "PropertyName": "Fill",
+          "PropertyName": "Visible",
           "RuleProviderType": "Unknown"
         },
         {
@@ -5444,7 +5449,7 @@
         },
         {
           "Category": "Design",
-          "PropertyName": "ZIndex",
+          "PropertyName": "Fill",
           "RuleProviderType": "Unknown"
         },
         {
@@ -5454,12 +5459,17 @@
         },
         {
           "Category": "Design",
-          "PropertyName": "DisabledBorderColor",
+          "PropertyName": "ZIndex",
           "RuleProviderType": "Unknown"
         },
         {
           "Category": "Design",
           "PropertyName": "DisplayMode",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Design",
+          "PropertyName": "DisabledBorderColor",
           "RuleProviderType": "Unknown"
         },
         {
@@ -5474,17 +5484,12 @@
         },
         {
           "Category": "Design",
-          "PropertyName": "Width",
-          "RuleProviderType": "Unknown"
-        },
-        {
-          "Category": "Design",
           "PropertyName": "DisabledColor",
           "RuleProviderType": "Unknown"
         },
         {
           "Category": "Design",
-          "PropertyName": "Color",
+          "PropertyName": "Width",
           "RuleProviderType": "Unknown"
         },
         {
@@ -5494,7 +5499,7 @@
         },
         {
           "Category": "Design",
-          "PropertyName": "X",
+          "PropertyName": "Color",
           "RuleProviderType": "Unknown"
         },
         {
@@ -5535,11 +5540,6 @@
         {
           "Category": "Design",
           "PropertyName": "PressedColor",
-          "RuleProviderType": "Unknown"
-        },
-        {
-          "Category": "Design",
-          "PropertyName": "Visible",
           "RuleProviderType": "Unknown"
         }
       ],
