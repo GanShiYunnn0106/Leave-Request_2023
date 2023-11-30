@@ -2,7 +2,7 @@ LeaveInformationScreen As screen:
 
     "Gallery6 As gallery.'BrowseLayout_Vertical_ThreeTextVariant_ver5.0'":
         DelayItemLoading: =true
-        Fill: =RGBA(249, 249, 249, 1)
+        Fill: =RGBA(255, 255, 255, 1)
         Height: =604
         Items: |-
             =If(
