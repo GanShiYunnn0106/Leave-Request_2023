@@ -11,7 +11,7 @@ Navigation As CanvasComponent:
 
     Gallery2 As gallery.galleryVertical:
         DelayItemLoading: =true
-        Fill: =RGBA(240, 240, 240, 1)
+        Fill: =RGBA(249, 249, 249, 1)
         Height: =Navigation.Height
         Items: =Navigation.NavItem
         Layout: =Layout.Vertical
