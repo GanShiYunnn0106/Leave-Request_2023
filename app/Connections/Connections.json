@@ -70,6 +70,9 @@
           "LeaveApp_Employee": {
             "tableName": "3b49dfb4-8eb7-4378-b5b7-1fdfee762a15"
           },
+          "LeaveApp_Employee_Entitlement": {
+            "tableName": "831d6ee5-9e2b-4130-ac8b-084fc5dfd9de"
+          },
           "LeaveApp_PublicHoliday": {
             "tableName": "9b6c8406-aed8-4eb6-a0d2-a71f8f7c58ec"
           },
@@ -80,9 +83,10 @@
       }
     },
     "dataSources": [
-      "LeaveApp_Request",
       "LeaveApp_Employee",
-      "LeaveApp_PublicHoliday"
+      "LeaveApp_PublicHoliday",
+      "LeaveApp_Employee_Entitlement",
+      "LeaveApp_Request"
     ],
     "dependencies": {},
     "dependents": [],

@@ -100,7 +100,7 @@ HomeScreen As screen:
             PaddingLeft: =0
             PaddingRight: =0
             PaddingTop: =0
-            Text: =Text(DateTimeValue(Text(ThisItem.Start_Date)),DateTimeFormat.LongDate)
+            Text: =ThisItem.Start_Date
             VerticalAlign: =VerticalAlign.Top
             Width: =353
             X: =156
@@ -115,7 +115,7 @@ HomeScreen As screen:
             PaddingLeft: =0
             PaddingRight: =0
             PaddingTop: =0
-            Text: =Text(DateTimeValue(Text(ThisItem.End_Date)),DateTimeFormat.LongDate)
+            Text: =ThisItem.End_Date
             VerticalAlign: =VerticalAlign.Top
             Width: =TitleStartDate.Width
             X: =156

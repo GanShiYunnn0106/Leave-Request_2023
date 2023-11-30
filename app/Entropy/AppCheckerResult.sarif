@@ -1686,83 +1686,6 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "EmployeeLeaveBalance.LeaveBalanceGallery.Rectangle10.Height"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "EmployeeLeaveBalance.LeaveBalanceGallery.Rectangle10.Height",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 10,
-                  "charOffset": 24,
-                  "snippet": {
-                    "text": "Separator2"
-                  }
-                }
-              },
-              "properties": {
-                "member": "Height",
-                "module": "EmployeeLeaveBalance",
-                "type": "EmployeeLeaveBalance.LeaveBalanceGallery.Rectangle10"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Separator2"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidName",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "EmployeeLeaveBalance.LeaveBalanceGallery.Rectangle10.Height"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "EmployeeLeaveBalance.LeaveBalanceGallery.Rectangle10.Height",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 7,
-                  "charOffset": 34,
-                  "snippet": {
-                    "text": ".Height"
-                  }
-                }
-              },
-              "properties": {
-                "member": "Height",
-                "module": "EmployeeLeaveBalance",
-                "type": "EmployeeLeaveBalance.LeaveBalanceGallery.Rectangle10"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidDot",
-          "ruleIndex": 6
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
                   "fullyQualifiedName": "HomeScreen.GalleryRequest.Items"
                 }
               ],
@@ -1773,7 +1696,7 @@
                 },
                 "region": {
                   "charLength": 16,
-                  "charOffset": 161,
+                  "charOffset": 168,
                   "snippet": {
                     "text": "Year(Start_Date)"
                   }
@@ -1813,7 +1736,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 178,
+                  "charOffset": 185,
                   "snippet": {
                     "text": "="
                   }
@@ -1853,7 +1776,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 194,
+                  "charOffset": 201,
                   "snippet": {
                     "text": "&&"
                   }
@@ -1893,7 +1816,7 @@
                 },
                 "region": {
                   "charLength": 16,
-                  "charOffset": 440,
+                  "charOffset": 455,
                   "snippet": {
                     "text": "Year(Start_Date)"
                   }
@@ -1933,7 +1856,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 457,
+                  "charOffset": 472,
                   "snippet": {
                     "text": "="
                   }
@@ -1973,7 +1896,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 437,
+                  "charOffset": 452,
                   "snippet": {
                     "text": "&&"
                   }
@@ -2013,7 +1936,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 473,
+                  "charOffset": 488,
                   "snippet": {
                     "text": "&&"
                   }
@@ -2053,7 +1976,7 @@
                 },
                 "region": {
                   "charLength": 16,
-                  "charOffset": 732,
+                  "charOffset": 758,
                   "snippet": {
                     "text": "Year(Start_Date)"
                   }
@@ -2093,7 +2016,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 749,
+                  "charOffset": 775,
                   "snippet": {
                     "text": "="
                   }
@@ -2133,7 +2056,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 765,
+                  "charOffset": 791,
                   "snippet": {
                     "text": "&&"
                   }
@@ -2173,7 +2096,7 @@
                 },
                 "region": {
                   "charLength": 16,
-                  "charOffset": 1013,
+                  "charOffset": 1047,
                   "snippet": {
                     "text": "Year(Start_Date)"
                   }
@@ -2213,7 +2136,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 1030,
+                  "charOffset": 1064,
                   "snippet": {
                     "text": "="
                   }
@@ -2253,7 +2176,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 1010,
+                  "charOffset": 1044,
                   "snippet": {
                     "text": "&&"
                   }
@@ -2293,7 +2216,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 1046,
+                  "charOffset": 1080,
                   "snippet": {
                     "text": "&&"
                   }
@@ -4163,6 +4086,66 @@
                 "member": "TabIndex",
                 "module": "EmployeeLeaveBalance",
                 "type": "EmployeeLeaveBalance.EmployeeLeaveFilter"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 10
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "EmployeeLeaveDetail.Icon4.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "EmployeeLeaveDetail.Icon4.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "EmployeeLeaveDetail",
+                "type": "EmployeeLeaveDetail.Icon4"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 9
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "EmployeeLeaveDetail.Icon4.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "EmployeeLeaveDetail.Icon4.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "EmployeeLeaveDetail",
+                "type": "EmployeeLeaveDetail.Icon4"
               }
             }
           ],
