@@ -87,7 +87,6 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "BtnEmployeeLogin",
-      "OptimizeForDevices": "Off",
       "ParentIndex": 4,
       "PersistMetaDataIDKey": false,
       "Properties": [
@@ -365,7 +364,6 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "BtnManagerLogin",
-      "OptimizeForDevices": "Off",
       "ParentIndex": 5,
       "PersistMetaDataIDKey": false,
       "Properties": [
@@ -610,7 +608,6 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "HeaderBackgroundImage",
-      "OptimizeForDevices": "Off",
       "ParentIndex": 0,
       "PersistMetaDataIDKey": false,
       "Properties": [
@@ -841,7 +838,6 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "LblEmployeeLogin",
-      "OptimizeForDevices": "Off",
       "ParentIndex": 2,
       "PersistMetaDataIDKey": false,
       "Properties": [
@@ -1127,7 +1123,6 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "LblManagerLogin",
-      "OptimizeForDevices": "Off",
       "ParentIndex": 3,
       "PersistMetaDataIDKey": false,
       "Properties": [
@@ -1339,7 +1334,6 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "LoginAsEmployeeGroup",
-      "OptimizeForDevices": "Off",
       "ParentIndex": 7,
       "PersistMetaDataIDKey": false,
       "Properties": [
@@ -1391,7 +1385,6 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "LoginAsManagerGroup",
-      "OptimizeForDevices": "Off",
       "ParentIndex": 8,
       "PersistMetaDataIDKey": false,
       "Properties": [
@@ -1453,7 +1446,6 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "LoginScreen",
-      "OptimizeForDevices": "Off",
       "ParentIndex": 0,
       "PersistMetaDataIDKey": false,
       "Properties": [
@@ -1562,7 +1554,6 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "RequestLabel",
-      "OptimizeForDevices": "Off",
       "ParentIndex": 1,
       "PersistMetaDataIDKey": false,
       "Properties": [
@@ -1764,7 +1755,6 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "WelcomePageHeaderGroup",
-      "OptimizeForDevices": "Off",
       "ParentIndex": 6,
       "PersistMetaDataIDKey": false,
       "Properties": [
