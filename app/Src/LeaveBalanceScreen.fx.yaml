@@ -22,7 +22,7 @@ LeaveBalanceScreen As screen:
         Color: =RGBA(101, 128, 187, 1)
         FontWeight: =FontWeight.Bold
         Height: =58
-        Size: =18
+        Size: =19
         Text: ="Leave Balance   -   " & User().FullName
         Width: =750
         X: =250
