@@ -173,6 +173,10 @@ App As appinfo:
                 </html>"
         );
         
+        ClearCollect(
+            HolidayCollection,LeaveApp_PublicHoliday
+        );
+        
         Set(
             _leaveStart,
             Now()

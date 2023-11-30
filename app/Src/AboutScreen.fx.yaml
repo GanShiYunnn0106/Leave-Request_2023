@@ -322,7 +322,7 @@ AboutScreen As screen:
             PressedFill: =AboutLeaveTypeDescription.Fill
             Size: =13.5
             Text: =LookUp(LeaveTypeCollection,type = _aboutSelectedLeaveType).description
-            Width: =893
+            Width: =900
             X: =256
             Y: =422
             ZIndex: =45
