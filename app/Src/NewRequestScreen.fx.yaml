@@ -460,7 +460,7 @@ NewRequestScreen As screen:
                         HolidayLastDate,
                         LookUp(
                             LeaveApp_PublicHoliday,
-                            (ToDate > LeaveStartDatePicker.SelectedDate && ToDate <= LeaveEndDatePicker.SelectedDate)
+                            (HolidayDates = HolidayStartDate)
                         ).ToDate
                     );
                     Set(
@@ -468,7 +468,7 @@ NewRequestScreen As screen:
                         DateDiff(
                             HolidayStartDate,
                             HolidayLastDate
-                        ) + 1
+                        )
                     );
                 
                 Set(
@@ -480,18 +480,21 @@ NewRequestScreen As screen:
                             )
                         );
                 
+                
+                Set(_totalDaysOfHolidays, _holidaysInRequest + NumberOfDaysForHolidays);
+                If(LeaveEndDatePicker.SelectedDate < HolidayLastDate,
                  If(
-                        (_workDaysInRequest - _holidaysInRequest) < 0,
+                        (_workDaysInRequest - _totalDaysOfHolidays) < 0,
                         Set(
                             _requestedDays,
                             _workDaysInRequest
                         ),
                         Set(
                             _requestedDays,
-                            _workDaysInRequest - _holidaysInRequest
+                            _workDaysInRequest - _totalDaysOfHolidays
                         )
                     )
-                    
+                )
                 )
             PressedBorderColor: =LeaveStartDatePicker.BorderColor
             PressedFill: =LeaveStartDatePicker.Fill
@@ -612,7 +615,7 @@ NewRequestScreen As screen:
             PressedFill: =Label1_13.Fill
             Size: =12
             Text: |-
-                =If((_balanceRemain < _requestedDays),"Unpaid Leave: " & -(_balanceRemain - _requestedDays) & " days",(LeaveStartDatePicker.SelectedDate > LeaveEndDatePicker.SelectedDate),"Start date must occur on before end date")
+                =If((_balanceRemain < _requestedDays) && (!IsBlank(_selectedLeaveType)),"Unpaid Leave: " & -(_balanceRemain - _requestedDays) & " days",(LeaveStartDatePicker.SelectedDate > LeaveEndDatePicker.SelectedDate),"Start date must occur on before end date")
             Width: =252
             X: =885
             Y: =304
@@ -1046,14 +1049,4 @@ NewRequestScreen As screen:
         X: =232
         Y: =656
         ZIndex: =50
-
-    Label27 As label:
-        BorderThickness: =4
-        Text: |-
-            =
-            
-                   
-        X: =267
-        Y: =563
-        ZIndex: =51
 

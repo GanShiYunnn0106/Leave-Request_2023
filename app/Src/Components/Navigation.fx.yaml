@@ -23,9 +23,9 @@ Navigation As CanvasComponent:
         ZIndex: =1
 
         Label2 As label:
-            Font: =Font.Georgia
             FontWeight: =FontWeight.Semibold
             OnSelect: =Select(Parent)
+            Size: =13.8
             Text: =ThisItem.Title
             Width: =196
             X: =16
