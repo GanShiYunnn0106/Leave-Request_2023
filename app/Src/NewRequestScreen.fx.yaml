@@ -449,6 +449,8 @@ NewRequestScreen As screen:
                         _numFullWeeks * 5 + _numPartialWeekdays
                     );
                 
+                
+                
                    Set(
                         HolidayStartDate,
                         LookUp(
@@ -471,8 +473,10 @@ NewRequestScreen As screen:
                         )
                     );
                 
+                
+                
                 Set(
-                            _holidaysInRequest,
+                            _numberOfTypesHoliday,
                             CountIf(
                                 LeaveApp_PublicHoliday,
                                 HolidayDates >= LeaveStartDatePicker.SelectedDate,
@@ -481,19 +485,21 @@ NewRequestScreen As screen:
                         );
                 
                 
-                Set(_totalDaysOfHolidays, _holidaysInRequest + NumberOfDaysForHolidays);
+                Set(_totalDaysOfHolidays, _numberOfTypesHoliday + NumberOfDaysForHolidays);
+                Set(daysBetweenStartDateToHolidayDate,DateDiff(LeaveStartDatePicker.SelectedDate,HolidayStartDate));
+                Set(daysBetweenEndDateToToDate,DateDiff(HolidayLastDate,LeaveEndDatePicker.SelectedDate));
                 If(LeaveEndDatePicker.SelectedDate < HolidayLastDate,
-                 If(
-                        (_workDaysInRequest - _totalDaysOfHolidays) < 0,
+                 
                         Set(
                             _requestedDays,
-                            _workDaysInRequest
-                        ),
-                        Set(
+                            daysBetweenStartDateToHolidayDate
+                        )
+                    
+                    ,
+                    Set(
                             _requestedDays,
                             _workDaysInRequest - _totalDaysOfHolidays
                         )
-                    )
                 )
                 )
             PressedBorderColor: =LeaveStartDatePicker.BorderColor
