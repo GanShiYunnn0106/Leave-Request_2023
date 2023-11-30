@@ -346,12 +346,12 @@ LeaveInformationScreen As screen:
         ButtonCategories_1 As button:
             BorderColor: =RGBA(62, 96, 170, 1)
             BorderThickness: =3
-            Color: =If(ButtonFilter_1.Selected.Filter=ThisItem.Filter,RGBA(255, 255, 255, 1),RGBA(10, 106, 204, 1))
+            Color: =If(ButtonFilter_1.Selected.Filter=ThisItem.Filter,RGBA(255, 255, 255, 1),RGBA(0,71,144,1))
             Fill: =If(ButtonFilter_1.Selected.Filter=ThisItem.Filter,RGBA(0, 71, 144, 1),RGBA(255, 255, 255, 1))
             Font: =Font.'Lato Black'
             Height: =37
             OnSelect: =
-            PressedColor: =If(ButtonFilter_1.Selected.Filter=ThisItem.Filter,RGBA(255, 255, 255, 1),RGBA(10, 106, 204, 1))
+            PressedColor: =If(ButtonFilter_1.Selected.Filter=ThisItem.Filter,RGBA(255, 255, 255, 1),RGBA(0,71,144,1))
             RadiusBottomLeft: =35
             RadiusBottomRight: =35
             RadiusTopLeft: =35
