@@ -127,7 +127,14 @@
               "DisplayMode",
               "OnSelect",
               "ZIndex",
-              "Size"
+              {
+                "AFDDataSourceName": "",
+                "AutoRuleBindingEnabled": false,
+                "AutoRuleBindingString": "",
+                "InvariantPropertyName": "Size",
+                "IsLockable": false,
+                "NameMapSourceSchema": "?"
+              }
             ],
             "ControlUniqueId": "7",
             "HasDynamicProperties": false,
@@ -255,7 +262,7 @@
               },
               {
                 "Category": "Design",
-                "InvariantScript": "Font.Georgia",
+                "InvariantScript": "Font.'Open Sans'",
                 "Property": "Font",
                 "RuleProviderType": "Unknown"
               },
@@ -315,7 +322,7 @@
               },
               {
                 "Category": "Design",
-                "InvariantScript": "13",
+                "InvariantScript": "13.8",
                 "Property": "Size",
                 "RuleProviderType": "Unknown"
               },
@@ -763,7 +770,7 @@
       },
       "CurrentScreen"
     ],
-    "LastModifiedTimestamp": "638369273022048736",
+    "LastModifiedTimestamp": "638369299089038600",
     "Name": "Navigation",
     "Rules": [
       {
@@ -854,7 +861,7 @@
   "IsPcfControl": false,
   "IsPremiumPcfControl": false,
   "IsWidgetTemplate": false,
-  "LastModifiedTimestamp": "638369273022048736",
+  "LastModifiedTimestamp": "638369299089038600",
   "Name": "b6b5e691fc474668b7b6312386d8a5c2",
   "OverridableProperties": {},
   "Version": "1.0"
