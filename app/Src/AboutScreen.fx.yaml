@@ -307,7 +307,7 @@ AboutScreen As screen:
         AboutLeaveTypeDescription As label:
             FocusedBorderColor: =AboutLeaveTypeDescription.BorderColor
             FontWeight: =FontWeight.Semibold
-            Height: =370
+            Height: =310
             HoverBorderColor: =AboutLeaveTypeDescription.BorderColor
             HoverColor: =AboutLeaveTypeDescription.Color
             HoverFill: =AboutLeaveTypeDescription.Fill
@@ -322,9 +322,9 @@ AboutScreen As screen:
             PressedFill: =AboutLeaveTypeDescription.Fill
             Size: =13.5
             Text: =LookUp(LeaveTypeCollection,type = _aboutSelectedLeaveType).description
-            Width: =944
-            X: =239
-            Y: =397
+            Width: =915
+            X: =256
+            Y: =420
             ZIndex: =45
 
         AboutLeaveGallerySeparator As rectangle:
@@ -335,8 +335,8 @@ AboutScreen As screen:
             Height: =2
             HoverFill: =AboutLeaveGallerySeparator.Fill
             PressedFill: =AboutLeaveGallerySeparator.Fill
-            Width: =944
-            X: =239
-            Y: =397
+            Width: =939
+            X: =231
+            Y: =381
             ZIndex: =46
 
