@@ -189,7 +189,7 @@ NewRequestScreen As screen:
             HoverColor: =ColorFade(IconHeaderCreateNew_6.Color, 20%)
             HoverFill: =IconHeaderCreateNew_6.Fill
             Icon: =Icon.Add
-            OnSelect: =Navigate(NewRequestScreen,BorderStyle.None);Set(_selectedLeaveType,Blank());Set(_editingRequest, false)
+            OnSelect: =Navigate(NewRequestScreen,BorderStyle.None);Set(_selectedLeaveType,Blank());Set(_editingRequest, false );Set(_leaveStart,Today());Set(_leaveEnd,Today());Set(_leaveDetail,"");Reset(LeaveEndDatePicker);Reset(LeaveStartDatePicker);Reset(TextInput1_1);Select(LeaveStartDatePicker)
             PaddingBottom: =7
             PaddingLeft: =7
             PaddingRight: =7
@@ -391,7 +391,7 @@ NewRequestScreen As screen:
             PressedFill: =Label1_9.Fill
             Size: =10.5
             Text: |-
-                =_balanceRemain - _requestedDays
+                =If((_balanceRemain - _requestedDays) >= 0,(_balanceRemain - _requestedDays),0)
                     &
                     " days"
             Visible: =!IsBlank(_selectedLeaveType)
@@ -443,7 +443,7 @@ NewRequestScreen As screen:
             Align: =LayoutAlignItems.Center
             Color: =RGBA(255, 0, 0, 1)
             FocusedBorderColor: =Label1_13.BorderColor
-            Height: =44
+            Height: =48
             HoverBorderColor: =Label1_13.BorderColor
             HoverColor: =Label1_13.Color
             HoverFill: =Label1_13.Fill
@@ -453,10 +453,10 @@ NewRequestScreen As screen:
             PressedFill: =Label1_13.Fill
             Size: =12
             Text: |-
-                =If((_balanceRemain < _requestedDays),"Reminder: Do not exceed leave balance",(LeaveStartDatePicker.SelectedDate > LeaveEndDatePicker.SelectedDate),"Start date must occur on before end date")
+                =If((_balanceRemain < _requestedDays),"Unpaid Leave: " & -(_balanceRemain - _requestedDays) & " days",(LeaveStartDatePicker.SelectedDate > LeaveEndDatePicker.SelectedDate),"Start date must occur on before end date")
             Width: =252
-            X: =874
-            Y: =295
+            X: =885
+            Y: =304
             ZIndex: =35
 
     GroupRequestInfo As group:
@@ -819,7 +819,7 @@ NewRequestScreen As screen:
         BorderColor: =RGBA(43, 67, 119, 1)
         Color: =RGBA(43, 67, 119, 1)
         DisplayMode: |
-            =If(IsBlank(LeaveStartDatePicker.SelectedDate) || IsBlank(LeaveEndDatePicker.SelectedDate) || LeaveEndDatePicker.SelectedDate < LeaveStartDatePicker.SelectedDate || IsBlank(_selectedLeaveType) || (_balanceRemain < _requestedDays) || IsBlank(TextInput1_1), DisplayMode.Disabled, DisplayMode.Edit)
+            =If(IsBlank(LeaveStartDatePicker.SelectedDate) || IsBlank(LeaveEndDatePicker.SelectedDate) || LeaveEndDatePicker.SelectedDate < LeaveStartDatePicker.SelectedDate || IsBlank(_selectedLeaveType) || IsBlank(TextInput1_1), DisplayMode.Disabled, DisplayMode.Edit)
         Fill: =RGBA(255, 255, 255, 1)
         FontWeight: =FontWeight.Bold
         Height: =112
