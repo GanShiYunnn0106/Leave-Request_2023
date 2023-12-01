@@ -976,7 +976,10 @@ NewRequestScreen As screen:
         FontWeight: =FontWeight.Bold
         Height: =112
         OnSelect: |-
-            =Patch(
+            =Set(LeaveAnnualEntitlementTemp1,LookUp(LeaveApp_Employee,NameofEmployee.Email = User().Email).AnnualLeaveEntitlement);
+            Set(LeaveAnnualCarriedTemp1,LookUp(LeaveApp_Employee,NameofEmployee.Email = User().Email).AnnualCarriedForward);
+            Set(LeaveAnnualTakenTemp1,LookUp(LeaveApp_Employee,NameofEmployee.Email = User().Email).AnnualLeaveTaken);
+            Patch(
                 LeaveApp_Request,
                 If(
                  _editingRequest,
@@ -1026,7 +1029,12 @@ NewRequestScreen As screen:
                         Picture: "."
                     }
                 },
-                If((_balanceRemain < _requestedDays),{UnpaidLeave:-(_balanceRemain - _requestedDays)})
+                If((_balanceRemain < _requestedDays),{UnpaidLeave:-(_balanceRemain - _requestedDays)},{UnpaidLeave:0}),
+            
+            If((_selectedLeaveType = "Annual"),
+            If((_selectedLeaveType = "Annual" && LeaveAnnualCarriedTemp1 >= _requestedDays),{CarryForwardDays:_requestedDays},
+            If((_selectedLeaveType = "Annual" && LeaveAnnualCarriedTemp1 < _requestedDays && LeaveAnnualEntitlementTemp1 >= (LeaveAnnualTakenTemp1 + (_requestedDays - LeaveAnnualCarriedTemp1))),{CarryForwardDays:LeaveAnnualCarriedTemp1},{CarryForwardDays:LeaveAnnualCarriedTemp1}));
+            )
             );
             
             Set(_leaveDaysTemp,_requestedDays);
