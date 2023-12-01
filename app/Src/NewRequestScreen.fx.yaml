@@ -84,23 +84,23 @@ NewRequestScreen As screen:
         Y: =80
         ZIndex: =3
 
-    Label8 As label:
+    TitleNewRequest As label:
         Align: =LayoutAlignItems.Center
         Color: =RGBA(255, 255, 255, 1)
-        FocusedBorderColor: =Label8.BorderColor
+        FocusedBorderColor: =TitleNewRequest.BorderColor
         Font: =Font.Lato
         FontWeight: =FontWeight.Semibold
         Height: =81
-        HoverBorderColor: =Label8.BorderColor
-        HoverColor: =Label8.Color
-        HoverFill: =Label8.Fill
-        PressedBorderColor: =Label8.BorderColor
-        PressedColor: =Label8.Color
-        PressedFill: =Label8.Fill
+        HoverBorderColor: =TitleNewRequest.BorderColor
+        HoverColor: =TitleNewRequest.Color
+        HoverFill: =TitleNewRequest.Fill
+        PressedBorderColor: =TitleNewRequest.BorderColor
+        PressedColor: =TitleNewRequest.Color
+        PressedFill: =TitleNewRequest.Fill
         Size: =20
         Text: =If(_editingRequest, "Edit", "New") & " request"
         Width: =243
-        X: =Parent.Width / 2 - Label8.Width/2
+        X: =Parent.Width / 2 - TitleNewRequest.Width/2
         ZIndex: =36
 
     Header_1 As group:
@@ -961,13 +961,13 @@ NewRequestScreen As screen:
         Y: =80
         ZIndex: =48
 
-    Label5 As label:
+    LabelSubmitRequestTo As label:
         Text: =LookUp(LeaveApp_Employee,NameofEmployee.Email=User().Email).NameofManager.DisplayName
         X: =252
         Y: =490
         ZIndex: =49
 
-    Button6 As button:
+    ButtonSubmitRequest As button:
         BorderColor: =RGBA(43, 67, 119, 1)
         Color: =RGBA(43, 67, 119, 1)
         DisplayMode: |
