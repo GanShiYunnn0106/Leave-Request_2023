@@ -286,7 +286,7 @@ Screen2 As screen:
     Label11_45 As label:
         BorderStyle: =BorderStyle.None
         BorderThickness: =2
-        Text: =LeaveBalanceGallery.Selected.AnnualLeaveTaken & " day(s)"
+        Text: =EmployeeLeaveBalanceGallery.Selected.AnnualLeaveTaken & " day(s)"
         Width: =273
         X: =37
         Y: =233
@@ -304,7 +304,7 @@ Screen2 As screen:
 
     Label11_47 As label:
         Height: =34
-        Text: =Value(LeaveBalanceGallery.Selected.Annual_x0020_Leave_x0020_Balance) & " day(s)"
+        Text: =Value(EmployeeLeaveBalanceGallery.Selected.Annual_x0020_Leave_x0020_Balance) & " day(s)"
         Width: =270
         X: =344
         Y: =237
@@ -322,7 +322,7 @@ Screen2 As screen:
 
     Label11_49 As label:
         Height: =38
-        Text: =LeaveBalanceGallery.Selected.MedicalLeaveTaken & " day(s)"
+        Text: =EmployeeLeaveBalanceGallery.Selected.MedicalLeaveTaken & " day(s)"
         Width: =286
         X: =34
         Y: =298
@@ -340,7 +340,7 @@ Screen2 As screen:
 
     Label11_51 As label:
         Height: =34
-        Text: =Value(LeaveBalanceGallery.Selected.Medical_x0020_Leave_x0020_Balanc) & " day(s)"
+        Text: =Value(EmployeeLeaveBalanceGallery.Selected.Medical_x0020_Leave_x0020_Balanc) & " day(s)"
         Width: =270
         X: =350
         Y: =304
@@ -358,7 +358,7 @@ Screen2 As screen:
 
     Label11_53 As label:
         Height: =34
-        Text: =LeaveBalanceGallery.Selected.CompassionateLeaveTaken & " day(s)"
+        Text: =EmployeeLeaveBalanceGallery.Selected.CompassionateLeaveTaken & " day(s)"
         Width: =300
         X: =34
         Y: =382
@@ -376,7 +376,7 @@ Screen2 As screen:
 
     Label11_55 As label:
         Height: =34
-        Text: =Value(LeaveBalanceGallery.Selected.Compassionate_x0020_Leave_x0020_) & " day(s)"
+        Text: =Value(EmployeeLeaveBalanceGallery.Selected.Compassionate_x0020_Leave_x0020_) & " day(s)"
         Width: =270
         X: =347
         Y: =383
@@ -394,7 +394,7 @@ Screen2 As screen:
 
     Label11_57 As label:
         Height: =34
-        Text: =LeaveBalanceGallery.Selected.AnnualCarriedForward & " day(s)"
+        Text: =EmployeeLeaveBalanceGallery.Selected.AnnualCarriedForward & " day(s)"
         Width: =300
         X: =663
         Y: =231
@@ -412,7 +412,7 @@ Screen2 As screen:
 
     Label11_59 As label:
         Height: =34
-        Text: =LeaveBalanceGallery.Selected.MarriageLeaveTaken & " day(s)"
+        Text: =EmployeeLeaveBalanceGallery.Selected.MarriageLeaveTaken & " day(s)"
         Width: =300
         X: =34
         Y: =468
@@ -430,7 +430,7 @@ Screen2 As screen:
 
     Label11_61 As label:
         Height: =34
-        Text: =Value(LeaveBalanceGallery.Selected.Marriage_x0020_Leave_x0020_Balan) & " day(s)"
+        Text: =Value(EmployeeLeaveBalanceGallery.Selected.Marriage_x0020_Leave_x0020_Balan) & " day(s)"
         Width: =270
         X: =344
         Y: =468
@@ -448,7 +448,7 @@ Screen2 As screen:
 
     Label11_63 As label:
         Height: =34
-        Text: =LeaveBalanceGallery.Selected.PaternityLeaveTaken & " day(s)"
+        Text: =EmployeeLeaveBalanceGallery.Selected.PaternityLeaveTaken & " day(s)"
         Width: =300
         X: =34
         Y: =552
@@ -466,7 +466,7 @@ Screen2 As screen:
 
     Label11_65 As label:
         Height: =34
-        Text: =Value(LeaveBalanceGallery.Selected.Paternity_x0020_Leave_x0020_Bala) & " day(s)"
+        Text: =Value(EmployeeLeaveBalanceGallery.Selected.Paternity_x0020_Leave_x0020_Bala) & " day(s)"
         Width: =270
         X: =347
         Y: =552
@@ -484,7 +484,7 @@ Screen2 As screen:
 
     Label11_67 As label:
         Height: =34
-        Text: =LeaveBalanceGallery.Selected.MaternityLeaveTaken & " day(s)"
+        Text: =EmployeeLeaveBalanceGallery.Selected.MaternityLeaveTaken & " day(s)"
         Width: =300
         X: =34
         Y: =637
@@ -502,7 +502,7 @@ Screen2 As screen:
 
     Label11_69 As label:
         Height: =34
-        Text: =Value(LeaveBalanceGallery.Selected.Maternity_x0020_Leave_x0020_Bala) & " day(s)"
+        Text: =Value(EmployeeLeaveBalanceGallery.Selected.Maternity_x0020_Leave_x0020_Bala) & " day(s)"
         Width: =270
         X: =347
         Y: =632
@@ -520,7 +520,7 @@ Screen2 As screen:
 
     Label11_71 As label:
         Height: =34
-        Text: =LeaveBalanceGallery.Selected.HospitalizationLeaveTaken & " day(s)"
+        Text: =EmployeeLeaveBalanceGallery.Selected.HospitalizationLeaveTaken & " day(s)"
         Width: =300
         X: =34
         Y: =707
@@ -538,7 +538,7 @@ Screen2 As screen:
 
     Label11_73 As label:
         Height: =34
-        Text: =Value(LeaveBalanceGallery.Selected.Hospitalization_x0020_Leave_x002) & " day(s)"
+        Text: =Value(EmployeeLeaveBalanceGallery.Selected.Hospitalization_x0020_Leave_x002) & " day(s)"
         Width: =270
         X: =347
         Y: =707
@@ -556,7 +556,7 @@ Screen2 As screen:
 
     Label11_75 As label:
         Height: =34
-        Text: =LeaveBalanceGallery.Selected.UnpaidLeaveTaken & " day(s)"
+        Text: =EmployeeLeaveBalanceGallery.Selected.UnpaidLeaveTaken & " day(s)"
         Width: =300
         X: =663
         Y: =302

@@ -296,37 +296,6 @@ CompanyHolidaysScreen As screen:
         Y: =40
         ZIndex: =38
 
-        Label7 As label:
-            Font: =Font.Georgia
-            Height: =255
-            Size: =14
-            Text: |-
-                ="Holiday:
-                
-                
-                
-                From:
-                
-                
-                
-                To:"
-            Visible: =_managerView=true
-            Width: =210
-            X: =1131
-            Y: =178
-            ZIndex: =36
-
-        Button1 As button:
-            Height: =42
-            OnSelect: |-
-                =Collect(LeaveApp_PublicHoliday,{HolidayName:txtHoliday.Text, HolidayDates:DateValue(HolidayDate.SelectedDate), ToDate:DateValue(HolidayDate2.SelectedDate)})
-            Text: ="Add"
-            Visible: =_managerView=true
-            Width: =86
-            X: =1193
-            Y: =499
-            ZIndex: =37
-
     txtHoliday As text:
         Default: =""
         Height: =36
