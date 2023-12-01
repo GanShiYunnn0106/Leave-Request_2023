@@ -86,7 +86,7 @@ HomeScreen As screen:
             
             Reset(RemarksTextBox);
         TemplatePadding: =0
-        TemplateSize: =194
+        TemplateSize: =150
         Width: =820
         X: =231
         Y: =158
@@ -122,21 +122,6 @@ HomeScreen As screen:
             Y: =98
             ZIndex: =2
 
-        BodyComments As label:
-            FontWeight: =FontWeight.Semibold
-            Height: =56
-            OnSelect: =
-            PaddingBottom: =0
-            PaddingLeft: =0
-            PaddingRight: =0
-            PaddingTop: =0
-            Text: =ThisItem.Comments
-            VerticalAlign: =VerticalAlign.Top
-            Width: =421
-            X: =156
-            Y: =145
-            ZIndex: =3
-
         Separator1 As rectangle:
             Fill: =RGBA(230, 230, 230, 1)
             Height: =3
@@ -159,11 +144,9 @@ HomeScreen As screen:
             Text: |-
                 ="Start date:
                 
-                End date:
-                
-                Comment:"
+                End date:"
             X: =20
-            Y: =51
+            Y: =24
             ZIndex: =8
 
         ButtonStatus As button:
@@ -179,7 +162,7 @@ HomeScreen As screen:
             OnSelect: =
             Text: =ThisItem.Status.Value
             X: =624
-            Y: =112
+            Y: =85
             ZIndex: =9
 
         Label26 As label:
@@ -297,11 +280,11 @@ HomeScreen As screen:
 
         RemarksTextBox As text:
             Default: =""
-            Height: =68
+            Height: =57
             Visible: =_managerView && (GalleryRequest.Selected.Status.Value) = "Pending"
             Width: =241
-            X: =1076
-            Y: =570
+            X: =1080
+            Y: =619
             ZIndex: =15
 
         RequestDetailsTitle_2 As label:
@@ -338,7 +321,7 @@ HomeScreen As screen:
             Visible: =!_managerView && (GalleryRequest.Selected.Status.Value) = "Pending"
             Width: =54
             X: =1119
-            Y: =660
+            Y: =525
             ZIndex: =17
 
         EditIcon_2 As icon.Edit:
@@ -348,7 +331,7 @@ HomeScreen As screen:
             Visible: =!_managerView && (GalleryRequest.Selected.Status.Value) = "Pending"
             Width: =23
             X: =1091
-            Y: =660
+            Y: =525
             ZIndex: =18
 
         ButtonManagerApprove_2 As button:
@@ -466,7 +449,7 @@ HomeScreen As screen:
                 =_managerView && (GalleryRequest.Selected.Status.Value) = "Pending"
             Width: =78
             X: =1107
-            Y: =660
+            Y: =696
             ZIndex: =19
 
         ButtonManagerDecline_2 As button:
@@ -530,7 +513,7 @@ HomeScreen As screen:
             Visible: =_managerView && (GalleryRequest.Selected.Status.Value) = "Pending"
             Width: =78
             X: =1213
-            Y: =660
+            Y: =696
             ZIndex: =20
 
         Days_2 As label:
@@ -580,7 +563,7 @@ HomeScreen As screen:
             Text: =If(IsBlank(GalleryRequest.Selected.UnpaidLeave),"-",GalleryRequest.Selected.UnpaidLeave &" days")
             Width: =161
             X: =1070
-            Y: =480
+            Y: =462
             ZIndex: =25
 
         LblTotalDays_2 As label:
@@ -627,7 +610,7 @@ HomeScreen As screen:
                 ="Unpaid Leaves:"
             Width: =171
             X: =1070
-            Y: =457
+            Y: =439
             ZIndex: =30
 
         LblRemarksHeader As label:
@@ -637,9 +620,27 @@ HomeScreen As screen:
             Visible: |
                 =_managerView
             Width: =137
-            X: =1070
-            Y: =527
+            X: =1074
+            Y: =574
             ZIndex: =31
+
+    Label33 As label:
+        Text: |-
+            ="Comment:"
+        Visible: =_managerView = true
+        X: =1071
+        Y: =491
+        ZIndex: =33
+
+    Label34 As label:
+        FontWeight: =FontWeight.Semibold
+        Height: =42
+        Text: =GalleryRequest.Selected.Comments
+        Visible: =_managerView = true
+        Width: =254
+        X: =1071
+        Y: =528
+        ZIndex: =34
 
     Header_11 As group:
         Height: =5
