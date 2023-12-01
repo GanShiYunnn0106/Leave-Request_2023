@@ -20,8 +20,8 @@ LoginScreen As screen:
         Height: =156
         Image: =Logo01
         Width: =555
-        X: =101
-        Y: =220
+        X: =120
+        Y: =238
         ZIndex: =6
 
     Label25 As label:
@@ -35,7 +35,7 @@ LoginScreen As screen:
             ="REQUEST
              LEAVE"
         Width: =364
-        X: =186
+        X: =215
         Y: =394
         ZIndex: =7
 
