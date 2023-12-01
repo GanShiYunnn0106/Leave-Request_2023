@@ -1526,12 +1526,12 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "EmployeeLeaveBalance.EmployeeLeaveBalanceGallery.Items"
+                  "fullyQualifiedName": "EmployeeLeaveBalance.LeaveBalanceGallery.Items"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "EmployeeLeaveBalance.EmployeeLeaveBalanceGallery.Items",
+                  "fullyQualifiedName": "EmployeeLeaveBalance.LeaveBalanceGallery.Items",
                   "relativeAddress": 0
                 },
                 "region": {
@@ -1545,7 +1545,7 @@
               "properties": {
                 "member": "Items",
                 "module": "EmployeeLeaveBalance",
-                "type": "EmployeeLeaveBalance.EmployeeLeaveBalanceGallery"
+                "type": "EmployeeLeaveBalance.LeaveBalanceGallery"
               }
             }
           ],
@@ -1566,12 +1566,12 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "EmployeeLeaveBalance.EmployeeLeaveBalanceGallery.Items"
+                  "fullyQualifiedName": "EmployeeLeaveBalance.LeaveBalanceGallery.Items"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "EmployeeLeaveBalance.EmployeeLeaveBalanceGallery.Items",
+                  "fullyQualifiedName": "EmployeeLeaveBalance.LeaveBalanceGallery.Items",
                   "relativeAddress": 0
                 },
                 "region": {
@@ -1585,7 +1585,7 @@
               "properties": {
                 "member": "Items",
                 "module": "EmployeeLeaveBalance",
-                "type": "EmployeeLeaveBalance.EmployeeLeaveBalanceGallery"
+                "type": "EmployeeLeaveBalance.LeaveBalanceGallery"
               }
             }
           ],
@@ -1606,12 +1606,12 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "EmployeeLeaveBalance.EmployeeLeaveBalanceGallery.Items"
+                  "fullyQualifiedName": "EmployeeLeaveBalance.LeaveBalanceGallery.Items"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "EmployeeLeaveBalance.EmployeeLeaveBalanceGallery.Items",
+                  "fullyQualifiedName": "EmployeeLeaveBalance.LeaveBalanceGallery.Items",
                   "relativeAddress": 0
                 },
                 "region": {
@@ -1625,7 +1625,7 @@
               "properties": {
                 "member": "Items",
                 "module": "EmployeeLeaveBalance",
-                "type": "EmployeeLeaveBalance.EmployeeLeaveBalanceGallery"
+                "type": "EmployeeLeaveBalance.LeaveBalanceGallery"
               }
             }
           ],
@@ -3473,19 +3473,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "EmployeeLeaveBalance.EmployeeLeaveBalanceGallery.AccessibleLabel"
+                  "fullyQualifiedName": "EmployeeLeaveBalance.LeaveBalanceGallery.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "EmployeeLeaveBalance.EmployeeLeaveBalanceGallery.AccessibleLabel",
+                  "fullyQualifiedName": "EmployeeLeaveBalance.LeaveBalanceGallery.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "EmployeeLeaveBalance",
-                "type": "EmployeeLeaveBalance.EmployeeLeaveBalanceGallery"
+                "type": "EmployeeLeaveBalance.LeaveBalanceGallery"
               }
             }
           ],
@@ -3503,19 +3503,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "EmployeeLeaveBalance.EmployeeLeaveBalanceGallery.TabIndex"
+                  "fullyQualifiedName": "EmployeeLeaveBalance.LeaveBalanceGallery.TabIndex"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "EmployeeLeaveBalance.EmployeeLeaveBalanceGallery.TabIndex",
+                  "fullyQualifiedName": "EmployeeLeaveBalance.LeaveBalanceGallery.TabIndex",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "TabIndex",
                 "module": "EmployeeLeaveBalance",
-                "type": "EmployeeLeaveBalance.EmployeeLeaveBalanceGallery"
+                "type": "EmployeeLeaveBalance.LeaveBalanceGallery"
               }
             }
           ],
@@ -3593,19 +3593,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "EmployeeLeaveDetail.EmployeeLeaveDetailGallery.AccessibleLabel"
+                  "fullyQualifiedName": "EmployeeLeaveDetail.Gallery1.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "EmployeeLeaveDetail.EmployeeLeaveDetailGallery.AccessibleLabel",
+                  "fullyQualifiedName": "EmployeeLeaveDetail.Gallery1.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "EmployeeLeaveDetail",
-                "type": "EmployeeLeaveDetail.EmployeeLeaveDetailGallery"
+                "type": "EmployeeLeaveDetail.Gallery1"
               }
             }
           ],
@@ -3623,19 +3623,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "EmployeeLeaveDetail.EmployeeLeaveDetailGallery.TabIndex"
+                  "fullyQualifiedName": "EmployeeLeaveDetail.Gallery1.TabIndex"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "EmployeeLeaveDetail.EmployeeLeaveDetailGallery.TabIndex",
+                  "fullyQualifiedName": "EmployeeLeaveDetail.Gallery1.TabIndex",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "TabIndex",
                 "module": "EmployeeLeaveDetail",
-                "type": "EmployeeLeaveDetail.EmployeeLeaveDetailGallery"
+                "type": "EmployeeLeaveDetail.Gallery1"
               }
             }
           ],
@@ -4403,19 +4403,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "LeaveBalanceScreen.MyLeaveBalanceGallery.AccessibleLabel"
+                  "fullyQualifiedName": "LeaveBalanceScreen.LeaveBalance.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "LeaveBalanceScreen.MyLeaveBalanceGallery.AccessibleLabel",
+                  "fullyQualifiedName": "LeaveBalanceScreen.LeaveBalance.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "LeaveBalanceScreen",
-                "type": "LeaveBalanceScreen.MyLeaveBalanceGallery"
+                "type": "LeaveBalanceScreen.LeaveBalance"
               }
             }
           ],
@@ -4433,19 +4433,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "LeaveBalanceScreen.MyLeaveBalanceGallery.TabIndex"
+                  "fullyQualifiedName": "LeaveBalanceScreen.LeaveBalance.TabIndex"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "LeaveBalanceScreen.MyLeaveBalanceGallery.TabIndex",
+                  "fullyQualifiedName": "LeaveBalanceScreen.LeaveBalance.TabIndex",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "TabIndex",
                 "module": "LeaveBalanceScreen",
-                "type": "LeaveBalanceScreen.MyLeaveBalanceGallery"
+                "type": "LeaveBalanceScreen.LeaveBalance"
               }
             }
           ],
@@ -4463,19 +4463,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "LeaveBalanceScreen.MyLeaveBalanceGallery.Icon2.AccessibleLabel"
+                  "fullyQualifiedName": "LeaveBalanceScreen.LeaveBalance.Icon2.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "LeaveBalanceScreen.MyLeaveBalanceGallery.Icon2.AccessibleLabel",
+                  "fullyQualifiedName": "LeaveBalanceScreen.LeaveBalance.Icon2.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "LeaveBalanceScreen",
-                "type": "LeaveBalanceScreen.MyLeaveBalanceGallery.Icon2"
+                "type": "LeaveBalanceScreen.LeaveBalance.Icon2"
               }
             }
           ],
@@ -4493,19 +4493,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "LeaveBalanceScreen.MyLeaveBalanceGallery.Icon2.TabIndex"
+                  "fullyQualifiedName": "LeaveBalanceScreen.LeaveBalance.Icon2.TabIndex"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "LeaveBalanceScreen.MyLeaveBalanceGallery.Icon2.TabIndex",
+                  "fullyQualifiedName": "LeaveBalanceScreen.LeaveBalance.Icon2.TabIndex",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "TabIndex",
                 "module": "LeaveBalanceScreen",
-                "type": "LeaveBalanceScreen.MyLeaveBalanceGallery.Icon2"
+                "type": "LeaveBalanceScreen.LeaveBalance.Icon2"
               }
             }
           ],
@@ -4523,19 +4523,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "LeaveBalanceScreen.MyLeaveBalanceGallery.Icon2_1.AccessibleLabel"
+                  "fullyQualifiedName": "LeaveBalanceScreen.LeaveBalance.Icon2_1.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "LeaveBalanceScreen.MyLeaveBalanceGallery.Icon2_1.AccessibleLabel",
+                  "fullyQualifiedName": "LeaveBalanceScreen.LeaveBalance.Icon2_1.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "LeaveBalanceScreen",
-                "type": "LeaveBalanceScreen.MyLeaveBalanceGallery.Icon2_1"
+                "type": "LeaveBalanceScreen.LeaveBalance.Icon2_1"
               }
             }
           ],
@@ -4553,19 +4553,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "LeaveBalanceScreen.MyLeaveBalanceGallery.Icon2_1.TabIndex"
+                  "fullyQualifiedName": "LeaveBalanceScreen.LeaveBalance.Icon2_1.TabIndex"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "LeaveBalanceScreen.MyLeaveBalanceGallery.Icon2_1.TabIndex",
+                  "fullyQualifiedName": "LeaveBalanceScreen.LeaveBalance.Icon2_1.TabIndex",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "TabIndex",
                 "module": "LeaveBalanceScreen",
-                "type": "LeaveBalanceScreen.MyLeaveBalanceGallery.Icon2_1"
+                "type": "LeaveBalanceScreen.LeaveBalance.Icon2_1"
               }
             }
           ],
@@ -4583,19 +4583,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "LeaveBalanceScreen.MyLeaveBalanceGallery.DatePicker1.AccessibleLabel"
+                  "fullyQualifiedName": "LeaveBalanceScreen.LeaveBalance.DatePicker1.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "LeaveBalanceScreen.MyLeaveBalanceGallery.DatePicker1.AccessibleLabel",
+                  "fullyQualifiedName": "LeaveBalanceScreen.LeaveBalance.DatePicker1.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "LeaveBalanceScreen",
-                "type": "LeaveBalanceScreen.MyLeaveBalanceGallery.DatePicker1"
+                "type": "LeaveBalanceScreen.LeaveBalance.DatePicker1"
               }
             }
           ],
