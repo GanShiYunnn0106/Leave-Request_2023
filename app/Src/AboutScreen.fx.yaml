@@ -324,7 +324,7 @@ AboutScreen As screen:
             Text: =LookUp(LeaveTypeCollection,type = _aboutSelectedLeaveType).description
             Width: =900
             X: =256
-            Y: =439
+            Y: =457
             ZIndex: =45
 
         AboutLeaveGallerySeparator As rectangle:
