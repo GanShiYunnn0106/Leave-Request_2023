@@ -5,7 +5,7 @@ EmployeeLeaveDetail As screen:
         FontWeight: =FontWeight.Bold
         Height: =49
         Size: =20
-        Text: ="Leave Takens for Chan Jia Xin"
+        Text: ="Leave Takens for " & LeaveBalanceGallery.Selected.NameofEmployee.DisplayName
         Width: =1019
         X: =305
         Y: =99
