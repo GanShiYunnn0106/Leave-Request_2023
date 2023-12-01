@@ -177,42 +177,6 @@ EmployeeLeaveBalance As screen:
             X: =1211
             ZIndex: =8
 
-    "EmployeeLeaveBalanceGallery As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
-        DelayItemLoading: =true
-        Height: =609
-        Items: |-
-            =If(
-                EmployeeLeaveFilter.Selected.Filter = "All",
-                Sort(
-                    Filter(
-                        LeaveApp_Employee,
-                        SearchLeaveInput.Text in NameofEmployee.DisplayName
-                    ),
-                    NameofEmployee.DisplayName,
-                    SortOrder.Ascending
-                ),
-                If(
-                    EmployeeLeaveFilter.Selected.Filter = "My Subordinate Only",
-                    Sort(
-                        Filter(
-                            LeaveApp_Employee,
-                            SearchLeaveInput.Text in NameofEmployee.DisplayName && NameofManager.Email = User().Email
-                        ),
-                        NameofEmployee.DisplayName,
-                        SortOrder.Ascending
-                    )
-                )
-            )
-        Layout: =Layout.Vertical
-        LoadingSpinner: =LoadingSpinner.Data
-        OnSelect: =Set(_selectedEmployee, ThisItem.NameofEmployee.DisplayName); Navigate(EmployeeLeaveDetail)
-        TemplatePadding: =0
-        TemplateSize: =111
-        Width: =1134
-        X: =231
-        Y: =159
-        ZIndex: =10
-
     Label1 As label:
         Color: =RGBA(255, 255, 255, 1)
         FontWeight: =FontWeight.Semibold
@@ -248,4 +212,131 @@ EmployeeLeaveBalance As screen:
         X: =231
         Y: =157
         ZIndex: =15
+
+    "EmployeeLeaveBalanceGallery As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+        DelayItemLoading: =true
+        Height: =609
+        Items: |-
+            =If(
+                EmployeeLeaveFilter.Selected.Filter = "All",
+                Sort(
+                    Filter(
+                        LeaveApp_Employee,
+                        SearchLeaveInput.Text in NameofEmployee.DisplayName
+                    ),
+                    NameofEmployee.DisplayName,
+                    SortOrder.Ascending
+                ),
+                If(
+                    EmployeeLeaveFilter.Selected.Filter = "My Subordinate Only",
+                    Sort(
+                        Filter(
+                            LeaveApp_Employee,
+                            SearchLeaveInput.Text in NameofEmployee.DisplayName && NameofManager.Email = User().Email
+                        ),
+                        NameofEmployee.DisplayName,
+                        SortOrder.Ascending
+                    )
+                )
+            )
+        Layout: =Layout.Vertical
+        LoadingSpinner: =LoadingSpinner.Data
+        OnSelect: =Set(_selectedEmployee, ThisItem.NameofEmployee.DisplayName); Navigate(EmployeeLeaveDetail)
+        TemplatePadding: =0
+        TemplateSize: =111
+        Width: =1134
+        X: =231
+        Y: =159
+        ZIndex: =16
+
+        Title1_2 As label:
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =29
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =15
+            Text: =ThisItem.NameofEmployee.DisplayName
+            VerticalAlign: =VerticalAlign.Top
+            Width: =480
+            X: =41
+            Y: =27
+            ZIndex: =2
+
+        Subtitle1_2 As label:
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =25
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: |-
+                ="Manager : " & ThisItem.NameofManager.DisplayName
+            VerticalAlign: =VerticalAlign.Top
+            Width: =480
+            X: =Title1_2.X
+            Y: =56
+            ZIndex: =3
+
+        NextArrow1_2 As icon.ChevronRight:
+            AccessibleLabel: =Self.Tooltip
+            Color: =RGBA(166, 166, 166, 1)
+            Height: =50
+            Icon: =Icon.ChevronRight
+            OnSelect: =Select(Parent)
+            PaddingBottom: =16
+            PaddingLeft: =16
+            PaddingRight: =16
+            PaddingTop: =16
+            Tooltip: ="View item details"
+            Width: =50
+            X: =Parent.TemplateWidth - Self.Width - 12
+            Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+            ZIndex: =4
+
+        Rectangle10_2 As rectangle:
+            Height: =107
+            OnSelect: =Select(Parent)
+            Visible: =ThisItem.IsSelected
+            Width: =3
+            ZIndex: =6
+
+        Rectangle11_2 As rectangle:
+            Fill: =RGBA(230, 229, 229, 1)
+            Height: =2
+            OnSelect: =Select(Parent)
+            Width: =1134
+            Y: =107
+            ZIndex: =7
+
+        Label29_2 As label:
+            Height: =29
+            OnSelect: =Select(Parent)
+            Text: |-
+                ="Carry Forward : " & ThisItem.AnnualCarriedForward & " day(s) of " & LookUp(LeaveApp_Employee_Entitlement,  ThisItem.NameofEmployee.DisplayName = NameofEmployee.DisplayName).CarriedForwardEntitlement & " day(s) left"
+            Width: =377
+            X: =696
+            Y: =27
+            ZIndex: =8
+
+        Label30_2 As label:
+            Height: =24
+            OnSelect: =Select(Parent)
+            Text: |-
+                ="Annual Leave  : " & Value(ThisItem.Annual_x0020_Leave_x0020_Balance) & " day(s) of " & ThisItem.AnnualLeaveEntitlement & " day(s) left"
+            Width: =377
+            X: =696
+            Y: =56
+            ZIndex: =9
+
+    Rectangle14_2 As rectangle:
+        Fill: =RGBA(230, 230, 230, 1)
+        Height: =2
+        Width: =1135
+        X: =231
+        Y: =157
+        ZIndex: =17
 

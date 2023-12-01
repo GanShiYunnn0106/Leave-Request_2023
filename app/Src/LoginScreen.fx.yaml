@@ -24,6 +24,21 @@ LoginScreen As screen:
         Y: =238
         ZIndex: =6
 
+    LabelRequestLeave As label:
+        Align: =Align.Center
+        Color: =RGBA(56, 86, 153, 1)
+        Font: =Font.Georgia
+        FontWeight: =FontWeight.Bold
+        Height: =94
+        Size: =35
+        Text: |-
+            ="REQUEST
+             LEAVE"
+        Width: =364
+        X: =215
+        Y: =394
+        ZIndex: =7
+
     LoginAsEmployeeGroup As group:
         Height: =5
         Width: =5
@@ -88,21 +103,6 @@ LoginScreen As screen:
             X: =919
             Y: =269
             ZIndex: =5
-
-    LabelRequestLeave As label:
-        Align: =Align.Center
-        Color: =RGBA(56, 86, 153, 1)
-        Font: =Font.Georgia
-        FontWeight: =FontWeight.Bold
-        Height: =94
-        Size: =35
-        Text: |-
-            ="REQUEST
-             LEAVE"
-        Width: =364
-        X: =215
-        Y: =394
-        ZIndex: =7
 
     LoginAsManagerGroup As group:
         Height: =5

@@ -11,18 +11,6 @@ EmployeeLeaveDetail As screen:
         Y: =99
         ZIndex: =1
 
-    EmployeeLeaveDetailGallery As gallery.galleryVertical:
-        DelayItemLoading: =true
-        Height: =543
-        Items: =Filter(LeaveApp_Request,Created_By.DisplayName = _selectedEmployee)
-        Layout: =Layout.Vertical
-        LoadingSpinner: =LoadingSpinner.Data
-        TemplateSize: =60
-        Width: =1135
-        X: =231
-        Y: =214
-        ZIndex: =1
-
     Navigation_9 As Navigation:
         NavItem: =If(_managerView,ManagerNavigation,EmployeeNavigation)
         Y: =80
@@ -168,7 +156,131 @@ EmployeeLeaveDetail As screen:
         Y: =167
         ZIndex: =43
 
-    Title2_1 As label:
+    Icon4 As icon.BackArrow:
+        Height: =40
+        Icon: =Icon.BackArrow
+        OnSelect: =Navigate(EmployeeLeaveBalance)
+        Width: =40
+        X: =248
+        Y: =100
+        ZIndex: =54
+
+    Gallery1_2 As gallery.galleryVertical:
+        DelayItemLoading: =true
+        Height: =543
+        Items: =Filter(LeaveApp_Request,Created_By.DisplayName = _selectedEmployee)
+        Layout: =Layout.Vertical
+        LoadingSpinner: =LoadingSpinner.Data
+        TemplateSize: =60
+        Width: =1135
+        X: =231
+        Y: =225
+        ZIndex: =55
+
+        Label28_2 As label:
+            Align: =Align.Center
+            Height: =25
+            OnSelect: =Select(Parent)
+            Size: =11
+            Text: =ThisItem.Leave_Type.Value
+            Width: =167
+            Y: =16
+            ZIndex: =1
+
+        Label28_14 As label:
+            Align: =Align.Center
+            Height: =25
+            OnSelect: =Select(Parent)
+            Size: =11
+            Text: =Text(ThisItem.Start_Date, "[$-en-US]dd mmm yyyy")
+            Width: =100
+            X: =276
+            Y: =16
+            ZIndex: =3
+
+        Label28_15 As label:
+            Align: =Align.Center
+            Height: =25
+            OnSelect: =Select(Parent)
+            Size: =11
+            Text: =Text(ThisItem.End_Date, "[$-en-US]dd mmm yyyy")
+            Width: =100
+            X: =393
+            Y: =16
+            ZIndex: =4
+
+        Label28_16 As label:
+            Align: =Align.Center
+            Height: =25
+            OnSelect: =Select(Parent)
+            Size: =11
+            Text: =ThisItem.Days
+            Width: =88
+            X: =501
+            Y: =16
+            ZIndex: =5
+
+        Label28_17 As label:
+            Align: =Align.Center
+            Height: =25
+            OnSelect: =Select(Parent)
+            Size: =11
+            Text: =If(IsBlank(ThisItem.CarryForwardDays),"-",ThisItem.CarryForwardDays)
+            Width: =100
+            X: =604
+            Y: =16
+            ZIndex: =6
+
+        Label28_18 As label:
+            Align: =Align.Center
+            Height: =25
+            OnSelect: =Select(Parent)
+            Size: =11
+            Text: =If(IsBlank(ThisItem.UnpaidLeave),"-",ThisItem.UnpaidLeave)
+            Width: =100
+            X: =738
+            Y: =16
+            ZIndex: =7
+
+        Label28_19 As label:
+            Height: =25
+            OnSelect: =Select(Parent)
+            Size: =11
+            Text: =If(IsBlank(ThisItem.Decision_By.DisplayName),"-",ThisItem.Decision_By.DisplayName)
+            Width: =271
+            X: =854
+            Y: =16
+            ZIndex: =8
+
+        Rectangle15_2 As rectangle:
+            Fill: =RGBA(230, 230, 230, 1)
+            Height: =1
+            OnSelect: =Select(Parent)
+            Width: =1120
+            Y: =58
+            ZIndex: =9
+
+        Button8_2 As button:
+            BorderColor: =If((ThisItem.Status.Value)="Pending",RGBA(0,71,144,1),(ThisItem.Status.Value)="Rejected",RGBA(213,0,0,1),(ThisItem.Status.Value)="Approved",RGBA(0,128,0,1))
+            Color: =If((ThisItem.Status.Value)="Pending",RGBA(0,71,144,1),(ThisItem.Status.Value)="Rejected",RGBA(213,0,0,1),(ThisItem.Status.Value)="Approved",RGBA(0,128,0,1))
+            DisabledBorderColor: =
+            DisabledColor: =If((ThisItem.Status.Value)="Pending",RGBA(0,71,144,1),(ThisItem.Status.Value)="Rejected",RGBA(213,0,0,1),(ThisItem.Status.Value)="Approved",RGBA(0,128,0,1))
+            DisabledFill: =
+            DisplayMode: =DisplayMode.Disabled
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =25
+            OnSelect: =Select(Parent)
+            PressedBorderColor: =
+            PressedColor: =
+            PressedFill: =
+            Size: =10
+            Text: =ThisItem.Status.Value
+            Width: =75
+            X: =186
+            Y: =16
+            ZIndex: =10
+
+    Title2_17 As label:
         FontWeight: =FontWeight.Semibold
         Height: =29
         OnSelect: =
@@ -181,10 +293,10 @@ EmployeeLeaveDetail As screen:
         VerticalAlign: =VerticalAlign.Top
         Width: =163
         X: =266
-        Y: =185
-        ZIndex: =45
+        Y: =196
+        ZIndex: =57
 
-    Title2_2 As label:
+    Title2_18 As label:
         FontWeight: =FontWeight.Semibold
         Height: =29
         OnSelect: =
@@ -197,10 +309,10 @@ EmployeeLeaveDetail As screen:
         VerticalAlign: =VerticalAlign.Top
         Width: =96
         X: =432
-        Y: =185
-        ZIndex: =46
+        Y: =196
+        ZIndex: =58
 
-    Title2_3 As label:
+    Title2_19 As label:
         FontWeight: =FontWeight.Semibold
         Height: =29
         OnSelect: =
@@ -213,10 +325,10 @@ EmployeeLeaveDetail As screen:
         VerticalAlign: =VerticalAlign.Top
         Width: =133
         X: =531
-        Y: =185
-        ZIndex: =47
+        Y: =196
+        ZIndex: =59
 
-    Title2_4 As label:
+    Title2_20 As label:
         FontWeight: =FontWeight.Semibold
         Height: =29
         OnSelect: =
@@ -229,10 +341,10 @@ EmployeeLeaveDetail As screen:
         VerticalAlign: =VerticalAlign.Top
         Width: =102
         X: =643
-        Y: =185
-        ZIndex: =48
+        Y: =196
+        ZIndex: =60
 
-    Title2_5 As label:
+    Title2_21 As label:
         FontWeight: =FontWeight.Semibold
         Height: =29
         OnSelect: =
@@ -245,10 +357,10 @@ EmployeeLeaveDetail As screen:
         VerticalAlign: =VerticalAlign.Top
         Width: =102
         X: =741
-        Y: =185
-        ZIndex: =49
+        Y: =196
+        ZIndex: =61
 
-    Title2_6 As label:
+    Title2_22 As label:
         FontWeight: =FontWeight.Semibold
         Height: =29
         OnSelect: =
@@ -261,10 +373,10 @@ EmployeeLeaveDetail As screen:
         VerticalAlign: =VerticalAlign.Top
         Width: =184
         X: =835
-        Y: =185
-        ZIndex: =50
+        Y: =196
+        ZIndex: =62
 
-    Title2_7 As label:
+    Title2_23 As label:
         FontWeight: =FontWeight.Semibold
         Height: =29
         OnSelect: =
@@ -277,10 +389,10 @@ EmployeeLeaveDetail As screen:
         VerticalAlign: =VerticalAlign.Top
         Width: =102
         X: =988
-        Y: =185
-        ZIndex: =51
+        Y: =196
+        ZIndex: =63
 
-    Title2_8 As label:
+    Title2_24 As label:
         FontWeight: =FontWeight.Semibold
         Height: =29
         OnSelect: =
@@ -293,23 +405,14 @@ EmployeeLeaveDetail As screen:
         VerticalAlign: =VerticalAlign.Top
         Width: =102
         X: =1098
-        Y: =185
-        ZIndex: =52
+        Y: =196
+        ZIndex: =64
 
-    Rectangle12_1 As rectangle:
+    Rectangle12_5 As rectangle:
         Fill: =RGBA(204, 204, 204, 1)
         Height: =2
         Width: =1135
         X: =231
-        Y: =216
-        ZIndex: =53
-
-    Icon4 As icon.BackArrow:
-        Height: =40
-        Icon: =Icon.BackArrow
-        OnSelect: =Navigate(EmployeeLeaveBalance)
-        Width: =40
-        X: =248
-        Y: =100
-        ZIndex: =54
+        Y: =227
+        ZIndex: =65
 
