@@ -405,10 +405,12 @@ HomeScreen As screen:
                 Set(LeaveRequestedToEmail,GalleryRequest.Selected.Requested_to.Email);
                 Set(LeaveCreatedByEmail,GalleryRequest.Selected.Requested_to.Email);
                 
+                If((TypeTemp = "Annual"),
                 If((TypeTemp = "Annual" && LeaveAnnualCarriedTemp >= DaysTemp),Patch(LeaveApp_Employee,LeaveTempEmail,{AnnualCarriedForward: LeaveAnnualCarriedTemp - DaysTemp});Patch(LeaveApp_Request,LeaveTempID,{CarryForwardDays:DaysTemp}));
-                If((TypeTemp = "Annual" && LeaveAnnualCarriedTemp < DaysTemp && (LeaveAnnualEntitlementTemp - LeaveAnnualTakenTemp - DaysTemp)>= 0),Patch(LeaveApp_Employee,LeaveTempEmail,{AnnualCarriedForward: 0},{AnnualLeaveTaken: LeaveAnnualTakenTemp + (DaysTemp - LeaveAnnualCarriedTemp)}) , Patch(LeaveApp_Employee,LeaveTempEmail,{AnnualCarriedForward: 0},{AnnualLeaveTaken: LeaveAnnualEntitlementTemp},{UnpaidLeaveTaken:UnpaidLeaveTemp + UnpaidLeaveTakenTemp}));
+                If((TypeTemp = "Annual" && LeaveAnnualCarriedTemp < DaysTemp && (LeaveAnnualEntitlementTemp - LeaveAnnualTakenTemp - DaysTemp)>= 0),Patch(LeaveApp_Employee,LeaveTempEmail,{AnnualCarriedForward: 0},{AnnualLeaveTaken: LeaveAnnualTakenTemp + (DaysTemp - LeaveAnnualCarriedTemp)}) , Patch(LeaveApp_Employee,LeaveTempEmail,{AnnualCarriedForward: 0},{AnnualLeaveTaken: LeaveAnnualEntitlementTemp},{UnpaidLeaveTaken:UnpaidLeaveTemp + UnpaidLeaveTakenTemp})));
                 
-                If((TypeTemp = "Medical") && (LeaveMedicalEntitlementTemp - LeaveMedicalTakenTemp - DaysTemp) >= 0,Patch(LeaveApp_Employee,LeaveTempEmail,{MedicalLeaveTaken: LeaveMedicalTakenTemp + DaysTemp}), Patch(LeaveApp_Employee,LeaveTempEmail,{MedicalLeaveTaken: LeaveMedicalEntitlementTemp},{UnpaidLeaveTaken:UnpaidLeaveTemp + UnpaidLeaveTakenTemp}));
+                If((TypeTemp = "Medical"),
+                If((LeaveMedicalEntitlementTemp - LeaveMedicalTakenTemp - DaysTemp) >= 0,Patch(LeaveApp_Employee,LeaveTempEmail,{MedicalLeaveTaken: LeaveMedicalTakenTemp + DaysTemp}), Patch(LeaveApp_Employee,LeaveTempEmail,{MedicalLeaveTaken: LeaveMedicalEntitlementTemp},{UnpaidLeaveTaken:UnpaidLeaveTemp + UnpaidLeaveTakenTemp})));
                 
                 If(TypeTemp = "Casual Immediate",
                 If((LeaveCasualImmediateEntitlementTemp - LeaveCasualImmediateTakenTemp - DaysTemp) >= 0,Patch(LeaveApp_Employee,LeaveTempEmail,{CompassionateLeaveTaken: LeaveCasualImmediateTakenTemp + DaysTemp}), Patch(LeaveApp_Employee,LeaveTempEmail,{CompassionateLeaveTaken: LeaveCasualImmediateEntitlementTemp},{UnpaidLeaveTaken:UnpaidLeaveTemp + UnpaidLeaveTakenTemp})));
