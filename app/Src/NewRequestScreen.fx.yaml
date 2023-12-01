@@ -582,7 +582,9 @@ NewRequestScreen As screen:
             PressedColor: =Label1_12.Color
             PressedFill: =Label1_12.Fill
             Size: =10.5
-            Text: =_balanceRemain & " days"
+            Text: |-
+                =
+                If(_balanceRemain >= 0,_balanceRemain & " days" ,0 & " days")
             Visible: =!IsBlank(_selectedLeaveType)
             Width: =70
             X: =1046
