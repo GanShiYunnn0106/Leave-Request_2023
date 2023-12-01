@@ -406,8 +406,8 @@ HomeScreen As screen:
                 Set(LeaveCreatedByEmail,GalleryRequest.Selected.Requested_to.Email);
                 
                 If((TypeTemp = "Annual"),
-                If((TypeTemp = "Annual" && LeaveAnnualCarriedTemp >= DaysTemp),Patch(LeaveApp_Employee,LeaveTempEmail,{AnnualCarriedForward: LeaveAnnualCarriedTemp - DaysTemp});Patch(LeaveApp_Request,LeaveTempID,{CarryForwardDays:DaysTemp}));
-                If((TypeTemp = "Annual" && LeaveAnnualCarriedTemp < DaysTemp && (LeaveAnnualEntitlementTemp - LeaveAnnualTakenTemp - DaysTemp)>= 0),Patch(LeaveApp_Employee,LeaveTempEmail,{AnnualCarriedForward: 0},{AnnualLeaveTaken: LeaveAnnualTakenTemp + (DaysTemp - LeaveAnnualCarriedTemp)}) , Patch(LeaveApp_Employee,LeaveTempEmail,{AnnualCarriedForward: 0},{AnnualLeaveTaken: LeaveAnnualEntitlementTemp},{UnpaidLeaveTaken:UnpaidLeaveTemp + UnpaidLeaveTakenTemp})));
+                If((TypeTemp = "Annual" && LeaveAnnualCarriedTemp >= DaysTemp),Patch(LeaveApp_Employee,LeaveTempEmail,{AnnualCarriedForward: LeaveAnnualCarriedTemp - DaysTemp});Patch(LeaveApp_Request,LeaveTempID,{CarryForwardDays:DaysTemp}), If((TypeTemp = "Annual" && LeaveAnnualCarriedTemp < DaysTemp && LeaveAnnualEntitlementTemp >= (LeaveAnnualTakenTemp + (DaysTemp - LeaveAnnualCarriedTemp))),Patch(LeaveApp_Employee,LeaveTempEmail,{AnnualCarriedForward: 0},{AnnualLeaveTaken: LeaveAnnualTakenTemp + (DaysTemp - LeaveAnnualCarriedTemp)}) , Patch(LeaveApp_Employee,LeaveTempEmail,{AnnualCarriedForward: 0},{AnnualLeaveTaken: LeaveAnnualEntitlementTemp},{UnpaidLeaveTaken:UnpaidLeaveTemp + UnpaidLeaveTakenTemp})));
+                );
                 
                 If((TypeTemp = "Medical"),
                 If((LeaveMedicalEntitlementTemp - LeaveMedicalTakenTemp - DaysTemp) >= 0,Patch(LeaveApp_Employee,LeaveTempEmail,{MedicalLeaveTaken: LeaveMedicalTakenTemp + DaysTemp}), Patch(LeaveApp_Employee,LeaveTempEmail,{MedicalLeaveTaken: LeaveMedicalEntitlementTemp},{UnpaidLeaveTaken:UnpaidLeaveTemp + UnpaidLeaveTakenTemp})));
@@ -429,7 +429,6 @@ HomeScreen As screen:
                 
                 If(TypeTemp = "Maternity",
                 If((LeaveMaternityEntitlementTemp - LeaveMaternityTakenTemp - DaysTemp) >= 0,Patch(LeaveApp_Employee,LeaveTempEmail,{MaternityLeaveTaken: LeaveMaternityTakenTemp + DaysTemp}), Patch(LeaveApp_Employee,LeaveTempEmail,{MaternityLeaveTaken: LeaveMaternityTakenTemp},{UnpaidLeaveTaken:UnpaidLeaveTemp + UnpaidLeaveTakenTemp})));
-                
                 
                 
                 //If(UnpaidLeaveTemp > 0,Patch(LeaveApp_Employee,LeaveTempEmail,{UnpaidLeaveTaken: UnpaidLeaveTemp + UnpaidLeaveTakenTemp}));
