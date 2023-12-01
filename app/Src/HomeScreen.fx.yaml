@@ -389,6 +389,7 @@ HomeScreen As screen:
                 Set(LeaveHospitalizationTakenTemp,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email).HospitalizationLeaveTaken);
                 Set(TypeTemp,GalleryRequest.Selected.Leave_Type.Value);
                 Set(DaysTemp,GalleryRequest.Selected.Days);
+                Set(UnpaidLeaveTemp,GalleryRequest.Selected.UnpaidLeave);
                 Set(LeaveTempEmail,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email));
                 Set(LeaveRequestedToEmail,GalleryRequest.Selected.Requested_to.Email);
                 Set(LeaveCreatedByEmail,GalleryRequest.Selected.Requested_to.Email);
@@ -402,6 +403,8 @@ HomeScreen As screen:
                 If((TypeTemp = "Paternity"),Patch(LeaveApp_Employee,LeaveTempEmail,{PaternityLeaveTaken: LeavePaternityTakenTemp + DaysTemp }));
                 If((TypeTemp = "Marriage"),Patch(LeaveApp_Employee,LeaveTempEmail,{MarriageLeaveTaken: LeaveMarriageTakenTemp + DaysTemp}));
                 If((TypeTemp = "Maternity"),Patch(LeaveApp_Employee,LeaveTempEmail,{MaternityLeaveTaken: LeaveMaternityTakenTemp + DaysTemp}));
+                If(UnpaidLeaveTemp > 0,Patch(LeaveApp_Employee,LeaveTempEmail,{UnpaidLeaveTaken: UnpaidLeaveTemp}));
+                
                 
                 Office365.SendEmailV2(
                             LeaveRequestedToEmail;LeaveCreatedByEmail,

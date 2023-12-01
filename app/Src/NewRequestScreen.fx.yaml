@@ -1023,7 +1023,8 @@ NewRequestScreen As screen:
                         JobTitle: ".",
                         Picture: "."
                     }
-                }
+                },
+                If((_balanceRemain < _requestedDays),{UnpaidLeave:-(_balanceRemain - _requestedDays)})
             );
             
             Set(_leaveDaysTemp,_requestedDays);
