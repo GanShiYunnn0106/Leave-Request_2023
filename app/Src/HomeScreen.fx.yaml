@@ -255,7 +255,7 @@ HomeScreen As screen:
             =_managerView && ((GalleryRequest.Selected.Status.Value) = "Approved" || (GalleryRequest.Selected.Status.Value) = "Rejected")
         Width: =239
         X: =1080
-        Y: =601
+        Y: =592
         ZIndex: =32
 
     Group4 As group:
@@ -284,7 +284,7 @@ HomeScreen As screen:
             Visible: =_managerView && (GalleryRequest.Selected.Status.Value) = "Pending"
             Width: =241
             X: =1082
-            Y: =599
+            Y: =590
             ZIndex: =15
 
         RequestDetailsTitle_2 As label:
@@ -449,7 +449,7 @@ HomeScreen As screen:
                 =_managerView && (GalleryRequest.Selected.Status.Value) = "Pending"
             Width: =78
             X: =1107
-            Y: =687
+            Y: =678
             ZIndex: =19
 
         ButtonManagerDecline_2 As button:
@@ -513,7 +513,7 @@ HomeScreen As screen:
             Visible: =_managerView && (GalleryRequest.Selected.Status.Value) = "Pending"
             Width: =78
             X: =1213
-            Y: =687
+            Y: =678
             ZIndex: =20
 
         Days_2 As label:
@@ -621,7 +621,7 @@ HomeScreen As screen:
                 =_managerView
             Width: =137
             X: =1074
-            Y: =556
+            Y: =547
             ZIndex: =31
 
     Label33 As label:
