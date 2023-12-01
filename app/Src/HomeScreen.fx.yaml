@@ -244,7 +244,7 @@ HomeScreen As screen:
         Y: =80
         ZIndex: =12
 
-    Label11 As label:
+    LabelRemarks As label:
         BorderThickness: =2
         Fill: =RGBA(255, 255, 255, 1)
         FontWeight: =FontWeight.Semibold
@@ -258,7 +258,7 @@ HomeScreen As screen:
         Y: =592
         ZIndex: =32
 
-    Group4 As group:
+    GroupRequestDetails As group:
         Height: =5
         Width: =5
         X: =40
@@ -623,7 +623,7 @@ HomeScreen As screen:
             Y: =547
             ZIndex: =31
 
-    Label33 As label:
+    LabelLeaveDetails As label:
         Text: |-
             ="Leave Details:"
         Visible: =_managerView
@@ -631,7 +631,7 @@ HomeScreen As screen:
         Y: =482
         ZIndex: =33
 
-    Label34 As label:
+    LabelComments As label:
         FontWeight: =FontWeight.Semibold
         Height: =42
         Text: =GalleryRequest.Selected.Comments

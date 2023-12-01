@@ -16,7 +16,7 @@ LoginScreen As screen:
         X: =793
         ZIndex: =1
 
-    Image2 As image:
+    CompanyLogo As image:
         Height: =156
         Image: =Logo01
         Width: =555
@@ -24,7 +24,7 @@ LoginScreen As screen:
         Y: =238
         ZIndex: =6
 
-    Label25 As label:
+    LabelRequestLeave As label:
         Align: =Align.Center
         Color: =RGBA(56, 86, 153, 1)
         Font: =Font.Georgia
