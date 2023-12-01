@@ -253,9 +253,9 @@ HomeScreen As screen:
         Text: =GalleryRequest.Selected.Remarks_By_Decision_Maker
         Visible: |
             =_managerView && ((GalleryRequest.Selected.Status.Value) = "Approved" || (GalleryRequest.Selected.Status.Value) = "Rejected")
-        Width: =259
-        X: =1071
-        Y: =570
+        Width: =239
+        X: =1080
+        Y: =601
         ZIndex: =32
 
     Group4 As group:
