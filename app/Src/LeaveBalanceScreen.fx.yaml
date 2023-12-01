@@ -21,10 +21,10 @@ LeaveBalanceScreen As screen:
     Label15 As label:
         Color: =RGBA(101, 128, 187, 1)
         FontWeight: =FontWeight.Bold
-        Height: =58
+        Height: =56
         Size: =19
         Text: ="Leave Balance   -   " & User().FullName
-        Width: =750
+        Width: =1116
         X: =250
         Y: =85
         ZIndex: =9
@@ -64,7 +64,7 @@ LeaveBalanceScreen As screen:
             ZIndex: =12
 
             Rectangle7 As rectangle:
-                BorderThickness: =2
+                BorderThickness: =3
                 Fill: =RGBA(0, 0, 0, 0)
                 Height: =268
                 OnSelect: =Select(Parent)
@@ -131,7 +131,7 @@ LeaveBalanceScreen As screen:
             ZIndex: =12
 
             Rectangle7_1 As rectangle:
-                BorderThickness: =2
+                BorderThickness: =3
                 Fill: =RGBA(0, 0, 0, 0)
                 Height: =268
                 OnSelect: =Select(Parent)

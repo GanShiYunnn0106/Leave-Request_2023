@@ -18,7 +18,7 @@ EmployeeLeaveBalance As screen:
         TemplateSize: =53
         Width: =528
         WrapCount: =2
-        X: =231
+        X: =241
         Y: =97
         ZIndex: =1
 
@@ -42,7 +42,7 @@ EmployeeLeaveBalance As screen:
             Size: =12
             Text: =ThisItem.Filter
             Width: =205
-            X: =39
+            X: =21
             ZIndex: =1
 
     Header_7 As group:

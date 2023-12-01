@@ -63,20 +63,20 @@ LeaveInformationScreen As screen:
 
         Label14 As label:
             FontWeight: =FontWeight.Semibold
-            Height: =75
+            Height: =99
             OnSelect: =Select(Parent)
-            Size: =14.5
+            Size: =14
             Text: =If(IsBlank(ThisItem.Comments),"-",ThisItem.Comments)
             Width: =434
             X: =146
-            Y: =69
+            Y: =61
             ZIndex: =9
 
         Label22 As label:
             FontWeight: =FontWeight.Semibold
             Height: =41
             OnSelect: =Select(Parent)
-            Size: =14.5
+            Size: =14
             Text: =Text(ThisItem.End_Date, "[$-en-US]dd mmm yyyy")
             Width: =210
             X: =685
@@ -87,7 +87,7 @@ LeaveInformationScreen As screen:
             FontWeight: =FontWeight.Semibold
             Height: =39
             OnSelect: =Select(Parent)
-            Size: =14.5
+            Size: =14
             Text: =ThisItem.Leave_Type.Value
             Width: =303
             X: =148
@@ -98,7 +98,7 @@ LeaveInformationScreen As screen:
             FontWeight: =FontWeight.Semibold
             Height: =44
             OnSelect: =Select(Parent)
-            Size: =14.5
+            Size: =14
             Text: =Text(ThisItem.Start_Date, "[$-en-US]dd mmm yyyy")
             Width: =293
             X: =685
@@ -117,7 +117,7 @@ LeaveInformationScreen As screen:
             FontWeight: =FontWeight.Semibold
             Height: =45
             OnSelect: =Select(Parent)
-            Size: =14.5
+            Size: =14
             Text: =ThisItem.Days & " days"
             Width: =204
             X: =691

@@ -5,7 +5,7 @@ EmployeeLeaveDetail As screen:
         FontWeight: =FontWeight.Bold
         Height: =49
         Size: =20
-        Text: ="Leave Details  -  " & LeaveBalanceGallery.Selected.NameofEmployee.DisplayName
+        Text: ="Leave Takens for " & LeaveBalanceGallery.Selected.NameofEmployee.DisplayName
         Width: =1019
         X: =305
         Y: =99
