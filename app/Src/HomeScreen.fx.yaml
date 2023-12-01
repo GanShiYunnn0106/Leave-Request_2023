@@ -387,6 +387,17 @@ HomeScreen As screen:
                 Set(LeavePaternityTakenTemp,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email).PaternityLeaveTaken);
                 Set(LeaveMaternityTakenTemp,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email).MaternityLeaveTaken);
                 Set(LeaveHospitalizationTakenTemp,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email).HospitalizationLeaveTaken);
+                
+                Set(LeaveAnnualEntitlementTemp,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email).AnnualLeaveEntitlement);
+                Set(LeaveMedicalEntitlementTemp,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email).MedicalLeaveEntitlement);
+                Set(LeaveCasualImmediateEntitlementTemp,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email).CompassionateLeaveEntitlement);
+                Set(LeaveCasualSecondEntitlementTemp,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email).CasualSecondLeaveEntitlement);
+                Set(LeaveMarriageEntitlementTemp,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email).MarriageLeaveEntitlement);
+                Set(LeavePaternityEntitlementTemp,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email).PaternityLeaveEntitlement);
+                Set(LeaveMaternityEntitlementTemp,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email).MaternityLeaveEntitlement);
+                Set(LeaveHospitalizationEntitlementTemp,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email).HospitalizationLeaveEntitlement);
+                
+                Set(UnpaidLeaveTakenTemp,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email).UnpaidLeaveTaken);
                 Set(TypeTemp,GalleryRequest.Selected.Leave_Type.Value);
                 Set(DaysTemp,GalleryRequest.Selected.Days);
                 Set(UnpaidLeaveTemp,GalleryRequest.Selected.UnpaidLeave);
@@ -394,16 +405,32 @@ HomeScreen As screen:
                 Set(LeaveRequestedToEmail,GalleryRequest.Selected.Requested_to.Email);
                 Set(LeaveCreatedByEmail,GalleryRequest.Selected.Requested_to.Email);
                 
-                If((TypeTemp = "Annual" && LeaveAnnualCarriedTemp >= DaysTemp),Patch(LeaveApp_Employee,LeaveTempEmail,{AnnualCarriedForward: LeaveAnnualCarriedTemp - DaysTemp}));
-                If((TypeTemp = "Annual" && LeaveAnnualCarriedTemp < DaysTemp),Patch(LeaveApp_Employee,LeaveTempEmail,{AnnualCarriedForward: 0},{AnnualLeaveTaken: LeaveAnnualTakenTemp + (DaysTemp - LeaveAnnualCarriedTemp)}));
-                If((TypeTemp = "Medical"),Patch(LeaveApp_Employee,LeaveTempEmail,{MedicalLeaveTaken: LeaveMedicalTakenTemp + DaysTemp}));
-                If((TypeTemp = "Casual Immediate"),Patch(LeaveApp_Employee,LeaveTempEmail,{CompassionateLeaveTaken: LeaveCasualImmediateTakenTemp + DaysTemp}));
-                If((TypeTemp = "Casual Second"),Patch(LeaveApp_Employee,LeaveTempEmail,{CasualSecondLeaveTaken: LeaveCasualSecondTakenTemp + DaysTemp}));
-                If((TypeTemp = "Hospitalization"),Patch(LeaveApp_Employee,LeaveTempEmail,{HospitalizationLeaveTaken: LeaveHospitalizationTakenTemp + DaysTemp}));
-                If((TypeTemp = "Paternity"),Patch(LeaveApp_Employee,LeaveTempEmail,{PaternityLeaveTaken: LeavePaternityTakenTemp + DaysTemp }));
-                If((TypeTemp = "Marriage"),Patch(LeaveApp_Employee,LeaveTempEmail,{MarriageLeaveTaken: LeaveMarriageTakenTemp + DaysTemp}));
-                If((TypeTemp = "Maternity"),Patch(LeaveApp_Employee,LeaveTempEmail,{MaternityLeaveTaken: LeaveMaternityTakenTemp + DaysTemp}));
-                If(UnpaidLeaveTemp > 0,Patch(LeaveApp_Employee,LeaveTempEmail,{UnpaidLeaveTaken: UnpaidLeaveTemp}));
+                If((TypeTemp = "Annual" && LeaveAnnualCarriedTemp >= DaysTemp),Patch(LeaveApp_Employee,LeaveTempEmail,{AnnualCarriedForward: LeaveAnnualCarriedTemp - DaysTemp});Patch(LeaveApp_Request,LeaveTempID,{CarryForwardDays:DaysTemp}));
+                If((TypeTemp = "Annual" && LeaveAnnualCarriedTemp < DaysTemp && (LeaveAnnualEntitlementTemp - LeaveAnnualTakenTemp - DaysTemp)>= 0),Patch(LeaveApp_Employee,LeaveTempEmail,{AnnualCarriedForward: 0},{AnnualLeaveTaken: LeaveAnnualTakenTemp + (DaysTemp - LeaveAnnualCarriedTemp)}) , Patch(LeaveApp_Employee,LeaveTempEmail,{AnnualCarriedForward: 0},{AnnualLeaveTaken: LeaveAnnualEntitlementTemp},{UnpaidLeaveTaken:UnpaidLeaveTemp + UnpaidLeaveTakenTemp}));
+                
+                If((TypeTemp = "Medical") && (LeaveMedicalEntitlementTemp - LeaveMedicalTakenTemp - DaysTemp) >= 0,Patch(LeaveApp_Employee,LeaveTempEmail,{MedicalLeaveTaken: LeaveMedicalTakenTemp + DaysTemp}), Patch(LeaveApp_Employee,LeaveTempEmail,{MedicalLeaveTaken: LeaveMedicalEntitlementTemp},{UnpaidLeaveTaken:UnpaidLeaveTemp + UnpaidLeaveTakenTemp}));
+                
+                If(TypeTemp = "Casual Immediate",
+                If((LeaveCasualImmediateEntitlementTemp - LeaveCasualImmediateTakenTemp - DaysTemp) >= 0,Patch(LeaveApp_Employee,LeaveTempEmail,{CompassionateLeaveTaken: LeaveCasualImmediateTakenTemp + DaysTemp}), Patch(LeaveApp_Employee,LeaveTempEmail,{CompassionateLeaveTaken: LeaveCasualImmediateEntitlementTemp},{UnpaidLeaveTaken:UnpaidLeaveTemp + UnpaidLeaveTakenTemp})));
+                
+                If(TypeTemp = "Casual Second",
+                If((LeaveCasualSecondEntitlementTemp - LeaveCasualSecondTakenTemp - DaysTemp) >= 0,Patch(LeaveApp_Employee,LeaveTempEmail,{CasualSecondLeaveTaken: LeaveCasualSecondTakenTemp + DaysTemp}), Patch(LeaveApp_Employee,LeaveTempEmail,{CasualSecondLeaveTaken: LeaveCasualSecondEntitlementTemp},{UnpaidLeaveTaken:UnpaidLeaveTemp + UnpaidLeaveTakenTemp})));
+                
+                If(TypeTemp = "Hospitalization",
+                If((LeaveHospitalizationEntitlementTemp - LeaveHospitalizationTakenTemp - DaysTemp) >= 0,Patch(LeaveApp_Employee,LeaveTempEmail,{HospitalizationLeaveTaken: LeaveHospitalizationTakenTemp + DaysTemp}), Patch(LeaveApp_Employee,LeaveTempEmail,{HospitalizationLeaveTaken: LeaveHospitalizationEntitlementTemp},{UnpaidLeaveTaken:UnpaidLeaveTemp + UnpaidLeaveTakenTemp})));
+                
+                If(TypeTemp = "Paternity",
+                If((LeavePaternityEntitlementTemp - LeavePaternityTakenTemp - DaysTemp) >= 0,Patch(LeaveApp_Employee,LeaveTempEmail,{PaternityLeaveTaken: LeavePaternityTakenTemp + DaysTemp }), Patch(LeaveApp_Employee,LeaveTempEmail,{PaternityLeaveTaken: LeavePaternityEntitlementTemp},{UnpaidLeaveTaken:UnpaidLeaveTemp + UnpaidLeaveTakenTemp})));
+                
+                If(TypeTemp = "Marriage",
+                If((LeaveMarriageEntitlementTemp - LeaveMarriageTakenTemp - DaysTemp) >= 0,Patch(LeaveApp_Employee,LeaveTempEmail,{MarriageLeaveTaken: LeaveMarriageTakenTemp + DaysTemp}), Patch(LeaveApp_Employee,LeaveTempEmail,{MarriageLeaveTaken: LeaveMarriageEntitlementTemp},{UnpaidLeaveTaken:UnpaidLeaveTemp + UnpaidLeaveTakenTemp})));
+                
+                If(TypeTemp = "Maternity",
+                If((LeaveMaternityEntitlementTemp - LeaveMaternityTakenTemp - DaysTemp) >= 0,Patch(LeaveApp_Employee,LeaveTempEmail,{MaternityLeaveTaken: LeaveMaternityTakenTemp + DaysTemp}), Patch(LeaveApp_Employee,LeaveTempEmail,{MaternityLeaveTaken: LeaveMaternityTakenTemp},{UnpaidLeaveTaken:UnpaidLeaveTemp + UnpaidLeaveTakenTemp})));
+                
+                
+                
+                //If(UnpaidLeaveTemp > 0,Patch(LeaveApp_Employee,LeaveTempEmail,{UnpaidLeaveTaken: UnpaidLeaveTemp + UnpaidLeaveTakenTemp}));
                 
                 
                 Office365.SendEmailV2(
