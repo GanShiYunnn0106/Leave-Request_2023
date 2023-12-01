@@ -38,7 +38,7 @@ EmployeeLeaveDetail As screen:
             Height: =25
             OnSelect: =Select(Parent)
             Size: =11
-            Text: =ThisItem.Start_Date
+            Text: =Text(ThisItem.Start_Date, "[$-en-US]dd mmm yyyy")
             Width: =100
             X: =276
             Y: =16
@@ -49,7 +49,7 @@ EmployeeLeaveDetail As screen:
             Height: =25
             OnSelect: =Select(Parent)
             Size: =11
-            Text: =ThisItem.End_Date
+            Text: =Text(ThisItem.End_Date, "[$-en-US]dd mmm yyyy")
             Width: =100
             X: =393
             Y: =16
