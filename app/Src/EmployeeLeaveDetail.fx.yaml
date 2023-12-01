@@ -5,13 +5,13 @@ EmployeeLeaveDetail As screen:
         FontWeight: =FontWeight.Bold
         Height: =49
         Size: =20
-        Text: ="Leave Takens for " & LeaveBalanceGallery.Selected.NameofEmployee.DisplayName
+        Text: ="Leave Takens for " & EmployeeLeaveBalanceGallery.Selected.NameofEmployee.DisplayName
         Width: =1019
         X: =305
         Y: =99
         ZIndex: =1
 
-    Gallery1 As gallery.galleryVertical:
+    EmployeeLeaveDetailGallery As gallery.galleryVertical:
         DelayItemLoading: =true
         Height: =543
         Items: =Filter(LeaveApp_Request,Created_By.DisplayName = _selectedEmployee)

@@ -23,13 +23,13 @@ LeaveBalanceScreen As screen:
         FontWeight: =FontWeight.Bold
         Height: =56
         Size: =19
-        Text: ="Leave Balance   -   " & LeaveBalance.Selected.NameofEmployee.DisplayName
+        Text: ="Leave Balance   -   " & MyLeaveBalanceGallery.Selected.NameofEmployee.DisplayName
         Width: =1116
         X: =250
         Y: =85
         ZIndex: =9
 
-    LeaveBalance As gallery.galleryVertical:
+    MyLeaveBalanceGallery As gallery.galleryVertical:
         BorderColor: =RGBA(230, 230, 230, 1)
         DelayItemLoading: =true
         Fill: =RGBA(255, 255, 255, 1)

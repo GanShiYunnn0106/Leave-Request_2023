@@ -177,7 +177,7 @@ EmployeeLeaveBalance As screen:
             X: =1211
             ZIndex: =8
 
-    "LeaveBalanceGallery As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+    "EmployeeLeaveBalanceGallery As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
         DelayItemLoading: =true
         Height: =609
         Items: |-
