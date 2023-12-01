@@ -23,7 +23,7 @@ LeaveBalanceScreen As screen:
         FontWeight: =FontWeight.Bold
         Height: =56
         Size: =19
-        Text: ="Leave Balance   -   " & User().FullName
+        Text: ="Leave Balance   -   " & LeaveBalance.Selected.NameofEmployee.DisplayName
         Width: =1116
         X: =250
         Y: =85
