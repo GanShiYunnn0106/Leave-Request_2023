@@ -21,7 +21,7 @@ LoginScreen As screen:
         Image: =Logo01
         Width: =555
         X: =101
-        Y: =221
+        Y: =220
         ZIndex: =6
 
     Label25 As label:
@@ -29,14 +29,14 @@ LoginScreen As screen:
         Color: =RGBA(56, 86, 153, 1)
         Font: =Font.Georgia
         FontWeight: =FontWeight.Bold
-        Height: =128
+        Height: =94
         Size: =35
         Text: |-
-            ="REQUEST 
-            LEAVE"
-        Width: =425
-        X: =166
-        Y: =473
+            ="REQUEST
+             LEAVE"
+        Width: =364
+        X: =186
+        Y: =394
         ZIndex: =7
 
     LoginAsEmployeeGroup As group:
@@ -133,7 +133,7 @@ LoginScreen As screen:
             Size: =12.5
             Text: ="TO APPROVE OR DECLINE LEAVE REQUESTS"
             Width: =418
-            X: =878
+            X: =885
             Y: =440
             ZIndex: =2
 
@@ -171,7 +171,7 @@ LoginScreen As screen:
             Size: =20
             Text: ="Login as a manager"
             Width: =344
-            X: =922
+            X: =929
             Y: =488
             ZIndex: =3
 

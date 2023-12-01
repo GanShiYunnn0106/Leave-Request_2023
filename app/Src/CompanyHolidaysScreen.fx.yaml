@@ -221,6 +221,7 @@ CompanyHolidaysScreen As screen:
             Size: =14
             Text: =ThisItem.HolidayName
             Width: =322
+            X: =9
             ZIndex: =1
 
         Label13 As label:
