@@ -625,7 +625,7 @@ HomeScreen As screen:
 
     Label33 As label:
         Text: |-
-            ="Comment:"
+            ="Leave Details:"
         Visible: =_managerView
         X: =1071
         Y: =482
