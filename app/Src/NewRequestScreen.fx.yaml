@@ -9,7 +9,7 @@ NewRequestScreen As screen:
             Set(_leaveDetail,"");
             Reset(LeaveEndDatePicker);
             Reset(LeaveStartDatePicker);
-            Reset(TextInput1_1);
+            Reset(LeaveDetail_txtInput);
             Select(LeaveStartDatePicker),
             
             _editingRequest,
@@ -34,6 +34,12 @@ NewRequestScreen As screen:
                     _balanceRemain,
                     (LookUp(LeaveApp_Employee, NameofEmployee.Email = User().Email).CompassionateLeaveEntitlement -
                     LookUp(LeaveApp_Employee, NameofEmployee.Email = User().Email).CompassionateLeaveTaken)
+                ),
+                _selectedLeaveType = "Casual Second",
+                Set(
+                    _balanceRemain,
+                    (LookUp(LeaveApp_Employee, NameofEmployee.Email = User().Email).CasualSecondLeaveEntitlement -
+                    LookUp(LeaveApp_Employee, NameofEmployee.Email = User().Email).CasualSecondLeaveTaken)
                 ),
                 _selectedLeaveType = "Marriage",
                 Set(
@@ -72,13 +78,13 @@ NewRequestScreen As screen:
     Size: =1 + CountRows(App.SizeBreakpoints) - CountIf(App.SizeBreakpoints, Value >= NewRequestScreen.Width)
     Width: =Max(App.Width, App.DesignWidth)
 
-    Rectangle4 As rectangle:
-        DisabledFill: =Rectangle4.Fill
+    SeparatorNavigation As rectangle:
+        DisabledFill: =SeparatorNavigation.Fill
         Fill: =RGBA(204, 204, 204, 1)
-        FocusedBorderColor: =Rectangle4.BorderColor
+        FocusedBorderColor: =SeparatorNavigation.BorderColor
         Height: =688
-        HoverFill: =Rectangle4.Fill
-        PressedFill: =Rectangle4.Fill
+        HoverFill: =SeparatorNavigation.Fill
+        PressedFill: =SeparatorNavigation.Fill
         Width: =1
         X: =231
         Y: =80
@@ -191,7 +197,7 @@ NewRequestScreen As screen:
             HoverColor: =ColorFade(IconHeaderCreateNew_6.Color, 20%)
             HoverFill: =IconHeaderCreateNew_6.Fill
             Icon: =Icon.Add
-            OnSelect: =Navigate(NewRequestScreen,BorderStyle.None);Set(_selectedLeaveType,Blank());Set(_editingRequest, false );Set(_leaveStart,Today());Set(_leaveEnd,Today());Set(_leaveDetail,"");Reset(LeaveEndDatePicker);Reset(LeaveStartDatePicker);Reset(TextInput1_1);Select(LeaveStartDatePicker)
+            OnSelect: =Navigate(NewRequestScreen,BorderStyle.None);Set(_selectedLeaveType,Blank());Set(_editingRequest, false );Set(_leaveStart,Today());Set(_leaveEnd,Today());Set(_leaveDetail,"");Reset(LeaveEndDatePicker);Reset(LeaveStartDatePicker);Reset(LeaveDetail_txtInput);Select(LeaveStartDatePicker)
             PaddingBottom: =7
             PaddingLeft: =7
             PaddingRight: =7
@@ -236,17 +242,17 @@ NewRequestScreen As screen:
         Y: =40
         ZIndex: =42
 
-        Label1_1 As label:
-            FocusedBorderColor: =Label1_1.BorderColor
+        LblSelectDatesHeader As label:
+            FocusedBorderColor: =LblSelectDatesHeader.BorderColor
             Font: =Font.Lato
             FontWeight: =FontWeight.Bold
             Height: =21
-            HoverBorderColor: =Label1_1.BorderColor
-            HoverColor: =Label1_1.Color
-            HoverFill: =Label1_1.Fill
-            PressedBorderColor: =Label1_1.BorderColor
-            PressedColor: =Label1_1.Color
-            PressedFill: =Label1_1.Fill
+            HoverBorderColor: =LblSelectDatesHeader.BorderColor
+            HoverColor: =LblSelectDatesHeader.Color
+            HoverFill: =LblSelectDatesHeader.Fill
+            PressedBorderColor: =LblSelectDatesHeader.BorderColor
+            PressedColor: =LblSelectDatesHeader.Color
+            PressedFill: =LblSelectDatesHeader.Fill
             Size: =13.5
             Text: |-
                 ="Select dates:"
@@ -255,17 +261,17 @@ NewRequestScreen As screen:
             Y: =301
             ZIndex: =7
 
-        Label1_2 As label:
-            FocusedBorderColor: =Label1_2.BorderColor
+        LblToHeader As label:
+            FocusedBorderColor: =LblToHeader.BorderColor
             Font: =Font.Lato
             FontWeight: =FontWeight.Bold
             Height: =21
-            HoverBorderColor: =Label1_2.BorderColor
-            HoverColor: =Label1_2.Color
-            HoverFill: =Label1_2.Fill
-            PressedBorderColor: =Label1_2.BorderColor
-            PressedColor: =Label1_2.Color
-            PressedFill: =Label1_2.Fill
+            HoverBorderColor: =LblToHeader.BorderColor
+            HoverColor: =LblToHeader.Color
+            HoverFill: =LblToHeader.Fill
+            PressedBorderColor: =LblToHeader.BorderColor
+            PressedColor: =LblToHeader.Color
+            PressedFill: =LblToHeader.Fill
             Size: =10.5
             Text: |-
                 ="*To:"
@@ -274,17 +280,17 @@ NewRequestScreen As screen:
             Y: =333
             ZIndex: =8
 
-        Label1_3 As label:
-            FocusedBorderColor: =Label1_3.BorderColor
+        LblFromHeader As label:
+            FocusedBorderColor: =LblFromHeader.BorderColor
             Font: =Font.Lato
             FontWeight: =FontWeight.Bold
             Height: =21
-            HoverBorderColor: =Label1_3.BorderColor
-            HoverColor: =Label1_3.Color
-            HoverFill: =Label1_3.Fill
-            PressedBorderColor: =Label1_3.BorderColor
-            PressedColor: =Label1_3.Color
-            PressedFill: =Label1_3.Fill
+            HoverBorderColor: =LblFromHeader.BorderColor
+            HoverColor: =LblFromHeader.Color
+            HoverFill: =LblFromHeader.Fill
+            PressedBorderColor: =LblFromHeader.BorderColor
+            PressedColor: =LblFromHeader.Color
+            PressedFill: =LblFromHeader.Fill
             Size: =10.5
             Text: |-
                 ="*From:"
@@ -361,16 +367,16 @@ NewRequestScreen As screen:
             Y: =358
             ZIndex: =15
 
-        Label1_8 As label:
-            FocusedBorderColor: =Label1_8.BorderColor
+        LblLeaveBalanceLeftHeader As label:
+            FocusedBorderColor: =LblLeaveBalanceLeftHeader.BorderColor
             Font: =Font.Lato
             Height: =21
-            HoverBorderColor: =Label1_8.BorderColor
-            HoverColor: =Label1_8.Color
-            HoverFill: =Label1_8.Fill
-            PressedBorderColor: =Label1_8.BorderColor
-            PressedColor: =Label1_8.Color
-            PressedFill: =Label1_8.Fill
+            HoverBorderColor: =LblLeaveBalanceLeftHeader.BorderColor
+            HoverColor: =LblLeaveBalanceLeftHeader.Color
+            HoverFill: =LblLeaveBalanceLeftHeader.Fill
+            PressedBorderColor: =LblLeaveBalanceLeftHeader.BorderColor
+            PressedColor: =LblLeaveBalanceLeftHeader.Color
+            PressedFill: =LblLeaveBalanceLeftHeader.Fill
             Size: =10.5
             Text: |-
                 ="New balance:"
@@ -380,17 +386,17 @@ NewRequestScreen As screen:
             Y: =377
             ZIndex: =18
 
-        Label1_9 As label:
-            FocusedBorderColor: =Label1_9.BorderColor
+        LblLeaveBalanceLeft As label:
+            FocusedBorderColor: =LblLeaveBalanceLeft.BorderColor
             Font: =Font.Lato
             FontWeight: =FontWeight.Semibold
             Height: =21
-            HoverBorderColor: =Label1_9.BorderColor
-            HoverColor: =Label1_9.Color
-            HoverFill: =Label1_9.Fill
-            PressedBorderColor: =Label1_9.BorderColor
-            PressedColor: =Label1_9.Color
-            PressedFill: =Label1_9.Fill
+            HoverBorderColor: =LblLeaveBalanceLeft.BorderColor
+            HoverColor: =LblLeaveBalanceLeft.Color
+            HoverFill: =LblLeaveBalanceLeft.Fill
+            PressedBorderColor: =LblLeaveBalanceLeft.BorderColor
+            PressedColor: =LblLeaveBalanceLeft.Color
+            PressedFill: =LblLeaveBalanceLeft.Fill
             Size: =10.5
             Text: |-
                 =If((_balanceRemain - _requestedDays) >= 0,(_balanceRemain - _requestedDays),0)
@@ -402,16 +408,16 @@ NewRequestScreen As screen:
             Y: =377
             ZIndex: =19
 
-        Label1_11 As label:
-            FocusedBorderColor: =Label1_11.BorderColor
+        LblCurrentLeaveDayHeader As label:
+            FocusedBorderColor: =LblCurrentLeaveDayHeader.BorderColor
             Font: =Font.Lato
             Height: =21
-            HoverBorderColor: =Label1_11.BorderColor
-            HoverColor: =Label1_11.Color
-            HoverFill: =Label1_11.Fill
-            PressedBorderColor: =Label1_11.BorderColor
-            PressedColor: =Label1_11.Color
-            PressedFill: =Label1_11.Fill
+            HoverBorderColor: =LblCurrentLeaveDayHeader.BorderColor
+            HoverColor: =LblCurrentLeaveDayHeader.Color
+            HoverFill: =LblCurrentLeaveDayHeader.Fill
+            PressedBorderColor: =LblCurrentLeaveDayHeader.BorderColor
+            PressedColor: =LblCurrentLeaveDayHeader.Color
+            PressedFill: =LblCurrentLeaveDayHeader.Fill
             Size: =10.5
             Text: |-
                 ="Current balance:"
@@ -421,43 +427,41 @@ NewRequestScreen As screen:
             Y: =352
             ZIndex: =25
 
-        Label1_12 As label:
-            FocusedBorderColor: =Label1_12.BorderColor
+        LblCurrentLeaveDay As label:
+            FocusedBorderColor: =LblCurrentLeaveDay.BorderColor
             Font: =Font.Lato
             FontWeight: =FontWeight.Semibold
             Height: =21
-            HoverBorderColor: =Label1_12.BorderColor
-            HoverColor: =Label1_12.Color
-            HoverFill: =Label1_12.Fill
+            HoverBorderColor: =LblCurrentLeaveDay.BorderColor
+            HoverColor: =LblCurrentLeaveDay.Color
+            HoverFill: =LblCurrentLeaveDay.Fill
             Live: =Live
-            PressedBorderColor: =Label1_12.BorderColor
-            PressedColor: =Label1_12.Color
-            PressedFill: =Label1_12.Fill
+            PressedBorderColor: =LblCurrentLeaveDay.BorderColor
+            PressedColor: =LblCurrentLeaveDay.Color
+            PressedFill: =LblCurrentLeaveDay.Fill
             Size: =10.5
-            Text: |-
-                =
-                If(_balanceRemain >= 0,_balanceRemain & " days" ,0 & " days")
+            Text: =If(_balanceRemain >= 0,_balanceRemain & " days" ,0 & " days")
             Visible: =!IsBlank(_selectedLeaveType)
             Width: =70
             X: =1046
             Y: =352
             ZIndex: =26
 
-        Label1_13 As label:
+        LblErrorMessage As label:
             Align: =LayoutAlignItems.Center
             Color: =RGBA(255, 0, 0, 1)
-            FocusedBorderColor: =Label1_13.BorderColor
+            FocusedBorderColor: =LblErrorMessage.BorderColor
             Height: =48
-            HoverBorderColor: =Label1_13.BorderColor
-            HoverColor: =Label1_13.Color
-            HoverFill: =Label1_13.Fill
+            HoverBorderColor: =LblErrorMessage.BorderColor
+            HoverColor: =LblErrorMessage.Color
+            HoverFill: =LblErrorMessage.Fill
             Live: =Live.Assertive
-            PressedBorderColor: =Label1_13.BorderColor
-            PressedColor: =Label1_13.Color
-            PressedFill: =Label1_13.Fill
+            PressedBorderColor: =LblErrorMessage.BorderColor
+            PressedColor: =LblErrorMessage.Color
+            PressedFill: =LblErrorMessage.Fill
             Size: =12
             Text: |-
-                =If((_balanceRemain < _requestedDays) && (!IsBlank(_selectedLeaveType)),"Unpaid Leave: " & -(_balanceRemain - _requestedDays) & " days",(LeaveStartDatePicker.SelectedDate > LeaveEndDatePicker.SelectedDate),"Start date must occur on before end date")
+                =If((_balanceRemain < _requestedDays) && (!IsBlank(_selectedLeaveType)),"Unpaid Leave: " & -(_balanceRemain - _requestedDays) & " days",(LeaveStartDatePicker.SelectedDate > LeaveEndDatePicker.SelectedDate),"Start date must occur on before end date.",(LeaveEndDatePicker.SelectedDate >= Date(Year(Today()) + 1,01,01)),"Do not select leave date by crossing year.",(LeaveStartDatePicker.SelectedDate >= Date(Year(Today()) + 1,01,01)),"Do not select leave date by crossing year.")
             Width: =252
             X: =885
             Y: =304
@@ -470,17 +474,17 @@ NewRequestScreen As screen:
         Y: =40
         ZIndex: =42
 
-        Label1_4 As label:
-            FocusedBorderColor: =Label1_4.BorderColor
+        LblSubmitRequestHeader As label:
+            FocusedBorderColor: =LblSubmitRequestHeader.BorderColor
             Font: =Font.Lato
             FontWeight: =FontWeight.Bold
             Height: =21
-            HoverBorderColor: =Label1_4.BorderColor
-            HoverColor: =Label1_4.Color
-            HoverFill: =Label1_4.Fill
-            PressedBorderColor: =Label1_4.BorderColor
-            PressedColor: =Label1_4.Color
-            PressedFill: =Label1_4.Fill
+            HoverBorderColor: =LblSubmitRequestHeader.BorderColor
+            HoverColor: =LblSubmitRequestHeader.Color
+            HoverFill: =LblSubmitRequestHeader.Fill
+            PressedBorderColor: =LblSubmitRequestHeader.BorderColor
+            PressedColor: =LblSubmitRequestHeader.Color
+            PressedFill: =LblSubmitRequestHeader.Fill
             Size: =13.5
             Text: |-
                 ="Submit request to:"
@@ -489,17 +493,17 @@ NewRequestScreen As screen:
             Y: =458
             ZIndex: =10
 
-        Label1_5 As label:
-            FocusedBorderColor: =Label1_5.BorderColor
+        LblAboutYourLeaveHeader As label:
+            FocusedBorderColor: =LblAboutYourLeaveHeader.BorderColor
             Font: =Font.Lato
             FontWeight: =FontWeight.Bold
             Height: =21
-            HoverBorderColor: =Label1_5.BorderColor
-            HoverColor: =Label1_5.Color
-            HoverFill: =Label1_5.Fill
-            PressedBorderColor: =Label1_5.BorderColor
-            PressedColor: =Label1_5.Color
-            PressedFill: =Label1_5.Fill
+            HoverBorderColor: =LblAboutYourLeaveHeader.BorderColor
+            HoverColor: =LblAboutYourLeaveHeader.Color
+            HoverFill: =LblAboutYourLeaveHeader.Fill
+            PressedBorderColor: =LblAboutYourLeaveHeader.BorderColor
+            PressedColor: =LblAboutYourLeaveHeader.Color
+            PressedFill: =LblAboutYourLeaveHeader.Fill
             Size: =13.5
             Text: |-
                 ="About your leave:"
@@ -508,18 +512,18 @@ NewRequestScreen As screen:
             Y: =458
             ZIndex: =11
 
-        Label1_7 As label:
+        LblLeaveDetailheader As label:
             Color: =RGBA(0, 0, 0, 1)
-            FocusedBorderColor: =Label1_7.BorderColor
+            FocusedBorderColor: =LblLeaveDetailheader.BorderColor
             Font: =Font.Lato
             FontWeight: =FontWeight.Bold
             Height: =21
-            HoverBorderColor: =Label1_7.BorderColor
-            HoverColor: =Label1_7.Color
-            HoverFill: =Label1_7.Fill
-            PressedBorderColor: =Label1_7.BorderColor
-            PressedColor: =Label1_7.Color
-            PressedFill: =Label1_7.Fill
+            HoverBorderColor: =LblLeaveDetailheader.BorderColor
+            HoverColor: =LblLeaveDetailheader.Color
+            HoverFill: =LblLeaveDetailheader.Fill
+            PressedBorderColor: =LblLeaveDetailheader.BorderColor
+            PressedColor: =LblLeaveDetailheader.Color
+            PressedFill: =LblLeaveDetailheader.Fill
             Size: =10.5
             Text: |-
                 ="* Detail:"
@@ -528,32 +532,32 @@ NewRequestScreen As screen:
             Y: =489
             ZIndex: =13
 
-        TextInput1_1 As text:
+        LeaveDetail_txtInput As text:
             AccessibleLabel: ="Leave detail"
             BorderColor: =RGBA(0, 71, 144, 1)
             Default: =_leaveDetail
-            FocusedBorderColor: =TextInput1_1.BorderColor
+            FocusedBorderColor: =LeaveDetail_txtInput.BorderColor
             Font: =Font.Lato
             Height: =74
             Mode: =TextMode.MultiLine
-            PressedBorderColor: =TextInput1_1.HoverBorderColor
-            PressedColor: =TextInput1_1.Color
-            PressedFill: =TextInput1_1.Fill
+            PressedBorderColor: =LeaveDetail_txtInput.HoverBorderColor
+            PressedColor: =LeaveDetail_txtInput.Color
+            PressedFill: =LeaveDetail_txtInput.Fill
             Size: =10.5
             Width: =551
             X: =565
             Y: =519
             ZIndex: =17
 
-        RectSeparator_1 As rectangle:
+        DateTimeSeparator As rectangle:
             AccessibleLabel: ="Separator"
             BorderColor: =RGBA(255, 37, 0, 0)
-            DisabledFill: =RectSeparator_1.Fill
+            DisabledFill: =DateTimeSeparator.Fill
             Fill: =RGBA(205, 205, 205, 1)
-            FocusedBorderColor: =RectSeparator_1.BorderColor
+            FocusedBorderColor: =DateTimeSeparator.BorderColor
             Height: =1
-            HoverFill: =RectSeparator_1.Fill
-            PressedFill: =RectSeparator_1.Fill
+            HoverFill: =DateTimeSeparator.Fill
+            PressedFill: =DateTimeSeparator.Fill
             Width: =1018
             X: =252
             Y: =428
@@ -823,7 +827,7 @@ NewRequestScreen As screen:
         BorderColor: =RGBA(43, 67, 119, 1)
         Color: =RGBA(43, 67, 119, 1)
         DisplayMode: |
-            =If(IsBlank(LeaveStartDatePicker.SelectedDate) || IsBlank(LeaveEndDatePicker.SelectedDate) || LeaveEndDatePicker.SelectedDate < LeaveStartDatePicker.SelectedDate || IsBlank(_selectedLeaveType) || IsBlank(TextInput1_1) || (LeaveEndDatePicker.SelectedDate >= Date(Year(Today()) + 1,01,01) && LeaveStartDatePicker.SelectedDate < Date(Year(Today()) + 1,01,01)), DisplayMode.Disabled, DisplayMode.Edit)
+            =If(IsBlank(LeaveStartDatePicker.SelectedDate) || IsBlank(LeaveEndDatePicker.SelectedDate) || LeaveEndDatePicker.SelectedDate < LeaveStartDatePicker.SelectedDate || IsBlank(_selectedLeaveType) || IsBlank(LeaveDetail_txtInput) || (LeaveEndDatePicker.SelectedDate >= Date(Year(Today()) + 1,01,01) || LeaveStartDatePicker.SelectedDate >= Date(Year(Today()) + 1,01,01)), DisplayMode.Disabled, DisplayMode.Edit)
         Fill: =RGBA(255, 255, 255, 1)
         FontWeight: =FontWeight.Bold
         Height: =112
@@ -850,7 +854,7 @@ NewRequestScreen As screen:
                     }
                 },
                 {Days: _requestedDays},
-                {Comments: TextInput1_1.Text},
+                {Comments: LeaveDetail_txtInput.Text},
                 {
                     Created_By: {
                         '@odata.type': "Microsoft.Azure.Connectors.SharePoint.SPListExpandedUser",
