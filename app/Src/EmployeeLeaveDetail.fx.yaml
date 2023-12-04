@@ -168,7 +168,7 @@ EmployeeLeaveDetail As screen:
     Gallery1_2 As gallery.galleryVertical:
         DelayItemLoading: =true
         Height: =543
-        Items: =Sort(Filter(LeaveApp_Request,Created_By.DisplayName = _selectedEmployee && Year(End_Date) = Year(Today())),Start_Date,SortOrder.Ascending)
+        Items: =Sort(Filter(LeaveApp_Request,Created_By.DisplayName = _selectedEmployee && Year(End_Date) = Year(Today())),Start_Date,SortOrder.Descending)
         Layout: =Layout.Vertical
         LoadingSpinner: =LoadingSpinner.Data
         TemplateSize: =60
