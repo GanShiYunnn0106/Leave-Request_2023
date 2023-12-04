@@ -4281,19 +4281,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "CompanyHolidaysScreen.GalleryHolidays.Icon3.AccessibleLabel"
+                  "fullyQualifiedName": "CompanyHolidaysScreen.GalleryHolidays.DeleteIcon.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "CompanyHolidaysScreen.GalleryHolidays.Icon3.AccessibleLabel",
+                  "fullyQualifiedName": "CompanyHolidaysScreen.GalleryHolidays.DeleteIcon.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "CompanyHolidaysScreen",
-                "type": "CompanyHolidaysScreen.GalleryHolidays.Icon3"
+                "type": "CompanyHolidaysScreen.GalleryHolidays.DeleteIcon"
               }
             }
           ],
@@ -4311,19 +4311,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "CompanyHolidaysScreen.GalleryHolidays.Icon3.TabIndex"
+                  "fullyQualifiedName": "CompanyHolidaysScreen.GalleryHolidays.DeleteIcon.TabIndex"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "CompanyHolidaysScreen.GalleryHolidays.Icon3.TabIndex",
+                  "fullyQualifiedName": "CompanyHolidaysScreen.GalleryHolidays.DeleteIcon.TabIndex",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "TabIndex",
                 "module": "CompanyHolidaysScreen",
-                "type": "CompanyHolidaysScreen.GalleryHolidays.Icon3"
+                "type": "CompanyHolidaysScreen.GalleryHolidays.DeleteIcon"
               }
             }
           ],

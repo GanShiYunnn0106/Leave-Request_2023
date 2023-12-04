@@ -221,7 +221,7 @@ CompanyHolidaysScreen As screen:
             Size: =14
             Text: =ThisItem.HolidayName
             Width: =322
-            X: =9
+            X: =22
             ZIndex: =1
 
         HolidayDates As label:
@@ -265,7 +265,7 @@ CompanyHolidaysScreen As screen:
             OnSelect: =Remove(LeaveApp_PublicHoliday,ThisItem)
             Visible: =_managerView=true
             Width: =43
-            X: =776
+            X: =804
             Y: =12
             ZIndex: =4
 
@@ -274,13 +274,6 @@ CompanyHolidaysScreen As screen:
         NavItem: =If(_managerView,ManagerNavigation,EmployeeNavigation)
         Y: =80
         ZIndex: =33
-
-    GroupNewHoliday As group:
-        Height: =5
-        Width: =5
-        X: =40
-        Y: =40
-        ZIndex: =38
 
     TitleNewHoliday As label:
         Align: =Align.Center
@@ -294,6 +287,13 @@ CompanyHolidaysScreen As screen:
         Width: =232
         X: =1105
         Y: =138
+        ZIndex: =38
+
+    GroupNewHoliday As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
         ZIndex: =38
 
     txtHoliday As text:
