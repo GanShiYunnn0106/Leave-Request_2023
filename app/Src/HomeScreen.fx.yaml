@@ -255,7 +255,7 @@ HomeScreen As screen:
 
     Label5 As label:
         FontWeight: =FontWeight.Semibold
-        Height: =76
+        Height: =65
         Overflow: =Overflow.Scroll
         Text: =GalleryRequest.Selected.Comments
         VerticalAlign: =VerticalAlign.Top
@@ -758,15 +758,15 @@ HomeScreen As screen:
             Visible: =_managerView && (GalleryRequest.Selected.Status.Value) = "Pending"
             Width: =239
             X: =1076
-            Y: =630
+            Y: =620
             ZIndex: =31
 
         remarksHeader As label:
             Text: |-
                 ="Remarks: "
             Visible: =_managerView
-            X: =1066
-            Y: =595
+            X: =1071
+            Y: =585
             ZIndex: =32
 
         LabelRemarks_1 As label:
@@ -779,7 +779,7 @@ HomeScreen As screen:
             Visible: |
                 =_managerView && ((GalleryRequest.Selected.Status.Value) = "Approved" || (GalleryRequest.Selected.Status.Value) = "Rejected")
             Width: =239
-            X: =1066
-            Y: =635
+            X: =1076
+            Y: =620
             ZIndex: =33
 
