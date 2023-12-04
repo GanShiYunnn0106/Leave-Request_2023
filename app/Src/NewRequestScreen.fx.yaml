@@ -461,7 +461,7 @@ NewRequestScreen As screen:
             PressedFill: =LblErrorMessage.Fill
             Size: =12
             Text: |-
-                =If((_balanceRemain < _requestedDays) && (!IsBlank(_selectedLeaveType)),"Unpaid Leave: " & -(_balanceRemain - _requestedDays) & " days",(LeaveStartDatePicker.SelectedDate > LeaveEndDatePicker.SelectedDate),"Start date must occur on before end date.",(LeaveEndDatePicker.SelectedDate >= Date(Year(Today()) + 1,01,01)),"Do not select leave date by crossing year.",(LeaveStartDatePicker.SelectedDate >= Date(Year(Today()) + 1,01,01)),"Do not select leave date by crossing year.")
+                =If((_balanceRemain < _requestedDays) && (!IsBlank(_selectedLeaveType)),"Unpaid Leave: " & -(_balanceRemain - _requestedDays) & " days",(LeaveStartDatePicker.SelectedDate > LeaveEndDatePicker.SelectedDate),"Start date must occur on before end date.",(LeaveEndDatePicker.SelectedDate >= Date(Year(Today()) + 1,01,01)) || (LeaveStartDatePicker.SelectedDate >= Date(Year(Today()) + 1,01,01)),"Do not select leave date by crossing year.")
             Width: =252
             X: =885
             Y: =304
@@ -649,6 +649,8 @@ NewRequestScreen As screen:
                 Set(_balanceRemain,((LookUp(LeaveApp_Employee,NameofEmployee.Email=User().Email).MedicalLeaveEntitlement) - (LookUp(LeaveApp_Employee,NameofEmployee.Email=User().Email).MedicalLeaveTaken))),
                 _selectedLeaveType = "Casual Immediate",
                 Set(_balanceRemain,((LookUp(LeaveApp_Employee,NameofEmployee.Email=User().Email).CompassionateLeaveEntitlement) - (LookUp(LeaveApp_Employee,NameofEmployee.Email=User().Email).CompassionateLeaveTaken))),
+                _selectedLeaveType = "Casual Second",
+                Set(_balanceRemain,((LookUp(LeaveApp_Employee,NameofEmployee.Email=User().Email).CasualSecondLeaveEntitlement) - (LookUp(LeaveApp_Employee,NameofEmployee.Email=User().Email).CasualSecondLeaveTaken))),
                 _selectedLeaveType = "Marriage",
                 Set(_balanceRemain,((LookUp(LeaveApp_Employee,NameofEmployee.Email=User().Email).MarriageLeaveEntitlement) - (LookUp(LeaveApp_Employee,NameofEmployee.Email=User().Email).MarriageLeaveTaken))),
                 _selectedLeaveType = "Paternity",
