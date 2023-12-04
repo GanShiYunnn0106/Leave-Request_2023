@@ -13,7 +13,7 @@ LoginScreen As screen:
         Fill: =RGBA(249, 249, 249, 1)
         Height: =768
         Width: =573
-        X: =793
+        X: =792
         ZIndex: =1
 
     CompanyLogo As image:
@@ -26,17 +26,20 @@ LoginScreen As screen:
 
     LabelRequestLeave As label:
         Align: =Align.Center
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =2
         Color: =RGBA(56, 86, 153, 1)
+        Fill: =RGBA(255, 255, 255, 1)
         Font: =Font.Georgia
         FontWeight: =FontWeight.Bold
-        Height: =94
-        Size: =35
+        Height: =115
+        Size: =33
         Text: |-
             ="REQUEST
              LEAVE"
-        Width: =364
-        X: =215
-        Y: =422
+        Width: =320
+        X: =237
+        Y: =394
         ZIndex: =7
 
     LoginAsEmployeeGroup As group:
@@ -68,8 +71,8 @@ LoginScreen As screen:
             Size: =12.5
             Text: ="TO SUBMIT A LEAVE REQUEST"
             Width: =299
-            X: =945
-            Y: =221
+            X: =929
+            Y: =238
             ZIndex: =4
 
         BtnEmployeeLogin As button:
@@ -100,8 +103,8 @@ LoginScreen As screen:
             Size: =20
             Text: ="Login as an employee"
             Width: =351
-            X: =919
-            Y: =269
+            X: =903
+            Y: =286
             ZIndex: =5
 
     LoginAsManagerGroup As group:
@@ -133,8 +136,8 @@ LoginScreen As screen:
             Size: =12.5
             Text: ="TO APPROVE OR DECLINE LEAVE REQUESTS"
             Width: =418
-            X: =885
-            Y: =440
+            X: =869
+            Y: =433
             ZIndex: =2
 
         BtnManagerLogin As button:
@@ -171,7 +174,7 @@ LoginScreen As screen:
             Size: =20
             Text: ="Login as a manager"
             Width: =344
-            X: =929
-            Y: =488
+            X: =913
+            Y: =481
             ZIndex: =3
 
