@@ -184,7 +184,7 @@ CompanyHolidaysScreen As screen:
         AccessibleLabel: ="Company holidays"
         DisabledBorderColor: =GalleryHolidays.BorderColor
         DisabledFill: =GalleryHolidays.Fill
-        Height: =597
+        Height: =610
         HoverBorderColor: =GalleryHolidays.BorderColor
         HoverFill: =GalleryHolidays.Fill
         Items: |-
@@ -201,9 +201,9 @@ CompanyHolidaysScreen As screen:
         PressedBorderColor: =GalleryHolidays.BorderColor
         PressedFill: =GalleryHolidays.Fill
         TemplateSize: =49
-        Width: =891
+        Width: =905
         X: =231
-        Y: =165
+        Y: =152
         ZIndex: =32
 
         Label12 As label:
@@ -338,6 +338,7 @@ CompanyHolidaysScreen As screen:
         FontWeight: =FontWeight.Semibold
         Text: |-
             ="Holiday Name:"
+        Visible: =_managerView=true
         X: =1136
         Y: =182
         ZIndex: =43
@@ -352,6 +353,7 @@ CompanyHolidaysScreen As screen:
             
             
             To:"
+        Visible: =_managerView=true
         Width: =71
         X: =1136
         Y: =253
@@ -365,6 +367,7 @@ CompanyHolidaysScreen As screen:
         OnSelect: |-
             =Collect(LeaveApp_PublicHoliday,{HolidayName:txtHoliday.Text, HolidayDates:DateValue(HolidayDate.SelectedDate), ToDate:DateValue(HolidayDate2.SelectedDate)});
         Text: ="ADD"
+        Visible: =_managerView=true
         Width: =75
         X: =1183
         Y: =508
