@@ -86,7 +86,7 @@ HomeScreen As screen:
             
             Reset(RemarksTextBox);
         TemplatePadding: =0
-        TemplateSize: =150
+        TemplateSize: =154
         Width: =820
         X: =231
         Y: =158
@@ -138,7 +138,7 @@ HomeScreen As screen:
             ZIndex: =6
 
         Label3 As label:
-            Height: =119
+            Height: =121
             OnSelect: =
             Size: =14
             Text: |-
