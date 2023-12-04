@@ -47,6 +47,106 @@ LeaveBalanceScreen As screen:
         Y: =153
         ZIndex: =10
 
+        Rectangle7 As rectangle:
+            BorderThickness: =2
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =273
+            OnSelect: =Select(Parent)
+            Width: =210
+            X: =45
+            Y: =36
+            ZIndex: =1
+
+        Icon2 As icon.Information:
+            Height: =25
+            Icon: =Icon.Information
+            OnSelect: =Navigate(AboutScreen);Set(_aboutSelectedLeaveType,"Annual")
+            Width: =25
+            X: =218
+            Y: =48
+            ZIndex: =3
+
+        Label7 As label:
+            Align: =Align.Center
+            Height: =33
+            OnSelect: =Select(Parent)
+            Text: =ThisItem.AnnualCarriedForward & " day(s)"
+            Width: =210
+            X: =45
+            Y: =177
+            ZIndex: =4
+
+        Rectangle7_1 As rectangle:
+            BorderThickness: =2
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =273
+            OnSelect: =Select(Parent)
+            Width: =210
+            X: =330
+            Y: =36
+            ZIndex: =5
+
+        Label6_1 As label:
+            Align: =Align.Center
+            FontWeight: =FontWeight.Semibold
+            Height: =67
+            OnSelect: =Select(Parent)
+            Size: =18
+            Text: ="Annual Leave Balance"
+            Width: =210
+            X: =330
+            Y: =89
+            ZIndex: =6
+
+        Icon2_1 As icon.Information:
+            Height: =25
+            Icon: =Icon.Information
+            OnSelect: =Navigate(AboutScreen);Set(_aboutSelectedLeaveType,"Annual")
+            Width: =25
+            X: =503
+            Y: =48
+            ZIndex: =7
+
+        Label7_1 As label:
+            Align: =Align.Center
+            Height: =33
+            OnSelect: =Select(Parent)
+            Text: =Value(ThisItem.Annual_x0020_Leave_x0020_Balance) & " day(s)"
+            Width: =210
+            X: =330
+            Y: =177
+            ZIndex: =8
+
+        Label8 As label:
+            Align: =Align.Center
+            Height: =31
+            OnSelect: =Select(Parent)
+            Text: |-
+                ="Expiry Date :"
+            Width: =210
+            X: =45
+            Y: =234
+            ZIndex: =9
+
+        Label11 As label:
+            Align: =Align.Center
+            Height: =38
+            OnSelect: =Select(Parent)
+            Text: =Text(ExpiryDatePicker.SelectedDate, "[$-en-US] dd mmm ") & Year(Today()) 
+            Width: =210
+            X: =45
+            Y: =257
+            ZIndex: =10
+
+        ExpiryDatePicker As datepicker:
+            DefaultDate: =Date(2023,03,31)
+            DisplayMode: =DisplayMode.Disabled
+            OnSelect: =Select(Parent)
+            Visible: =false
+            X: =45
+            Y: =344
+            ZIndex: =11
+
     Rectangle6 As rectangle:
         Fill: =RGBA(217, 216, 217, 1)
         Height: =2
