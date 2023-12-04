@@ -491,8 +491,8 @@ HomeScreen As screen:
             Text: ="EDIT"
             Visible: =!_managerView && (GalleryRequest.Selected.Status.Value) = "Pending"
             Width: =54
-            X: =1101
-            Y: =560
+            X: =1115
+            Y: =586
             ZIndex: =37
 
         EditIcon_2 As icon.Edit:
@@ -501,8 +501,8 @@ HomeScreen As screen:
             OnSelect: =
             Visible: =!_managerView && (GalleryRequest.Selected.Status.Value) = "Pending"
             Width: =23
-            X: =1063
-            Y: =560
+            X: =1076
+            Y: =586
             ZIndex: =38
 
         ButtonManagerApprove_2 As button:
@@ -785,4 +785,22 @@ HomeScreen As screen:
             X: =1071
             Y: =428
             ZIndex: =50
+
+    Label4 As label:
+        Height: =43
+        Text: |-
+            ="Comment:"
+        Width: =145
+        X: =1076
+        Y: =486
+        ZIndex: =51
+
+    Label5 As label:
+        FontWeight: =FontWeight.Semibold
+        Height: =83
+        Text: =GalleryRequest.Selected.Comments
+        Width: =284
+        X: =1076
+        Y: =495
+        ZIndex: =52
 
