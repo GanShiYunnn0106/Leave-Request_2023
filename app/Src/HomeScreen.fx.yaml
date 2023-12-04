@@ -244,75 +244,30 @@ HomeScreen As screen:
         Y: =80
         ZIndex: =12
 
+    Label4 As label:
+        Height: =35
+        Text: |-
+            ="Comment:"
+        Width: =145
+        X: =1066
+        Y: =490
+        ZIndex: =29
+
+    Label5 As label:
+        FontWeight: =FontWeight.Semibold
+        Height: =76
+        Text: =GalleryRequest.Selected.Comments
+        Width: =284
+        X: =1076
+        Y: =518
+        ZIndex: =30
+
     GroupRequestDetails As group:
         Height: =5
         Width: =5
         X: =40
         Y: =40
         ZIndex: =32
-
-    Group2 As group:
-        Height: =5
-        Width: =5
-        X: =40
-        Y: =40
-        ZIndex: =34
-
-        LabelRemarks_1 As label:
-            BorderThickness: =2
-            Fill: =RGBA(255, 255, 255, 1)
-            FontWeight: =FontWeight.Semibold
-            Height: =68
-            Overflow: =Overflow.Scroll
-            Text: =GalleryRequest.Selected.Remarks_By_Decision_Maker
-            Visible: |
-                =_managerView && ((GalleryRequest.Selected.Status.Value) = "Approved" || (GalleryRequest.Selected.Status.Value) = "Rejected")
-            Width: =239
-            X: =1069
-            Y: =630
-            ZIndex: =29
-
-        LabelLeaveDetails_1 As label:
-            Text: |-
-                ="Leave Details:"
-            Visible: =_managerView
-            X: =1067
-            Y: =529
-            ZIndex: =30
-
-        LabelComments_1 As label:
-            FontWeight: =FontWeight.Semibold
-            Height: =42
-            Text: =GalleryRequest.Selected.Comments
-            Visible: =_managerView
-            Width: =254
-            X: =1067
-            Y: =557
-            ZIndex: =31
-
-        RemarksTextBox As text:
-            Default: =""
-            Height: =68
-            Visible: =_managerView && (GalleryRequest.Selected.Status.Value) = "Pending"
-            Width: =239
-            X: =1069
-            Y: =630
-            ZIndex: =32
-
-        remarksHeader As label:
-            Text: ="Remarks"
-            X: =1069
-            Y: =590
-            ZIndex: =33
-
-    Label4 As label:
-        Height: =43
-        Text: |-
-            ="Comment:"
-        Width: =145
-        X: =1076
-        Y: =486
-        ZIndex: =51
 
     Header_11 As group:
         Height: =5
@@ -447,12 +402,12 @@ HomeScreen As screen:
             X: =1211
             ZIndex: =11
 
-    GroupRequestDetails_2 As group:
+    Group2 As group:
         Height: =5
         Width: =5
         X: =40
         Y: =40
-        ZIndex: =51
+        ZIndex: =53
 
         Rectangle3_4 As rectangle:
             DisabledFill: =Rectangle3_4.Fill
@@ -465,7 +420,7 @@ HomeScreen As screen:
             Width: =315
             X: =1051
             Y: =80
-            ZIndex: =35
+            ZIndex: =13
 
         RequestDetailsTitle_2 As label:
             Color: =RGBA(62, 96, 170, 1)
@@ -477,7 +432,7 @@ HomeScreen As screen:
             Width: =161
             X: =1066
             Y: =121
-            ZIndex: =36
+            ZIndex: =14
 
         EditLable_2 As label:
             BorderThickness: =2
@@ -502,7 +457,7 @@ HomeScreen As screen:
             Width: =54
             X: =1115
             Y: =586
-            ZIndex: =37
+            ZIndex: =15
 
         EditIcon_2 As icon.Edit:
             Height: =30
@@ -512,7 +467,7 @@ HomeScreen As screen:
             Width: =23
             X: =1076
             Y: =586
-            ZIndex: =38
+            ZIndex: =16
 
         ButtonManagerApprove_2 As button:
             BorderColor: =RGBA(54, 176, 75, 1)
@@ -626,9 +581,9 @@ HomeScreen As screen:
             Visible: |
                 =_managerView && (GalleryRequest.Selected.Status.Value) = "Pending"
             Width: =78
-            X: =1094
-            Y: =590
-            ZIndex: =39
+            X: =1087
+            Y: =716
+            ZIndex: =17
 
         ButtonManagerDecline_2 As button:
             BorderColor: =RGBA(213, 25, 32, 1)
@@ -690,9 +645,9 @@ HomeScreen As screen:
             Text: ="Decline"
             Visible: =_managerView && (GalleryRequest.Selected.Status.Value) = "Pending"
             Width: =78
-            X: =1201
-            Y: =590
-            ZIndex: =40
+            X: =1211
+            Y: =716
+            ZIndex: =18
 
         Days_2 As label:
             FontWeight: =FontWeight.Semibold
@@ -701,9 +656,9 @@ HomeScreen As screen:
             Text: |
                 =GalleryRequest.Selected.Days
             Width: =157
-            X: =1069
-            Y: =184
-            ZIndex: =41
+            X: =1074
+            Y: =188
+            ZIndex: =19
 
         Leave_Type_2 As label:
             FontWeight: =FontWeight.Semibold
@@ -713,7 +668,7 @@ HomeScreen As screen:
             Width: =278
             X: =1071
             Y: =251
-            ZIndex: =42
+            ZIndex: =20
 
         Request_To_2 As label:
             FontWeight: =FontWeight.Semibold
@@ -723,8 +678,8 @@ HomeScreen As screen:
             Text: =GalleryRequest.Selected.Requested_to.DisplayName
             Width: =295
             X: =1071
-            Y: =322
-            ZIndex: =43
+            Y: =327
+            ZIndex: =21
 
         CarryForwardDays_2 As label:
             FontWeight: =FontWeight.Semibold
@@ -732,9 +687,9 @@ HomeScreen As screen:
             OnSelect: =
             Text: =If(IsBlank(GalleryRequest.Selected.CarryForwardDays) , "-", GalleryRequest.Selected.CarryForwardDays& " days")
             Width: =229
-            X: =1076
+            X: =1071
             Y: =394
-            ZIndex: =44
+            ZIndex: =22
 
         UnpaidLeave_2 As label:
             FontWeight: =FontWeight.Semibold
@@ -744,16 +699,16 @@ HomeScreen As screen:
             Width: =161
             X: =1076
             Y: =459
-            ZIndex: =45
+            ZIndex: =23
 
         LblTotalDays_2 As label:
             OnSelect: =
             Text: |-
                 ="Total days:"
             Width: =161
-            X: =1066
+            X: =1070
             Y: =154
-            ZIndex: =46
+            ZIndex: =24
 
         LblLeaveType_2 As label:
             Height: =28
@@ -761,9 +716,9 @@ HomeScreen As screen:
             Text: |-
                 ="Leave Type:"
             Width: =156
-            X: =1066
+            X: =1071
             Y: =231
-            ZIndex: =47
+            ZIndex: =25
 
         LblRequestTo_2 As label:
             Height: =38
@@ -771,9 +726,9 @@ HomeScreen As screen:
             Text: |-
                 ="Request Send To:"
             Width: =167
-            X: =1066
+            X: =1071
             Y: =293
-            ZIndex: =48
+            ZIndex: =26
 
         LblCarryForward_2 As label:
             Height: =19
@@ -783,7 +738,7 @@ HomeScreen As screen:
             Width: =206
             X: =1071
             Y: =367
-            ZIndex: =49
+            ZIndex: =27
 
         LblUnpaidLeave_2 As label:
             Height: =30
@@ -793,14 +748,36 @@ HomeScreen As screen:
             Width: =171
             X: =1071
             Y: =428
-            ZIndex: =50
+            ZIndex: =28
 
-    Label5 As label:
-        FontWeight: =FontWeight.Semibold
-        Height: =83
-        Text: =GalleryRequest.Selected.Comments
-        Width: =284
-        X: =1076
-        Y: =495
-        ZIndex: =52
+        RemarksTextBox As text:
+            Default: =""
+            Height: =68
+            Visible: =_managerView && (GalleryRequest.Selected.Status.Value) = "Pending"
+            Width: =239
+            X: =1076
+            Y: =630
+            ZIndex: =31
+
+        remarksHeader As label:
+            Text: |-
+                ="Remarks: "
+            Visible: =_managerView
+            X: =1076
+            Y: =590
+            ZIndex: =32
+
+        LabelRemarks_1 As label:
+            BorderThickness: =2
+            Fill: =RGBA(255, 255, 255, 1)
+            FontWeight: =FontWeight.Semibold
+            Height: =68
+            Overflow: =Overflow.Scroll
+            Text: =GalleryRequest.Selected.Remarks_By_Decision_Maker
+            Visible: |
+                =_managerView && ((GalleryRequest.Selected.Status.Value) = "Approved" || (GalleryRequest.Selected.Status.Value) = "Rejected")
+            Width: =239
+            X: =1076
+            Y: =630
+            ZIndex: =33
 
