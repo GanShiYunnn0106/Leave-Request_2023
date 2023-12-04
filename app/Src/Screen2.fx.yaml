@@ -14,265 +14,6 @@ Screen2 As screen:
         Y: =28
         ZIndex: =17
 
-    GroupRequestDetails_1 As group:
-        Height: =5
-        Width: =5
-        X: =40
-        Y: =40
-        ZIndex: =17
-
-        Rectangle3_1 As rectangle:
-            DisabledFill: =Rectangle3_1.Fill
-            Fill: =RGBA(249, 249, 249, 1)
-            FocusedBorderColor: =Rectangle3_1.BorderColor
-            Height: =695
-            HoverFill: =Rectangle3_1.Fill
-            OnSelect: =
-            PressedFill: =Rectangle3_1.Fill
-            Width: =315
-            X: =1051
-            Y: =73
-            ZIndex: =1
-
-        RequestDetailsTitle_1 As label:
-            Color: =RGBA(62, 96, 170, 1)
-            Font: =Font.'Lato Black'
-            OnSelect: =
-            Size: =14
-            Text: ="Request Details"
-            Underline: =true
-            Width: =161
-            X: =1066
-            Y: =121
-            ZIndex: =2
-
-        EditLable_1 As label:
-            BorderThickness: =2
-            Color: =RGBA(101, 128, 187, 1)
-            FocusedBorderThickness: =3
-            Font: =Font.'Lato Black'
-            FontWeight: =FontWeight.Semibold
-            Height: =30
-            HoverBorderColor: =RGBA(62, 96, 170, 1)
-            HoverFill: =RGBA(230, 229, 229, 1)
-            OnSelect: |-
-                =Set(
-                    _editingRequest,
-                    true
-                );
-                Navigate(
-                    NewRequestScreen,
-                    ScreenTransition.None
-                );
-            Text: ="EDIT"
-            Visible: =!_managerView && (GalleryRequest.Selected.Status.Value) = "Pending"
-            Width: =54
-            X: =1101
-            Y: =560
-            ZIndex: =3
-
-        EditIcon_1 As icon.Edit:
-            Height: =30
-            Icon: =Icon.Edit
-            OnSelect: =
-            Visible: =!_managerView && (GalleryRequest.Selected.Status.Value) = "Pending"
-            Width: =23
-            X: =1063
-            Y: =560
-            ZIndex: =4
-
-        ButtonManagerApprove_1 As button:
-            BorderColor: =RGBA(54, 176, 75, 1)
-            Color: =RGBA(54, 176, 75, 1)
-            Fill: =RGBA(255, 255, 255, 1)
-            Height: =27
-            OnSelect: |+
-                =Set(LeaveTempID,LookUp(LeaveApp_Request,ID = GalleryRequest.Selected.ID));
-                Set(DecisionDateTemp,Now());
-                Patch(LeaveApp_Request,LeaveTempID,{Status: {
-                            '@odata.type': "Microsoft.Azure.Connectors.SharePoint.SPListExpandedUser",
-                            Value: "Approved"
-                        }}
-                        ,{Decision_Date: Now()}
-                        ,{Remarks_By_Decision_Maker: RemarksTextBox.Text}
-                        ,{
-                        Decision_By: {
-                            '@odata.type': "Microsoft.Azure.Connectors.SharePoint.SPListExpandedUser",
-                            Claims: "i:0#.f|membership|" & Lower(User().Email),
-                            Department: "",
-                            DisplayName: User().FullName,
-                            Email: User().Email,
-                            JobTitle: ".",
-                            Picture: "."
-                        }
-                    }
-                        );
-                
-                Set(LeaveAnnualCarriedTemp,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email).AnnualCarriedForward);
-                Set(LeaveAnnualTakenTemp,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email).AnnualLeaveTaken);
-                Set(LeaveMedicalTakenTemp,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email).MedicalLeaveTaken);
-                Set(LeaveCasualImmediateTakenTemp,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email).CompassionateLeaveTaken);
-                Set(LeaveCasualSecondTakenTemp,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email).CasualSecondLeaveTaken);
-                Set(LeaveMarriageTakenTemp,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email).MarriageLeaveTaken);
-                Set(LeavePaternityTakenTemp,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email).PaternityLeaveTaken);
-                Set(LeaveMaternityTakenTemp,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email).MaternityLeaveTaken);
-                Set(LeaveHospitalizationTakenTemp,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email).HospitalizationLeaveTaken);
-                Set(TypeTemp,GalleryRequest.Selected.Leave_Type.Value);
-                Set(DaysTemp,GalleryRequest.Selected.Days);
-                Set(LeaveTempEmail,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email));
-                
-                If((TypeTemp = "Annual" && LeaveAnnualCarriedTemp >= DaysTemp),Patch(LeaveApp_Employee,LeaveTempEmail,{AnnualCarriedForward: LeaveAnnualCarriedTemp - DaysTemp}));
-                If((TypeTemp = "Annual" && LeaveAnnualCarriedTemp < DaysTemp),Patch(LeaveApp_Employee,LeaveTempEmail,{AnnualCarriedForward: 0},{AnnualLeaveTaken: LeaveAnnualTakenTemp + (DaysTemp - LeaveAnnualCarriedTemp)}));
-                If((TypeTemp = "Medical"),Patch(LeaveApp_Employee,LeaveTempEmail,{MedicalLeaveTaken: LeaveMedicalTakenTemp + DaysTemp}));
-                If((TypeTemp = "Casual Immediate"),Patch(LeaveApp_Employee,LeaveTempEmail,{CompassionateLeaveTaken: LeaveCasualImmediateTakenTemp + DaysTemp}));
-                If((TypeTemp = "Casual Second"),Patch(LeaveApp_Employee,LeaveTempEmail,{CasualSecondLeaveTaken: LeaveCasualSecondTakenTemp + DaysTemp}));
-                If((TypeTemp = "Hospitalization"),Patch(LeaveApp_Employee,LeaveTempEmail,{HospitalizationLeaveTaken: LeaveHospitalizationTakenTemp + DaysTemp}));
-                If((TypeTemp = "Paternity"),Patch(LeaveApp_Employee,LeaveTempEmail,{PaternityLeaveTaken: LeavePaternityTakenTemp + DaysTemp }));
-                If((TypeTemp = "Marriage"),Patch(LeaveApp_Employee,LeaveTempEmail,{MarriageLeaveTaken: LeaveMarriageTakenTemp + DaysTemp}));
-                If((TypeTemp = "Maternity"),Patch(LeaveApp_Employee,LeaveTempEmail,{MaternityLeaveTaken: LeaveMaternityTakenTemp + DaysTemp}));
-                
-                
-            Size: =11
-            Text: ="Approve"
-            Visible: |
-                =_managerView && (GalleryRequest.Selected.Status.Value) = "Pending"
-            Width: =78
-            X: =1094
-            Y: =590
-            ZIndex: =5
-
-        ButtonManagerDecline_1 As button:
-            BorderColor: =RGBA(213, 25, 32, 1)
-            Color: =RGBA(213, 25, 32, 1)
-            Fill: =RGBA(255, 255, 255, 1)
-            Height: =27
-            OnSelect: |-
-                =Set(LeaveTempID,LookUp(LeaveApp_Request,ID = GalleryRequest.Selected.ID));
-                Set(DecisionDateTemp,Now());
-                Patch(LeaveApp_Request,LeaveTempID,{Status: {
-                            '@odata.type': "Microsoft.Azure.Connectors.SharePoint.SPListExpandedUser",
-                            Value: "Approved"
-                        }}
-                        ,{Decision_Date: Now()}
-                        ,{Remarks_By_Decision_Maker: RemarksTextBox.Text}
-                        ,{
-                        Decision_By: {
-                            '@odata.type': "Microsoft.Azure.Connectors.SharePoint.SPListExpandedUser",
-                            Claims: "i:0#.f|membership|" & Lower(User().Email),
-                            Department: "",
-                            DisplayName: User().FullName,
-                            Email: User().Email,
-                            JobTitle: ".",
-                            Picture: "."
-                        }
-                    }
-                        );
-            Size: =11
-            Text: ="Decline"
-            Visible: =_managerView && (GalleryRequest.Selected.Status.Value) = "Pending"
-            Width: =78
-            X: =1201
-            Y: =590
-            ZIndex: =6
-
-        Days_1 As label:
-            FontWeight: =FontWeight.Semibold
-            Height: =36
-            OnSelect: =
-            Text: |
-                =GalleryRequest.Selected.Days
-            Width: =157
-            X: =1066
-            Y: =195
-            ZIndex: =7
-
-        Leave_Type_1 As label:
-            FontWeight: =FontWeight.Semibold
-            Height: =42
-            OnSelect: =
-            Text: =GalleryRequest.Selected.Leave_Type.Value
-            Width: =278
-            X: =1077
-            Y: =279
-            ZIndex: =8
-
-        Request_To_1 As label:
-            FontWeight: =FontWeight.Semibold
-            Height: =30
-            OnSelect: =
-            Size: =12.5
-            Text: =GalleryRequest.Selected.Requested_to.DisplayName
-            Width: =299
-            X: =1067
-            Y: =351
-            ZIndex: =9
-
-        CarryForwardDays_1 As label:
-            FontWeight: =FontWeight.Semibold
-            Height: =44
-            OnSelect: =
-            Text: =GalleryRequest.Selected.CarryForwardDays & " days"
-            Width: =229
-            X: =1067
-            Y: =412
-            ZIndex: =10
-
-        UnpaidLeave_1 As label:
-            FontWeight: =FontWeight.Semibold
-            OnSelect: =
-            Text: =GalleryRequest.Selected.UnpaidLeave & " days"
-            Width: =161
-            X: =1067
-            Y: =500
-            ZIndex: =11
-
-        LblTotalDays_1 As label:
-            OnSelect: =
-            Text: |-
-                ="Total days:"
-            Width: =161
-            X: =1066
-            Y: =161
-            ZIndex: =12
-
-        LblLeaveType_1 As label:
-            OnSelect: =
-            Text: |-
-                ="Leave Type:"
-            Width: =161
-            X: =1077
-            Y: =251
-            ZIndex: =13
-
-        LblRequestTo_1 As label:
-            OnSelect: =
-            Text: |-
-                ="Request Send To:"
-            Width: =161
-            X: =1063
-            Y: =311
-            ZIndex: =14
-
-        LblCarryForward_1 As label:
-            Height: =19
-            OnSelect: =
-            Text: |-
-                ="Carry Forward Days:"
-            Width: =206
-            X: =1066
-            Y: =399
-            ZIndex: =15
-
-        LblUnpaidLeave_1 As label:
-            Height: =30
-            OnSelect: =
-            Text: |-
-                ="Unpaid Leaves:"
-            Width: =171
-            X: =1066
-            Y: =471
-            ZIndex: =16
-
     Label11_44 As label:
         FontWeight: =FontWeight.Semibold
         Height: =44
@@ -561,4 +302,295 @@ Screen2 As screen:
         X: =663
         Y: =302
         ZIndex: =49
+
+    Group1 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =53
+
+        Rectangle3_1 As rectangle:
+            DisabledFill: =Rectangle3_1.Fill
+            Fill: =RGBA(249, 249, 249, 1)
+            FocusedBorderColor: =Rectangle3_1.BorderColor
+            Height: =695
+            HoverFill: =Rectangle3_1.Fill
+            OnSelect: =
+            PressedFill: =Rectangle3_1.Fill
+            Width: =315
+            X: =1051
+            Y: =73
+            ZIndex: =1
+
+        RequestDetailsTitle_1 As label:
+            Color: =RGBA(62, 96, 170, 1)
+            Font: =Font.'Lato Black'
+            OnSelect: =
+            Size: =14
+            Text: ="Request Details"
+            Underline: =true
+            Width: =161
+            X: =1066
+            Y: =121
+            ZIndex: =2
+
+        EditLable_1 As label:
+            BorderThickness: =2
+            Color: =RGBA(101, 128, 187, 1)
+            FocusedBorderThickness: =3
+            Font: =Font.'Lato Black'
+            FontWeight: =FontWeight.Semibold
+            Height: =30
+            HoverBorderColor: =RGBA(62, 96, 170, 1)
+            HoverFill: =RGBA(230, 229, 229, 1)
+            OnSelect: |-
+                =Set(
+                    _editingRequest,
+                    true
+                );
+                Navigate(
+                    NewRequestScreen,
+                    ScreenTransition.None
+                );
+            Text: ="EDIT"
+            Visible: =!_managerView && (GalleryRequest.Selected.Status.Value) = "Pending"
+            Width: =54
+            X: =1101
+            Y: =560
+            ZIndex: =3
+
+        EditIcon_1 As icon.Edit:
+            Height: =30
+            Icon: =Icon.Edit
+            OnSelect: =
+            Visible: =!_managerView && (GalleryRequest.Selected.Status.Value) = "Pending"
+            Width: =23
+            X: =1063
+            Y: =560
+            ZIndex: =4
+
+        ButtonManagerApprove_1 As button:
+            BorderColor: =RGBA(54, 176, 75, 1)
+            Color: =RGBA(54, 176, 75, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =27
+            OnSelect: |+
+                =Set(LeaveTempID,LookUp(LeaveApp_Request,ID = GalleryRequest.Selected.ID));
+                Set(DecisionDateTemp,Now());
+                Patch(LeaveApp_Request,LeaveTempID,{Status: {
+                            '@odata.type': "Microsoft.Azure.Connectors.SharePoint.SPListExpandedUser",
+                            Value: "Approved"
+                        }}
+                        ,{Decision_Date: Now()}
+                        ,{Remarks_By_Decision_Maker: RemarksTextBox.Text}
+                        ,{
+                        Decision_By: {
+                            '@odata.type': "Microsoft.Azure.Connectors.SharePoint.SPListExpandedUser",
+                            Claims: "i:0#.f|membership|" & Lower(User().Email),
+                            Department: "",
+                            DisplayName: User().FullName,
+                            Email: User().Email,
+                            JobTitle: ".",
+                            Picture: "."
+                        }
+                    }
+                        );
+                
+                Set(LeaveAnnualCarriedTemp,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email).AnnualCarriedForward);
+                Set(LeaveAnnualTakenTemp,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email).AnnualLeaveTaken);
+                Set(LeaveMedicalTakenTemp,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email).MedicalLeaveTaken);
+                Set(LeaveCasualImmediateTakenTemp,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email).CompassionateLeaveTaken);
+                Set(LeaveCasualSecondTakenTemp,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email).CasualSecondLeaveTaken);
+                Set(LeaveMarriageTakenTemp,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email).MarriageLeaveTaken);
+                Set(LeavePaternityTakenTemp,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email).PaternityLeaveTaken);
+                Set(LeaveMaternityTakenTemp,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email).MaternityLeaveTaken);
+                Set(LeaveHospitalizationTakenTemp,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email).HospitalizationLeaveTaken);
+                Set(TypeTemp,GalleryRequest.Selected.Leave_Type.Value);
+                Set(DaysTemp,GalleryRequest.Selected.Days);
+                Set(LeaveTempEmail,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email));
+                
+                If((TypeTemp = "Annual" && LeaveAnnualCarriedTemp >= DaysTemp),Patch(LeaveApp_Employee,LeaveTempEmail,{AnnualCarriedForward: LeaveAnnualCarriedTemp - DaysTemp}));
+                If((TypeTemp = "Annual" && LeaveAnnualCarriedTemp < DaysTemp),Patch(LeaveApp_Employee,LeaveTempEmail,{AnnualCarriedForward: 0},{AnnualLeaveTaken: LeaveAnnualTakenTemp + (DaysTemp - LeaveAnnualCarriedTemp)}));
+                If((TypeTemp = "Medical"),Patch(LeaveApp_Employee,LeaveTempEmail,{MedicalLeaveTaken: LeaveMedicalTakenTemp + DaysTemp}));
+                If((TypeTemp = "Casual Immediate"),Patch(LeaveApp_Employee,LeaveTempEmail,{CompassionateLeaveTaken: LeaveCasualImmediateTakenTemp + DaysTemp}));
+                If((TypeTemp = "Casual Second"),Patch(LeaveApp_Employee,LeaveTempEmail,{CasualSecondLeaveTaken: LeaveCasualSecondTakenTemp + DaysTemp}));
+                If((TypeTemp = "Hospitalization"),Patch(LeaveApp_Employee,LeaveTempEmail,{HospitalizationLeaveTaken: LeaveHospitalizationTakenTemp + DaysTemp}));
+                If((TypeTemp = "Paternity"),Patch(LeaveApp_Employee,LeaveTempEmail,{PaternityLeaveTaken: LeavePaternityTakenTemp + DaysTemp }));
+                If((TypeTemp = "Marriage"),Patch(LeaveApp_Employee,LeaveTempEmail,{MarriageLeaveTaken: LeaveMarriageTakenTemp + DaysTemp}));
+                If((TypeTemp = "Maternity"),Patch(LeaveApp_Employee,LeaveTempEmail,{MaternityLeaveTaken: LeaveMaternityTakenTemp + DaysTemp}));
+                
+                
+            Size: =11
+            Text: ="Approve"
+            Visible: |
+                =_managerView && (GalleryRequest.Selected.Status.Value) = "Pending"
+            Width: =78
+            X: =1094
+            Y: =590
+            ZIndex: =5
+
+        ButtonManagerDecline_1 As button:
+            BorderColor: =RGBA(213, 25, 32, 1)
+            Color: =RGBA(213, 25, 32, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =27
+            OnSelect: |-
+                =Set(LeaveTempID,LookUp(LeaveApp_Request,ID = GalleryRequest.Selected.ID));
+                Set(DecisionDateTemp,Now());
+                Patch(LeaveApp_Request,LeaveTempID,{Status: {
+                            '@odata.type': "Microsoft.Azure.Connectors.SharePoint.SPListExpandedUser",
+                            Value: "Approved"
+                        }}
+                        ,{Decision_Date: Now()}
+                        ,{Remarks_By_Decision_Maker: RemarksTextBox.Text}
+                        ,{
+                        Decision_By: {
+                            '@odata.type': "Microsoft.Azure.Connectors.SharePoint.SPListExpandedUser",
+                            Claims: "i:0#.f|membership|" & Lower(User().Email),
+                            Department: "",
+                            DisplayName: User().FullName,
+                            Email: User().Email,
+                            JobTitle: ".",
+                            Picture: "."
+                        }
+                    }
+                        );
+            Size: =11
+            Text: ="Decline"
+            Visible: =_managerView && (GalleryRequest.Selected.Status.Value) = "Pending"
+            Width: =78
+            X: =1201
+            Y: =590
+            ZIndex: =6
+
+        Days_1 As label:
+            FontWeight: =FontWeight.Semibold
+            Height: =36
+            OnSelect: =
+            Text: |
+                =GalleryRequest.Selected.Days
+            Width: =157
+            X: =1066
+            Y: =195
+            ZIndex: =7
+
+        Leave_Type_1 As label:
+            FontWeight: =FontWeight.Semibold
+            Height: =42
+            OnSelect: =
+            Text: =GalleryRequest.Selected.Leave_Type.Value
+            Width: =278
+            X: =1077
+            Y: =279
+            ZIndex: =8
+
+        Request_To_1 As label:
+            FontWeight: =FontWeight.Semibold
+            Height: =30
+            OnSelect: =
+            Size: =12.5
+            Text: =GalleryRequest.Selected.Requested_to.DisplayName
+            Width: =299
+            X: =1067
+            Y: =351
+            ZIndex: =9
+
+        CarryForwardDays_1 As label:
+            FontWeight: =FontWeight.Semibold
+            Height: =44
+            OnSelect: =
+            Text: =GalleryRequest.Selected.CarryForwardDays & " days"
+            Width: =229
+            X: =1067
+            Y: =412
+            ZIndex: =10
+
+        UnpaidLeave_1 As label:
+            FontWeight: =FontWeight.Semibold
+            OnSelect: =
+            Text: =GalleryRequest.Selected.UnpaidLeave & " days"
+            Width: =161
+            X: =1067
+            Y: =500
+            ZIndex: =11
+
+        LblTotalDays_1 As label:
+            OnSelect: =
+            Text: |-
+                ="Total days:"
+            Width: =161
+            X: =1066
+            Y: =161
+            ZIndex: =12
+
+        LblLeaveType_1 As label:
+            OnSelect: =
+            Text: |-
+                ="Leave Type:"
+            Width: =161
+            X: =1077
+            Y: =251
+            ZIndex: =13
+
+        LblRequestTo_1 As label:
+            OnSelect: =
+            Text: |-
+                ="Request Send To:"
+            Width: =161
+            X: =1063
+            Y: =311
+            ZIndex: =14
+
+        LblCarryForward_1 As label:
+            Height: =19
+            OnSelect: =
+            Text: |-
+                ="Carry Forward Days:"
+            Width: =206
+            X: =1066
+            Y: =399
+            ZIndex: =15
+
+        LblUnpaidLeave_1 As label:
+            Height: =30
+            OnSelect: =
+            Text: |-
+                ="Unpaid Leaves:"
+            Width: =171
+            X: =1066
+            Y: =471
+            ZIndex: =16
+
+        LabelRemarks As label:
+            BorderThickness: =2
+            Fill: =RGBA(255, 255, 255, 1)
+            FontWeight: =FontWeight.Semibold
+            Height: =68
+            Overflow: =Overflow.Scroll
+            Text: =GalleryRequest.Selected.Remarks_By_Decision_Maker
+            Visible: |
+                =_managerView && ((GalleryRequest.Selected.Status.Value) = "Approved" || (GalleryRequest.Selected.Status.Value) = "Rejected")
+            Width: =239
+            X: =1076
+            Y: =639
+            ZIndex: =50
+
+        LabelLeaveDetails As label:
+            Text: |-
+                ="Leave Details:"
+            Visible: =_managerView
+            X: =1067
+            Y: =529
+            ZIndex: =51
+
+        LabelComments As label:
+            FontWeight: =FontWeight.Semibold
+            Height: =42
+            Text: =GalleryRequest.Selected.Comments
+            Visible: =_managerView
+            Width: =254
+            X: =1067
+            Y: =557
+            ZIndex: =52
 
