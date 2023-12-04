@@ -236,12 +236,7 @@ CompanyHolidaysScreen As screen:
             PressedColor: =HolidayDates.Color
             PressedFill: =HolidayDates.Fill
             Size: =13.8
-            Text: |-
-                =If(
-                    DateValue(ThisItem.HolidayDates) = DateValue(ThisItem.ToDate),
-                    Text(DateValue(ThisItem.HolidayDates), "[$-en-US]ddd, dd mmm yyyy"),
-                    Text(DateValue(ThisItem.HolidayDates), "[$-en-US]ddd, dd mmm yyyy") & "  -  " & Text(DateValue(ThisItem.ToDate), "[$-en-US]ddd, dd mmm yyyy")
-                )
+            Text: =Text(DateValue(ThisItem.HolidayDates), "[$-en-US]ddd, dd mmm yyyy")
             Width: =442
             X: =405
             ZIndex: =2
@@ -315,14 +310,6 @@ CompanyHolidaysScreen As screen:
         Y: =331
         ZIndex: =40
 
-    HolidayDate2 As datepicker:
-        Height: =41
-        Visible: =_managerView=true
-        Width: =174
-        X: =1140
-        Y: =430
-        ZIndex: =41
-
     TitlePublicHoliday As label:
         Color: =RGBA(255, 255, 255, 1)
         FontWeight: =FontWeight.Semibold
@@ -345,16 +332,11 @@ CompanyHolidaysScreen As screen:
 
     FromTo As label:
         FontWeight: =FontWeight.Semibold
-        Height: =199
+        Height: =101
         Text: |-
-            ="From:
-            
-            
-            
-            
-            To:"
+            ="Date:"
         Visible: =_managerView=true
-        Width: =71
+        Width: =93
         X: =1136
         Y: =253
         ZIndex: =44
@@ -365,11 +347,11 @@ CompanyHolidaysScreen As screen:
         Fill: =RGBA(62, 96, 170, 1)
         Height: =23
         OnSelect: |-
-            =Collect(LeaveApp_PublicHoliday,{HolidayName:txtHoliday.Text, HolidayDates:DateValue(HolidayDate.SelectedDate), ToDate:DateValue(HolidayDate2.SelectedDate)});
+            =Collect(LeaveApp_PublicHoliday,{HolidayName:txtHoliday.Text, HolidayDates:DateValue(HolidayDate.SelectedDate)});
         Text: ="ADD"
         Visible: =_managerView=true
         Width: =75
-        X: =1183
-        Y: =508
+        X: =1189
+        Y: =430
         ZIndex: =45
 
