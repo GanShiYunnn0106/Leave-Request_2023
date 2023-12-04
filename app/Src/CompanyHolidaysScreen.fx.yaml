@@ -275,6 +275,13 @@ CompanyHolidaysScreen As screen:
         Y: =80
         ZIndex: =33
 
+    GroupNewHoliday As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =38
+
     TitleNewHoliday As label:
         Align: =Align.Center
         FontWeight: =FontWeight.Semibold
@@ -287,13 +294,6 @@ CompanyHolidaysScreen As screen:
         Width: =232
         X: =1105
         Y: =138
-        ZIndex: =38
-
-    GroupNewHoliday As group:
-        Height: =5
-        Width: =5
-        X: =40
-        Y: =40
         ZIndex: =38
 
     txtHoliday As text:
