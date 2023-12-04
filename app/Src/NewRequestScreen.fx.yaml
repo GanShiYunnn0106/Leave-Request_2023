@@ -885,8 +885,10 @@ NewRequestScreen As screen:
             
             If((_selectedLeaveType = "Annual"),
             If((_selectedLeaveType = "Annual" && LeaveAnnualCarriedTemp1 >= _requestedDays),{CarryForwardDays:_requestedDays},
-            If((_selectedLeaveType = "Annual" && LeaveAnnualCarriedTemp1 < _requestedDays && LeaveAnnualEntitlementTemp1 >= (LeaveAnnualTakenTemp1 + (_requestedDays - LeaveAnnualCarriedTemp1))),{CarryForwardDays:LeaveAnnualCarriedTemp1},{CarryForwardDays:LeaveAnnualCarriedTemp1}));
+            If((_selectedLeaveType = "Annual" && LeaveAnnualCarriedTemp1 < _requestedDays && LeaveAnnualEntitlementTemp1 >= (LeaveAnnualTakenTemp1 + (_requestedDays - LeaveAnnualCarriedTemp1))),{CarryForwardDays:LeaveAnnualCarriedTemp1},{CarryForwardDays:LeaveAnnualCarriedTemp1})),{CarryForwardDays: 0}
             )
+            
+            
             );
             
             Set(_leaveDaysTemp,_requestedDays);
