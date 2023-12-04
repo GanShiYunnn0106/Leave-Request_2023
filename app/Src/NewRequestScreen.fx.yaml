@@ -306,183 +306,35 @@ NewRequestScreen As screen:
             OnChange: =Select(LeaveStartDatePicker)
             OnSelect: |-
                 =//**** CALCULATION USED TO DETERMINE TOTAL WORK DAYS REQUESTED ****
-                If(
-                    LeaveStartDatePicker.SelectedDate <= LeaveEndDatePicker.SelectedDate,
-                    Set(
-                        _inclusiveTotalDaysRequested,
-                        DateDiff(
-                            LeaveStartDatePicker.SelectedDate,
-                            LeaveEndDatePicker.SelectedDate,
-                            TimeUnit.Days
-                        ) + 1
-                    );
-                    Set(
-                        _numFullWeeks,
-                        RoundDown(
-                            _inclusiveTotalDaysRequested / 7,
-                            0
-                        )
-                    );
-                    Set(
-                        _numFullDaysPartialWeek,
-                        _inclusiveTotalDaysRequested - _numFullWeeks * 7
-                    );
-                    Concurrent(
-                        Set(
-                            _startWeekday,
-                            Weekday(LeaveStartDatePicker.SelectedDate)
-                        ),
-                        Set(
-                            _endWeekday,
-                            Weekday(LeaveEndDatePicker.SelectedDate)
-                        )
-                    );
+                
+                If(LeaveStartDatePicker.SelectedDate <= LeaveEndDatePicker.SelectedDate,
+                    Set(_inclusiveTotalDaysRequested, DateDiff(LeaveStartDatePicker.SelectedDate, LeaveEndDatePicker.SelectedDate, TimeUnit.Days) + 1);
+                    Set(_numFullWeeks, RoundDown(_inclusiveTotalDaysRequested / 7, 0));
+                    Set(_numFullDaysPartialWeek, _inclusiveTotalDaysRequested - _numFullWeeks * 7);
+                    Concurrent(Set(_startWeekday, Weekday(LeaveStartDatePicker.SelectedDate)), Set(_endWeekday, Weekday(LeaveEndDatePicker.SelectedDate)));
                     //calculates the number of business days in the partial week left over after whole weeks are subtracted out of total days requested
-                If(
-                        _numFullDaysPartialWeek = 6,
-                        If(
-                            _startWeekday <= 2,
-                            Set(
-                                _numPartialWeekdays,
-                                5
-                            ),
-                            Set(
-                                _numPartialWeekdays,
-                                4
-                            )
+                    If(_numFullDaysPartialWeek = 6, 
+                        If(_startWeekday <= 2, Set(_numPartialWeekdays, 5), Set(_numPartialWeekdays, 4)
                         ),
-                        _numFullDaysPartialWeek = 5,
-                        If(
-                            _startWeekday = 2,
-                            Set(
-                                _numPartialWeekdays,
-                                5
-                            ),
-                            _startWeekday = 1 || _startWeekday = 3 || _startWeekday = 4,
-                            Set(
-                                _numPartialWeekdays,
-                                4
-                            ),
-                            Set(
-                                _numPartialWeekdays,
-                                3
-                            )
+                      _numFullDaysPartialWeek = 5,
+                        If(_startWeekday = 2, Set(_numPartialWeekdays, 5), _startWeekday = 1 || _startWeekday = 3 || _startWeekday = 4, Set(_numPartialWeekdays, 4), Set(_numPartialWeekdays, 3)
                         ),
-                        _numFullDaysPartialWeek = 4,
-                        If(
-                            _startWeekday = 2 || _startWeekday = 3,
-                            Set(
-                                _numPartialWeekdays,
-                                4
-                            ),
-                            _startWeekday = 1 || _startWeekday = 4,
-                            Set(
-                                _numPartialWeekdays,
-                                3
-                            ),
-                            Set(
-                                _numPartialWeekdays,
-                                2
-                            )
+                      _numFullDaysPartialWeek = 4,
+                        If(_startWeekday = 2 || _startWeekday = 3, Set(_numPartialWeekdays, 4), _startWeekday = 1 || _startWeekday = 4, Set(_numPartialWeekdays, 3), Set(_numPartialWeekdays, 2)
                         ),
-                        _numFullDaysPartialWeek = 3,
-                        If(
-                            _startWeekday = 6 || _startWeekday = 7,
-                            Set(
-                                _numPartialWeekdays,
-                                1
-                            ),
-                            _startWeekday = 1 || _startWeekday = 5,
-                            Set(
-                                _numPartialWeekdays,
-                                2
-                            ),
-                            Set(
-                                _numPartialWeekdays,
-                                3
-                            )
+                      _numFullDaysPartialWeek = 3,
+                        If(_startWeekday = 6 || _startWeekday = 7, Set(_numPartialWeekdays, 1), _startWeekday = 1 || _startWeekday = 5, Set(_numPartialWeekdays, 2), Set(_numPartialWeekdays, 3)
                         ),
-                        _numFullDaysPartialWeek = 2,
-                        If(
-                            _startWeekday = 7,
-                            Set(
-                                _numPartialWeekdays,
-                                0
-                            ),
-                            _startWeekday = 1 || _startWeekday = 6,
-                            Set(
-                                _numPartialWeekdays,
-                                1
-                            ),
-                            Set(
-                                _numPartialWeekdays,
-                                2
-                            )
+                      _numFullDaysPartialWeek = 2,
+                        If(_startWeekday = 7, Set(_numPartialWeekdays, 0), _startWeekday = 1 || _startWeekday = 6, Set(_numPartialWeekdays, 1), Set(_numPartialWeekdays, 2)),
+                      _numFullDaysPartialWeek = 1,
+                        If(_startWeekday = 1 || _startWeekday = 7, Set(_numPartialWeekdays, 0), Set(_numPartialWeekdays, 1)
                         ),
-                        _numFullDaysPartialWeek = 1,
-                        If(
-                            _startWeekday = 1 || _startWeekday = 7,
-                            Set(
-                                _numPartialWeekdays,
-                                0
-                            ),
-                            Set(
-                                _numPartialWeekdays,
-                                1
-                            )
-                        ),
-                        _numFullDaysPartialWeek = 0,
-                        Set(
-                            _numPartialWeekdays,
-                            0
-                        )
+                      _numFullDaysPartialWeek = 0, Set(_numPartialWeekdays, 0)
                     );
-                    Set(
-                        _workDaysInRequest,
-                        _numFullWeeks * 5 + _numPartialWeekdays
-                    );
-                
-                
-                   Set(
-                        HolidayStartDate,
-                        LookUp(
-                            LeaveApp_PublicHoliday,
-                            (HolidayDates > LeaveStartDatePicker.SelectedDate && HolidayDates <= LeaveEndDatePicker.SelectedDate)
-                        ).HolidayDates
-                    );
-                    Set(
-                        HolidayLastDate,
-                        LookUp(
-                            LeaveApp_PublicHoliday,
-                            (HolidayDates = HolidayStartDate)
-                        ).ToDate
-                    );
-                    Set(
-                        NumberOfDaysForHolidays,
-                        DateDiff(
-                            HolidayStartDate,
-                            HolidayLastDate
-                        )
-                    );
-                
-                Set(_totalDaysOfHolidays,Sum(Filter(LeaveApp_PublicHoliday, HolidayDates >= LeaveStartDatePicker.SelectedDate,HolidayDates <= LeaveEndDatePicker.SelectedDate), Days_x0020_for_x0020_holiday));
-                
-                
-                Set(daysBetweenStartDateToHolidayDate,DateDiff(LeaveStartDatePicker.SelectedDate,HolidayStartDate));
-                Set(daysBetweenEndDateToToDate,DateDiff(HolidayLastDate,LeaveEndDatePicker.SelectedDate));
-                If(LeaveEndDatePicker.SelectedDate < HolidayLastDate,
-                 
-                        Set(
-                            _requestedDays,
-                            daysBetweenStartDateToHolidayDate
-                        )
-                    
-                    ,
-                    Set(
-                            _requestedDays,
-                            _workDaysInRequest - _totalDaysOfHolidays
-                        )
-                )
+                      Set(_workDaysInRequest, _numFullWeeks * 5 + _numPartialWeekdays);  
+                      Set(_holidaysInRequest, CountIf(LeaveApp_PublicHoliday, HolidayDates >= LeaveStartDatePicker.SelectedDate, HolidayDates <= LeaveEndDatePicker.SelectedDate));
+                      Set(_requestedDays, _workDaysInRequest - _holidaysInRequest)
                 )
             PressedBorderColor: =LeaveStartDatePicker.BorderColor
             PressedFill: =LeaveStartDatePicker.Fill
