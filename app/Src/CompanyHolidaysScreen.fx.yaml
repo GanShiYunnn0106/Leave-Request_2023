@@ -13,9 +13,9 @@ CompanyHolidaysScreen As screen:
         Height: =695
         HoverFill: =Rectangle3_2.Fill
         PressedFill: =Rectangle3_2.Fill
-        Width: =244
+        Width: =243
         X: =1122
-        Y: =73
+        Y: =63
         ZIndex: =3
 
     Header_2 As group:
@@ -301,8 +301,8 @@ CompanyHolidaysScreen As screen:
         Height: =36
         Visible: =_managerView=true
         Width: =210
-        X: =1140
-        Y: =240
+        X: =1138
+        Y: =222
         ZIndex: =39
 
     HolidayDate As datepicker:
@@ -312,7 +312,7 @@ CompanyHolidaysScreen As screen:
         Visible: =_managerView=true
         Width: =174
         X: =1140
-        Y: =330
+        Y: =331
         ZIndex: =40
 
     HolidayDate2 As datepicker:
@@ -320,7 +320,7 @@ CompanyHolidaysScreen As screen:
         Visible: =_managerView=true
         Width: =174
         X: =1140
-        Y: =422
+        Y: =430
         ZIndex: =41
 
     TitlePublicHoliday As label:
@@ -333,4 +333,40 @@ CompanyHolidaysScreen As screen:
         X: =582
         Y: =21
         ZIndex: =42
+
+    Label5 As label:
+        FontWeight: =FontWeight.Semibold
+        Text: |-
+            ="Holiday Name:"
+        X: =1136
+        Y: =182
+        ZIndex: =43
+
+    Label6 As label:
+        FontWeight: =FontWeight.Semibold
+        Height: =199
+        Text: |-
+            ="From:
+            
+            
+            
+            
+            To:"
+        Width: =71
+        X: =1136
+        Y: =253
+        ZIndex: =44
+
+    Button1 As button:
+        BorderColor: =RGBA(62, 96, 170, 1)
+        Color: =RGBA(255, 255, 255, 1)
+        Fill: =RGBA(62, 96, 170, 1)
+        Height: =23
+        OnSelect: |-
+            =Collect(LeaveApp_PublicHoliday,{HolidayName:txtHoliday.Text, HolidayDates:DateValue(HolidayDate.SelectedDate), ToDate:DateValue(HolidayDate2.SelectedDate)});
+        Text: ="ADD"
+        Width: =75
+        X: =1183
+        Y: =508
+        ZIndex: =45
 
