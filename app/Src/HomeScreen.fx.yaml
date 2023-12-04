@@ -408,7 +408,7 @@ HomeScreen As screen:
             Text: ="Decline"
             Visible: =_managerView && (GalleryRequest.Selected.Status.Value) = "Pending"
             Width: =78
-            X: =1211
+            X: =1237
             Y: =718
             ZIndex: =18
 
@@ -429,8 +429,8 @@ HomeScreen As screen:
             OnSelect: =
             Text: =GalleryRequest.Selected.Leave_Type.Value
             Width: =278
-            X: =1077
-            Y: =279
+            X: =1069
+            Y: =263
             ZIndex: =20
 
         Request_To_2 As label:
@@ -477,8 +477,8 @@ HomeScreen As screen:
             Text: |-
                 ="Leave Type:"
             Width: =161
-            X: =1077
-            Y: =251
+            X: =1067
+            Y: =231
             ZIndex: =25
 
         LblRequestTo_2 As label:
@@ -546,7 +546,7 @@ HomeScreen As screen:
             Default: =""
             Height: =68
             Visible: =_managerView && (GalleryRequest.Selected.Status.Value) = "Pending"
-            Width: =252
+            Width: =239
             X: =1069
             Y: =630
             ZIndex: =32
