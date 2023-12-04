@@ -4222,7 +4222,14 @@
         "DisplayMode",
         "ZIndex",
         "Size",
-        "BorderThickness",
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "",
+          "InvariantPropertyName": "BorderThickness",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
         "Visible"
       ],
       "HasDynamicProperties": false,

@@ -249,7 +249,7 @@ HomeScreen As screen:
         Text: |-
             ="Comment:"
         Width: =145
-        X: =1066
+        X: =1071
         Y: =490
         ZIndex: =29
 
@@ -260,7 +260,7 @@ HomeScreen As screen:
         Text: =GalleryRequest.Selected.Comments
         VerticalAlign: =VerticalAlign.Top
         Width: =284
-        X: =1071
+        X: =1076
         Y: =525
         ZIndex: =30
 
@@ -765,12 +765,11 @@ HomeScreen As screen:
             Text: |-
                 ="Remarks: "
             Visible: =_managerView
-            X: =1071
+            X: =1076
             Y: =585
             ZIndex: =32
 
         LabelRemarks_1 As label:
-            BorderThickness: =2
             Fill: =RGBA(255, 255, 255, 1)
             FontWeight: =FontWeight.Semibold
             Height: =68
@@ -779,7 +778,7 @@ HomeScreen As screen:
             Visible: |
                 =_managerView && ((GalleryRequest.Selected.Status.Value) = "Approved" || (GalleryRequest.Selected.Status.Value) = "Rejected")
             Width: =239
-            X: =1076
-            Y: =620
+            X: =1079
+            Y: =619
             ZIndex: =33
 
