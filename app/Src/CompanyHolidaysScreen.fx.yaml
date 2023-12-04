@@ -238,7 +238,7 @@ CompanyHolidaysScreen As screen:
             PressedColor: =HolidayDates.Color
             PressedFill: =HolidayDates.Fill
             Size: =13.8
-            Text: =Text(DateValue(ThisItem.HolidayDates), "[$-en-US]ddd, dd mmm yyyy")
+            Text: =Text(DateValue(ThisItem.HolidayDates), "[$-en-US]ddd, dd mmmm yyyy")
             Width: =442
             X: =405
             ZIndex: =2
