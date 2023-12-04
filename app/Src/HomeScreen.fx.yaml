@@ -256,10 +256,12 @@ HomeScreen As screen:
     Label5 As label:
         FontWeight: =FontWeight.Semibold
         Height: =76
+        Overflow: =Overflow.Scroll
         Text: =GalleryRequest.Selected.Comments
+        VerticalAlign: =VerticalAlign.Top
         Width: =284
-        X: =1076
-        Y: =518
+        X: =1071
+        Y: =525
         ZIndex: =30
 
     GroupRequestDetails As group:
@@ -455,8 +457,8 @@ HomeScreen As screen:
             Text: ="EDIT"
             Visible: =!_managerView && (GalleryRequest.Selected.Status.Value) = "Pending"
             Width: =54
-            X: =1115
-            Y: =586
+            X: =1122
+            Y: =619
             ZIndex: =15
 
         EditIcon_2 As icon.Edit:
@@ -465,8 +467,8 @@ HomeScreen As screen:
             OnSelect: =
             Visible: =!_managerView && (GalleryRequest.Selected.Status.Value) = "Pending"
             Width: =23
-            X: =1076
-            Y: =586
+            X: =1080
+            Y: =619
             ZIndex: =16
 
         ButtonManagerApprove_2 As button:
@@ -697,7 +699,7 @@ HomeScreen As screen:
             OnSelect: =
             Text: =If(IsBlank(GalleryRequest.Selected.UnpaidLeave) , "-", GalleryRequest.Selected.UnpaidLeave& " days")
             Width: =161
-            X: =1076
+            X: =1071
             Y: =459
             ZIndex: =23
 
@@ -763,8 +765,8 @@ HomeScreen As screen:
             Text: |-
                 ="Remarks: "
             Visible: =_managerView
-            X: =1076
-            Y: =590
+            X: =1066
+            Y: =595
             ZIndex: =32
 
         LabelRemarks_1 As label:
@@ -777,7 +779,7 @@ HomeScreen As screen:
             Visible: |
                 =_managerView && ((GalleryRequest.Selected.Status.Value) = "Approved" || (GalleryRequest.Selected.Status.Value) = "Rejected")
             Width: =239
-            X: =1076
-            Y: =630
+            X: =1066
+            Y: =635
             ZIndex: =33
 
