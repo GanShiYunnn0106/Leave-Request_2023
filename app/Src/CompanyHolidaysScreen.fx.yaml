@@ -13,9 +13,9 @@ CompanyHolidaysScreen As screen:
         Height: =695
         HoverFill: =Rectangle3_2.Fill
         PressedFill: =Rectangle3_2.Fill
-        Width: =244
+        Width: =243
         X: =1122
-        Y: =73
+        Y: =63
         ZIndex: =3
 
     Header_2 As group:
@@ -184,7 +184,7 @@ CompanyHolidaysScreen As screen:
         AccessibleLabel: ="Company holidays"
         DisabledBorderColor: =GalleryHolidays.BorderColor
         DisabledFill: =GalleryHolidays.Fill
-        Height: =597
+        Height: =610
         HoverBorderColor: =GalleryHolidays.BorderColor
         HoverFill: =GalleryHolidays.Fill
         Items: |-
@@ -201,47 +201,42 @@ CompanyHolidaysScreen As screen:
         PressedBorderColor: =GalleryHolidays.BorderColor
         PressedFill: =GalleryHolidays.Fill
         TemplateSize: =49
-        Width: =891
+        Width: =905
         X: =231
-        Y: =165
+        Y: =152
         ZIndex: =32
 
-        Label12 As label:
-            FocusedBorderColor: =Label12.BorderColor
+        HolidayName As label:
+            FocusedBorderColor: =HolidayName.BorderColor
             FocusedBorderThickness: =2
             FontWeight: =FontWeight.Semibold
             Height: =49
-            HoverBorderColor: =Label12.BorderColor
-            HoverColor: =Label12.Color
-            HoverFill: =Label12.Fill
+            HoverBorderColor: =HolidayName.BorderColor
+            HoverColor: =HolidayName.Color
+            HoverFill: =HolidayName.Fill
             OnSelect: =Select(Parent)
-            PressedBorderColor: =Label12.BorderColor
-            PressedColor: =Label12.Color
-            PressedFill: =Label12.Fill
+            PressedBorderColor: =HolidayName.BorderColor
+            PressedColor: =HolidayName.Color
+            PressedFill: =HolidayName.Fill
             Size: =14
             Text: =ThisItem.HolidayName
             Width: =322
-            X: =9
+            X: =22
             ZIndex: =1
 
-        Label13 As label:
-            FocusedBorderColor: =Label13.BorderColor
+        HolidayDates As label:
+            FocusedBorderColor: =HolidayDates.BorderColor
             FocusedBorderThickness: =2
             Height: =49
-            HoverBorderColor: =Label13.BorderColor
-            HoverColor: =Label13.Color
-            HoverFill: =Label13.Fill
+            HoverBorderColor: =HolidayDates.BorderColor
+            HoverColor: =HolidayDates.Color
+            HoverFill: =HolidayDates.Fill
             OnSelect: =Select(Parent)
-            PressedBorderColor: =Label13.BorderColor
-            PressedColor: =Label13.Color
-            PressedFill: =Label13.Fill
+            PressedBorderColor: =HolidayDates.BorderColor
+            PressedColor: =HolidayDates.Color
+            PressedFill: =HolidayDates.Fill
             Size: =13.8
-            Text: |-
-                =If(
-                    DateValue(ThisItem.HolidayDates) = DateValue(ThisItem.ToDate),
-                    Text(DateValue(ThisItem.HolidayDates), "[$-en-US]ddd, dd mmm yyyy"),
-                    Text(DateValue(ThisItem.HolidayDates), "[$-en-US]ddd, dd mmm yyyy") & "  -  " & Text(DateValue(ThisItem.ToDate), "[$-en-US]ddd, dd mmm yyyy")
-                )
+            Text: =Text(DateValue(ThisItem.HolidayDates), "[$-en-US]ddd, dd mmm yyyy")
             Width: =442
             X: =405
             ZIndex: =2
@@ -259,13 +254,13 @@ CompanyHolidaysScreen As screen:
             Y: =48
             ZIndex: =3
 
-        Icon3 As icon.Trash:
+        DeleteIcon As icon.Trash:
             Height: =24
             Icon: =Icon.Trash
             OnSelect: =Remove(LeaveApp_PublicHoliday,ThisItem)
             Visible: =_managerView=true
             Width: =43
-            X: =776
+            X: =804
             Y: =12
             ZIndex: =4
 
@@ -275,7 +270,14 @@ CompanyHolidaysScreen As screen:
         Y: =80
         ZIndex: =33
 
-    Label4 As label:
+    GroupNewHoliday As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =38
+
+    TitleNewHoliday As label:
         Align: =Align.Center
         FontWeight: =FontWeight.Semibold
         Height: =36
@@ -289,20 +291,13 @@ CompanyHolidaysScreen As screen:
         Y: =138
         ZIndex: =38
 
-    GroupNewHoliday As group:
-        Height: =5
-        Width: =5
-        X: =40
-        Y: =40
-        ZIndex: =38
-
     txtHoliday As text:
         Default: =""
         Height: =36
         Visible: =_managerView=true
         Width: =210
-        X: =1140
-        Y: =240
+        X: =1138
+        Y: =222
         ZIndex: =39
 
     HolidayDate As datepicker:
@@ -312,16 +307,8 @@ CompanyHolidaysScreen As screen:
         Visible: =_managerView=true
         Width: =174
         X: =1140
-        Y: =330
+        Y: =331
         ZIndex: =40
-
-    HolidayDate2 As datepicker:
-        Height: =41
-        Visible: =_managerView=true
-        Width: =174
-        X: =1140
-        Y: =422
-        ZIndex: =41
 
     TitlePublicHoliday As label:
         Color: =RGBA(255, 255, 255, 1)
@@ -333,4 +320,38 @@ CompanyHolidaysScreen As screen:
         X: =582
         Y: =21
         ZIndex: =42
+
+    TitleHolidayName As label:
+        FontWeight: =FontWeight.Semibold
+        Text: |-
+            ="Holiday Name:"
+        Visible: =_managerView=true
+        X: =1136
+        Y: =182
+        ZIndex: =43
+
+    FromTo As label:
+        FontWeight: =FontWeight.Semibold
+        Height: =101
+        Text: |-
+            ="Date:"
+        Visible: =_managerView=true
+        Width: =93
+        X: =1136
+        Y: =253
+        ZIndex: =44
+
+    AddButton As button:
+        BorderColor: =RGBA(62, 96, 170, 1)
+        Color: =RGBA(255, 255, 255, 1)
+        Fill: =RGBA(62, 96, 170, 1)
+        Height: =23
+        OnSelect: |-
+            =Collect(LeaveApp_PublicHoliday,{HolidayName:txtHoliday.Text, HolidayDates:DateValue(HolidayDate.SelectedDate)});
+        Text: ="ADD"
+        Visible: =_managerView=true
+        Width: =75
+        X: =1189
+        Y: =430
+        ZIndex: =45
 

@@ -57,18 +57,6 @@ LeaveBalanceScreen As screen:
             Y: =36
             ZIndex: =1
 
-        Label6 As label:
-            Align: =Align.Center
-            FontWeight: =FontWeight.Semibold
-            Height: =67
-            OnSelect: =Select(Parent)
-            Size: =18
-            Text: ="Carry Forward Leave Balance"
-            Width: =210
-            X: =45
-            Y: =89
-            ZIndex: =2
-
         Icon2 As icon.Information:
             Height: =25
             Icon: =Icon.Information
@@ -158,6 +146,18 @@ LeaveBalanceScreen As screen:
             X: =45
             Y: =344
             ZIndex: =11
+
+        Label6_2 As label:
+            Align: =Align.Center
+            FontWeight: =FontWeight.Semibold
+            Height: =67
+            OnSelect: =Select(Parent)
+            Size: =18
+            Text: ="Carry Foward Leave Balance"
+            Width: =210
+            X: =45
+            Y: =89
+            ZIndex: =12
 
     Rectangle6 As rectangle:
         Fill: =RGBA(217, 216, 217, 1)
