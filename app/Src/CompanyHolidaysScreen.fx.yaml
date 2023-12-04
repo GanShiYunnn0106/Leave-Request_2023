@@ -207,6 +207,7 @@ CompanyHolidaysScreen As screen:
         ZIndex: =32
 
         HolidayName As label:
+            Align: =Align.Center
             FocusedBorderColor: =HolidayName.BorderColor
             FocusedBorderThickness: =2
             FontWeight: =FontWeight.Semibold
@@ -220,11 +221,12 @@ CompanyHolidaysScreen As screen:
             PressedFill: =HolidayName.Fill
             Size: =14
             Text: =ThisItem.HolidayName
-            Width: =322
+            Width: =448
             X: =22
             ZIndex: =1
 
         HolidayDates As label:
+            Align: =Align.Center
             FocusedBorderColor: =HolidayDates.BorderColor
             FocusedBorderThickness: =2
             Height: =49
