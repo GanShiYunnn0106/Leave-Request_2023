@@ -305,6 +305,15 @@ HomeScreen As screen:
             Y: =590
             ZIndex: =33
 
+    Label4 As label:
+        Height: =43
+        Text: |-
+            ="Comment:"
+        Width: =145
+        X: =1076
+        Y: =486
+        ZIndex: =51
+
     Header_11 As group:
         Height: =5
         Width: =5
@@ -635,7 +644,7 @@ HomeScreen As screen:
                 
                 Patch(LeaveApp_Request,LeaveTempID,{Status: {
                             '@odata.type': "Microsoft.Azure.Connectors.SharePoint.SPListExpandedUser",
-                            Value: "Approved"
+                            Value: "Rejected"
                         }}
                         ,{Decision_Date: Now()}
                         ,{Remarks_By_Decision_Maker: RemarksTextBox.Text}
@@ -654,7 +663,7 @@ HomeScreen As screen:
                 
                         Office365.SendEmailV2(
                             LeaveRequestedToEmail;LeaveCreatedByEmail,
-                            "Acknowledgement Leave Request Approved",
+                            "Acknowledgement Leave Request Rejected",
                 
                             "<div style=""font-family: Calibri; font-size:15px;"">" &
                 
@@ -662,7 +671,7 @@ HomeScreen As screen:
                             "," &
                 
                 
-                            "Your leave request has been ""<font color = green>approved</font>"".<br><br>" &
+                            "Your leave request has been ""<font color = red>rejected</font>"".<br><br>" &
                 
                             
                             "<br><b><strong>Leave type:</strong></b> " & GalleryRequest.Selected.Leave_Type.Value &
@@ -785,15 +794,6 @@ HomeScreen As screen:
             X: =1071
             Y: =428
             ZIndex: =50
-
-    Label4 As label:
-        Height: =43
-        Text: |-
-            ="Comment:"
-        Width: =145
-        X: =1076
-        Y: =486
-        ZIndex: =51
 
     Label5 As label:
         FontWeight: =FontWeight.Semibold
