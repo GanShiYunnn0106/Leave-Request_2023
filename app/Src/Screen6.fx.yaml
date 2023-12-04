@@ -1,0 +1,345 @@
+Screen6 As screen:
+
+    GroupDateSection_1 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =11
+
+        Label1_10 As label:
+            FocusedBorderColor: =Label1_10.BorderColor
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Bold
+            Height: =21
+            HoverBorderColor: =Label1_10.BorderColor
+            HoverColor: =Label1_10.Color
+            HoverFill: =Label1_10.Fill
+            PressedBorderColor: =Label1_10.BorderColor
+            PressedColor: =Label1_10.Color
+            PressedFill: =Label1_10.Fill
+            Size: =13.5
+            Text: |-
+                ="Select dates:"
+            Width: =560
+            X: =252
+            Y: =301
+            ZIndex: =1
+
+        Label1_18 As label:
+            FocusedBorderColor: =Label1_18.BorderColor
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Bold
+            Height: =21
+            HoverBorderColor: =Label1_18.BorderColor
+            HoverColor: =Label1_18.Color
+            HoverFill: =Label1_18.Fill
+            PressedBorderColor: =Label1_18.BorderColor
+            PressedColor: =Label1_18.Color
+            PressedFill: =Label1_18.Fill
+            Size: =10.5
+            Text: |-
+                ="*To:"
+            Width: =300
+            X: =565
+            Y: =333
+            ZIndex: =2
+
+        Label1_19 As label:
+            FocusedBorderColor: =Label1_19.BorderColor
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Bold
+            Height: =21
+            HoverBorderColor: =Label1_19.BorderColor
+            HoverColor: =Label1_19.Color
+            HoverFill: =Label1_19.Fill
+            PressedBorderColor: =Label1_19.BorderColor
+            PressedColor: =Label1_19.Color
+            PressedFill: =Label1_19.Fill
+            Size: =10.5
+            Text: |-
+                ="*From:"
+            Width: =300
+            X: =252
+            Y: =333
+            ZIndex: =3
+
+        LeaveStartDatePicker_1 As datepicker:
+            AccessibleLabel: ="Leave start date. Required field."
+            BorderColor: =If(LeaveStartDatePicker_1.SelectedDate > LeaveEndDatePicker_1.SelectedDate, Color.Red, RGBA(0, 71, 144, 1))
+            DefaultDate: =_leaveStart
+            DisabledBorderColor: =RGBA(56, 86, 153, 1)
+            FocusedBorderColor: =LeaveStartDatePicker_1.BorderColor
+            HoverBorderColor: =LeaveStartDatePicker_1.BorderColor
+            HoverFill: =LeaveStartDatePicker_1.Fill
+            IconBackground: =RGBA(0, 71, 144, 1)
+            InputTextPlaceholder: =Text(Date(2001,12,31), LeaveStartDatePicker_1.Format, LeaveStartDatePicker_1.Language)
+            OnChange: =Select(LeaveStartDatePicker_1)
+            OnSelect: |-
+                =//**** CALCULATION USED TO DETERMINE TOTAL WORK DAYS REQUESTED ****
+                If(
+                    LeaveStartDatePicker_1.SelectedDate <= LeaveEndDatePicker_1.SelectedDate,
+                    Set(
+                        _inclusiveTotalDaysRequested,
+                        DateDiff(
+                            LeaveStartDatePicker_1.SelectedDate,
+                            LeaveEndDatePicker_1.SelectedDate,
+                            TimeUnit.Days
+                        ) + 1
+                    );
+                    Set(
+                        _numFullWeeks,
+                        RoundDown(
+                            _inclusiveTotalDaysRequested / 7,
+                            0
+                        )
+                    );
+                    Set(
+                        _numFullDaysPartialWeek,
+                        _inclusiveTotalDaysRequested - _numFullWeeks * 7
+                    );
+                    Concurrent(
+                        Set(
+                            _startWeekday,
+                            Weekday(LeaveStartDatePicker_1.SelectedDate)
+                        ),
+                        Set(
+                            _endWeekday,
+                            Weekday(LeaveEndDatePicker_1.SelectedDate)
+                        )
+                    );
+                    //calculates the number of business days in the partial week left over after whole weeks are subtracted out of total days requested
+                If(
+                        _numFullDaysPartialWeek = 6,
+                        If(
+                            _startWeekday <= 2,
+                            Set(
+                                _numPartialWeekdays,
+                                5
+                            ),
+                            Set(
+                                _numPartialWeekdays,
+                                4
+                            )
+                        ),
+                        _numFullDaysPartialWeek = 5,
+                        If(
+                            _startWeekday = 2,
+                            Set(
+                                _numPartialWeekdays,
+                                5
+                            ),
+                            _startWeekday = 1 || _startWeekday = 3 || _startWeekday = 4,
+                            Set(
+                                _numPartialWeekdays,
+                                4
+                            ),
+                            Set(
+                                _numPartialWeekdays,
+                                3
+                            )
+                        ),
+                        _numFullDaysPartialWeek = 4,
+                        If(
+                            _startWeekday = 2 || _startWeekday = 3,
+                            Set(
+                                _numPartialWeekdays,
+                                4
+                            ),
+                            _startWeekday = 1 || _startWeekday = 4,
+                            Set(
+                                _numPartialWeekdays,
+                                3
+                            ),
+                            Set(
+                                _numPartialWeekdays,
+                                2
+                            )
+                        ),
+                        _numFullDaysPartialWeek = 3,
+                        If(
+                            _startWeekday = 6 || _startWeekday = 7,
+                            Set(
+                                _numPartialWeekdays,
+                                1
+                            ),
+                            _startWeekday = 1 || _startWeekday = 5,
+                            Set(
+                                _numPartialWeekdays,
+                                2
+                            ),
+                            Set(
+                                _numPartialWeekdays,
+                                3
+                            )
+                        ),
+                        _numFullDaysPartialWeek = 2,
+                        If(
+                            _startWeekday = 7,
+                            Set(
+                                _numPartialWeekdays,
+                                0
+                            ),
+                            _startWeekday = 1 || _startWeekday = 6,
+                            Set(
+                                _numPartialWeekdays,
+                                1
+                            ),
+                            Set(
+                                _numPartialWeekdays,
+                                2
+                            )
+                        ),
+                        _numFullDaysPartialWeek = 1,
+                        If(
+                            _startWeekday = 1 || _startWeekday = 7,
+                            Set(
+                                _numPartialWeekdays,
+                                0
+                            ),
+                            Set(
+                                _numPartialWeekdays,
+                                1
+                            )
+                        ),
+                        _numFullDaysPartialWeek = 0,
+                        Set(
+                            _numPartialWeekdays,
+                            0
+                        )
+                    );
+                    Set(
+                        _workDaysInRequest,
+                        _numFullWeeks * 5 + _numPartialWeekdays
+                    );
+                 
+                      Set(_holidaysInRequest, CountIf(LeaveApp_PublicHoliday, HolidayDates >= LeaveStartDatePicker.SelectedDate, HolidayDates <= LeaveEndDatePicker.SelectedDate));
+                      Set(_requestedDays, _workDaysInRequest - _holidaysInRequest)
+                )
+            PressedBorderColor: =LeaveStartDatePicker_1.BorderColor
+            PressedFill: =LeaveStartDatePicker_1.Fill
+            Width: =267
+            X: =252
+            Y: =358
+            ZIndex: =4
+
+        LeaveEndDatePicker_1 As datepicker:
+            AccessibleLabel: ="Leave end date. Required field."
+            BorderColor: =If(LeaveStartDatePicker_1.SelectedDate > LeaveEndDatePicker_1.SelectedDate, Color.Red, RGBA(0, 71, 144, 1))
+            DefaultDate: =_leaveEnd
+            FocusedBorderColor: =LeaveEndDatePicker_1.BorderColor
+            HoverBorderColor: =LeaveEndDatePicker_1.BorderColor
+            HoverFill: =LeaveEndDatePicker_1.Fill
+            IconBackground: =RGBA(0, 71, 144, 1)
+            InputTextPlaceholder: =Text(Date(2001,12,31), LeaveEndDatePicker_1.Format, LeaveEndDatePicker_1.Language)
+            OnChange: =Select(LeaveStartDatePicker_1)
+            OnSelect: =Select(LeaveStartDatePicker_1)
+            PressedBorderColor: =LeaveEndDatePicker_1.BorderColor
+            PressedFill: =LeaveEndDatePicker_1.Fill
+            Width: =267
+            X: =565
+            Y: =358
+            ZIndex: =5
+
+        Label1_20 As label:
+            FocusedBorderColor: =Label1_20.BorderColor
+            Font: =Font.Lato
+            Height: =21
+            HoverBorderColor: =Label1_20.BorderColor
+            HoverColor: =Label1_20.Color
+            HoverFill: =Label1_20.Fill
+            PressedBorderColor: =Label1_20.BorderColor
+            PressedColor: =Label1_20.Color
+            PressedFill: =Label1_20.Fill
+            Size: =10.5
+            Text: |-
+                ="New balance:"
+            Visible: =!IsBlank(_selectedLeaveType)
+            Width: =93
+            X: =956
+            Y: =377
+            ZIndex: =6
+
+        Label1_21 As label:
+            FocusedBorderColor: =Label1_21.BorderColor
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Semibold
+            Height: =21
+            HoverBorderColor: =Label1_21.BorderColor
+            HoverColor: =Label1_21.Color
+            HoverFill: =Label1_21.Fill
+            PressedBorderColor: =Label1_21.BorderColor
+            PressedColor: =Label1_21.Color
+            PressedFill: =Label1_21.Fill
+            Size: =10.5
+            Text: |-
+                =If((_balanceRemain - _requestedDays) >= 0,(_balanceRemain - _requestedDays),0)
+                    &
+                    " days"
+            Visible: =!IsBlank(_selectedLeaveType)
+            Width: =70
+            X: =1046
+            Y: =377
+            ZIndex: =7
+
+        Label1_22 As label:
+            FocusedBorderColor: =Label1_22.BorderColor
+            Font: =Font.Lato
+            Height: =21
+            HoverBorderColor: =Label1_22.BorderColor
+            HoverColor: =Label1_22.Color
+            HoverFill: =Label1_22.Fill
+            PressedBorderColor: =Label1_22.BorderColor
+            PressedColor: =Label1_22.Color
+            PressedFill: =Label1_22.Fill
+            Size: =10.5
+            Text: |-
+                ="Current balance:"
+            Visible: =!IsBlank(_selectedLeaveType)
+            Width: =114
+            X: =936
+            Y: =352
+            ZIndex: =8
+
+        Label1_23 As label:
+            FocusedBorderColor: =Label1_23.BorderColor
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Semibold
+            Height: =21
+            HoverBorderColor: =Label1_23.BorderColor
+            HoverColor: =Label1_23.Color
+            HoverFill: =Label1_23.Fill
+            Live: =Live
+            PressedBorderColor: =Label1_23.BorderColor
+            PressedColor: =Label1_23.Color
+            PressedFill: =Label1_23.Fill
+            Size: =10.5
+            Text: |-
+                =
+                If(_balanceRemain >= 0,_balanceRemain & " days" ,0 & " days")
+            Visible: =!IsBlank(_selectedLeaveType)
+            Width: =70
+            X: =1046
+            Y: =352
+            ZIndex: =9
+
+        Label1_24 As label:
+            Align: =LayoutAlignItems.Center
+            Color: =RGBA(255, 0, 0, 1)
+            FocusedBorderColor: =Label1_24.BorderColor
+            Height: =48
+            HoverBorderColor: =Label1_24.BorderColor
+            HoverColor: =Label1_24.Color
+            HoverFill: =Label1_24.Fill
+            Live: =Live.Assertive
+            PressedBorderColor: =Label1_24.BorderColor
+            PressedColor: =Label1_24.Color
+            PressedFill: =Label1_24.Fill
+            Size: =12
+            Text: |-
+                =If((_balanceRemain < _requestedDays) && (!IsBlank(_selectedLeaveType)),"Unpaid Leave: " & -(_balanceRemain - _requestedDays) & " days",(LeaveStartDatePicker_1.SelectedDate > LeaveEndDatePicker_1.SelectedDate),"Start date must occur on before end date")
+            Width: =252
+            X: =885
+            Y: =304
+            ZIndex: =10
+

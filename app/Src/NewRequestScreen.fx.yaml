@@ -447,7 +447,7 @@ NewRequestScreen As screen:
                         HolidayStartDate,
                         LookUp(
                             LeaveApp_PublicHoliday,
-                            (HolidayDates > LeaveStartDatePicker.SelectedDate && HolidayDates <= LeaveEndDatePicker.SelectedDate)
+                            (HolidayDates >= LeaveStartDatePicker.SelectedDate && HolidayDates <= LeaveEndDatePicker.SelectedDate)
                         ).HolidayDates
                     );
                     Set(
@@ -457,13 +457,7 @@ NewRequestScreen As screen:
                             (HolidayDates = HolidayStartDate)
                         ).ToDate
                     );
-                    Set(
-                        NumberOfDaysForHolidays,
-                        DateDiff(
-                            HolidayStartDate,
-                            HolidayLastDate
-                        )
-                    );
+                    
                 
                 Set(_totalDaysOfHolidays,Sum(Filter(LeaveApp_PublicHoliday, HolidayDates >= LeaveStartDatePicker.SelectedDate,HolidayDates <= LeaveEndDatePicker.SelectedDate), Days_x0020_for_x0020_holiday));
                 

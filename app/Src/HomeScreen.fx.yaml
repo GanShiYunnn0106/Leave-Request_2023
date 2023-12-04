@@ -262,13 +262,13 @@ HomeScreen As screen:
             DisabledFill: =Rectangle3_4.Fill
             Fill: =RGBA(249, 249, 249, 1)
             FocusedBorderColor: =Rectangle3_4.BorderColor
-            Height: =695
+            Height: =688
             HoverFill: =Rectangle3_4.Fill
             OnSelect: =
             PressedFill: =Rectangle3_4.Fill
             Width: =315
             X: =1051
-            Y: =73
+            Y: =80
             ZIndex: =13
 
         RequestDetailsTitle_2 As label:
