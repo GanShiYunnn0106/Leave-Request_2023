@@ -255,7 +255,7 @@ HomeScreen As screen:
 
     Label5 As label:
         FontWeight: =FontWeight.Semibold
-        Height: =65
+        Height: =57
         Overflow: =Overflow.Scroll
         Text: =GalleryRequest.Selected.Comments
         VerticalAlign: =VerticalAlign.Top
@@ -458,7 +458,7 @@ HomeScreen As screen:
             Visible: =!_managerView && (GalleryRequest.Selected.Status.Value) = "Pending"
             Width: =54
             X: =1122
-            Y: =619
+            Y: =592
             ZIndex: =15
 
         EditIcon_2 As icon.Edit:
@@ -467,8 +467,8 @@ HomeScreen As screen:
             OnSelect: =
             Visible: =!_managerView && (GalleryRequest.Selected.Status.Value) = "Pending"
             Width: =23
-            X: =1080
-            Y: =619
+            X: =1089
+            Y: =592
             ZIndex: =16
 
         ButtonManagerApprove_2 As button:
@@ -583,8 +583,8 @@ HomeScreen As screen:
             Visible: |
                 =_managerView && (GalleryRequest.Selected.Status.Value) = "Pending"
             Width: =78
-            X: =1087
-            Y: =716
+            X: =1105
+            Y: =698
             ZIndex: =17
 
         ButtonManagerDecline_2 As button:
@@ -648,7 +648,7 @@ HomeScreen As screen:
             Visible: =_managerView && (GalleryRequest.Selected.Status.Value) = "Pending"
             Width: =78
             X: =1211
-            Y: =716
+            Y: =698
             ZIndex: =18
 
         Days_2 As label:
@@ -757,8 +757,8 @@ HomeScreen As screen:
             Height: =68
             Visible: =_managerView && (GalleryRequest.Selected.Status.Value) = "Pending"
             Width: =239
-            X: =1076
-            Y: =620
+            X: =1081
+            Y: =609
             ZIndex: =31
 
         remarksHeader As label:
@@ -766,7 +766,7 @@ HomeScreen As screen:
                 ="Remarks: "
             Visible: =_managerView
             X: =1076
-            Y: =585
+            Y: =569
             ZIndex: =32
 
         LabelRemarks_1 As label:
