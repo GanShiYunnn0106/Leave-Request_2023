@@ -255,13 +255,13 @@ HomeScreen As screen:
 
     LeaveDetail As label:
         FontWeight: =FontWeight.Semibold
-        Height: =57
+        Height: =49
         Overflow: =Overflow.Scroll
         Text: =If(IsBlank(GalleryRequest.Selected.Comments) , "-", GalleryRequest.Selected.Comments)
         VerticalAlign: =VerticalAlign.Top
         Width: =294
         X: =1072
-        Y: =509
+        Y: =501
         ZIndex: =30
 
     GroupRequestDetails As group:
@@ -584,7 +584,7 @@ HomeScreen As screen:
                 =_managerView && (GalleryRequest.Selected.Status.Value) = "Pending"
             Width: =78
             X: =1110
-            Y: =689
+            Y: =681
             ZIndex: =17
 
         ButtonManagerDecline_2 As button:
@@ -648,7 +648,7 @@ HomeScreen As screen:
             Visible: =_managerView && (GalleryRequest.Selected.Status.Value) = "Pending"
             Width: =78
             X: =1202
-            Y: =689
+            Y: =681
             ZIndex: =18
 
         Days_2 As label:
@@ -757,8 +757,8 @@ HomeScreen As screen:
             Height: =68
             Visible: =_managerView && (GalleryRequest.Selected.Status.Value) = "Pending"
             Width: =239
-            X: =1081
-            Y: =598
+            X: =1080
+            Y: =590
             ZIndex: =31
 
         remarksHeader As label:
@@ -767,8 +767,8 @@ HomeScreen As screen:
                 ="Remarks From Approver: "
             Visible: =_managerView
             Width: =248
-            X: =1072
-            Y: =566
+            X: =1071
+            Y: =558
             ZIndex: =32
 
         LabelRemarks_1 As label:
