@@ -4,8 +4,31 @@ Screen1 As screen:
         Height: =285
         HtmlText: =LookUp(LeaveTypeCollection,type = _aboutSelectedLeaveType).description
         Size: =13.5
-        Width: =875
-        X: =240
-        Y: =243
+        Width: =900
+        X: =224
+        Y: =452
         ZIndex: =1
+
+    AboutLeaveTypeDescription_1 As label:
+        FocusedBorderColor: =AboutLeaveTypeDescription_1.BorderColor
+        FontWeight: =FontWeight.Semibold
+        Height: =285
+        HoverBorderColor: =AboutLeaveTypeDescription_1.BorderColor
+        HoverColor: =AboutLeaveTypeDescription_1.Color
+        HoverFill: =AboutLeaveTypeDescription_1.Fill
+        LineHeight: =1.5
+        Overflow: =Overflow.Scroll
+        PaddingBottom: =0
+        PaddingLeft: =0
+        PaddingRight: =0
+        PaddingTop: =0
+        PressedBorderColor: =AboutLeaveTypeDescription_1.BorderColor
+        PressedColor: =AboutLeaveTypeDescription_1.Color
+        PressedFill: =AboutLeaveTypeDescription_1.Fill
+        Size: =13.5
+        Text: =LookUp(LeaveTypeCollection,type = _aboutSelectedLeaveType).description
+        Width: =900
+        X: =224
+        Y: =104
+        ZIndex: =2
 

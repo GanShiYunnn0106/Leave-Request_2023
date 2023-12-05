@@ -68,7 +68,7 @@ App As appinfo:
                     icon: vacation,
                     iconselected: 'vacation-selected',
                     description:  "<b>Details:</b>
-        <div style:'font-weight: 500px'>            
+        <div style:'font-weight: 600px'>            
         <p>
         1.  Annual Leave Entitlement: 
             <br>- For employees with less than 3 years of service: 14 days
@@ -77,8 +77,8 @@ App As appinfo:
         </p>
         <p>
         2.  Annual Leave Carry Forward Policy:
-            - A maximum of seven (07) days of annual leave can be carried forward to the next calendar year.
-            - Any excess leave not utilized by the end of March (the next quarter) of the following calendar year       will be deemed forfeited.</p></div>   
+            <br>- A maximum of seven (07) days of annual leave can be carried forward to the next calendar year.
+            <br>- Any excess leave not utilized by the end of March (the next quarter) of the following calendar year       will be deemed forfeited.</p></div>   
             "
                 },
                 {
@@ -86,7 +86,7 @@ App As appinfo:
                     icon: 'sick-leave',
                     iconselected: 'sick-leave-selected',
                     description: "<b>Details:</b>
-        <div style:'font-weight: 500px'>            
+        <div style:'font-weight: 600px'>            
         <p>
         1. Medical Leave shall be defined as approved leave of absence resulting from illness, disease or injury as certified by the Company Panel Doctor / Government Medical Officer / registered medical practitioner. An employee shall also be entitled to paid leave after examination by a dental surgeon as defined in the Dental Act 1971.
         </p>
@@ -101,7 +101,7 @@ App As appinfo:
                 {
                     type: "Hospitalization",
                     description: "<b>Details:</b>
-        <div style:'font-weight: 500px'>            
+        <div style:'font-weight: 600px'>            
         <p>            
         1. Medical Leave shall be defined as approved leave of absence resulting from illness, disease or injury as certified by the Company Panel Doctor / Government Medical Officer / registered medical practitioner. An employee shall also be entitled to paid leave after examination by a dental surgeon as defined in the Dental Act 1971.							
         </p>
@@ -114,7 +114,7 @@ App As appinfo:
                 {
                     type: "Casual Immediate",
                     description: "<b>Details:</b>
-        <div style:'font-weight: 500px'>
+        <div style:'font-weight: 600px'>
         <p>            
         1. Death of a member of the employee's family. First relation (parents/ parents-in-law/ spouse/ children)
         </p>
@@ -127,7 +127,7 @@ App As appinfo:
                 {
                     type: "Casual Second",
                     description: "<b>Details:</b>
-        <div style:'font-weight: 500px'>
+        <div style:'font-weight: 600px'>
         <p>            
         1. Death of a member of the employee's family. Second relations (grandparents / brothers / sisters /         grandchildren)
         </p>
@@ -140,12 +140,12 @@ App As appinfo:
                 {
                     type: "Paternity",
                     description: "<b>Details:</b>
-        <div style:'font-weight: 500px'>
+        <div style:'font-weight: 600px'>
         <p>            
         1. Requirements for Subsection 60FA:					
-            - The male employee must be married to the mother in question.					
-            - He must have been employed by the same employer for at least 12 months.					
-            - He must notify the employer at least 30 days from expected confinement (or as early as possible).	
+            <br>- The male employee must be married to the mother in question.					
+            <br>- He must have been employed by the same employer for at least 12 months.					
+            <br>- He must notify the employer at least 30 days from expected confinement (or as early as possible).	
         </p>
         <p>
         2. Entitlement: 7 consecutive days 	 </p></div>"
@@ -153,7 +153,7 @@ App As appinfo:
                 {
                     type: "Maternity",
                     description: "<b>Details:</b>
-        <div style:'font-weight: 500px'>            
+        <div style:'font-weight: 600px'>            
         <p>            
         1. A full-time confirmed female employee. For miscarriage maternity leave only apply upon seven full months of pregnancy under the labour law.								
         </p>
@@ -163,7 +163,7 @@ App As appinfo:
                 {
                     type: "Marriage",
                     description: "<b>Details:</b>
-        <div style:'font-weight: 500px'>
+        <div style:'font-weight: 600px'>
         <p>    
         1. A full-time confirmed employee who has completed a minimum of twelve (12) months of continuous service of his first legal marriage while in the service of the Company.										
         </p>
