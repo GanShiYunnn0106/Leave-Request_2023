@@ -6,7 +6,7 @@ Screen1 As screen:
         Size: =13.5
         Width: =900
         X: =224
-        Y: =452
+        Y: =466
         ZIndex: =1
 
     AboutLeaveTypeDescription_1 As label:
@@ -29,6 +29,6 @@ Screen1 As screen:
         Text: =LookUp(LeaveTypeCollection,type = _aboutSelectedLeaveType).description
         Width: =900
         X: =224
-        Y: =104
+        Y: =156
         ZIndex: =2
 
