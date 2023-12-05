@@ -231,14 +231,14 @@ AboutScreen As screen:
                 ="Learn about the types of leave:"
             Width: =862
             X: =252
-            Y: =155
+            Y: =162
             ZIndex: =42
 
         AboutLeaveTypeGallery As gallery.galleryVertical:
             Default: =If(!IsBlank(_aboutSelectedLeaveType),LookUp(LeaveTypeCollection, type=_aboutSelectedLeaveType))
             DisabledBorderColor: =AboutLeaveTypeGallery.BorderColor
             DisabledFill: =AboutLeaveTypeGallery.Fill
-            Height: =282
+            Height: =256
             HoverBorderColor: =AboutLeaveTypeGallery.BorderColor
             HoverFill: =AboutLeaveTypeGallery.Fill
             Items: =LeaveTypeCollection
@@ -252,8 +252,8 @@ AboutScreen As screen:
             TemplateSize: =55
             Width: =808
             WrapCount: =3
-            X: =279
-            Y: =167
+            X: =300
+            Y: =194
             ZIndex: =43
 
             AboutLeaveTypeIcon As image:
@@ -355,7 +355,7 @@ AboutScreen As screen:
             HtmlText: =LookUp(LeaveTypeCollection,type = _aboutSelectedLeaveType).description
             Size: =13.5
             Width: =900
-            X: =255
+            X: =252
             Y: =463
             ZIndex: =51
 
