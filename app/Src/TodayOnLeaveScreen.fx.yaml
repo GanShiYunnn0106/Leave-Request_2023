@@ -13,41 +13,37 @@ TodayOnLeaveScreen As screen:
         Height: =565
         Items: |-
             =If(
-                ButtonFilter2.Selected.Filter="Today",
+                ButtonFilter2.Selected.Filter = "Today",
                 Sort(
-                Filter(
-                    LeaveApp_Request,
-                    Start_Date <= Today()&&
-                    End_Date >= Today()&&
-                    Status.Value = "Approved"
+                    Filter(
+                        LeaveApp_Request,
+                        Start_Date <= Today() && End_Date >= Today() && Status.Value = "Approved"
+                    ),
+                    Created_By.DisplayName,
+                    SortOrder.Ascending
                 ),
-                 Created_By.DisplayName,
-                 SortOrder.Ascending
-            ),
-            If(
-                ButtonFilter2.Selected.Filter="Past",
-                Sort(
-                Filter(
-                    LeaveApp_Request,
-                    End_Date <= Today()&&
-                    Status.Value = "Approved"
-                ),
-                 Created_By.DisplayName,
-                 SortOrder.Ascending
-            ),
-            If(
-                 ButtonFilter2.Selected.Filter="Upcoming",
-                Sort(
-                Filter(
-                    LeaveApp_Request,
-                    Start_Date >= Today()&&
-                    Status.Value = "Approved"
-                ),
-                 Created_By.DisplayName,
-                 SortOrder.Ascending
-            )
-            )
-            )
+                If(
+                    ButtonFilter2.Selected.Filter = "Past",
+                    Sort(
+                        Filter(
+                            LeaveApp_Request,
+                            End_Date <= Today() && Status.Value = "Approved"
+                        ),
+                        Created_By.DisplayName,
+                        SortOrder.Ascending
+                    ),
+                    If(
+                        ButtonFilter2.Selected.Filter = "Upcoming",
+                        Sort(
+                            Filter(
+                                LeaveApp_Request,
+                                Start_Date >= Today() && Status.Value = "Approved"
+                            ),
+                            Created_By.DisplayName,
+                            SortOrder.Ascending
+                        )
+                    )
+                )
             )
         Layout: =Layout.Vertical
         LoadingSpinner: =LoadingSpinner.Data
@@ -287,11 +283,10 @@ TodayOnLeaveScreen As screen:
         ZIndex: =15
 
     "ButtonFilter2 As gallery.'BrowseLayout_Vertical_OneTextOneImageVariant_ver5.0'":
-        Default: =_defaultFilter2
         DelayItemLoading: =true
-        Height: =86
+        Height: =67
         Items: |-
-            =Table({Filter: "Past"}, {Filter: "Today"}, {Filter: "Upcoming"})
+            =Table({Filter: "Today"},{Filter: "Past"},{Filter: "Upcoming"})
         Layout: =Layout.Vertical
         LoadingSpinner: =LoadingSpinner.Data
         ShowScrollbar: =false
@@ -300,7 +295,7 @@ TodayOnLeaveScreen As screen:
         Width: =660
         WrapCount: =4
         X: =497
-        Y: =73
+        Y: =80
         ZIndex: =16
 
         ButtonCategories_2 As button:
@@ -320,6 +315,7 @@ TodayOnLeaveScreen As screen:
             RadiusTopRight: =35
             Text: =ThisItem.Filter
             Width: =110
-            Y: =27
+            X: =4
+            Y: =16
             ZIndex: =6
 
