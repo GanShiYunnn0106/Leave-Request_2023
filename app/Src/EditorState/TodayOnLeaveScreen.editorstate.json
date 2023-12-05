@@ -340,8 +340,7 @@
         },
         "Height",
         "ZIndex",
-        "ShowScrollbar",
-        "Default"
+        "ShowScrollbar"
       ],
       "GalleryTemplateChildName": "galleryTemplate1_3",
       "HasDynamicProperties": false,
@@ -366,11 +365,6 @@
         {
           "Category": "Data",
           "PropertyName": "WrapCount",
-          "RuleProviderType": "Unknown"
-        },
-        {
-          "Category": "Data",
-          "PropertyName": "Default",
           "RuleProviderType": "Unknown"
         },
         {
