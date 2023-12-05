@@ -260,7 +260,7 @@ HomeScreen As screen:
         Text: =If(IsBlank(GalleryRequest.Selected.Comments) , "-", GalleryRequest.Selected.Comments)
         VerticalAlign: =VerticalAlign.Top
         Width: =294
-        X: =1072
+        X: =1071
         Y: =501
         ZIndex: =30
 
@@ -780,7 +780,7 @@ HomeScreen As screen:
             Visible: |
                 =_managerView && ((GalleryRequest.Selected.Status.Value) = "Approved" || (GalleryRequest.Selected.Status.Value) = "Rejected")
             Width: =239
-            X: =1081
-            Y: =598
+            X: =1071
+            Y: =582
             ZIndex: =33
 
