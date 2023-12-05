@@ -254,8 +254,8 @@ TodayOnLeaveScreen As screen:
         Text: ="Today's On Leave   -   " & Text(Today(), "[$-en-US]dd mmm yyyy")
         Visible: =ButtonFilter2.Selected.Filter="Today"
         Width: =476
-        X: =551
-        Y: =7
+        X: =497
+        Y: =3
         ZIndex: =12
 
     Rectangle1 As rectangle:
@@ -298,7 +298,7 @@ TodayOnLeaveScreen As screen:
         TemplateSize: =98
         Width: =660
         WrapCount: =4
-        X: =526
+        X: =497
         Y: =73
         ZIndex: =16
 
