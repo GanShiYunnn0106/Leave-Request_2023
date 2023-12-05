@@ -250,7 +250,7 @@ HomeScreen As screen:
             ="Leave Detail:"
         Width: =145
         X: =1071
-        Y: =490
+        Y: =474
         ZIndex: =29
 
     Label5 As label:
@@ -261,7 +261,7 @@ HomeScreen As screen:
         VerticalAlign: =VerticalAlign.Top
         Width: =294
         X: =1072
-        Y: =525
+        Y: =509
         ZIndex: =30
 
     GroupRequestDetails As group:
@@ -458,7 +458,7 @@ HomeScreen As screen:
             Visible: =!_managerView && (GalleryRequest.Selected.Status.Value) = "Pending"
             Width: =54
             X: =1122
-            Y: =592
+            Y: =584
             ZIndex: =15
 
         EditIcon_2 As icon.Edit:
@@ -468,7 +468,7 @@ HomeScreen As screen:
             Visible: =!_managerView && (GalleryRequest.Selected.Status.Value) = "Pending"
             Width: =23
             X: =1089
-            Y: =592
+            Y: =584
             ZIndex: =16
 
         ButtonManagerApprove_2 As button:
@@ -653,7 +653,7 @@ HomeScreen As screen:
 
         Days_2 As label:
             FontWeight: =FontWeight.Semibold
-            Height: =36
+            Height: =24
             OnSelect: =
             Text: |
                 =If(IsBlank(GalleryRequest.Selected.Days) , "-", GalleryRequest.Selected.Days& " days")
@@ -664,12 +664,12 @@ HomeScreen As screen:
 
         Leave_Type_2 As label:
             FontWeight: =FontWeight.Semibold
-            Height: =42
+            Height: =34
             OnSelect: =
             Text: =If(IsBlank(GalleryRequest.Selected.Leave_Type.Value) , "-", GalleryRequest.Selected.Leave_Type.Value)
             Width: =278
             X: =1071
-            Y: =251
+            Y: =243
             ZIndex: =20
 
         Request_To_2 As label:
@@ -680,7 +680,7 @@ HomeScreen As screen:
             Text: =If(IsBlank(GalleryRequest.Selected.Requested_to.DisplayName) , "-", GalleryRequest.Selected.Requested_to.DisplayName)
             Width: =295
             X: =1071
-            Y: =327
+            Y: =311
             ZIndex: =21
 
         CarryForwardDays_2 As label:
@@ -690,7 +690,7 @@ HomeScreen As screen:
             Text: =If(IsBlank(GalleryRequest.Selected.CarryForwardDays) , "-", GalleryRequest.Selected.CarryForwardDays& " days")
             Width: =229
             X: =1071
-            Y: =394
+            Y: =378
             ZIndex: =22
 
         UnpaidLeave_2 As label:
@@ -700,7 +700,7 @@ HomeScreen As screen:
             Text: =If(IsBlank(GalleryRequest.Selected.UnpaidLeave) , "-", GalleryRequest.Selected.UnpaidLeave& " days")
             Width: =161
             X: =1071
-            Y: =459
+            Y: =443
             ZIndex: =23
 
         LblTotalDays_2 As label:
@@ -719,7 +719,7 @@ HomeScreen As screen:
                 ="Leave Type:"
             Width: =156
             X: =1071
-            Y: =231
+            Y: =223
             ZIndex: =25
 
         LblRequestTo_2 As label:
@@ -729,7 +729,7 @@ HomeScreen As screen:
                 ="Request Sent To:"
             Width: =167
             X: =1071
-            Y: =293
+            Y: =277
             ZIndex: =26
 
         LblCarryForward_2 As label:
@@ -739,7 +739,7 @@ HomeScreen As screen:
                 ="Carry Forward Days:"
             Width: =206
             X: =1071
-            Y: =367
+            Y: =351
             ZIndex: =27
 
         LblUnpaidLeave_2 As label:
@@ -749,7 +749,7 @@ HomeScreen As screen:
                 ="Unpaid Leaves:"
             Width: =171
             X: =1071
-            Y: =428
+            Y: =412
             ZIndex: =28
 
         RemarksTextBox As text:
