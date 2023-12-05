@@ -12,7 +12,9 @@ TodayOnLeaveScreen As screen:
         DelayItemLoading: =true
         Height: =565
         Items: |-
-            =Sort(
+            =If(
+                ButtonFilter2.Selected.Filter="Today",
+                Sort(
                 Filter(
                     LeaveApp_Request,
                     Start_Date <= Today()&&
@@ -21,6 +23,31 @@ TodayOnLeaveScreen As screen:
                 ),
                  Created_By.DisplayName,
                  SortOrder.Ascending
+            ),
+            If(
+                ButtonFilter2.Selected.Filter="Past",
+                Sort(
+                Filter(
+                    LeaveApp_Request,
+                    End_Date <= Today()&&
+                    Status.Value = "Approved"
+                ),
+                 Created_By.DisplayName,
+                 SortOrder.Ascending
+            ),
+            If(
+                 ButtonFilter2.Selected.Filter="Upcoming",
+                Sort(
+                Filter(
+                    LeaveApp_Request,
+                    Start_Date >= Today()&&
+                    Status.Value = "Approved"
+                ),
+                 Created_By.DisplayName,
+                 SortOrder.Ascending
+            )
+            )
+            )
             )
         Layout: =Layout.Vertical
         LoadingSpinner: =LoadingSpinner.Data
@@ -220,14 +247,15 @@ TodayOnLeaveScreen As screen:
             ZIndex: =8
 
     TodayOnLeaveTitle As label:
-        Color: =RGBA(101, 128, 187, 1)
+        Color: =RGBA(255, 255, 255, 1)
         FontWeight: =FontWeight.Bold
-        Height: =66
+        Height: =73
         Size: =19
-        Text: ="Today's On Leave   -   " & Text(Today(),"[$-en-US]dd mmm yyyy")
-        Width: =485
-        X: =250
-        Y: =81
+        Text: ="Today's On Leave   -   " & Text(Today(), "[$-en-US]dd mmm yyyy")
+        Visible: =ButtonFilter2.Selected.Filter="Today"
+        Width: =476
+        X: =551
+        Y: =7
         ZIndex: =12
 
     Rectangle1 As rectangle:
@@ -257,4 +285,40 @@ TodayOnLeaveScreen As screen:
         X: =232
         Y: =203
         ZIndex: =15
+
+    "ButtonFilter2 As gallery.'BrowseLayout_Vertical_OneTextOneImageVariant_ver5.0'":
+        DelayItemLoading: =true
+        Height: =86
+        Items: |-
+            =Table({Filter: "Past"}, {Filter: "Today"}, {Filter: "Upcoming"})
+        Layout: =Layout.Vertical
+        LoadingSpinner: =LoadingSpinner.Data
+        ShowScrollbar: =false
+        TemplatePadding: =1
+        TemplateSize: =98
+        Width: =660
+        WrapCount: =4
+        X: =526
+        Y: =73
+        ZIndex: =16
+
+        ButtonCategories_2 As button:
+            BorderColor: =RGBA(62, 96, 170, 1)
+            BorderThickness: =3
+            Color: =If(ButtonFilter2.Selected.Filter=ThisItem.Filter,RGBA(255, 255, 255, 1),RGBA(0,71,144,1))
+            DisabledBorderColor: =ColorFade(ButtonFilter2.BorderColor, 30%)
+            Fill: =If(ButtonFilter2.Selected.Filter=ThisItem.Filter,RGBA(0, 71, 144, 1),RGBA(255, 255, 255, 1))
+            Font: =Font.'Lato Black'
+            Height: =37
+            OnSelect: =
+            PressedBorderColor: =ButtonFilter2.Fill
+            PressedColor: =If(ButtonFilter2.Selected.Filter=ThisItem.Filter,RGBA(255, 255, 255, 1),RGBA(0,71,144,1))
+            RadiusBottomLeft: =35
+            RadiusBottomRight: =35
+            RadiusTopLeft: =35
+            RadiusTopRight: =35
+            Text: =ThisItem.Filter
+            Width: =110
+            Y: =27
+            ZIndex: =6
 

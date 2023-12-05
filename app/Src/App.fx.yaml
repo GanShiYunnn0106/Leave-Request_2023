@@ -51,10 +51,6 @@ App As appinfo:
                 TargetScreen: EmployeeLeaveBalance
             },
             {
-                Title: "Leave Information",
-                TargetScreen: LeaveInformationScreen
-            },
-            {
                 Title: "Public Holidays",
                 TargetScreen: CompanyHolidaysScreen
             },
