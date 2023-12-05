@@ -287,6 +287,7 @@ TodayOnLeaveScreen As screen:
         ZIndex: =15
 
     "ButtonFilter2 As gallery.'BrowseLayout_Vertical_OneTextOneImageVariant_ver5.0'":
+        Default: =_defaultFilter2
         DelayItemLoading: =true
         Height: =86
         Items: |-

@@ -88,6 +88,7 @@ LoginScreen As screen:
             OnSelect: |-
                 =Set(_managerView,false);
                 Set(_requestTypeFilter,"All");
+                
                 Navigate(HomeScreen,BorderStyle.None)
             PaddingBottom: =0
             PaddingLeft: =0
@@ -157,6 +158,7 @@ LoginScreen As screen:
                     !IsBlank(LookUp(LeaveApp_Employee, User().Email = NameofManager.Email)),
                     Set(_managerView, true);
                     Set(_requestTypeFilter, "Pending");
+                    Set(_defaultFilter2,"Today");
                     Navigate(HomeScreen, BorderStyle.None),
                     Notify("You are not authorized to perform this action.", NotificationType.Error)
                 )
