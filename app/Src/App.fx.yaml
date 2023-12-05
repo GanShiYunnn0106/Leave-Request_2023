@@ -66,7 +66,7 @@ App As appinfo:
                     type: "Annual",
                     icon: vacation,
                     iconselected: 'vacation-selected',
-                    description: "
+                    description: "Details:
         
         1.  Annual Leave Entitlement: 
             - For employees with less than 3 years of service: 14 days
@@ -82,7 +82,7 @@ App As appinfo:
                     type: "Medical",
                     icon: 'sick-leave',
                     iconselected: 'sick-leave-selected',
-                    description: "
+                    description: "Details:
         
         1. Medical Leave shall be defined as approved leave of absence resulting from illness, disease or injury as certified by the Company Panel Doctor / Government Medical Officer / registered medical practitioner. An employee shall also be entitled to paid leave after examination by a dental surgeon as defined in the Dental Act 1971.
         
@@ -94,7 +94,7 @@ App As appinfo:
                 },
                 {
                     type: "Hospitalization",
-                    description: "
+                    description: "Details:
                     
         1. Medical Leave shall be defined as approved leave of absence resulting from illness, disease or injury as certified by the Company Panel Doctor / Government Medical Officer / registered medical practitioner. An employee shall also be entitled to paid leave after examination by a dental surgeon as defined in the Dental Act 1971.							
         							
@@ -104,7 +104,7 @@ App As appinfo:
                 },
                 {
                     type: "Casual Immediate",
-                    description: "
+                    description: "Details:
                     
         1. Death of a member of the employee's family. First relation (parents/ parents-in-law/ spouse/ children)
         
@@ -114,7 +114,7 @@ App As appinfo:
                 },
                 {
                     type: "Casual Second",
-                    description: "
+                    description: "Details:
                     
         1. Death of a member of the employee's family. Second relations (grandparents / brothers / sisters /         grandchildren)
         
@@ -124,7 +124,7 @@ App As appinfo:
                 },
                 {
                     type: "Paternity",
-                    description: "
+                    description: "Details:
                     
         1. Requirements for Subsection 60FA:					
             - The male employee must be married to the mother in question.					
@@ -135,7 +135,7 @@ App As appinfo:
                 },
                 {
                     type: "Maternity",
-                    description: "
+                    description: "Details:
                     
         1. A full-time confirmed female employee. For miscarriage maternity leave only apply upon seven full months of pregnancy under the labour law.								
         								
@@ -143,11 +143,11 @@ App As appinfo:
                 },
                 {
                     type: "Marriage",
-                    description: "
-            
-        1. A full-time confirmed employee who has completed a minimum of twelve (12) months of continuous service of his first legal marriage while in the service of the Company.										
-        										
-        2. Entitlement: 3 days"
+                    description: "<b>Details:</b>
+            <br><br><div style='font-weight:600'>
+        <p>1. A full-time confirmed employee who has completed a minimum of twelve (12) months of continuous service of his first legal marriage while in the service of the Company.</p>										
+        	<br><br>									
+        <p>2. Entitlement: 3 days<p/></div>"
                 }
             )
         );

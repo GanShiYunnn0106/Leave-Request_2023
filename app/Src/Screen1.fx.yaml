@@ -1,0 +1,11 @@
+Screen1 As screen:
+
+    HtmlText3 As htmlViewer:
+        Height: =285
+        HtmlText: =LookUp(LeaveTypeCollection,type = _aboutSelectedLeaveType).description
+        Size: =13.5
+        Width: =875
+        X: =240
+        Y: =243
+        ZIndex: =1
+
