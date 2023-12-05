@@ -1,7 +1,7 @@
 App As appinfo:
     BackEnabled: =true
     OnError: =
-    OnStart: |
+    OnStart: |+
         =Set(
             _sendEmailsEnabled,
             false
@@ -163,10 +163,7 @@ App As appinfo:
             _leaveEnd,
             Now()
         );
-        Set(
-            _selectedButtonFilter2,
-            "Today"
-        );
+        
     Theme: =PowerAppsTheme
 
     Host As hostControl.DefaultHostControlVariant:
