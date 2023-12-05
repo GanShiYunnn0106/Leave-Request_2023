@@ -7,9 +7,6 @@ App As appinfo:
             false
         );
         
-        Set(detailsWord,FontWeight.Bold);
-        Set(detailsWord,"Details");
-        
             //collection used in the left nav menu
         ClearCollect(
             EmployeeNavigation,
