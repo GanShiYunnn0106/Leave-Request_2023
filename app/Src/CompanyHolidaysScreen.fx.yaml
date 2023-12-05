@@ -184,7 +184,7 @@ CompanyHolidaysScreen As screen:
         AccessibleLabel: ="Company holidays"
         DisabledBorderColor: =GalleryHolidays.BorderColor
         DisabledFill: =GalleryHolidays.Fill
-        Height: =610
+        Height: =580
         HoverBorderColor: =GalleryHolidays.BorderColor
         HoverFill: =GalleryHolidays.Fill
         Items: |-
@@ -202,8 +202,8 @@ CompanyHolidaysScreen As screen:
         PressedFill: =GalleryHolidays.Fill
         TemplateSize: =49
         Width: =905
-        X: =231
-        Y: =152
+        X: =223
+        Y: =188
         ZIndex: =32
 
         HolidayName As label:
@@ -246,7 +246,7 @@ CompanyHolidaysScreen As screen:
         Rectangle5 As rectangle:
             AccessibleLabel: =ThisItem.HolidayName
             DisabledFill: =Rectangle5.Fill
-            Fill: =RGBA(202, 202, 202, 1)
+            Fill: =RGBA(230, 229, 229, 1)
             FocusedBorderColor: =Rectangle5.BorderColor
             Height: =1
             HoverFill: =Rectangle5.Fill
@@ -356,4 +356,42 @@ CompanyHolidaysScreen As screen:
         X: =1189
         Y: =430
         ZIndex: =45
+
+    Label6 As label:
+        Align: =Align.Center
+        FontWeight: =FontWeight.Bold
+        Height: =44
+        Size: =15
+        Text: ="Public Holidays"
+        Width: =207
+        X: =374
+        Y: =141
+        ZIndex: =46
+
+    Label6_3 As label:
+        Align: =Align.Center
+        FontWeight: =FontWeight.Bold
+        Height: =44
+        Size: =15
+        Text: ="Dates"
+        Width: =181
+        X: =755
+        Y: =141
+        ZIndex: =47
+
+    Rectangle4 As rectangle:
+        Fill: =RGBA(230, 229, 229, 1)
+        Height: =1
+        Width: =889
+        X: =234
+        Y: =185
+        ZIndex: =48
+
+    Rectangle4_1 As rectangle:
+        Fill: =RGBA(230, 229, 229, 1)
+        Height: =1
+        Width: =889
+        X: =234
+        Y: =141
+        ZIndex: =49
 

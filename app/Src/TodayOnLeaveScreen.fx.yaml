@@ -224,7 +224,7 @@ TodayOnLeaveScreen As screen:
         FontWeight: =FontWeight.Bold
         Height: =66
         Size: =19
-        Text: ="Today's On Leave   -   30 Nov 2023"
+        Text: ="Today's On Leave   -   " & Text(Today(),"[$-en-US]dd mmm yyyy")
         Width: =485
         X: =250
         Y: =81
