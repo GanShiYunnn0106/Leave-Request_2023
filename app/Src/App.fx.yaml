@@ -6,8 +6,9 @@ App As appinfo:
             _sendEmailsEnabled,
             false
         );
-        Set(detailsWord,"Details");
+        
         Set(detailsWord,FontWeight.Bold);
+        Set(detailsWord,"Details");
         
             //collection used in the left nav menu
         ClearCollect(
