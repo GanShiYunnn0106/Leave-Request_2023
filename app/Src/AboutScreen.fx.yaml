@@ -168,12 +168,44 @@ AboutScreen As screen:
         Y: =80
         ZIndex: =47
 
+    LblInformationHeader As label:
+        FontWeight: =FontWeight.Semibold
+        Height: =61
+        Text: ="For more information, please refer to the original document located under the Dynafront Group Channel > Files > Employee Guide."
+        Width: =909
+        X: =245
+        Y: =80
+        ZIndex: =48
+
+    AboutLeaveGallerySeparator_1 As rectangle:
+        DisabledFill: =AboutLeaveGallerySeparator_1.Fill
+        Fill: =RGBA(230, 230, 230, 1)
+        FocusedBorderColor: =AboutLeaveGallerySeparator_1.BorderColor
+        FocusedBorderThickness: =0
+        Height: =1.7
+        HoverFill: =AboutLeaveGallerySeparator_1.Fill
+        PressedFill: =AboutLeaveGallerySeparator_1.Fill
+        Width: =939
+        X: =230
+        Y: =139
+        ZIndex: =49
+
+    LblAboutHeader As label:
+        Color: =RGBA(255, 255, 255, 1)
+        FontWeight: =FontWeight.Semibold
+        Height: =80
+        Size: =22
+        Text: ="About"
+        Width: =106
+        X: =634
+        ZIndex: =50
+
     AboutLeaveMiddle As group:
         Height: =5
         Width: =5
         X: =40
         Y: =40
-        ZIndex: =47
+        ZIndex: =52
 
         LblInformationHeader2 As label:
             AutoHeight: =true
@@ -304,29 +336,6 @@ AboutScreen As screen:
                 X: =5
                 ZIndex: =4
 
-        AboutLeaveTypeDescription As label:
-            FocusedBorderColor: =AboutLeaveTypeDescription.BorderColor
-            FontWeight: =FontWeight.Semibold
-            Height: =285
-            HoverBorderColor: =AboutLeaveTypeDescription.BorderColor
-            HoverColor: =AboutLeaveTypeDescription.Color
-            HoverFill: =AboutLeaveTypeDescription.Fill
-            LineHeight: =1.5
-            Overflow: =Overflow.Scroll
-            PaddingBottom: =0
-            PaddingLeft: =0
-            PaddingRight: =0
-            PaddingTop: =0
-            PressedBorderColor: =AboutLeaveTypeDescription.BorderColor
-            PressedColor: =AboutLeaveTypeDescription.Color
-            PressedFill: =AboutLeaveTypeDescription.Fill
-            Size: =13.5
-            Text: =LookUp(LeaveTypeCollection,type = _aboutSelectedLeaveType).description
-            Width: =900
-            X: =256
-            Y: =457
-            ZIndex: =45
-
         AboutLeaveGallerySeparator As rectangle:
             BorderColor: =RGBA(230, 230, 230, 1)
             DisabledFill: =AboutLeaveGallerySeparator.Fill
@@ -341,35 +350,12 @@ AboutScreen As screen:
             Y: =437
             ZIndex: =46
 
-    LblInformationHeader As label:
-        FontWeight: =FontWeight.Semibold
-        Height: =61
-        Text: ="For more information, please refer to the original document located under the Dynafront Group Channel > Files > Employee Guide."
-        Width: =909
-        X: =245
-        Y: =80
-        ZIndex: =48
-
-    AboutLeaveGallerySeparator_1 As rectangle:
-        DisabledFill: =AboutLeaveGallerySeparator_1.Fill
-        Fill: =RGBA(230, 230, 230, 1)
-        FocusedBorderColor: =AboutLeaveGallerySeparator_1.BorderColor
-        FocusedBorderThickness: =0
-        Height: =1.7
-        HoverFill: =AboutLeaveGallerySeparator_1.Fill
-        PressedFill: =AboutLeaveGallerySeparator_1.Fill
-        Width: =939
-        X: =230
-        Y: =139
-        ZIndex: =49
-
-    LblAboutHeader As label:
-        Color: =RGBA(255, 255, 255, 1)
-        FontWeight: =FontWeight.Semibold
-        Height: =80
-        Size: =22
-        Text: ="About"
-        Width: =106
-        X: =634
-        ZIndex: =50
+        HtmlText3_1 As htmlViewer:
+            Height: =285
+            HtmlText: =LookUp(LeaveTypeCollection,type = _aboutSelectedLeaveType).description
+            Size: =13.5
+            Width: =900
+            X: =255
+            Y: =463
+            ZIndex: =51
 
