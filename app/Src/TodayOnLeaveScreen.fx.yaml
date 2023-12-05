@@ -110,7 +110,7 @@ TodayOnLeaveScreen As screen:
 
     Navigation_1 As Navigation:
         CurrentScreen: ="Today's On Leave"
-        NavItem: =If(_managerView,ManagerNavigation,EmployeeNavigation); Set(_selectedButtonFilter2, "Today");
+        NavItem: =If(_managerView,ManagerNavigation,EmployeeNavigation)
         Y: =80
         ZIndex: =10
 
