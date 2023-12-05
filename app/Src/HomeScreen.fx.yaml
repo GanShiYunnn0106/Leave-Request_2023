@@ -529,8 +529,8 @@ HomeScreen As screen:
                 Set(LeaveTempEmail,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email));
                 
                 If((TypeTemp = "Annual"),
-                If((TypeTemp = "Annual" && LeaveAnnualCarriedTemp >= DaysTemp),Patch(LeaveApp_Employee,LeaveTempEmail,{AnnualCarriedForward: LeaveAnnualCarriedTemp - DaysTemp}));
-                If((TypeTemp = "Annual" && LeaveAnnualCarriedTemp < DaysTemp && UnpaidTemp <= 0),Patch(LeaveApp_Employee,LeaveTempEmail,{AnnualCarriedForward: 0},{AnnualLeaveTaken: LeaveAnnualTakenTemp + (DaysTemp - LeaveAnnualCarriedTemp)}),Patch(LeaveApp_Employee,LeaveTempEmail,{AnnualCarriedForward: 0},{AnnualLeaveTaken: LeaveAnnualEntitleTemp},{UnpaidLeaveTaken: LeaveUnpaidTakenTemp + UnpaidTemp})));
+                If((LeaveAnnualCarriedTemp >= DaysTemp),Patch(LeaveApp_Employee,LeaveTempEmail,{AnnualCarriedForward: LeaveAnnualCarriedTemp - DaysTemp}),If((UnpaidTemp <= 0),Patch(LeaveApp_Employee,LeaveTempEmail,{AnnualCarriedForward: 0},{AnnualLeaveTaken: LeaveAnnualTakenTemp + (DaysTemp - LeaveAnnualCarriedTemp)}),Patch(LeaveApp_Employee,LeaveTempEmail,{AnnualCarriedForward: 0},{AnnualLeaveTaken: LeaveAnnualEntitleTemp},{UnpaidLeaveTaken: LeaveUnpaidTakenTemp + UnpaidTemp})));
+                );
                 
                 If((TypeTemp = "Medical"),
                 If((TypeTemp = "Medical" && UnpaidTemp <= 0),Patch(LeaveApp_Employee,LeaveTempEmail,{MedicalLeaveTaken: LeaveMedicalTakenTemp + DaysTemp}),Patch(LeaveApp_Employee,LeaveTempEmail,{MedicalLeaveTaken: LeaveMedicalEntitleTemp},{UnpaidLeaveTaken: LeaveUnpaidTakenTemp + UnpaidTemp})));
