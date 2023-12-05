@@ -6,6 +6,9 @@ App As appinfo:
             _sendEmailsEnabled,
             false
         );
+        Set(detailsWord,"Details");
+        Set(detailsWord,FontWeight.Bold);
+        
             //collection used in the left nav menu
         ClearCollect(
             EmployeeNavigation,
@@ -66,7 +69,7 @@ App As appinfo:
                     type: "Annual",
                     icon: vacation,
                     iconselected: 'vacation-selected',
-                    description: "Details:
+                    description:  detailsWord & "
         
         1.  Annual Leave Entitlement: 
             - For employees with less than 3 years of service: 14 days
