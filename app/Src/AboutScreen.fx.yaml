@@ -373,3 +373,12 @@ AboutScreen As screen:
         X: =634
         ZIndex: =50
 
+    Label10 As label:
+        FontWeight: =FontWeight.Bold
+        Size: =13.5
+        Text: |-
+            ="Details: "
+        X: =253
+        Y: =450
+        ZIndex: =51
+
