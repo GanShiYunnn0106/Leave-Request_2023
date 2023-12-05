@@ -101,6 +101,16 @@ App As appinfo:
         3. Supporting Document: Medical Certificate (MC)"
                 },
                 {
+                    type: "Hospitalization",
+                    description: "Details:
+        
+        1. Medical Leave shall be defined as approved leave of absence resulting from illness, disease or injury as certified by the Company Panel Doctor / Government Medical Officer / registered medical practitioner. An employee shall also be entitled to paid leave after examination by a dental surgeon as defined in the Dental Act 1971.							
+        							
+        2. Entitlement: 60 days, including non-hospitalization days (From Medical Leave).							
+        							
+        3. Supporting Document: Please refer HR for more information"
+                },
+                {
                     type: "Casual Immediate",
                     description: "Details:
         
@@ -121,16 +131,6 @@ App As appinfo:
         3. The total number of days for both Casual Immediate and Casual Second shall be capped at 3 days in any calendar year."
                 },
                 {
-                    type: "Hospitalization",
-                    description: "Details:
-        
-        1. Medical Leave shall be defined as approved leave of absence resulting from illness, disease or injury as certified by the Company Panel Doctor / Government Medical Officer / registered medical practitioner. An employee shall also be entitled to paid leave after examination by a dental surgeon as defined in the Dental Act 1971.							
-        							
-        2. Entitlement: 60 days, including non-hospitalization days (From Medical Leave).							
-        							
-        3. Supporting Document: Please refer HR for more information"
-                },
-                {
                     type: "Paternity",
                     description: "Details:
                     
@@ -142,20 +142,20 @@ App As appinfo:
         2. Entitlement: 7 consecutive days 	 "
                 },
                 {
-                    type: "Marriage",
-                    description: "Details:
-            
-        1. A full-time confirmed employee who has completed a minimum of twelve (12) months of continuous service of his first legal marriage while in the service of the Company.										
-        										
-        2. Entitlement: 3 days"
-                },
-                {
                     type: "Maternity",
                     description: "Details:
                     
         1. A full-time confirmed female employee. For miscarriage maternity leave only apply upon seven full         months of pregnancy under the labour law.								
         								
         2. Entitlement: 98 consecutive days	"
+                },
+                {
+                    type: "Marriage",
+                    description: "Details:
+            
+        1. A full-time confirmed employee who has completed a minimum of twelve (12) months of continuous service of his first legal marriage while in the service of the Company.										
+        										
+        2. Entitlement: 3 days"
                 }
             )
         );
