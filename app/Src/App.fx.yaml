@@ -143,11 +143,11 @@ App As appinfo:
                 },
                 {
                     type: "Marriage",
-                    description: "<b>Details:</b>
-            <br><br><div style='font-weight:600'>
-        <p>1. A full-time confirmed employee who has completed a minimum of twelve (12) months of continuous service of his first legal marriage while in the service of the Company.</p>										
-        	<br><br>									
-        <p>2. Entitlement: 3 days<p/></div>"
+                    description: "Details:
+            
+        1. A full-time confirmed employee who has completed a minimum of twelve (12) months of continuous service of his first legal marriage while in the service of the Company.										
+        										
+        2. Entitlement: 3 days"
                 }
             )
         );
