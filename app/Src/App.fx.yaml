@@ -6,8 +6,6 @@ App As appinfo:
             _sendEmailsEnabled,
             false
         );
-        Set(_selectedButtonFilter2, "Today");
-        
             //collection used in the left nav menu
         ClearCollect(
             EmployeeNavigation,
@@ -60,7 +58,6 @@ App As appinfo:
                 TargetScreen: LoginScreen
             }
         );
-        
             //add custom leave types to this collection to make them show up in the app
         ClearCollect(
             LeaveTypeCollection,
@@ -70,15 +67,11 @@ App As appinfo:
                     icon: vacation,
                     iconselected: 'vacation-selected',
                     description: "Details:
-        
         1.  Annual Leave Entitlement: 
-        
             - For employees with less than 3 years of service: 14 days
             - For employees with more than 3 years of service: 16 days
             - For employees in positions at Team Lead level and above, with more than 5years of service: 18 days
-        
         2.  Annual Leave Carry Forward Policy:
-        
             - A maximum of seven (07) days of annual leave can be carried forward to the next calendar year.
             - Any excess leave not utilized by the end of March (the next quarter) of the following calendar year       will be deemed forfeited.
             "
@@ -88,19 +81,15 @@ App As appinfo:
                     icon: 'sick-leave',
                     iconselected: 'sick-leave-selected',
                     description: "Details:
-        
         1. Medical Leave shall be defined as approved leave of absence resulting from illness, disease or injury as certified by the Company Panel Doctor / Government Medical Officer / registered medical practitioner. An employee shall also be entitled to paid leave after examination by a dental surgeon as defined in the Dental Act 1971.							
-        
         2. Entitlement:						
             - Without hospitalization: 14 days						
             - With hospitalization: 60 days, including non-hospitalization days. (Please select Hospitalization Leave for this)
-        
         3. Supporting Document: Medical Certificate (MC)"
                 },
                 {
                     type: "Hospitalization",
                     description: "Details:
-        
         1. Medical Leave shall be defined as approved leave of absence resulting from illness, disease or injury as certified by the Company Panel Doctor / Government Medical Officer / registered medical practitioner. An employee shall also be entitled to paid leave after examination by a dental surgeon as defined in the Dental Act 1971.							
         							
         2. Entitlement: 60 days, including non-hospitalization days (From Medical Leave).							
@@ -110,21 +99,15 @@ App As appinfo:
                 {
                     type: "Casual Immediate",
                     description: "Details:
-        
         1. Death of a member of the employee's family. First relation (parents/ parents-in-law/ spouse/ children)
-        
         2. Entitlement: 3 days	
-        
         3. The total number of days for both Casual Immediate and Casual Second shall be capped at 3 days in any calendar year."
                 },
                 {
                     type: "Casual Second",
                     description: "Details:
-        
         1. Death of a member of the employee's family. Second relations (grandparents / brothers / sisters /         grandchildren)
-        
         2. Entitlement: 2 days	
-        
         3. The total number of days for both Casual Immediate and Casual Second shall be capped at 3 days in any calendar year."
                 },
                 {
@@ -135,7 +118,6 @@ App As appinfo:
             - The male employee must be married to the mother in question.					
             - He must have been employed by the same employer for at least 12 months.					
             - He must notify the employer at least 30 days from expected confinement (or as early as possible).	
-        
         2. Entitlement: 7 consecutive days 	 "
                 },
                 {
@@ -169,11 +151,10 @@ App As appinfo:
                 </body>
                 </html>"
         );
-        
         ClearCollect(
-            HolidayCollection,LeaveApp_PublicHoliday
+            HolidayCollection,
+            LeaveApp_PublicHoliday
         );
-        
         Set(
             _leaveStart,
             Now()
@@ -181,6 +162,10 @@ App As appinfo:
         Set(
             _leaveEnd,
             Now()
+        );
+        Set(
+            _selectedButtonFilter2,
+            "Today"
         );
     Theme: =PowerAppsTheme
 
