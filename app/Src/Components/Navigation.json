@@ -42,7 +42,7 @@
             "OptimizeForDevices": "Off",
             "Parent": "Gallery2",
             "PersistMetaDataIDKey": false,
-            "PublishOrderIndex": 3,
+            "PublishOrderIndex": 367,
             "Rules": [
               {
                 "Category": "Design",
@@ -143,7 +143,7 @@
             "OptimizeForDevices": "Off",
             "Parent": "Gallery2",
             "PersistMetaDataIDKey": false,
-            "PublishOrderIndex": 4,
+            "PublishOrderIndex": 368,
             "Rules": [
               {
                 "Category": "Data",
@@ -389,7 +389,7 @@
             "OptimizeForDevices": "Off",
             "Parent": "Gallery2",
             "PersistMetaDataIDKey": false,
-            "PublishOrderIndex": 5,
+            "PublishOrderIndex": 369,
             "Rules": [
               {
                 "Category": "Design",
@@ -562,7 +562,7 @@
         "OptimizeForDevices": "Off",
         "Parent": "Navigation",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 2,
+        "PublishOrderIndex": 366,
         "Rules": [
           {
             "Category": "Data",
@@ -763,7 +763,7 @@
       },
       "CurrentScreen"
     ],
-    "LastModifiedTimestamp": "638373387660659600",
+    "LastModifiedTimestamp": "638373399823013416",
     "Name": "Navigation",
     "Rules": [
       {
@@ -854,7 +854,7 @@
   "IsPcfControl": false,
   "IsPremiumPcfControl": false,
   "IsWidgetTemplate": false,
-  "LastModifiedTimestamp": "638373387660659600",
+  "LastModifiedTimestamp": "638373399823013416",
   "Name": "b6b5e691fc474668b7b6312386d8a5c2",
   "OverridableProperties": {},
   "Version": "1.0"
