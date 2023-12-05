@@ -763,7 +763,7 @@
       },
       "CurrentScreen"
     ],
-    "LastModifiedTimestamp": "638373401650344803",
+    "LastModifiedTimestamp": "638373415102785407",
     "Name": "Navigation",
     "Rules": [
       {
@@ -771,7 +771,7 @@
         "InvariantScript": "Table({Title: \"My Leave Requests\", TargetScreen: HomeScreen},{Title: \"My Leave Balance\", TargetScreen: LeaveBalanceScreen},{Title: \"Today's On Leave\", TargetScreen: TodayOnLeaveScreen},{Title: \"Public Holidays\", TargetScreen: CompanyHolidaysScreen},{Title: \"About\", TargetScreen: AboutScreen},{Title: \"Log Out\", TargetScreen: LoginScreen})",
         "NameMap": "{\"TargetScreen\":\"TargetScreen\",\"Title\":\"Title\"}",
         "Property": "NavItem",
-        "RuleProviderType": "Unknown"
+        "RuleProviderType": "System"
       },
       {
         "Category": "Data",
@@ -854,7 +854,7 @@
   "IsPcfControl": false,
   "IsPremiumPcfControl": false,
   "IsWidgetTemplate": false,
-  "LastModifiedTimestamp": "638373401650344803",
+  "LastModifiedTimestamp": "638373415102785407",
   "Name": "b6b5e691fc474668b7b6312386d8a5c2",
   "OverridableProperties": {},
   "Version": "1.0"
