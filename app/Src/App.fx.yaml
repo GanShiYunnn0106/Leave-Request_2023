@@ -6,6 +6,7 @@ App As appinfo:
             _sendEmailsEnabled,
             false
         );
+        Set(_selectedButtonFilter2, "Today");
         
             //collection used in the left nav menu
         ClearCollect(
