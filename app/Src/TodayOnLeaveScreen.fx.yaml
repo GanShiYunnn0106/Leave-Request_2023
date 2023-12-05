@@ -284,7 +284,7 @@ TodayOnLeaveScreen As screen:
 
     "ButtonFilter2 As gallery.'BrowseLayout_Vertical_OneTextOneImageVariant_ver5.0'":
         DelayItemLoading: =true
-        Height: =86
+        Height: =67
         Items: |-
             =Table({Filter: "Today"},{Filter: "Past"},{Filter: "Upcoming"})
         Layout: =Layout.Vertical
@@ -295,7 +295,7 @@ TodayOnLeaveScreen As screen:
         Width: =660
         WrapCount: =4
         X: =497
-        Y: =73
+        Y: =80
         ZIndex: =16
 
         ButtonCategories_2 As button:
@@ -315,6 +315,7 @@ TodayOnLeaveScreen As screen:
             RadiusTopRight: =35
             Text: =ThisItem.Filter
             Width: =110
-            Y: =27
+            X: =4
+            Y: =16
             ZIndex: =6
 
