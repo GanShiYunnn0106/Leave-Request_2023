@@ -82,7 +82,7 @@ TodayOnLeaveScreen As screen:
             Height: =31
             OnSelect: =Select(Parent)
             Size: =14
-            Text: =Text(ThisItem.Start_Date, "[$-en-US]dd mmm yyyy") & "  -  " & Text(ThisItem.End_Date, "[$-en-US]dd mmm yyyy") & ", " & ThisItem.Days & " day(s)"
+            Text: =Text(ThisItem.Start_Date, "[$-en-US]dd mmm yyyy") & "  -  " & Text(ThisItem.End_Date, "[$-en-US]dd mmm yyyy") & " ,  " &  ThisItem.Days & " day(s)"
             Width: =397
             X: =727
             Y: =16
