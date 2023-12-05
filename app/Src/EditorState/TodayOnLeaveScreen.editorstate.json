@@ -341,7 +341,14 @@
         "Height",
         "ZIndex",
         "ShowScrollbar",
-        "Default"
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "_defaultFilter2",
+          "InvariantPropertyName": "Default",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        }
       ],
       "GalleryTemplateChildName": "galleryTemplate1_3",
       "HasDynamicProperties": false,
@@ -355,7 +362,7 @@
       "MetaDataIDKey": "",
       "Name": "ButtonFilter2",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 9,
+      "ParentIndex": 8,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -569,7 +576,7 @@
       "MetaDataIDKey": "",
       "Name": "CircleHeaderCreateNew_5",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 5,
+      "ParentIndex": 6,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -856,7 +863,7 @@
       "MetaDataIDKey": "",
       "Name": "icon2_6",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 4,
+      "ParentIndex": 5,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -1122,7 +1129,7 @@
       "MetaDataIDKey": "",
       "Name": "IconHeaderCreateNew_5",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 6,
+      "ParentIndex": 7,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -2098,7 +2105,7 @@
       "MetaDataIDKey": "",
       "Name": "Navigation_1",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 7,
+      "ParentIndex": 9,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -2678,7 +2685,7 @@
       "MetaDataIDKey": "",
       "Name": "RectNavSep_5",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 8,
+      "ParentIndex": 10,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -3773,7 +3780,7 @@
       "MetaDataIDKey": "",
       "Name": "TodayOnLeaveTitle",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 10,
+      "ParentIndex": 4,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
