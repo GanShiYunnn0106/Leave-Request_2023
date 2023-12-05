@@ -373,12 +373,12 @@ AboutScreen As screen:
         X: =634
         ZIndex: =50
 
-    Label12 As label:
+    Label9 As label:
         FontWeight: =FontWeight.Bold
         Text: |-
-            ="Details:"
-        Visible: =!IsBlank(AboutLeaveTypeGallery)
-        X: =484
-        Y: =439
+            ="Details: "
+        Visible: =If(!IsBlank(AboutLeaveTypeGallery.Selected.type),true,false)
+        X: =381
+        Y: =457
         ZIndex: =51
 
