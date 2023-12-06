@@ -302,3 +302,16 @@ LeaveBalanceScreen As screen:
         Y: =80
         ZIndex: =13
 
+    Icon3 As icon.Reload:
+        Height: =37
+        Icon: =Icon.Reload
+        OnSelect: |-
+            =Filter(
+                LeaveApp_Employee,
+                NameofEmployee.Email = User().Email
+            )
+        Width: =29
+        X: =1259
+        Y: =92
+        ZIndex: =14
+
