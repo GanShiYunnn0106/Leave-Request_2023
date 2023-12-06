@@ -13,6 +13,7 @@ NewRequestScreen As screen:
             Select(LeaveStartDatePicker),
             
             _editingRequest,
+            Set(_requestedDays,GalleryRequest.Selected.Days);
             Set(_selectedLeaveType, GalleryRequest.Selected.Leave_Type.Value);
             If(
                 _selectedLeaveType = "Annual",
