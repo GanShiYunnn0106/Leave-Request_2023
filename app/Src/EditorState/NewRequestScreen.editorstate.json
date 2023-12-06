@@ -629,7 +629,8 @@
         "TabIndex",
         "ContentLanguage",
         "FocusedBorderColor",
-        "FocusedBorderThickness"
+        "FocusedBorderThickness",
+        "MaxTemplateSize"
       ],
       "GalleryTemplateChildName": "galleryTemplate2_14",
       "HasDynamicProperties": false,
@@ -809,6 +810,11 @@
         {
           "Category": "Design",
           "PropertyName": "FocusedBorderThickness",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Design",
+          "PropertyName": "MaxTemplateSize",
           "RuleProviderType": "Unknown"
         }
       ],
@@ -7076,7 +7082,8 @@
         "TabIndex",
         "ContentLanguage",
         "FocusedBorderColor",
-        "FocusedBorderThickness"
+        "FocusedBorderThickness",
+        "MaxTemplateSize"
       ],
       "GalleryTemplateChildName": "galleryTemplate2_8",
       "HasDynamicProperties": false,
@@ -7271,6 +7278,11 @@
         {
           "Category": "Design",
           "PropertyName": "FocusedBorderThickness",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Design",
+          "PropertyName": "MaxTemplateSize",
           "RuleProviderType": "Unknown"
         }
       ],

@@ -699,7 +699,8 @@
         "TabIndex",
         "ContentLanguage",
         "FocusedBorderColor",
-        "FocusedBorderThickness"
+        "FocusedBorderThickness",
+        "MaxTemplateSize"
       ],
       "GalleryTemplateChildName": "galleryTemplate2_9",
       "HasDynamicProperties": false,
@@ -889,6 +890,11 @@
         {
           "Category": "Design",
           "PropertyName": "FocusedBorderThickness",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Design",
+          "PropertyName": "MaxTemplateSize",
           "RuleProviderType": "Unknown"
         }
       ],

@@ -340,7 +340,9 @@
         },
         "Height",
         "ZIndex",
-        "ShowScrollbar"
+        "ShowScrollbar",
+        "MaxTemplateSize",
+        "Visible"
       ],
       "GalleryTemplateChildName": "galleryTemplate1_3",
       "HasDynamicProperties": false,
@@ -365,6 +367,11 @@
         {
           "Category": "Data",
           "PropertyName": "WrapCount",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Design",
+          "PropertyName": "Visible",
           "RuleProviderType": "Unknown"
         },
         {
@@ -485,6 +492,11 @@
         {
           "Category": "Design",
           "PropertyName": "Y",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Design",
+          "PropertyName": "MaxTemplateSize",
           "RuleProviderType": "Unknown"
         }
       ],
@@ -3223,7 +3235,8 @@
         "Y",
         "Width",
         "Height",
-        "ZIndex"
+        "ZIndex",
+        "MaxTemplateSize"
       ],
       "GalleryTemplateChildName": "galleryTemplate2",
       "HasDynamicProperties": false,
@@ -3363,6 +3376,11 @@
         {
           "Category": "Design",
           "PropertyName": "LoadingSpinnerColor",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Design",
+          "PropertyName": "MaxTemplateSize",
           "RuleProviderType": "Unknown"
         }
       ],

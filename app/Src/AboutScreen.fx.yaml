@@ -238,7 +238,7 @@ AboutScreen As screen:
             Default: =If(!IsBlank(_aboutSelectedLeaveType),LookUp(LeaveTypeCollection, type=_aboutSelectedLeaveType))
             DisabledBorderColor: =AboutLeaveTypeGallery.BorderColor
             DisabledFill: =AboutLeaveTypeGallery.Fill
-            Height: =256
+            Height: =299
             HoverBorderColor: =AboutLeaveTypeGallery.BorderColor
             HoverFill: =AboutLeaveTypeGallery.Fill
             Items: =LeaveTypeCollection
@@ -253,7 +253,7 @@ AboutScreen As screen:
             Width: =808
             WrapCount: =3
             X: =300
-            Y: =194
+            Y: =181
             ZIndex: =43
 
             AboutLeaveTypeIcon As image:

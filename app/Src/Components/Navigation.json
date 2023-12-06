@@ -42,7 +42,7 @@
             "OptimizeForDevices": "Off",
             "Parent": "Gallery2",
             "PersistMetaDataIDKey": false,
-            "PublishOrderIndex": 345,
+            "PublishOrderIndex": 3,
             "Rules": [
               {
                 "Category": "Design",
@@ -143,7 +143,7 @@
             "OptimizeForDevices": "Off",
             "Parent": "Gallery2",
             "PersistMetaDataIDKey": false,
-            "PublishOrderIndex": 346,
+            "PublishOrderIndex": 4,
             "Rules": [
               {
                 "Category": "Data",
@@ -389,7 +389,7 @@
             "OptimizeForDevices": "Off",
             "Parent": "Gallery2",
             "PersistMetaDataIDKey": false,
-            "PublishOrderIndex": 347,
+            "PublishOrderIndex": 5,
             "Rules": [
               {
                 "Category": "Design",
@@ -546,7 +546,8 @@
             "IsLockable": false,
             "NameMapSourceSchema": "?"
           },
-          "ZIndex"
+          "ZIndex",
+          "MaxTemplateSize"
         ],
         "ControlUniqueId": "5",
         "HasDynamicProperties": false,
@@ -562,7 +563,7 @@
         "OptimizeForDevices": "Off",
         "Parent": "Navigation",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 344,
+        "PublishOrderIndex": 2,
         "Rules": [
           {
             "Category": "Data",
@@ -713,6 +714,12 @@
             "InvariantScript": "1",
             "Property": "ZIndex",
             "RuleProviderType": "Unknown"
+          },
+          {
+            "Category": "Design",
+            "InvariantScript": "5000",
+            "Property": "MaxTemplateSize",
+            "RuleProviderType": "Unknown"
           }
         ],
         "StyleName": "defaultGalleryStyle",
@@ -726,7 +733,7 @@
           "LastModifiedTimestamp": "0",
           "Name": "gallery",
           "OverridableProperties": {},
-          "Version": "2.13.2"
+          "Version": "2.14.0"
         },
         "Type": "ControlInfo",
         "VariantName": "galleryVertical"
@@ -763,7 +770,7 @@
       },
       "CurrentScreen"
     ],
-    "LastModifiedTimestamp": "638373521768906057",
+    "LastModifiedTimestamp": "638374404219131861",
     "Name": "Navigation",
     "Rules": [
       {
@@ -854,7 +861,7 @@
   "IsPcfControl": false,
   "IsPremiumPcfControl": false,
   "IsWidgetTemplate": false,
-  "LastModifiedTimestamp": "638373521768906057",
+  "LastModifiedTimestamp": "638374404219131861",
   "Name": "b6b5e691fc474668b7b6312386d8a5c2",
   "OverridableProperties": {},
   "Version": "1.0"
