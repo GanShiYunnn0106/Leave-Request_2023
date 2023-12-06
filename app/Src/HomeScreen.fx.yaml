@@ -272,6 +272,15 @@ HomeScreen As screen:
         Y: =40
         ZIndex: =32
 
+    Icon3_1 As icon.Reload:
+        Height: =35
+        Icon: =Icon.Reload
+        OnSelect: =Refresh(LeaveApp_Request);
+        Width: =35
+        X: =994
+        Y: =101
+        ZIndex: =34
+
     Header_11 As group:
         Height: =5
         Width: =5
