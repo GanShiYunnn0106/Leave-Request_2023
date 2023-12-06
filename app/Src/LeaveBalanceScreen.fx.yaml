@@ -302,3 +302,12 @@ LeaveBalanceScreen As screen:
         Y: =80
         ZIndex: =13
 
+    Icon3 As icon.Reload:
+        Height: =35
+        Icon: =Icon.Reload
+        OnSelect: =Refresh(LeaveApp_Employee)
+        Width: =35
+        X: =1273
+        Y: =93
+        ZIndex: =14
+
