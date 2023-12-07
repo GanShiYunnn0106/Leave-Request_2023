@@ -194,7 +194,7 @@ EmployeeLeaveDetail As screen:
             Size: =11
             Text: =Text(ThisItem.Start_Date, "[$-en-US]dd mmm yyyy")
             Width: =100
-            X: =276
+            X: =285
             Y: =16
             ZIndex: =3
 
@@ -205,7 +205,7 @@ EmployeeLeaveDetail As screen:
             Size: =11
             Text: =Text(ThisItem.End_Date, "[$-en-US]dd mmm yyyy")
             Width: =100
-            X: =393
+            X: =402
             Y: =16
             ZIndex: =4
 
@@ -276,7 +276,7 @@ EmployeeLeaveDetail As screen:
             Size: =10
             Text: =ThisItem.Status.Value
             Width: =75
-            X: =186
+            X: =177
             Y: =16
             ZIndex: =10
 
@@ -292,7 +292,7 @@ EmployeeLeaveDetail As screen:
         Text: ="Leave Type"
         VerticalAlign: =VerticalAlign.Top
         Width: =163
-        X: =266
+        X: =275
         Y: =196
         ZIndex: =57
 
@@ -308,7 +308,7 @@ EmployeeLeaveDetail As screen:
         Text: ="Status"
         VerticalAlign: =VerticalAlign.Top
         Width: =96
-        X: =432
+        X: =423
         Y: =196
         ZIndex: =58
 
@@ -340,7 +340,7 @@ EmployeeLeaveDetail As screen:
         Text: ="End Date"
         VerticalAlign: =VerticalAlign.Top
         Width: =102
-        X: =643
+        X: =652
         Y: =196
         ZIndex: =60
 

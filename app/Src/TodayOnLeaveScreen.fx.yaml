@@ -55,22 +55,23 @@ TodayOnLeaveScreen As screen:
 
         TodayOnLeaveName As label:
             FontWeight: =FontWeight.Semibold
-            Height: =45
+            Height: =52
             OnSelect: =Select(Parent)
             Size: =14
             Text: =ThisItem.Created_By.DisplayName
-            Width: =384
-            X: =25
+            Width: =402
+            X: =24
             Y: =9
             ZIndex: =1
 
         TodayOnLeaveType As label:
+            Align: =Align.Center
             Height: =31
             OnSelect: =Select(Parent)
             Size: =14
             Text: =ThisItem.Leave_Type.Value
-            Width: =217
-            X: =449
+            Width: =243
+            X: =365
             Y: =16
             ZIndex: =2
 
