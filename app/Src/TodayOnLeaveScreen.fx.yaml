@@ -292,7 +292,6 @@ TodayOnLeaveScreen As screen:
         ShowScrollbar: =false
         TemplatePadding: =1
         TemplateSize: =68
-        Visible: =_managerView
         Width: =505
         WrapCount: =3
         X: =861
@@ -307,10 +306,7 @@ TodayOnLeaveScreen As screen:
             Fill: =If(ButtonFilter2.Selected.Filter=ThisItem.Filter,RGBA(0, 71, 144, 1),RGBA(255, 255, 255, 1))
             Font: =Font.'Lato Black'
             Height: =37
-            OnSelect: |-
-                =If(ThisItem.Filter <> _todayOnLeavefilter,
-                Set(_showDetails, false); 
-                Set(_todayOnLeavefilter, ThisItem.Filter))
+            OnSelect: =ThisItem.Filter
             PressedBorderColor: =ButtonFilter2.Fill
             PressedColor: =If(ButtonFilter2.Selected.Filter=ThisItem.Filter,RGBA(255, 255, 255, 1),RGBA(0,71,144,1))
             RadiusBottomLeft: =35
