@@ -342,8 +342,7 @@
         "ZIndex",
         "ShowScrollbar",
         "MaxTemplateSize",
-        "Visible",
-        "Default"
+        "Visible"
       ],
       "GalleryTemplateChildName": "galleryTemplate1_3",
       "HasDynamicProperties": false,
@@ -368,11 +367,6 @@
         {
           "Category": "Data",
           "PropertyName": "WrapCount",
-          "RuleProviderType": "Unknown"
-        },
-        {
-          "Category": "Data",
-          "PropertyName": "Default",
           "RuleProviderType": "Unknown"
         },
         {
@@ -3242,15 +3236,7 @@
         "Width",
         "Height",
         "ZIndex",
-        "MaxTemplateSize",
-        {
-          "AFDDataSourceName": "",
-          "AutoRuleBindingEnabled": false,
-          "AutoRuleBindingString": "ButtonFilter2.Selected.Filter = \"Today\"",
-          "InvariantPropertyName": "Default",
-          "IsLockable": false,
-          "NameMapSourceSchema": "?"
-        }
+        "MaxTemplateSize"
       ],
       "GalleryTemplateChildName": "galleryTemplate2",
       "HasDynamicProperties": false,
@@ -3275,11 +3261,6 @@
         {
           "Category": "Data",
           "PropertyName": "Items",
-          "RuleProviderType": "Unknown"
-        },
-        {
-          "Category": "Data",
-          "PropertyName": "Default",
           "RuleProviderType": "Unknown"
         },
         {
