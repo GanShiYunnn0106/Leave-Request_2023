@@ -666,7 +666,7 @@ HomeScreen As screen:
             Height: =24
             OnSelect: =
             Text: |
-                =If(IsBlank(GalleryRequest.Selected.Days) , "-", GalleryRequest.Selected.Days& " days")
+                =If(IsBlank(GalleryRequest.Selected.Days) , "-", GalleryRequest.Selected.Days& " day(s)")
             Width: =157
             X: =1074
             Y: =188
@@ -697,7 +697,7 @@ HomeScreen As screen:
             FontWeight: =FontWeight.Semibold
             Height: =25
             OnSelect: =
-            Text: =If(IsBlank(GalleryRequest.Selected.CarryForwardDays) , "-", GalleryRequest.Selected.CarryForwardDays& " days")
+            Text: =If(IsBlank(GalleryRequest.Selected.CarryForwardDays) , "-", GalleryRequest.Selected.CarryForwardDays& " day(s)")
             Width: =229
             X: =1071
             Y: =378
@@ -707,7 +707,7 @@ HomeScreen As screen:
             FontWeight: =FontWeight.Semibold
             Height: =24
             OnSelect: =
-            Text: =If(IsBlank(GalleryRequest.Selected.UnpaidLeave) , "-", GalleryRequest.Selected.UnpaidLeave& " days")
+            Text: =If(IsBlank(GalleryRequest.Selected.UnpaidLeave) , "-", GalleryRequest.Selected.UnpaidLeave& " day(s)")
             Width: =161
             X: =1071
             Y: =443
