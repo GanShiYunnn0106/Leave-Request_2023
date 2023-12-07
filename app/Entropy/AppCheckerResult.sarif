@@ -3399,36 +3399,6 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "App._defaultFilter2"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "App._defaultFilter2",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "_defaultFilter2",
-                "module": "App",
-                "type": "App"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-UnusedVariables",
-          "ruleIndex": 8
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
                   "fullyQualifiedName": "App._endWeekday"
                 }
               ],

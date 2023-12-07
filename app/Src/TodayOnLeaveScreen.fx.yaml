@@ -309,6 +309,7 @@ TodayOnLeaveScreen As screen:
             Height: =37
             OnSelect: |-
                 =If(ThisItem.Filter <> _todayOnLeavefilter,
+                Set(_showDetails, false); 
                 Set(_todayOnLeavefilter, ThisItem.Filter))
             PressedBorderColor: =ButtonFilter2.Fill
             PressedColor: =If(ButtonFilter2.Selected.Filter=ThisItem.Filter,RGBA(255, 255, 255, 1),RGBA(0,71,144,1))
