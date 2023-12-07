@@ -189,7 +189,7 @@ CompanyHolidaysScreen As screen:
         PressedBorderColor: =GalleryHolidays.BorderColor
         PressedFill: =GalleryHolidays.Fill
         TemplateSize: =49
-        Width: =905
+        Width: =886
         X: =223
         Y: =188
         ZIndex: =32
@@ -338,7 +338,7 @@ CompanyHolidaysScreen As screen:
             Underline: =true
             Visible: =_managerView=true
             Width: =209
-            X: =1109
+            X: =1127
             Y: =139
             ZIndex: =38
 
@@ -347,17 +347,17 @@ CompanyHolidaysScreen As screen:
             Height: =41
             Visible: =_managerView=true
             Width: =173
-            X: =1128
+            X: =1146
             Y: =228
             ZIndex: =39
 
         HolidayDate As datepicker:
             Color: =RGBA(0, 0, 0, 1)
             DisabledBorderColor: =RGBA(62, 96, 170, 1)
-            Height: =43
+            Height: =38
             Visible: =_managerView=true
-            Width: =163
-            X: =1128
+            Width: =173
+            X: =1146
             Y: =349
             ZIndex: =40
 
@@ -367,7 +367,7 @@ CompanyHolidaysScreen As screen:
                 ="Holiday Name:"
             Visible: =_managerView=true
             Width: =163
-            X: =1128
+            X: =1146
             Y: =182
             ZIndex: =43
 
@@ -378,8 +378,8 @@ CompanyHolidaysScreen As screen:
                 ="Date:"
             Visible: =_managerView=true
             Width: =70
-            X: =1128
-            Y: =293
+            X: =1146
+            Y: =284
             ZIndex: =44
 
         AddButton As button:
@@ -387,14 +387,14 @@ CompanyHolidaysScreen As screen:
             Color: =RGBA(255, 255, 255, 1)
             DisplayMode: =If(IsBlank(txtHoliday.Text), DisplayMode.Disabled,DisplayMode.Edit)
             Fill: =RGBA(62, 96, 170, 1)
-            Height: =29
+            Height: =32
             OnSelect: |
                 =Collect(LeaveApp_PublicHoliday,{HolidayName:txtHoliday.Text, HolidayDates:DateValue(HolidayDate.SelectedDate)})
             Text: ="ADD"
             Visible: =_managerView=true
-            Width: =80
-            X: =1174
-            Y: =434
+            Width: =90
+            X: =1182
+            Y: =429
             ZIndex: =45
 
         ErrorMsg As label:
@@ -403,8 +403,8 @@ CompanyHolidaysScreen As screen:
             Size: =12
             Text: ="*Holiday Name is required"
             Visible: =IsBlank(txtHoliday.Text) && _managerView=true
-            Width: =238
-            X: =1128
+            Width: =226
+            X: =1140
             Y: =269
             ZIndex: =50
 
