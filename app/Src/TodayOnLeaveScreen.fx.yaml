@@ -289,9 +289,6 @@ TodayOnLeaveScreen As screen:
             =Table({Filter: "Today"},{Filter: "Past"},{Filter: "Upcoming"})
         Layout: =Layout.Vertical
         LoadingSpinner: =LoadingSpinner.Data
-        OnSelect: |-
-            =If(ThisItem.Filter <> _todayOnLeavefilter,
-            Set(_todayOnLeavefilter, ThisItem.Filter))
         ShowScrollbar: =false
         TemplatePadding: =1
         TemplateSize: =68
@@ -310,7 +307,9 @@ TodayOnLeaveScreen As screen:
             Fill: =If(ButtonFilter2.Selected.Filter=ThisItem.Filter,RGBA(0, 71, 144, 1),RGBA(255, 255, 255, 1))
             Font: =Font.'Lato Black'
             Height: =37
-            OnSelect: =
+            OnSelect: |-
+                =If(ThisItem.Filter <> _todayOnLeavefilter,
+                Set(_todayOnLeavefilter, ThisItem.Filter))
             PressedBorderColor: =ButtonFilter2.Fill
             PressedColor: =If(ButtonFilter2.Selected.Filter=ThisItem.Filter,RGBA(255, 255, 255, 1),RGBA(0,71,144,1))
             RadiusBottomLeft: =35
