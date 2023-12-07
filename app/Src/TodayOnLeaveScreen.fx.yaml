@@ -294,7 +294,7 @@ TodayOnLeaveScreen As screen:
         TemplateSize: =68
         Width: =505
         WrapCount: =3
-        X: =861
+        X: =845
         Y: =80
         ZIndex: =16
 
@@ -315,7 +315,7 @@ TodayOnLeaveScreen As screen:
             RadiusTopRight: =35
             Text: =ThisItem.Filter
             Width: =110
-            X: =20
+            X: =28
             Y: =16
             ZIndex: =6
 
