@@ -88,7 +88,7 @@ LoginScreen As screen:
             OnSelect: |-
                 =Set(_managerView,false);
                 Set(_requestTypeFilter,"All");
-                
+                Set(_todayOnLeavefilter, "Today");
                 Navigate(HomeScreen,BorderStyle.None)
             PaddingBottom: =0
             PaddingLeft: =0
