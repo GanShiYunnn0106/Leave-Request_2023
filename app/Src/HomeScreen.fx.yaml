@@ -277,7 +277,7 @@ HomeScreen As screen:
         Icon: =Icon.Reload
         OnSelect: =Refresh(LeaveApp_Request);
         Width: =35
-        X: =994
+        X: =987
         Y: =101
         ZIndex: =34
 
