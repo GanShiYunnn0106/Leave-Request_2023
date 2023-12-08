@@ -2,11 +2,7 @@ App As appinfo:
     BackEnabled: =true
     OnError: =
     OnStart: |
-        =Set(
-            _sendEmailsEnabled,
-            false
-        );
-            //collection used in the left nav menu
+        =//collection used in the left nav menu
         ClearCollect(
             EmployeeNavigation,
             {
@@ -196,6 +192,7 @@ App As appinfo:
             _leaveEnd,
             Now()
         );
+        
         ClearCollect(
             _buttonFilter2,
             Table(

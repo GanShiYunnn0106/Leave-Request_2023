@@ -3269,36 +3269,6 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "App._sendEmailsEnabled"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "App._sendEmailsEnabled",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "_sendEmailsEnabled",
-                "module": "App",
-                "type": "App"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-UnusedVariables",
-          "ruleIndex": 7
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
                   "fullyQualifiedName": "App._showDetails"
                 }
               ],
