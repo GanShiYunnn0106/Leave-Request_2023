@@ -1,7 +1,7 @@
 App As appinfo:
     BackEnabled: =true
     OnError: =
-    OnStart: |+
+    OnStart: |
         =//collection used in the left nav menu
         ClearCollect(
             EmployeeNavigation,
@@ -192,7 +192,7 @@ App As appinfo:
             _leaveEnd,
             Now()
         );
-        
+        ClearCollect(_buttonFilter2,Table({Filter: "Past"},{Filter: "Today"},{Filter: "Upcoming"}));
     Theme: =PowerAppsTheme
 
     Host As hostControl.DefaultHostControlVariant:
