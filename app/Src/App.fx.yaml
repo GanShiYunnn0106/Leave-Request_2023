@@ -199,9 +199,9 @@ App As appinfo:
         ClearCollect(
             _OnLeaveFilter,
             Table(
-                {Filter: "Past"},
-                {Filter: "Today"},
-                {Filter: "Upcoming"}
+                {LeaveFilter: "Past"},
+                {LeaveFilter: "Today"},
+                {LeaveFilter: "Upcoming"}
             )
         );
     Theme: =PowerAppsTheme
