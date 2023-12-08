@@ -248,7 +248,7 @@ CompanyHolidaysScreen As screen:
             Height: =24
             Icon: =Icon.Trash
             OnSelect: =Remove(LeaveApp_PublicHoliday,ThisItem)
-            Visible: =_managerView=true
+            Visible: =_adminView
             Width: =43
             X: =804
             Y: =12
@@ -323,7 +323,8 @@ CompanyHolidaysScreen As screen:
             Height: =695
             HoverFill: =Rectangle3_2.Fill
             PressedFill: =Rectangle3_2.Fill
-            Visible: =_adminView
+            Visible: |
+                =true
             Width: =238
             X: =1128
             Y: =73
