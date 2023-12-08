@@ -285,7 +285,7 @@ TodayOnLeaveScreen As screen:
         ZIndex: =15
 
     "ButtonFilter2 As gallery.'BrowseLayout_Vertical_OneTextOneImageVariant_ver5.0'":
-        Default: =If(!IsBlank(OnLeaveFilter),LookUp(_OnLeaveFilter, LeaveFilter= OnLeaveFilter))
+        Default: =Reset(OnLeaveFilter);If(!IsBlank(OnLeaveFilter),LookUp(_OnLeaveFilter, LeaveFilter= OnLeaveFilter))
         DelayItemLoading: =true
         Height: =69
         Items: =_OnLeaveFilter
