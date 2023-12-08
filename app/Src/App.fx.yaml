@@ -59,7 +59,7 @@ App As appinfo:
                 TargetScreen: LoginScreen
             }
         );
-        ClearCollect(_buttonFilter2,Table({Filter: "Today"},{Filter: "Past"},{Filter: "Upcoming"});
+        
             //add custom leave types to this collection to make them show up in the app
         ClearCollect(
             LeaveTypeCollection,
@@ -198,6 +198,7 @@ App As appinfo:
             _leaveEnd,
             Now()
         );
+        ClearCollect(_buttonFilter2,Table({Filter: "Today"},{Filter: "Past"},{Filter: "Upcoming"}));
     Theme: =PowerAppsTheme
 
     Host As hostControl.DefaultHostControlVariant:
