@@ -89,7 +89,7 @@ LoginScreen As screen:
                 =Set(_managerView,false);
                 
                 Set(_adminView,false);
-                Set(_buttonFilter2,"Today");
+                Set(_defaultFilter,"Today");
                 Navigate(HomeScreen,BorderStyle.None)
             PaddingBottom: =0
             PaddingLeft: =0
@@ -166,7 +166,7 @@ LoginScreen As screen:
                         _managerView,
                         true
                     );
-                    Set(_buttonFilter2,"Today");
+                    Set(_defaultFilter,"Today");
                     Set(
                         _adminView,
                         false
@@ -196,7 +196,7 @@ LoginScreen As screen:
                         _adminView,
                         true
                     );
-                    Set(_buttonFilter2,"Today");
+                    Set(_defaultFilter,"Today");
                 )
             PaddingBottom: =0
             PaddingLeft: =0
