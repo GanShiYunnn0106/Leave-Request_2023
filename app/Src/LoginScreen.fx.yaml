@@ -87,9 +87,8 @@ LoginScreen As screen:
             HoverFill: =ColorFade(BtnEmployeeLogin.Fill, 20%)
             OnSelect: |-
                 =Set(_managerView,false);
-                
                 Set(_adminView,false);
-                Set(_defaultFilter,"Today");
+                
                 Navigate(HomeScreen,BorderStyle.None)
             PaddingBottom: =0
             PaddingLeft: =0
@@ -166,7 +165,7 @@ LoginScreen As screen:
                         _managerView,
                         true
                     );
-                    Set(_defaultFilter,"Today");
+                
                     Set(
                         _adminView,
                         false
@@ -175,6 +174,7 @@ LoginScreen As screen:
                         _requestTypeFilter,
                         "Pending"
                     );
+                
                     Reset(SearchLeaveInput);
                     Navigate(
                         HomeScreen,
@@ -196,7 +196,6 @@ LoginScreen As screen:
                         _adminView,
                         true
                     );
-                    Set(_defaultFilter,"Today");
                 )
             PaddingBottom: =0
             PaddingLeft: =0

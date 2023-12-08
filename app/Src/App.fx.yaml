@@ -192,7 +192,14 @@ App As appinfo:
             _leaveEnd,
             Now()
         );
-        ClearCollect(_defaultFilter,Table({Filter: "Past"},{Filter: "Today"},{Filter: "Upcoming"}));
+        ClearCollect(
+            _OnLeaveFilter,
+            Table(
+                {Filter: "Past"},
+                {Filter: "Today"},
+                {Filter: "Upcoming"}
+            )
+        );
     Theme: =PowerAppsTheme
 
     Host As hostControl.DefaultHostControlVariant:
