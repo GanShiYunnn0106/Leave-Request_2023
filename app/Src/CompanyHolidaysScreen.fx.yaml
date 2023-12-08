@@ -323,8 +323,6 @@ CompanyHolidaysScreen As screen:
             Height: =695
             HoverFill: =Rectangle3_2.Fill
             PressedFill: =Rectangle3_2.Fill
-            Visible: |
-                =true
             Width: =238
             X: =1128
             Y: =73

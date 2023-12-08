@@ -87,7 +87,7 @@ LoginScreen As screen:
             HoverFill: =ColorFade(BtnEmployeeLogin.Fill, 20%)
             OnSelect: |-
                 =Set(_managerView,false);
-                
+                Set(_adminView,false);
                 Navigate(HomeScreen,BorderStyle.None)
             PaddingBottom: =0
             PaddingLeft: =0
@@ -164,7 +164,10 @@ LoginScreen As screen:
                         _managerView,
                         true
                     );
-                    Set(_adminView,false);
+                    Set(
+                        _adminView,
+                        false
+                    );
                     Set(
                         _requestTypeFilter,
                         "Pending"
