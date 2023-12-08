@@ -490,10 +490,9 @@ HomeScreen As screen:
                 =Set(LeaveTempID,LookUp(LeaveApp_Request,ID = GalleryRequest.Selected.ID));
                 Set(DecisionDateTemp,Now());
                 Patch(LeaveApp_Request,LeaveTempID,{Status: {
-                            '@odata.type': "Microsoft.Azure.Connectors.SharePoint.SPListExpandedUser",
                             Value: "Approved"
                         }}
-                        ,{Decision_Date: Now()}
+                        ,{Decision_Date: DecisionDateTemp}
                         ,{Remarks_By_Decision_Maker: RemarksTextBox.Text}
                         ,{
                         Decision_By: {

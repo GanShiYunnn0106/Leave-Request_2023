@@ -2,7 +2,8 @@ NewRequestScreen As screen:
     Height: =Max(App.Height, App.DesignHeight)
     OnHidden: =
     OnVisible: |-
-        =If(
+        =Refresh(LeaveApp_Request);
+        If(
             !_editingRequest,
             Set(_leaveStart,Today());
             Set(_leaveEnd,Today());
