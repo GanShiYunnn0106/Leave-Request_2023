@@ -13,7 +13,7 @@ TodayOnLeaveScreen As screen:
         Height: =565
         Items: |-
             =If(
-                ButtonFilter2.Selected.Filter = "Today",
+                ButtonFilter2.Selected.LeaveFilter = "Today",
                 Sort(
                     Filter(
                         LeaveApp_Request,
@@ -23,7 +23,7 @@ TodayOnLeaveScreen As screen:
                     SortOrder.Ascending
                 ),
                 If(
-                    ButtonFilter2.Selected.Filter = "Past",
+                    ButtonFilter2.Selected.LeaveFilter = "Past",
                     Sort(
                         Filter(
                             LeaveApp_Request,
@@ -33,7 +33,7 @@ TodayOnLeaveScreen As screen:
                         SortOrder.Ascending
                     ),
                     If(
-                        ButtonFilter2.Selected.Filter = "Upcoming",
+                        ButtonFilter2.Selected.LeaveFilter = "Upcoming",
                         Sort(
                             Filter(
                                 LeaveApp_Request,
@@ -249,7 +249,7 @@ TodayOnLeaveScreen As screen:
         Height: =73
         Size: =19
         Text: ="Today's On Leave   -   " & Text(Today(), "[$-en-US]dd mmm yyyy")
-        Visible: =ButtonFilter2.Selected.Filter="Today"
+        Visible: =ButtonFilter2.Selected.LeaveFilter="Today"
         Width: =476
         X: =244
         Y: =80
@@ -284,7 +284,7 @@ TodayOnLeaveScreen As screen:
         ZIndex: =15
 
     "ButtonFilter2 As gallery.'BrowseLayout_Vertical_OneTextOneImageVariant_ver5.0'":
-        Default: =If(!IsBlank(OnLeaveFilter),LookUp(_OnLeaveFilter, Filter=OnLeaveFilter))
+        Default: =If(!IsBlank(OnLeaveFilter),LookUp(_OnLeaveFilter, LeaveFilter=OnLeaveFilter))
         DelayItemLoading: =true
         Height: =69
         Items: =_OnLeaveFilter
@@ -303,19 +303,19 @@ TodayOnLeaveScreen As screen:
         ButtonCategories_2 As button:
             BorderColor: =RGBA(62, 96, 170, 1)
             BorderThickness: =3
-            Color: =If(ButtonFilter2.Selected.Filter=ThisItem.Filter,RGBA(255, 255, 255, 1),RGBA(0,71,144,1))
+            Color: =If(ButtonFilter2.Selected.LeaveFilter=ThisItem.LeaveFilter,RGBA(255, 255, 255, 1),RGBA(0,71,144,1))
             DisabledBorderColor: =ColorFade(ButtonFilter2.BorderColor, 30%)
-            Fill: =If(ButtonFilter2.Selected.Filter=ThisItem.Filter,RGBA(0, 71, 144, 1),RGBA(255, 255, 255, 1))
+            Fill: =If(ButtonFilter2.Selected.LeaveFilter=ThisItem.LeaveFilter,RGBA(0, 71, 144, 1),RGBA(255, 255, 255, 1))
             Font: =Font.'Lato Black'
             Height: =37
             OnSelect: =ThisItem.LeaveFilter
             PressedBorderColor: =ButtonFilter2.Fill
-            PressedColor: =If(ButtonFilter2.Selected.Filter=ThisItem.Filter,RGBA(255, 255, 255, 1),RGBA(0,71,144,1))
+            PressedColor: =If(ButtonFilter2.Selected.LeaveFilter=ThisItem.LeaveFilter,RGBA(255, 255, 255, 1),RGBA(0,71,144,1))
             RadiusBottomLeft: =35
             RadiusBottomRight: =35
             RadiusTopLeft: =35
             RadiusTopRight: =35
-            Text: =ThisItem.Filter
+            Text: =ThisItem.LeaveFilter
             Width: =110
             X: =28
             Y: =16
