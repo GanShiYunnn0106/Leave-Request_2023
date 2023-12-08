@@ -68,12 +68,12 @@ LeaveBalanceScreen As screen:
 
         Label7 As label:
             Align: =Align.Center
-            Height: =33
+            Height: =57
             OnSelect: =Select(Parent)
-            Text: =ThisItem.AnnualCarriedForward & " day(s)"
-            Width: =210
-            X: =45
-            Y: =177
+            Text: =ThisItem.AnnualCarriedForward & " day(s) of " & LookUp(LeaveApp_Employee_Entitlement,User().Email = NameofEmployee.Email,CarriedForwardEntitlement) & " day(s) left"
+            Width: =180
+            X: =60
+            Y: =170
             ZIndex: =4
 
         Rectangle7_1 As rectangle:
@@ -109,11 +109,11 @@ LeaveBalanceScreen As screen:
 
         Label7_1 As label:
             Align: =Align.Center
-            Height: =33
+            Height: =44
             OnSelect: =Select(Parent)
-            Text: =Value(ThisItem.Annual_x0020_Leave_x0020_Balance) & " day(s)"
-            Width: =210
-            X: =330
+            Text: =Value(ThisItem.Annual_x0020_Leave_x0020_Balance) & " day(s) of " & ThisItem.AnnualLeaveEntitlement & " day(s) left"
+            Width: =198
+            X: =336
             Y: =177
             ZIndex: =8
 
