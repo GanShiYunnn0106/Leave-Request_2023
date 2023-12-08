@@ -1,13 +1,8 @@
 App As appinfo:
     BackEnabled: =true
     OnError: =
-    OnStart: |
-        =Set(
-            _sendEmailsEnabled,
-            false
-        );
-        
-            //collection used in the left nav menu
+    OnStart: |+
+        =//collection used in the left nav menu
         ClearCollect(
             EmployeeNavigation,
             {
@@ -67,7 +62,7 @@ App As appinfo:
                     type: "Annual",
                     icon: vacation,
                     iconselected: 'vacation-selected',
-                    description:  "<b>Details:</b>
+                    description: "<b>Details:</b>
         <div style='font-weight:600;'>            
         <p>
         1.  Annual Leave Entitlement: 
@@ -197,6 +192,7 @@ App As appinfo:
             _leaveEnd,
             Now()
         );
+        
     Theme: =PowerAppsTheme
 
     Host As hostControl.DefaultHostControlVariant:
