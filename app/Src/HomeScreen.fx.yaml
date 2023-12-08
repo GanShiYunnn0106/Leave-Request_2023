@@ -101,25 +101,25 @@ HomeScreen As screen:
             PaddingLeft: =0
             PaddingRight: =0
             PaddingTop: =0
-            Text: =Text(ThisItem.Start_Date, "[$-en-US]ddd, dd mmmm yyyy")
+            Text: =If(IsBlank(ThisItem.Days) , "-", ThisItem.Days& " day(s)")
             VerticalAlign: =VerticalAlign.Top
             Width: =353
-            X: =156
+            X: =136
             Y: =51
             ZIndex: =1
 
         SubtitleEndDate As label:
             FontWeight: =FontWeight.Semibold
-            Height: =Self.Size * 1.8
+            Height: =27
             OnSelect: =
             PaddingBottom: =0
             PaddingLeft: =0
             PaddingRight: =0
             PaddingTop: =0
-            Text: =Text(ThisItem.End_Date, "[$-en-US]ddd, dd mmmm yyyy")
+            Text: =Text(ThisItem.Start_Date, "[$-en-US]ddd, dd mmm yyyy") & "  -  " & Text(ThisItem.End_Date, "[$-en-US]ddd, dd mmm yyyy") 
             VerticalAlign: =VerticalAlign.Top
-            Width: =TitleStartDate.Width
-            X: =156
+            Width: =465
+            X: =136
             Y: =98
             ZIndex: =2
 
@@ -143,9 +143,9 @@ HomeScreen As screen:
             OnSelect: =
             Size: =14
             Text: |-
-                ="Start date:
+                ="Total days:
                 
-                End date:"
+                Durations:"
             X: =20
             Y: =24
             ZIndex: =8
@@ -251,7 +251,7 @@ HomeScreen As screen:
             ="Leave Detail:"
         Width: =145
         X: =1071
-        Y: =474
+        Y: =454
         ZIndex: =29
 
     LeaveDetail As label:
@@ -262,7 +262,7 @@ HomeScreen As screen:
         VerticalAlign: =VerticalAlign.Top
         Width: =294
         X: =1071
-        Y: =501
+        Y: =491
         ZIndex: =30
 
     GroupRequestDetails As group:
@@ -660,17 +660,6 @@ HomeScreen As screen:
             Y: =681
             ZIndex: =18
 
-        Days_2 As label:
-            FontWeight: =FontWeight.Semibold
-            Height: =24
-            OnSelect: =
-            Text: |
-                =If(IsBlank(GalleryRequest.Selected.Days) , "-", GalleryRequest.Selected.Days& " day(s)")
-            Width: =157
-            X: =1074
-            Y: =188
-            ZIndex: =19
-
         Leave_Type_2 As label:
             FontWeight: =FontWeight.Semibold
             Height: =34
@@ -678,7 +667,7 @@ HomeScreen As screen:
             Text: =If(IsBlank(GalleryRequest.Selected.Leave_Type.Value) , "-", GalleryRequest.Selected.Leave_Type.Value)
             Width: =278
             X: =1071
-            Y: =243
+            Y: =203
             ZIndex: =20
 
         Request_To_2 As label:
@@ -689,7 +678,7 @@ HomeScreen As screen:
             Text: =If(IsBlank(GalleryRequest.Selected.Requested_to.DisplayName) , "-", GalleryRequest.Selected.Requested_to.DisplayName)
             Width: =295
             X: =1071
-            Y: =311
+            Y: =281
             ZIndex: =21
 
         CarryForwardDays_2 As label:
@@ -699,7 +688,7 @@ HomeScreen As screen:
             Text: =If(IsBlank(GalleryRequest.Selected.CarryForwardDays) , "-", GalleryRequest.Selected.CarryForwardDays& " day(s)")
             Width: =229
             X: =1071
-            Y: =378
+            Y: =358
             ZIndex: =22
 
         UnpaidLeave_2 As label:
@@ -709,17 +698,8 @@ HomeScreen As screen:
             Text: =If(IsBlank(GalleryRequest.Selected.UnpaidLeave) , "-", GalleryRequest.Selected.UnpaidLeave& " day(s)")
             Width: =161
             X: =1071
-            Y: =443
+            Y: =423
             ZIndex: =23
-
-        LblTotalDays_2 As label:
-            OnSelect: =
-            Text: |-
-                ="Total days:"
-            Width: =161
-            X: =1070
-            Y: =154
-            ZIndex: =24
 
         LblLeaveType_2 As label:
             Height: =28
@@ -728,7 +708,7 @@ HomeScreen As screen:
                 ="Leave Type:"
             Width: =156
             X: =1071
-            Y: =223
+            Y: =173
             ZIndex: =25
 
         LblRequestTo_2 As label:
@@ -738,7 +718,7 @@ HomeScreen As screen:
                 ="Request Sent To:"
             Width: =167
             X: =1071
-            Y: =277
+            Y: =247
             ZIndex: =26
 
         LblCarryForward_2 As label:
@@ -748,7 +728,7 @@ HomeScreen As screen:
                 ="Carry Forward Days:"
             Width: =206
             X: =1071
-            Y: =351
+            Y: =331
             ZIndex: =27
 
         LblUnpaidLeave_2 As label:
@@ -758,7 +738,7 @@ HomeScreen As screen:
                 ="Unpaid Leaves:"
             Width: =171
             X: =1071
-            Y: =412
+            Y: =392
             ZIndex: =28
 
         RemarksTextBox As text:
