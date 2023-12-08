@@ -6,7 +6,6 @@ App As appinfo:
             _sendEmailsEnabled,
             false
         );
-        
             //collection used in the left nav menu
         ClearCollect(
             EmployeeNavigation,
@@ -59,7 +58,6 @@ App As appinfo:
                 TargetScreen: LoginScreen
             }
         );
-        
             //add custom leave types to this collection to make them show up in the app
         ClearCollect(
             LeaveTypeCollection,
@@ -68,7 +66,7 @@ App As appinfo:
                     type: "Annual",
                     icon: vacation,
                     iconselected: 'vacation-selected',
-                    description:  "<b>Details:</b>
+                    description: "<b>Details:</b>
         <div style='font-weight:600;'>            
         <p>
         1.  Annual Leave Entitlement: 
@@ -198,7 +196,14 @@ App As appinfo:
             _leaveEnd,
             Now()
         );
-        ClearCollect(_buttonFilter2,Table({Filter: "Today"},{Filter: "Past"},{Filter: "Upcoming"}));
+        ClearCollect(
+            _buttonFilter2,
+            Table(
+                {Filter: "Today"},
+                {Filter: "Past"},
+                {Filter: "Upcoming"}
+            )
+        );
     Theme: =PowerAppsTheme
 
     Host As hostControl.DefaultHostControlVariant:
