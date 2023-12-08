@@ -489,6 +489,7 @@ HomeScreen As screen:
             OnSelect: |
                 =Set(LeaveTempID,LookUp(LeaveApp_Request,ID = GalleryRequest.Selected.ID));
                 Set(DecisionDateTemp,Now());
+                
                 Patch(LeaveApp_Request,LeaveTempID,{Status: {
                             Value: "Approved"
                         }}

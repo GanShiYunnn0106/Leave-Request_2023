@@ -1,7 +1,7 @@
 App As appinfo:
     BackEnabled: =true
     OnError: =
-    OnStart: |
+    OnStart: |-
         =Set(
             _sendEmailsEnabled,
             false
@@ -197,6 +197,7 @@ App As appinfo:
             _leaveEnd,
             Now()
         );
+        Refresh(
     Theme: =PowerAppsTheme
 
     Host As hostControl.DefaultHostControlVariant:
