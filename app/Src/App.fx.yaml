@@ -196,8 +196,8 @@ App As appinfo:
         ClearCollect(
             _buttonFilter2,
             Table(
-                {Filter: "Today"},
                 {Filter: "Past"},
+                {Filter: "Today"},
                 {Filter: "Upcoming"}
             )
         );
