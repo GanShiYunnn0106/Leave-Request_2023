@@ -3,7 +3,8 @@ TodayOnLeaveScreen As screen:
         =RGBA(255,255,255,1)
     Height: =Max(App.Height, App.DesignHeight)
     OnHidden: =Set(_showDetails, false)
-    OnVisible: =Refresh(LeaveApp_Request)
+    OnVisible: |
+        =Refresh(LeaveApp_Request);
     Orientation: =If(TodayOnLeaveScreen.Width < TodayOnLeaveScreen.Height, Layout.Vertical, Layout.Horizontal)
     Size: =1 + CountRows(App.SizeBreakpoints) - CountIf(App.SizeBreakpoints, Value >= TodayOnLeaveScreen.Width)
     Width: =Max(App.Width, App.DesignWidth)
