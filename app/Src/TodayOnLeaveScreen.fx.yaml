@@ -289,6 +289,7 @@ TodayOnLeaveScreen As screen:
         Items: =_OnLeaveFilter
         Layout: =Layout.Vertical
         LoadingSpinner: =LoadingSpinner.Data
+        OnSelect: =Set(OnLeaveFilter, ThisItem.Filter)
         ShowScrollbar: =false
         TemplatePadding: =1
         TemplateSize: =68
