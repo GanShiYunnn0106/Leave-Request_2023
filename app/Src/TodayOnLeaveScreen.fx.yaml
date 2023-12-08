@@ -286,7 +286,7 @@ TodayOnLeaveScreen As screen:
     "ButtonFilter2 As gallery.'BrowseLayout_Vertical_OneTextOneImageVariant_ver5.0'":
         DelayItemLoading: =true
         Height: =69
-        Items: =_buttonFilter2
+        Items: =_defaultFilter
         Layout: =Layout.Vertical
         LoadingSpinner: =LoadingSpinner.Data
         ShowScrollbar: =false
