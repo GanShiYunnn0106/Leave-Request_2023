@@ -496,7 +496,7 @@ HomeScreen As screen:
                         ,{Decision_Date: Now()}
                         ,{Remarks_By_Decision_Maker: RemarksTextBox.Text}
                         ,{
-                        testColumn: {
+                        Decision_By: {
                             '@odata.type': "Microsoft.Azure.Connectors.SharePoint.SPListExpandedUser",
                             Claims: "i:0#.f|membership|" & Lower(User().Email),
                             Department: "",
