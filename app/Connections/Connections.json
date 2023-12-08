@@ -76,9 +76,6 @@
           "LeaveApp_Entitlement": {
             "tableName": "3ae20aab-1895-4601-87d1-21890292ecc7"
           },
-          "LeaveApp_HR/Admin": {
-            "tableName": "7c511a5d-d773-4cbe-b9ff-4f19430d0de5"
-          },
           "LeaveApp_PublicHoliday": {
             "tableName": "9b6c8406-aed8-4eb6-a0d2-a71f8f7c58ec"
           },
@@ -93,8 +90,7 @@
       "LeaveApp_Employee",
       "LeaveApp_PublicHoliday",
       "LeaveApp_Entitlement",
-      "LeaveApp_Employee_Entitlement",
-      "LeaveApp_HR/Admin"
+      "LeaveApp_Employee_Entitlement"
     ],
     "dependencies": {},
     "dependents": [],

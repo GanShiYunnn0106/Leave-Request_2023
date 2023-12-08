@@ -323,6 +323,7 @@ CompanyHolidaysScreen As screen:
             Height: =695
             HoverFill: =Rectangle3_2.Fill
             PressedFill: =Rectangle3_2.Fill
+            Visible: =_adminView
             Width: =238
             X: =1128
             Y: =73
@@ -336,7 +337,7 @@ CompanyHolidaysScreen As screen:
             Text: |-
                 ="New public holiday:"
             Underline: =true
-            Visible: =_managerView=true
+            Visible: =_adminView
             Width: =209
             X: =1127
             Y: =139
@@ -345,7 +346,7 @@ CompanyHolidaysScreen As screen:
         txtHoliday As text:
             Default: =""
             Height: =41
-            Visible: =_managerView=true
+            Visible: =_adminView
             Width: =173
             X: =1146
             Y: =228
@@ -355,7 +356,7 @@ CompanyHolidaysScreen As screen:
             Color: =RGBA(0, 0, 0, 1)
             DisabledBorderColor: =RGBA(62, 96, 170, 1)
             Height: =38
-            Visible: =_managerView=true
+            Visible: =_adminView
             Width: =173
             X: =1146
             Y: =349
@@ -365,7 +366,7 @@ CompanyHolidaysScreen As screen:
             FontWeight: =FontWeight.Semibold
             Text: |-
                 ="Holiday Name:"
-            Visible: =_managerView=true
+            Visible: =_adminView
             Width: =163
             X: =1146
             Y: =182
@@ -376,7 +377,7 @@ CompanyHolidaysScreen As screen:
             Height: =78
             Text: |-
                 ="Date:"
-            Visible: =_managerView=true
+            Visible: =_adminView
             Width: =70
             X: =1146
             Y: =284
@@ -391,7 +392,7 @@ CompanyHolidaysScreen As screen:
             OnSelect: |
                 =Collect(LeaveApp_PublicHoliday,{HolidayName:txtHoliday.Text, HolidayDates:DateValue(HolidayDate.SelectedDate)})
             Text: ="ADD"
-            Visible: =_managerView=true
+            Visible: =_adminView
             Width: =90
             X: =1182
             Y: =429
@@ -402,7 +403,7 @@ CompanyHolidaysScreen As screen:
             Height: =24
             Size: =12
             Text: ="*Holiday Name is required"
-            Visible: =IsBlank(txtHoliday.Text) && _managerView=true
+            Visible: =_adminView
             Width: =226
             X: =1140
             Y: =269
