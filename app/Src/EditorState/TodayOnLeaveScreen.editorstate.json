@@ -3263,8 +3263,7 @@
         "Width",
         "Height",
         "ZIndex",
-        "MaxTemplateSize",
-        "Default"
+        "MaxTemplateSize"
       ],
       "GalleryTemplateChildName": "galleryTemplate2",
       "HasDynamicProperties": false,
@@ -3289,11 +3288,6 @@
         {
           "Category": "Data",
           "PropertyName": "Items",
-          "RuleProviderType": "Unknown"
-        },
-        {
-          "Category": "Data",
-          "PropertyName": "Default",
           "RuleProviderType": "Unknown"
         },
         {
