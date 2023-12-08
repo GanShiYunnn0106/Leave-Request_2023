@@ -88,7 +88,7 @@ LoginScreen As screen:
             OnSelect: |-
                 =Set(_managerView,false);
                 Set(_adminView,false);
-                
+                Set(OnLeaveFilter, "Today");
                 Navigate(HomeScreen,BorderStyle.None)
             PaddingBottom: =0
             PaddingLeft: =0
@@ -174,7 +174,7 @@ LoginScreen As screen:
                         _requestTypeFilter,
                         "Pending"
                     );
-                
+                    Set(OnLeaveFilter,"Today");
                     Reset(SearchLeaveInput);
                     Navigate(
                         HomeScreen,
@@ -196,6 +196,7 @@ LoginScreen As screen:
                         _adminView,
                         true
                     );
+                    Set(OnLeaveFilter,"Today");
                 )
             PaddingBottom: =0
             PaddingLeft: =0
