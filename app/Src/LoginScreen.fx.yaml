@@ -154,12 +154,42 @@ LoginScreen As screen:
             HoverFill: =ColorFade(BtnManagerLogin.Fill, 20%)
             OnSelect: |-
                 =If(
-                    !IsBlank(LookUp(LeaveApp_Employee, User().Email = NameofManager.Email)),
-                    Set(_managerView, true);
-                    Set(_requestTypeFilter, "Pending");
+                    !IsBlank(
+                        LookUp(
+                            LeaveApp_Employee,
+                            User().Email = NameofManager.Email
+                        )
+                    ),
+                    Set(
+                        _managerView,
+                        true
+                    );
+                    Set(_adminView,false);
+                    Set(
+                        _requestTypeFilter,
+                        "Pending"
+                    );
                     Reset(SearchLeaveInput);
-                    Navigate(HomeScreen, BorderStyle.None),
-                    Notify("You are not authorized to perform this action.", NotificationType.Error)
+                    Navigate(
+                        HomeScreen,
+                        BorderStyle.None
+                    ),
+                    Notify(
+                        "You are not authorized to perform this action.",
+                        NotificationType.Error
+                    )
+                );
+                If(
+                    !IsBlank(
+                        LookUp(
+                            'LeaveApp_HR/Admin',
+                            User().Email = NameofHR_x002f_Admin.Email
+                        )
+                    ),
+                    Set(
+                        _adminView,
+                        true
+                    )
                 )
             PaddingBottom: =0
             PaddingLeft: =0
