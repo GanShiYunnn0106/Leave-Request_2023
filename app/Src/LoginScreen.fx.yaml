@@ -192,7 +192,7 @@ LoginScreen As screen:
                     Set(
                         _adminView,
                         true
-                    )
+                    );
                 )
             PaddingBottom: =0
             PaddingLeft: =0
