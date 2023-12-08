@@ -295,7 +295,7 @@ TodayOnLeaveScreen As screen:
         ShowScrollbar: =false
         TemplatePadding: =1
         TemplateSize: =68
-        Width: =505
+        Width: =520
         WrapCount: =3
         X: =845
         Y: =80
@@ -306,10 +306,10 @@ TodayOnLeaveScreen As screen:
             BorderThickness: =3
             Color: =If(OnLeaveFilter=ThisItem.LeaveFilter,RGBA(255, 255, 255, 1),RGBA(0,71,144,1))
             DisabledBorderColor: =ColorFade(ButtonFilter2.BorderColor, 30%)
-            Fill: =If(OnLeaveFilter=ThisItem.LeaveFilter,RGBA(0, 71, 144, 1),RGBA(255, 255, 255, 1))
+            Fill: =If(ButtonFilter2.Selected.LeaveFilter=ThisItem.LeaveFilter,RGBA(0, 71, 144, 1),RGBA(255, 255, 255, 1))
             Font: =Font.'Lato Black'
             Height: =37
-            OnSelect: =ThisItem.LeaveFilter
+            OnSelect: =OnLeaveFilter
             PressedBorderColor: =ButtonFilter2.Fill
             PressedColor: =If(OnLeaveFilter=ThisItem.LeaveFilter,RGBA(255, 255, 255, 1),RGBA(0,71,144,1))
             RadiusBottomLeft: =35
@@ -318,7 +318,7 @@ TodayOnLeaveScreen As screen:
             RadiusTopRight: =35
             Text: =ThisItem.LeaveFilter
             Width: =110
-            X: =28
+            X: =32
             Y: =16
             ZIndex: =6
 
