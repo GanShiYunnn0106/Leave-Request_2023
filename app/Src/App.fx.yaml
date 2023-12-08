@@ -197,7 +197,7 @@ App As appinfo:
             _leaveEnd,
             Now()
         );
-        Refresh(
+        ClearCollect(_OnLeaveFilter, Table({Filter: "Past"},{Filter:"Today"},{Filter:"Upcoming"}));
     Theme: =PowerAppsTheme
 
     Host As hostControl.DefaultHostControlVariant:
