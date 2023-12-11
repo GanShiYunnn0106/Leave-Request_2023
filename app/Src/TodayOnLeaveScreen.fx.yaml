@@ -304,14 +304,14 @@ TodayOnLeaveScreen As screen:
         ButtonCategories_2 As button:
             BorderColor: =RGBA(62, 96, 170, 1)
             BorderThickness: =3
-            Color: =If(OnLeaveFilter=ThisItem.LeaveFilter,RGBA(255, 255, 255, 1),RGBA(0,71,144,1))
+            Color: =If(ButtonFilter2.Selected.LeaveFilter=ThisItem.LeaveFilter,RGBA(255, 255, 255, 1),RGBA(0,71,144,1))
             DisabledBorderColor: =ColorFade(ButtonFilter2.BorderColor, 30%)
             Fill: =If(ButtonFilter2.Selected.LeaveFilter=ThisItem.LeaveFilter,RGBA(0, 71, 144, 1),RGBA(255, 255, 255, 1))
             Font: =Font.'Lato Black'
             Height: =37
             OnSelect: =OnLeaveFilter
             PressedBorderColor: =ButtonFilter2.Fill
-            PressedColor: =If(OnLeaveFilter=ThisItem.LeaveFilter,RGBA(255, 255, 255, 1),RGBA(0,71,144,1))
+            PressedColor: =If(ButtonFilter2.Selected.LeaveFilter=ThisItem.LeaveFilter,RGBA(255, 255, 255, 1),RGBA(0,71,144,1))
             RadiusBottomLeft: =35
             RadiusBottomRight: =35
             RadiusTopLeft: =35
