@@ -281,15 +281,19 @@ HomeScreen As screen:
         Y: =101
         ZIndex: =34
 
-    Label4 As label:
+    LabelNoRecordMsg As label:
         FontWeight: =FontWeight.Semibold
-        Height: =31
-        Size: =15
-        Text: ="No record found"
-        Visible: =IsBlank(GalleryRequest)
-        Width: =198
-        X: =584
-        Y: =158
+        Height: =41
+        Text: ="No Record Found"
+        Visible: |-
+            =If(
+                GalleryRequest.AllItemsCount = 0,
+                true,  // Show the label if the gallery is empty
+                false  // Hide the label if there are records in the gallery
+            )
+        Width: =186
+        X: =581
+        Y: =161
         ZIndex: =35
 
     Header_11 As group:
