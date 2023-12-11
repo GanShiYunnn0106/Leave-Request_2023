@@ -12,34 +12,30 @@ LoginScreen As screen:
     Rectangle3 As rectangle:
         Fill: =RGBA(248, 248, 248, 9)
         Height: =768
-        Width: =573
-        X: =793
+        Width: =725
+        X: =641
         ZIndex: =1
 
-    CompanyLogo As image:
-        Height: =156
-        Image: =Logo01
-        Width: =555
-        X: =120
-        Y: =238
+    Image1 As image:
+        Height: =768
+        Image: ='papers.co-no59-summer-vacation-ocean-sea-nature-beach-blue-2-wallpaper'
+        ImagePosition: =ImagePosition.Center
+        Width: =641
         ZIndex: =6
 
     LabelRequestLeave As label:
         Align: =Align.Center
         BorderStyle: =BorderStyle.None
         BorderThickness: =2
-        Color: =RGBA(56, 86, 153, 1)
-        Fill: =RGBA(255, 255, 255, 1)
+        Color: =RGBA(62, 96, 170, 1)
         Font: =Font.Georgia
         FontWeight: =FontWeight.Bold
-        Height: =115
+        Height: =107
         Size: =33
-        Text: |-
-            ="REQUEST
-             LEAVE"
-        Width: =320
-        X: =237
-        Y: =394
+        Text: ="REQUEST LEAVE"
+        Width: =542
+        X: =732
+        Y: =81
         ZIndex: =7
 
     LoginAsEmployeeGroup As group:
@@ -70,7 +66,7 @@ LoginScreen As screen:
             Size: =12.5
             Text: ="TO SUBMIT A LEAVE REQUEST"
             Width: =299
-            X: =929
+            X: =854
             Y: =238
             ZIndex: =4
 
@@ -103,7 +99,7 @@ LoginScreen As screen:
             Size: =20
             Text: ="Login as an employee"
             Width: =351
-            X: =903
+            X: =828
             Y: =286
             ZIndex: =5
 
@@ -135,7 +131,7 @@ LoginScreen As screen:
             Size: =12.5
             Text: ="TO APPROVE OR DECLINE LEAVE REQUESTS"
             Width: =418
-            X: =869
+            X: =794
             Y: =433
             ZIndex: =2
 
@@ -210,7 +206,7 @@ LoginScreen As screen:
             Size: =20
             Text: ="Login as a manager"
             Width: =344
-            X: =913
+            X: =838
             Y: =481
             ZIndex: =3
 
