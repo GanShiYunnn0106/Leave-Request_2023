@@ -483,7 +483,7 @@ HomeScreen As screen:
             Text: ="EDIT"
             Visible: =!_managerView && (GalleryRequest.Selected.Status.Value) = "Pending"
             Width: =54
-            X: =1122
+            X: =1106
             Y: =552
             ZIndex: =15
 
@@ -493,7 +493,7 @@ HomeScreen As screen:
             OnSelect: =
             Visible: =!_managerView && (GalleryRequest.Selected.Status.Value) = "Pending"
             Width: =23
-            X: =1089
+            X: =1075
             Y: =552
             ZIndex: =16
 
