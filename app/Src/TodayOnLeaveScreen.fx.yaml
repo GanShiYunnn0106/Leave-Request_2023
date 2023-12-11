@@ -56,13 +56,13 @@ TodayOnLeaveScreen As screen:
 
         TodayOnLeaveName As label:
             FontWeight: =FontWeight.Semibold
-            Height: =52
+            Height: =31
             OnSelect: =Select(Parent)
             Size: =14
             Text: =ThisItem.Created_By.DisplayName
             Width: =402
-            X: =24
-            Y: =9
+            X: =21
+            Y: =16
             ZIndex: =1
 
         TodayOnLeaveType As label:
@@ -287,7 +287,7 @@ TodayOnLeaveScreen As screen:
     "ButtonFilter2 As gallery.'BrowseLayout_Vertical_OneTextOneImageVariant_ver5.0'":
         Default: =If(!IsBlank(OnLeaveFilter),LookUp(_OnLeaveFilter, LeaveFilter = OnLeaveFilter))
         DelayItemLoading: =true
-        Height: =69
+        Height: =73
         Items: =_OnLeaveFilter
         Layout: =Layout.Vertical
         LoadingSpinner: =LoadingSpinner.Data
@@ -321,4 +321,21 @@ TodayOnLeaveScreen As screen:
             X: =32
             Y: =16
             ZIndex: =6
+
+    LabelNoRecordMsg9 As label:
+        Align: =Align.Center
+        FontWeight: =FontWeight.Semibold
+        Height: =59
+        Size: =15
+        Text: ="No Record Found"
+        Visible: |-
+            =If(
+                TodayOnLeaveGallery.AllItemsCount = 0,
+                true,  // Show the label if the gallery is empty
+                false  // Hide the label if there are records in the gallery
+            )
+        Width: =293
+        X: =652
+        Y: =394
+        ZIndex: =17
 

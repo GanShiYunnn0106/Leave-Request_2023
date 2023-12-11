@@ -10,10 +10,10 @@ LoginScreen As screen:
     Width: =Max(App.Width, App.DesignWidth)
 
     Rectangle3 As rectangle:
-        Fill: =RGBA(249, 249, 249, 1)
+        Fill: =RGBA(248, 248, 248, 9)
         Height: =768
         Width: =573
-        X: =792
+        X: =793
         ZIndex: =1
 
     CompanyLogo As image:
@@ -54,7 +54,6 @@ LoginScreen As screen:
             Color: =RGBA(0, 0, 0, 1)
             FocusedBorderColor: =LblEmployeeLogin.BorderColor
             FocusedBorderThickness: =2
-            Font: =Font.Georgia
             Height: =23
             HoverBorderColor: =LblEmployeeLogin.BorderColor
             HoverColor: =LblEmployeeLogin.Color
@@ -120,7 +119,6 @@ LoginScreen As screen:
             Color: =RGBA(0, 0, 0, 1)
             FocusedBorderColor: =LblManagerLogin.BorderColor
             FocusedBorderThickness: =2
-            Font: =Font.Georgia
             Height: =33
             HoverBorderColor: =LblManagerLogin.BorderColor
             HoverColor: =LblManagerLogin.Color
