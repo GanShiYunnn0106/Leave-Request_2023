@@ -309,7 +309,7 @@ TodayOnLeaveScreen As screen:
             Fill: =If(ButtonFilter2.Selected.LeaveFilter=ThisItem.LeaveFilter,RGBA(0, 71, 144, 1),RGBA(255, 255, 255, 1))
             Font: =Font.'Lato Black'
             Height: =37
-            OnSelect: =OnLeaveFilter
+            OnSelect: =Select(Parent)
             PressedBorderColor: =ButtonFilter2.Fill
             PressedColor: =If(ButtonFilter2.Selected.LeaveFilter=ThisItem.LeaveFilter,RGBA(255, 255, 255, 1),RGBA(0,71,144,1))
             RadiusBottomLeft: =35
