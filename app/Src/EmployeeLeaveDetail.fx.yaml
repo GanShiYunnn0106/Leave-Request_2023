@@ -153,7 +153,7 @@ EmployeeLeaveDetail As screen:
         Height: =2
         Width: =1135
         X: =231
-        Y: =167
+        Y: =159
         ZIndex: =43
 
     Icon4 As icon.BackArrow:
@@ -174,7 +174,7 @@ EmployeeLeaveDetail As screen:
         TemplateSize: =60
         Width: =1135
         X: =231
-        Y: =225
+        Y: =209
         ZIndex: =55
 
         Label28_2 As label:
@@ -293,7 +293,7 @@ EmployeeLeaveDetail As screen:
         VerticalAlign: =VerticalAlign.Top
         Width: =163
         X: =275
-        Y: =196
+        Y: =180
         ZIndex: =57
 
     Title2_18 As label:
@@ -309,7 +309,7 @@ EmployeeLeaveDetail As screen:
         VerticalAlign: =VerticalAlign.Top
         Width: =96
         X: =423
-        Y: =196
+        Y: =180
         ZIndex: =58
 
     Title2_19 As label:
@@ -325,7 +325,7 @@ EmployeeLeaveDetail As screen:
         VerticalAlign: =VerticalAlign.Top
         Width: =133
         X: =531
-        Y: =196
+        Y: =180
         ZIndex: =59
 
     Title2_20 As label:
@@ -341,7 +341,7 @@ EmployeeLeaveDetail As screen:
         VerticalAlign: =VerticalAlign.Top
         Width: =102
         X: =652
-        Y: =196
+        Y: =180
         ZIndex: =60
 
     Title2_21 As label:
@@ -357,7 +357,7 @@ EmployeeLeaveDetail As screen:
         VerticalAlign: =VerticalAlign.Top
         Width: =102
         X: =741
-        Y: =196
+        Y: =180
         ZIndex: =61
 
     Title2_22 As label:
@@ -373,7 +373,7 @@ EmployeeLeaveDetail As screen:
         VerticalAlign: =VerticalAlign.Top
         Width: =184
         X: =835
-        Y: =196
+        Y: =180
         ZIndex: =62
 
     Title2_23 As label:
@@ -389,7 +389,7 @@ EmployeeLeaveDetail As screen:
         VerticalAlign: =VerticalAlign.Top
         Width: =102
         X: =988
-        Y: =196
+        Y: =180
         ZIndex: =63
 
     Title2_24 As label:
@@ -405,7 +405,7 @@ EmployeeLeaveDetail As screen:
         VerticalAlign: =VerticalAlign.Top
         Width: =102
         X: =1098
-        Y: =196
+        Y: =180
         ZIndex: =64
 
     Rectangle12_5 As rectangle:
@@ -413,7 +413,7 @@ EmployeeLeaveDetail As screen:
         Height: =2
         Width: =1135
         X: =231
-        Y: =227
+        Y: =211
         ZIndex: =65
 
     LabelNoRecordMsg4 As label:
@@ -430,6 +430,6 @@ EmployeeLeaveDetail As screen:
             )
         Width: =241
         X: =678
-        Y: =399
+        Y: =383
         ZIndex: =66
 
