@@ -67,7 +67,7 @@ LoginScreen As screen:
             Text: ="TO SUBMIT A LEAVE REQUEST"
             Width: =299
             X: =854
-            Y: =238
+            Y: =251
             ZIndex: =4
 
         BtnEmployeeLogin As button:
@@ -100,7 +100,7 @@ LoginScreen As screen:
             Text: ="Login as an employee"
             Width: =351
             X: =828
-            Y: =286
+            Y: =299
             ZIndex: =5
 
     LoginAsManagerGroup As group:
@@ -132,7 +132,7 @@ LoginScreen As screen:
             Text: ="TO APPROVE OR DECLINE LEAVE REQUESTS"
             Width: =418
             X: =794
-            Y: =433
+            Y: =446
             ZIndex: =2
 
         BtnManagerLogin As button:
@@ -207,6 +207,6 @@ LoginScreen As screen:
             Text: ="Login as a manager"
             Width: =351
             X: =828
-            Y: =481
+            Y: =494
             ZIndex: =3
 
