@@ -73,6 +73,7 @@ HomeScreen As screen:
         OnSelect: |
             =Set(_selectedLeaveItem, ThisItem);
             Set(SelectedRecord,GalleryRequest.Selected);
+            Set(LeaveTempID,LookUp(LeaveApp_Request,ID = GalleryRequest.Selected.ID));
             
             Set(LeaveTempID,LookUp(LeaveApp_Request,ID = GalleryRequest.Selected.ID));
             Set(LeaveAnnualCarriedTemp,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email).AnnualCarriedForward);
