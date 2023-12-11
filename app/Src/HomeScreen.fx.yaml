@@ -282,8 +282,9 @@ HomeScreen As screen:
         ZIndex: =34
 
     LabelNoRecordMsg As label:
+        Align: =Align.Center
         FontWeight: =FontWeight.Semibold
-        Height: =41
+        Size: =15
         Text: ="No Record Found"
         Visible: |-
             =If(
@@ -291,9 +292,9 @@ HomeScreen As screen:
                 true,  // Show the label if the gallery is empty
                 false  // Hide the label if there are records in the gallery
             )
-        Width: =186
-        X: =581
-        Y: =161
+        Width: =230
+        X: =538
+        Y: =404
         ZIndex: =35
 
     Header_11 As group:

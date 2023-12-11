@@ -165,7 +165,7 @@ EmployeeLeaveDetail As screen:
         Y: =100
         ZIndex: =54
 
-    Gallery1_2 As gallery.galleryVertical:
+    GalleryLeaveTaken As gallery.galleryVertical:
         DelayItemLoading: =true
         Height: =543
         Items: =Sort(Filter(LeaveApp_Request,Created_By.DisplayName = _selectedEmployee && Year(End_Date) = Year(Today())),Start_Date,SortOrder.Descending)
@@ -415,4 +415,21 @@ EmployeeLeaveDetail As screen:
         X: =231
         Y: =227
         ZIndex: =65
+
+    LabelNoRecordMsg4 As label:
+        Align: =Align.Center
+        FontWeight: =FontWeight.Semibold
+        Height: =50
+        Size: =15
+        Text: ="No Record Found"
+        Visible: |-
+            =If(
+                GalleryLeaveTaken.AllItemsCount = 0,
+                true,  // Show the label if the gallery is empty
+                false  // Hide the label if there are records in the gallery
+            )
+        Width: =241
+        X: =678
+        Y: =399
+        ZIndex: =66
 

@@ -322,9 +322,10 @@ TodayOnLeaveScreen As screen:
             Y: =16
             ZIndex: =6
 
-    Label9 As label:
+    LabelNoRecordMsg9 As label:
+        Align: =Align.Center
         FontWeight: =FontWeight.Semibold
-        Height: =36
+        Height: =59
         Size: =15
         Text: ="No Record Found"
         Visible: |-
@@ -333,8 +334,8 @@ TodayOnLeaveScreen As screen:
                 true,  // Show the label if the gallery is empty
                 false  // Hide the label if there are records in the gallery
             )
-        Width: =243
-        X: =614
-        Y: =205
+        Width: =293
+        X: =652
+        Y: =394
         ZIndex: =17
 
