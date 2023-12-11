@@ -10,7 +10,7 @@ LoginScreen As screen:
     Width: =Max(App.Width, App.DesignWidth)
 
     Rectangle3 As rectangle:
-        Fill: =RGBA(249, 249, 249, 1)
+        Fill: =RGBA(248, 248, 248, 9)
         Height: =768
         Width: =573
         X: =792
