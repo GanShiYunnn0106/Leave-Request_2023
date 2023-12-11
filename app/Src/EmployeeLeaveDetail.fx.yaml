@@ -167,14 +167,14 @@ EmployeeLeaveDetail As screen:
 
     GalleryLeaveTaken As gallery.galleryVertical:
         DelayItemLoading: =true
-        Height: =543
+        Height: =539
         Items: =Sort(Filter(LeaveApp_Request,Created_By.DisplayName = _selectedEmployee && Year(End_Date) = Year(Today())),Start_Date,SortOrder.Descending)
         Layout: =Layout.Vertical
         LoadingSpinner: =LoadingSpinner.Data
         TemplateSize: =60
         Width: =1135
         X: =231
-        Y: =209
+        Y: =213
         ZIndex: =55
 
         Label28_2 As label:
@@ -276,7 +276,7 @@ EmployeeLeaveDetail As screen:
             Size: =10
             Text: =ThisItem.Status.Value
             Width: =75
-            X: =186
+            X: =168
             Y: =17
             ZIndex: =9
 
@@ -308,7 +308,7 @@ EmployeeLeaveDetail As screen:
         Text: ="Status"
         VerticalAlign: =VerticalAlign.Top
         Width: =96
-        X: =423
+        X: =414
         Y: =180
         ZIndex: =58
 
@@ -324,7 +324,7 @@ EmployeeLeaveDetail As screen:
         Text: ="Start Date"
         VerticalAlign: =VerticalAlign.Top
         Width: =133
-        X: =531
+        X: =522
         Y: =180
         ZIndex: =59
 
@@ -340,7 +340,7 @@ EmployeeLeaveDetail As screen:
         Text: ="End Date"
         VerticalAlign: =VerticalAlign.Top
         Width: =102
-        X: =652
+        X: =643
         Y: =180
         ZIndex: =60
 
