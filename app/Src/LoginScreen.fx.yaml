@@ -27,7 +27,7 @@ LoginScreen As screen:
         Align: =Align.Center
         BorderStyle: =BorderStyle.None
         BorderThickness: =2
-        Color: =RGBA(62, 96, 170, 1)
+        Color: =RGBA(43, 67, 119, 1)
         Font: =Font.Georgia
         FontWeight: =FontWeight.Bold
         Height: =107
@@ -205,8 +205,8 @@ LoginScreen As screen:
             RadiusTopRight: =15
             Size: =20
             Text: ="Login as a manager"
-            Width: =344
-            X: =838
+            Width: =351
+            X: =828
             Y: =481
             ZIndex: =3
 
