@@ -287,7 +287,7 @@ TodayOnLeaveScreen As screen:
     "ButtonFilter2 As gallery.'BrowseLayout_Vertical_OneTextOneImageVariant_ver5.0'":
         Default: =If(!IsBlank(OnLeaveFilter),LookUp(_OnLeaveFilter, LeaveFilter = OnLeaveFilter))
         DelayItemLoading: =true
-        Height: =69
+        Height: =73
         Items: =_OnLeaveFilter
         Layout: =Layout.Vertical
         LoadingSpinner: =LoadingSpinner.Data

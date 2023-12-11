@@ -190,7 +190,7 @@ CompanyHolidaysScreen As screen:
         PressedFill: =GalleryHolidays.Fill
         TemplateSize: =49
         Width: =886
-        X: =223
+        X: =239
         Y: =188
         ZIndex: =32
 
@@ -278,7 +278,7 @@ CompanyHolidaysScreen As screen:
         Size: =15
         Text: ="Public Holidays"
         Width: =207
-        X: =374
+        X: =390
         Y: =141
         ZIndex: =46
 
@@ -289,7 +289,7 @@ CompanyHolidaysScreen As screen:
         Size: =15
         Text: ="Dates"
         Width: =181
-        X: =755
+        X: =771
         Y: =141
         ZIndex: =47
 
