@@ -483,7 +483,7 @@ HomeScreen As screen:
             Text: ="EDIT"
             Visible: =!_managerView && (GalleryRequest.Selected.Status.Value) = "Pending"
             Width: =54
-            X: =1122
+            X: =1106
             Y: =552
             ZIndex: =15
 
@@ -493,7 +493,7 @@ HomeScreen As screen:
             OnSelect: =
             Visible: =!_managerView && (GalleryRequest.Selected.Status.Value) = "Pending"
             Width: =23
-            X: =1089
+            X: =1075
             Y: =552
             ZIndex: =16
 
@@ -502,7 +502,7 @@ HomeScreen As screen:
             Color: =RGBA(54, 176, 75, 1)
             Fill: =RGBA(255, 255, 255, 1)
             Height: =27
-            OnSelect: |
+            OnSelect: |+
                 =Set(LeaveTempID,LookUp(LeaveApp_Request,ID = GalleryRequest.Selected.ID));
                 Set(DecisionDateTemp,Now());
                 
@@ -522,88 +522,8 @@ HomeScreen As screen:
                             Picture: "."
                         }
                     }
-                        );
-                
-                Set(UnpaidTemp,GalleryRequest.Selected.UnpaidLeave);
-                
-                Set(LeaveAnnualCarriedTemp,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email).AnnualCarriedForward);
-                Set(LeaveAnnualTakenTemp,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email).AnnualLeaveTaken);
-                Set(LeaveMedicalTakenTemp,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email).MedicalLeaveTaken);
-                Set(LeaveCasualImmediateTakenTemp,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email).CompassionateLeaveTaken);
-                Set(LeaveCasualSecondTakenTemp,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email).CasualSecondLeaveTaken);
-                Set(LeaveMarriageTakenTemp,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email).MarriageLeaveTaken);
-                Set(LeavePaternityTakenTemp,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email).PaternityLeaveTaken);
-                Set(LeaveMaternityTakenTemp,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email).MaternityLeaveTaken);
-                Set(LeaveHospitalizationTakenTemp,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email).HospitalizationLeaveTaken);
-                
-                Set(LeaveAnnualEntitleTemp,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email).AnnualLeaveEntitlement);
-                Set(LeaveMedicalEntitleTemp,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email).MedicalLeaveEntitlement);
-                Set(LeaveCasualImmediateEntitleTemp,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email).CompassionateLeaveEntitlement);
-                Set(LeaveCasualSecondEntitleTemp,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email).CasualSecondLeaveEntitlement);
-                Set(LeaveMarriageEntitleTemp,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email).MarriageLeaveEntitlement);
-                Set(LeavePaternityEntitleTemp,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email).PaternityLeaveEntitlement);
-                Set(LeaveMaternityEntitleTemp,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email).MaternityLeaveEntitlement);
-                Set(LeaveHospitalizationEntitleTemp,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email).HospitalizationLeaveEntitlement);
-                
-                Set(LeaveUnpaidTakenTemp,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email).UnpaidLeaveTaken);
-                Set(LeaveRequestedToEmail,GalleryRequest.Selected.Requested_to.Email);
-                Set(LeaveCreatedByEmail,GalleryRequest.Selected.Requested_to.Email);
-                
-                
-                Set(TypeTemp,GalleryRequest.Selected.Leave_Type.Value);
-                Set(DaysTemp,GalleryRequest.Selected.Days);
-                Set(LeaveTempEmail,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email));
-                
-                If((TypeTemp = "Annual"),
-                If((LeaveAnnualCarriedTemp >= DaysTemp),Patch(LeaveApp_Employee,LeaveTempEmail,{AnnualCarriedForward: LeaveAnnualCarriedTemp - DaysTemp}),If((UnpaidTemp <= 0),Patch(LeaveApp_Employee,LeaveTempEmail,{AnnualCarriedForward: 0},{AnnualLeaveTaken: LeaveAnnualTakenTemp + (DaysTemp - LeaveAnnualCarriedTemp)}),Patch(LeaveApp_Employee,LeaveTempEmail,{AnnualCarriedForward: 0},{AnnualLeaveTaken: LeaveAnnualEntitleTemp},{UnpaidLeaveTaken: LeaveUnpaidTakenTemp + UnpaidTemp})));
                 );
                 
-                If((TypeTemp = "Medical"),
-                If((TypeTemp = "Medical" && UnpaidTemp <= 0),Patch(LeaveApp_Employee,LeaveTempEmail,{MedicalLeaveTaken: LeaveMedicalTakenTemp + DaysTemp}),Patch(LeaveApp_Employee,LeaveTempEmail,{MedicalLeaveTaken: LeaveMedicalEntitleTemp},{UnpaidLeaveTaken: LeaveUnpaidTakenTemp + UnpaidTemp})));
-                
-                If((TypeTemp = "Casual Immediate"),
-                If((TypeTemp = "Casual Immediate" && UnpaidTemp <= 0),Patch(LeaveApp_Employee,LeaveTempEmail,{CompassionateLeaveTaken: LeaveCasualImmediateTakenTemp + DaysTemp}),Patch(LeaveApp_Employee,LeaveTempEmail,{CompassionateLeaveTaken: LeaveCasualImmediateEntitleTemp},{UnpaidLeaveTaken: LeaveUnpaidTakenTemp + UnpaidTemp})));
-                
-                If((TypeTemp = "Casual Second"),
-                If((TypeTemp = "Casual Second" && UnpaidTemp <= 0),Patch(LeaveApp_Employee,LeaveTempEmail,{CasualSecondLeaveTaken: LeaveCasualSecondTakenTemp + DaysTemp}),Patch(LeaveApp_Employee,LeaveTempEmail,{CasualSecondLeaveTaken: LeaveCasualSecondEntitleTemp},{UnpaidLeaveTaken: LeaveUnpaidTakenTemp + UnpaidTemp})));
-                
-                If((TypeTemp = "Hospitalization"),
-                If((TypeTemp = "Hospitalization" && UnpaidTemp <= 0),Patch(LeaveApp_Employee,LeaveTempEmail,{HospitalizationLeaveTaken: LeaveHospitalizationTakenTemp + DaysTemp}),Patch(LeaveApp_Employee,LeaveTempEmail,{HospitalizationLeaveTaken: LeaveHospitalizationEntitleTemp},{UnpaidLeaveTaken: LeaveUnpaidTakenTemp + UnpaidTemp})));
-                
-                If((TypeTemp = "Paternity"),
-                If((TypeTemp = "Paternity" && UnpaidTemp <= 0),Patch(LeaveApp_Employee,LeaveTempEmail,{PaternityLeaveTaken: LeavePaternityTakenTemp + DaysTemp }),Patch(LeaveApp_Employee,LeaveTempEmail,{PaternityLeaveTaken: LeavePaternityEntitleTemp},{UnpaidLeaveTaken: LeaveUnpaidTakenTemp + UnpaidTemp})));
-                
-                If((TypeTemp = "Marriage"),
-                If((TypeTemp = "Marriage" && UnpaidTemp <= 0),Patch(LeaveApp_Employee,LeaveTempEmail,{MarriageLeaveTaken: LeaveMarriageTakenTemp + DaysTemp}),Patch(LeaveApp_Employee,LeaveTempEmail,{MarriageLeaveTaken: LeaveMarriageEntitleTemp},{UnpaidLeaveTaken: LeaveUnpaidTakenTemp + UnpaidTemp})));
-                
-                If((TypeTemp = "Maternity"),
-                If((TypeTemp = "Maternity" && UnpaidTemp <= 0),Patch(LeaveApp_Employee,LeaveTempEmail,{MaternityLeaveTaken: LeaveMaternityTakenTemp + DaysTemp}),Patch(LeaveApp_Employee,LeaveTempEmail,{MaternityLeaveTaken: LeaveMaternityEntitleTemp},{UnpaidLeaveTaken: LeaveUnpaidTakenTemp + UnpaidTemp})));
-                
-                Office365.SendEmailV2(
-                            LeaveRequestedToEmail;LeaveCreatedByEmail,
-                            "Acknowledgement Leave Request Approved",
-                
-                            "<div style=""font-family: Calibri; font-size:15px;"">" &
-                
-                            "Hi " & GalleryRequest.Selected.Created_By.DisplayName &
-                            "," &
-                
-                
-                            "Your leave request has been ""<font color = green>approved</font>"".<br><br>" &
-                
-                            
-                            "<br><b><strong>Leave type:</strong></b> " & GalleryRequest.Selected.Leave_Type.Value &
-                            "<br><b><strong>Total days:</strong></b> " & GalleryRequest.Selected.Days & 
-                            "<br><b><strong>Start date:</strong></b> " & GalleryRequest.Selected.Start_Date &
-                            "<br><b><strong>End date:</strong></b> " & GalleryRequest.Selected.End_Date & 
-                            "<br><b><strong>Leave detail:</strong></b> " & GalleryRequest.Selected.Comments &
-                
-                
-                            "<br><br><br>If you have any further questions, please check with your supervisor and HR." & 
-                            "</div>"
-                            ,
-                            {Importance: "Normal"}
-                        )
             Size: =11
             Text: ="Approve"
             Visible: |
@@ -643,32 +563,6 @@ HomeScreen As screen:
                         }
                     }
                         );
-                
-                        Office365.SendEmailV2(
-                            LeaveRequestedToEmail;LeaveCreatedByEmail,
-                            "Acknowledgement Leave Request Rejected",
-                
-                            "<div style=""font-family: Calibri; font-size:15px;"">" &
-                
-                            "Hi " & GalleryRequest.Selected.Created_By.DisplayName &
-                            "," &
-                
-                
-                            "Your leave request has been ""<font color = red>rejected</font>"".<br><br>" &
-                
-                            
-                            "<br><b><strong>Leave type:</strong></b> " & GalleryRequest.Selected.Leave_Type.Value &
-                            "<br><b><strong>Total days:</strong></b> " & GalleryRequest.Selected.Days & 
-                            "<br><b><strong>Start date:</strong></b> " & GalleryRequest.Selected.Start_Date &
-                            "<br><b><strong>End date:</strong></b> " & GalleryRequest.Selected.End_Date & 
-                            "<br><b><strong>Leave detail:</strong></b> " & GalleryRequest.Selected.Comments &
-                
-                
-                            "<br><br><br>If you have any further questions, please check with your supervisor and HR." & 
-                            "</div>"
-                            ,
-                            {Importance: "Normal"}
-                        )
             Size: =11
             Text: ="Decline"
             Visible: =_managerView && (GalleryRequest.Selected.Status.Value) = "Pending"

@@ -153,7 +153,7 @@ EmployeeLeaveDetail As screen:
         Height: =2
         Width: =1135
         X: =231
-        Y: =167
+        Y: =159
         ZIndex: =43
 
     Icon4 As icon.BackArrow:
@@ -174,111 +174,8 @@ EmployeeLeaveDetail As screen:
         TemplateSize: =60
         Width: =1135
         X: =231
-        Y: =225
+        Y: =209
         ZIndex: =55
-
-        Label28_2 As label:
-            Align: =Align.Center
-            Height: =25
-            OnSelect: =Select(Parent)
-            Size: =11
-            Text: =ThisItem.Leave_Type.Value
-            Width: =167
-            Y: =16
-            ZIndex: =1
-
-        Label28_14 As label:
-            Align: =Align.Center
-            Height: =25
-            OnSelect: =Select(Parent)
-            Size: =11
-            Text: =Text(ThisItem.Start_Date, "[$-en-US]dd mmm yyyy")
-            Width: =100
-            X: =285
-            Y: =16
-            ZIndex: =3
-
-        Label28_15 As label:
-            Align: =Align.Center
-            Height: =25
-            OnSelect: =Select(Parent)
-            Size: =11
-            Text: =Text(ThisItem.End_Date, "[$-en-US]dd mmm yyyy")
-            Width: =100
-            X: =402
-            Y: =16
-            ZIndex: =4
-
-        Label28_16 As label:
-            Align: =Align.Center
-            Height: =25
-            OnSelect: =Select(Parent)
-            Size: =11
-            Text: =ThisItem.Days
-            Width: =88
-            X: =501
-            Y: =16
-            ZIndex: =5
-
-        Label28_17 As label:
-            Align: =Align.Center
-            Height: =25
-            OnSelect: =Select(Parent)
-            Size: =11
-            Text: =If(IsBlank(ThisItem.CarryForwardDays),"-",ThisItem.CarryForwardDays)
-            Width: =100
-            X: =604
-            Y: =16
-            ZIndex: =6
-
-        Label28_18 As label:
-            Align: =Align.Center
-            Height: =25
-            OnSelect: =Select(Parent)
-            Size: =11
-            Text: =If(IsBlank(ThisItem.UnpaidLeave),"-",ThisItem.UnpaidLeave)
-            Width: =100
-            X: =738
-            Y: =16
-            ZIndex: =7
-
-        Label28_19 As label:
-            Height: =25
-            OnSelect: =Select(Parent)
-            Size: =11
-            Text: =If(IsBlank(ThisItem.Decision_By.DisplayName),"-",ThisItem.Decision_By.DisplayName)
-            Width: =271
-            X: =854
-            Y: =16
-            ZIndex: =8
-
-        Rectangle15_2 As rectangle:
-            Fill: =RGBA(230, 230, 230, 1)
-            Height: =1
-            OnSelect: =Select(Parent)
-            Width: =1120
-            Y: =58
-            ZIndex: =9
-
-        Button8_2 As button:
-            BorderColor: =If((ThisItem.Status.Value)="Pending",RGBA(0,71,144,1),(ThisItem.Status.Value)="Rejected",RGBA(213,0,0,1),(ThisItem.Status.Value)="Approved",RGBA(0,128,0,1))
-            Color: =If((ThisItem.Status.Value)="Pending",RGBA(0,71,144,1),(ThisItem.Status.Value)="Rejected",RGBA(213,0,0,1),(ThisItem.Status.Value)="Approved",RGBA(0,128,0,1))
-            DisabledBorderColor: =
-            DisabledColor: =If((ThisItem.Status.Value)="Pending",RGBA(0,71,144,1),(ThisItem.Status.Value)="Rejected",RGBA(213,0,0,1),(ThisItem.Status.Value)="Approved",RGBA(0,128,0,1))
-            DisabledFill: =
-            DisplayMode: =DisplayMode.Disabled
-            Fill: =RGBA(0, 0, 0, 0)
-            Height: =25
-            OnSelect: =Select(Parent)
-            PressedBorderColor: =
-            PressedColor: =
-            PressedFill: =
-            Size: =10
-            Text: =ThisItem.Status.Value
-            Width: =75
-            X: =177
-            Y: =16
-            ZIndex: =10
 
     Title2_17 As label:
         FontWeight: =FontWeight.Semibold
@@ -293,7 +190,7 @@ EmployeeLeaveDetail As screen:
         VerticalAlign: =VerticalAlign.Top
         Width: =163
         X: =275
-        Y: =196
+        Y: =180
         ZIndex: =57
 
     Title2_18 As label:
@@ -309,7 +206,7 @@ EmployeeLeaveDetail As screen:
         VerticalAlign: =VerticalAlign.Top
         Width: =96
         X: =423
-        Y: =196
+        Y: =180
         ZIndex: =58
 
     Title2_19 As label:
@@ -325,7 +222,7 @@ EmployeeLeaveDetail As screen:
         VerticalAlign: =VerticalAlign.Top
         Width: =133
         X: =531
-        Y: =196
+        Y: =180
         ZIndex: =59
 
     Title2_20 As label:
@@ -341,7 +238,7 @@ EmployeeLeaveDetail As screen:
         VerticalAlign: =VerticalAlign.Top
         Width: =102
         X: =652
-        Y: =196
+        Y: =180
         ZIndex: =60
 
     Title2_21 As label:
@@ -357,7 +254,7 @@ EmployeeLeaveDetail As screen:
         VerticalAlign: =VerticalAlign.Top
         Width: =102
         X: =741
-        Y: =196
+        Y: =180
         ZIndex: =61
 
     Title2_22 As label:
@@ -373,7 +270,7 @@ EmployeeLeaveDetail As screen:
         VerticalAlign: =VerticalAlign.Top
         Width: =184
         X: =835
-        Y: =196
+        Y: =180
         ZIndex: =62
 
     Title2_23 As label:
@@ -389,7 +286,7 @@ EmployeeLeaveDetail As screen:
         VerticalAlign: =VerticalAlign.Top
         Width: =102
         X: =988
-        Y: =196
+        Y: =180
         ZIndex: =63
 
     Title2_24 As label:
@@ -405,7 +302,7 @@ EmployeeLeaveDetail As screen:
         VerticalAlign: =VerticalAlign.Top
         Width: =102
         X: =1098
-        Y: =196
+        Y: =180
         ZIndex: =64
 
     Rectangle12_5 As rectangle:
@@ -413,7 +310,7 @@ EmployeeLeaveDetail As screen:
         Height: =2
         Width: =1135
         X: =231
-        Y: =227
+        Y: =211
         ZIndex: =65
 
     LabelNoRecordMsg4 As label:
@@ -430,6 +327,6 @@ EmployeeLeaveDetail As screen:
             )
         Width: =241
         X: =678
-        Y: =399
+        Y: =383
         ZIndex: =66
 
