@@ -13,7 +13,7 @@ LoginScreen As screen:
         Fill: =RGBA(249, 249, 249, 1)
         Height: =768
         Width: =573
-        X: =792
+        X: =793
         ZIndex: =1
 
     CompanyLogo As image:

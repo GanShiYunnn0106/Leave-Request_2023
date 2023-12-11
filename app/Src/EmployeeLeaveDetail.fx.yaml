@@ -416,3 +416,17 @@ EmployeeLeaveDetail As screen:
         Y: =227
         ZIndex: =65
 
+    Label5 As label:
+        Size: =11
+        Text: ="No Records Found"
+        Visible: |-
+            =CountRows(
+                Filter(
+                    LeaveApp_Request,
+                    Created_By.DisplayName = _selectedEmployee && Year(End_Date) = Year(Today())
+                )
+            ) = 0
+        X: =734
+        Y: =243
+        ZIndex: =66
+
