@@ -402,7 +402,7 @@ CompanyHolidaysScreen As screen:
             Height: =24
             Size: =12
             Text: ="*Holiday Name is required"
-            Visible: =_adminView
+            Visible: =_adminView && IsBlank(txtHoliday.Text)
             Width: =226
             X: =1140
             Y: =269
