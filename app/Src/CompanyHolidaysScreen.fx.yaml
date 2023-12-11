@@ -172,7 +172,7 @@ CompanyHolidaysScreen As screen:
         AccessibleLabel: ="Company holidays"
         DisabledBorderColor: =GalleryHolidays.BorderColor
         DisabledFill: =GalleryHolidays.Fill
-        Height: =580
+        Height: =581
         HoverBorderColor: =GalleryHolidays.BorderColor
         HoverFill: =GalleryHolidays.Fill
         Items: |-
@@ -191,7 +191,7 @@ CompanyHolidaysScreen As screen:
         TemplateSize: =49
         Width: =886
         X: =239
-        Y: =188
+        Y: =187
         ZIndex: =32
 
         HolidayName As label:
