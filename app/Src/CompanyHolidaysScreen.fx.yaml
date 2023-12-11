@@ -354,7 +354,7 @@ CompanyHolidaysScreen As screen:
         HolidayDate As datepicker:
             Color: =RGBA(0, 0, 0, 1)
             DisabledBorderColor: =RGBA(62, 96, 170, 1)
-            Height: =36
+            Height: =35
             Visible: =_adminView
             Width: =190
             X: =1146
@@ -368,7 +368,7 @@ CompanyHolidaysScreen As screen:
             Visible: =_adminView
             Width: =163
             X: =1146
-            Y: =182
+            Y: =191
             ZIndex: =43
 
         Dates As label:
@@ -379,7 +379,7 @@ CompanyHolidaysScreen As screen:
             Visible: =_adminView
             Width: =70
             X: =1146
-            Y: =284
+            Y: =293
             ZIndex: =44
 
         AddButton As button:
@@ -402,7 +402,7 @@ CompanyHolidaysScreen As screen:
             Height: =24
             Size: =12
             Text: ="*Holiday Name is required"
-            Visible: =_adminView
+            Visible: =_adminView && IsBlank(txtHoliday.Text)
             Width: =226
             X: =1140
             Y: =269
