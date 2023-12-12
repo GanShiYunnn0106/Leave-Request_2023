@@ -288,10 +288,10 @@ EmployeeLeaveDetail As screen:
         PaddingLeft: =0
         PaddingRight: =0
         PaddingTop: =0
-        Size: =13
+        Size: =12
         Text: ="Leave Type"
         VerticalAlign: =VerticalAlign.Top
-        Width: =163
+        Width: =101
         X: =275
         Y: =180
         ZIndex: =57
