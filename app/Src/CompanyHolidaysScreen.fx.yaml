@@ -210,7 +210,7 @@ CompanyHolidaysScreen As screen:
             Size: =14
             Text: =ThisItem.HolidayName
             Width: =448
-            X: =22
+            X: =9
             ZIndex: =1
 
         HolidayDates As label:
@@ -228,7 +228,7 @@ CompanyHolidaysScreen As screen:
             Size: =13.8
             Text: =Text(DateValue(ThisItem.HolidayDates), "[$-en-US]ddd, dd mmmm yyyy")
             Width: =442
-            X: =405
+            X: =418
             ZIndex: =2
 
         Rectangle5 As rectangle:
@@ -278,7 +278,7 @@ CompanyHolidaysScreen As screen:
         Size: =15
         Text: ="Public Holidays"
         Width: =207
-        X: =390
+        X: =377
         Y: =141
         ZIndex: =46
 
@@ -289,7 +289,7 @@ CompanyHolidaysScreen As screen:
         Size: =15
         Text: ="Dates"
         Width: =181
-        X: =771
+        X: =784
         Y: =141
         ZIndex: =47
 
