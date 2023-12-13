@@ -12,15 +12,15 @@ LoginScreen As screen:
     Rectangle3 As rectangle:
         Fill: =RGBA(248, 248, 248, 9)
         Height: =768
-        Width: =579
-        X: =786
+        Width: =597
+        X: =768
         ZIndex: =1
 
     Image1 As image:
         Height: =768
         Image: ='papers.co-no59-summer-vacation-ocean-sea-nature-beach-blue-2-wallpaper'
         ImagePosition: =ImagePosition.Fill
-        Width: =786
+        Width: =768
         ZIndex: =6
 
     LabelRequestLeave As label:
