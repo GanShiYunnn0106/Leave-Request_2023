@@ -34,7 +34,7 @@ LoginScreen As screen:
         Size: =33
         Text: ="REQUEST LEAVE"
         Width: =556
-        X: =810
+        X: =797
         Y: =94
         ZIndex: =7
 
@@ -66,7 +66,7 @@ LoginScreen As screen:
             Size: =12.5
             Text: ="TO SUBMIT A LEAVE REQUEST"
             Width: =299
-            X: =932
+            X: =919
             Y: =251
             ZIndex: =4
 
@@ -99,7 +99,7 @@ LoginScreen As screen:
             Size: =20
             Text: ="Login as an employee"
             Width: =351
-            X: =906
+            X: =893
             Y: =299
             ZIndex: =5
 
@@ -107,7 +107,7 @@ LoginScreen As screen:
         Height: =58
         Image: =Logo1
         Width: =351
-        X: =906
+        X: =893
         Y: =669
         ZIndex: =8
 
@@ -139,7 +139,7 @@ LoginScreen As screen:
             Size: =12.5
             Text: ="TO APPROVE OR DECLINE LEAVE REQUESTS"
             Width: =418
-            X: =872
+            X: =859
             Y: =446
             ZIndex: =2
 
@@ -214,7 +214,7 @@ LoginScreen As screen:
             Size: =20
             Text: ="Login as a manager"
             Width: =351
-            X: =906
+            X: =893
             Y: =494
             ZIndex: =3
 
