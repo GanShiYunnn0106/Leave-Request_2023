@@ -30,8 +30,8 @@ TodayOnLeaveScreen As screen:
                             LeaveApp_Request,
                             End_Date <= Today() && Status.Value = "Approved"
                         ),
-                        Created_By.DisplayName,
-                        SortOrder.Ascending
+                        Start_Date,
+                        SortOrder.Descending
                     ),
                     If(
                         OnLeaveFilter = "Upcoming",
@@ -40,7 +40,7 @@ TodayOnLeaveScreen As screen:
                                 LeaveApp_Request,
                                 Start_Date > Today() && Status.Value = "Approved"
                             ),
-                            Created_By.DisplayName,
+                            Start_Date,
                             SortOrder.Ascending
                         )
                     )

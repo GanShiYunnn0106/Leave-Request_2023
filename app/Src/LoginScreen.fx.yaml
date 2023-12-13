@@ -12,15 +12,15 @@ LoginScreen As screen:
     Rectangle3 As rectangle:
         Fill: =RGBA(248, 248, 248, 9)
         Height: =768
-        Width: =725
-        X: =641
+        Width: =579
+        X: =786
         ZIndex: =1
 
     Image1 As image:
         Height: =768
         Image: ='papers.co-no59-summer-vacation-ocean-sea-nature-beach-blue-2-wallpaper'
-        ImagePosition: =ImagePosition.Center
-        Width: =641
+        ImagePosition: =ImagePosition.Fill
+        Width: =786
         ZIndex: =6
 
     LabelRequestLeave As label:
@@ -33,9 +33,9 @@ LoginScreen As screen:
         Height: =107
         Size: =33
         Text: ="REQUEST LEAVE"
-        Width: =542
-        X: =732
-        Y: =81
+        Width: =556
+        X: =810
+        Y: =94
         ZIndex: =7
 
     LoginAsEmployeeGroup As group:
@@ -66,7 +66,7 @@ LoginScreen As screen:
             Size: =12.5
             Text: ="TO SUBMIT A LEAVE REQUEST"
             Width: =299
-            X: =854
+            X: =932
             Y: =251
             ZIndex: =4
 
@@ -99,9 +99,17 @@ LoginScreen As screen:
             Size: =20
             Text: ="Login as an employee"
             Width: =351
-            X: =828
+            X: =906
             Y: =299
             ZIndex: =5
+
+    Image2 As image:
+        Height: =58
+        Image: =Logo1
+        Width: =351
+        X: =906
+        Y: =669
+        ZIndex: =8
 
     LoginAsManagerGroup As group:
         Height: =5
@@ -131,7 +139,7 @@ LoginScreen As screen:
             Size: =12.5
             Text: ="TO APPROVE OR DECLINE LEAVE REQUESTS"
             Width: =418
-            X: =794
+            X: =872
             Y: =446
             ZIndex: =2
 
@@ -206,7 +214,7 @@ LoginScreen As screen:
             Size: =20
             Text: ="Login as a manager"
             Width: =351
-            X: =828
+            X: =906
             Y: =494
             ZIndex: =3
 
