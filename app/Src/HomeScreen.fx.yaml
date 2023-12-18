@@ -489,7 +489,7 @@ HomeScreen As screen:
             Visible: =!_managerView && (GalleryRequest.Selected.Status.Value) = "Pending"
             Width: =54
             X: =1111
-            Y: =522
+            Y: =512
             ZIndex: =15
 
         EditIcon_2 As icon.Edit:
@@ -499,7 +499,7 @@ HomeScreen As screen:
             Visible: =!_managerView && (GalleryRequest.Selected.Status.Value) = "Pending"
             Width: =23
             X: =1080
-            Y: =522
+            Y: =512
             ZIndex: =16
 
         ButtonManagerApprove_2 As button:
