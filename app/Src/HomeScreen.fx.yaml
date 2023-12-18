@@ -256,18 +256,18 @@ HomeScreen As screen:
             ="Leave Detail:"
         Width: =145
         X: =1071
-        Y: =454
+        Y: =424
         ZIndex: =29
 
     LeaveDetail As label:
         FontWeight: =FontWeight.Semibold
-        Height: =51
+        Height: =39
         Overflow: =Overflow.Scroll
         Text: =If(IsBlank(GalleryRequest.Selected.Comments) , "-", GalleryRequest.Selected.Comments)
         VerticalAlign: =VerticalAlign.Top
         Width: =294
         X: =1071
-        Y: =489
+        Y: =454
         ZIndex: =30
 
     GroupRequestDetails As group:
@@ -488,8 +488,8 @@ HomeScreen As screen:
             Text: ="EDIT"
             Visible: =!_managerView && (GalleryRequest.Selected.Status.Value) = "Pending"
             Width: =54
-            X: =1106
-            Y: =552
+            X: =1111
+            Y: =522
             ZIndex: =15
 
         EditIcon_2 As icon.Edit:
@@ -498,8 +498,8 @@ HomeScreen As screen:
             OnSelect: =
             Visible: =!_managerView && (GalleryRequest.Selected.Status.Value) = "Pending"
             Width: =23
-            X: =1075
-            Y: =552
+            X: =1080
+            Y: =522
             ZIndex: =16
 
         ButtonManagerApprove_2 As button:
@@ -534,7 +534,7 @@ HomeScreen As screen:
                 =_managerView && (GalleryRequest.Selected.Status.Value) = "Pending"
             Width: =78
             X: =1110
-            Y: =681
+            Y: =631
             ZIndex: =17
 
         ButtonManagerDecline_2 As button:
@@ -571,7 +571,7 @@ HomeScreen As screen:
             Visible: =_managerView && (GalleryRequest.Selected.Status.Value) = "Pending"
             Width: =78
             X: =1202
-            Y: =681
+            Y: =631
             ZIndex: =18
 
         Leave_Type_2 As label:
@@ -581,7 +581,7 @@ HomeScreen As screen:
             Text: =If(IsBlank(GalleryRequest.Selected.Leave_Type.Value) , "-", GalleryRequest.Selected.Leave_Type.Value)
             Width: =278
             X: =1071
-            Y: =203
+            Y: =199
             ZIndex: =20
 
         Request_To_2 As label:
@@ -592,7 +592,7 @@ HomeScreen As screen:
             Text: =If(IsBlank(GalleryRequest.Selected.Requested_to.DisplayName) , "-", GalleryRequest.Selected.Requested_to.DisplayName)
             Width: =295
             X: =1071
-            Y: =281
+            Y: =265
             ZIndex: =21
 
         CarryForwardDays_2 As label:
@@ -602,7 +602,7 @@ HomeScreen As screen:
             Text: =If(IsBlank(GalleryRequest.Selected.CarryForwardDays) , "-", GalleryRequest.Selected.CarryForwardDays& " day(s)")
             Width: =229
             X: =1071
-            Y: =358
+            Y: =328
             ZIndex: =22
 
         UnpaidLeave_2 As label:
@@ -612,7 +612,7 @@ HomeScreen As screen:
             Text: =If(IsBlank(GalleryRequest.Selected.UnpaidLeave) , "-", GalleryRequest.Selected.UnpaidLeave& " day(s)")
             Width: =161
             X: =1071
-            Y: =423
+            Y: =393
             ZIndex: =23
 
         LblLeaveType_2 As label:
@@ -622,17 +622,17 @@ HomeScreen As screen:
                 ="Leave Type:"
             Width: =156
             X: =1071
-            Y: =173
+            Y: =176
             ZIndex: =25
 
         LblRequestTo_2 As label:
-            Height: =38
+            Height: =22
             OnSelect: =
             Text: |-
                 ="Request Sent To:"
             Width: =167
             X: =1071
-            Y: =247
+            Y: =242
             ZIndex: =26
 
         LblCarryForward_2 As label:
@@ -642,7 +642,7 @@ HomeScreen As screen:
                 ="Carry Forward Days:"
             Width: =206
             X: =1071
-            Y: =331
+            Y: =306
             ZIndex: =27
 
         LblUnpaidLeave_2 As label:
@@ -652,7 +652,7 @@ HomeScreen As screen:
                 ="Unpaid Leaves:"
             Width: =171
             X: =1071
-            Y: =392
+            Y: =365
             ZIndex: =28
 
         RemarksTextBox As text:
@@ -660,8 +660,8 @@ HomeScreen As screen:
             Height: =68
             Visible: =_managerView && (GalleryRequest.Selected.Status.Value) = "Pending"
             Width: =239
-            X: =1080
-            Y: =590
+            X: =1075
+            Y: =531
             ZIndex: =31
 
         remarksHeader As label:
@@ -671,19 +671,19 @@ HomeScreen As screen:
             Visible: =_managerView
             Width: =248
             X: =1071
-            Y: =548
+            Y: =503
             ZIndex: =32
 
         LabelRemarks_1 As label:
             Color: =RGBA(0, 0, 0, 1)
             FontWeight: =FontWeight.Semibold
-            Height: =109
+            Height: =54
             Overflow: =Overflow.Scroll
             Text: =If(IsBlank(GalleryRequest.Selected.Remarks_By_Decision_Maker) , "-", GalleryRequest.Selected.Remarks_By_Decision_Maker)
             Visible: |
                 =_managerView && ((GalleryRequest.Selected.Status.Value) = "Approved" || (GalleryRequest.Selected.Status.Value) = "Rejected")
             Width: =248
             X: =1071
-            Y: =572
+            Y: =523
             ZIndex: =33
 
