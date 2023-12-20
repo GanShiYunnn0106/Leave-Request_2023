@@ -83,6 +83,7 @@ LoginScreen As screen:
             OnSelect: |-
                 =Set(_managerView,false);
                 Set(_adminView,false);
+                Set(_employeeView,true);
                 Set(OnLeaveFilter, "Today");
                 Navigate(HomeScreen,BorderStyle.None);
             PaddingBottom: =0
@@ -167,7 +168,10 @@ LoginScreen As screen:
                         _managerView,
                         true
                     );
-                
+                    Set(
+                        _employeeView,
+                        false
+                    );
                     Set(
                         _adminView,
                         false

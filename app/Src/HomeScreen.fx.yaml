@@ -400,8 +400,8 @@ HomeScreen As screen:
             Visible: |
                 =_managerView && (GalleryRequest.Selected.Status.Value) = "Pending"
             Width: =78
-            X: =1110
-            Y: =631
+            X: =1100
+            Y: =641
             ZIndex: =17
 
         ButtonManagerDecline_2 As button:
@@ -438,7 +438,7 @@ HomeScreen As screen:
             Visible: =_managerView && (GalleryRequest.Selected.Status.Value) = "Pending"
             Width: =78
             X: =1202
-            Y: =631
+            Y: =641
             ZIndex: =18
 
         Leave_Type_2 As label:
@@ -584,7 +584,7 @@ HomeScreen As screen:
                         );
             Size: =13
             Text: ="Cancel leave approved"
-            Visible: =_managerView && (GalleryRequest.Selected.Status.Value) = "Approved"
+            Visible: =(_employeeView && (((GalleryRequest.Selected.Status.Value) = "Approved" && (GalleryRequest.Selected.Start_Date > Today())) || ((GalleryRequest.Selected.Status.Value) = "Pending")))
             Width: =211
             X: =1104
             Y: =683
