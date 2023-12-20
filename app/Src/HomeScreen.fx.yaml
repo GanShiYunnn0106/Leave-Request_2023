@@ -528,7 +528,7 @@ HomeScreen As screen:
             Visible: =_managerView && (GalleryRequest.Selected.Status.Value) = "Pending"
             Width: =239
             X: =1075
-            Y: =531
+            Y: =541
             ZIndex: =31
 
         remarksHeader As label:
