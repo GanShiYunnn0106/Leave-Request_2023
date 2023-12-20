@@ -261,7 +261,7 @@ HomeScreen As screen:
 
     LeaveDetail As label:
         FontWeight: =FontWeight.Semibold
-        Height: =39
+        Height: =58
         Overflow: =Overflow.Scroll
         Text: =If(IsBlank(GalleryRequest.Selected.Comments) , "-", GalleryRequest.Selected.Comments)
         VerticalAlign: =VerticalAlign.Top
@@ -538,7 +538,7 @@ HomeScreen As screen:
             Visible: =_managerView
             Width: =248
             X: =1071
-            Y: =503
+            Y: =515
             ZIndex: =32
 
         LabelRemarks_1 As label:
@@ -551,7 +551,7 @@ HomeScreen As screen:
                 =_managerView && ((GalleryRequest.Selected.Status.Value) = "Approved" || (GalleryRequest.Selected.Status.Value) = "Rejected")
             Width: =248
             X: =1071
-            Y: =523
+            Y: =545
             ZIndex: =33
 
         ButtonManagerCancel_2 As button:
