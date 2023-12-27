@@ -178,7 +178,7 @@ CompanyHolidaysScreen As screen:
         Items: |-
             =Sort(
                         Filter(
-                            LeaveApp_PublicHoliday,
+                            HolidayCollection,
                             Year(HolidayDates) = Year(Today())
                         ),
                         HolidayDates,
