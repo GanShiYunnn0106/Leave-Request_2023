@@ -33,7 +33,7 @@ HomeScreen As screen:
                     Sort(
                         Filter(
                             LeaveApp_Request,
-                            Created_By.Email = User().Email
+                           Year(Start_Date) = Year(Today()) && Created_By.Email = User().Email
                         ),
                         Start_Date,
                         SortOrder.Descending
@@ -41,7 +41,7 @@ HomeScreen As screen:
                     Sort(
                         Filter(
                             LeaveApp_Request,
-                            Status.Value = ButtonFilter.Selected.Filter && Created_By.Email = User().Email
+                           Year(Start_Date) = Year(Today()) && Status.Value = ButtonFilter.Selected.Filter && Created_By.Email = User().Email
                         ),
                         Start_Date,
                         SortOrder.Descending
@@ -52,7 +52,7 @@ HomeScreen As screen:
                     Sort(
                         Filter(
                             LeaveApp_Request,
-                             Requested_to.Email = User().Email
+                            Year(Start_Date) = Year(Today()) && Requested_to.Email = User().Email
                         ),
                         Start_Date,
                         SortOrder.Descending
@@ -60,7 +60,7 @@ HomeScreen As screen:
                     Sort(
                         Filter(
                             LeaveApp_Request,
-                            Status.Value = ButtonFilter.Selected.Filter && Requested_to.Email = User().Email
+                           Year(Start_Date) = Year(Today()) && Status.Value = ButtonFilter.Selected.Filter && Requested_to.Email = User().Email
                         ),
                         Start_Date,
                         SortOrder.Descending
