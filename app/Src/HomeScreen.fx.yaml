@@ -393,6 +393,7 @@ HomeScreen As screen:
                             Picture: "."
                         }
                     }
+                    ,{Decided:{Value:"Approved"}}
                 );
                 
             Size: =11
@@ -432,6 +433,8 @@ HomeScreen As screen:
                             Picture: "."
                         }
                     }
+                    ,{Decided:{Value:"Rejected"}}
+                
                         );
             Size: =11
             Text: ="Decline"
