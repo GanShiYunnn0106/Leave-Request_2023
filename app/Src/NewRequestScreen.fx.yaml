@@ -341,7 +341,7 @@ NewRequestScreen As screen:
                       _numFullDaysPartialWeek = 0, Set(_numPartialWeekdays, 0)
                     );
                       Set(_workDaysInRequest, _numFullWeeks * 5 + _numPartialWeekdays);  
-                      Set(_holidaysInRequest, CountIf(LeaveApp_PublicHoliday, HolidayDates >= LeaveStartDatePicker.SelectedDate, HolidayDates <= LeaveEndDatePicker.SelectedDate));
+                      Set(_holidaysInRequest, CountIf(HolidayCollection, HolidayDates >= LeaveStartDatePicker.SelectedDate, HolidayDates <= LeaveEndDatePicker.SelectedDate));
                       Set(_requestedDays, _workDaysInRequest - _holidaysInRequest)
                 )
             PressedBorderColor: =LeaveStartDatePicker.BorderColor
