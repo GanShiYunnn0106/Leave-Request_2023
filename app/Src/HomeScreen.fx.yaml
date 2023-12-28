@@ -183,6 +183,56 @@ HomeScreen As screen:
             X: =20
             ZIndex: =10
 
+        Label4 As label:
+            OnSelect: =Select(Parent)
+            Size: =10
+            Text: |-
+                =If(ThisItem.ID = Last(If(
+                    !_managerView,
+                    If(
+                        ButtonFilter.Selected.Filter = "All",
+                        Sort(
+                            Filter(
+                                LeaveApp_Request,
+                               Year(Start_Date) = Year(Today()) && Created_By.Email = User().Email
+                            ),
+                            Start_Date,
+                            SortOrder.Descending
+                        ),
+                        Sort(
+                            Filter(
+                                LeaveApp_Request,
+                               Year(Start_Date) = Year(Today()) && Status.Value = ButtonFilter.Selected.Filter && Created_By.Email = User().Email
+                            ),
+                            Start_Date,
+                            SortOrder.Descending
+                        )
+                    ),
+                    If(
+                        ButtonFilter.Selected.Filter = "All",
+                        Sort(
+                            Filter(
+                                LeaveApp_Request,
+                                Year(Start_Date) = Year(Today()) && Requested_to.Email = User().Email
+                            ),
+                            Start_Date,
+                            SortOrder.Descending
+                        ),
+                        Sort(
+                            Filter(
+                                LeaveApp_Request,
+                               Year(Start_Date) = Year(Today()) && Status.Value = ButtonFilter.Selected.Filter && Requested_to.Email = User().Email
+                            ),
+                            Start_Date,
+                            SortOrder.Descending
+                        )
+                    )
+                )).ID,"There is a 2000 row limit of data, If leave applied not display please contact to HR")
+            Width: =688
+            X: =20
+            Y: =131
+            ZIndex: =11
+
     "ButtonFilter As gallery.'BrowseLayout_Vertical_OneTextOneImageVariant_ver5.0'":
         DelayItemLoading: =true
         Height: =104
