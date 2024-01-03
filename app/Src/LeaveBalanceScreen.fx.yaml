@@ -70,7 +70,7 @@ LeaveBalanceScreen As screen:
             Align: =Align.Center
             Height: =57
             OnSelect: =Select(Parent)
-            Text: =ThisItem.AnnualCarriedForward & " day(s) of " & LookUp(LeaveApp_Employee_Entitlement,User().Email = NameofEmployee.Email,CarriedForwardEntitlement) & " day(s) left"
+            Text: =ThisItem.AnnualCarriedForward & " day(s) of " & LookUp(LeaveApp_Employee_Entitlement,User().Email = NameofEmployee.Email && EffectiveYear = Year(Today()),CarriedForwardEntitlement) & " day(s) left"
             Width: =180
             X: =60
             Y: =170
