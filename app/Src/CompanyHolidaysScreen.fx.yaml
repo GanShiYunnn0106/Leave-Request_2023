@@ -179,7 +179,7 @@ CompanyHolidaysScreen As screen:
             =Sort(
                         Filter(
                             LeaveApp_PublicHoliday,
-                            Year(HolidayDates) = Year(Today())
+                            HolidayDates >= _thisYear && HolidayDates < _nextYear
                         ),
                         HolidayDates,
                         SortOrder.Ascending
