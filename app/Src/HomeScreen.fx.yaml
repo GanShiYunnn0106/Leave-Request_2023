@@ -33,7 +33,7 @@ HomeScreen As screen:
                     Sort(
                         Filter(
                             LeaveApp_Request,
-                           Year(Start_Date) = Year(Today()) && Created_By.Email = User().Email
+                            Start_Date >= _thisYear && Start_Date < _nextYear && Created_By.Email = User().Email
                         ),
                         Start_Date,
                         SortOrder.Descending
@@ -41,7 +41,7 @@ HomeScreen As screen:
                     Sort(
                         Filter(
                             LeaveApp_Request,
-                           Year(Start_Date) = Year(Today()) && Status.Value = ButtonFilter.Selected.Filter && Created_By.Email = User().Email
+                           Start_Date >= _thisYear && Start_Date < _nextYear && Status.Value = ButtonFilter.Selected.Filter && Created_By.Email = User().Email
                         ),
                         Start_Date,
                         SortOrder.Descending
@@ -52,7 +52,7 @@ HomeScreen As screen:
                     Sort(
                         Filter(
                             LeaveApp_Request,
-                            Year(Start_Date) = Year(Today()) && Requested_to.Email = User().Email
+                            Start_Date >= _thisYear && Start_Date < _nextYear && Requested_to.Email = User().Email
                         ),
                         Start_Date,
                         SortOrder.Descending
@@ -60,7 +60,7 @@ HomeScreen As screen:
                     Sort(
                         Filter(
                             LeaveApp_Request,
-                           Year(Start_Date) = Year(Today()) && Status.Value = ButtonFilter.Selected.Filter && Requested_to.Email = User().Email
+                           Start_Date >= _thisYear && Start_Date < _nextYear && Status.Value = ButtonFilter.Selected.Filter && Requested_to.Email = User().Email
                         ),
                         Start_Date,
                         SortOrder.Descending
@@ -194,7 +194,7 @@ HomeScreen As screen:
                         Sort(
                             Filter(
                                 LeaveApp_Request,
-                               Year(Start_Date) = Year(Today()) && Created_By.Email = User().Email
+                                Start_Date >= _thisYear && Start_Date < _nextYear && Created_By.Email = User().Email
                             ),
                             Start_Date,
                             SortOrder.Descending
@@ -202,7 +202,7 @@ HomeScreen As screen:
                         Sort(
                             Filter(
                                 LeaveApp_Request,
-                               Year(Start_Date) = Year(Today()) && Status.Value = ButtonFilter.Selected.Filter && Created_By.Email = User().Email
+                               Start_Date >= _thisYear && Start_Date < _nextYear && Status.Value = ButtonFilter.Selected.Filter && Created_By.Email = User().Email
                             ),
                             Start_Date,
                             SortOrder.Descending
@@ -213,7 +213,7 @@ HomeScreen As screen:
                         Sort(
                             Filter(
                                 LeaveApp_Request,
-                                Year(Start_Date) = Year(Today()) && Requested_to.Email = User().Email
+                                Start_Date >= _thisYear && Start_Date < _nextYear && Requested_to.Email = User().Email
                             ),
                             Start_Date,
                             SortOrder.Descending
@@ -221,13 +221,15 @@ HomeScreen As screen:
                         Sort(
                             Filter(
                                 LeaveApp_Request,
-                               Year(Start_Date) = Year(Today()) && Status.Value = ButtonFilter.Selected.Filter && Requested_to.Email = User().Email
+                               Start_Date >= _thisYear && Start_Date < _nextYear && Status.Value = ButtonFilter.Selected.Filter && Requested_to.Email = User().Email
                             ),
                             Start_Date,
                             SortOrder.Descending
                         )
                     )
-                )).ID,"There is a 2000 row limit of data, If leave applied not display please contact to HR")
+                )
+                
+                ).ID,"There is a 2000 row limit of data, If leave applied not display please contact to HR")
             Width: =688
             X: =20
             Y: =131
