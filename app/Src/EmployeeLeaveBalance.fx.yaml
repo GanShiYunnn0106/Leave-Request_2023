@@ -318,7 +318,7 @@ EmployeeLeaveBalance As screen:
             OnSelect: =Select(Parent)
             Size: =14
             Text: |-
-                ="Carry Forward : " & ThisItem.AnnualCarriedForward & " day(s) of " & LookUp(LeaveApp_Employee_Entitlement,  ThisItem.NameofEmployee.DisplayName = NameofEmployee.DisplayName).CarriedForwardEntitlement & " day(s) left"
+                ="Carry Forward : " & ThisItem.AnnualCarriedForward & " day(s) of " & LookUp(LeaveApp_Employee_Entitlement,  ThisItem.NameofEmployee.DisplayName = NameofEmployee.DisplayName && EffectiveYear = Year(Today())).CarriedForwardEntitlement & " day(s) left"
             Width: =377
             X: =687
             Y: =27
