@@ -587,9 +587,10 @@ HomeScreen As screen:
 
         ButtonEmployeeCancel_2 As button:
             BorderColor: =RGBA(213, 25, 32, 1)
-            Color: =RGBA(213, 25, 32, 1)
+            BorderThickness: =1
+            Color: =RGBA(237, 28, 36, 1)
             Fill: =RGBA(255, 255, 255, 1)
-            Height: =50
+            Height: =33
             OnSelect: |-
                 =Set(DecisionDateTemp,Now());
                 
@@ -616,9 +617,9 @@ HomeScreen As screen:
             Size: =13
             Text: ="Cancel leave approved"
             Visible: =(_employeeView && (((GalleryRequest.Selected.Status.Value) = "Approved" && (GalleryRequest.Selected.Start_Date > Today())) || ((GalleryRequest.Selected.Status.Value) = "Pending")))
-            Width: =211
-            X: =1104
-            Y: =683
+            Width: =203
+            X: =1111
+            Y: =697
             ZIndex: =36
 
     Header_11 As group:
