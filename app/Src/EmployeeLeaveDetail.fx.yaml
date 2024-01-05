@@ -262,9 +262,9 @@ EmployeeLeaveDetail As screen:
 
         Button8_2 As button:
             BorderColor: =If((ThisItem.Status.Value)="Pending",RGBA(0,71,144,1),(ThisItem.Status.Value)="Rejected",RGBA(213,0,0,1),(ThisItem.Status.Value)="Approved",RGBA(0,128,0,1))
-            Color: =If((ThisItem.Status.Value)="Pending",RGBA(0,71,144,1),(ThisItem.Status.Value)="Rejected",RGBA(213,0,0,1),(ThisItem.Status.Value)="Approved",RGBA(0,128,0,1))
+            Color: =If((ThisItem.Status.Value)="Pending",RGBA(0,71,144,1),(ThisItem.Status.Value)="Rejected",RGBA(213,0,0,1),(ThisItem.Status.Value)="Approved",RGBA(0,128,0,1),(ThisItem.Status.Value)="Cancelled",RGBA(255,69,0,1))
             DisabledBorderColor: =
-            DisabledColor: =If((ThisItem.Status.Value)="Pending",RGBA(0,71,144,1),(ThisItem.Status.Value)="Rejected",RGBA(213,0,0,1),(ThisItem.Status.Value)="Approved",RGBA(0,128,0,1))
+            DisabledColor: =If((ThisItem.Status.Value)="Pending",RGBA(0,71,144,1),(ThisItem.Status.Value)="Rejected",RGBA(213,0,0,1),(ThisItem.Status.Value)="Approved",RGBA(0,128,0,1),(ThisItem.Status.Value)="Cancelled",RGBA(255,69,0,1))
             DisabledFill: =
             DisplayMode: =DisplayMode.Disabled
             Fill: =RGBA(0, 0, 0, 0)
