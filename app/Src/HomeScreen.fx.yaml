@@ -5,15 +5,7 @@ HomeScreen As screen:
     OnHidden: =Set(_showDetails, false)
     OnVisible: |-
         =Set(LeaveTempID,LookUp(LeaveApp_Request,ID = GalleryRequest.Selected.ID));
-        Set(LeaveAnnualCarriedTemp,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email).AnnualCarriedForward);
-        Set(LeaveAnnualTakenTemp,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email).AnnualLeaveTaken);
-        Set(LeaveMedicalTakenTemp,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email).MedicalLeaveTaken);
-        Set(LeaveCasualImmediateTakenTemp,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email).AnnualLeaveTaken);
-        Set(LeaveCasualSecondTakenTemp,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email).CasualSecondLeaveTaken);
-        Set(LeaveMarriageTakenTemp,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email).MarriageLeaveTaken);
-        Set(LeavePaternityTakenTemp,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email).PaternityLeaveTaken);
-        Set(LeaveMaternityTakenTemp,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email).MaternityLeaveTaken);
-        Set(LeaveHospitalizationTakenTemp,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email).HospitalizationLeaveTaken);
+        
         Reset(RemarksTextBox);
         Refresh(LeaveApp_Request);
     Orientation: =If(HomeScreen.Width < HomeScreen.Height, Layout.Vertical, Layout.Horizontal)
@@ -75,7 +67,6 @@ HomeScreen As screen:
             Set(SelectedRecord,GalleryRequest.Selected);
             Set(LeaveTempID,LookUp(LeaveApp_Request,ID = GalleryRequest.Selected.ID));
             
-            Set(LeaveTempID,LookUp(LeaveApp_Request,ID = GalleryRequest.Selected.ID));
             Set(LeaveAnnualCarriedTemp,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email).AnnualCarriedForward);
             Set(LeaveAnnualTakenTemp,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email).AnnualLeaveTaken);
             Set(LeaveMedicalTakenTemp,LookUp(LeaveApp_Employee,NameofEmployee.Email = GalleryRequest.Selected.Created_By.Email).MedicalLeaveTaken);
@@ -429,7 +420,7 @@ HomeScreen As screen:
             OnSelect: |+
                 =Set(DecisionDateTemp,Now());
                 
-                Patch(LeaveApp_Request,LeaveTempID,{Status: {
+                Patch(LeaveApp_Request,LookUp(LeaveApp_Request,ID = GalleryRequest.Selected.ID),{Status: {
                             Value: "Approved"
                         }}
                         ,{Decision_Date: DecisionDateTemp}
