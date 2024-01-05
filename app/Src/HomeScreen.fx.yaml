@@ -4,9 +4,7 @@ HomeScreen As screen:
     Height: =Max(App.Height, App.DesignHeight)
     OnHidden: =Set(_showDetails, false)
     OnVisible: |-
-        =Set(LeaveTempID,LookUp(LeaveApp_Request,ID = GalleryRequest.Selected.ID));
-        
-        Reset(RemarksTextBox);
+        =Reset(RemarksTextBox);
         Refresh(LeaveApp_Request);
     Orientation: =If(HomeScreen.Width < HomeScreen.Height, Layout.Vertical, Layout.Horizontal)
     Size: =1 + CountRows(App.SizeBreakpoints) - CountIf(App.SizeBreakpoints, Value >= HomeScreen.Width)
@@ -65,8 +63,6 @@ HomeScreen As screen:
         OnSelect: |
             =Set(_selectedLeaveItem, ThisItem);
             Set(SelectedRecord,GalleryRequest.Selected);
-            
-            
             Reset(RemarksTextBox);
         TemplatePadding: =0
         TemplateSize: =171
@@ -448,7 +444,7 @@ HomeScreen As screen:
                 Set(LeaveRequestedToEmail,GalleryRequest.Selected.Requested_to.Email);
                 Set(LeaveCreatedByEmail,GalleryRequest.Selected.Requested_to.Email);
                 
-                Patch(LeaveApp_Request,LeaveTempID,{Status: {
+                Patch(LeaveApp_Request,LookUp(LeaveApp_Request,ID = GalleryRequest.Selected.ID),{Status: {
                             '@odata.type': "Microsoft.Azure.Connectors.SharePoint.SPListExpandedUser",
                             Value: "Rejected"
                         }}
@@ -600,7 +596,7 @@ HomeScreen As screen:
                 Set(LeaveRequestedToEmail,GalleryRequest.Selected.Requested_to.Email);
                 Set(LeaveCreatedByEmail,GalleryRequest.Selected.Requested_to.Email);
                 
-                Patch(LeaveApp_Request,LeaveTempID,{Status: {
+                Patch(LeaveApp_Request,LookUp(LeaveApp_Request,ID = GalleryRequest.Selected.ID),{Status: {
                             '@odata.type': "Microsoft.Azure.Connectors.SharePoint.SPListExpandedUser",
                             Value: "Cancelled"
                         }}
