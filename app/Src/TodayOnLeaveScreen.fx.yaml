@@ -28,7 +28,7 @@ TodayOnLeaveScreen As screen:
                     Sort(
                         Filter(
                             LeaveApp_Request,
-                            End_Date < Today() && Status.Value = "Approved"
+                            End_Date >= _thisYear && End_Date < Today() && Status.Value = "Approved"
                         ),
                         Start_Date,
                         SortOrder.Descending
