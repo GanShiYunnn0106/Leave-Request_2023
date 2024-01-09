@@ -199,7 +199,7 @@ App As appinfo:
         
         Set(_thisYear,Date(Year(DateValue(Year(Today()))), Month(DateValue(1)), 1));
         Set(_nextYear,Date(Year(DateValue(Year(Today()))) + 1, Month(DateValue(1)), 1));
-        Set(_today,Today());
+        
         ClearCollect(
             _OnLeaveFilter,
             Table(
