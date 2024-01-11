@@ -563,7 +563,7 @@ HomeScreen As screen:
                     }
                         );
             Size: =13
-            Text: ="Cancel leave approved"
+            Text: ="Cancel Request"
             Visible: =(_employeeView && (((GalleryRequest.Selected.Status.Value) = "Approved" && (GalleryRequest.Selected.Start_Date > Today())) || ((GalleryRequest.Selected.Status.Value) = "Pending")))
             Width: =203
             X: =1111
